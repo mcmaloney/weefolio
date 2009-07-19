@@ -9,7 +9,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090718215859) do
+ActiveRecord::Schema.define(:version => 20090719032501) do
+
+  create_table "portfolios", :force => true do |t|
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "login",                     :limit => 40
@@ -23,6 +29,12 @@ ActiveRecord::Schema.define(:version => 20090718215859) do
     t.datetime "remember_token_expires_at"
     t.string   "activation_code",           :limit => 40
     t.datetime "activated_at"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.text     "about_me"
+    t.string   "tag_line",                  :limit => 500
+    t.integer  "design_type"
+    t.integer  "account_tier",                             :default => 1
   end
 
   add_index "users", ["login"], :name => "index_users_on_login", :unique => true

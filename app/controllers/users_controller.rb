@@ -1,9 +1,4 @@
 class UsersController < ApplicationController
-  # Be sure to include AuthenticationSystem in Application Controller instead
-  include AuthenticatedSystem
-  
-
-  # render new.rhtml
   def new
     @user = User.new
   end
@@ -11,10 +6,16 @@ class UsersController < ApplicationController
   def create
     logout_keeping_session!
     @user = User.new(params[:user])
-    success = @user && @user.save
+    
+    # Give the user a portfolio
+    @user.make_portfolio
+    
+    @user.activate!
+    success = @user && @user.save && @user.portfolio
     if success && @user.errors.empty?
-      redirect_back_or_default('/')
-      flash[:notice] = "Thanks for signing up!  We're sending you an email with your activation code."
+      self.current_user = @user
+      redirect_to root_path
+      flash[:notice] = "Welcome to Weefolio, #{@user.login}!"
     else
       flash[:error]  = "We couldn't set up that account, sorry.  Please try again, or contact an admin (link is above)."
       render :action => 'new'
