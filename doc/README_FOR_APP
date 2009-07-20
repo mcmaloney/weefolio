@@ -1,2 +1,37 @@
-Use this README file to introduce your application and point to useful places in the API for learning more.
-Run "rake doc:app" to generate API documentation for your models, controllers, helpers, and libraries.
+Data Structure
+================
+
+User
+  has_one :portfolio
+  has_many :pieces, through :portfolio
+  
+  first_name (string)
+  last_name (string)
+  login (string) *unique
+  email (string)
+  password (string)
+  password_confirmation (string)
+  account_tier (integer [1, 2, 3])
+  about_me (text)
+  tag_line (string)
+  avatar (image)
+  design_type (integer [1, 2])
+  
+Portfolio
+  belongs_to :user
+  has_many :pieces
+  
+Piece
+  belongs_to :user
+  belongs_to :portfolio
+  
+  title (string)
+  description (string)
+  price (decimal)
+  for_sale (boolean)
+  image1 (image)
+  image2 (image)
+  image3 (image)
+  image4 (image)
+  image5 (image)
+

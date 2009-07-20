@@ -706,3 +706,83 @@ Completed in 7ms (View: 1, DB: 0) | 200 OK [http://0.0.0.0/session]
   [4;35;1mSQL (1.0ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090718220754')[0m
   [4;36;1mSQL (1.0ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090719031854')[0m
   [4;35;1mSQL (1.0ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090719032358')[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mCREATE TABLE "portfolios" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (9.7ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(40), "name" varchar(100) DEFAULT '', "email" varchar(100), "crypted_password" varchar(40), "salt" varchar(40), "created_at" datetime, "updated_at" datetime, "remember_token" varchar(40), "remember_token_expires_at" datetime, "activation_code" varchar(40), "activated_at" datetime, "first_name" varchar(255), "last_name" varchar(255), "about_me" text, "tag_line" varchar(500), "design_type" integer, "account_tier" integer DEFAULT 1) [0m
+  [4;35;1mSQL (1.1ms)[0m   [0mCREATE UNIQUE INDEX "index_users_on_login" ON "users" ("login")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (3.3ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090719032501')[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090718215859')[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090718220754')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090719031854')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090719032358')[0m
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 01:31:39) [GET]
+Rendering main_pages/home
+Completed in 28ms (View: 4, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-07-20 01:31:40) [GET]
+Rendering users/new
+Completed in 20ms (View: 9, DB: 0) | 200 OK [http://0.0.0.0/signup]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-07-20 01:31:57) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"giraffe", "first_name"=>"Hilary", "password"=>"giraffe", "login"=>"hrwalker", "last_name"=>"Walker", "email"=>"hilary@walker.com"}, "commit"=>"Sign Up", "authenticity_token"=>"3rsn93LRjKTw+9RBvhffRYS6pwfMTIo0XJk2REKtjdU="}
+  [4;36;1mPortfolio Create (0.3ms)[0m   [0;1mINSERT INTO "portfolios" ("updated_at", "user_id", "created_at") VALUES('2009-07-20 05:31:57', NULL, '2009-07-20 05:31:57')[0m
+  [4;35;1mUser Create (2.2ms)[0m   [0mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "crypted_password", "account_tier", "about_me", "remember_token_expires_at", "activation_code", "remember_token", "tag_line", "first_name", "login", "last_name", "design_type", "email", "created_at") VALUES('', '65c2c751c1178ffc18f1b9e882fb8fe786db9a61', '2009-07-20 05:31:57', '2009-07-20 05:31:57', 'defc0c6ce5283deb6bca0ab7537494d2fcf46491', 1, NULL, NULL, 'a44dcf86c0e9c889228bea86f029f54db5550259', NULL, NULL, 'Hilary', 'hrwalker', 'Walker', NULL, 'hilary@walker.com', '2009-07-20 05:31:57')[0m
+  [4;36;1mPortfolio Update (0.1ms)[0m   [0;1mUPDATE "portfolios" SET "updated_at" = '2009-07-20 05:31:58', "user_id" = 2 WHERE "id" = 1[0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login" = 'hrwalker' AND "users".id <> 2) LIMIT 1[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'hilary@walker.com' AND "users".id <> 2) LIMIT 1[0m
+Redirected to http://0.0.0.0:3000/
+Completed in 67ms (DB: 3) | 302 Found [http://0.0.0.0/users]
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 01:31:58) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+Rendering main_pages/home
+
+ActionView::TemplateError (user_portfolio_url failed to generate from {:action=>"show", :user_id=>#<User id: 2, login: "hrwalker", name: "", email: "hilary@walker.com", crypted_password: "defc0c6ce5283deb6bca0ab7537494d2fcf46491", salt: "65c2c751c1178ffc18f1b9e882fb8fe786db9a61", created_at: "2009-07-20 05:31:57", updated_at: "2009-07-20 05:31:57", remember_token: nil, remember_token_expires_at: nil, activation_code: "a44dcf86c0e9c889228bea86f029f54db5550259", activated_at: "2009-07-20 05:31:57", first_name: "Hilary", last_name: "Walker", about_me: nil, tag_line: nil, design_type: nil, account_tier: 1>, :controller=>"portfolios"}, expected: {:action=>"show", :controller=>"portfolios"}, diff: {:user_id=>#<User id: 2, login: "hrwalker", name: "", email: "hilary@walker.com", crypted_password: "defc0c6ce5283deb6bca0ab7537494d2fcf46491", salt: "65c2c751c1178ffc18f1b9e882fb8fe786db9a61", created_at: "2009-07-20 05:31:57", updated_at: "2009-07-20 05:31:57", remember_token: nil, remember_token_expires_at: nil, activation_code: "a44dcf86c0e9c889228bea86f029f54db5550259", activated_at: "2009-07-20 05:31:57", first_name: "Hilary", last_name: "Walker", about_me: nil, tag_line: nil, design_type: nil, account_tier: 1>}) on line #5 of app/views/main_pages/home.html.erb:
+2: 
+3: <%= flash[:notice] %>
+4: <% if logged_in? %>
+5:   <%= link_to 'Portfolio', user_portfolio_path(@user) %> | <%= link_to 'Log Out', logout_path %>
+6: <% else %>
+7:   <%= link_to 'Sign Up', signup_path %> | <%= link_to 'Log In', login_path %>
+8: <% end %>
+
+    (eval):16:in `user_portfolio_path'
+    app/views/main_pages/home.html.erb:5
+
+Rendered rescues/_trace (33.1ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mPortfolio Load (0.2ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 1) LIMIT 1[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" [0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 2) [0m
+  [4;36;1mPortfolio Load (0.3ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 2) LIMIT 1[0m

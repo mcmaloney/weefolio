@@ -969,3 +969,890 @@ Rendering main_pages/home
 Completed in 1ms (View: 1, DB: 0) | 200 OK [http://www.example.com/]
   [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
   [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "portfolios" [0m
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 01:07:36) [GET]
+Rendering main_pages/home
+Completed in 42ms (View: 40, DB: 0) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /signup with {} and HTTP headers {"HTTP_REFERER"=>"/"}
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-07-20 01:07:36) [GET]
+Rendering users/new
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://www.example.com/signup]
+REQUESTING PAGE: GET /signup with {} and HTTP headers {}
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-07-20 01:07:36) [GET]
+Rendering users/new
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://www.example.com/signup]
+  [4;36;1mUser Delete all (0.4ms)[0m   [0;1mDELETE FROM "users" WHERE 1=1[0m
+REQUESTING PAGE: POST /users with {"user"=>{"password_confirmation"=>"giraffe", "first_name"=>"Michael", "password"=>"giraffe", "login"=>"mcmaloney", "last_name"=>"Maloney", "email"=>"michael@maloney.com"}, "commit"=>"Sign Up"} and HTTP headers {"HTTP_REFERER"=>"/signup"}
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-07-20 01:07:36) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"giraffe", "first_name"=>"Michael", "last_name"=>"Maloney", "login"=>"mcmaloney", "password"=>"giraffe", "email"=>"michael@maloney.com"}, "commit"=>"Sign Up"}
+  [4;35;1mPortfolio Create (0.2ms)[0m   [0mINSERT INTO "portfolios" ("updated_at", "user_id", "created_at") VALUES('2009-07-20 05:07:36', NULL, '2009-07-20 05:07:36')[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "crypted_password", "account_tier", "about_me", "remember_token_expires_at", "activation_code", "remember_token", "tag_line", "first_name", "login", "last_name", "design_type", "email", "created_at") VALUES('', '471948fa78f56520de3246f5adfb46af1be651a6', '2009-07-20 05:07:36', '2009-07-20 05:07:36', '6f588a429bda391925d323c42cda65dd1e54b0d8', 1, NULL, NULL, 'a0f74cf38d127c635d7f73675dee7ed2ba5fb3fe', NULL, NULL, 'Michael', 'mcmaloney', 'Maloney', NULL, 'michael@maloney.com', '2009-07-20 05:07:36')[0m
+  [4;35;1mPortfolio Update (0.1ms)[0m   [0mUPDATE "portfolios" SET "updated_at" = '2009-07-20 05:07:36', "user_id" = 1 WHERE "id" = 1[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login" = 'mcmaloney' AND "users".id <> 1) LIMIT 1[0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'michael@maloney.com' AND "users".id <> 1) LIMIT 1[0m
+Redirected to http://www.example.com/
+Completed in 68ms (DB: 1) | 302 Found [http://www.example.com/users]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/users"}
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 01:07:36) [GET]
+Rendering main_pages/home
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://www.example.com/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "portfolios" [0m
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 01:09:42) [GET]
+Rendering main_pages/home
+Completed in 28ms (View: 27, DB: 0) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /signup with {} and HTTP headers {"HTTP_REFERER"=>"/"}
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-07-20 01:09:42) [GET]
+Rendering users/new
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://www.example.com/signup]
+REQUESTING PAGE: GET /signup with {} and HTTP headers {}
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-07-20 01:09:42) [GET]
+Rendering users/new
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://www.example.com/signup]
+  [4;36;1mUser Delete all (0.4ms)[0m   [0;1mDELETE FROM "users" WHERE 1=1[0m
+REQUESTING PAGE: POST /users with {"user"=>{"password_confirmation"=>"giraffe", "first_name"=>"Michael", "password"=>"giraffe", "login"=>"mcmaloney", "last_name"=>"Maloney", "email"=>"michael@maloney.com"}, "commit"=>"Sign Up"} and HTTP headers {"HTTP_REFERER"=>"/signup"}
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-07-20 01:09:42) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"giraffe", "first_name"=>"Michael", "last_name"=>"Maloney", "login"=>"mcmaloney", "password"=>"giraffe", "email"=>"michael@maloney.com"}, "commit"=>"Sign Up"}
+  [4;35;1mPortfolio Create (0.2ms)[0m   [0mINSERT INTO "portfolios" ("updated_at", "user_id", "created_at") VALUES('2009-07-20 05:09:42', NULL, '2009-07-20 05:09:42')[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "crypted_password", "account_tier", "about_me", "remember_token_expires_at", "activation_code", "remember_token", "tag_line", "first_name", "login", "last_name", "design_type", "email", "created_at") VALUES('', '57f2e7be40057255023e05c450ec3154e6fa615d', '2009-07-20 05:09:42', '2009-07-20 05:09:42', '45c7e4492f5b20acbb45251745e004764b0a8876', 1, NULL, NULL, '6898444dca3a0d7634a6c8203aa2e79d7436f830', NULL, NULL, 'Michael', 'mcmaloney', 'Maloney', NULL, 'michael@maloney.com', '2009-07-20 05:09:42')[0m
+  [4;35;1mPortfolio Update (0.1ms)[0m   [0mUPDATE "portfolios" SET "updated_at" = '2009-07-20 05:09:42', "user_id" = 1 WHERE "id" = 1[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login" = 'mcmaloney' AND "users".id <> 1) LIMIT 1[0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'michael@maloney.com' AND "users".id <> 1) LIMIT 1[0m
+Redirected to http://www.example.com/
+Completed in 32ms (DB: 1) | 302 Found [http://www.example.com/users]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/users"}
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 01:09:42) [GET]
+Rendering main_pages/home
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://www.example.com/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "portfolios" [0m
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 01:13:02) [GET]
+Rendering main_pages/home
+Completed in 28ms (View: 26, DB: 0) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /signup with {} and HTTP headers {"HTTP_REFERER"=>"/"}
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-07-20 01:13:02) [GET]
+Rendering users/new
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://www.example.com/signup]
+REQUESTING PAGE: GET /signup with {} and HTTP headers {}
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-07-20 01:13:02) [GET]
+Rendering users/new
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://www.example.com/signup]
+  [4;36;1mUser Delete all (0.4ms)[0m   [0;1mDELETE FROM "users" WHERE 1=1[0m
+REQUESTING PAGE: POST /users with {"user"=>{"password_confirmation"=>"giraffe", "first_name"=>"Michael", "password"=>"giraffe", "login"=>"mcmaloney", "last_name"=>"Maloney", "email"=>"michael@maloney.com"}, "commit"=>"Sign Up"} and HTTP headers {"HTTP_REFERER"=>"/signup"}
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-07-20 01:13:02) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"giraffe", "first_name"=>"Michael", "last_name"=>"Maloney", "login"=>"mcmaloney", "password"=>"giraffe", "email"=>"michael@maloney.com"}, "commit"=>"Sign Up"}
+  [4;35;1mPortfolio Create (0.2ms)[0m   [0mINSERT INTO "portfolios" ("updated_at", "user_id", "created_at") VALUES('2009-07-20 05:13:02', NULL, '2009-07-20 05:13:02')[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "crypted_password", "account_tier", "about_me", "remember_token_expires_at", "activation_code", "remember_token", "tag_line", "first_name", "login", "last_name", "design_type", "email", "created_at") VALUES('', 'f1acf1c5ea38a28df95c886ebd162253451aa886', '2009-07-20 05:13:02', '2009-07-20 05:13:02', '0d55d8c60ef442b2bdcb28d21f8e017abd0392c3', 1, NULL, NULL, '6f469c47fc867a307ebbdd3edd08b8b76d33af58', NULL, NULL, 'Michael', 'mcmaloney', 'Maloney', NULL, 'michael@maloney.com', '2009-07-20 05:13:02')[0m
+  [4;35;1mPortfolio Update (0.1ms)[0m   [0mUPDATE "portfolios" SET "updated_at" = '2009-07-20 05:13:02', "user_id" = 1 WHERE "id" = 1[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login" = 'mcmaloney' AND "users".id <> 1) LIMIT 1[0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'michael@maloney.com' AND "users".id <> 1) LIMIT 1[0m
+Redirected to http://www.example.com/
+Completed in 31ms (DB: 1) | 302 Found [http://www.example.com/users]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/users"}
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 01:13:02) [GET]
+Rendering main_pages/home
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://www.example.com/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "portfolios" [0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login" = 'kevingomez') LIMIT 1[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'michael@maloney.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.2ms)[0m   [0mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "crypted_password", "account_tier", "about_me", "remember_token_expires_at", "activation_code", "remember_token", "tag_line", "first_name", "login", "last_name", "design_type", "email", "created_at") VALUES('', 'dda9b69cfc9e17f0491e33753a81805628aa8102', '2009-07-20 05:13:02', NULL, '24f72f1afa783bcb3382fba8cb1e5359ffbabbf5', 1, NULL, NULL, '3f595116817cfa417eafde4462678a79f9a15c32', NULL, NULL, 'Kevin', 'kevingomez', 'Gomez', NULL, 'michael@maloney.com', '2009-07-20 05:13:02')[0m
+  [4;36;1mPortfolio Load (0.1ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 1) LIMIT 1[0m
+  [4;35;1mPortfolio Create (0.1ms)[0m   [0mINSERT INTO "portfolios" ("updated_at", "user_id", "created_at") VALUES('2009-07-20 05:13:02', 1, '2009-07-20 05:13:02')[0m
+  [4;36;1mUser Update (0.1ms)[0m   [0;1mUPDATE "users" SET "activated_at" = '2009-07-20 05:13:02', "activation_code" = NULL, "updated_at" = '2009-07-20 05:13:02' WHERE "id" = 1[0m
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 01:13:02) [GET]
+Rendering main_pages/home
+Completed in 1ms (View: 0, DB: 1) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /login with {} and HTTP headers {"HTTP_REFERER"=>"/"}
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-07-20 01:13:02) [GET]
+Rendering sessions/new
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://www.example.com/login]
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 01:13:27) [GET]
+Rendering main_pages/home
+Completed in 28ms (View: 26, DB: 0) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /signup with {} and HTTP headers {"HTTP_REFERER"=>"/"}
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-07-20 01:13:27) [GET]
+Rendering users/new
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://www.example.com/signup]
+REQUESTING PAGE: GET /signup with {} and HTTP headers {}
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-07-20 01:13:27) [GET]
+Rendering users/new
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://www.example.com/signup]
+  [4;36;1mUser Delete all (0.4ms)[0m   [0;1mDELETE FROM "users" WHERE 1=1[0m
+REQUESTING PAGE: POST /users with {"user"=>{"password_confirmation"=>"giraffe", "first_name"=>"Michael", "password"=>"giraffe", "login"=>"mcmaloney", "last_name"=>"Maloney", "email"=>"michael@maloney.com"}, "commit"=>"Sign Up"} and HTTP headers {"HTTP_REFERER"=>"/signup"}
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-07-20 01:13:27) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"giraffe", "first_name"=>"Michael", "last_name"=>"Maloney", "login"=>"mcmaloney", "password"=>"giraffe", "email"=>"michael@maloney.com"}, "commit"=>"Sign Up"}
+  [4;35;1mPortfolio Create (0.1ms)[0m   [0mINSERT INTO "portfolios" ("updated_at", "user_id", "created_at") VALUES('2009-07-20 05:13:27', NULL, '2009-07-20 05:13:27')[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "crypted_password", "account_tier", "about_me", "remember_token_expires_at", "activation_code", "remember_token", "tag_line", "first_name", "login", "last_name", "design_type", "email", "created_at") VALUES('', 'fd0fe4a6932d5ea63642a9a07776a9d78a88b02e', '2009-07-20 05:13:27', '2009-07-20 05:13:27', '9ad2ad51323b9091cc895a15982b38dca5ebc5d9', 1, NULL, NULL, 'cf913b5467f80cfcb81762b3f03a7f9cbccdeea9', NULL, NULL, 'Michael', 'mcmaloney', 'Maloney', NULL, 'michael@maloney.com', '2009-07-20 05:13:27')[0m
+  [4;35;1mPortfolio Update (0.1ms)[0m   [0mUPDATE "portfolios" SET "updated_at" = '2009-07-20 05:13:27', "user_id" = 1 WHERE "id" = 1[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login" = 'mcmaloney' AND "users".id <> 1) LIMIT 1[0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'michael@maloney.com' AND "users".id <> 1) LIMIT 1[0m
+Redirected to http://www.example.com/
+Completed in 31ms (DB: 1) | 302 Found [http://www.example.com/users]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/users"}
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 01:13:27) [GET]
+Rendering main_pages/home
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://www.example.com/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "portfolios" [0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login" = 'kevingomez') LIMIT 1[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'michael@maloney.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.2ms)[0m   [0mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "crypted_password", "account_tier", "about_me", "remember_token_expires_at", "activation_code", "remember_token", "tag_line", "first_name", "login", "last_name", "design_type", "email", "created_at") VALUES('', 'f36ade98f969684ab65f246ab570cc02ab745122', '2009-07-20 05:13:27', NULL, '37040ef4b29e07c4583e6d94a16bc4239926c1be', 1, NULL, NULL, '6fd4a90eef65f1106d40a561f35504f767a34213', NULL, NULL, 'Kevin', 'kevingomez', 'Gomez', NULL, 'michael@maloney.com', '2009-07-20 05:13:27')[0m
+  [4;36;1mPortfolio Load (0.1ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 1) LIMIT 1[0m
+  [4;35;1mPortfolio Create (0.1ms)[0m   [0mINSERT INTO "portfolios" ("updated_at", "user_id", "created_at") VALUES('2009-07-20 05:13:27', 1, '2009-07-20 05:13:27')[0m
+  [4;36;1mUser Update (0.1ms)[0m   [0;1mUPDATE "users" SET "activated_at" = '2009-07-20 05:13:27', "activation_code" = NULL, "updated_at" = '2009-07-20 05:13:27' WHERE "id" = 1[0m
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 01:13:27) [GET]
+Rendering main_pages/home
+Completed in 1ms (View: 0, DB: 1) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /login with {} and HTTP headers {"HTTP_REFERER"=>"/"}
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-07-20 01:13:27) [GET]
+Rendering sessions/new
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://www.example.com/login]
+REQUESTING PAGE: POST /session with {"commit"=>"Login", "password"=>"giraffe", "login"=>"kevingomez"} and HTTP headers {"HTTP_REFERER"=>"/login"}
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2009-07-20 01:13:27) [POST]
+  Parameters: {"commit"=>"Login", "password"=>"giraffe", "login"=>"kevingomez"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE (login = 'kevingomez' and activated_at IS NOT NULL) LIMIT 1[0m
+Redirected to http://www.example.com/
+Completed in 2ms (DB: 0) | 302 Found [http://www.example.com/session]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/session"}
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 01:13:27) [GET]
+Rendering main_pages/home
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 01:14:19) [GET]
+Rendering main_pages/home
+Completed in 28ms (View: 26, DB: 0) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /signup with {} and HTTP headers {"HTTP_REFERER"=>"/"}
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-07-20 01:14:19) [GET]
+Rendering users/new
+Completed in 8ms (View: 5, DB: 0) | 200 OK [http://www.example.com/signup]
+REQUESTING PAGE: GET /signup with {} and HTTP headers {}
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-07-20 01:14:19) [GET]
+Rendering users/new
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://www.example.com/signup]
+  [4;36;1mUser Delete all (0.4ms)[0m   [0;1mDELETE FROM "users" WHERE 1=1[0m
+REQUESTING PAGE: POST /users with {"user"=>{"password_confirmation"=>"giraffe", "first_name"=>"Michael", "password"=>"giraffe", "login"=>"mcmaloney", "last_name"=>"Maloney", "email"=>"michael@maloney.com"}, "commit"=>"Sign Up"} and HTTP headers {"HTTP_REFERER"=>"/signup"}
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-07-20 01:14:19) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"giraffe", "first_name"=>"Michael", "last_name"=>"Maloney", "login"=>"mcmaloney", "password"=>"giraffe", "email"=>"michael@maloney.com"}, "commit"=>"Sign Up"}
+  [4;35;1mPortfolio Create (0.1ms)[0m   [0mINSERT INTO "portfolios" ("updated_at", "user_id", "created_at") VALUES('2009-07-20 05:14:19', NULL, '2009-07-20 05:14:19')[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "crypted_password", "account_tier", "about_me", "remember_token_expires_at", "activation_code", "remember_token", "tag_line", "first_name", "login", "last_name", "design_type", "email", "created_at") VALUES('', '50daa8651a6263a272a77c854e7b9485e9596017', '2009-07-20 05:14:19', '2009-07-20 05:14:19', '36ab3d123f43b75b0d2c6e1f6bc0ba05727ebbbf', 1, NULL, NULL, 'f67b6dac77ce6f8c9c25533e66b99407fd401a8e', NULL, NULL, 'Michael', 'mcmaloney', 'Maloney', NULL, 'michael@maloney.com', '2009-07-20 05:14:19')[0m
+  [4;35;1mPortfolio Update (0.1ms)[0m   [0mUPDATE "portfolios" SET "updated_at" = '2009-07-20 05:14:19', "user_id" = 1 WHERE "id" = 1[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login" = 'mcmaloney' AND "users".id <> 1) LIMIT 1[0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'michael@maloney.com' AND "users".id <> 1) LIMIT 1[0m
+Redirected to http://www.example.com/
+Completed in 32ms (DB: 1) | 302 Found [http://www.example.com/users]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/users"}
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 01:14:19) [GET]
+Rendering main_pages/home
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://www.example.com/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "portfolios" [0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login" = 'kevingomez') LIMIT 1[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'michael@maloney.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.2ms)[0m   [0mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "crypted_password", "account_tier", "about_me", "remember_token_expires_at", "activation_code", "remember_token", "tag_line", "first_name", "login", "last_name", "design_type", "email", "created_at") VALUES('', 'dff4da1586d16284eacee2c8c8c773cb026f528c', '2009-07-20 05:14:19', NULL, 'b480df8b5a83c869d6dd395229366587ae807386', 1, NULL, NULL, '47f3ed2c3e0239fc200518e76121d657e5a7e7f7', NULL, NULL, 'Kevin', 'kevingomez', 'Gomez', NULL, 'michael@maloney.com', '2009-07-20 05:14:19')[0m
+  [4;36;1mPortfolio Load (0.1ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 1) LIMIT 1[0m
+  [4;35;1mPortfolio Create (0.1ms)[0m   [0mINSERT INTO "portfolios" ("updated_at", "user_id", "created_at") VALUES('2009-07-20 05:14:19', 1, '2009-07-20 05:14:19')[0m
+  [4;36;1mUser Update (0.1ms)[0m   [0;1mUPDATE "users" SET "activated_at" = '2009-07-20 05:14:19', "activation_code" = NULL, "updated_at" = '2009-07-20 05:14:19' WHERE "id" = 1[0m
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 01:14:19) [GET]
+Rendering main_pages/home
+Completed in 1ms (View: 0, DB: 1) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /login with {} and HTTP headers {"HTTP_REFERER"=>"/"}
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-07-20 01:14:19) [GET]
+Rendering sessions/new
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://www.example.com/login]
+REQUESTING PAGE: POST /session with {"commit"=>"Login", "password"=>"giraffe", "login"=>"kevingomez"} and HTTP headers {"HTTP_REFERER"=>"/login"}
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2009-07-20 01:14:19) [POST]
+  Parameters: {"commit"=>"Login", "password"=>"giraffe", "login"=>"kevingomez"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE (login = 'kevingomez' and activated_at IS NOT NULL) LIMIT 1[0m
+Redirected to http://www.example.com/
+Completed in 2ms (DB: 0) | 302 Found [http://www.example.com/session]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/session"}
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 01:14:19) [GET]
+Rendering main_pages/home
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 01:17:41) [GET]
+Rendering main_pages/home
+Completed in 80ms (View: 78, DB: 0) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /signup with {} and HTTP headers {"HTTP_REFERER"=>"/"}
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-07-20 01:17:41) [GET]
+Rendering users/new
+Completed in 8ms (View: 5, DB: 0) | 200 OK [http://www.example.com/signup]
+REQUESTING PAGE: GET /signup with {} and HTTP headers {}
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-07-20 01:17:41) [GET]
+Rendering users/new
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://www.example.com/signup]
+  [4;36;1mUser Delete all (0.3ms)[0m   [0;1mDELETE FROM "users" WHERE 1=1[0m
+REQUESTING PAGE: POST /users with {"user"=>{"password_confirmation"=>"giraffe", "first_name"=>"Michael", "password"=>"giraffe", "login"=>"mcmaloney", "last_name"=>"Maloney", "email"=>"michael@maloney.com"}, "commit"=>"Sign Up"} and HTTP headers {"HTTP_REFERER"=>"/signup"}
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-07-20 01:17:41) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"giraffe", "first_name"=>"Michael", "last_name"=>"Maloney", "login"=>"mcmaloney", "password"=>"giraffe", "email"=>"michael@maloney.com"}, "commit"=>"Sign Up"}
+  [4;35;1mPortfolio Create (0.2ms)[0m   [0mINSERT INTO "portfolios" ("updated_at", "user_id", "created_at") VALUES('2009-07-20 05:17:41', NULL, '2009-07-20 05:17:41')[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "crypted_password", "account_tier", "about_me", "remember_token_expires_at", "activation_code", "remember_token", "tag_line", "first_name", "login", "last_name", "design_type", "email", "created_at") VALUES('', 'fdf3c380bcafb899d846a2d7f5cc32924c98b96a', '2009-07-20 05:17:41', '2009-07-20 05:17:41', 'bbd4da103fb0d2a7a3a32bc491e7e1e7e2a7ef65', 1, NULL, NULL, 'b14aea8e30272febeaf893e4c97b33981cf26467', NULL, NULL, 'Michael', 'mcmaloney', 'Maloney', NULL, 'michael@maloney.com', '2009-07-20 05:17:41')[0m
+  [4;35;1mPortfolio Update (0.1ms)[0m   [0mUPDATE "portfolios" SET "updated_at" = '2009-07-20 05:17:41', "user_id" = 1 WHERE "id" = 1[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login" = 'mcmaloney' AND "users".id <> 1) LIMIT 1[0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'michael@maloney.com' AND "users".id <> 1) LIMIT 1[0m
+Redirected to http://www.example.com/
+Completed in 31ms (DB: 1) | 302 Found [http://www.example.com/users]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/users"}
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 01:17:41) [GET]
+Rendering main_pages/home
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://www.example.com/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "portfolios" [0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login" = 'kevingomez') LIMIT 1[0m
+  [4;36;1mUser Exists (0.0ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'michael@maloney.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.2ms)[0m   [0mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "crypted_password", "account_tier", "about_me", "remember_token_expires_at", "activation_code", "remember_token", "tag_line", "first_name", "login", "last_name", "design_type", "email", "created_at") VALUES('', 'c8a580aebe5d49c025d66752bde7772e9bc0f56f', '2009-07-20 05:17:41', NULL, '81b90c614c23ab4e02964659335ad27b492ba620', 1, NULL, NULL, '7b454f04f8cb2a4cdb7d41ff7c0a05558300def3', NULL, NULL, 'Kevin', 'kevingomez', 'Gomez', NULL, 'michael@maloney.com', '2009-07-20 05:17:41')[0m
+  [4;36;1mPortfolio Load (0.1ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 1) LIMIT 1[0m
+  [4;35;1mPortfolio Create (0.1ms)[0m   [0mINSERT INTO "portfolios" ("updated_at", "user_id", "created_at") VALUES('2009-07-20 05:17:41', 1, '2009-07-20 05:17:41')[0m
+  [4;36;1mUser Update (0.1ms)[0m   [0;1mUPDATE "users" SET "activated_at" = '2009-07-20 05:17:41', "activation_code" = NULL, "updated_at" = '2009-07-20 05:17:41' WHERE "id" = 1[0m
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 01:17:41) [GET]
+Rendering main_pages/home
+Completed in 1ms (View: 0, DB: 1) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /login with {} and HTTP headers {"HTTP_REFERER"=>"/"}
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-07-20 01:17:41) [GET]
+Rendering sessions/new
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://www.example.com/login]
+REQUESTING PAGE: POST /session with {"commit"=>"Login", "password"=>"giraffe", "login"=>"kevingomez"} and HTTP headers {"HTTP_REFERER"=>"/login"}
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2009-07-20 01:17:41) [POST]
+  Parameters: {"commit"=>"Login", "password"=>"giraffe", "login"=>"kevingomez"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE (login = 'kevingomez' and activated_at IS NOT NULL) LIMIT 1[0m
+Redirected to http://www.example.com/
+Completed in 2ms (DB: 0) | 302 Found [http://www.example.com/session]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/session"}
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 01:17:41) [GET]
+Rendering main_pages/home
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 01:18:42) [GET]
+Rendering main_pages/home
+Completed in 28ms (View: 26, DB: 0) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /signup with {} and HTTP headers {"HTTP_REFERER"=>"/"}
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-07-20 01:18:42) [GET]
+Rendering users/new
+Completed in 8ms (View: 5, DB: 0) | 200 OK [http://www.example.com/signup]
+REQUESTING PAGE: GET /signup with {} and HTTP headers {}
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-07-20 01:18:42) [GET]
+Rendering users/new
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://www.example.com/signup]
+  [4;36;1mUser Delete all (0.3ms)[0m   [0;1mDELETE FROM "users" WHERE 1=1[0m
+REQUESTING PAGE: POST /users with {"user"=>{"password_confirmation"=>"giraffe", "first_name"=>"Michael", "password"=>"giraffe", "login"=>"mcmaloney", "last_name"=>"Maloney", "email"=>"michael@maloney.com"}, "commit"=>"Sign Up"} and HTTP headers {"HTTP_REFERER"=>"/signup"}
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-07-20 01:18:42) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"giraffe", "first_name"=>"Michael", "last_name"=>"Maloney", "login"=>"mcmaloney", "password"=>"giraffe", "email"=>"michael@maloney.com"}, "commit"=>"Sign Up"}
+  [4;35;1mPortfolio Create (0.2ms)[0m   [0mINSERT INTO "portfolios" ("updated_at", "user_id", "created_at") VALUES('2009-07-20 05:18:42', NULL, '2009-07-20 05:18:42')[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "crypted_password", "account_tier", "about_me", "remember_token_expires_at", "activation_code", "remember_token", "tag_line", "first_name", "login", "last_name", "design_type", "email", "created_at") VALUES('', '2ea4dc117c4d14878bcd58284761bf35bdd29b2d', '2009-07-20 05:18:42', '2009-07-20 05:18:42', '170c7548437aaaa59c712c3e32c208279a922d24', 1, NULL, NULL, '6e83ddb6bacdbc946d72f10554e1bf6e1e381859', NULL, NULL, 'Michael', 'mcmaloney', 'Maloney', NULL, 'michael@maloney.com', '2009-07-20 05:18:42')[0m
+  [4;35;1mPortfolio Update (0.1ms)[0m   [0mUPDATE "portfolios" SET "updated_at" = '2009-07-20 05:18:42', "user_id" = 1 WHERE "id" = 1[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login" = 'mcmaloney' AND "users".id <> 1) LIMIT 1[0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'michael@maloney.com' AND "users".id <> 1) LIMIT 1[0m
+Redirected to http://www.example.com/
+Completed in 31ms (DB: 1) | 302 Found [http://www.example.com/users]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/users"}
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 01:18:42) [GET]
+Rendering main_pages/home
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://www.example.com/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "portfolios" [0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login" = 'kevingomez') LIMIT 1[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'michael@maloney.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.2ms)[0m   [0mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "crypted_password", "account_tier", "about_me", "remember_token_expires_at", "activation_code", "remember_token", "tag_line", "first_name", "login", "last_name", "design_type", "email", "created_at") VALUES('', '72d144dd43a74f8734b09d7c445aa202f96e0529', '2009-07-20 05:18:42', NULL, '0e5664f9d1f2971051332a406d96886efcf31d59', 1, NULL, NULL, '5acab7dab2612ff5d562f53e1155cde52ff71633', NULL, NULL, 'Kevin', 'kevingomez', 'Gomez', NULL, 'michael@maloney.com', '2009-07-20 05:18:42')[0m
+  [4;36;1mPortfolio Load (0.1ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 1) LIMIT 1[0m
+  [4;35;1mPortfolio Create (0.1ms)[0m   [0mINSERT INTO "portfolios" ("updated_at", "user_id", "created_at") VALUES('2009-07-20 05:18:42', 1, '2009-07-20 05:18:42')[0m
+  [4;36;1mUser Update (0.1ms)[0m   [0;1mUPDATE "users" SET "activated_at" = '2009-07-20 05:18:42', "activation_code" = NULL, "updated_at" = '2009-07-20 05:18:42' WHERE "id" = 1[0m
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 01:18:42) [GET]
+Rendering main_pages/home
+Completed in 1ms (View: 0, DB: 1) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /login with {} and HTTP headers {"HTTP_REFERER"=>"/"}
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-07-20 01:18:42) [GET]
+Rendering sessions/new
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://www.example.com/login]
+REQUESTING PAGE: POST /session with {"commit"=>"Login", "password"=>"giraffe", "login"=>"kevingomez"} and HTTP headers {"HTTP_REFERER"=>"/login"}
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2009-07-20 01:18:42) [POST]
+  Parameters: {"commit"=>"Login", "password"=>"giraffe", "login"=>"kevingomez"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE (login = 'kevingomez' and activated_at IS NOT NULL) LIMIT 1[0m
+Redirected to http://www.example.com/
+Completed in 2ms (DB: 0) | 302 Found [http://www.example.com/session]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/session"}
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 01:18:42) [GET]
+Rendering main_pages/home
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 01:18:59) [GET]
+Rendering main_pages/home
+Completed in 29ms (View: 27, DB: 0) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /signup with {} and HTTP headers {"HTTP_REFERER"=>"/"}
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-07-20 01:18:59) [GET]
+Rendering users/new
+Completed in 8ms (View: 5, DB: 0) | 200 OK [http://www.example.com/signup]
+REQUESTING PAGE: GET /signup with {} and HTTP headers {}
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-07-20 01:19:00) [GET]
+Rendering users/new
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://www.example.com/signup]
+  [4;36;1mUser Delete all (0.4ms)[0m   [0;1mDELETE FROM "users" WHERE 1=1[0m
+REQUESTING PAGE: POST /users with {"user"=>{"password_confirmation"=>"giraffe", "first_name"=>"Michael", "password"=>"giraffe", "login"=>"mcmaloney", "last_name"=>"Maloney", "email"=>"michael@maloney.com"}, "commit"=>"Sign Up"} and HTTP headers {"HTTP_REFERER"=>"/signup"}
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-07-20 01:19:00) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"giraffe", "first_name"=>"Michael", "last_name"=>"Maloney", "login"=>"mcmaloney", "password"=>"giraffe", "email"=>"michael@maloney.com"}, "commit"=>"Sign Up"}
+  [4;35;1mPortfolio Create (0.2ms)[0m   [0mINSERT INTO "portfolios" ("updated_at", "user_id", "created_at") VALUES('2009-07-20 05:19:00', NULL, '2009-07-20 05:19:00')[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "crypted_password", "account_tier", "about_me", "remember_token_expires_at", "activation_code", "remember_token", "tag_line", "first_name", "login", "last_name", "design_type", "email", "created_at") VALUES('', '889abcb14c4eac03f63d2e70b4e17bafde069a0b', '2009-07-20 05:19:00', '2009-07-20 05:19:00', 'f04b76c537450e6103d62bb180a89990ca0c63b7', 1, NULL, NULL, '09bea2f0a94c14867ea9fc8583c0b9b6d6b455c2', NULL, NULL, 'Michael', 'mcmaloney', 'Maloney', NULL, 'michael@maloney.com', '2009-07-20 05:19:00')[0m
+  [4;35;1mPortfolio Update (0.1ms)[0m   [0mUPDATE "portfolios" SET "updated_at" = '2009-07-20 05:19:00', "user_id" = 1 WHERE "id" = 1[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login" = 'mcmaloney' AND "users".id <> 1) LIMIT 1[0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'michael@maloney.com' AND "users".id <> 1) LIMIT 1[0m
+Redirected to http://www.example.com/
+Completed in 31ms (DB: 1) | 302 Found [http://www.example.com/users]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/users"}
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 01:19:00) [GET]
+Rendering main_pages/home
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://www.example.com/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "portfolios" [0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login" = 'kevingomez') LIMIT 1[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'michael@maloney.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.2ms)[0m   [0mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "crypted_password", "account_tier", "about_me", "remember_token_expires_at", "activation_code", "remember_token", "tag_line", "first_name", "login", "last_name", "design_type", "email", "created_at") VALUES('', '16fbfd7607b61a526e8a2c688aa6e37f818ece42', '2009-07-20 05:19:00', NULL, 'd166a8d0123688b120e8a62a11b39c32f49bbc43', 1, NULL, NULL, 'f8a6e670411f7777d418fb4a9e3de859e2be9eca', NULL, NULL, 'Kevin', 'kevingomez', 'Gomez', NULL, 'michael@maloney.com', '2009-07-20 05:19:00')[0m
+  [4;36;1mPortfolio Load (0.1ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 1) LIMIT 1[0m
+  [4;35;1mPortfolio Create (0.1ms)[0m   [0mINSERT INTO "portfolios" ("updated_at", "user_id", "created_at") VALUES('2009-07-20 05:19:00', 1, '2009-07-20 05:19:00')[0m
+  [4;36;1mUser Update (0.1ms)[0m   [0;1mUPDATE "users" SET "activated_at" = '2009-07-20 05:19:00', "activation_code" = NULL, "updated_at" = '2009-07-20 05:19:00' WHERE "id" = 1[0m
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 01:19:00) [GET]
+Rendering main_pages/home
+Completed in 1ms (View: 0, DB: 1) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /login with {} and HTTP headers {"HTTP_REFERER"=>"/"}
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-07-20 01:19:00) [GET]
+Rendering sessions/new
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://www.example.com/login]
+REQUESTING PAGE: POST /session with {"commit"=>"Login", "password"=>"giraffe", "login"=>"kevingomez"} and HTTP headers {"HTTP_REFERER"=>"/login"}
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2009-07-20 01:19:00) [POST]
+  Parameters: {"commit"=>"Login", "password"=>"giraffe", "login"=>"kevingomez"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE (login = 'kevingomez' and activated_at IS NOT NULL) LIMIT 1[0m
+Redirected to http://www.example.com/
+Completed in 2ms (DB: 0) | 302 Found [http://www.example.com/session]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/session"}
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 01:19:00) [GET]
+Rendering main_pages/home
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 01:19:14) [GET]
+Rendering main_pages/home
+Completed in 77ms (View: 76, DB: 0) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /signup with {} and HTTP headers {"HTTP_REFERER"=>"/"}
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-07-20 01:19:14) [GET]
+Rendering users/new
+Completed in 8ms (View: 5, DB: 0) | 200 OK [http://www.example.com/signup]
+REQUESTING PAGE: GET /signup with {} and HTTP headers {}
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-07-20 01:19:14) [GET]
+Rendering users/new
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://www.example.com/signup]
+  [4;36;1mUser Delete all (0.3ms)[0m   [0;1mDELETE FROM "users" WHERE 1=1[0m
+REQUESTING PAGE: POST /users with {"user"=>{"password_confirmation"=>"giraffe", "first_name"=>"Michael", "password"=>"giraffe", "login"=>"mcmaloney", "last_name"=>"Maloney", "email"=>"michael@maloney.com"}, "commit"=>"Sign Up"} and HTTP headers {"HTTP_REFERER"=>"/signup"}
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-07-20 01:19:14) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"giraffe", "first_name"=>"Michael", "last_name"=>"Maloney", "login"=>"mcmaloney", "password"=>"giraffe", "email"=>"michael@maloney.com"}, "commit"=>"Sign Up"}
+  [4;35;1mPortfolio Create (0.2ms)[0m   [0mINSERT INTO "portfolios" ("updated_at", "user_id", "created_at") VALUES('2009-07-20 05:19:14', NULL, '2009-07-20 05:19:14')[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "crypted_password", "account_tier", "about_me", "remember_token_expires_at", "activation_code", "remember_token", "tag_line", "first_name", "login", "last_name", "design_type", "email", "created_at") VALUES('', '05b16d684bc1174c8dd3d02a62a6a4a62c004c30', '2009-07-20 05:19:14', '2009-07-20 05:19:14', '0f7034e4d565d2c7fd27beb892117b6ad4103fe6', 1, NULL, NULL, '5133064aa5d8c31b2d6aca97dbe928f788a7bfd4', NULL, NULL, 'Michael', 'mcmaloney', 'Maloney', NULL, 'michael@maloney.com', '2009-07-20 05:19:14')[0m
+  [4;35;1mPortfolio Update (0.1ms)[0m   [0mUPDATE "portfolios" SET "updated_at" = '2009-07-20 05:19:14', "user_id" = 1 WHERE "id" = 1[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login" = 'mcmaloney' AND "users".id <> 1) LIMIT 1[0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'michael@maloney.com' AND "users".id <> 1) LIMIT 1[0m
+Redirected to http://www.example.com/
+Completed in 31ms (DB: 1) | 302 Found [http://www.example.com/users]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/users"}
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 01:19:14) [GET]
+Rendering main_pages/home
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://www.example.com/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "portfolios" [0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login" = 'kevingomez') LIMIT 1[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'michael@maloney.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.3ms)[0m   [0mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "crypted_password", "account_tier", "about_me", "remember_token_expires_at", "activation_code", "remember_token", "tag_line", "first_name", "login", "last_name", "design_type", "email", "created_at") VALUES('', '3d1cc2ac51913cae6afc22d70c23e783948e75e6', '2009-07-20 05:19:14', NULL, '8742cc14f8953d1ae293a9dc903bd35b78fcf9a5', 1, NULL, NULL, '232adbfcffffdaa9f917ff24f0ca200e87bd89c4', NULL, NULL, 'Kevin', 'kevingomez', 'Gomez', NULL, 'michael@maloney.com', '2009-07-20 05:19:14')[0m
+  [4;36;1mPortfolio Load (0.1ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 1) LIMIT 1[0m
+  [4;35;1mPortfolio Create (0.1ms)[0m   [0mINSERT INTO "portfolios" ("updated_at", "user_id", "created_at") VALUES('2009-07-20 05:19:14', 1, '2009-07-20 05:19:14')[0m
+  [4;36;1mUser Update (0.1ms)[0m   [0;1mUPDATE "users" SET "activated_at" = '2009-07-20 05:19:14', "activation_code" = NULL, "updated_at" = '2009-07-20 05:19:14' WHERE "id" = 1[0m
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 01:19:14) [GET]
+Rendering main_pages/home
+Completed in 1ms (View: 0, DB: 1) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /login with {} and HTTP headers {"HTTP_REFERER"=>"/"}
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-07-20 01:19:14) [GET]
+Rendering sessions/new
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://www.example.com/login]
+REQUESTING PAGE: POST /session with {"commit"=>"Login", "password"=>"giraffe", "login"=>"kevingomez"} and HTTP headers {"HTTP_REFERER"=>"/login"}
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2009-07-20 01:19:14) [POST]
+  Parameters: {"commit"=>"Login", "password"=>"giraffe", "login"=>"kevingomez"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE (login = 'kevingomez' and activated_at IS NOT NULL) LIMIT 1[0m
+Redirected to http://www.example.com/
+Completed in 2ms (DB: 0) | 302 Found [http://www.example.com/session]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/session"}
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 01:19:14) [GET]
+Rendering main_pages/home
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /login with {} and HTTP headers {}
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-07-20 01:21:11) [GET]
+Rendering sessions/new
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://www.example.com/login]
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login" = 'mcmaloney') LIMIT 1[0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'michael@maloney.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.4ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "crypted_password", "account_tier", "about_me", "remember_token_expires_at", "activation_code", "remember_token", "tag_line", "first_name", "login", "last_name", "design_type", "email", "created_at") VALUES('', 'c1d6422a068261ae03a98297f2d2eabd613ea05a', '2009-07-20 05:24:31', NULL, 'ea08ed21b36868f15c54de57744391cac7592e3b', 1, NULL, NULL, '026b5b08572c69ca4642db28b4d53f07a5b3196a', NULL, NULL, 'Michael', 'mcmaloney', 'Michael', NULL, 'michael@maloney.com', '2009-07-20 05:24:31')[0m
+  [4;35;1mPortfolio Load (0.1ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 1) LIMIT 1[0m
+  [4;36;1mPortfolio Create (0.1ms)[0m   [0;1mINSERT INTO "portfolios" ("updated_at", "user_id", "created_at") VALUES('2009-07-20 05:24:31', 1, '2009-07-20 05:24:31')[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login" = 'mcmaloney') LIMIT 1[0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'michael@maloney.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.4ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "crypted_password", "account_tier", "about_me", "remember_token_expires_at", "activation_code", "remember_token", "tag_line", "first_name", "login", "last_name", "design_type", "email", "created_at") VALUES('', '613093425cd3dddc02cdbd822c1e495f2e26327b', '2009-07-20 05:24:42', NULL, '76fc02e6e988e62d0ff6eb10c066837efb18dba2', 1, NULL, NULL, '2f9fb2261bbc9cc67a7464aca9be4c117e3b53f0', NULL, NULL, 'Michael', 'mcmaloney', 'Michael', NULL, 'michael@maloney.com', '2009-07-20 05:24:42')[0m
+  [4;35;1mPortfolio Load (0.1ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 1) LIMIT 1[0m
+  [4;36;1mPortfolio Create (0.1ms)[0m   [0;1mINSERT INTO "portfolios" ("updated_at", "user_id", "created_at") VALUES('2009-07-20 05:24:42', 1, '2009-07-20 05:24:42')[0m
+  [4;35;1mUser Update (0.1ms)[0m   [0mUPDATE "users" SET "activated_at" = '2009-07-20 05:24:42', "activation_code" = NULL, "updated_at" = '2009-07-20 05:24:42' WHERE "id" = 1[0m
+REQUESTING PAGE: GET /login with {} and HTTP headers {}
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-07-20 01:24:42) [GET]
+Rendering sessions/new
+Completed in 3ms (View: 2, DB: 1) | 200 OK [http://www.example.com/login]
+REQUESTING PAGE: POST /session with {"commit"=>"Login", "password"=>"giraffe", "login"=>"mcmaloney"} and HTTP headers {"HTTP_REFERER"=>"/login"}
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2009-07-20 01:24:42) [POST]
+  Parameters: {"commit"=>"Login", "password"=>"giraffe", "login"=>"mcmaloney"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'mcmaloney' and activated_at IS NOT NULL) LIMIT 1[0m
+Redirected to http://www.example.com/
+Completed in 27ms (DB: 0) | 302 Found [http://www.example.com/session]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/session"}
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 01:24:42) [GET]
+Rendering main_pages/home
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET / with {} and HTTP headers {"HTTP_REFERER"=>"http://www.example.com/"}
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 01:24:42) [GET]
+Rendering main_pages/home
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://www.example.com/]
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login" = 'mcmaloney') LIMIT 1[0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'michael@maloney.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.4ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "crypted_password", "account_tier", "about_me", "remember_token_expires_at", "activation_code", "remember_token", "tag_line", "first_name", "login", "last_name", "design_type", "email", "created_at") VALUES('', '221d2680c3adc064d962c14dd458323d83952195', '2009-07-20 05:26:11', NULL, 'b3bb0b84b3fa558b9ce1da6124f10741eac330f0', 1, NULL, NULL, 'b5adb5cca88f07e349ae38a2d1ca25b6ef5f0b38', NULL, NULL, 'Michael', 'mcmaloney', 'Michael', NULL, 'michael@maloney.com', '2009-07-20 05:26:11')[0m
+  [4;35;1mPortfolio Load (0.1ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 1) LIMIT 1[0m
+  [4;36;1mPortfolio Create (0.1ms)[0m   [0;1mINSERT INTO "portfolios" ("updated_at", "user_id", "created_at") VALUES('2009-07-20 05:26:11', 1, '2009-07-20 05:26:11')[0m
+  [4;35;1mUser Update (0.1ms)[0m   [0mUPDATE "users" SET "activated_at" = '2009-07-20 05:26:11', "activation_code" = NULL, "updated_at" = '2009-07-20 05:26:11' WHERE "id" = 1[0m
+REQUESTING PAGE: GET /login with {} and HTTP headers {}
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-07-20 01:26:11) [GET]
+Rendering sessions/new
+Completed in 3ms (View: 2, DB: 1) | 200 OK [http://www.example.com/login]
+REQUESTING PAGE: POST /session with {"commit"=>"Login", "password"=>"giraffe", "login"=>"mcmaloney"} and HTTP headers {"HTTP_REFERER"=>"/login"}
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2009-07-20 01:26:11) [POST]
+  Parameters: {"commit"=>"Login", "password"=>"giraffe", "login"=>"mcmaloney"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'mcmaloney' and activated_at IS NOT NULL) LIMIT 1[0m
+Redirected to http://www.example.com/
+Completed in 27ms (DB: 0) | 302 Found [http://www.example.com/session]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/session"}
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 01:26:11) [GET]
+Rendering main_pages/home
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+
+
+Processing ApplicationController#home (for 127.0.0.1 at 2009-07-20 01:26:11) [GET]
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 01:26:11) [GET]
+Rendering main_pages/home
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /signup with {} and HTTP headers {"HTTP_REFERER"=>"/"}
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-07-20 01:26:11) [GET]
+Rendering users/new
+Completed in 5ms (View: 3, DB: 0) | 200 OK [http://www.example.com/signup]
+REQUESTING PAGE: GET /signup with {} and HTTP headers {}
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-07-20 01:26:11) [GET]
+Rendering users/new
+Completed in 2ms (View: 2, DB: 0) | 200 OK [http://www.example.com/signup]
+  [4;36;1mUser Delete all (0.3ms)[0m   [0;1mDELETE FROM "users" WHERE 1=1[0m
+REQUESTING PAGE: POST /users with {"user"=>{"password_confirmation"=>"giraffe", "first_name"=>"Michael", "password"=>"giraffe", "login"=>"mcmaloney", "last_name"=>"Maloney", "email"=>"michael@maloney.com"}, "commit"=>"Sign Up"} and HTTP headers {"HTTP_REFERER"=>"/signup"}
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-07-20 01:26:11) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"giraffe", "first_name"=>"Michael", "last_name"=>"Maloney", "login"=>"mcmaloney", "password"=>"giraffe", "email"=>"michael@maloney.com"}, "commit"=>"Sign Up"}
+  [4;35;1mPortfolio Create (0.1ms)[0m   [0mINSERT INTO "portfolios" ("updated_at", "user_id", "created_at") VALUES('2009-07-20 05:26:11', NULL, '2009-07-20 05:26:11')[0m
+  [4;36;1mUser Create (0.1ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "crypted_password", "account_tier", "about_me", "remember_token_expires_at", "activation_code", "remember_token", "tag_line", "first_name", "login", "last_name", "design_type", "email", "created_at") VALUES('', 'ac9080ca5516a0e874ef66e5d6fea3df9324d1fd', '2009-07-20 05:26:11', '2009-07-20 05:26:11', '8b83b1a3f021214c7a0b4bcb2e4600dff3ed0ef9', 1, NULL, NULL, '6cc29a56e8fa7a76f985a0e3d3df2b390aafda04', NULL, NULL, 'Michael', 'mcmaloney', 'Maloney', NULL, 'michael@maloney.com', '2009-07-20 05:26:11')[0m
+  [4;35;1mPortfolio Update (0.1ms)[0m   [0mUPDATE "portfolios" SET "updated_at" = '2009-07-20 05:26:11', "user_id" = 1 WHERE "id" = 1[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login" = 'mcmaloney' AND "users".id <> 1) LIMIT 1[0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'michael@maloney.com' AND "users".id <> 1) LIMIT 1[0m
+Redirected to http://www.example.com/
+Completed in 6ms (DB: 1) | 302 Found [http://www.example.com/users]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/users"}
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 01:26:11) [GET]
+Rendering main_pages/home
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+
+
+Processing ApplicationController#home (for 127.0.0.1 at 2009-07-20 01:26:11) [GET]
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login" = 'kevingomez') LIMIT 1[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'michael@maloney.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.2ms)[0m   [0mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "crypted_password", "account_tier", "about_me", "remember_token_expires_at", "activation_code", "remember_token", "tag_line", "first_name", "login", "last_name", "design_type", "email", "created_at") VALUES('', '1fb89410dc57dc2cbd53179f542cd61149860f27', '2009-07-20 05:26:11', NULL, '59c90025d2f4a0ddcfbcac24d3a390da53b604a5', 1, NULL, NULL, '33fe37e2949724d9093b6b2609f472a5274175d6', NULL, NULL, 'Kevin', 'kevingomez', 'Gomez', NULL, 'michael@maloney.com', '2009-07-20 05:26:11')[0m
+  [4;36;1mPortfolio Load (0.1ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 1) LIMIT 1[0m
+  [4;35;1mPortfolio Create (0.1ms)[0m   [0mINSERT INTO "portfolios" ("updated_at", "user_id", "created_at") VALUES('2009-07-20 05:26:11', 1, '2009-07-20 05:26:11')[0m
+  [4;36;1mUser Update (0.1ms)[0m   [0;1mUPDATE "users" SET "activated_at" = '2009-07-20 05:26:11', "activation_code" = NULL, "updated_at" = '2009-07-20 05:26:11' WHERE "id" = 1[0m
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 01:26:11) [GET]
+Rendering main_pages/home
+Completed in 1ms (View: 0, DB: 1) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /login with {} and HTTP headers {"HTTP_REFERER"=>"/"}
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-07-20 01:26:11) [GET]
+Rendering sessions/new
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://www.example.com/login]
+REQUESTING PAGE: POST /session with {"commit"=>"Login", "password"=>"giraffe", "login"=>"kevingomez"} and HTTP headers {"HTTP_REFERER"=>"/login"}
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2009-07-20 01:26:11) [POST]
+  Parameters: {"commit"=>"Login", "password"=>"giraffe", "login"=>"kevingomez"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE (login = 'kevingomez' and activated_at IS NOT NULL) LIMIT 1[0m
+Redirected to http://www.example.com/
+Completed in 2ms (DB: 0) | 302 Found [http://www.example.com/session]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/session"}
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 01:26:11) [GET]
+Rendering main_pages/home
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+
+
+Processing ApplicationController#home (for 127.0.0.1 at 2009-07-20 01:26:11) [GET]
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login" = 'mcmaloney') LIMIT 1[0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'michael@maloney.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.4ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "crypted_password", "account_tier", "about_me", "remember_token_expires_at", "activation_code", "remember_token", "tag_line", "first_name", "login", "last_name", "design_type", "email", "created_at") VALUES('', 'aecaa123947dc68e05c4ca75aa54d96d79112fde', '2009-07-20 05:28:25', NULL, '9d1452e0aafa385e961bf9f5c13a4c1def2a4dbe', 1, NULL, NULL, '7a5a2ca466308fced6477840945cc9877473e623', NULL, NULL, 'Michael', 'mcmaloney', 'Michael', NULL, 'michael@maloney.com', '2009-07-20 05:28:25')[0m
+  [4;35;1mPortfolio Load (0.1ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 1) LIMIT 1[0m
+  [4;36;1mPortfolio Create (0.1ms)[0m   [0;1mINSERT INTO "portfolios" ("updated_at", "user_id", "created_at") VALUES('2009-07-20 05:28:25', 1, '2009-07-20 05:28:25')[0m
+  [4;35;1mUser Update (0.1ms)[0m   [0mUPDATE "users" SET "activated_at" = '2009-07-20 05:28:25', "activation_code" = NULL, "updated_at" = '2009-07-20 05:28:25' WHERE "id" = 1[0m
+REQUESTING PAGE: GET /login with {} and HTTP headers {}
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-07-20 01:28:25) [GET]
+Rendering sessions/new
+Completed in 3ms (View: 2, DB: 1) | 200 OK [http://www.example.com/login]
+REQUESTING PAGE: POST /session with {"commit"=>"Login", "password"=>"giraffe", "login"=>"mcmaloney"} and HTTP headers {"HTTP_REFERER"=>"/login"}
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2009-07-20 01:28:25) [POST]
+  Parameters: {"commit"=>"Login", "password"=>"giraffe", "login"=>"mcmaloney"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'mcmaloney' and activated_at IS NOT NULL) LIMIT 1[0m
+Redirected to http://www.example.com/
+Completed in 27ms (DB: 0) | 302 Found [http://www.example.com/session]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/session"}
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 01:28:25) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendering main_pages/home
+
+
+Processing ApplicationController#home (for 127.0.0.1 at 2009-07-20 01:28:25) [GET]
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login" = 'mcmaloney') LIMIT 1[0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'michael@maloney.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.4ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "crypted_password", "account_tier", "about_me", "remember_token_expires_at", "activation_code", "remember_token", "tag_line", "first_name", "login", "last_name", "design_type", "email", "created_at") VALUES('', '0cdff6e023df0ee96ae299329933dded8ef8e60b', '2009-07-20 05:29:51', NULL, 'e6730eb53e59bfc355d1cf714bcdfcd047518834', 1, NULL, NULL, '14784b23ffbf388d6ade43abef704249259ea42f', NULL, NULL, 'Michael', 'mcmaloney', 'Michael', NULL, 'michael@maloney.com', '2009-07-20 05:29:51')[0m
+  [4;35;1mPortfolio Load (0.1ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 1) LIMIT 1[0m
+  [4;36;1mPortfolio Create (0.1ms)[0m   [0;1mINSERT INTO "portfolios" ("updated_at", "user_id", "created_at") VALUES('2009-07-20 05:29:51', 1, '2009-07-20 05:29:51')[0m
+  [4;35;1mUser Update (0.1ms)[0m   [0mUPDATE "users" SET "activated_at" = '2009-07-20 05:29:51', "activation_code" = NULL, "updated_at" = '2009-07-20 05:29:51' WHERE "id" = 1[0m
+REQUESTING PAGE: GET /login with {} and HTTP headers {}
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-07-20 01:29:51) [GET]
+Rendering sessions/new
+Completed in 3ms (View: 2, DB: 1) | 200 OK [http://www.example.com/login]
+REQUESTING PAGE: POST /session with {"commit"=>"Login", "password"=>"giraffe", "login"=>"mcmaloney"} and HTTP headers {"HTTP_REFERER"=>"/login"}
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2009-07-20 01:29:51) [POST]
+  Parameters: {"commit"=>"Login", "password"=>"giraffe", "login"=>"mcmaloney"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'mcmaloney' and activated_at IS NOT NULL) LIMIT 1[0m
+Redirected to http://www.example.com/
+Completed in 26ms (DB: 0) | 302 Found [http://www.example.com/session]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/session"}
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 01:29:51) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendering main_pages/home
+
+
+Processing ApplicationController#home (for 127.0.0.1 at 2009-07-20 01:29:51) [GET]
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 01:29:51) [GET]
+Rendering main_pages/home
+Completed in 1ms (View: 0, DB: 0) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /signup with {} and HTTP headers {"HTTP_REFERER"=>"/"}
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-07-20 01:29:51) [GET]
+Rendering users/new
+Completed in 4ms (View: 3, DB: 0) | 200 OK [http://www.example.com/signup]
+REQUESTING PAGE: GET /signup with {} and HTTP headers {}
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-07-20 01:29:51) [GET]
+Rendering users/new
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://www.example.com/signup]
+  [4;36;1mUser Delete all (0.3ms)[0m   [0;1mDELETE FROM "users" WHERE 1=1[0m
+REQUESTING PAGE: POST /users with {"user"=>{"password_confirmation"=>"giraffe", "first_name"=>"Michael", "password"=>"giraffe", "login"=>"mcmaloney", "last_name"=>"Maloney", "email"=>"michael@maloney.com"}, "commit"=>"Sign Up"} and HTTP headers {"HTTP_REFERER"=>"/signup"}
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-07-20 01:29:51) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"giraffe", "first_name"=>"Michael", "last_name"=>"Maloney", "login"=>"mcmaloney", "password"=>"giraffe", "email"=>"michael@maloney.com"}, "commit"=>"Sign Up"}
+  [4;35;1mPortfolio Create (0.2ms)[0m   [0mINSERT INTO "portfolios" ("updated_at", "user_id", "created_at") VALUES('2009-07-20 05:29:51', NULL, '2009-07-20 05:29:51')[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "crypted_password", "account_tier", "about_me", "remember_token_expires_at", "activation_code", "remember_token", "tag_line", "first_name", "login", "last_name", "design_type", "email", "created_at") VALUES('', 'd0ec46a8791a6a4183c49f22688f0f6f75ebe60e', '2009-07-20 05:29:51', '2009-07-20 05:29:51', 'c002aa5b9a4da484fd1cd351b037a05454d67320', 1, NULL, NULL, 'eb4588b37d182c80c375290e8cde36f1bc2b4204', NULL, NULL, 'Michael', 'mcmaloney', 'Maloney', NULL, 'michael@maloney.com', '2009-07-20 05:29:51')[0m
+  [4;35;1mPortfolio Update (0.1ms)[0m   [0mUPDATE "portfolios" SET "updated_at" = '2009-07-20 05:29:51', "user_id" = 1 WHERE "id" = 1[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login" = 'mcmaloney' AND "users".id <> 1) LIMIT 1[0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'michael@maloney.com' AND "users".id <> 1) LIMIT 1[0m
+Redirected to http://www.example.com/
+Completed in 6ms (DB: 1) | 302 Found [http://www.example.com/users]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/users"}
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 01:29:51) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendering main_pages/home
+
+
+Processing ApplicationController#home (for 127.0.0.1 at 2009-07-20 01:29:51) [GET]
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login" = 'kevingomez') LIMIT 1[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'michael@maloney.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.2ms)[0m   [0mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "crypted_password", "account_tier", "about_me", "remember_token_expires_at", "activation_code", "remember_token", "tag_line", "first_name", "login", "last_name", "design_type", "email", "created_at") VALUES('', '2632b5290b12bbddfb3fc98ecc329a1221a24bd0', '2009-07-20 05:29:51', NULL, 'ec551dd496ad226591b342b4151f6fcbf528128f', 1, NULL, NULL, '0f1e67a3926c0a00a1676b9542668fa063461991', NULL, NULL, 'Kevin', 'kevingomez', 'Gomez', NULL, 'michael@maloney.com', '2009-07-20 05:29:51')[0m
+  [4;36;1mPortfolio Load (0.1ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 1) LIMIT 1[0m
+  [4;35;1mPortfolio Create (0.1ms)[0m   [0mINSERT INTO "portfolios" ("updated_at", "user_id", "created_at") VALUES('2009-07-20 05:29:51', 1, '2009-07-20 05:29:51')[0m
+  [4;36;1mUser Update (0.1ms)[0m   [0;1mUPDATE "users" SET "activated_at" = '2009-07-20 05:29:51', "activation_code" = NULL, "updated_at" = '2009-07-20 05:29:51' WHERE "id" = 1[0m
+REQUESTING PAGE: GET / with {} and HTTP headers {}
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 01:29:51) [GET]
+Rendering main_pages/home
+Completed in 1ms (View: 0, DB: 1) | 200 OK [http://www.example.com/]
+REQUESTING PAGE: GET /login with {} and HTTP headers {"HTTP_REFERER"=>"/"}
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-07-20 01:29:51) [GET]
+Rendering sessions/new
+Completed in 1ms (View: 1, DB: 0) | 200 OK [http://www.example.com/login]
+REQUESTING PAGE: POST /session with {"commit"=>"Login", "password"=>"giraffe", "login"=>"kevingomez"} and HTTP headers {"HTTP_REFERER"=>"/login"}
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2009-07-20 01:29:51) [POST]
+  Parameters: {"commit"=>"Login", "password"=>"giraffe", "login"=>"kevingomez"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE (login = 'kevingomez' and activated_at IS NOT NULL) LIMIT 1[0m
+Redirected to http://www.example.com/
+Completed in 2ms (DB: 0) | 302 Found [http://www.example.com/session]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/session"}
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 01:29:51) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendering main_pages/home
+
+
+Processing ApplicationController#home (for 127.0.0.1 at 2009-07-20 01:29:51) [GET]
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login" = 'mcmaloney') LIMIT 1[0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'michael@maloney.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.4ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "crypted_password", "account_tier", "about_me", "remember_token_expires_at", "activation_code", "remember_token", "tag_line", "first_name", "login", "last_name", "design_type", "email", "created_at") VALUES('', '1170e71f9a5ab6a5f456469354934b174e79734c', '2009-07-20 05:30:23', NULL, 'fa0b298845f8ae49cb071458bc5ff4e238a6df7f', 1, NULL, NULL, '803670d32ef04977a500323aefeefe5ed300be95', NULL, NULL, 'Michael', 'mcmaloney', 'Michael', NULL, 'michael@maloney.com', '2009-07-20 05:30:23')[0m
+  [4;35;1mPortfolio Load (0.1ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 1) LIMIT 1[0m
+  [4;36;1mPortfolio Create (0.1ms)[0m   [0;1mINSERT INTO "portfolios" ("updated_at", "user_id", "created_at") VALUES('2009-07-20 05:30:23', 1, '2009-07-20 05:30:23')[0m
+  [4;35;1mUser Update (0.1ms)[0m   [0mUPDATE "users" SET "activated_at" = '2009-07-20 05:30:23', "activation_code" = NULL, "updated_at" = '2009-07-20 05:30:23' WHERE "id" = 1[0m
+REQUESTING PAGE: GET /login with {} and HTTP headers {}
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-07-20 01:30:23) [GET]
+Rendering sessions/new
+Completed in 3ms (View: 2, DB: 1) | 200 OK [http://www.example.com/login]
+REQUESTING PAGE: POST /session with {"commit"=>"Login", "password"=>"giraffe", "login"=>"mcmaloney"} and HTTP headers {"HTTP_REFERER"=>"/login"}
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2009-07-20 01:30:23) [POST]
+  Parameters: {"commit"=>"Login", "password"=>"giraffe", "login"=>"mcmaloney"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'mcmaloney' and activated_at IS NOT NULL) LIMIT 1[0m
+Redirected to http://www.example.com/
+Completed in 27ms (DB: 0) | 302 Found [http://www.example.com/session]
+REQUESTING PAGE: GET http://www.example.com/ with {} and HTTP headers {"HTTP_REFERER"=>"/session"}
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 01:30:23) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendering main_pages/home
+
+
+Processing ApplicationController#home (for 127.0.0.1 at 2009-07-20 01:30:23) [GET]

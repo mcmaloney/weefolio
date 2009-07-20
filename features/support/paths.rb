@@ -12,6 +12,8 @@ module NavigationHelpers
       root_path
     when /the sign up page/
       signup_path
+    when /the login page/
+      login_path
     
     # Add more mappings here.
     # Here is a more fancy example:

@@ -18,3 +18,12 @@ Feature: User
     And I should see "Log Out"
     And I should not see "Log In"
     And I should not see "Sign Up"
+  
+  Scenario: Existing user logs in
+    Given I have already signed up as "kevingomez"
+    And I am on the home page
+    When I follow "Log In"
+    And I login as "kevingomez"
+    Then I should be on the home page
+    And I should see "Logged in as kevingomez"
+    
