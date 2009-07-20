@@ -9,7 +9,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090719032501) do
+ActiveRecord::Schema.define(:version => 20090720151551) do
+
+  create_table "pieces", :force => true do |t|
+    t.string   "title"
+    t.string   "description"
+    t.decimal  "price",        :precision => 10, :scale => 2
+    t.boolean  "for_sale"
+    t.integer  "portfolio_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "portfolios", :force => true do |t|
     t.integer  "user_id"
@@ -35,6 +45,9 @@ ActiveRecord::Schema.define(:version => 20090719032501) do
     t.string   "tag_line",                  :limit => 500
     t.integer  "design_type"
     t.integer  "account_tier",                             :default => 1
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
   end
 
   add_index "users", ["login"], :name => "index_users_on_login", :unique => true

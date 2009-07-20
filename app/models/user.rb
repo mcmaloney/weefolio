@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   include Authentication::ByCookieToken
   
   has_one                   :portfolio
-
+  has_many                  :pieces, :through => :portfolio
   validates_presence_of     :login
   validates_length_of       :login,    :within => 3..40
   validates_uniqueness_of   :login
@@ -27,11 +27,23 @@ class User < ActiveRecord::Base
   # anything else you want your user to change should be added here.
   attr_accessible :login, :email, :name, :password, :password_confirmation, :first_name, :last_name, :type, :about_me, :tag_line, :design_type
   
+  # Paperclip settings for avatar.
+  has_attached_file :avatar,
+    :styles => { :thumb => "100x100#", :small => "150x150>" }
+    
   # Should probably put this in the Portfolio model (make_portfolio_for(user))
   def make_portfolio
     my_portfolio = Portfolio.new
     self.portfolio = my_portfolio
     self.portfolio.save
+  end
+  
+  def has_blank_info
+    if (self.tag_line.blank? || self.about_me.blank?)
+      return true
+    else
+      return false
+    end
   end
 
   # Activates the user in the database.

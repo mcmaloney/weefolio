@@ -3,7 +3,6 @@ Feature: Portfolio
   I want to add work to my portfolio
   So that I can show off my stuff.
   
-  @this
   Scenario: Show my portfolio (with nothing in it)
     Given I am logged in as "mcmaloney"
     And I am on the home page

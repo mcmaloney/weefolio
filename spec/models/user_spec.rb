@@ -19,5 +19,20 @@ describe User do
       @user.activate!
       @user.active?.should be_true
     end
+    
+    it "should have no pieces" do
+      @user.pieces.length.should == 0
+    end
+    
+    it "should have an avatar object" do
+      @user.avatar.should be_true
+    end
+  end
+  
+  describe "being displayed" do
+    it "should prompt if some info is blank" do
+      user = Factory(:user, :tag_line => nil, :about_me => nil)
+      user.has_blank_info.should be_true
+    end
   end
 end

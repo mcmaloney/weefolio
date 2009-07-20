@@ -14,6 +14,10 @@ module NavigationHelpers
       signup_path
     when /the login page/
       login_path
+    when /my portfolio page/
+      user_portfolio_path(User.find_by_login("mcmaloney"))
+    when /^the account page for "(.*)"$/i
+      edit_user_path(User.find_by_login($1))
     
     # Add more mappings here.
     # Here is a more fancy example:

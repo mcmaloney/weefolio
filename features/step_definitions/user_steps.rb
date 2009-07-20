@@ -42,5 +42,9 @@ Given /^I am logged in as "([^\"]*)"$/ do |login|
   When %{I press "Login"}
 end
 
+Given /^I have additional info that is blank$/ do
+  @user.has_blank_info
+end
+
 
 
