@@ -15,7 +15,7 @@ Feature: User
     And I should see "Welcome to Weefolio, mcmaloney!"
     And I should have 1 user
     And I should have 1 portfolio
-    And I should see "Portfolio | Account | Log Out"
+    And I should see "Portfolio | Design | Account | My Weefolio | Log Out"
     And I should not see "Log In"
     And I should not see "Sign Up"
   
@@ -38,4 +38,15 @@ Feature: User
     And I am on the home page
     When I follow "Account"
     Then I should be on the account page for "mcmaloney"
+  
+  @this
+  Scenario: User edits account info
+    Given I am logged in as "mcmaloney"
+    And I am on the account page for "mcmaloney"
+    And I update my about me to say "I am one cool cat"
+    And I update my tag line to say "See above."
+    And I press "Update"
+    Then I should see "Account info updated."
+    
+    
     

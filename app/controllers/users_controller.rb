@@ -6,6 +6,14 @@ class UsersController < ApplicationController
   def edit
     @user = User.find(params[:id])
   end
+  
+  def update
+    @user = User.find(params[:id])
+    if @user.save
+      redirect_to root_path
+      flash[:notice] = "Account info updated."
+    end
+  end
  
   def create
     logout_keeping_session!

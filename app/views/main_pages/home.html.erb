@@ -1,6 +1,9 @@
 <h1>Weefolio</h1>
 
-<%= flash[:notice] %>
+<p>
+  <%= flash[:notice] %>
+</p>
+
 <% if logged_in? %>
   <% unless !current_user.has_blank_info %>
     <p>
@@ -8,7 +11,7 @@
     </p>
   <% end %>
   <p>
-    <%= link_to 'Portfolio', user_portfolio_path(current_user, current_user.portfolio) %> | <%= link_to 'Account', edit_user_path(current_user) %> | <%= link_to 'Log Out', logout_path %>
+    <%= link_to 'Portfolio', user_portfolio_path(current_user, current_user.portfolio) %> | Design | <%= link_to 'Account', edit_user_path(current_user) %> | My Weefolio | <%= link_to 'Log Out', logout_path %>
   </p>
 <% else %>
   <p>

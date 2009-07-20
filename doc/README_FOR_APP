@@ -34,4 +34,15 @@ Piece
   image3 (image)
   image4 (image)
   image5 (image)
+  
+
+Notes
+========
+
+Could use something like this for displaying edited styles in the head?
+<% content_for("head") do %>
+  <%= javascript_include_tag 'mootools-release-1-11' %>
+  <%= javascript_include_tag 'class_schedules' %>
+  <%= stylesheet_link_tag 'class_schedules' %>
+<% end %>
 

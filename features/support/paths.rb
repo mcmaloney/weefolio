@@ -15,7 +15,8 @@ module NavigationHelpers
     when /the login page/
       login_path
     when /my portfolio page/
-      user_portfolio_path(User.find_by_login("mcmaloney"))
+      user = User.find_by_login("mcmaloney")
+      user_portfolio_path(user, user.portfolio)
     when /^the account page for "(.*)"$/i
       edit_user_path(User.find_by_login($1))
     

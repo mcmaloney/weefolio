@@ -6,3 +6,11 @@ Factory.define :user do |u|
   u.password "giraffe"
   u.password_confirmation { |c| c.password }
 end
+
+Factory.define :piece do |p|
+  p.title "My Awesome Art"
+  p.description "This is so awesome it's gonna make your eyes bleed."
+  p.price 12.75
+  p.for_sale false
+end
+  

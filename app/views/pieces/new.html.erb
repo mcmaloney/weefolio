@@ -1,0 +1,15 @@
+<h1>Add a new piece to your Weefolio</h1>
+
+<% form_for [@portfolio, Piece.new] do |f| %>
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>

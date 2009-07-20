@@ -1,6 +1,6 @@
 class PortfoliosController < ApplicationController
   def show
-    @user = User.find(params[:id])
+    @user = current_user
+    @portfolio = current_user.portfolio
   end
-
 end

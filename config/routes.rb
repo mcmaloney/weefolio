@@ -7,6 +7,10 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :users do |users|
     users.resources :portfolios
   end
+  
+  map.resources :portfolios do |portfolios|
+    portfolios.resources :pieces
+  end
 
   map.resource :session
 

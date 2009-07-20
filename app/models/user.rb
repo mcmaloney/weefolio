@@ -29,7 +29,9 @@ class User < ActiveRecord::Base
   
   # Paperclip settings for avatar.
   has_attached_file :avatar,
-    :styles => { :thumb => "100x100#", :small => "150x150>" }
+    :styles => { :thumb => "100x100#", 
+                 :small => "150x150>"
+               } 
     
   # Should probably put this in the Portfolio model (make_portfolio_for(user))
   def make_portfolio

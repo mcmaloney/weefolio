@@ -1,6 +1,16 @@
 <h1><%= @user.login %>'s Weefolio</h1>
 <p>
-  Add Work
+  <%= flash[:notice] %>
+</p>
+<p>
+  <%= link_to 'Add Work', new_portfolio_piece_path(@user.portfolio) %>
 </p>
 
-  
+<% @portfolio.pieces.each do |piece| %>
+  <p>
+    <%= piece.title %>
+  </p>
+  <p> 
+    <%= piece.description %>
+  </p>
+<% end %>

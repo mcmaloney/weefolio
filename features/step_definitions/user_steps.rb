@@ -46,5 +46,14 @@ Given /^I have additional info that is blank$/ do
   @user.has_blank_info
 end
 
+Given /^I update my about me to say "([^\"]*)"$/ do |about_me|
+  When %{I fill in "About Me" with "#{about_me}"}
+end
+
+Given /^I update my tag line to say "([^\"]*)"$/ do |tag_line|
+  When %{I fill in "Tag Line" with "#{tag_line}"}
+end
+
+
 
 
