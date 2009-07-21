@@ -25,14 +25,11 @@ class User < ActiveRecord::Base
   # HACK HACK HACK -- how to do attr_accessible from here?
   # prevents a user from submitting a crafted form that bypasses activation
   # anything else you want your user to change should be added here.
-  attr_accessible :login, :email, :name, :password, :password_confirmation, :first_name, :last_name, :type, :about_me, :tag_line, :design_type
+  attr_accessible :login, :email, :name, :password, :password_confirmation, :first_name, :last_name, :type, :about_me, :tag_line, :design_type, :photo
   
-  # Paperclip settings for avatar.
-  has_attached_file :avatar,
-    :styles => { :thumb => "100x100#", 
-                 :small => "150x150>"
-               } 
-    
+  # Paperclip settings
+  has_attached_file :photo
+   
   # Should probably put this in the Portfolio model (make_portfolio_for(user))
   def make_portfolio
     my_portfolio = Portfolio.new

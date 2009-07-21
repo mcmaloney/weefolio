@@ -5,6 +5,9 @@
 </p>
 
 <% if logged_in? %>
+  <p>
+    <%= image_tag current_user.photo.url %>
+  </p>
   <% unless !current_user.has_blank_info %>
     <p>
       <%= link_to 'Update your info', edit_user_path(current_user) %>

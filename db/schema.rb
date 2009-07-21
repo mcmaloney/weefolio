@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090720202338) do
+ActiveRecord::Schema.define(:version => 20090721033319) do
 
   create_table "pieces", :force => true do |t|
     t.string   "title"
@@ -45,9 +45,10 @@ ActiveRecord::Schema.define(:version => 20090720202338) do
     t.string   "tag_line",                  :limit => 500
     t.integer  "design_type"
     t.integer  "account_tier",                             :default => 1
-    t.string   "avatar_file_name"
-    t.string   "avatar_content_type"
-    t.integer  "avatar_file_size"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
   add_index "users", ["login"], :name => "index_users_on_login", :unique => true

@@ -2906,3 +2906,1413 @@ Rendering rescues/layout (not_found)
   [4;35;1mSQL (1.7ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090720145132')[0m
   [4;36;1mSQL (1.6ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090720151551')[0m
   [4;35;1mSQL (1.5ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090720202141')[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-20 19:48:40) [GET]
+
+ActionController::RoutingError (No route matches "/money" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 19:49:26) [GET]
+Rendering main_pages/home
+Completed in 47ms (View: 45, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-07-20 19:49:28) [GET]
+Rendering users/new
+Completed in 52ms (View: 12, DB: 0) | 200 OK [http://0.0.0.0/signup]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-07-20 19:49:54) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"testuser", "first_name"=>"Harry", "password"=>"testuser", "login"=>"testuser", "last_name"=>"Livingstone", "email"=>"harry@livingstone.com"}, "commit"=>"Sign Up", "authenticity_token"=>"HQaZkx6M7Iwn07GF2oiMng7b1V4UlmmUedU0KpeC88o="}
+  [4;36;1mPortfolio Create (0.4ms)[0m   [0;1mINSERT INTO "portfolios" ("updated_at", "user_id", "created_at") VALUES('2009-07-20 23:49:54', NULL, '2009-07-20 23:49:54')[0m
+  [4;35;1mUser Create (0.4ms)[0m   [0mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "avatar_file_name", "avatar_file_size", "crypted_password", "account_tier", "about_me", "remember_token_expires_at", "activation_code", "avatar_content_type", "remember_token", "tag_line", "first_name", "login", "last_name", "design_type", "email", "created_at") VALUES('', 'e20ef659dc50ef546e2792349a9c8d1fb0b97a73', '2009-07-20 23:49:54', '2009-07-20 23:49:54', NULL, NULL, 'c31f819ca56e1c5fd08b143d5100bbd99ba9d438', 1, NULL, NULL, 'a5962791ae8ca7d9b8fd19d866d018323210a951', NULL, NULL, NULL, 'Harry', 'testuser', 'Livingstone', NULL, 'harry@livingstone.com', '2009-07-20 23:49:54')[0m
+  [4;36;1mPortfolio Update (0.1ms)[0m   [0;1mUPDATE "portfolios" SET "updated_at" = '2009-07-20 23:49:54', "user_id" = 4 WHERE "id" = 3[0m
+[paperclip] Saving attachments.
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login" = 'testuser' AND "users".id <> 4) LIMIT 1[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'harry@livingstone.com' AND "users".id <> 4) LIMIT 1[0m
+[paperclip] Saving attachments.
+Redirected to http://0.0.0.0:3000/
+Completed in 175ms (DB: 1) | 302 Found [http://0.0.0.0/users]
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 19:49:54) [GET]
+Rendering main_pages/home
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.2ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 4) LIMIT 1[0m
+Completed in 16ms (View: 14, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2009-07-20 19:49:56) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+Rendering users/edit
+Completed in 16ms (View: 7, DB: 0) | 200 OK [http://0.0.0.0/users/4/edit]
+
+
+Processing UsersController#update (for 127.0.0.1 at 2009-07-20 19:50:10) [PUT]
+  Parameters: {"user"=>{"about_me"=>"", "avatar"=>#<File:/var/folders/QO/QOtKcBYTHt0GW1RvqdSOyk+++TI/-Tmp-/RackMultipart.432.1>, "tag_line"=>"", "first_name"=>"Harry", "login"=>"testuser", "last_name"=>"Livingstone", "email"=>"harry@livingstone.com"}, "commit"=>"Update", "authenticity_token"=>"HQaZkx6M7Iwn07GF2oiMng7b1V4UlmmUedU0KpeC88o=", "id"=>"4"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login" = 'testuser' AND "users".id <> 4) LIMIT 1[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'harry@livingstone.com' AND "users".id <> 4) LIMIT 1[0m
+[paperclip] Saving attachments.
+Redirected to http://0.0.0.0:3000/
+Completed in 13ms (DB: 1) | 302 Found [http://0.0.0.0/users/4]
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 19:50:10) [GET]
+Rendering main_pages/home
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.2ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 4) LIMIT 1[0m
+Completed in 16ms (View: 15, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 19:50:56) [GET]
+Rendering main_pages/home
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.2ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 4) LIMIT 1[0m
+Completed in 20ms (View: 18, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-20 19:50:56) [GET]
+
+ActionController::RoutingError (No route matches "/avatars/original/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 21:00:37) [GET]
+Rendering main_pages/home
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.2ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 4) LIMIT 1[0m
+Completed in 36ms (View: 34, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-20 21:00:37) [GET]
+
+ActionController::RoutingError (No route matches "/avatars/original/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 21:00:39) [GET]
+Rendering main_pages/home
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.2ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 4) LIMIT 1[0m
+Completed in 17ms (View: 15, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-20 21:00:39) [GET]
+
+ActionController::RoutingError (No route matches "/avatars/original/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SessionsController#destroy (for 127.0.0.1 at 2009-07-20 21:00:40) [GET]
+Redirected to http://0.0.0.0:3000/
+Completed in 53ms (DB: 0) | 302 Found [http://0.0.0.0/logout]
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 21:00:40) [GET]
+Rendering main_pages/home
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-07-20 21:00:42) [GET]
+Rendering sessions/new
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://0.0.0.0/login]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2009-07-20 21:00:47) [POST]
+  Parameters: {"commit"=>"Login", "authenticity_token"=>"JzN6BAdMdi+TuLEW9+pUZWeEwUCb2QPaN5+NVEgkcao=", "login"=>"testuser", "password"=>"testuser"}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'testuser' and activated_at IS NOT NULL) LIMIT 1[0m
+[paperclip] Saving attachments.
+Redirected to http://0.0.0.0:3000/
+Completed in 12ms (DB: 1) | 302 Found [http://0.0.0.0/session]
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 21:00:47) [GET]
+Rendering main_pages/home
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.2ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 4) LIMIT 1[0m
+Completed in 16ms (View: 14, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-20 21:00:47) [GET]
+
+ActionController::RoutingError (No route matches "/avatars/original/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2009-07-20 21:00:50) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+Rendering users/edit
+Completed in 18ms (View: 9, DB: 0) | 200 OK [http://0.0.0.0/users/4/edit]
+
+
+Processing UsersController#update (for 127.0.0.1 at 2009-07-20 21:00:59) [PUT]
+  Parameters: {"user"=>{"about_me"=>"", "avatar"=>#<File:/var/folders/QO/QOtKcBYTHt0GW1RvqdSOyk+++TI/-Tmp-/RackMultipart.27388.1>, "tag_line"=>"", "first_name"=>"Harry", "login"=>"testuser", "last_name"=>"Livingstone", "email"=>"harry@livingstone.com"}, "commit"=>"Update", "authenticity_token"=>"JzN6BAdMdi+TuLEW9+pUZWeEwUCb2QPaN5+NVEgkcao=", "id"=>"4"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login" = 'testuser' AND "users".id <> 4) LIMIT 1[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'harry@livingstone.com' AND "users".id <> 4) LIMIT 1[0m
+[paperclip] Saving attachments.
+Redirected to http://0.0.0.0:3000/
+Completed in 63ms (DB: 0) | 302 Found [http://0.0.0.0/users/4]
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 21:00:59) [GET]
+Rendering main_pages/home
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.2ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 4) LIMIT 1[0m
+Completed in 17ms (View: 15, DB: 1) | 200 OK [http://0.0.0.0/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-20 21:00:59) [GET]
+
+ActionController::RoutingError (No route matches "/avatars/original/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 23:13:20) [GET]
+Rendering main_pages/home
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.2ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 4) LIMIT 1[0m
+Completed in 36ms (View: 34, DB: 1) | 200 OK [http://0.0.0.0/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-20 23:13:20) [GET]
+
+ActionController::RoutingError (No route matches "/avatars/original/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 23:13:21) [GET]
+Rendering main_pages/home
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.2ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 4) LIMIT 1[0m
+Completed in 17ms (View: 15, DB: 1) | 200 OK [http://0.0.0.0/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-20 23:13:21) [GET]
+
+ActionController::RoutingError (No route matches "/avatars/original/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SessionsController#destroy (for 127.0.0.1 at 2009-07-20 23:13:22) [GET]
+Redirected to http://0.0.0.0:3000/
+Completed in 52ms (DB: 0) | 302 Found [http://0.0.0.0/logout]
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 23:13:22) [GET]
+Rendering main_pages/home
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-07-20 23:13:24) [GET]
+Rendering sessions/new
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://0.0.0.0/login]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2009-07-20 23:13:30) [POST]
+  Parameters: {"commit"=>"Login", "authenticity_token"=>"zcymyEllcLWrMbcJae2D8T15iO67Cji+qYEdo9eandk=", "login"=>"testuser", "password"=>"testuser"}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'testuser' and activated_at IS NOT NULL) LIMIT 1[0m
+[paperclip] Saving attachments.
+Redirected to http://0.0.0.0:3000/
+Completed in 12ms (DB: 1) | 302 Found [http://0.0.0.0/session]
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 23:13:30) [GET]
+Rendering main_pages/home
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.2ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 4) LIMIT 1[0m
+Completed in 16ms (View: 14, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-20 23:13:30) [GET]
+
+ActionController::RoutingError (No route matches "/avatars/original/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2009-07-20 23:13:32) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+Rendering users/edit
+Completed in 18ms (View: 9, DB: 0) | 200 OK [http://0.0.0.0/users/4/edit]
+
+
+Processing UsersController#update (for 127.0.0.1 at 2009-07-20 23:13:38) [PUT]
+  Parameters: {"user"=>{"about_me"=>"", "avatar"=>#<File:/var/folders/QO/QOtKcBYTHt0GW1RvqdSOyk+++TI/-Tmp-/RackMultipart.1049.1>, "tag_line"=>"", "first_name"=>"Harry", "login"=>"testuser", "last_name"=>"Livingstone", "email"=>"harry@livingstone.com"}, "commit"=>"Update", "authenticity_token"=>"zcymyEllcLWrMbcJae2D8T15iO67Cji+qYEdo9eandk=", "id"=>"4"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login" = 'testuser' AND "users".id <> 4) LIMIT 1[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'harry@livingstone.com' AND "users".id <> 4) LIMIT 1[0m
+[paperclip] Saving attachments.
+Redirected to http://0.0.0.0:3000/
+Completed in 61ms (DB: 0) | 302 Found [http://0.0.0.0/users/4]
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 23:13:38) [GET]
+Rendering main_pages/home
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.2ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 4) LIMIT 1[0m
+Completed in 17ms (View: 15, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-20 23:13:39) [GET]
+
+ActionController::RoutingError (No route matches "/avatars/original/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 23:14:32) [GET]
+Rendering main_pages/home
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.2ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 4) LIMIT 1[0m
+Completed in 18ms (View: 16, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-20 23:14:32) [GET]
+
+ActionController::RoutingError (No route matches "/avatars/small/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2009-07-20 23:14:35) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+Rendering users/edit
+Completed in 13ms (View: 4, DB: 0) | 200 OK [http://0.0.0.0/users/4/edit]
+
+
+Processing UsersController#update (for 127.0.0.1 at 2009-07-20 23:14:51) [PUT]
+  Parameters: {"user"=>{"about_me"=>"", "avatar"=>#<File:/var/folders/QO/QOtKcBYTHt0GW1RvqdSOyk+++TI/-Tmp-/RackMultipart.1049.0>, "tag_line"=>"", "first_name"=>"Harry", "login"=>"testuser", "last_name"=>"Livingstone", "email"=>"harry@livingstone.com"}, "commit"=>"Update", "authenticity_token"=>"zcymyEllcLWrMbcJae2D8T15iO67Cji+qYEdo9eandk=", "id"=>"4"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login" = 'testuser' AND "users".id <> 4) LIMIT 1[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'harry@livingstone.com' AND "users".id <> 4) LIMIT 1[0m
+[paperclip] Saving attachments.
+Redirected to http://0.0.0.0:3000/
+Completed in 13ms (DB: 0) | 302 Found [http://0.0.0.0/users/4]
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 23:14:51) [GET]
+Rendering main_pages/home
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.9ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 4) LIMIT 1[0m
+Completed in 18ms (View: 16, DB: 1) | 200 OK [http://0.0.0.0/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-20 23:14:51) [GET]
+
+ActionController::RoutingError (No route matches "/avatars/small/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PortfoliosController#show (for 127.0.0.1 at 2009-07-20 23:15:00) [GET]
+  Parameters: {"id"=>"3", "user_id"=>"4"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.1ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 4) LIMIT 1[0m
+Rendering portfolios/show
+  [4;35;1mPiece Load (0.1ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 3) [0m
+Completed in 21ms (View: 10, DB: 1) | 200 OK [http://0.0.0.0/users/4/portfolios/3]
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20090718215859)
+Migrating to AddInfoToUsers (20090718220754)
+Migrating to CreatePortfolios (20090719031854)
+Migrating to RemoveTypeFromUsers (20090719032358)
+Migrating to AddAccountTierToUsers (20090719032501)
+Migrating to CreatePieces (20090720145132)
+Migrating to AddAvatarToUsers (20090720151551)
+Migrating to RemoveAvatarFromUsers (20090720202141)
+Migrating to AddAvatarToUsersForReal (20090720202338)
+Migrating to PleaseWorkPaperclipYouMotherfucker (20090721033045)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mCREATE TEMPORARY TABLE "altered_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(40), "name" varchar(100) DEFAULT '', "email" varchar(100), "crypted_password" varchar(40), "salt" varchar(40), "created_at" datetime, "updated_at" datetime, "remember_token" varchar(40), "remember_token_expires_at" datetime, "activation_code" varchar(40), "activated_at" datetime, "first_name" varchar(255), "last_name" varchar(255), "about_me" text, "tag_line" varchar(500), "design_type" integer, "account_tier" integer DEFAULT 1, "avatar_file_name" varchar(255), "avatar_content_type" varchar(255), "avatar_file_size" integer) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_login')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE UNIQUE INDEX "temp_index_altered_users_on_login" ON "altered_users" ("login")[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mDROP TABLE "users"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(40), "name" varchar(100) DEFAULT '', "email" varchar(100), "crypted_password" varchar(40), "salt" varchar(40), "created_at" datetime, "updated_at" datetime, "remember_token" varchar(40), "remember_token_expires_at" datetime, "activation_code" varchar(40), "activated_at" datetime, "first_name" varchar(255), "last_name" varchar(255), "about_me" text, "tag_line" varchar(500), "design_type" integer, "account_tier" integer DEFAULT 1, "avatar_content_type" varchar(255), "avatar_file_size" integer) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("altered_users")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('temp_index_altered_users_on_login')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE UNIQUE INDEX "index_users_on_login" ON "users" ("login")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mDROP TABLE "altered_users"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE TEMPORARY TABLE "altered_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(40), "name" varchar(100) DEFAULT '', "email" varchar(100), "crypted_password" varchar(40), "salt" varchar(40), "created_at" datetime, "updated_at" datetime, "remember_token" varchar(40), "remember_token_expires_at" datetime, "activation_code" varchar(40), "activated_at" datetime, "first_name" varchar(255), "last_name" varchar(255), "about_me" text, "tag_line" varchar(500), "design_type" integer, "account_tier" integer DEFAULT 1, "avatar_content_type" varchar(255), "avatar_file_size" integer) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_login')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCREATE UNIQUE INDEX "temp_index_altered_users_on_login" ON "altered_users" ("login")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mDROP TABLE "users"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(40), "name" varchar(100) DEFAULT '', "email" varchar(100), "crypted_password" varchar(40), "salt" varchar(40), "created_at" datetime, "updated_at" datetime, "remember_token" varchar(40), "remember_token_expires_at" datetime, "activation_code" varchar(40), "activated_at" datetime, "first_name" varchar(255), "last_name" varchar(255), "about_me" text, "tag_line" varchar(500), "design_type" integer, "account_tier" integer DEFAULT 1, "avatar_file_size" integer) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("altered_users")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('temp_index_altered_users_on_login')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCREATE UNIQUE INDEX "index_users_on_login" ON "users" ("login")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mDROP TABLE "altered_users"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE TEMPORARY TABLE "altered_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(40), "name" varchar(100) DEFAULT '', "email" varchar(100), "crypted_password" varchar(40), "salt" varchar(40), "created_at" datetime, "updated_at" datetime, "remember_token" varchar(40), "remember_token_expires_at" datetime, "activation_code" varchar(40), "activated_at" datetime, "first_name" varchar(255), "last_name" varchar(255), "about_me" text, "tag_line" varchar(500), "design_type" integer, "account_tier" integer DEFAULT 1, "avatar_file_size" integer) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_login')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCREATE UNIQUE INDEX "temp_index_altered_users_on_login" ON "altered_users" ("login")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mDROP TABLE "users"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(40), "name" varchar(100) DEFAULT '', "email" varchar(100), "crypted_password" varchar(40), "salt" varchar(40), "created_at" datetime, "updated_at" datetime, "remember_token" varchar(40), "remember_token_expires_at" datetime, "activation_code" varchar(40), "activated_at" datetime, "first_name" varchar(255), "last_name" varchar(255), "about_me" text, "tag_line" varchar(500), "design_type" integer, "account_tier" integer DEFAULT 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("altered_users")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('temp_index_altered_users_on_login')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCREATE UNIQUE INDEX "index_users_on_login" ON "users" ("login")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mDROP TABLE "altered_users"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090721033045')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("pieces")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("portfolios")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_users_on_login')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20090718215859)
+Migrating to AddInfoToUsers (20090718220754)
+Migrating to CreatePortfolios (20090719031854)
+Migrating to RemoveTypeFromUsers (20090719032358)
+Migrating to AddAccountTierToUsers (20090719032501)
+Migrating to CreatePieces (20090720145132)
+Migrating to AddAvatarToUsers (20090720151551)
+Migrating to RemoveAvatarFromUsers (20090720202141)
+Migrating to AddAvatarToUsersForReal (20090720202338)
+Migrating to PleaseWorkPaperclipYouMotherfucker (20090721033045)
+Migrating to AddAttachmentsPhotoToUser (20090721033319)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mALTER TABLE "users" ADD "photo_file_name" varchar(255)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "users" ADD "photo_content_type" varchar(255)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "users" ADD "photo_file_size" integer[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "users" ADD "photo_updated_at" datetime[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090721033319')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("pieces")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("portfolios")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_users_on_login')[0m
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 23:36:11) [GET]
+Rendering main_pages/home
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.2ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 4) LIMIT 1[0m
+Completed in 36ms (View: 34, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-20 23:36:11) [GET]
+
+ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SessionsController#destroy (for 127.0.0.1 at 2009-07-20 23:36:13) [GET]
+Redirected to http://0.0.0.0:3000/
+Completed in 7ms (DB: 0) | 302 Found [http://0.0.0.0/logout]
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 23:36:13) [GET]
+Rendering main_pages/home
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-07-20 23:36:14) [GET]
+Rendering users/new
+Completed in 62ms (View: 54, DB: 0) | 200 OK [http://0.0.0.0/signup]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-07-20 23:36:33) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"", "first_name"=>"Tesy", "password"=>"", "login"=>"testuser2", "last_name"=>"McUserson", "email"=>""}, "commit"=>"Sign Up", "authenticity_token"=>"oTxhnnR/PE7sEoEVY4lcJepw1cA1uB6cdamgIPJmQ4w="}
+  [4;36;1mPortfolio Create (0.3ms)[0m   [0;1mINSERT INTO "portfolios" ("updated_at", "user_id", "created_at") VALUES('2009-07-21 03:36:33', NULL, '2009-07-21 03:36:33')[0m
+  [4;35;1mUser Create (0.4ms)[0m   [0mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "photo_file_name", "photo_file_size", "crypted_password", "account_tier", "about_me", "remember_token_expires_at", "activation_code", "photo_updated_at", "photo_content_type", "remember_token", "tag_line", "first_name", "login", "last_name", "design_type", "email", "created_at") VALUES('', NULL, '2009-07-21 03:36:33', '2009-07-21 03:36:33', NULL, NULL, NULL, 1, NULL, NULL, '20441f38edfce3a3622f4cb6aeae33b796ecc760', NULL, NULL, NULL, NULL, 'Tesy', 'testuser2', 'McUserson', NULL, '', '2009-07-21 03:36:33')[0m
+  [4;36;1mPortfolio Update (0.1ms)[0m   [0;1mUPDATE "portfolios" SET "updated_at" = '2009-07-21 03:36:33', "user_id" = 5 WHERE "id" = 4[0m
+[paperclip] Saving attachments.
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login" = 'testuser2' AND "users".id <> 5) LIMIT 1[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = '' AND "users".id <> 5) LIMIT 1[0m
+Rendering users/new
+Completed in 66ms (View: 3, DB: 1) | 200 OK [http://0.0.0.0/users]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-07-20 23:36:51) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"testuser2", "first_name"=>"Tesy", "password"=>"testuser2", "login"=>"testuser2", "last_name"=>"McUserson", "email"=>"test@user.com"}, "commit"=>"Sign Up", "authenticity_token"=>"oTxhnnR/PE7sEoEVY4lcJepw1cA1uB6cdamgIPJmQ4w="}
+  [4;35;1mPortfolio Create (0.3ms)[0m   [0mINSERT INTO "portfolios" ("updated_at", "user_id", "created_at") VALUES('2009-07-21 03:36:51', NULL, '2009-07-21 03:36:51')[0m
+  [4;36;1mUser Create (0.0ms)[0m   [0;1mSQLite3::SQLException: column login is not unique: INSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "photo_file_name", "photo_file_size", "crypted_password", "account_tier", "about_me", "remember_token_expires_at", "activation_code", "photo_updated_at", "photo_content_type", "remember_token", "tag_line", "first_name", "login", "last_name", "design_type", "email", "created_at") VALUES('', '9f78be443044b263ded311cf403d877af2447a0f', '2009-07-21 03:36:51', '2009-07-21 03:36:51', NULL, NULL, '7fdc882d95c8db907944aeeaec61e4366b558d13', 1, NULL, NULL, 'e8b58b45ba4077e249b61d4546e17f83ba09509b', NULL, NULL, NULL, NULL, 'Tesy', 'testuser2', 'McUserson', NULL, 'test@user.com', '2009-07-21 03:36:51')[0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: column login is not unique: INSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "photo_file_name", "photo_file_size", "crypted_password", "account_tier", "about_me", "remember_token_expires_at", "activation_code", "photo_updated_at", "photo_content_type", "remember_token", "tag_line", "first_name", "login", "last_name", "design_type", "email", "created_at") VALUES('', '9f78be443044b263ded311cf403d877af2447a0f', '2009-07-21 03:36:51', '2009-07-21 03:36:51', NULL, NULL, '7fdc882d95c8db907944aeeaec61e4366b558d13', 1, NULL, NULL, 'e8b58b45ba4077e249b61d4546e17f83ba09509b', NULL, NULL, NULL, NULL, 'Tesy', 'testuser2', 'McUserson', NULL, 'test@user.com', '2009-07-21 03:36:51')):
+  app/models/user.rb:52:in `activate!'
+  app/controllers/users_controller.rb:25:in `create'
+
+Rendered rescues/_trace (38.8ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-07-20 23:37:23) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"test2", "first_name"=>"Tesy", "password"=>"test2", "login"=>"testuseruser", "last_name"=>"McUserson", "email"=>"test@user.com"}, "commit"=>"Sign Up", "authenticity_token"=>"oTxhnnR/PE7sEoEVY4lcJepw1cA1uB6cdamgIPJmQ4w="}
+  [4;35;1mPortfolio Create (0.3ms)[0m   [0mINSERT INTO "portfolios" ("updated_at", "user_id", "created_at") VALUES('2009-07-21 03:37:23', NULL, '2009-07-21 03:37:23')[0m
+  [4;36;1mUser Create (0.3ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "photo_file_name", "photo_file_size", "crypted_password", "account_tier", "about_me", "remember_token_expires_at", "activation_code", "photo_updated_at", "photo_content_type", "remember_token", "tag_line", "first_name", "login", "last_name", "design_type", "email", "created_at") VALUES('', '29d6a23fa801aec20af273466a4682dff46494bb', '2009-07-21 03:37:23', '2009-07-21 03:37:23', NULL, NULL, '604a29dd00d17a9a1ce777f66aa5ee71d3a2ef11', 1, NULL, NULL, 'b0fc24659aac2e01263cc141f8594fdd0a800703', NULL, NULL, NULL, NULL, 'Tesy', 'testuseruser', 'McUserson', NULL, 'test@user.com', '2009-07-21 03:37:23')[0m
+  [4;35;1mPortfolio Update (0.1ms)[0m   [0mUPDATE "portfolios" SET "updated_at" = '2009-07-21 03:37:23', "user_id" = 6 WHERE "id" = 6[0m
+[paperclip] Saving attachments.
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login" = 'testuseruser' AND "users".id <> 6) LIMIT 1[0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'test@user.com' AND "users".id <> 6) LIMIT 1[0m
+Rendering users/new
+Completed in 37ms (View: 2, DB: 1) | 200 OK [http://0.0.0.0/users]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-07-20 23:37:31) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"fitzgoogoo", "first_name"=>"Tesy", "password"=>"fitzgoogoo", "login"=>"testuseruser", "last_name"=>"McUserson", "email"=>"test@user.com"}, "commit"=>"Sign Up", "authenticity_token"=>"oTxhnnR/PE7sEoEVY4lcJepw1cA1uB6cdamgIPJmQ4w="}
+  [4;36;1mPortfolio Create (0.3ms)[0m   [0;1mINSERT INTO "portfolios" ("updated_at", "user_id", "created_at") VALUES('2009-07-21 03:37:31', NULL, '2009-07-21 03:37:31')[0m
+  [4;35;1mUser Create (0.0ms)[0m   [0mSQLite3::SQLException: column login is not unique: INSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "photo_file_name", "photo_file_size", "crypted_password", "account_tier", "about_me", "remember_token_expires_at", "activation_code", "photo_updated_at", "photo_content_type", "remember_token", "tag_line", "first_name", "login", "last_name", "design_type", "email", "created_at") VALUES('', '2726513b3c47e5cf54b526915abec70b6ca3fa5c', '2009-07-21 03:37:31', '2009-07-21 03:37:31', NULL, NULL, '3ba5c879981e1b55a747e9849fc4d7b456d38b9b', 1, NULL, NULL, '1bf12622ace86f1d6ea4b65d2699a30909d2e17a', NULL, NULL, NULL, NULL, 'Tesy', 'testuseruser', 'McUserson', NULL, 'test@user.com', '2009-07-21 03:37:31')[0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: column login is not unique: INSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "photo_file_name", "photo_file_size", "crypted_password", "account_tier", "about_me", "remember_token_expires_at", "activation_code", "photo_updated_at", "photo_content_type", "remember_token", "tag_line", "first_name", "login", "last_name", "design_type", "email", "created_at") VALUES('', '2726513b3c47e5cf54b526915abec70b6ca3fa5c', '2009-07-21 03:37:31', '2009-07-21 03:37:31', NULL, NULL, '3ba5c879981e1b55a747e9849fc4d7b456d38b9b', 1, NULL, NULL, '1bf12622ace86f1d6ea4b65d2699a30909d2e17a', NULL, NULL, NULL, NULL, 'Tesy', 'testuseruser', 'McUserson', NULL, 'test@user.com', '2009-07-21 03:37:31')):
+  app/models/user.rb:52:in `activate!'
+  app/controllers/users_controller.rb:25:in `create'
+
+Rendered rescues/_trace (34.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-07-20 23:38:22) [GET]
+Rendering sessions/new
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://0.0.0.0/login]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2009-07-20 23:38:29) [POST]
+  Parameters: {"commit"=>"Login", "authenticity_token"=>"oTxhnnR/PE7sEoEVY4lcJepw1cA1uB6cdamgIPJmQ4w=", "login"=>"testuser", "password"=>"testuser"}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'testuser' and activated_at IS NOT NULL) LIMIT 1[0m
+[paperclip] Saving attachments.
+Redirected to http://0.0.0.0:3000/
+Completed in 12ms (DB: 1) | 302 Found [http://0.0.0.0/session]
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 23:38:29) [GET]
+Rendering main_pages/home
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.2ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 4) LIMIT 1[0m
+Completed in 17ms (View: 15, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-20 23:38:29) [GET]
+
+ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2009-07-20 23:38:30) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+Rendering users/edit
+Completed in 17ms (View: 7, DB: 0) | 200 OK [http://0.0.0.0/users/4/edit]
+
+
+Processing UsersController#update (for 127.0.0.1 at 2009-07-20 23:38:36) [PUT]
+  Parameters: {"user"=>{"photo"=>#<File:/var/folders/QO/QOtKcBYTHt0GW1RvqdSOyk+++TI/-Tmp-/RackMultipart.1163.1>, "about_me"=>"", "tag_line"=>"", "first_name"=>"Harry", "login"=>"testuser", "last_name"=>"Livingstone", "email"=>"harry@livingstone.com"}, "commit"=>"Update", "authenticity_token"=>"oTxhnnR/PE7sEoEVY4lcJepw1cA1uB6cdamgIPJmQ4w=", "id"=>"4"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login" = 'testuser' AND "users".id <> 4) LIMIT 1[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'harry@livingstone.com' AND "users".id <> 4) LIMIT 1[0m
+[paperclip] Saving attachments.
+Redirected to http://0.0.0.0:3000/
+Completed in 13ms (DB: 1) | 302 Found [http://0.0.0.0/users/4]
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 23:38:36) [GET]
+Rendering main_pages/home
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.2ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 4) LIMIT 1[0m
+Completed in 17ms (View: 15, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-20 23:38:36) [GET]
+
+ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 23:38:37) [GET]
+Rendering main_pages/home
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.2ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 4) LIMIT 1[0m
+Completed in 66ms (View: 64, DB: 1) | 200 OK [http://0.0.0.0/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-20 23:38:37) [GET]
+
+ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PortfoliosController#show (for 127.0.0.1 at 2009-07-20 23:39:01) [GET]
+  Parameters: {"id"=>"3", "user_id"=>"4"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.2ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 4) LIMIT 1[0m
+Rendering portfolios/show
+  [4;35;1mPiece Load (0.1ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 3) [0m
+Completed in 21ms (View: 9, DB: 1) | 200 OK [http://0.0.0.0/users/4/portfolios/3]
+
+
+Processing SessionsController#destroy (for 127.0.0.1 at 2009-07-20 23:39:12) [GET]
+Redirected to http://0.0.0.0:3000/
+Completed in 6ms (DB: 0) | 302 Found [http://0.0.0.0/logout]
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 23:39:12) [GET]
+Rendering main_pages/home
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-07-20 23:39:14) [GET]
+Rendering users/new
+Completed in 12ms (View: 4, DB: 0) | 200 OK [http://0.0.0.0/signup]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-07-20 23:39:36) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"fitzgoogoo", "first_name"=>"Michael", "password"=>"fitzgoogoo", "login"=>"michaelmaloney", "last_name"=>"Maloney", "email"=>"michael@michael.com"}, "commit"=>"Sign Up", "authenticity_token"=>"sYTxfdPvz1rFb8rwp54FyLHFP8DmXramTmmU62EHUWY="}
+  [4;36;1mPortfolio Create (0.3ms)[0m   [0;1mINSERT INTO "portfolios" ("updated_at", "user_id", "created_at") VALUES('2009-07-21 03:39:36', NULL, '2009-07-21 03:39:36')[0m
+  [4;35;1mUser Create (0.3ms)[0m   [0mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "photo_file_name", "photo_file_size", "crypted_password", "account_tier", "about_me", "remember_token_expires_at", "activation_code", "photo_updated_at", "photo_content_type", "remember_token", "tag_line", "first_name", "login", "last_name", "design_type", "email", "created_at") VALUES('', 'fedd62c17b16875829b8324aca8fe8a73458b171', '2009-07-21 03:39:36', '2009-07-21 03:39:36', NULL, NULL, '0cb07f0aa5542e698b7fb1ee8eff96af62f2f9c6', 1, NULL, NULL, '50e490d990b73639c7741d89668d484326fb8831', NULL, NULL, NULL, NULL, 'Michael', 'michaelmaloney', 'Maloney', NULL, 'michael@michael.com', '2009-07-21 03:39:36')[0m
+  [4;36;1mPortfolio Update (0.1ms)[0m   [0;1mUPDATE "portfolios" SET "updated_at" = '2009-07-21 03:39:36', "user_id" = 7 WHERE "id" = 8[0m
+[paperclip] Saving attachments.
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login" = 'michaelmaloney' AND "users".id <> 7) LIMIT 1[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'michael@michael.com' AND "users".id <> 7) LIMIT 1[0m
+[paperclip] Saving attachments.
+Redirected to http://0.0.0.0:3000/
+Completed in 23ms (DB: 1) | 302 Found [http://0.0.0.0/users]
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 23:39:36) [GET]
+Rendering main_pages/home
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 7) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.2ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 7) LIMIT 1[0m
+Completed in 16ms (View: 15, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-20 23:39:36) [GET]
+
+ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2009-07-20 23:39:40) [GET]
+  Parameters: {"id"=>"7"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 7) LIMIT 1[0m
+Rendering users/edit
+Completed in 13ms (View: 4, DB: 0) | 200 OK [http://0.0.0.0/users/7/edit]
+
+
+Processing UsersController#update (for 127.0.0.1 at 2009-07-20 23:39:46) [PUT]
+  Parameters: {"user"=>{"photo"=>#<File:/var/folders/QO/QOtKcBYTHt0GW1RvqdSOyk+++TI/-Tmp-/RackMultipart.1163.2>, "about_me"=>"", "tag_line"=>"", "first_name"=>"Michael", "login"=>"michaelmaloney", "last_name"=>"Maloney", "email"=>"michael@michael.com"}, "commit"=>"Update", "authenticity_token"=>"sYTxfdPvz1rFb8rwp54FyLHFP8DmXramTmmU62EHUWY=", "id"=>"7"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 7) [0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login" = 'michaelmaloney' AND "users".id <> 7) LIMIT 1[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'michael@michael.com' AND "users".id <> 7) LIMIT 1[0m
+[paperclip] Saving attachments.
+Redirected to http://0.0.0.0:3000/
+Completed in 13ms (DB: 0) | 302 Found [http://0.0.0.0/users/7]
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 23:39:46) [GET]
+Rendering main_pages/home
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 7) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.2ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 7) LIMIT 1[0m
+Completed in 16ms (View: 14, DB: 1) | 200 OK [http://0.0.0.0/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-20 23:39:46) [GET]
+
+ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 23:39:48) [GET]
+Rendering main_pages/home
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 7) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.2ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 7) LIMIT 1[0m
+Completed in 67ms (View: 65, DB: 1) | 200 OK [http://0.0.0.0/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-20 23:39:49) [GET]
+
+ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PortfoliosController#show (for 127.0.0.1 at 2009-07-20 23:39:51) [GET]
+  Parameters: {"id"=>"8", "user_id"=>"7"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 7) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.2ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 7) LIMIT 1[0m
+Rendering portfolios/show
+  [4;35;1mPiece Load (0.1ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 8) [0m
+Completed in 17ms (View: 5, DB: 1) | 200 OK [http://0.0.0.0/users/7/portfolios/8]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2009-07-20 23:39:54) [GET]
+  Parameters: {"id"=>"7"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 7) LIMIT 1[0m
+Rendering users/edit
+Completed in 13ms (View: 4, DB: 0) | 200 OK [http://0.0.0.0/users/7/edit]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2009-07-20 23:40:36) [GET]
+  Parameters: {"id"=>"7"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 7) LIMIT 1[0m
+Rendering users/edit
+Completed in 33ms (View: 9, DB: 0) | 200 OK [http://0.0.0.0/users/7/edit]
+
+
+Processing SessionsController#destroy (for 127.0.0.1 at 2009-07-20 23:40:39) [GET]
+Redirected to http://0.0.0.0:3000/
+Completed in 7ms (DB: 0) | 302 Found [http://0.0.0.0/logout]
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 23:40:39) [GET]
+Rendering main_pages/home
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-07-20 23:40:41) [GET]
+Rendering sessions/new
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://0.0.0.0/login]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2009-07-20 23:40:47) [POST]
+  Parameters: {"commit"=>"Login", "authenticity_token"=>"qQx29q9YODDR51lUkJYYLjlwePC7lrQqjN1La13pFD0=", "login"=>"michaelmaloney", "password"=>"fitzgoogoo"}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE (login = 'michaelmaloney' and activated_at IS NOT NULL) LIMIT 1[0m
+[paperclip] Saving attachments.
+Redirected to http://0.0.0.0:3000/
+Completed in 57ms (DB: 1) | 302 Found [http://0.0.0.0/session]
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 23:40:47) [GET]
+Rendering main_pages/home
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 7) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.2ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 7) LIMIT 1[0m
+Completed in 17ms (View: 15, DB: 1) | 200 OK [http://0.0.0.0/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-20 23:40:47) [GET]
+
+ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2009-07-20 23:40:49) [GET]
+  Parameters: {"id"=>"7"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 7) LIMIT 1[0m
+Rendering users/edit
+Completed in 13ms (View: 4, DB: 0) | 200 OK [http://0.0.0.0/users/7/edit]
+
+
+Processing UsersController#update (for 127.0.0.1 at 2009-07-20 23:40:54) [PUT]
+  Parameters: {"user"=>{"photo"=>#<File:/var/folders/QO/QOtKcBYTHt0GW1RvqdSOyk+++TI/-Tmp-/RackMultipart.1184.1>, "about_me"=>"", "tag_line"=>"", "first_name"=>"Michael", "login"=>"michaelmaloney", "last_name"=>"Maloney", "email"=>"michael@michael.com"}, "commit"=>"Update", "authenticity_token"=>"qQx29q9YODDR51lUkJYYLjlwePC7lrQqjN1La13pFD0=", "id"=>"7"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 7) [0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login" = 'michaelmaloney' AND "users".id <> 7) LIMIT 1[0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'michael@michael.com' AND "users".id <> 7) LIMIT 1[0m
+[paperclip] Saving attachments.
+Redirected to http://0.0.0.0:3000/
+Completed in 13ms (DB: 1) | 302 Found [http://0.0.0.0/users/7]
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 23:40:54) [GET]
+Rendering main_pages/home
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 7) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.2ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 7) LIMIT 1[0m
+Completed in 16ms (View: 15, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-20 23:40:54) [GET]
+
+ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 23:40:56) [GET]
+Rendering main_pages/home
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 7) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.2ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 7) LIMIT 1[0m
+Completed in 18ms (View: 16, DB: 1) | 200 OK [http://0.0.0.0/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-20 23:40:56) [GET]
+
+ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 23:42:20) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 7) LIMIT 1[0m
+Rendering main_pages/home
+  [4;35;1mPortfolio Load (0.2ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 7) LIMIT 1[0m
+Completed in 34ms (View: 11, DB: 1) | 200 OK [http://0.0.0.0/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-20 23:42:20) [GET]
+
+ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SessionsController#destroy (for 127.0.0.1 at 2009-07-20 23:42:21) [GET]
+Redirected to http://0.0.0.0:3000/
+Completed in 6ms (DB: 0) | 302 Found [http://0.0.0.0/logout]
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 23:42:21) [GET]
+Rendering main_pages/home
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-07-20 23:42:22) [GET]
+Rendering sessions/new
+Completed in 53ms (View: 51, DB: 0) | 200 OK [http://0.0.0.0/login]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2009-07-20 23:42:29) [POST]
+  Parameters: {"commit"=>"Login", "authenticity_token"=>"9gAyqZ9AnWpCmMz2N3sG2ZzntQP/o2kSFgoFDPpnlec=", "login"=>"mgmcadam", "password"=>"giraffe"}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'mgmcadam' and activated_at IS NOT NULL) LIMIT 1[0m
+[paperclip] Saving attachments.
+Redirected to http://0.0.0.0:3000/
+Completed in 13ms (DB: 1) | 302 Found [http://0.0.0.0/session]
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 23:42:29) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+Rendering main_pages/home
+  [4;36;1mPortfolio Load (0.2ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 3) LIMIT 1[0m
+Completed in 15ms (View: 6, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-20 23:42:29) [GET]
+
+ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PortfoliosController#show (for 127.0.0.1 at 2009-07-20 23:42:32) [GET]
+  Parameters: {"id"=>"2", "user_id"=>"3"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.1ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 3) LIMIT 1[0m
+Rendering portfolios/show
+  [4;35;1mPiece Load (0.1ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 2) [0m
+Completed in 21ms (View: 9, DB: 1) | 200 OK [http://0.0.0.0/users/3/portfolios/2]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2009-07-20 23:42:34) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+Rendering users/edit
+Completed in 18ms (View: 9, DB: 0) | 200 OK [http://0.0.0.0/users/3/edit]
+
+
+Processing UsersController#update (for 127.0.0.1 at 2009-07-20 23:42:39) [PUT]
+  Parameters: {"user"=>{"photo"=>#<File:/var/folders/QO/QOtKcBYTHt0GW1RvqdSOyk+++TI/-Tmp-/RackMultipart.1191.1>, "about_me"=>"", "tag_line"=>"", "first_name"=>"meghan", "login"=>"mgmcadam", "last_name"=>"mcadam", "email"=>"mgmcadam@gmail.com"}, "commit"=>"Update", "authenticity_token"=>"9gAyqZ9AnWpCmMz2N3sG2ZzntQP/o2kSFgoFDPpnlec=", "id"=>"3"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) [0m
+  [4;36;1mUser Exists (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login" = 'mgmcadam' AND "users".id <> 3) LIMIT 1[0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'mgmcadam@gmail.com' AND "users".id <> 3) LIMIT 1[0m
+[paperclip] Saving attachments.
+Redirected to http://0.0.0.0:3000/
+Completed in 62ms (DB: 1) | 302 Found [http://0.0.0.0/users/3]
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 23:42:39) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+Rendering main_pages/home
+  [4;35;1mPortfolio Load (0.2ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 3) LIMIT 1[0m
+Completed in 17ms (View: 7, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-20 23:42:39) [GET]
+
+ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 23:43:38) [GET]
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+Rendering main_pages/home
+  [4;35;1mPortfolio Load (0.2ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 3) LIMIT 1[0m
+Completed in 16ms (View: 6, DB: 1) | 200 OK [http://0.0.0.0/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-20 23:43:38) [GET]
+
+ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2009-07-20 23:43:39) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+Rendering users/edit
+Completed in 16ms (View: 7, DB: 0) | 200 OK [http://0.0.0.0/users/3/edit]
+
+
+Processing UsersController#update (for 127.0.0.1 at 2009-07-20 23:43:43) [PUT]
+  Parameters: {"user"=>{"photo"=>#<File:/var/folders/QO/QOtKcBYTHt0GW1RvqdSOyk+++TI/-Tmp-/RackMultipart.1191.3>, "about_me"=>"", "tag_line"=>"", "first_name"=>"meghan", "login"=>"mgmcadam", "last_name"=>"mcadam", "email"=>"mgmcadam@gmail.com"}, "commit"=>"Update", "authenticity_token"=>"9gAyqZ9AnWpCmMz2N3sG2ZzntQP/o2kSFgoFDPpnlec=", "id"=>"3"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login" = 'mgmcadam' AND "users".id <> 3) LIMIT 1[0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'mgmcadam@gmail.com' AND "users".id <> 3) LIMIT 1[0m
+[paperclip] Saving attachments.
+Redirected to http://0.0.0.0:3000/
+Completed in 13ms (DB: 0) | 302 Found [http://0.0.0.0/users/3]
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 23:43:43) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+Rendering main_pages/home
+  [4;35;1mPortfolio Load (0.2ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 3) LIMIT 1[0m
+Completed in 70ms (View: 7, DB: 1) | 200 OK [http://0.0.0.0/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-20 23:43:43) [GET]
+
+ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 23:44:41) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+Rendering main_pages/home
+  [4;35;1mPortfolio Load (0.2ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 3) LIMIT 1[0m
+Completed in 15ms (View: 6, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-20 23:44:41) [GET]
+
+ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2009-07-20 23:44:42) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+Rendering users/edit
+Completed in 13ms (View: 4, DB: 0) | 200 OK [http://0.0.0.0/users/3/edit]
+
+
+Processing UsersController#update (for 127.0.0.1 at 2009-07-20 23:44:47) [PUT]
+  Parameters: {"user"=>{"photo"=>#<File:/var/folders/QO/QOtKcBYTHt0GW1RvqdSOyk+++TI/-Tmp-/RackMultipart.1191.1>, "about_me"=>"", "tag_line"=>"", "first_name"=>"meghan", "login"=>"mgmcadam", "last_name"=>"mcadam", "email"=>"mgmcadam@gmail.com"}, "commit"=>"Update", "authenticity_token"=>"9gAyqZ9AnWpCmMz2N3sG2ZzntQP/o2kSFgoFDPpnlec=", "id"=>"3"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+WARNING: Can't mass-assign these protected attributes: photo
+  [4;36;1mUser Exists (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login" = 'mgmcadam' AND "users".id <> 3) LIMIT 1[0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'mgmcadam@gmail.com' AND "users".id <> 3) LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "about_me" = '', "tag_line" = '', "updated_at" = '2009-07-21 03:44:47' WHERE "id" = 3[0m
+[paperclip] Saving attachments.
+Redirected to http://0.0.0.0:3000/
+Completed in 22ms (DB: 1) | 302 Found [http://0.0.0.0/users/3]
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 23:44:47) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+Rendering main_pages/home
+  [4;36;1mPortfolio Load (0.2ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 3) LIMIT 1[0m
+Completed in 15ms (View: 6, DB: 1) | 200 OK [http://0.0.0.0/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-20 23:44:47) [GET]
+
+ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 23:44:49) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+Rendering main_pages/home
+  [4;36;1mPortfolio Load (0.2ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 3) LIMIT 1[0m
+Completed in 16ms (View: 6, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-20 23:44:49) [GET]
+
+ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 23:46:11) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+Rendering main_pages/home
+  [4;36;1mPortfolio Load (0.2ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 3) LIMIT 1[0m
+Completed in 16ms (View: 6, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-20 23:46:11) [GET]
+
+ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2009-07-20 23:46:13) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+Rendering users/edit
+Completed in 13ms (View: 4, DB: 0) | 200 OK [http://0.0.0.0/users/3/edit]
+
+
+Processing UsersController#update (for 127.0.0.1 at 2009-07-20 23:46:17) [PUT]
+  Parameters: {"user"=>{"photo"=>#<File:/var/folders/QO/QOtKcBYTHt0GW1RvqdSOyk+++TI/-Tmp-/RackMultipart.1191.2>, "about_me"=>"", "tag_line"=>"", "first_name"=>"meghan", "login"=>"mgmcadam", "last_name"=>"mcadam", "email"=>"mgmcadam@gmail.com"}, "commit"=>"Update", "authenticity_token"=>"9gAyqZ9AnWpCmMz2N3sG2ZzntQP/o2kSFgoFDPpnlec=", "id"=>"3"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+WARNING: Can't mass-assign these protected attributes: photo
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login" = 'mgmcadam' AND "users".id <> 3) LIMIT 1[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'mgmcadam@gmail.com' AND "users".id <> 3) LIMIT 1[0m
+[paperclip] Saving attachments.
+Redirected to http://0.0.0.0:3000/
+Completed in 14ms (DB: 0) | 302 Found [http://0.0.0.0/users/3]
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 23:46:17) [GET]
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+Rendering main_pages/home
+  [4;36;1mPortfolio Load (0.2ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 3) LIMIT 1[0m
+Completed in 67ms (View: 6, DB: 1) | 200 OK [http://0.0.0.0/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-20 23:46:17) [GET]
+
+ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 23:46:19) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+Rendering main_pages/home
+  [4;36;1mPortfolio Load (0.2ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 3) LIMIT 1[0m
+Completed in 16ms (View: 6, DB: 1) | 200 OK [http://0.0.0.0/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-20 23:46:19) [GET]
+
+ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 23:47:50) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+Rendering main_pages/home
+  [4;36;1mPortfolio Load (0.2ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 3) LIMIT 1[0m
+Completed in 16ms (View: 6, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-20 23:47:50) [GET]
+
+ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SessionsController#destroy (for 127.0.0.1 at 2009-07-20 23:47:52) [GET]
+Redirected to http://0.0.0.0:3000/
+Completed in 7ms (DB: 0) | 302 Found [http://0.0.0.0/logout]
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 23:47:52) [GET]
+Rendering main_pages/home
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-07-20 23:47:53) [GET]
+Rendering users/new
+Completed in 16ms (View: 7, DB: 0) | 200 OK [http://0.0.0.0/signup]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-07-20 23:48:40) [POST]
+  Parameters: {"user"=>{"photo"=>#<File:/var/folders/QO/QOtKcBYTHt0GW1RvqdSOyk+++TI/-Tmp-/RackMultipart.1191.2>, "password_confirmation"=>"chloe", "first_name"=>"Maura", "password"=>"chloe", "login"=>"mkea920", "last_name"=>"Kearney", "email"=>"mkea920@gmail.com"}, "commit"=>"Sign Up", "authenticity_token"=>"s/d2RUKxag4ltjvcJlZgfULZGf1vgtYKCP47xyMok6A="}
+WARNING: Can't mass-assign these protected attributes: photo
+  [4;35;1mPortfolio Create (0.3ms)[0m   [0mINSERT INTO "portfolios" ("updated_at", "user_id", "created_at") VALUES('2009-07-21 03:48:40', NULL, '2009-07-21 03:48:40')[0m
+  [4;36;1mUser Create (0.4ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "photo_file_name", "photo_file_size", "crypted_password", "account_tier", "about_me", "remember_token_expires_at", "activation_code", "photo_updated_at", "photo_content_type", "remember_token", "tag_line", "first_name", "login", "last_name", "design_type", "email", "created_at") VALUES('', '61d237df7237b429a061147219f046f1b004e465', '2009-07-21 03:48:40', '2009-07-21 03:48:40', NULL, NULL, '0830feb41e0c06cdf5949b77778743f31799f842', 1, NULL, NULL, '47779d85fa1a4d450baa0e656ec62c9a96216637', NULL, NULL, NULL, NULL, 'Maura', 'mkea920', 'Kearney', NULL, 'mkea920@gmail.com', '2009-07-21 03:48:40')[0m
+  [4;35;1mPortfolio Update (0.1ms)[0m   [0mUPDATE "portfolios" SET "updated_at" = '2009-07-21 03:48:40', "user_id" = 8 WHERE "id" = 9[0m
+[paperclip] Saving attachments.
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login" = 'mkea920' AND "users".id <> 8) LIMIT 1[0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'mkea920@gmail.com' AND "users".id <> 8) LIMIT 1[0m
+Rendering users/new
+Completed in 63ms (View: 2, DB: 1) | 200 OK [http://0.0.0.0/users]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-07-20 23:48:58) [POST]
+  Parameters: {"user"=>{"photo"=>#<File:/var/folders/QO/QOtKcBYTHt0GW1RvqdSOyk+++TI/-Tmp-/RackMultipart.1191.4>, "password_confirmation"=>"tinkerbell", "first_name"=>"Maura", "password"=>"tinkerbell", "login"=>"mkea920", "last_name"=>"Kearney", "email"=>"mkea920@gmail.com"}, "commit"=>"Sign Up", "authenticity_token"=>"s/d2RUKxag4ltjvcJlZgfULZGf1vgtYKCP47xyMok6A="}
+WARNING: Can't mass-assign these protected attributes: photo
+  [4;36;1mPortfolio Create (0.3ms)[0m   [0;1mINSERT INTO "portfolios" ("updated_at", "user_id", "created_at") VALUES('2009-07-21 03:48:58', NULL, '2009-07-21 03:48:58')[0m
+  [4;35;1mUser Create (0.0ms)[0m   [0mSQLite3::SQLException: column login is not unique: INSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "photo_file_name", "photo_file_size", "crypted_password", "account_tier", "about_me", "remember_token_expires_at", "activation_code", "photo_updated_at", "photo_content_type", "remember_token", "tag_line", "first_name", "login", "last_name", "design_type", "email", "created_at") VALUES('', '58927e8c47b41dc184ae514943e3aeab1f3b8f64', '2009-07-21 03:48:58', '2009-07-21 03:48:58', NULL, NULL, '8a87ddc143d6d80792cf266b045d4fcd745d08fa', 1, NULL, NULL, '451590051ce28fc25532f13377e41edba59302af', NULL, NULL, NULL, NULL, 'Maura', 'mkea920', 'Kearney', NULL, 'mkea920@gmail.com', '2009-07-21 03:48:58')[0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: column login is not unique: INSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "photo_file_name", "photo_file_size", "crypted_password", "account_tier", "about_me", "remember_token_expires_at", "activation_code", "photo_updated_at", "photo_content_type", "remember_token", "tag_line", "first_name", "login", "last_name", "design_type", "email", "created_at") VALUES('', '58927e8c47b41dc184ae514943e3aeab1f3b8f64', '2009-07-21 03:48:58', '2009-07-21 03:48:58', NULL, NULL, '8a87ddc143d6d80792cf266b045d4fcd745d08fa', 1, NULL, NULL, '451590051ce28fc25532f13377e41edba59302af', NULL, NULL, NULL, NULL, 'Maura', 'mkea920', 'Kearney', NULL, 'mkea920@gmail.com', '2009-07-21 03:48:58')):
+  app/models/user.rb:52:in `activate!'
+  app/controllers/users_controller.rb:24:in `create'
+
+Rendered rescues/_trace (86.5ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-07-20 23:49:38) [GET]
+Rendering users/new
+Completed in 12ms (View: 4, DB: 0) | 200 OK [http://0.0.0.0/signup]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-07-20 23:50:08) [POST]
+  Parameters: {"user"=>{"photo"=>#<File:/var/folders/QO/QOtKcBYTHt0GW1RvqdSOyk+++TI/-Tmp-/RackMultipart.1191.1>, "password_confirmation"=>"testuser", "first_name"=>"Test", "password"=>"testuser", "login"=>"demouser", "last_name"=>"User", "email"=>"demo@user.com"}, "commit"=>"Sign Up", "authenticity_token"=>"s/d2RUKxag4ltjvcJlZgfULZGf1vgtYKCP47xyMok6A="}
+WARNING: Can't mass-assign these protected attributes: photo
+  [4;36;1mPortfolio Create (0.3ms)[0m   [0;1mINSERT INTO "portfolios" ("updated_at", "user_id", "created_at") VALUES('2009-07-21 03:50:08', NULL, '2009-07-21 03:50:08')[0m
+  [4;35;1mUser Create (0.3ms)[0m   [0mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "photo_file_name", "photo_file_size", "crypted_password", "account_tier", "about_me", "remember_token_expires_at", "activation_code", "photo_updated_at", "photo_content_type", "remember_token", "tag_line", "first_name", "login", "last_name", "design_type", "email", "created_at") VALUES('', '858a665cf6dc129281e855f85c77d87620aba1b6', '2009-07-21 03:50:08', '2009-07-21 03:50:08', NULL, NULL, 'ba2e73d3a4bad5ce131dcfa4b38163d435d79586', 1, NULL, NULL, 'fa15e65962b57011458282b5c78643fd66d509cd', NULL, NULL, NULL, NULL, 'Test', 'demouser', 'User', NULL, 'demo@user.com', '2009-07-21 03:50:08')[0m
+  [4;36;1mPortfolio Update (0.1ms)[0m   [0;1mUPDATE "portfolios" SET "updated_at" = '2009-07-21 03:50:08', "user_id" = 9 WHERE "id" = 11[0m
+[paperclip] Saving attachments.
+  [4;35;1mUser Exists (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login" = 'demouser' AND "users".id <> 9) LIMIT 1[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'demo@user.com' AND "users".id <> 9) LIMIT 1[0m
+[paperclip] Saving attachments.
+Redirected to http://0.0.0.0:3000/
+Completed in 45ms (DB: 1) | 302 Found [http://0.0.0.0/users]
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 23:50:08) [GET]
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 9) LIMIT 1[0m
+Rendering main_pages/home
+  [4;36;1mPortfolio Load (0.2ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 9) LIMIT 1[0m
+Completed in 18ms (View: 8, DB: 1) | 200 OK [http://0.0.0.0/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-20 23:50:08) [GET]
+
+ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 23:50:15) [GET]
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 9) LIMIT 1[0m
+Rendering main_pages/home
+  [4;36;1mPortfolio Load (0.2ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 9) LIMIT 1[0m
+Completed in 16ms (View: 6, DB: 1) | 200 OK [http://0.0.0.0/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-20 23:50:15) [GET]
+
+ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 23:50:33) [GET]
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 9) LIMIT 1[0m
+Rendering main_pages/home
+  [4;36;1mPortfolio Load (0.2ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 9) LIMIT 1[0m
+Completed in 19ms (View: 9, DB: 1) | 200 OK [http://0.0.0.0/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-20 23:50:33) [GET]
+
+ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SessionsController#destroy (for 127.0.0.1 at 2009-07-20 23:50:36) [GET]
+Redirected to http://0.0.0.0:3000/
+Completed in 6ms (DB: 0) | 302 Found [http://0.0.0.0/logout]
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 23:50:36) [GET]
+Rendering main_pages/home
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-07-20 23:50:37) [GET]
+Rendering users/new
+Completed in 12ms (View: 4, DB: 0) | 200 OK [http://0.0.0.0/signup]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-07-20 23:51:19) [GET]
+Rendering users/new
+Completed in 15ms (View: 7, DB: 0) | 200 OK [http://0.0.0.0/signup]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-07-20 23:51:41) [POST]
+  Parameters: {"user"=>{"photo"=>#<File:/var/folders/QO/QOtKcBYTHt0GW1RvqdSOyk+++TI/-Tmp-/RackMultipart.1191.2>, "password_confirmation"=>"paperclip", "first_name"=>"Demo", "password"=>"paperclip", "login"=>"pleaseletthiswork", "last_name"=>"User", "email"=>"this@isnuts.com"}, "commit"=>"Sign Up", "authenticity_token"=>"bQJT5j/1AyNAuwXBrf2ylLK+kYEOTyxMzFJiOQcsBDc="}
+Rendering users/new
+Completed in 13ms (View: 4, DB: 0) | 200 OK [http://0.0.0.0/signup]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-07-20 23:52:00) [GET]
+Rendering users/new
+Completed in 18ms (View: 7, DB: 0) | 200 OK [http://0.0.0.0/signup]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-07-20 23:52:36) [POST]
+  Parameters: {"user"=>{"photo"=>#<File:/var/folders/QO/QOtKcBYTHt0GW1RvqdSOyk+++TI/-Tmp-/RackMultipart.1191.3>, "password_confirmation"=>"fitzgoogoo", "first_name"=>"Grace", "password"=>"fitzgoogoo", "login"=>"gkearney", "last_name"=>"Kearney", "email"=>"grace@nana.com"}, "commit"=>"Sign Up", "authenticity_token"=>"bQJT5j/1AyNAuwXBrf2ylLK+kYEOTyxMzFJiOQcsBDc="}
+WARNING: Can't mass-assign these protected attributes: photo
+  [4;35;1mPortfolio Create (0.3ms)[0m   [0mINSERT INTO "portfolios" ("updated_at", "user_id", "created_at") VALUES('2009-07-21 03:52:36', NULL, '2009-07-21 03:52:36')[0m
+  [4;36;1mUser Create (0.3ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "photo_file_name", "photo_file_size", "crypted_password", "account_tier", "about_me", "remember_token_expires_at", "activation_code", "photo_updated_at", "photo_content_type", "remember_token", "tag_line", "first_name", "login", "last_name", "design_type", "email", "created_at") VALUES('', '131e12044fc5f395fac61df2248917e87e0c832b', '2009-07-21 03:52:36', '2009-07-21 03:52:36', NULL, NULL, 'aabe5aeb9c72ba2937c85c9c154fd8c2c996512d', 1, NULL, NULL, '500aeac6dbdd59f6af6067c5576272feec6e4c28', NULL, NULL, NULL, NULL, 'Grace', 'gkearney', 'Kearney', NULL, 'grace@nana.com', '2009-07-21 03:52:36')[0m
+  [4;35;1mPortfolio Update (0.1ms)[0m   [0mUPDATE "portfolios" SET "updated_at" = '2009-07-21 03:52:36', "user_id" = 10 WHERE "id" = 12[0m
+[paperclip] Saving attachments.
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login" = 'gkearney' AND "users".id <> 10) LIMIT 1[0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'grace@nana.com' AND "users".id <> 10) LIMIT 1[0m
+[paperclip] Saving attachments.
+Redirected to http://0.0.0.0:3000/
+Completed in 38ms (DB: 1) | 302 Found [http://0.0.0.0/users]
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 23:52:36) [GET]
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 10) LIMIT 1[0m
+Rendering main_pages/home
+  [4;35;1mPortfolio Load (0.8ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 10) LIMIT 1[0m
+Completed in 18ms (View: 8, DB: 1) | 200 OK [http://0.0.0.0/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-20 23:52:36) [GET]
+
+ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 23:52:39) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 10) LIMIT 1[0m
+Rendering main_pages/home
+  [4;35;1mPortfolio Load (0.2ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 10) LIMIT 1[0m
+Completed in 15ms (View: 6, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-20 23:52:39) [GET]
+
+ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing SessionsController#destroy (for 127.0.0.1 at 2009-07-20 23:53:27) [GET]
+Redirected to http://0.0.0.0:3000/
+Completed in 6ms (DB: 0) | 302 Found [http://0.0.0.0/logout]
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 23:53:27) [GET]
+Rendering main_pages/home
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 23:53:29) [GET]
+Rendering main_pages/home
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-07-20 23:53:31) [GET]
+Rendering users/new
+Completed in 12ms (View: 4, DB: 0) | 200 OK [http://0.0.0.0/signup]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-07-20 23:53:34) [GET]
+Rendering sessions/new
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://0.0.0.0/login]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2009-07-20 23:53:41) [POST]
+  Parameters: {"commit"=>"Login", "authenticity_token"=>"uuh5Su57GiMtZAVwy+9KeGB637qKXNAkFmOCC4tZ24o=", "login"=>"mgmcadam", "password"=>"giraffe"}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'mgmcadam' and activated_at IS NOT NULL) LIMIT 1[0m
+[paperclip] Saving attachments.
+Redirected to http://0.0.0.0:3000/
+Completed in 12ms (DB: 1) | 302 Found [http://0.0.0.0/session]
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 23:53:41) [GET]
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+Rendering main_pages/home
+  [4;36;1mPortfolio Load (0.2ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 3) LIMIT 1[0m
+Completed in 15ms (View: 6, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-20 23:53:42) [GET]
+
+ActionController::RoutingError (No route matches "/photos/original/missing.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2009-07-20 23:53:43) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+Rendering users/edit
+Completed in 13ms (View: 4, DB: 0) | 200 OK [http://0.0.0.0/users/3/edit]
+
+
+Processing UsersController#update (for 127.0.0.1 at 2009-07-20 23:53:47) [PUT]
+  Parameters: {"user"=>{"photo"=>#<File:/var/folders/QO/QOtKcBYTHt0GW1RvqdSOyk+++TI/-Tmp-/RackMultipart.1191.0>, "about_me"=>"", "tag_line"=>"", "first_name"=>"meghan", "login"=>"mgmcadam", "last_name"=>"mcadam", "email"=>"mgmcadam@gmail.com"}, "commit"=>"Update", "authenticity_token"=>"uuh5Su57GiMtZAVwy+9KeGB637qKXNAkFmOCC4tZ24o=", "id"=>"3"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login" = 'mgmcadam' AND "users".id <> 3) LIMIT 1[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'mgmcadam@gmail.com' AND "users".id <> 3) LIMIT 1[0m
+  [4;35;1mUser Update (0.2ms)[0m   [0mUPDATE "users" SET "photo_content_type" = 'image/gif', "photo_file_name" = 'France.gif', "photo_updated_at" = '2009-07-21 03:53:47', "photo_file_size" = 2425, "updated_at" = '2009-07-21 03:53:47' WHERE "id" = 3[0m
+[paperclip] Saving attachments.
+[paperclip] saving /Users/michael/Desktop/weefolio/public/system/photos/3/original/France.gif
+Redirected to http://0.0.0.0:3000/
+Completed in 26ms (DB: 1) | 302 Found [http://0.0.0.0/users/3]
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 23:53:47) [GET]
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+Rendering main_pages/home
+  [4;35;1mPortfolio Load (0.2ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 3) LIMIT 1[0m
+Completed in 23ms (View: 13, DB: 1) | 200 OK [http://0.0.0.0/]
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 23:55:03) [GET]
+Rendering main_pages/home
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.2ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 3) LIMIT 1[0m
+Completed in 24ms (View: 22, DB: 1) | 200 OK [http://0.0.0.0/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-20 23:55:03) [GET]
+  Parameters: {"1248148427"=>nil}
+
+ActionController::RoutingError (No route matches "/system/photos/3/micro/France.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2009-07-20 23:55:07) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+Rendering users/edit
+Completed in 14ms (View: 4, DB: 0) | 200 OK [http://0.0.0.0/users/3/edit]
+
+
+Processing UsersController#update (for 127.0.0.1 at 2009-07-20 23:55:11) [PUT]
+  Parameters: {"user"=>{"photo"=>#<File:/var/folders/QO/QOtKcBYTHt0GW1RvqdSOyk+++TI/-Tmp-/RackMultipart.1191.3>, "about_me"=>"", "tag_line"=>"", "first_name"=>"meghan", "login"=>"mgmcadam", "last_name"=>"mcadam", "email"=>"mgmcadam@gmail.com"}, "commit"=>"Update", "authenticity_token"=>"uuh5Su57GiMtZAVwy+9KeGB637qKXNAkFmOCC4tZ24o=", "id"=>"3"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mUser Exists (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login" = 'mgmcadam' AND "users".id <> 3) LIMIT 1[0m
+  [4;35;1mUser Exists (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'mgmcadam@gmail.com' AND "users".id <> 3) LIMIT 1[0m
+  [4;36;1mUser Update (48.2ms)[0m   [0;1mUPDATE "users" SET "photo_file_name" = 'Germany.gif', "photo_updated_at" = '2009-07-21 03:55:11', "photo_file_size" = 2178, "updated_at" = '2009-07-21 03:55:11' WHERE "id" = 3[0m
+[paperclip] Saving attachments.
+[paperclip] deleting /Users/michael/Desktop/weefolio/public/system/photos/3/original/France.gif
+[paperclip] saving /Users/michael/Desktop/weefolio/public/system/photos/3/micro/Germany.gif
+[paperclip] saving /Users/michael/Desktop/weefolio/public/system/photos/3/original/Germany.gif
+Redirected to http://0.0.0.0:3000/
+Completed in 270ms (DB: 49) | 302 Found [http://0.0.0.0/users/3]
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 23:55:11) [GET]
+Rendering main_pages/home
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.2ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 3) LIMIT 1[0m
+Completed in 25ms (View: 23, DB: 1) | 200 OK [http://0.0.0.0/]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2009-07-20 23:55:21) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+Rendering users/edit
+Completed in 14ms (View: 5, DB: 0) | 200 OK [http://0.0.0.0/users/3/edit]
+
+
+Processing UsersController#update (for 127.0.0.1 at 2009-07-20 23:55:30) [PUT]
+  Parameters: {"user"=>{"about_me"=>"I'm called Meghan", "tag_line"=>"Tag", "first_name"=>"meghan", "login"=>"mgmcadam", "last_name"=>"mcadam", "email"=>"mgmcadam@gmail.com"}, "commit"=>"Update", "authenticity_token"=>"uuh5Su57GiMtZAVwy+9KeGB637qKXNAkFmOCC4tZ24o=", "id"=>"3"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login" = 'mgmcadam' AND "users".id <> 3) LIMIT 1[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'mgmcadam@gmail.com' AND "users".id <> 3) LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "about_me" = 'I''m called Meghan', "tag_line" = 'Tag', "updated_at" = '2009-07-21 03:55:30' WHERE "id" = 3[0m
+[paperclip] Saving attachments.
+Redirected to http://0.0.0.0:3000/
+Completed in 22ms (DB: 1) | 302 Found [http://0.0.0.0/users/3]
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 23:55:30) [GET]
+Rendering main_pages/home
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 3) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.2ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 3) LIMIT 1[0m
+Completed in 26ms (View: 24, DB: 1) | 200 OK [http://0.0.0.0/]
+
+
+Processing SessionsController#destroy (for 127.0.0.1 at 2009-07-20 23:55:35) [GET]
+Redirected to http://0.0.0.0:3000/
+Completed in 7ms (DB: 0) | 302 Found [http://0.0.0.0/logout]
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-20 23:55:35) [GET]
+Rendering main_pages/home
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://0.0.0.0/]

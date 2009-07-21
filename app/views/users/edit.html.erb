@@ -4,7 +4,7 @@
   <%= flash[:notice] %>
 </p>
 
-<% form_for @user, :html => { :multipart => true }  do |f| %>
+<% form_for @user, :html => {:multipart => true}  do |f| %>
   <p>
     <%= f.label :first_name %><br />
     <%= f.text_field :first_name %>
@@ -30,7 +30,7 @@
     <%= f.text_area :about_me %>
   </p>
   <p>
-    <%= f.file_field :avatar %>
+    <%= f.file_field :photo %>
   </p>
   <p>
     <%= f.submit 'Update' %>
