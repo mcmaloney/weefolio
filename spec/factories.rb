@@ -5,6 +5,7 @@ Factory.define :user do |u|
   u.email "michael@maloney.com"
   u.password "giraffe"
   u.password_confirmation { |c| c.password }
+  u.account_tier 1
 end
 
 Factory.define :piece do |p|

@@ -2,9 +2,11 @@
 <p>
   <%= flash[:notice] %>
 </p>
+
 <p>
   <%= link_to 'Add Work', new_portfolio_piece_path(@user.portfolio) %>
 </p>
+
 
 <% @portfolio.pieces.each do |piece| %>
   <p>
@@ -13,4 +15,15 @@
   <p> 
     <%= piece.description %>
   </p>
+  <p>
+    <%= image_tag piece.image_1.url %>
+    <% unless @user.account_tier == 1 %>
+      <%= image_tag piece.image_2.url %> 
+      <%= image_tag piece.image_3.url %> 
+      <%= image_tag piece.image_4.url %> 
+      <%= image_tag piece.image_5.url %>
+    <% end %>
+  </p>
+  <p>
+    <%= link_to 'Edit', edit_portfolio_piece_path(@portfolio, piece)%> 
 <% end %>

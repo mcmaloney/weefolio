@@ -1,3 +1,5 @@
+## I NEED TO BE REFACTORED!!
+
 Feature: User
   I want to sign up for a Weefolio account
   So that I can show off my work in a portfolio
@@ -39,7 +41,6 @@ Feature: User
     When I follow "Account"
     Then I should be on the account page for "mcmaloney"
   
-  @this
   Scenario: User edits account info
     Given I am logged in as "mcmaloney"
     And I am on the account page for "mcmaloney"

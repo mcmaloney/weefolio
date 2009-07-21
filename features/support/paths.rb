@@ -19,6 +19,9 @@ module NavigationHelpers
       user_portfolio_path(user, user.portfolio)
     when /^the account page for "(.*)"$/i
       edit_user_path(User.find_by_login($1))
+    when /^the edit piece page for "(.*)"$/i
+      user = User.find_by_login("mcmaloney")
+      edit_portfolio_piece_path(user.portfolio, Piece.find_by_title($1))
     
     # Add more mappings here.
     # Here is a more fancy example:

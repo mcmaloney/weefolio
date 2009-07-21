@@ -24,8 +24,8 @@ describe User do
       @user.pieces.length.should == 0
     end
     
-    it "should have an avatar object" do
-      @user.avatar.should be_true
+    it "should have a space for a photo" do
+      @user.photo.should be_true
     end
   end
   

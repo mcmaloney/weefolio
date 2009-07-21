@@ -25,7 +25,7 @@ class User < ActiveRecord::Base
   # HACK HACK HACK -- how to do attr_accessible from here?
   # prevents a user from submitting a crafted form that bypasses activation
   # anything else you want your user to change should be added here.
-  attr_accessible :login, :email, :name, :password, :password_confirmation, :first_name, :last_name, :type, :about_me, :tag_line, :design_type, :photo
+  attr_accessible :login, :email, :name, :password, :password_confirmation, :first_name, :last_name, :about_me, :tag_line, :design_type, :account_tier, :photo
   
   # Paperclip settings
   has_attached_file :photo

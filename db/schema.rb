@@ -9,22 +9,42 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090721033319) do
+ActiveRecord::Schema.define(:version => 20090721170424) do
 
   create_table "pieces", :force => true do |t|
     t.string   "title"
     t.string   "description"
-    t.decimal  "price",        :precision => 10, :scale => 2
+    t.decimal  "price",                :precision => 10, :scale => 2
     t.boolean  "for_sale"
     t.integer  "portfolio_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "image_2_file_name"
+    t.string   "image_2_content_type"
+    t.integer  "image_2_file_size"
+    t.datetime "image_2_updated_at"
+    t.string   "image_3_file_name"
+    t.string   "image_3_content_type"
+    t.integer  "image_3_file_size"
+    t.datetime "image_3_updated_at"
+    t.string   "image_4_file_name"
+    t.string   "image_4_content_type"
+    t.integer  "image_4_file_size"
+    t.datetime "image_4_updated_at"
+    t.string   "image_5_file_name"
+    t.string   "image_5_content_type"
+    t.integer  "image_5_file_size"
+    t.datetime "image_5_updated_at"
   end
 
   create_table "portfolios", :force => true do |t|
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "image_1_file_name"
+    t.string   "image_1_content_type"
+    t.integer  "image_1_file_size"
+    t.datetime "image_1_updated_at"
   end
 
   create_table "users", :force => true do |t|
