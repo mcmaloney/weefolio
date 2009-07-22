@@ -1,6 +1,6 @@
 <h1>Add a new piece to your Weefolio</h1>
 <% if @portfolio.can_add_more? %>
-<% form_for [@portfolio, Piece.new], :html => {:multipart => true} do |f| %>
+<% form_for [@portfolio, @piece], :html => {:multipart => true} do |f| %>
   <p>
     <%= f.label :title %><br />
     <%= f.text_field :title %>

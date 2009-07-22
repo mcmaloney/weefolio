@@ -1,7 +1,7 @@
 Given /^I add a piece called "([^\"]*)"$/ do |title|
   When %{I fill in "Title" with "#{title}"}
   When %{I fill in "Description" with "This is going to be bad."}
-  When %{I attach the file at "public/images/test_images/janus.jpg" to "Image 1"}
+  When %{I attach the file at "/Users/maloney/Desktop/weefolio/public/images/test_images/janus.jpg" to "Image 1"}
   When %{I press "Create"}
 end
 
