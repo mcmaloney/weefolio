@@ -23,12 +23,30 @@ Feature: Portfolio
     And I should see "Marzipan Statue of Hitler"
     And I should see "This is going to be bad."
    
-  Scenario: User edits a piece in his portfolio
+  Scenario: User visits edit page for a piece in his portfolio
     Given I am logged in as "mcmaloney"
     And I have a piece in my portfolio called "Moody Photo"
     And I am on my portfolio page
     When I follow "Edit"
     Then I should be on the edit piece page for "Moody Photo"
+  
+  Scenario: User edits a piece in his portfolio
+    Given I am logged in as "mcmaloney"
+    And I have a piece in my portfolio called "Moody Photo"
+    And I am on the edit piece page for "Moody Photo"
+    And I change the info to "Arty Photo" and "Yeah. That's better."
+    Then I should be on my portfolio page
+    And I should see "Piece updated."
+    And I should see "Arty Photo"
+  
+  @tits
+  Scenario: User deletes a piece in his profile
+    Given I am logged in as "mcmaloney"
+    And I have a piece in my portfolio called "Moody Photo"
+    And I am on my portfolio page
+    When I follow "Delete"
+    Then I should see "'Moody Photo' deleted."
+    And I should have no pieces in my portfolio
   
   @skip
   Scenario: Tier 1 user adds max (5) pieces

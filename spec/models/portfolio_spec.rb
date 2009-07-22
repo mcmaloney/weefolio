@@ -10,7 +10,7 @@ describe Portfolio do
       @portfolio.pieces.length.should == 0
     end
   end
-  
+
   describe "account tier 1" do
     before(:each) do
       @user = Factory(:user)
