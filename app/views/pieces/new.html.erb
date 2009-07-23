@@ -1,48 +1,4 @@
-<h1>Add a new piece to your Weefolio</h1>
-<% if @portfolio.can_add_more? %>
-<% form_for [@portfolio, @piece], :html => {:multipart => true} do |f| %>
-  <p>
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </p>
-  <p>
-    <%= f.label :description %><br />
-    <%= f.text_field :description %>
-  </p>
-  <p>
-    <%= f.label :image_1 %><br />
-    <%= f.file_field :image_1 %>
-  </p>
-  <% unless @portfolio.account_tier == 1 %>
-    <p>
-      <%= f.label :image_2 %><br />
-      <%= f.file_field :image_2 %>
-    </p>
-    <p>
-      <%= f.label :image_3 %><br />
-      <%= f.file_field :image_3 %>
-    </p>
-    <p>
-      <%= f.label :image_4 %><br />
-      <%= f.file_field :image_4 %>
-    </p>
-    <p>
-      <%= f.label :image_5 %><br />
-      <%= f.file_field :image_5 %>
-    </p>
-  <% end %>
-  <p>
-    <%= f.submit 'Create' %>
-  </p>
-<% end %>
-<% else %>
-<p>
-  You have uploaded the maximum amount of pieces for your account type.
-</p>
-<% end %>
-
-<%= link_to 'Back', user_portfolio_path(current_user, current_user.portfolio) %>
-
+<%= render :partial => "form" %>
 
 
 

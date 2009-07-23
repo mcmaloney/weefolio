@@ -1,0 +1,5 @@
+<%= form_title(@piece, "Add a new piece to your Weefolio") %>
+
+<%= form_content(@portfolio, @piece) %>
+
+<%= link_to 'Back', user_portfolio_path(current_user, current_user.portfolio) %>
