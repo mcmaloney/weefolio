@@ -29,5 +29,13 @@
       <%= f.file_field :image_5 %>
     </p>
   <% end %>
+  <p>
+    <%= f.label :for_sale %><br />
+    <%= f.check_box :for_sale %>
+  </p>
+  <p>
+    <%= f.label :price %><br />
+    <%= f.text_field :price %>
+  </p>
   <%= form_button(@piece, f)%>
 <% end %>

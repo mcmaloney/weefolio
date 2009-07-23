@@ -9,7 +9,11 @@ class PiecesController < ApplicationController
     @piece = @portfolio.pieces.create!(params[:piece])
     if @piece.save
       redirect_to user_portfolio_path(current_user, @portfolio)
-      flash[:notice] = "Added '#{@piece.title}' to your Weefolio"
+      if @piece.for_sale
+        flash[:notice] = "Added '#{@piece.title}' to your Weefolio (for sale at #{@piece.display_price})"
+      else
+        flash[:notice] = "Added '#{@piece.title}' to your Weefolio"
+      end
     end
   end
 

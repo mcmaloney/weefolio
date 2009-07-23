@@ -35,3 +35,16 @@ Then /^I should have no pieces in my portfolio$/ do
   @user.portfolio.pieces.count.should == 0
 end
 
+Given /^I add a piece that I want to sell called "([^\"]*)"$/ do |title|
+  When %{I fill in "Title" with "#{title}"}
+  When %{I fill in "Description" with "A hooker floating in the Sienne at dawn."}
+  When %{I attach the file at "/Users/maloney/Desktop/weefolio/public/images/test_images/janus.jpg" to "Image 1"}
+  When %{I check "For Sale"}
+  When %{I fill in "Price" with "150000.46"}
+  When %{I press "Create"}
+end
+
+Then /^I should have ([0-9]*) piece in my portfolio$/ do |count|
+  @user.portfolio.pieces.count.should == count.to_i
+end
+

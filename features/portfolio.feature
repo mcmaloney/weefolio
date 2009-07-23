@@ -39,7 +39,6 @@ Feature: Portfolio
     And I should see "Piece updated."
     And I should see "Arty Photo"
   
-  @tits
   Scenario: User deletes a piece in his profile
     Given I am logged in as "mcmaloney"
     And I have a piece in my portfolio called "Moody Photo"
