@@ -4,6 +4,10 @@
 </p>
 
 <p>
+  <%= link_to 'RSS', user_portfolio_path(@user, @portfolio, :rss) %>
+</p>
+
+<p>
   <%= link_to 'Add Work', new_portfolio_piece_path(@user.portfolio) %>
 </p>
 

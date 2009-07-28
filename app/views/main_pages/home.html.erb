@@ -1,25 +1,24 @@
-<h1>Weefolio</h1>
+<!--PAGE TITLE/CALL-TO-ACTION-->
+<%# YIELD %>
+<div id="page-header-container-outer">
+	<div id="page-header-container-inner">
+		<h1>Home<small>  Is where the heart is.</small></h1>
+		
+		<div class="call-to-action">
+			<!--THIS IS WHERE YOU CAN PUT 'ADD NEW WORK' LINKS ETC.
+			<a href="#">Call to action!</a>
+			-->
+		</div>
+	</div>
+</div>
 
-<p>
-  <%= flash[:notice] %>
-</p>
-
-<% if logged_in? %>
+<!--PAGE CONTENT-->
+<%# YIELD %>
+<div id="content-container">
   <p>
-    <%= image_tag current_user.photo.url %>
+    <%= flash[:notice] %>
   </p>
-  <% unless !current_user.has_blank_info %>
-    <p>
-      <%= link_to 'Update your info', edit_user_path(current_user) %>
-    </p>
-  <% end %>
-  <p>
-    <%= link_to 'Portfolio', user_portfolio_path(current_user, current_user.portfolio) %> | Design | <%= link_to 'Account', edit_user_path(current_user) %> | My Weefolio | <%= link_to 'Log Out', logout_path %>
-  </p>
-<% else %>
-  <p>
-    <%= link_to 'Sign Up', signup_path %> | <%= link_to 'Log In', login_path %>
-  </p>
-<% end %>
+	<!--DUMP ALL OF YOUR SHIT HERE!-->
+</div>
 
 

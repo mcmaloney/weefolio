@@ -1,0 +1,59 @@
+<html>
+	<head>
+		<title><%= @page_title %></title>
+		<%= stylesheet_link_tag 'screen' %>
+		<%= javascript_include_tag 'jquery-1.3.1.min.js' %>
+	</head>
+	
+	<body>
+		<div id="page-container">
+			
+			<!--GLOBAL NAVIGATION-->
+			<ul id="global-nav">
+				<li><%= link_to 'Home', root_path %></li>
+				<li><a href="#">Portfolios</a></li>
+				<li><a href="#">Questions</a></li>
+				<li><a href="#">Blog</a></li>
+			</ul>
+			
+			<!--HEADER-->
+			<div id="header-container">
+				<a id="header-logo">Weefolio</a>
+				
+				<% if logged_in? %>
+				  <!--USER NAV (LOGGED IN) -->
+  				<ul id="user-nav">
+  					<li id="portfolio" class="selected"><%= link_to 'Portfolio', user_portfolio_path(current_user, current_user.portfolio) %></li>
+  					<li id="design"><a href="#">Design</a></li>
+  					<li id="account"><%= link_to 'Account', edit_user_path(current_user) %></li>
+  					<li id="my-weefolio"><%= link_to 'My Weefolio', user_portfolio_path(current_user, current_user.portfolio) %></li>
+  				</ul>
+  			<% else %>
+				  <!--USER NAV (LOGGED OUT)-->
+				  <ul id="user-nav">
+					  <li id="sign-up"><%= link_to 'Sign Up!', signup_path %></li>
+					  <li id="or">or</li>
+					  <li id="login"><%= link_to 'Login', login_path %></li>
+				  </ul>
+				<% end %>
+			</div>
+			
+			<%= yield %>
+			
+			<!--FOOTER-->
+			<div id="footer-container">
+				<a id="footer-logo" href="#">Fancy Labs</a>
+				
+				<div id="legal">
+					Brought to you by <strong>Fancy Labs, LLC</strong> &copy; 2009
+				</div>
+				
+				<ul id="footer-nav">
+					<li><a href="#">Terms of Use</a></li>
+					<li><a href="#">Privacy Policy</a></li>
+					<li id="sign-up"><a href="#">Contact</a></li>
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>
