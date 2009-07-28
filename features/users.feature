@@ -17,23 +17,17 @@ Feature: User
     And I should see "Welcome to Weefolio, mcmaloney!"
     And I should have 1 user
     And I should have 1 portfolio
-    And I should see "Portfolio | Design | Account | My Weefolio | Log Out"
-    And I should not see "Log In"
+    And I should see the logged in nav bar in all its glory
+    And I should not see "Login"
     And I should not see "Sign Up"
   
   Scenario: Existing user logs in
     Given I have already signed up as "kevingomez"
     And I am on the home page
-    When I follow "Log In"
+    When I follow "Login"
     And I login as "kevingomez"
     Then I should be on the home page
     And I should see "Logged in as kevingomez"
-    
-  Scenario: User has not updated additional info
-    Given I am logged in as "mcmaloney"
-    And I have additional info that is blank
-    And I am on the home page
-    Then I should see "Update your info"
   
   Scenario: User visits account page
     Given I am logged in as "mcmaloney"

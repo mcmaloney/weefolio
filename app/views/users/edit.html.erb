@@ -1,41 +1,55 @@
-<h1>My Account</h1>
+<!--PAGE TITLE/CALL-TO-ACTION-->
+<%# YIELD %>
+<div id="page-header-container-outer">
+	<div id="page-header-container-inner">
+		<h1>Account<small>  Edit your account</small></h1>
+		
+		<div class="call-to-action">
+			<!--THIS IS WHERE YOU CAN PUT 'ADD NEW WORK' LINKS ETC.
+			<a href="#">Call to action!</a>
+			-->
+		</div>
+	</div>
+</div>
 
-<p>
-  <%= flash[:notice] %>
-</p>
+<!--PAGE CONTENT-->
+<%# YIELD %>
+<div id="content-container">
+  <p>
+    <%= flash[:notice] %>
+  </p>
+	<!--DUMP ALL OF YOUR SHIT HERE!-->
+	<% form_for @user, :html => {:multipart => true}  do |f| %>
+    <p>
+      <%= f.label :first_name %><br/>
+      <%= f.text_field :first_name %>
+    </p>
+    <p>
+      <%= f.label :last_name %><br/>
+      <%= f.text_field :last_name %>
+    </p>
+    <p>
+      <%= f.label :login %><br/>
+      <%= f.text_field :login %>
+    </p>
 
-<% form_for @user, :html => {:multipart => true}  do |f| %>
-  <p>
-    <%= f.label :first_name %><br/>
-    <%= f.text_field :first_name %>
-  </p>
-  <p>
-    <%= f.label :last_name %><br/>
-    <%= f.text_field :last_name %>
-  </p>
-  <p>
-    <%= f.label :login %><br/>
-    <%= f.text_field :login %>
-  </p>
-
-  <p>
-    <%= f.label :email %><br/>
-    <%= f.text_field :email %>
-  </p>
-  <p>
-    <%= f.label :tag_line %><br />
-    <%= f.text_field :tag_line %>
-  </p>
-  <p>
-    <%= f.label :about_me %><br />
-    <%= f.text_area :about_me %>
-  </p>
-  <p>
-    <%= f.file_field :photo %>
-  </p>
-  <p>
-    <%= f.submit 'Update' %>
-  </p>
-<% end %>
-
-<%= link_to 'Back', root_path %>
+    <p>
+      <%= f.label :email %><br/>
+      <%= f.text_field :email %>
+    </p>
+    <p>
+      <%= f.label :tag_line %><br />
+      <%= f.text_field :tag_line %>
+    </p>
+    <p>
+      <%= f.label :about_me %><br />
+      <%= f.text_area :about_me %>
+    </p>
+    <p>
+      <%= f.file_field :photo %>
+    </p>
+    <p>
+      <%= f.submit 'Update' %>
+    </p>
+  <% end %>
+</div>

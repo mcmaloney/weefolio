@@ -11312,3 +11312,1286 @@ Completed in 0ms (View: 0, DB: 0) | 200 OK [http://test.host/login_not_required?
 [paperclip] Saving attachments.
 [paperclip] Saving attachments.
 [paperclip] Saving attachments.
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login" = 'mcmaloney') LIMIT 1[0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'michael@maloney.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.5ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "photo_file_name", "photo_file_size", "crypted_password", "account_tier", "about_me", "remember_token_expires_at", "activation_code", "photo_updated_at", "photo_content_type", "remember_token", "tag_line", "first_name", "login", "last_name", "design_type", "email", "created_at") VALUES('', 'ec2fb65ce97d85131ad2a90cb851eaf10b23e8e1', '2009-07-26 03:35:28', NULL, NULL, NULL, '8eacb425935100484b5527245a8e0cc49e421d27', 1, NULL, NULL, '25032f53569b1e7035d8cc4b37c4859dcdcfd1d3', NULL, NULL, NULL, NULL, 'Michael', 'mcmaloney', 'Maloney', NULL, 'michael@maloney.com', '2009-07-26 03:35:28')[0m
+[paperclip] Saving attachments.
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login" = 'mcmaloney') LIMIT 1[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'michael@maloney.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.3ms)[0m   [0mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "photo_file_name", "photo_file_size", "crypted_password", "account_tier", "about_me", "remember_token_expires_at", "activation_code", "photo_updated_at", "photo_content_type", "remember_token", "tag_line", "first_name", "login", "last_name", "design_type", "email", "created_at") VALUES('', '9cb33fbb0ade9832d75c46c86a229deacadb3cb1', '2009-07-26 03:35:28', NULL, NULL, NULL, '39638577d62bf6cd027a62bc109b9bcc01d17c9c', 1, NULL, NULL, '720fb598582b2eceb8d0390b1f1a07d6fb964ebd', NULL, NULL, NULL, NULL, 'Michael', 'mcmaloney', 'Maloney', NULL, 'michael@maloney.com', '2009-07-26 03:35:28')[0m
+[paperclip] Saving attachments.
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login" = 'mcmaloney') LIMIT 1[0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'michael@maloney.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.3ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "photo_file_name", "photo_file_size", "crypted_password", "account_tier", "about_me", "remember_token_expires_at", "activation_code", "photo_updated_at", "photo_content_type", "remember_token", "tag_line", "first_name", "login", "last_name", "design_type", "email", "created_at") VALUES('', '0bdaf019d62b8de1d96246ba41f2e1293dc1b3dc', '2009-07-26 03:35:28', NULL, NULL, NULL, 'dad18bfe511766a513432990d0a938b648c968bd', 1, NULL, NULL, 'aa04993bfc1c1a1a102abf50503dceeb8857d09d', NULL, NULL, NULL, NULL, 'Michael', 'mcmaloney', 'Maloney', NULL, 'michael@maloney.com', '2009-07-26 03:35:28')[0m
+[paperclip] Saving attachments.
+  [4;35;1mPortfolio Load (0.1ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 1) LIMIT 1[0m
+  [4;36;1mPortfolio Create (0.1ms)[0m   [0;1mINSERT INTO "portfolios" ("updated_at", "user_id", "created_at") VALUES('2009-07-26 03:35:28', 1, '2009-07-26 03:35:28')[0m
+  [4;35;1mUser Exists (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login" = 'mcmaloney') LIMIT 1[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'michael@maloney.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.3ms)[0m   [0mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "photo_file_name", "photo_file_size", "crypted_password", "account_tier", "about_me", "remember_token_expires_at", "activation_code", "photo_updated_at", "photo_content_type", "remember_token", "tag_line", "first_name", "login", "last_name", "design_type", "email", "created_at") VALUES('', '786fbcac5dbdc6a7774f2d9c7e156d9e1360ffb3', '2009-07-26 03:35:28', NULL, NULL, NULL, '6239378fef9759225944f03aa44f4064e923a46b', 1, NULL, NULL, '8c222f3ebe766ca76a1c26c0fa170903bcf0e18e', NULL, NULL, NULL, NULL, 'Michael', 'mcmaloney', 'Maloney', NULL, 'michael@maloney.com', '2009-07-26 03:35:28')[0m
+[paperclip] Saving attachments.
+  [4;36;1mUser Update (0.1ms)[0m   [0;1mUPDATE "users" SET "activated_at" = '2009-07-26 03:35:28', "activation_code" = NULL, "updated_at" = '2009-07-26 03:35:28' WHERE "id" = 1[0m
+[paperclip] Saving attachments.
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login" = 'mcmaloney') LIMIT 1[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'michael@maloney.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.3ms)[0m   [0mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "photo_file_name", "photo_file_size", "crypted_password", "account_tier", "about_me", "remember_token_expires_at", "activation_code", "photo_updated_at", "photo_content_type", "remember_token", "tag_line", "first_name", "login", "last_name", "design_type", "email", "created_at") VALUES('', '953a0a505b1ca6f9300c198c5062877c46efea08', '2009-07-26 03:35:28', NULL, NULL, NULL, '59486e05e0f18929be5d3dbb4079803fc66c13b8', 1, NULL, NULL, 'd6c5f13c4cb08fd0c4a1381575120c54cfcf9d65', NULL, NULL, NULL, NULL, 'Michael', 'mcmaloney', 'Maloney', NULL, 'michael@maloney.com', '2009-07-26 03:35:28')[0m
+[paperclip] Saving attachments.
+  [4;36;1mPiece Load (0.2ms)[0m   [0;1mSELECT "pieces".* FROM "pieces" INNER JOIN "portfolios" ON "pieces".portfolio_id = "portfolios".id WHERE (("portfolios".user_id = 1)) [0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login" = 'mcmaloney') LIMIT 1[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'michael@maloney.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.3ms)[0m   [0mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "photo_file_name", "photo_file_size", "crypted_password", "account_tier", "about_me", "remember_token_expires_at", "activation_code", "photo_updated_at", "photo_content_type", "remember_token", "tag_line", "first_name", "login", "last_name", "design_type", "email", "created_at") VALUES('', 'f205c0009665536954c028f27449a2f94b261a65', '2009-07-26 03:35:28', NULL, NULL, NULL, '2c27579a27d412870ec08da7675ee770cda29bb5', 1, NULL, NULL, '5a6cf9ff9df4d78a6d886ac086e614c4bf05b5c5', NULL, NULL, NULL, NULL, 'Michael', 'mcmaloney', 'Maloney', NULL, 'michael@maloney.com', '2009-07-26 03:35:28')[0m
+[paperclip] Saving attachments.
+  [4;36;1mUser Exists (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login" = 'mcmaloney') LIMIT 1[0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'michael@maloney.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.3ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "photo_file_name", "photo_file_size", "crypted_password", "account_tier", "about_me", "remember_token_expires_at", "activation_code", "photo_updated_at", "photo_content_type", "remember_token", "tag_line", "first_name", "login", "last_name", "design_type", "email", "created_at") VALUES('', '9fff266d76238c1336aca3d6151116e2bbf114ac', '2009-07-26 03:35:28', NULL, NULL, NULL, 'e07d82e50802d8001a2a311bc85d5e571e4a768e', 3, NULL, NULL, '6fa1a301de89be45bb64301a3ed5d408343fda05', NULL, NULL, NULL, NULL, 'Michael', 'mcmaloney', 'Maloney', NULL, 'michael@maloney.com', '2009-07-26 03:35:28')[0m
+[paperclip] Saving attachments.
+  [4;35;1mPortfolio Load (0.1ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 1) LIMIT 1[0m
+  [4;36;1mPortfolio Create (0.1ms)[0m   [0;1mINSERT INTO "portfolios" ("updated_at", "user_id", "created_at") VALUES('2009-07-26 03:35:28', 1, '2009-07-26 03:35:28')[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login" = 'mcmaloney') LIMIT 1[0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'michael@maloney.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.3ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "photo_file_name", "photo_file_size", "crypted_password", "account_tier", "about_me", "remember_token_expires_at", "activation_code", "photo_updated_at", "photo_content_type", "remember_token", "tag_line", "first_name", "login", "last_name", "design_type", "email", "created_at") VALUES('', '2fe2f51a8f14239acc855db4b25c172a9f100ee7', '2009-07-26 03:35:28', NULL, NULL, NULL, '28c64531a15830ade8b386f8f456c3f8239c6709', 3, NULL, NULL, '2252c3678758bb5a6caff6251b9b104bc998c961', NULL, NULL, NULL, NULL, 'Michael', 'mcmaloney', 'Maloney', NULL, 'michael@maloney.com', '2009-07-26 03:35:28')[0m
+[paperclip] Saving attachments.
+  [4;35;1mPortfolio Load (0.1ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 1) LIMIT 1[0m
+  [4;36;1mPortfolio Create (0.1ms)[0m   [0;1mINSERT INTO "portfolios" ("updated_at", "user_id", "created_at") VALUES('2009-07-26 03:35:28', 1, '2009-07-26 03:35:28')[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login" = 'mcmaloney') LIMIT 1[0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'michael@maloney.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.3ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "photo_file_name", "photo_file_size", "crypted_password", "account_tier", "about_me", "remember_token_expires_at", "activation_code", "photo_updated_at", "photo_content_type", "remember_token", "tag_line", "first_name", "login", "last_name", "design_type", "email", "created_at") VALUES('', 'd1c71fe77aa30f682afdd40142ea67b51b2d2117', '2009-07-26 03:35:28', NULL, NULL, NULL, '9e8021266a68797fd911da12a5bda1bf68954996', 3, NULL, NULL, '8a89a353ae75d93d2432f659ec21a41ef0d3b7ac', NULL, NULL, NULL, NULL, 'Michael', 'mcmaloney', 'Maloney', NULL, 'michael@maloney.com', '2009-07-26 03:35:28')[0m
+[paperclip] Saving attachments.
+  [4;35;1mPortfolio Load (0.1ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 1) LIMIT 1[0m
+  [4;36;1mPortfolio Create (0.1ms)[0m   [0;1mINSERT INTO "portfolios" ("updated_at", "user_id", "created_at") VALUES('2009-07-26 03:35:28', 1, '2009-07-26 03:35:28')[0m
+  [4;35;1mPiece Create (0.1ms)[0m   [0mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, NULL, '2009-07-26 03:35:28', NULL, NULL, 'My Awesome Art', 12.75, NULL, NULL, NULL, NULL, NULL, NULL, 'This is so awesome it''s gonna make your eyes bleed.', 'f', NULL, NULL, NULL, NULL, NULL, NULL, '2009-07-26 03:35:28', NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;36;1mPiece Update (0.1ms)[0m   [0;1mUPDATE "pieces" SET "portfolio_id" = 1, "updated_at" = '2009-07-26 03:35:28' WHERE "id" = 1[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mPiece Create (0.1ms)[0m   [0mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, NULL, '2009-07-26 03:35:28', NULL, NULL, 'My Awesome Art', 12.75, NULL, NULL, NULL, NULL, NULL, NULL, 'This is so awesome it''s gonna make your eyes bleed.', 'f', NULL, NULL, NULL, NULL, NULL, NULL, '2009-07-26 03:35:28', NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;36;1mPiece Update (0.1ms)[0m   [0;1mUPDATE "pieces" SET "portfolio_id" = 1, "updated_at" = '2009-07-26 03:35:28' WHERE "id" = 2[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mPiece Create (0.1ms)[0m   [0mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, NULL, '2009-07-26 03:35:28', NULL, NULL, 'My Awesome Art', 12.75, NULL, NULL, NULL, NULL, NULL, NULL, 'This is so awesome it''s gonna make your eyes bleed.', 'f', NULL, NULL, NULL, NULL, NULL, NULL, '2009-07-26 03:35:28', NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;36;1mPiece Update (0.1ms)[0m   [0;1mUPDATE "pieces" SET "portfolio_id" = 1, "updated_at" = '2009-07-26 03:35:28' WHERE "id" = 3[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mPiece Create (0.1ms)[0m   [0mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, NULL, '2009-07-26 03:35:28', NULL, NULL, 'My Awesome Art', 12.75, NULL, NULL, NULL, NULL, NULL, NULL, 'This is so awesome it''s gonna make your eyes bleed.', 'f', NULL, NULL, NULL, NULL, NULL, NULL, '2009-07-26 03:35:28', NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;36;1mPiece Update (0.1ms)[0m   [0;1mUPDATE "pieces" SET "portfolio_id" = 1, "updated_at" = '2009-07-26 03:35:28' WHERE "id" = 4[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mPiece Create (0.1ms)[0m   [0mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, NULL, '2009-07-26 03:35:28', NULL, NULL, 'My Awesome Art', 12.75, NULL, NULL, NULL, NULL, NULL, NULL, 'This is so awesome it''s gonna make your eyes bleed.', 'f', NULL, NULL, NULL, NULL, NULL, NULL, '2009-07-26 03:35:28', NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;36;1mPiece Update (0.1ms)[0m   [0;1mUPDATE "pieces" SET "portfolio_id" = 1, "updated_at" = '2009-07-26 03:35:28' WHERE "id" = 5[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mPiece Create (0.1ms)[0m   [0mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, NULL, '2009-07-26 03:35:28', NULL, NULL, 'My Awesome Art', 12.75, NULL, NULL, NULL, NULL, NULL, NULL, 'This is so awesome it''s gonna make your eyes bleed.', 'f', NULL, NULL, NULL, NULL, NULL, NULL, '2009-07-26 03:35:28', NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;36;1mPiece Update (0.1ms)[0m   [0;1mUPDATE "pieces" SET "portfolio_id" = 1, "updated_at" = '2009-07-26 03:35:28' WHERE "id" = 6[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mPiece Create (0.1ms)[0m   [0mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, NULL, '2009-07-26 03:35:28', NULL, NULL, 'My Awesome Art', 12.75, NULL, NULL, NULL, NULL, NULL, NULL, 'This is so awesome it''s gonna make your eyes bleed.', 'f', NULL, NULL, NULL, NULL, NULL, NULL, '2009-07-26 03:35:28', NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;36;1mPiece Update (0.1ms)[0m   [0;1mUPDATE "pieces" SET "portfolio_id" = 1, "updated_at" = '2009-07-26 03:35:28' WHERE "id" = 7[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mPiece Create (0.1ms)[0m   [0mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, NULL, '2009-07-26 03:35:28', NULL, NULL, 'My Awesome Art', 12.75, NULL, NULL, NULL, NULL, NULL, NULL, 'This is so awesome it''s gonna make your eyes bleed.', 'f', NULL, NULL, NULL, NULL, NULL, NULL, '2009-07-26 03:35:28', NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;36;1mPiece Update (0.1ms)[0m   [0;1mUPDATE "pieces" SET "portfolio_id" = 1, "updated_at" = '2009-07-26 03:35:28' WHERE "id" = 8[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mPiece Create (0.1ms)[0m   [0mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, NULL, '2009-07-26 03:35:28', NULL, NULL, 'My Awesome Art', 12.75, NULL, NULL, NULL, NULL, NULL, NULL, 'This is so awesome it''s gonna make your eyes bleed.', 'f', NULL, NULL, NULL, NULL, NULL, NULL, '2009-07-26 03:35:28', NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;36;1mPiece Update (0.1ms)[0m   [0;1mUPDATE "pieces" SET "portfolio_id" = 1, "updated_at" = '2009-07-26 03:35:28' WHERE "id" = 9[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mPiece Create (0.1ms)[0m   [0mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, NULL, '2009-07-26 03:35:28', NULL, NULL, 'My Awesome Art', 12.75, NULL, NULL, NULL, NULL, NULL, NULL, 'This is so awesome it''s gonna make your eyes bleed.', 'f', NULL, NULL, NULL, NULL, NULL, NULL, '2009-07-26 03:35:28', NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;36;1mPiece Update (0.1ms)[0m   [0;1mUPDATE "pieces" SET "portfolio_id" = 1, "updated_at" = '2009-07-26 03:35:28' WHERE "id" = 10[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mPiece Create (0.1ms)[0m   [0mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, NULL, '2009-07-26 03:35:28', NULL, NULL, 'My Awesome Art', 12.75, NULL, NULL, NULL, NULL, NULL, NULL, 'This is so awesome it''s gonna make your eyes bleed.', 'f', NULL, NULL, NULL, NULL, NULL, NULL, '2009-07-26 03:35:28', NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;36;1mPiece Update (0.1ms)[0m   [0;1mUPDATE "pieces" SET "portfolio_id" = 1, "updated_at" = '2009-07-26 03:35:28' WHERE "id" = 11[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mPiece Create (0.1ms)[0m   [0mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, NULL, '2009-07-26 03:35:28', NULL, NULL, 'My Awesome Art', 12.75, NULL, NULL, NULL, NULL, NULL, NULL, 'This is so awesome it''s gonna make your eyes bleed.', 'f', NULL, NULL, NULL, NULL, NULL, NULL, '2009-07-26 03:35:28', NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;36;1mPiece Update (0.1ms)[0m   [0;1mUPDATE "pieces" SET "portfolio_id" = 1, "updated_at" = '2009-07-26 03:35:28' WHERE "id" = 12[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mPiece Create (0.1ms)[0m   [0mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, NULL, '2009-07-26 03:35:28', NULL, NULL, 'My Awesome Art', 12.75, NULL, NULL, NULL, NULL, NULL, NULL, 'This is so awesome it''s gonna make your eyes bleed.', 'f', NULL, NULL, NULL, NULL, NULL, NULL, '2009-07-26 03:35:28', NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;36;1mPiece Update (0.1ms)[0m   [0;1mUPDATE "pieces" SET "portfolio_id" = 1, "updated_at" = '2009-07-26 03:35:28' WHERE "id" = 13[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mPiece Create (0.1ms)[0m   [0mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, NULL, '2009-07-26 03:35:28', NULL, NULL, 'My Awesome Art', 12.75, NULL, NULL, NULL, NULL, NULL, NULL, 'This is so awesome it''s gonna make your eyes bleed.', 'f', NULL, NULL, NULL, NULL, NULL, NULL, '2009-07-26 03:35:28', NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;36;1mPiece Update (0.1ms)[0m   [0;1mUPDATE "pieces" SET "portfolio_id" = 1, "updated_at" = '2009-07-26 03:35:28' WHERE "id" = 14[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mPiece Create (0.1ms)[0m   [0mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, NULL, '2009-07-26 03:35:28', NULL, NULL, 'My Awesome Art', 12.75, NULL, NULL, NULL, NULL, NULL, NULL, 'This is so awesome it''s gonna make your eyes bleed.', 'f', NULL, NULL, NULL, NULL, NULL, NULL, '2009-07-26 03:35:28', NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;36;1mPiece Update (0.1ms)[0m   [0;1mUPDATE "pieces" SET "portfolio_id" = 1, "updated_at" = '2009-07-26 03:35:28' WHERE "id" = 15[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mPiece Create (0.1ms)[0m   [0mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, NULL, '2009-07-26 03:35:28', NULL, NULL, 'My Awesome Art', 12.75, NULL, NULL, NULL, NULL, NULL, NULL, 'This is so awesome it''s gonna make your eyes bleed.', 'f', NULL, NULL, NULL, NULL, NULL, NULL, '2009-07-26 03:35:28', NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;36;1mPiece Update (0.1ms)[0m   [0;1mUPDATE "pieces" SET "portfolio_id" = 1, "updated_at" = '2009-07-26 03:35:28' WHERE "id" = 16[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mPiece Create (0.1ms)[0m   [0mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, NULL, '2009-07-26 03:35:28', NULL, NULL, 'My Awesome Art', 12.75, NULL, NULL, NULL, NULL, NULL, NULL, 'This is so awesome it''s gonna make your eyes bleed.', 'f', NULL, NULL, NULL, NULL, NULL, NULL, '2009-07-26 03:35:28', NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;36;1mPiece Update (0.1ms)[0m   [0;1mUPDATE "pieces" SET "portfolio_id" = 1, "updated_at" = '2009-07-26 03:35:28' WHERE "id" = 17[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mPiece Create (0.1ms)[0m   [0mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, NULL, '2009-07-26 03:35:28', NULL, NULL, 'My Awesome Art', 12.75, NULL, NULL, NULL, NULL, NULL, NULL, 'This is so awesome it''s gonna make your eyes bleed.', 'f', NULL, NULL, NULL, NULL, NULL, NULL, '2009-07-26 03:35:28', NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;36;1mPiece Update (0.1ms)[0m   [0;1mUPDATE "pieces" SET "portfolio_id" = 1, "updated_at" = '2009-07-26 03:35:28' WHERE "id" = 18[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mPiece Create (0.1ms)[0m   [0mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, NULL, '2009-07-26 03:35:28', NULL, NULL, 'My Awesome Art', 12.75, NULL, NULL, NULL, NULL, NULL, NULL, 'This is so awesome it''s gonna make your eyes bleed.', 'f', NULL, NULL, NULL, NULL, NULL, NULL, '2009-07-26 03:35:28', NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;36;1mPiece Update (0.1ms)[0m   [0;1mUPDATE "pieces" SET "portfolio_id" = 1, "updated_at" = '2009-07-26 03:35:28' WHERE "id" = 19[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mPiece Create (0.1ms)[0m   [0mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, NULL, '2009-07-26 03:35:28', NULL, NULL, 'My Awesome Art', 12.75, NULL, NULL, NULL, NULL, NULL, NULL, 'This is so awesome it''s gonna make your eyes bleed.', 'f', NULL, NULL, NULL, NULL, NULL, NULL, '2009-07-26 03:35:28', NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;36;1mPiece Update (0.1ms)[0m   [0;1mUPDATE "pieces" SET "portfolio_id" = 1, "updated_at" = '2009-07-26 03:35:28' WHERE "id" = 20[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mPiece Create (0.1ms)[0m   [0mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, NULL, '2009-07-26 03:35:28', NULL, NULL, 'My Awesome Art', 12.75, NULL, NULL, NULL, NULL, NULL, NULL, 'This is so awesome it''s gonna make your eyes bleed.', 'f', NULL, NULL, NULL, NULL, NULL, NULL, '2009-07-26 03:35:28', NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;36;1mPiece Update (0.1ms)[0m   [0;1mUPDATE "pieces" SET "portfolio_id" = 1, "updated_at" = '2009-07-26 03:35:28' WHERE "id" = 21[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mPiece Create (0.1ms)[0m   [0mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, NULL, '2009-07-26 03:35:28', NULL, NULL, 'My Awesome Art', 12.75, NULL, NULL, NULL, NULL, NULL, NULL, 'This is so awesome it''s gonna make your eyes bleed.', 'f', NULL, NULL, NULL, NULL, NULL, NULL, '2009-07-26 03:35:28', NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;36;1mPiece Update (0.1ms)[0m   [0;1mUPDATE "pieces" SET "portfolio_id" = 1, "updated_at" = '2009-07-26 03:35:28' WHERE "id" = 22[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mPiece Create (0.1ms)[0m   [0mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, NULL, '2009-07-26 03:35:28', NULL, NULL, 'My Awesome Art', 12.75, NULL, NULL, NULL, NULL, NULL, NULL, 'This is so awesome it''s gonna make your eyes bleed.', 'f', NULL, NULL, NULL, NULL, NULL, NULL, '2009-07-26 03:35:28', NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;36;1mPiece Update (0.1ms)[0m   [0;1mUPDATE "pieces" SET "portfolio_id" = 1, "updated_at" = '2009-07-26 03:35:28' WHERE "id" = 23[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mPiece Create (0.1ms)[0m   [0mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, NULL, '2009-07-26 03:35:28', NULL, NULL, 'My Awesome Art', 12.75, NULL, NULL, NULL, NULL, NULL, NULL, 'This is so awesome it''s gonna make your eyes bleed.', 'f', NULL, NULL, NULL, NULL, NULL, NULL, '2009-07-26 03:35:28', NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;36;1mPiece Update (0.1ms)[0m   [0;1mUPDATE "pieces" SET "portfolio_id" = 1, "updated_at" = '2009-07-26 03:35:28' WHERE "id" = 24[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mPiece Create (0.1ms)[0m   [0mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, NULL, '2009-07-26 03:35:28', NULL, NULL, 'My Awesome Art', 12.75, NULL, NULL, NULL, NULL, NULL, NULL, 'This is so awesome it''s gonna make your eyes bleed.', 'f', NULL, NULL, NULL, NULL, NULL, NULL, '2009-07-26 03:35:28', NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;36;1mPiece Update (0.1ms)[0m   [0;1mUPDATE "pieces" SET "portfolio_id" = 1, "updated_at" = '2009-07-26 03:35:28' WHERE "id" = 25[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mPiece Load (3.7ms)[0m   [0;1mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 1) [0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login" = 'mcmaloney') LIMIT 1[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'michael@maloney.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.2ms)[0m   [0mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "photo_file_name", "photo_file_size", "crypted_password", "account_tier", "about_me", "remember_token_expires_at", "activation_code", "photo_updated_at", "photo_content_type", "remember_token", "tag_line", "first_name", "login", "last_name", "design_type", "email", "created_at") VALUES('', '33479658138b129aba2aebf5899acf3ba2bbea5a', '2009-07-26 03:35:28', NULL, NULL, NULL, 'd94a4c6587e2ae08052a8ddc5220116504a0a2ef', 2, NULL, NULL, '2a9423ef4112193f67ca9d86a227e940f9082bab', NULL, NULL, NULL, NULL, 'Michael', 'mcmaloney', 'Maloney', NULL, 'michael@maloney.com', '2009-07-26 03:35:28')[0m
+[paperclip] Saving attachments.
+  [4;36;1mPortfolio Load (0.1ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 1) LIMIT 1[0m
+  [4;35;1mPortfolio Create (0.1ms)[0m   [0mINSERT INTO "portfolios" ("updated_at", "user_id", "created_at") VALUES('2009-07-26 03:35:28', 1, '2009-07-26 03:35:28')[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login" = 'mcmaloney') LIMIT 1[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'michael@maloney.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.3ms)[0m   [0mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "photo_file_name", "photo_file_size", "crypted_password", "account_tier", "about_me", "remember_token_expires_at", "activation_code", "photo_updated_at", "photo_content_type", "remember_token", "tag_line", "first_name", "login", "last_name", "design_type", "email", "created_at") VALUES('', 'f492e6cfe31a55f0a193ceef1c26295a3c140d52', '2009-07-26 03:35:28', NULL, NULL, NULL, 'ef6ee9d41ebb81b3085b9cb3ccec89989fd9a3b2', 2, NULL, NULL, '60388717c7285fadb2c358acbf1b669d6415a953', NULL, NULL, NULL, NULL, 'Michael', 'mcmaloney', 'Maloney', NULL, 'michael@maloney.com', '2009-07-26 03:35:28')[0m
+[paperclip] Saving attachments.
+  [4;36;1mPortfolio Load (0.1ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 1) LIMIT 1[0m
+  [4;35;1mPortfolio Create (0.1ms)[0m   [0mINSERT INTO "portfolios" ("updated_at", "user_id", "created_at") VALUES('2009-07-26 03:35:28', 1, '2009-07-26 03:35:28')[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login" = 'mcmaloney') LIMIT 1[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'michael@maloney.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.2ms)[0m   [0mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "photo_file_name", "photo_file_size", "crypted_password", "account_tier", "about_me", "remember_token_expires_at", "activation_code", "photo_updated_at", "photo_content_type", "remember_token", "tag_line", "first_name", "login", "last_name", "design_type", "email", "created_at") VALUES('', 'ca80114a46e32ab74467bf4b6bcde7e09519f4a0', '2009-07-26 03:35:28', NULL, NULL, NULL, '4b6a575c4ccb68095cb97e21b79e31dfa79b8fc4', 2, NULL, NULL, '9235dd2655c24b068a6d4e5f99211884933ab497', NULL, NULL, NULL, NULL, 'Michael', 'mcmaloney', 'Maloney', NULL, 'michael@maloney.com', '2009-07-26 03:35:28')[0m
+[paperclip] Saving attachments.
+  [4;36;1mPortfolio Load (0.1ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 1) LIMIT 1[0m
+  [4;35;1mPortfolio Create (0.1ms)[0m   [0mINSERT INTO "portfolios" ("updated_at", "user_id", "created_at") VALUES('2009-07-26 03:35:28', 1, '2009-07-26 03:35:28')[0m
+  [4;36;1mPiece Create (0.1ms)[0m   [0;1mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, NULL, '2009-07-26 03:35:28', NULL, NULL, 'My Awesome Art', 12.75, NULL, NULL, NULL, NULL, NULL, NULL, 'This is so awesome it''s gonna make your eyes bleed.', 'f', NULL, NULL, NULL, NULL, NULL, NULL, '2009-07-26 03:35:28', NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mPiece Update (0.1ms)[0m   [0mUPDATE "pieces" SET "portfolio_id" = 1, "updated_at" = '2009-07-26 03:35:28' WHERE "id" = 1[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;36;1mPiece Create (0.1ms)[0m   [0;1mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, NULL, '2009-07-26 03:35:28', NULL, NULL, 'My Awesome Art', 12.75, NULL, NULL, NULL, NULL, NULL, NULL, 'This is so awesome it''s gonna make your eyes bleed.', 'f', NULL, NULL, NULL, NULL, NULL, NULL, '2009-07-26 03:35:28', NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mPiece Update (0.1ms)[0m   [0mUPDATE "pieces" SET "portfolio_id" = 1, "updated_at" = '2009-07-26 03:35:28' WHERE "id" = 2[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;36;1mPiece Create (0.1ms)[0m   [0;1mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, NULL, '2009-07-26 03:35:28', NULL, NULL, 'My Awesome Art', 12.75, NULL, NULL, NULL, NULL, NULL, NULL, 'This is so awesome it''s gonna make your eyes bleed.', 'f', NULL, NULL, NULL, NULL, NULL, NULL, '2009-07-26 03:35:28', NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mPiece Update (0.1ms)[0m   [0mUPDATE "pieces" SET "portfolio_id" = 1, "updated_at" = '2009-07-26 03:35:28' WHERE "id" = 3[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;36;1mPiece Create (0.1ms)[0m   [0;1mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, NULL, '2009-07-26 03:35:28', NULL, NULL, 'My Awesome Art', 12.75, NULL, NULL, NULL, NULL, NULL, NULL, 'This is so awesome it''s gonna make your eyes bleed.', 'f', NULL, NULL, NULL, NULL, NULL, NULL, '2009-07-26 03:35:28', NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mPiece Update (0.1ms)[0m   [0mUPDATE "pieces" SET "portfolio_id" = 1, "updated_at" = '2009-07-26 03:35:28' WHERE "id" = 4[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;36;1mPiece Create (0.1ms)[0m   [0;1mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, NULL, '2009-07-26 03:35:28', NULL, NULL, 'My Awesome Art', 12.75, NULL, NULL, NULL, NULL, NULL, NULL, 'This is so awesome it''s gonna make your eyes bleed.', 'f', NULL, NULL, NULL, NULL, NULL, NULL, '2009-07-26 03:35:28', NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mPiece Update (0.1ms)[0m   [0mUPDATE "pieces" SET "portfolio_id" = 1, "updated_at" = '2009-07-26 03:35:28' WHERE "id" = 5[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;36;1mPiece Create (0.1ms)[0m   [0;1mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, NULL, '2009-07-26 03:35:28', NULL, NULL, 'My Awesome Art', 12.75, NULL, NULL, NULL, NULL, NULL, NULL, 'This is so awesome it''s gonna make your eyes bleed.', 'f', NULL, NULL, NULL, NULL, NULL, NULL, '2009-07-26 03:35:28', NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mPiece Update (0.1ms)[0m   [0mUPDATE "pieces" SET "portfolio_id" = 1, "updated_at" = '2009-07-26 03:35:28' WHERE "id" = 6[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;36;1mPiece Create (0.1ms)[0m   [0;1mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, NULL, '2009-07-26 03:35:28', NULL, NULL, 'My Awesome Art', 12.75, NULL, NULL, NULL, NULL, NULL, NULL, 'This is so awesome it''s gonna make your eyes bleed.', 'f', NULL, NULL, NULL, NULL, NULL, NULL, '2009-07-26 03:35:28', NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mPiece Update (0.1ms)[0m   [0mUPDATE "pieces" SET "portfolio_id" = 1, "updated_at" = '2009-07-26 03:35:28' WHERE "id" = 7[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;36;1mPiece Create (0.1ms)[0m   [0;1mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, NULL, '2009-07-26 03:35:28', NULL, NULL, 'My Awesome Art', 12.75, NULL, NULL, NULL, NULL, NULL, NULL, 'This is so awesome it''s gonna make your eyes bleed.', 'f', NULL, NULL, NULL, NULL, NULL, NULL, '2009-07-26 03:35:28', NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mPiece Update (0.1ms)[0m   [0mUPDATE "pieces" SET "portfolio_id" = 1, "updated_at" = '2009-07-26 03:35:28' WHERE "id" = 8[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;36;1mPiece Create (0.1ms)[0m   [0;1mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, NULL, '2009-07-26 03:35:28', NULL, NULL, 'My Awesome Art', 12.75, NULL, NULL, NULL, NULL, NULL, NULL, 'This is so awesome it''s gonna make your eyes bleed.', 'f', NULL, NULL, NULL, NULL, NULL, NULL, '2009-07-26 03:35:28', NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mPiece Update (0.1ms)[0m   [0mUPDATE "pieces" SET "portfolio_id" = 1, "updated_at" = '2009-07-26 03:35:28' WHERE "id" = 9[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;36;1mPiece Create (0.1ms)[0m   [0;1mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, NULL, '2009-07-26 03:35:28', NULL, NULL, 'My Awesome Art', 12.75, NULL, NULL, NULL, NULL, NULL, NULL, 'This is so awesome it''s gonna make your eyes bleed.', 'f', NULL, NULL, NULL, NULL, NULL, NULL, '2009-07-26 03:35:28', NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mPiece Update (0.1ms)[0m   [0mUPDATE "pieces" SET "portfolio_id" = 1, "updated_at" = '2009-07-26 03:35:28' WHERE "id" = 10[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;36;1mPiece Create (0.1ms)[0m   [0;1mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, NULL, '2009-07-26 03:35:28', NULL, NULL, 'My Awesome Art', 12.75, NULL, NULL, NULL, NULL, NULL, NULL, 'This is so awesome it''s gonna make your eyes bleed.', 'f', NULL, NULL, NULL, NULL, NULL, NULL, '2009-07-26 03:35:28', NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mPiece Update (0.1ms)[0m   [0mUPDATE "pieces" SET "portfolio_id" = 1, "updated_at" = '2009-07-26 03:35:28' WHERE "id" = 11[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;36;1mPiece Create (0.1ms)[0m   [0;1mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, NULL, '2009-07-26 03:35:28', NULL, NULL, 'My Awesome Art', 12.75, NULL, NULL, NULL, NULL, NULL, NULL, 'This is so awesome it''s gonna make your eyes bleed.', 'f', NULL, NULL, NULL, NULL, NULL, NULL, '2009-07-26 03:35:28', NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mPiece Update (0.1ms)[0m   [0mUPDATE "pieces" SET "portfolio_id" = 1, "updated_at" = '2009-07-26 03:35:28' WHERE "id" = 12[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;36;1mPiece Create (0.1ms)[0m   [0;1mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, NULL, '2009-07-26 03:35:28', NULL, NULL, 'My Awesome Art', 12.75, NULL, NULL, NULL, NULL, NULL, NULL, 'This is so awesome it''s gonna make your eyes bleed.', 'f', NULL, NULL, NULL, NULL, NULL, NULL, '2009-07-26 03:35:28', NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mPiece Update (0.1ms)[0m   [0mUPDATE "pieces" SET "portfolio_id" = 1, "updated_at" = '2009-07-26 03:35:28' WHERE "id" = 13[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;36;1mPiece Create (0.1ms)[0m   [0;1mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, NULL, '2009-07-26 03:35:28', NULL, NULL, 'My Awesome Art', 12.75, NULL, NULL, NULL, NULL, NULL, NULL, 'This is so awesome it''s gonna make your eyes bleed.', 'f', NULL, NULL, NULL, NULL, NULL, NULL, '2009-07-26 03:35:28', NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mPiece Update (0.1ms)[0m   [0mUPDATE "pieces" SET "portfolio_id" = 1, "updated_at" = '2009-07-26 03:35:28' WHERE "id" = 14[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;36;1mPiece Create (0.1ms)[0m   [0;1mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, NULL, '2009-07-26 03:35:28', NULL, NULL, 'My Awesome Art', 12.75, NULL, NULL, NULL, NULL, NULL, NULL, 'This is so awesome it''s gonna make your eyes bleed.', 'f', NULL, NULL, NULL, NULL, NULL, NULL, '2009-07-26 03:35:28', NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mPiece Update (0.1ms)[0m   [0mUPDATE "pieces" SET "portfolio_id" = 1, "updated_at" = '2009-07-26 03:35:28' WHERE "id" = 15[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mPiece Load (2.3ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 1) [0m
+  [4;36;1mUser Exists (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login" = 'mcmaloney') LIMIT 1[0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'michael@maloney.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.3ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "photo_file_name", "photo_file_size", "crypted_password", "account_tier", "about_me", "remember_token_expires_at", "activation_code", "photo_updated_at", "photo_content_type", "remember_token", "tag_line", "first_name", "login", "last_name", "design_type", "email", "created_at") VALUES('', '3f0611f4cd0fe3ed17114e2178da55ba4e6344b6', '2009-07-26 03:35:28', NULL, NULL, NULL, '7f586dfc829605471ef6bf679930392c2de41c05', 1, NULL, NULL, '9c0b76115e66b2879e84734e499ee54925a5cdcc', NULL, NULL, NULL, NULL, 'Michael', 'mcmaloney', 'Maloney', NULL, 'michael@maloney.com', '2009-07-26 03:35:28')[0m
+[paperclip] Saving attachments.
+  [4;35;1mPortfolio Load (0.1ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 1) LIMIT 1[0m
+  [4;36;1mPortfolio Create (0.1ms)[0m   [0;1mINSERT INTO "portfolios" ("updated_at", "user_id", "created_at") VALUES('2009-07-26 03:35:28', 1, '2009-07-26 03:35:28')[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login" = 'mcmaloney') LIMIT 1[0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'michael@maloney.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "photo_file_name", "photo_file_size", "crypted_password", "account_tier", "about_me", "remember_token_expires_at", "activation_code", "photo_updated_at", "photo_content_type", "remember_token", "tag_line", "first_name", "login", "last_name", "design_type", "email", "created_at") VALUES('', '30f5cc6c8fe9437c3b2524ac7b3df58461a94aa3', '2009-07-26 03:35:29', NULL, NULL, NULL, '8631713fc602c923eadf95cf99984c86bf72c44e', 1, NULL, NULL, 'e7159b22dff6e7b21b25f85fb856c15b3955c122', NULL, NULL, NULL, NULL, 'Michael', 'mcmaloney', 'Maloney', NULL, 'michael@maloney.com', '2009-07-26 03:35:29')[0m
+[paperclip] Saving attachments.
+  [4;35;1mPortfolio Load (0.1ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 1) LIMIT 1[0m
+  [4;36;1mPortfolio Create (0.1ms)[0m   [0;1mINSERT INTO "portfolios" ("updated_at", "user_id", "created_at") VALUES('2009-07-26 03:35:29', 1, '2009-07-26 03:35:29')[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login" = 'mcmaloney') LIMIT 1[0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'michael@maloney.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "photo_file_name", "photo_file_size", "crypted_password", "account_tier", "about_me", "remember_token_expires_at", "activation_code", "photo_updated_at", "photo_content_type", "remember_token", "tag_line", "first_name", "login", "last_name", "design_type", "email", "created_at") VALUES('', 'dfe2c3da7d78c5ddc0d63577c20f784cdafb1d20', '2009-07-26 03:35:29', NULL, NULL, NULL, '144a164b0d0ebe64443e571334fac0f034655c68', 1, NULL, NULL, 'cd7cdd7415036eb0f44358e2efcb3c2ecfbf1214', NULL, NULL, NULL, NULL, 'Michael', 'mcmaloney', 'Maloney', NULL, 'michael@maloney.com', '2009-07-26 03:35:29')[0m
+[paperclip] Saving attachments.
+  [4;35;1mPortfolio Load (0.1ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 1) LIMIT 1[0m
+  [4;36;1mPortfolio Create (0.1ms)[0m   [0;1mINSERT INTO "portfolios" ("updated_at", "user_id", "created_at") VALUES('2009-07-26 03:35:29', 1, '2009-07-26 03:35:29')[0m
+  [4;35;1mPiece Create (0.1ms)[0m   [0mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, NULL, '2009-07-26 03:35:29', NULL, NULL, 'My Awesome Art', 12.75, NULL, NULL, NULL, NULL, NULL, NULL, 'This is so awesome it''s gonna make your eyes bleed.', 'f', NULL, NULL, NULL, NULL, NULL, NULL, '2009-07-26 03:35:29', NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;36;1mPiece Update (0.1ms)[0m   [0;1mUPDATE "pieces" SET "portfolio_id" = 1, "updated_at" = '2009-07-26 03:35:29' WHERE "id" = 1[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mPiece Create (0.1ms)[0m   [0mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, NULL, '2009-07-26 03:35:29', NULL, NULL, 'My Awesome Art', 12.75, NULL, NULL, NULL, NULL, NULL, NULL, 'This is so awesome it''s gonna make your eyes bleed.', 'f', NULL, NULL, NULL, NULL, NULL, NULL, '2009-07-26 03:35:29', NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;36;1mPiece Update (0.1ms)[0m   [0;1mUPDATE "pieces" SET "portfolio_id" = 1, "updated_at" = '2009-07-26 03:35:29' WHERE "id" = 2[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mPiece Create (0.1ms)[0m   [0mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, NULL, '2009-07-26 03:35:29', NULL, NULL, 'My Awesome Art', 12.75, NULL, NULL, NULL, NULL, NULL, NULL, 'This is so awesome it''s gonna make your eyes bleed.', 'f', NULL, NULL, NULL, NULL, NULL, NULL, '2009-07-26 03:35:29', NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;36;1mPiece Update (0.1ms)[0m   [0;1mUPDATE "pieces" SET "portfolio_id" = 1, "updated_at" = '2009-07-26 03:35:29' WHERE "id" = 3[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mPiece Create (0.1ms)[0m   [0mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, NULL, '2009-07-26 03:35:29', NULL, NULL, 'My Awesome Art', 12.75, NULL, NULL, NULL, NULL, NULL, NULL, 'This is so awesome it''s gonna make your eyes bleed.', 'f', NULL, NULL, NULL, NULL, NULL, NULL, '2009-07-26 03:35:29', NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;36;1mPiece Update (0.1ms)[0m   [0;1mUPDATE "pieces" SET "portfolio_id" = 1, "updated_at" = '2009-07-26 03:35:29' WHERE "id" = 4[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mPiece Create (0.1ms)[0m   [0mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, NULL, '2009-07-26 03:35:29', NULL, NULL, 'My Awesome Art', 12.75, NULL, NULL, NULL, NULL, NULL, NULL, 'This is so awesome it''s gonna make your eyes bleed.', 'f', NULL, NULL, NULL, NULL, NULL, NULL, '2009-07-26 03:35:29', NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;36;1mPiece Update (0.1ms)[0m   [0;1mUPDATE "pieces" SET "portfolio_id" = 1, "updated_at" = '2009-07-26 03:35:29' WHERE "id" = 5[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mPiece Load (0.9ms)[0m   [0;1mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 1) [0m
+  [4;35;1mPiece Create (0.3ms)[0m   [0mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, NULL, '2009-07-26 03:35:29', NULL, NULL, 'My Awesome Art', 12.75, NULL, NULL, NULL, NULL, NULL, NULL, 'This is so awesome it''s gonna make your eyes bleed.', 't', NULL, NULL, NULL, NULL, NULL, NULL, '2009-07-26 03:35:29', NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+New Relic Agent not running
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login" = 'mcmaloney') LIMIT 1[0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'michael@maloney.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.3ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "photo_file_name", "photo_file_size", "crypted_password", "account_tier", "about_me", "remember_token_expires_at", "activation_code", "photo_updated_at", "photo_content_type", "remember_token", "tag_line", "first_name", "login", "last_name", "design_type", "email", "created_at") VALUES('', 'ccc8a6d21c1a429f9de1afe69fc88073d7461f3c', '2009-07-28 02:46:45', NULL, NULL, NULL, 'f09183d90e97b736327a9fc47dc4344cb5a3196b', 1, NULL, NULL, '742387559ddd76ed93a6e94cccba14ee0c417ac6', NULL, NULL, NULL, NULL, 'Michael', 'mcmaloney', 'Maloney', NULL, 'michael@maloney.com', '2009-07-28 02:46:45')[0m
+[paperclip] Saving attachments.
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login" = 'mcmaloney') LIMIT 1[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'michael@maloney.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.2ms)[0m   [0mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "photo_file_name", "photo_file_size", "crypted_password", "account_tier", "about_me", "remember_token_expires_at", "activation_code", "photo_updated_at", "photo_content_type", "remember_token", "tag_line", "first_name", "login", "last_name", "design_type", "email", "created_at") VALUES('', 'b4ef776817c5548a3c27a4fc0c9be4d982ceb6d5', '2009-07-28 02:46:45', NULL, NULL, NULL, '2cc47743170fa8fe5f11863e0782760a9f6d93f1', 1, NULL, NULL, 'a65a5b497412be7eecf8f7f1de862d7d0f3aaddc', NULL, NULL, NULL, NULL, 'Michael', 'mcmaloney', 'Maloney', NULL, 'michael@maloney.com', '2009-07-28 02:46:45')[0m
+[paperclip] Saving attachments.
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login" = 'mcmaloney') LIMIT 1[0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'michael@maloney.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "photo_file_name", "photo_file_size", "crypted_password", "account_tier", "about_me", "remember_token_expires_at", "activation_code", "photo_updated_at", "photo_content_type", "remember_token", "tag_line", "first_name", "login", "last_name", "design_type", "email", "created_at") VALUES('', '815b3346d0ed64e7fd71dc807f90f681183e8b13', '2009-07-28 02:46:45', NULL, NULL, NULL, '69cc828e183eeed9570085e72b34b78caeaa17b7', 1, NULL, NULL, '496f1e08b5c2959d003d546df4a9785cd281318a', NULL, NULL, NULL, NULL, 'Michael', 'mcmaloney', 'Maloney', NULL, 'michael@maloney.com', '2009-07-28 02:46:45')[0m
+[paperclip] Saving attachments.
+  [4;35;1mPortfolio Load (0.1ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 1) LIMIT 1[0m
+  [4;36;1mPortfolio Create (0.1ms)[0m   [0;1mINSERT INTO "portfolios" ("updated_at", "user_id", "created_at") VALUES('2009-07-28 02:46:45', 1, '2009-07-28 02:46:45')[0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login" = 'mcmaloney') LIMIT 1[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'michael@maloney.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.2ms)[0m   [0mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "photo_file_name", "photo_file_size", "crypted_password", "account_tier", "about_me", "remember_token_expires_at", "activation_code", "photo_updated_at", "photo_content_type", "remember_token", "tag_line", "first_name", "login", "last_name", "design_type", "email", "created_at") VALUES('', '72e6a466a1c778d58c379fb4dbb6844328fbb70b', '2009-07-28 02:46:45', NULL, NULL, NULL, 'd0c750369dccf55f34f03060a157155ab7b0fa7b', 1, NULL, NULL, '5759ac9618d23a69f5f2b85d460149ce6a25adea', NULL, NULL, NULL, NULL, 'Michael', 'mcmaloney', 'Maloney', NULL, 'michael@maloney.com', '2009-07-28 02:46:45')[0m
+[paperclip] Saving attachments.
+  [4;36;1mUser Update (0.1ms)[0m   [0;1mUPDATE "users" SET "activated_at" = '2009-07-28 02:46:45', "activation_code" = NULL, "updated_at" = '2009-07-28 02:46:45' WHERE "id" = 1[0m
+[paperclip] Saving attachments.
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login" = 'mcmaloney') LIMIT 1[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'michael@maloney.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.3ms)[0m   [0mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "photo_file_name", "photo_file_size", "crypted_password", "account_tier", "about_me", "remember_token_expires_at", "activation_code", "photo_updated_at", "photo_content_type", "remember_token", "tag_line", "first_name", "login", "last_name", "design_type", "email", "created_at") VALUES('', '5026d2d05cf3443f879341cfe962a13a96e6b94e', '2009-07-28 02:46:45', NULL, NULL, NULL, '7aa261b30832e34bbf164a92482169a276e2222b', 1, NULL, NULL, 'e38ca5e8948149c4a3db4a0bb0ab08042689336c', NULL, NULL, NULL, NULL, 'Michael', 'mcmaloney', 'Maloney', NULL, 'michael@maloney.com', '2009-07-28 02:46:45')[0m
+[paperclip] Saving attachments.
+  [4;36;1mPiece Load (0.1ms)[0m   [0;1mSELECT "pieces".* FROM "pieces" INNER JOIN "portfolios" ON "pieces".portfolio_id = "portfolios".id WHERE (("portfolios".user_id = 1)) [0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login" = 'mcmaloney') LIMIT 1[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'michael@maloney.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.2ms)[0m   [0mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "photo_file_name", "photo_file_size", "crypted_password", "account_tier", "about_me", "remember_token_expires_at", "activation_code", "photo_updated_at", "photo_content_type", "remember_token", "tag_line", "first_name", "login", "last_name", "design_type", "email", "created_at") VALUES('', 'e36a65bc5a29778902c62ad040714e86261270a0', '2009-07-28 02:46:45', NULL, NULL, NULL, '5e61fac4806ab34e51aec502236f1affdc35e6fe', 1, NULL, NULL, '902887094407982b0a840e15e695c74236e6c20d', NULL, NULL, NULL, NULL, 'Michael', 'mcmaloney', 'Maloney', NULL, 'michael@maloney.com', '2009-07-28 02:46:45')[0m
+[paperclip] Saving attachments.
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login" = 'mcmaloney') LIMIT 1[0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'michael@maloney.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "photo_file_name", "photo_file_size", "crypted_password", "account_tier", "about_me", "remember_token_expires_at", "activation_code", "photo_updated_at", "photo_content_type", "remember_token", "tag_line", "first_name", "login", "last_name", "design_type", "email", "created_at") VALUES('', '37623d7b43593be43c95b988f8d4a1874e663792', '2009-07-28 02:46:45', NULL, NULL, NULL, '7b6ce71d115aaf7e8061b7eeeb780b8d230bc475', 3, NULL, NULL, '4268886a76241eb25679497505b6f792729afb82', NULL, NULL, NULL, NULL, 'Michael', 'mcmaloney', 'Maloney', NULL, 'michael@maloney.com', '2009-07-28 02:46:45')[0m
+[paperclip] Saving attachments.
+  [4;35;1mPortfolio Load (0.1ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 1) LIMIT 1[0m
+  [4;36;1mPortfolio Create (0.1ms)[0m   [0;1mINSERT INTO "portfolios" ("updated_at", "user_id", "created_at") VALUES('2009-07-28 02:46:45', 1, '2009-07-28 02:46:45')[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login" = 'mcmaloney') LIMIT 1[0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'michael@maloney.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "photo_file_name", "photo_file_size", "crypted_password", "account_tier", "about_me", "remember_token_expires_at", "activation_code", "photo_updated_at", "photo_content_type", "remember_token", "tag_line", "first_name", "login", "last_name", "design_type", "email", "created_at") VALUES('', 'c1e953d41be9afbc9cc1129c1c53d060962ec97a', '2009-07-28 02:46:45', NULL, NULL, NULL, '181d704a64b15fb3cba33aa562fedb9e1de39657', 3, NULL, NULL, '607969ade790d62359e0f10a137962ffd4edac45', NULL, NULL, NULL, NULL, 'Michael', 'mcmaloney', 'Maloney', NULL, 'michael@maloney.com', '2009-07-28 02:46:45')[0m
+[paperclip] Saving attachments.
+  [4;35;1mPortfolio Load (0.1ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 1) LIMIT 1[0m
+  [4;36;1mPortfolio Create (0.1ms)[0m   [0;1mINSERT INTO "portfolios" ("updated_at", "user_id", "created_at") VALUES('2009-07-28 02:46:45', 1, '2009-07-28 02:46:45')[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login" = 'mcmaloney') LIMIT 1[0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'michael@maloney.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "photo_file_name", "photo_file_size", "crypted_password", "account_tier", "about_me", "remember_token_expires_at", "activation_code", "photo_updated_at", "photo_content_type", "remember_token", "tag_line", "first_name", "login", "last_name", "design_type", "email", "created_at") VALUES('', '17bc9f24faadac6ee6dd15dd90f9c61c67d7fff2', '2009-07-28 02:46:45', NULL, NULL, NULL, '96c50e56af4a5aef3f94c23f2badda2bf6280b7f', 3, NULL, NULL, '49b710f3c5c86084f22dc57974f140b5420fdbdd', NULL, NULL, NULL, NULL, 'Michael', 'mcmaloney', 'Maloney', NULL, 'michael@maloney.com', '2009-07-28 02:46:45')[0m
+[paperclip] Saving attachments.
+  [4;35;1mPortfolio Load (0.1ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 1) LIMIT 1[0m
+  [4;36;1mPortfolio Create (0.1ms)[0m   [0;1mINSERT INTO "portfolios" ("updated_at", "user_id", "created_at") VALUES('2009-07-28 02:46:45', 1, '2009-07-28 02:46:45')[0m
+  [4;35;1mPiece Create (0.1ms)[0m   [0mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, NULL, '2009-07-28 02:46:45', NULL, NULL, 'My Awesome Art', 12.75, NULL, NULL, NULL, NULL, NULL, NULL, 'This is so awesome it''s gonna make your eyes bleed.', 'f', NULL, NULL, NULL, NULL, NULL, NULL, '2009-07-28 02:46:45', NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;36;1mPiece Update (0.1ms)[0m   [0;1mUPDATE "pieces" SET "portfolio_id" = 1, "updated_at" = '2009-07-28 02:46:45' WHERE "id" = 1[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mPiece Create (0.1ms)[0m   [0mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, NULL, '2009-07-28 02:46:45', NULL, NULL, 'My Awesome Art', 12.75, NULL, NULL, NULL, NULL, NULL, NULL, 'This is so awesome it''s gonna make your eyes bleed.', 'f', NULL, NULL, NULL, NULL, NULL, NULL, '2009-07-28 02:46:45', NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;36;1mPiece Update (0.1ms)[0m   [0;1mUPDATE "pieces" SET "portfolio_id" = 1, "updated_at" = '2009-07-28 02:46:45' WHERE "id" = 2[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mPiece Create (0.1ms)[0m   [0mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, NULL, '2009-07-28 02:46:45', NULL, NULL, 'My Awesome Art', 12.75, NULL, NULL, NULL, NULL, NULL, NULL, 'This is so awesome it''s gonna make your eyes bleed.', 'f', NULL, NULL, NULL, NULL, NULL, NULL, '2009-07-28 02:46:45', NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;36;1mPiece Update (0.1ms)[0m   [0;1mUPDATE "pieces" SET "portfolio_id" = 1, "updated_at" = '2009-07-28 02:46:45' WHERE "id" = 3[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mPiece Create (0.1ms)[0m   [0mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, NULL, '2009-07-28 02:46:45', NULL, NULL, 'My Awesome Art', 12.75, NULL, NULL, NULL, NULL, NULL, NULL, 'This is so awesome it''s gonna make your eyes bleed.', 'f', NULL, NULL, NULL, NULL, NULL, NULL, '2009-07-28 02:46:45', NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;36;1mPiece Update (0.1ms)[0m   [0;1mUPDATE "pieces" SET "portfolio_id" = 1, "updated_at" = '2009-07-28 02:46:45' WHERE "id" = 4[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mPiece Create (0.1ms)[0m   [0mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, NULL, '2009-07-28 02:46:45', NULL, NULL, 'My Awesome Art', 12.75, NULL, NULL, NULL, NULL, NULL, NULL, 'This is so awesome it''s gonna make your eyes bleed.', 'f', NULL, NULL, NULL, NULL, NULL, NULL, '2009-07-28 02:46:45', NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;36;1mPiece Update (0.1ms)[0m   [0;1mUPDATE "pieces" SET "portfolio_id" = 1, "updated_at" = '2009-07-28 02:46:45' WHERE "id" = 5[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mPiece Create (0.1ms)[0m   [0mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, NULL, '2009-07-28 02:46:45', NULL, NULL, 'My Awesome Art', 12.75, NULL, NULL, NULL, NULL, NULL, NULL, 'This is so awesome it''s gonna make your eyes bleed.', 'f', NULL, NULL, NULL, NULL, NULL, NULL, '2009-07-28 02:46:45', NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;36;1mPiece Update (0.1ms)[0m   [0;1mUPDATE "pieces" SET "portfolio_id" = 1, "updated_at" = '2009-07-28 02:46:45' WHERE "id" = 6[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mPiece Create (0.1ms)[0m   [0mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, NULL, '2009-07-28 02:46:45', NULL, NULL, 'My Awesome Art', 12.75, NULL, NULL, NULL, NULL, NULL, NULL, 'This is so awesome it''s gonna make your eyes bleed.', 'f', NULL, NULL, NULL, NULL, NULL, NULL, '2009-07-28 02:46:45', NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;36;1mPiece Update (0.1ms)[0m   [0;1mUPDATE "pieces" SET "portfolio_id" = 1, "updated_at" = '2009-07-28 02:46:45' WHERE "id" = 7[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mPiece Create (0.1ms)[0m   [0mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, NULL, '2009-07-28 02:46:45', NULL, NULL, 'My Awesome Art', 12.75, NULL, NULL, NULL, NULL, NULL, NULL, 'This is so awesome it''s gonna make your eyes bleed.', 'f', NULL, NULL, NULL, NULL, NULL, NULL, '2009-07-28 02:46:45', NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;36;1mPiece Update (0.1ms)[0m   [0;1mUPDATE "pieces" SET "portfolio_id" = 1, "updated_at" = '2009-07-28 02:46:45' WHERE "id" = 8[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mPiece Create (0.1ms)[0m   [0mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, NULL, '2009-07-28 02:46:45', NULL, NULL, 'My Awesome Art', 12.75, NULL, NULL, NULL, NULL, NULL, NULL, 'This is so awesome it''s gonna make your eyes bleed.', 'f', NULL, NULL, NULL, NULL, NULL, NULL, '2009-07-28 02:46:45', NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;36;1mPiece Update (0.1ms)[0m   [0;1mUPDATE "pieces" SET "portfolio_id" = 1, "updated_at" = '2009-07-28 02:46:45' WHERE "id" = 9[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mPiece Create (0.1ms)[0m   [0mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, NULL, '2009-07-28 02:46:45', NULL, NULL, 'My Awesome Art', 12.75, NULL, NULL, NULL, NULL, NULL, NULL, 'This is so awesome it''s gonna make your eyes bleed.', 'f', NULL, NULL, NULL, NULL, NULL, NULL, '2009-07-28 02:46:45', NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;36;1mPiece Update (0.1ms)[0m   [0;1mUPDATE "pieces" SET "portfolio_id" = 1, "updated_at" = '2009-07-28 02:46:45' WHERE "id" = 10[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mPiece Create (0.1ms)[0m   [0mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, NULL, '2009-07-28 02:46:45', NULL, NULL, 'My Awesome Art', 12.75, NULL, NULL, NULL, NULL, NULL, NULL, 'This is so awesome it''s gonna make your eyes bleed.', 'f', NULL, NULL, NULL, NULL, NULL, NULL, '2009-07-28 02:46:45', NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;36;1mPiece Update (0.1ms)[0m   [0;1mUPDATE "pieces" SET "portfolio_id" = 1, "updated_at" = '2009-07-28 02:46:45' WHERE "id" = 11[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mPiece Create (0.1ms)[0m   [0mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, NULL, '2009-07-28 02:46:45', NULL, NULL, 'My Awesome Art', 12.75, NULL, NULL, NULL, NULL, NULL, NULL, 'This is so awesome it''s gonna make your eyes bleed.', 'f', NULL, NULL, NULL, NULL, NULL, NULL, '2009-07-28 02:46:45', NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;36;1mPiece Update (0.1ms)[0m   [0;1mUPDATE "pieces" SET "portfolio_id" = 1, "updated_at" = '2009-07-28 02:46:45' WHERE "id" = 12[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mPiece Create (0.1ms)[0m   [0mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, NULL, '2009-07-28 02:46:45', NULL, NULL, 'My Awesome Art', 12.75, NULL, NULL, NULL, NULL, NULL, NULL, 'This is so awesome it''s gonna make your eyes bleed.', 'f', NULL, NULL, NULL, NULL, NULL, NULL, '2009-07-28 02:46:45', NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;36;1mPiece Update (0.1ms)[0m   [0;1mUPDATE "pieces" SET "portfolio_id" = 1, "updated_at" = '2009-07-28 02:46:45' WHERE "id" = 13[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mPiece Create (0.1ms)[0m   [0mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, NULL, '2009-07-28 02:46:45', NULL, NULL, 'My Awesome Art', 12.75, NULL, NULL, NULL, NULL, NULL, NULL, 'This is so awesome it''s gonna make your eyes bleed.', 'f', NULL, NULL, NULL, NULL, NULL, NULL, '2009-07-28 02:46:45', NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;36;1mPiece Update (0.1ms)[0m   [0;1mUPDATE "pieces" SET "portfolio_id" = 1, "updated_at" = '2009-07-28 02:46:45' WHERE "id" = 14[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mPiece Create (0.1ms)[0m   [0mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, NULL, '2009-07-28 02:46:45', NULL, NULL, 'My Awesome Art', 12.75, NULL, NULL, NULL, NULL, NULL, NULL, 'This is so awesome it''s gonna make your eyes bleed.', 'f', NULL, NULL, NULL, NULL, NULL, NULL, '2009-07-28 02:46:45', NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;36;1mPiece Update (0.1ms)[0m   [0;1mUPDATE "pieces" SET "portfolio_id" = 1, "updated_at" = '2009-07-28 02:46:45' WHERE "id" = 15[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mPiece Create (0.1ms)[0m   [0mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, NULL, '2009-07-28 02:46:45', NULL, NULL, 'My Awesome Art', 12.75, NULL, NULL, NULL, NULL, NULL, NULL, 'This is so awesome it''s gonna make your eyes bleed.', 'f', NULL, NULL, NULL, NULL, NULL, NULL, '2009-07-28 02:46:45', NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;36;1mPiece Update (0.1ms)[0m   [0;1mUPDATE "pieces" SET "portfolio_id" = 1, "updated_at" = '2009-07-28 02:46:45' WHERE "id" = 16[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mPiece Create (0.1ms)[0m   [0mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, NULL, '2009-07-28 02:46:45', NULL, NULL, 'My Awesome Art', 12.75, NULL, NULL, NULL, NULL, NULL, NULL, 'This is so awesome it''s gonna make your eyes bleed.', 'f', NULL, NULL, NULL, NULL, NULL, NULL, '2009-07-28 02:46:45', NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;36;1mPiece Update (0.1ms)[0m   [0;1mUPDATE "pieces" SET "portfolio_id" = 1, "updated_at" = '2009-07-28 02:46:45' WHERE "id" = 17[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mPiece Create (0.1ms)[0m   [0mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, NULL, '2009-07-28 02:46:45', NULL, NULL, 'My Awesome Art', 12.75, NULL, NULL, NULL, NULL, NULL, NULL, 'This is so awesome it''s gonna make your eyes bleed.', 'f', NULL, NULL, NULL, NULL, NULL, NULL, '2009-07-28 02:46:45', NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;36;1mPiece Update (0.1ms)[0m   [0;1mUPDATE "pieces" SET "portfolio_id" = 1, "updated_at" = '2009-07-28 02:46:45' WHERE "id" = 18[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mPiece Create (0.1ms)[0m   [0mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, NULL, '2009-07-28 02:46:45', NULL, NULL, 'My Awesome Art', 12.75, NULL, NULL, NULL, NULL, NULL, NULL, 'This is so awesome it''s gonna make your eyes bleed.', 'f', NULL, NULL, NULL, NULL, NULL, NULL, '2009-07-28 02:46:45', NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;36;1mPiece Update (0.1ms)[0m   [0;1mUPDATE "pieces" SET "portfolio_id" = 1, "updated_at" = '2009-07-28 02:46:45' WHERE "id" = 19[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mPiece Create (0.1ms)[0m   [0mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, NULL, '2009-07-28 02:46:45', NULL, NULL, 'My Awesome Art', 12.75, NULL, NULL, NULL, NULL, NULL, NULL, 'This is so awesome it''s gonna make your eyes bleed.', 'f', NULL, NULL, NULL, NULL, NULL, NULL, '2009-07-28 02:46:45', NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;36;1mPiece Update (0.1ms)[0m   [0;1mUPDATE "pieces" SET "portfolio_id" = 1, "updated_at" = '2009-07-28 02:46:45' WHERE "id" = 20[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mPiece Create (0.1ms)[0m   [0mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, NULL, '2009-07-28 02:46:45', NULL, NULL, 'My Awesome Art', 12.75, NULL, NULL, NULL, NULL, NULL, NULL, 'This is so awesome it''s gonna make your eyes bleed.', 'f', NULL, NULL, NULL, NULL, NULL, NULL, '2009-07-28 02:46:45', NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;36;1mPiece Update (0.1ms)[0m   [0;1mUPDATE "pieces" SET "portfolio_id" = 1, "updated_at" = '2009-07-28 02:46:45' WHERE "id" = 21[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mPiece Create (0.1ms)[0m   [0mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, NULL, '2009-07-28 02:46:45', NULL, NULL, 'My Awesome Art', 12.75, NULL, NULL, NULL, NULL, NULL, NULL, 'This is so awesome it''s gonna make your eyes bleed.', 'f', NULL, NULL, NULL, NULL, NULL, NULL, '2009-07-28 02:46:45', NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;36;1mPiece Update (0.1ms)[0m   [0;1mUPDATE "pieces" SET "portfolio_id" = 1, "updated_at" = '2009-07-28 02:46:45' WHERE "id" = 22[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mPiece Create (0.1ms)[0m   [0mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, NULL, '2009-07-28 02:46:45', NULL, NULL, 'My Awesome Art', 12.75, NULL, NULL, NULL, NULL, NULL, NULL, 'This is so awesome it''s gonna make your eyes bleed.', 'f', NULL, NULL, NULL, NULL, NULL, NULL, '2009-07-28 02:46:45', NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;36;1mPiece Update (0.1ms)[0m   [0;1mUPDATE "pieces" SET "portfolio_id" = 1, "updated_at" = '2009-07-28 02:46:45' WHERE "id" = 23[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mPiece Create (0.1ms)[0m   [0mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, NULL, '2009-07-28 02:46:45', NULL, NULL, 'My Awesome Art', 12.75, NULL, NULL, NULL, NULL, NULL, NULL, 'This is so awesome it''s gonna make your eyes bleed.', 'f', NULL, NULL, NULL, NULL, NULL, NULL, '2009-07-28 02:46:45', NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;36;1mPiece Update (0.1ms)[0m   [0;1mUPDATE "pieces" SET "portfolio_id" = 1, "updated_at" = '2009-07-28 02:46:45' WHERE "id" = 24[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mPiece Create (0.1ms)[0m   [0mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, NULL, '2009-07-28 02:46:45', NULL, NULL, 'My Awesome Art', 12.75, NULL, NULL, NULL, NULL, NULL, NULL, 'This is so awesome it''s gonna make your eyes bleed.', 'f', NULL, NULL, NULL, NULL, NULL, NULL, '2009-07-28 02:46:45', NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;36;1mPiece Update (0.1ms)[0m   [0;1mUPDATE "pieces" SET "portfolio_id" = 1, "updated_at" = '2009-07-28 02:46:45' WHERE "id" = 25[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mPiece Load (3.8ms)[0m   [0;1mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 1) [0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login" = 'mcmaloney') LIMIT 1[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'michael@maloney.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.2ms)[0m   [0mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "photo_file_name", "photo_file_size", "crypted_password", "account_tier", "about_me", "remember_token_expires_at", "activation_code", "photo_updated_at", "photo_content_type", "remember_token", "tag_line", "first_name", "login", "last_name", "design_type", "email", "created_at") VALUES('', 'c0b289f4c1084916eb23db4da128bc8b947f21c5', '2009-07-28 02:46:45', NULL, NULL, NULL, '565d07f585d9e6ddc79b50e547027bb97851dec1', 2, NULL, NULL, 'cebfa887cdd87c6e46c07094b344094ca949c382', NULL, NULL, NULL, NULL, 'Michael', 'mcmaloney', 'Maloney', NULL, 'michael@maloney.com', '2009-07-28 02:46:45')[0m
+[paperclip] Saving attachments.
+  [4;36;1mPortfolio Load (0.1ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 1) LIMIT 1[0m
+  [4;35;1mPortfolio Create (0.1ms)[0m   [0mINSERT INTO "portfolios" ("updated_at", "user_id", "created_at") VALUES('2009-07-28 02:46:45', 1, '2009-07-28 02:46:45')[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login" = 'mcmaloney') LIMIT 1[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'michael@maloney.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.2ms)[0m   [0mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "photo_file_name", "photo_file_size", "crypted_password", "account_tier", "about_me", "remember_token_expires_at", "activation_code", "photo_updated_at", "photo_content_type", "remember_token", "tag_line", "first_name", "login", "last_name", "design_type", "email", "created_at") VALUES('', '892c948b67194b6ee3c0f78255ff323ee02bda47', '2009-07-28 02:46:45', NULL, NULL, NULL, '2f4a807fd639eaa7568a35a2b773a8e0cef07203', 2, NULL, NULL, 'f7dd9e90a3255147a94c27a92c445067872c1d3c', NULL, NULL, NULL, NULL, 'Michael', 'mcmaloney', 'Maloney', NULL, 'michael@maloney.com', '2009-07-28 02:46:45')[0m
+[paperclip] Saving attachments.
+  [4;36;1mPortfolio Load (0.1ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 1) LIMIT 1[0m
+  [4;35;1mPortfolio Create (0.1ms)[0m   [0mINSERT INTO "portfolios" ("updated_at", "user_id", "created_at") VALUES('2009-07-28 02:46:45', 1, '2009-07-28 02:46:45')[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login" = 'mcmaloney') LIMIT 1[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'michael@maloney.com') LIMIT 1[0m
+  [4;35;1mUser Create (0.2ms)[0m   [0mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "photo_file_name", "photo_file_size", "crypted_password", "account_tier", "about_me", "remember_token_expires_at", "activation_code", "photo_updated_at", "photo_content_type", "remember_token", "tag_line", "first_name", "login", "last_name", "design_type", "email", "created_at") VALUES('', '08a6f827609d56d6fbec09c9b0d5603973b5498b', '2009-07-28 02:46:45', NULL, NULL, NULL, 'e056fb84bb09d4571737637d56181c3098882073', 2, NULL, NULL, '07027dbbf19ed6ca607a9cf37b7ac8d6745ae594', NULL, NULL, NULL, NULL, 'Michael', 'mcmaloney', 'Maloney', NULL, 'michael@maloney.com', '2009-07-28 02:46:45')[0m
+[paperclip] Saving attachments.
+  [4;36;1mPortfolio Load (0.1ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 1) LIMIT 1[0m
+  [4;35;1mPortfolio Create (0.1ms)[0m   [0mINSERT INTO "portfolios" ("updated_at", "user_id", "created_at") VALUES('2009-07-28 02:46:45', 1, '2009-07-28 02:46:45')[0m
+  [4;36;1mPiece Create (0.1ms)[0m   [0;1mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, NULL, '2009-07-28 02:46:45', NULL, NULL, 'My Awesome Art', 12.75, NULL, NULL, NULL, NULL, NULL, NULL, 'This is so awesome it''s gonna make your eyes bleed.', 'f', NULL, NULL, NULL, NULL, NULL, NULL, '2009-07-28 02:46:45', NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mPiece Update (0.1ms)[0m   [0mUPDATE "pieces" SET "portfolio_id" = 1, "updated_at" = '2009-07-28 02:46:45' WHERE "id" = 1[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;36;1mPiece Create (0.1ms)[0m   [0;1mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, NULL, '2009-07-28 02:46:45', NULL, NULL, 'My Awesome Art', 12.75, NULL, NULL, NULL, NULL, NULL, NULL, 'This is so awesome it''s gonna make your eyes bleed.', 'f', NULL, NULL, NULL, NULL, NULL, NULL, '2009-07-28 02:46:45', NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mPiece Update (0.1ms)[0m   [0mUPDATE "pieces" SET "portfolio_id" = 1, "updated_at" = '2009-07-28 02:46:45' WHERE "id" = 2[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;36;1mPiece Create (0.1ms)[0m   [0;1mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, NULL, '2009-07-28 02:46:45', NULL, NULL, 'My Awesome Art', 12.75, NULL, NULL, NULL, NULL, NULL, NULL, 'This is so awesome it''s gonna make your eyes bleed.', 'f', NULL, NULL, NULL, NULL, NULL, NULL, '2009-07-28 02:46:45', NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mPiece Update (0.1ms)[0m   [0mUPDATE "pieces" SET "portfolio_id" = 1, "updated_at" = '2009-07-28 02:46:45' WHERE "id" = 3[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;36;1mPiece Create (0.1ms)[0m   [0;1mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, NULL, '2009-07-28 02:46:45', NULL, NULL, 'My Awesome Art', 12.75, NULL, NULL, NULL, NULL, NULL, NULL, 'This is so awesome it''s gonna make your eyes bleed.', 'f', NULL, NULL, NULL, NULL, NULL, NULL, '2009-07-28 02:46:45', NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mPiece Update (0.1ms)[0m   [0mUPDATE "pieces" SET "portfolio_id" = 1, "updated_at" = '2009-07-28 02:46:45' WHERE "id" = 4[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;36;1mPiece Create (0.1ms)[0m   [0;1mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, NULL, '2009-07-28 02:46:45', NULL, NULL, 'My Awesome Art', 12.75, NULL, NULL, NULL, NULL, NULL, NULL, 'This is so awesome it''s gonna make your eyes bleed.', 'f', NULL, NULL, NULL, NULL, NULL, NULL, '2009-07-28 02:46:45', NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mPiece Update (0.1ms)[0m   [0mUPDATE "pieces" SET "portfolio_id" = 1, "updated_at" = '2009-07-28 02:46:45' WHERE "id" = 5[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;36;1mPiece Create (0.1ms)[0m   [0;1mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, NULL, '2009-07-28 02:46:45', NULL, NULL, 'My Awesome Art', 12.75, NULL, NULL, NULL, NULL, NULL, NULL, 'This is so awesome it''s gonna make your eyes bleed.', 'f', NULL, NULL, NULL, NULL, NULL, NULL, '2009-07-28 02:46:45', NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mPiece Update (0.1ms)[0m   [0mUPDATE "pieces" SET "portfolio_id" = 1, "updated_at" = '2009-07-28 02:46:45' WHERE "id" = 6[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;36;1mPiece Create (0.1ms)[0m   [0;1mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, NULL, '2009-07-28 02:46:45', NULL, NULL, 'My Awesome Art', 12.75, NULL, NULL, NULL, NULL, NULL, NULL, 'This is so awesome it''s gonna make your eyes bleed.', 'f', NULL, NULL, NULL, NULL, NULL, NULL, '2009-07-28 02:46:45', NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mPiece Update (0.1ms)[0m   [0mUPDATE "pieces" SET "portfolio_id" = 1, "updated_at" = '2009-07-28 02:46:45' WHERE "id" = 7[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;36;1mPiece Create (0.1ms)[0m   [0;1mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, NULL, '2009-07-28 02:46:45', NULL, NULL, 'My Awesome Art', 12.75, NULL, NULL, NULL, NULL, NULL, NULL, 'This is so awesome it''s gonna make your eyes bleed.', 'f', NULL, NULL, NULL, NULL, NULL, NULL, '2009-07-28 02:46:45', NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mPiece Update (0.1ms)[0m   [0mUPDATE "pieces" SET "portfolio_id" = 1, "updated_at" = '2009-07-28 02:46:45' WHERE "id" = 8[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;36;1mPiece Create (0.1ms)[0m   [0;1mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, NULL, '2009-07-28 02:46:45', NULL, NULL, 'My Awesome Art', 12.75, NULL, NULL, NULL, NULL, NULL, NULL, 'This is so awesome it''s gonna make your eyes bleed.', 'f', NULL, NULL, NULL, NULL, NULL, NULL, '2009-07-28 02:46:45', NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mPiece Update (0.1ms)[0m   [0mUPDATE "pieces" SET "portfolio_id" = 1, "updated_at" = '2009-07-28 02:46:45' WHERE "id" = 9[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;36;1mPiece Create (0.1ms)[0m   [0;1mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, NULL, '2009-07-28 02:46:45', NULL, NULL, 'My Awesome Art', 12.75, NULL, NULL, NULL, NULL, NULL, NULL, 'This is so awesome it''s gonna make your eyes bleed.', 'f', NULL, NULL, NULL, NULL, NULL, NULL, '2009-07-28 02:46:45', NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mPiece Update (0.1ms)[0m   [0mUPDATE "pieces" SET "portfolio_id" = 1, "updated_at" = '2009-07-28 02:46:45' WHERE "id" = 10[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;36;1mPiece Create (0.1ms)[0m   [0;1mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, NULL, '2009-07-28 02:46:45', NULL, NULL, 'My Awesome Art', 12.75, NULL, NULL, NULL, NULL, NULL, NULL, 'This is so awesome it''s gonna make your eyes bleed.', 'f', NULL, NULL, NULL, NULL, NULL, NULL, '2009-07-28 02:46:45', NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mPiece Update (0.1ms)[0m   [0mUPDATE "pieces" SET "portfolio_id" = 1, "updated_at" = '2009-07-28 02:46:45' WHERE "id" = 11[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;36;1mPiece Create (0.1ms)[0m   [0;1mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, NULL, '2009-07-28 02:46:45', NULL, NULL, 'My Awesome Art', 12.75, NULL, NULL, NULL, NULL, NULL, NULL, 'This is so awesome it''s gonna make your eyes bleed.', 'f', NULL, NULL, NULL, NULL, NULL, NULL, '2009-07-28 02:46:45', NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mPiece Update (0.1ms)[0m   [0mUPDATE "pieces" SET "portfolio_id" = 1, "updated_at" = '2009-07-28 02:46:45' WHERE "id" = 12[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;36;1mPiece Create (0.1ms)[0m   [0;1mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, NULL, '2009-07-28 02:46:45', NULL, NULL, 'My Awesome Art', 12.75, NULL, NULL, NULL, NULL, NULL, NULL, 'This is so awesome it''s gonna make your eyes bleed.', 'f', NULL, NULL, NULL, NULL, NULL, NULL, '2009-07-28 02:46:45', NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mPiece Update (0.1ms)[0m   [0mUPDATE "pieces" SET "portfolio_id" = 1, "updated_at" = '2009-07-28 02:46:45' WHERE "id" = 13[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;36;1mPiece Create (0.1ms)[0m   [0;1mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, NULL, '2009-07-28 02:46:45', NULL, NULL, 'My Awesome Art', 12.75, NULL, NULL, NULL, NULL, NULL, NULL, 'This is so awesome it''s gonna make your eyes bleed.', 'f', NULL, NULL, NULL, NULL, NULL, NULL, '2009-07-28 02:46:45', NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mPiece Update (0.1ms)[0m   [0mUPDATE "pieces" SET "portfolio_id" = 1, "updated_at" = '2009-07-28 02:46:45' WHERE "id" = 14[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;36;1mPiece Create (0.1ms)[0m   [0;1mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, NULL, '2009-07-28 02:46:45', NULL, NULL, 'My Awesome Art', 12.75, NULL, NULL, NULL, NULL, NULL, NULL, 'This is so awesome it''s gonna make your eyes bleed.', 'f', NULL, NULL, NULL, NULL, NULL, NULL, '2009-07-28 02:46:45', NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mPiece Update (0.1ms)[0m   [0mUPDATE "pieces" SET "portfolio_id" = 1, "updated_at" = '2009-07-28 02:46:45' WHERE "id" = 15[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mPiece Load (2.3ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 1) [0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login" = 'mcmaloney') LIMIT 1[0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'michael@maloney.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "photo_file_name", "photo_file_size", "crypted_password", "account_tier", "about_me", "remember_token_expires_at", "activation_code", "photo_updated_at", "photo_content_type", "remember_token", "tag_line", "first_name", "login", "last_name", "design_type", "email", "created_at") VALUES('', 'af8a5ca3b138df81afdd460817bb202f632230a5', '2009-07-28 02:46:45', NULL, NULL, NULL, 'a01045de774297eebb1d327cabdb1c0e5d3a3b46', 1, NULL, NULL, '2af25d06b859b83f33b71d68b6f80fc6321a4f23', NULL, NULL, NULL, NULL, 'Michael', 'mcmaloney', 'Maloney', NULL, 'michael@maloney.com', '2009-07-28 02:46:45')[0m
+[paperclip] Saving attachments.
+  [4;35;1mPortfolio Load (0.1ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 1) LIMIT 1[0m
+  [4;36;1mPortfolio Create (0.1ms)[0m   [0;1mINSERT INTO "portfolios" ("updated_at", "user_id", "created_at") VALUES('2009-07-28 02:46:45', 1, '2009-07-28 02:46:45')[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login" = 'mcmaloney') LIMIT 1[0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'michael@maloney.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "photo_file_name", "photo_file_size", "crypted_password", "account_tier", "about_me", "remember_token_expires_at", "activation_code", "photo_updated_at", "photo_content_type", "remember_token", "tag_line", "first_name", "login", "last_name", "design_type", "email", "created_at") VALUES('', 'ecb0ed4bb58d65b0f95b0a38498b4ea60ef431bc', '2009-07-28 02:46:45', NULL, NULL, NULL, '0be53b641cc8bca4d77618e6c70eabc73e2e55d5', 1, NULL, NULL, '9b7337132ef3a74a43e95a2fcabf11c7ce21657c', NULL, NULL, NULL, NULL, 'Michael', 'mcmaloney', 'Maloney', NULL, 'michael@maloney.com', '2009-07-28 02:46:45')[0m
+[paperclip] Saving attachments.
+  [4;35;1mPortfolio Load (0.1ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 1) LIMIT 1[0m
+  [4;36;1mPortfolio Create (0.1ms)[0m   [0;1mINSERT INTO "portfolios" ("updated_at", "user_id", "created_at") VALUES('2009-07-28 02:46:45', 1, '2009-07-28 02:46:45')[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login" = 'mcmaloney') LIMIT 1[0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'michael@maloney.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.2ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "photo_file_name", "photo_file_size", "crypted_password", "account_tier", "about_me", "remember_token_expires_at", "activation_code", "photo_updated_at", "photo_content_type", "remember_token", "tag_line", "first_name", "login", "last_name", "design_type", "email", "created_at") VALUES('', '45f747229154cd763dac9c1e421ba23e9327a12c', '2009-07-28 02:46:45', NULL, NULL, NULL, '4b3261c839ebeef0cff0abe5fc1eba92c3f7381f', 1, NULL, NULL, '256f5b8c3d38875bd31367ea3e5e07cfd663fb12', NULL, NULL, NULL, NULL, 'Michael', 'mcmaloney', 'Maloney', NULL, 'michael@maloney.com', '2009-07-28 02:46:45')[0m
+[paperclip] Saving attachments.
+  [4;35;1mPortfolio Load (0.1ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 1) LIMIT 1[0m
+  [4;36;1mPortfolio Create (0.1ms)[0m   [0;1mINSERT INTO "portfolios" ("updated_at", "user_id", "created_at") VALUES('2009-07-28 02:46:45', 1, '2009-07-28 02:46:45')[0m
+  [4;35;1mPiece Create (0.1ms)[0m   [0mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, NULL, '2009-07-28 02:46:45', NULL, NULL, 'My Awesome Art', 12.75, NULL, NULL, NULL, NULL, NULL, NULL, 'This is so awesome it''s gonna make your eyes bleed.', 'f', NULL, NULL, NULL, NULL, NULL, NULL, '2009-07-28 02:46:45', NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;36;1mPiece Update (0.1ms)[0m   [0;1mUPDATE "pieces" SET "portfolio_id" = 1, "updated_at" = '2009-07-28 02:46:45' WHERE "id" = 1[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mPiece Create (0.1ms)[0m   [0mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, NULL, '2009-07-28 02:46:45', NULL, NULL, 'My Awesome Art', 12.75, NULL, NULL, NULL, NULL, NULL, NULL, 'This is so awesome it''s gonna make your eyes bleed.', 'f', NULL, NULL, NULL, NULL, NULL, NULL, '2009-07-28 02:46:45', NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;36;1mPiece Update (0.1ms)[0m   [0;1mUPDATE "pieces" SET "portfolio_id" = 1, "updated_at" = '2009-07-28 02:46:45' WHERE "id" = 2[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mPiece Create (0.1ms)[0m   [0mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, NULL, '2009-07-28 02:46:45', NULL, NULL, 'My Awesome Art', 12.75, NULL, NULL, NULL, NULL, NULL, NULL, 'This is so awesome it''s gonna make your eyes bleed.', 'f', NULL, NULL, NULL, NULL, NULL, NULL, '2009-07-28 02:46:45', NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;36;1mPiece Update (0.1ms)[0m   [0;1mUPDATE "pieces" SET "portfolio_id" = 1, "updated_at" = '2009-07-28 02:46:45' WHERE "id" = 3[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mPiece Create (0.1ms)[0m   [0mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, NULL, '2009-07-28 02:46:45', NULL, NULL, 'My Awesome Art', 12.75, NULL, NULL, NULL, NULL, NULL, NULL, 'This is so awesome it''s gonna make your eyes bleed.', 'f', NULL, NULL, NULL, NULL, NULL, NULL, '2009-07-28 02:46:45', NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;36;1mPiece Update (0.1ms)[0m   [0;1mUPDATE "pieces" SET "portfolio_id" = 1, "updated_at" = '2009-07-28 02:46:45' WHERE "id" = 4[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mPiece Create (0.1ms)[0m   [0mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, NULL, '2009-07-28 02:46:45', NULL, NULL, 'My Awesome Art', 12.75, NULL, NULL, NULL, NULL, NULL, NULL, 'This is so awesome it''s gonna make your eyes bleed.', 'f', NULL, NULL, NULL, NULL, NULL, NULL, '2009-07-28 02:46:45', NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;36;1mPiece Update (0.1ms)[0m   [0;1mUPDATE "pieces" SET "portfolio_id" = 1, "updated_at" = '2009-07-28 02:46:45' WHERE "id" = 5[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mPiece Load (0.9ms)[0m   [0;1mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 1) [0m
+  [4;35;1mPiece Create (0.2ms)[0m   [0mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, NULL, '2009-07-28 02:46:45', NULL, NULL, 'My Awesome Art', 12.75, NULL, NULL, NULL, NULL, NULL, NULL, 'This is so awesome it''s gonna make your eyes bleed.', 't', NULL, NULL, NULL, NULL, NULL, NULL, '2009-07-28 02:46:45', NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.

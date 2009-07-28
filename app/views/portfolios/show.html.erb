@@ -1,36 +1,42 @@
-<h1><%= @user.login %>'s Weefolio</h1>
-<p>
-  <%= flash[:notice] %>
-</p>
+<!--PAGE TITLE/CALL-TO-ACTION-->
+<%# YIELD %>
+<div id="page-header-container-outer">
+	<div id="page-header-container-inner">
+		<h1>My Weefolio<small> This is my Weefolio.</small></h1>
+		
+		<div class="call-to-action">
+			<!--THIS IS WHERE YOU CAN PUT 'ADD NEW WORK' LINKS ETC.
+			<a href="#">Call to action!</a>
+			-->
+			<p>
+        <%= link_to 'RSS', user_portfolio_path(@user, @portfolio, :rss) %>
+      </p>
+		</div>
+	</div>
+</div>
 
-<p>
-  <%= link_to 'RSS', user_portfolio_path(@user, @portfolio, :rss) %>
-</p>
+<!--PAGE CONTENT-->
+<%# YIELD %>
+<div id="content-container">
+	<!--DUMP ALL OF YOUR SHIT HERE!-->
+	<% @portfolio.pieces.each do |piece| %>
+    <p>
+      <%= piece.title %>
+    </p>
+    <p> 
+      <%= piece.description %>
+    </p>
+    <p>
+      <%= image_tag piece.image_1.url %>
+      <% unless @user.account_tier == 1 %>
+        <%= image_tag piece.image_2.url %> 
+        <%= image_tag piece.image_3.url %> 
+        <%= image_tag piece.image_4.url %> 
+        <%= image_tag piece.image_5.url %>
+      <% end %>
+    </p>
+  <% end %>
+</div>
 
-<p>
-  <%= link_to 'Add Work', new_portfolio_piece_path(@user.portfolio) %>
-</p>
 
 
-<% @portfolio.pieces.each do |piece| %>
-  <p>
-    <%= piece.title %>
-  </p>
-  <p> 
-    <%= piece.description %>
-  </p>
-  <p>
-    <%= image_tag piece.image_1.url %>
-    <% unless @user.account_tier == 1 %>
-      <%= image_tag piece.image_2.url %> 
-      <%= image_tag piece.image_3.url %> 
-      <%= image_tag piece.image_4.url %> 
-      <%= image_tag piece.image_5.url %>
-    <% end %>
-  </p>
-  <p>
-    <%= link_to 'Edit', edit_portfolio_piece_path(@portfolio, piece)%> | <%= link_to 'Delete', portfolio_piece_path(@portfolio, piece), :confirm => "Are you sure?", :method => :delete %>
-  </p>
-<% end %>
-
-<%= link_to 'Back', root_path %>

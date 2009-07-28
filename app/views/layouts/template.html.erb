@@ -23,7 +23,7 @@
 				<% if logged_in? %>
 				  <!--USER NAV (LOGGED IN) -->
   				<ul id="user-nav">
-  					<li id="portfolio" class="selected"><%= link_to 'Portfolio', user_portfolio_path(current_user, current_user.portfolio) %></li>
+  					<li id="portfolio" class="selected"><%= link_to 'Portfolio', edit_user_portfolio_path(current_user, current_user.portfolio) %></li>
   					<li id="design"><a href="#">Design</a></li>
   					<li id="account"><%= link_to 'Account', edit_user_path(current_user) %></li>
   					<li id="my-weefolio"><%= link_to 'My Weefolio', user_portfolio_path(current_user, current_user.portfolio) %></li>

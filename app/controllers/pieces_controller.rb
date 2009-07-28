@@ -8,7 +8,7 @@ class PiecesController < ApplicationController
     @portfolio = current_user.portfolio
     @piece = @portfolio.pieces.create!(params[:piece])
     if @piece.save
-      redirect_to user_portfolio_path(current_user, @portfolio)
+      redirect_to edit_user_portfolio_path(current_user, @portfolio)
       if @piece.for_sale
         flash[:notice] = "Added '#{@piece.title}' to your Weefolio (for sale at #{@piece.display_price})"
       else
@@ -27,7 +27,7 @@ class PiecesController < ApplicationController
     @piece = Piece.find(params[:id])
     
     if @piece.update_attributes(params[:piece])
-      redirect_to user_portfolio_path(current_user)
+      redirect_to edit_user_portfolio_path(current_user)
       flash[:notice] = "Piece updated."
     end
   end
@@ -37,7 +37,7 @@ class PiecesController < ApplicationController
     @piece = Piece.find(params[:id])
     
     @piece.destroy
-    redirect_to user_portfolio_path(current_user)
+    redirect_to edit_user_portfolio_path(current_user)
     flash[:notice] = "'#{@piece.title}' deleted."
   end
 

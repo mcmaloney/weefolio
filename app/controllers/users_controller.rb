@@ -1,13 +1,18 @@
 class UsersController < ApplicationController
+  layout 'template'
+  
   def new
+    @page_title = "Sign Up for Weefolio!"
     @user = User.new
   end
   
   def edit
+    @page_title = "Weefolio :: Account"
     @user = current_user
   end
   
   def update
+   
     @user = current_user
     if @user.update_attributes(params[:user])
       redirect_to root_path

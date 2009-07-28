@@ -54,6 +54,15 @@ Given /^I update my tag line to say "([^\"]*)"$/ do |tag_line|
   When %{I fill in "Tag Line" with "#{tag_line}"}
 end
 
+Then /^I should see the logged in nav bar in all its glory$/ do
+  Then %{I should see "Portfolio"}
+  Then %{I should see "Design"}
+  Then %{I should see "Account"}
+  Then %{I should see "My Weefolio"}
+  
+end
+
+
 
 
 
