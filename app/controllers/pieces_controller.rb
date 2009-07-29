@@ -1,4 +1,6 @@
 class PiecesController < ApplicationController
+  layout 'template'
+  
   def new
     @portfolio = current_user.portfolio
     @piece  = @portfolio.pieces.new
