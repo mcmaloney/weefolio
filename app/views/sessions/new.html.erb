@@ -1,16 +1,46 @@
-<h1>Log In</h1>
+<!--PAGE TITLE/CALL-TO-ACTION-->
+<%# YIELD %>
+<div id="page-header-container-outer">
+	<div id="page-header-container-inner">
+		<h1>Login<small></small></h1>
+		
+		<div class="call-to-action">
+			<!--THIS IS WHERE YOU CAN PUT 'ADD NEW WORK' LINKS ETC.
+			<a href="#">Call to action!</a>
+			-->
+		</div>
+	</div>
+</div>
 
-<% form_tag session_path do -%>
-<p><%= label_tag 'login' %><br />
-<%= text_field_tag 'login', @login %></p>
+<!--PAGE CONTENT-->
+<%# YIELD %>
+<div id="content-container">
+  <p>
+    <%= flash[:notice] %>
+  </p>
+	<!--DUMP ALL OF YOUR SHIT HERE!-->
+	<% form_tag session_path do -%>
+    <p>
+      <%= label_tag 'login' %><br />
+      <%= text_field_tag 'login', @login %>
+    </p>
 
-<p><%= label_tag 'password' %><br/>
-<%= password_field_tag 'password', nil %></p>
+    <p>
+      <%= label_tag 'password' %><br/>
+      <%= password_field_tag 'password', nil %>
+    </p>
 
-<!-- Uncomment this if you want this functionality
-<p><%= label_tag 'remember_me', 'Remember me' %>
-<%= check_box_tag 'remember_me', '1', @remember_me %></p>
--->
+  <!-- Uncomment this if you want this functionality
+  <p><%= label_tag 'remember_me', 'Remember me' %>
+  <%= check_box_tag 'remember_me', '1', @remember_me %></p>
+  -->
+  
+    <p>
+      <%= submit_tag 'Login' %>
+    </p>
+  <% end -%>
+</div>
 
-<p><%= submit_tag 'Login' %></p>
-<% end -%>
+
+
+

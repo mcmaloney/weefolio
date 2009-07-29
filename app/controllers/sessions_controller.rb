@@ -1,6 +1,9 @@
 # This controller handles the login/logout function of the site.  
 class SessionsController < ApplicationController
+  layout 'template'
+  
   def new
+    @page_title = "Weefolio :: Login"
   end
 
   def create
