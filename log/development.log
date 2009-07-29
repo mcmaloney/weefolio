@@ -11560,3 +11560,2599 @@ Processing SessionsController#new (for 127.0.0.1 at 2009-07-29 13:13:24) [GET]
 Rendering template within layouts/template
 Rendering sessions/new
 Completed in 7ms (View: 7, DB: 0) | 200 OK [http://0.0.0.0/login]
+Starting the New Relic Agent
+  [4;36;1mSQL (1.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-29 15:24:31) [GET]
+Rendering template within layouts/template
+Rendering main_pages/home
+Completed in 22ms (View: 21, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-29 15:24:32) [GET]
+Rendering template within layouts/template
+Rendering main_pages/home
+Completed in 5ms (View: 5, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-07-29 15:24:34) [GET]
+Rendering template within layouts/template
+Rendering sessions/new
+Completed in 140ms (View: 140, DB: 0) | 200 OK [http://0.0.0.0/login]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-07-29 15:24:35) [GET]
+Rendering template within layouts/template
+Rendering sessions/new
+Completed in 8ms (View: 8, DB: 0) | 200 OK [http://0.0.0.0/login]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2009-07-29 15:24:41) [POST]
+  Parameters: {"commit"=>"Login", "authenticity_token"=>"aTCtLk4u4JX64HyYqSaaIfYBkILzF0TiA4HhUugP4IY=", "login"=>"mcmaloney", "password"=>"fitzgoogoo"}
+  [4;36;1mUser Load (1.9ms)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'mcmaloney' and activated_at IS NOT NULL) LIMIT 1[0m
+[paperclip] Saving attachments.
+Redirected to http://0.0.0.0:3000/
+Completed in 79ms (DB: 2) | 302 Found [http://0.0.0.0/session]
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-29 15:24:41) [GET]
+Rendering template within layouts/template
+Rendering main_pages/home
+  [4;35;1mUser Load (1.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 12) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.7ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 12) LIMIT 1[0m
+Completed in 75ms (View: 72, DB: 2) | 200 OK [http://0.0.0.0/]
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-29 15:24:41) [GET]
+Rendering template within layouts/template
+Rendering main_pages/home
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 12) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.7ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 12) LIMIT 1[0m
+Completed in 205ms (View: 202, DB: 2) | 200 OK [http://0.0.0.0/]
+
+
+Processing PortfoliosController#edit (for 127.0.0.1 at 2009-07-29 15:24:43) [GET]
+  Parameters: {"id"=>"14", "user_id"=>"12"}
+  [4;35;1mUser Load (1.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 12) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.7ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 12) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering portfolios/edit
+  [4;35;1mPiece Load (1.6ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 14) [0m
+Completed in 211ms (View: 166, DB: 4) | 200 OK [http://0.0.0.0/users/12/portfolios/14/edit]
+
+
+Processing PortfoliosController#edit (for 127.0.0.1 at 2009-07-29 15:24:44) [GET]
+  Parameters: {"id"=>"14", "user_id"=>"12"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 12) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.6ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 12) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering portfolios/edit
+  [4;36;1mPiece Load (1.2ms)[0m   [0;1mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 14) [0m
+Completed in 81ms (View: 46, DB: 3) | 200 OK [http://0.0.0.0/users/12/portfolios/14/edit]
+
+
+Processing PiecesController#edit (for 127.0.0.1 at 2009-07-29 15:24:47) [GET]
+  Parameters: {"id"=>"12", "portfolio_id"=>"14"}
+  [4;35;1mUser Load (1.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 12) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.6ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 12) LIMIT 1[0m
+  [4;35;1mPiece Load (1.3ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces"."id" = 12) [0m
+Rendering template within layouts/template
+Rendering pieces/edit
+  [4;36;1mUser Load (1.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 12) [0m
+Rendered pieces/_fields (20.2ms)
+Rendered pieces/_form (34.3ms)
+Completed in 110ms (View: 53, DB: 4) | 200 OK [http://0.0.0.0/portfolios/14/pieces/12/edit]
+
+
+Processing PiecesController#edit (for 127.0.0.1 at 2009-07-29 15:24:48) [GET]
+  Parameters: {"id"=>"12", "portfolio_id"=>"14"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 12) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.6ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 12) LIMIT 1[0m
+  [4;35;1mPiece Load (1.1ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces"."id" = 12) [0m
+Rendering template within layouts/template
+Rendering pieces/edit
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 12) [0m
+Rendered pieces/_fields (16.4ms)
+Rendered pieces/_form (24.8ms)
+Completed in 79ms (View: 31, DB: 4) | 200 OK [http://0.0.0.0/portfolios/14/pieces/12/edit]
+
+
+Processing PiecesController#edit (for 127.0.0.1 at 2009-07-29 15:26:05) [GET]
+  Parameters: {"id"=>"12", "portfolio_id"=>"14"}
+
+NoMethodError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.title):
+  app/controllers/pieces_controller.rb:23:in `edit'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (95.4ms)
+Rendered rescues/_request_and_response (4.9ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PiecesController#edit (for 127.0.0.1 at 2009-07-29 15:26:06) [GET]
+  Parameters: {"id"=>"12", "portfolio_id"=>"14"}
+
+NoMethodError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.title):
+  app/controllers/pieces_controller.rb:23:in `edit'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (63.9ms)
+Rendered rescues/_request_and_response (1.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PortfoliosController#edit (for 127.0.0.1 at 2009-07-29 15:26:10) [GET]
+  Parameters: {"id"=>"14", "user_id"=>"12"}
+  [4;35;1mUser Load (1.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 12) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.6ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 12) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering portfolios/edit
+  [4;35;1mPiece Load (1.4ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 14) [0m
+Completed in 84ms (View: 43, DB: 3) | 200 OK [http://0.0.0.0/users/12/portfolios/14/edit]
+
+
+Processing PortfoliosController#edit (for 127.0.0.1 at 2009-07-29 15:26:38) [GET]
+  Parameters: {"id"=>"14", "user_id"=>"12"}
+  [4;36;1mUser Load (1.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 12) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.9ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 12) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering portfolios/edit
+  [4;36;1mPiece Load (1.4ms)[0m   [0;1mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 14) [0m
+Completed in 122ms (View: 52, DB: 4) | 200 OK [http://0.0.0.0/users/12/portfolios/14/edit]
+
+
+Processing PortfoliosController#edit (for 127.0.0.1 at 2009-07-29 15:26:39) [GET]
+  Parameters: {"id"=>"14", "user_id"=>"12"}
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 12) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.6ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 12) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering portfolios/edit
+  [4;35;1mPiece Load (1.1ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 14) [0m
+Completed in 80ms (View: 44, DB: 3) | 200 OK [http://0.0.0.0/users/12/portfolios/14/edit]
+
+
+Processing PiecesController#edit (for 127.0.0.1 at 2009-07-29 15:26:44) [GET]
+  Parameters: {"id"=>"12", "portfolio_id"=>"14"}
+
+NoMethodError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.title):
+  app/controllers/pieces_controller.rb:23:in `edit'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (47.8ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PiecesController#edit (for 127.0.0.1 at 2009-07-29 15:26:44) [GET]
+  Parameters: {"id"=>"12", "portfolio_id"=>"14"}
+
+NoMethodError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.title):
+  app/controllers/pieces_controller.rb:23:in `edit'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (56.7ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PiecesController#edit (for 127.0.0.1 at 2009-07-29 15:27:08) [GET]
+  Parameters: {"id"=>"12", "portfolio_id"=>"14"}
+  [4;36;1mUser Load (1.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 12) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.7ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 12) LIMIT 1[0m
+  [4;36;1mPiece Load (1.2ms)[0m   [0;1mSELECT * FROM "pieces" WHERE ("pieces"."id" = 12) [0m
+Rendering template within layouts/template
+Rendering pieces/edit
+  [4;35;1mUser Load (1.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 12) [0m
+Rendered pieces/_fields (25.9ms)
+Rendered pieces/_form (28.1ms)
+Completed in 114ms (View: 35, DB: 5) | 200 OK [http://0.0.0.0/portfolios/14/pieces/12/edit]
+
+
+Processing PiecesController#edit (for 127.0.0.1 at 2009-07-29 15:27:09) [GET]
+  Parameters: {"id"=>"12", "portfolio_id"=>"14"}
+  [4;36;1mUser Load (1.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 12) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.6ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 12) LIMIT 1[0m
+  [4;36;1mPiece Load (1.1ms)[0m   [0;1mSELECT * FROM "pieces" WHERE ("pieces"."id" = 12) [0m
+Rendering template within layouts/template
+Rendering pieces/edit
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 12) [0m
+Rendered pieces/_fields (19.2ms)
+Rendered pieces/_form (21.0ms)
+Completed in 260ms (View: 26, DB: 4) | 200 OK [http://0.0.0.0/portfolios/14/pieces/12/edit]
+
+
+Processing PortfoliosController#edit (for 127.0.0.1 at 2009-07-29 15:27:17) [GET]
+  Parameters: {"id"=>"14", "user_id"=>"12"}
+  [4;36;1mUser Load (1.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 12) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.7ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 12) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering portfolios/edit
+  [4;36;1mPiece Load (1.4ms)[0m   [0;1mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 14) [0m
+Completed in 108ms (View: 59, DB: 3) | 200 OK [http://0.0.0.0/users/12/portfolios/14/edit]
+
+
+Processing PortfoliosController#edit (for 127.0.0.1 at 2009-07-29 15:27:18) [GET]
+  Parameters: {"id"=>"14", "user_id"=>"12"}
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 12) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.6ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 12) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering portfolios/edit
+  [4;35;1mPiece Load (1.3ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 14) [0m
+Completed in 91ms (View: 51, DB: 3) | 200 OK [http://0.0.0.0/users/12/portfolios/14/edit]
+
+
+Processing PiecesController#new (for 127.0.0.1 at 2009-07-29 15:27:20) [GET]
+  Parameters: {"portfolio_id"=>"14"}
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 12) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.6ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 12) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering pieces/new
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 12) [0m
+  [4;35;1mPiece Load (1.2ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 14) [0m
+Rendered pieces/_fields (5.2ms)
+Rendered pieces/_form (21.5ms)
+Completed in 96ms (View: 30, DB: 4) | 200 OK [http://0.0.0.0/portfolios/14/pieces/new]
+
+
+Processing PiecesController#new (for 127.0.0.1 at 2009-07-29 15:27:21) [GET]
+  Parameters: {"portfolio_id"=>"14"}
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 12) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.6ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 12) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering pieces/new
+  [4;36;1mUser Load (0.9ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 12) [0m
+  [4;35;1mPiece Load (1.4ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 14) [0m
+Rendered pieces/_fields (4.6ms)
+Rendered pieces/_form (22.5ms)
+Completed in 96ms (View: 26, DB: 4) | 200 OK [http://0.0.0.0/portfolios/14/pieces/new]
+
+
+Processing PiecesController#new (for 127.0.0.1 at 2009-07-29 15:27:41) [GET]
+  Parameters: {"portfolio_id"=>"14"}
+  [4;36;1mUser Load (1.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 12) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.7ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 12) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering pieces/new
+  [4;36;1mUser Load (1.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 12) [0m
+  [4;35;1mPiece Load (1.2ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 14) [0m
+Rendered pieces/_fields (5.0ms)
+Rendered pieces/_form (20.7ms)
+Completed in 305ms (View: 25, DB: 4) | 200 OK [http://0.0.0.0/portfolios/14/pieces/new]
+
+
+Processing PiecesController#new (for 127.0.0.1 at 2009-07-29 15:27:42) [GET]
+  Parameters: {"portfolio_id"=>"14"}
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 12) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.6ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 12) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering pieces/new
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 12) [0m
+  [4;35;1mPiece Load (1.1ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 14) [0m
+Rendered pieces/_fields (5.1ms)
+Rendered pieces/_form (19.4ms)
+Completed in 81ms (View: 24, DB: 4) | 200 OK [http://0.0.0.0/portfolios/14/pieces/new]
+
+
+Processing PortfoliosController#edit (for 127.0.0.1 at 2009-07-29 15:28:14) [GET]
+  Parameters: {"id"=>"14", "user_id"=>"12"}
+  [4;36;1mUser Load (1.7ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 12) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.9ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 12) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering portfolios/edit
+  [4;36;1mPiece Load (1.5ms)[0m   [0;1mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 14) [0m
+Completed in 285ms (View: 231, DB: 4) | 200 OK [http://0.0.0.0/users/12/portfolios/14/edit]
+
+
+Processing PortfoliosController#edit (for 127.0.0.1 at 2009-07-29 15:28:15) [GET]
+  Parameters: {"id"=>"14", "user_id"=>"12"}
+  [4;35;1mUser Load (1.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 12) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.6ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 12) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering portfolios/edit
+  [4;35;1mPiece Load (1.1ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 14) [0m
+Completed in 77ms (View: 40, DB: 3) | 200 OK [http://0.0.0.0/users/12/portfolios/14/edit]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2009-07-29 15:28:17) [GET]
+  Parameters: {"id"=>"12"}
+  [4;36;1mUser Load (1.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 12) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering users/edit
+  [4;35;1mPortfolio Load (0.8ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 12) LIMIT 1[0m
+Completed in 79ms (View: 49, DB: 2) | 200 OK [http://0.0.0.0/users/12/edit]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2009-07-29 15:28:18) [GET]
+  Parameters: {"id"=>"12"}
+  [4;36;1mUser Load (1.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 12) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering users/edit
+  [4;35;1mPortfolio Load (0.7ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 12) LIMIT 1[0m
+Completed in 227ms (View: 31, DB: 2) | 200 OK [http://0.0.0.0/users/12/edit]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2009-07-29 15:29:32) [GET]
+  Parameters: {"id"=>"12"}
+  [4;36;1mUser Load (1.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 12) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering users/edit
+  [4;35;1mPortfolio Load (0.8ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 12) LIMIT 1[0m
+Completed in 60ms (View: 30, DB: 2) | 200 OK [http://0.0.0.0/users/12/edit]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2009-07-29 15:29:33) [GET]
+  Parameters: {"id"=>"12"}
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 12) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering users/edit
+  [4;35;1mPortfolio Load (0.7ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 12) LIMIT 1[0m
+Completed in 57ms (View: 31, DB: 2) | 200 OK [http://0.0.0.0/users/12/edit]
+
+
+Processing PortfoliosController#show (for 127.0.0.1 at 2009-07-29 15:29:34) [GET]
+  Parameters: {"id"=>"14", "user_id"=>"12"}
+  [4;36;1mUser Load (1.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 12) LIMIT 1[0m
+  [4;35;1mPortfolio Load (1.3ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 12) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering portfolios/show
+  [4;36;1mPiece Load (1.3ms)[0m   [0;1mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 14) [0m
+Completed in 96ms (View: 52, DB: 4) | 200 OK [http://0.0.0.0/users/12/portfolios/14]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-29 15:29:35) [GET]
+  Parameters: {"1248750133"=>nil}
+
+ActionController::RoutingError (No route matches "/system/image_1s/12/small_thumb/Brazil.gif" with {:method=>:get}):
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing PortfoliosController#show (for 127.0.0.1 at 2009-07-29 15:29:35) [GET]
+  Parameters: {"id"=>"14", "user_id"=>"12"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 12) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.6ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 12) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering portfolios/show
+  [4;35;1mPiece Load (1.1ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 14) [0m
+Completed in 89ms (View: 51, DB: 3) | 200 OK [http://0.0.0.0/users/12/portfolios/14]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-29 15:29:35) [GET]
+  Parameters: {"1248750133"=>nil}
+
+ActionController::RoutingError (No route matches "/system/image_1s/12/small_thumb/Brazil.gif" with {:method=>:get}):
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing PortfoliosController#show (for 127.0.0.1 at 2009-07-29 15:30:09) [GET]
+  Parameters: {"id"=>"14", "user_id"=>"12"}
+  [4;36;1mUser Load (1.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 12) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.7ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 12) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering portfolios/show
+  [4;36;1mPiece Load (1.8ms)[0m   [0;1mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 14) [0m
+Completed in 99ms (View: 55, DB: 4) | 200 OK [http://0.0.0.0/users/12/portfolios/14]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-29 15:30:09) [GET]
+  Parameters: {"1248750133"=>nil}
+
+ActionController::RoutingError (No route matches "/system/image_1s/12/small_thumb/Brazil.gif" with {:method=>:get}):
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing PortfoliosController#show (for 127.0.0.1 at 2009-07-29 15:30:10) [GET]
+  Parameters: {"id"=>"14", "user_id"=>"12"}
+  [4;35;1mUser Load (2.8ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 12) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.7ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 12) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering portfolios/show
+  [4;35;1mPiece Load (1.6ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 14) [0m
+Completed in 242ms (View: 195, DB: 5) | 200 OK [http://0.0.0.0/users/12/portfolios/14]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-29 15:30:10) [GET]
+  Parameters: {"1248750133"=>nil}
+
+ActionController::RoutingError (No route matches "/system/image_1s/12/small_thumb/Brazil.gif" with {:method=>:get}):
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing PortfoliosController#show (for 127.0.0.1 at 2009-07-29 15:30:23) [GET]
+  Parameters: {"id"=>"14", "user_id"=>"12"}
+  [4;36;1mUser Load (1.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 12) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.7ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 12) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering portfolios/show
+  [4;36;1mPiece Load (1.5ms)[0m   [0;1mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 14) [0m
+Completed in 105ms (View: 51, DB: 3) | 200 OK [http://0.0.0.0/users/12/portfolios/14]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-29 15:30:24) [GET]
+  Parameters: {"1248750133"=>nil}
+
+ActionController::RoutingError (No route matches "/system/image_1s/12/small_thumb/Brazil.gif" with {:method=>:get}):
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing PortfoliosController#show (for 127.0.0.1 at 2009-07-29 15:30:24) [GET]
+  Parameters: {"id"=>"14", "user_id"=>"12"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 12) LIMIT 1[0m
+  [4;36;1mPortfolio Load (1.5ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 12) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering portfolios/show
+  [4;35;1mPiece Load (1.3ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 14) [0m
+Completed in 89ms (View: 46, DB: 4) | 200 OK [http://0.0.0.0/users/12/portfolios/14]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-07-29 15:30:24) [GET]
+  Parameters: {"1248750133"=>nil}
+
+ActionController::RoutingError (No route matches "/system/image_1s/12/small_thumb/Brazil.gif" with {:method=>:get}):
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing PortfoliosController#show (for 127.0.0.1 at 2009-07-29 15:31:50) [GET]
+  Parameters: {"id"=>"14", "user_id"=>"12"}
+  [4;36;1mUser Load (1.9ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 12) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.7ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 12) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering portfolios/show
+  [4;36;1mPiece Load (1.5ms)[0m   [0;1mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 14) [0m
+Completed in 303ms (View: 242, DB: 4) | 200 OK [http://0.0.0.0/users/12/portfolios/14]
+
+
+Processing PortfoliosController#show (for 127.0.0.1 at 2009-07-29 15:31:51) [GET]
+  Parameters: {"id"=>"14", "user_id"=>"12"}
+  [4;35;1mUser Load (0.9ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 12) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.6ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 12) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering portfolios/show
+  [4;35;1mPiece Load (1.3ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 14) [0m
+Completed in 79ms (View: 40, DB: 3) | 200 OK [http://0.0.0.0/users/12/portfolios/14]
+
+
+Processing PortfoliosController#edit (for 127.0.0.1 at 2009-07-29 15:32:02) [GET]
+  Parameters: {"id"=>"14", "user_id"=>"12"}
+  [4;36;1mUser Load (1.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 12) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.8ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 12) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering portfolios/edit
+  [4;36;1mPiece Load (1.4ms)[0m   [0;1mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 14) [0m
+Completed in 103ms (View: 55, DB: 3) | 200 OK [http://0.0.0.0/users/12/portfolios/14/edit]
+
+
+Processing PortfoliosController#edit (for 127.0.0.1 at 2009-07-29 15:32:03) [GET]
+  Parameters: {"id"=>"14", "user_id"=>"12"}
+  [4;35;1mUser Load (1.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 12) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.6ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 12) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering portfolios/edit
+  [4;35;1mPiece Load (1.3ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 14) [0m
+Completed in 81ms (View: 42, DB: 3) | 200 OK [http://0.0.0.0/users/12/portfolios/14/edit]
+
+
+Processing PortfoliosController#show (for 127.0.0.1 at 2009-07-29 15:32:05) [GET]
+  Parameters: {"id"=>"14", "user_id"=>"12"}
+  [4;36;1mUser Load (1.7ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 12) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.7ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 12) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering portfolios/show
+  [4;36;1mPiece Load (1.1ms)[0m   [0;1mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 14) [0m
+Completed in 94ms (View: 48, DB: 4) | 200 OK [http://0.0.0.0/users/12/portfolios/14]
+
+
+Processing PortfoliosController#show (for 127.0.0.1 at 2009-07-29 15:32:05) [GET]
+  Parameters: {"id"=>"14", "user_id"=>"12"}
+  [4;35;1mUser Load (1.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 12) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.6ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 12) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering portfolios/show
+  [4;35;1mPiece Load (1.6ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 14) [0m
+Completed in 204ms (View: 170, DB: 3) | 200 OK [http://0.0.0.0/users/12/portfolios/14]
+
+
+Processing PortfoliosController#edit (for 127.0.0.1 at 2009-07-29 15:35:39) [GET]
+  Parameters: {"id"=>"14", "user_id"=>"12"}
+  [4;36;1mUser Load (1.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 12) LIMIT 1[0m
+  [4;35;1mPortfolio Load (1.0ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 12) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering portfolios/edit
+  [4;36;1mPiece Load (1.5ms)[0m   [0;1mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 14) [0m
+Completed in 112ms (View: 58, DB: 4) | 200 OK [http://0.0.0.0/users/12/portfolios/14/edit]
+
+
+Processing PortfoliosController#edit (for 127.0.0.1 at 2009-07-29 15:35:40) [GET]
+  Parameters: {"id"=>"14", "user_id"=>"12"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 12) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.8ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 12) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering portfolios/edit
+  [4;35;1mPiece Load (1.5ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 14) [0m
+Completed in 100ms (View: 58, DB: 3) | 200 OK [http://0.0.0.0/users/12/portfolios/14/edit]
+New Relic Agent not running
+New Relic Agent not running
+  [4;36;1mSQL (1.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20090718215859)
+Migrating to AddInfoToUsers (20090718220754)
+Migrating to CreatePortfolios (20090719031854)
+Migrating to RemoveTypeFromUsers (20090719032358)
+Migrating to AddAccountTierToUsers (20090719032501)
+Migrating to CreatePieces (20090720145132)
+Migrating to AddAvatarToUsers (20090720151551)
+Migrating to RemoveAvatarFromUsers (20090720202141)
+Migrating to AddAvatarToUsersForReal (20090720202338)
+Migrating to PleaseWorkPaperclipYouMotherfucker (20090721033045)
+Migrating to AddAttachmentsPhotoToUser (20090721033319)
+Migrating to AddAttachmentsImage1ToPortfolio (20090721152728)
+Migrating to AddAttachmentsImage2ToPiece (20090721170213)
+Migrating to AddAttachmentsImage3ToPiece (20090721170326)
+Migrating to AddAttachmentsImage4ToPiece (20090721170409)
+Migrating to AddAttachmentsImage5ToPiece (20090721170424)
+Migrating to RemoveImage1FromPortfolios (20090721210418)
+Migrating to AddAttachmentsImage1ToPiece (20090721210511)
+Migrating to AddPositionToPieces (20090729193934)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mALTER TABLE "pieces" ADD "position" integer[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090729193934')[0m
+  [4;35;1mSQL (0.7ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.7ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mPRAGMA index_list("pieces")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_list("portfolios")[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mPRAGMA index_info('index_users_on_login')[0m
+New Relic Agent not running
+  [4;36;1mSQL (1.0ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (1.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_list("pieces")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("portfolios")[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mPRAGMA index_info('index_users_on_login')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (1.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mCREATE TABLE "pieces" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "description" varchar(255), "price" decimal(10,2), "for_sale" boolean, "portfolio_id" integer, "created_at" datetime, "updated_at" datetime, "image_2_file_name" varchar(255), "image_2_content_type" varchar(255), "image_2_file_size" integer, "image_2_updated_at" datetime, "image_3_file_name" varchar(255), "image_3_content_type" varchar(255), "image_3_file_size" integer, "image_3_updated_at" datetime, "image_4_file_name" varchar(255), "image_4_content_type" varchar(255), "image_4_file_size" integer, "image_4_updated_at" datetime, "image_5_file_name" varchar(255), "image_5_content_type" varchar(255), "image_5_file_size" integer, "image_5_updated_at" datetime, "image_1_file_name" varchar(255), "image_1_content_type" varchar(255), "image_1_file_size" integer, "image_1_updated_at" datetime, "position" integer) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (22.4ms)[0m   [0;1mCREATE TABLE "portfolios" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.7ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (11.1ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(40), "name" varchar(100) DEFAULT '', "email" varchar(100), "crypted_password" varchar(40), "salt" varchar(40), "created_at" datetime, "updated_at" datetime, "remember_token" varchar(40), "remember_token_expires_at" datetime, "activation_code" varchar(40), "activated_at" datetime, "first_name" varchar(255), "last_name" varchar(255), "about_me" text, "tag_line" varchar(500), "design_type" integer, "account_tier" integer DEFAULT 1, "photo_file_name" varchar(255), "photo_content_type" varchar(255), "photo_file_size" integer, "photo_updated_at" datetime) [0m
+  [4;35;1mSQL (1.9ms)[0m   [0mCREATE UNIQUE INDEX "index_users_on_login" ON "users" ("login")[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;36;1mSQL (10.3ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.7ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (13.0ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090729193934')[0m
+  [4;36;1mSQL (8.0ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090718215859')[0m
+  [4;35;1mSQL (8.1ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090718220754')[0m
+  [4;36;1mSQL (8.1ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090719031854')[0m
+  [4;35;1mSQL (8.1ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090719032358')[0m
+  [4;36;1mSQL (8.4ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090719032501')[0m
+  [4;35;1mSQL (7.8ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090720145132')[0m
+  [4;36;1mSQL (8.0ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090720151551')[0m
+  [4;35;1mSQL (8.4ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090720202141')[0m
+  [4;36;1mSQL (11.9ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090720202338')[0m
+  [4;35;1mSQL (5.0ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090721033045')[0m
+  [4;36;1mSQL (7.0ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090721033319')[0m
+  [4;35;1mSQL (8.3ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090721152728')[0m
+  [4;36;1mSQL (7.9ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090721170213')[0m
+  [4;35;1mSQL (8.0ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090721170326')[0m
+  [4;36;1mSQL (8.4ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090721170409')[0m
+  [4;35;1mSQL (7.8ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090721170424')[0m
+  [4;36;1mSQL (8.2ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090721210418')[0m
+  [4;35;1mSQL (7.9ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090721210511')[0m
+Starting the New Relic Agent
+  [4;36;1mSQL (1.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+
+
+Processing PortfoliosController#edit (for 127.0.0.1 at 2009-07-29 15:58:35) [GET]
+  Parameters: {"id"=>"14", "user_id"=>"12"}
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 12) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.8ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 12) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering portfolios/edit
+ERROR: compiling _run_erb_app47views47portfolios47edit46html46erb RAISED compile error
+/Users/maloney/Desktop/weefolio/app/views/portfolios/edit.html.erb:53: syntax error, unexpected kENSURE, expecting $end
+Function body:           def _run_erb_app47views47portfolios47edit46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<!--PAGE TITLE/CALL-TO-ACTION-->\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "<div id=\"page-header-container-outer\">\n"
+@output_buffer.concat "\t<div id=\"page-header-container-inner\">\n"
+@output_buffer.concat "\t\t<h1>Portfolio<small>  Manage your Weefolio</small></h1>\n"
+@output_buffer.concat "\t\t\n"
+@output_buffer.concat "\t\t<div class=\"call-to-action\">\n"
+@output_buffer.concat "\t\t\t<!--THIS IS WHERE YOU CAN PUT 'ADD NEW WORK' LINKS ETC.\n"
+@output_buffer.concat "\t\t\t<a href=\"#\">Call to action!</a>\n"
+@output_buffer.concat "\t\t\t-->\n"
+@output_buffer.concat "\t\t\t<p>\n"
+@output_buffer.concat "        "; @output_buffer.concat(( link_to 'Add Work', new_portfolio_piece_path(@user.portfolio) ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "      </p>\n"
+@output_buffer.concat "\t\t</div>\n"
+@output_buffer.concat "\t</div>\n"
+@output_buffer.concat "</div>\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "<!--PAGE CONTENT-->\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "<div id=\"content-container\">\n"
+@output_buffer.concat "  <p>\n"
+@output_buffer.concat "    "; @output_buffer.concat(( flash[:notice] ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "  </p>\n"
+@output_buffer.concat "\t<!--DUMP ALL OF YOUR SHIT HERE!-->\n"
+@output_buffer.concat "\t<ul id=\"pieces\">\n"
+@output_buffer.concat "\t";  @portfolio.pieces.each do |piece| ; @output_buffer.concat "\n"
+@output_buffer.concat "\t  ";  content_tag_for :li, piece do ; @output_buffer.concat "\n"
+@output_buffer.concat "      <p>\n"
+@output_buffer.concat "        "; @output_buffer.concat(( piece.title ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "      </p>\n"
+@output_buffer.concat "      <p> \n"
+@output_buffer.concat "        "; @output_buffer.concat(( piece.description ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "      </p>\n"
+@output_buffer.concat "      <p>\n"
+@output_buffer.concat "        "; @output_buffer.concat(( image_tag piece.image_1.url ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "        ";  unless @user.account_tier == 1 ; @output_buffer.concat "\n"
+@output_buffer.concat "          "; @output_buffer.concat(( image_tag piece.image_2.url ).to_s); @output_buffer.concat " \n"
+@output_buffer.concat "          "; @output_buffer.concat(( image_tag piece.image_3.url ).to_s); @output_buffer.concat " \n"
+@output_buffer.concat "          "; @output_buffer.concat(( image_tag piece.image_4.url ).to_s); @output_buffer.concat " \n"
+@output_buffer.concat "          "; @output_buffer.concat(( image_tag piece.image_5.url ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "      ";  end ; @output_buffer.concat "\n"
+@output_buffer.concat "      </p>\n"
+@output_buffer.concat "      <p>\n"
+@output_buffer.concat "        "; @output_buffer.concat(( link_to 'Edit', edit_portfolio_piece_path(@portfolio, piece)).to_s); @output_buffer.concat " | "; @output_buffer.concat(( link_to 'Delete', portfolio_piece_path(@portfolio, piece), :confirm => "Are you sure?", :method => :delete ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "      </p>\n"
+@output_buffer.concat "      ";  end ; @output_buffer.concat "\n"
+@output_buffer.concat "    ";  end ; @output_buffer.concat "\n"
+@output_buffer.concat "    </ul>\n"
+@output_buffer.concat "    "; @output_buffer.concat(( sortable_element("pieces", :url => sort_pieces_path)).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "  ";  end ; @output_buffer.concat "\n"
+@output_buffer.concat "</div>\n"
+@output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/maloney/Desktop/weefolio/app/views/portfolios/edit.html.erb:53:in `compile!'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/renderable.rb:61:in `compile'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/renderable.rb:28:in `render_without_trace_View___path__Rendering'
+/Users/maloney/Desktop/weefolio/vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:161:in `render'
+/Users/maloney/Desktop/weefolio/vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:62:in `trace_method_execution_with_scope'
+/Users/maloney/Desktop/weefolio/vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:160:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/template.rb:194:in `render_template'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:260:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:343:in `_render_with_layout'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:257:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1241:in `render_for_file'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:937:in `render_without_benchmark'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:51:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:51:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1317:in `default_render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1323:in `perform_action_without_filters'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:617:in `call_filters'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/flash.rb:141:in `perform_action_without_newrelic_trace'
+/Users/maloney/Desktop/weefolio/vendor/plugins/newrelic_rpm/lib/new_relic/agent/instrumentation/controller_instrumentation.rb:138:in `perform_action'
+/Users/maloney/Desktop/weefolio/vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:62:in `trace_method_execution_with_scope'
+/Users/maloney/Desktop/weefolio/vendor/plugins/newrelic_rpm/lib/new_relic/agent/instrumentation/controller_instrumentation.rb:122:in `perform_action'
+/Users/maloney/Desktop/weefolio/vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:38:in `trace_method_execution_no_scope'
+/Users/maloney/Desktop/weefolio/vendor/plugins/newrelic_rpm/lib/new_relic/agent/instrumentation/controller_instrumentation.rb:117:in `perform_action'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:523:in `send'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:523:in `process_without_filters'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:606:in `process'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:391:in `process'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:386:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:433:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:88:in `dispatch'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:111:in `_call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:82:in `initialize'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:9:in `cache'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:28:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/Users/maloney/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/head.rb:9:in `call'
+/Users/maloney/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/methodoverride.rb:24:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/params_parser.rb:15:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rewindable_input.rb:25:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/session/cookie_store.rb:93:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/reloader.rb:9:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/failsafe.rb:11:in `call'
+/Users/maloney/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/Users/maloney/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+/Users/maloney/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:106:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/rails/rack/static.rb:31:in `call'
+/Users/maloney/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:46:in `call'
+/Users/maloney/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `each'
+/Users/maloney/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/rails/rack/log_tailer.rb:17:in `call'
+/Users/maloney/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/content_length.rb:13:in `call'
+/Users/maloney/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/handler/webrick.rb:46:in `service'
+/usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/Users/maloney/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/handler/webrick.rb:13:in `run'
+/usr/local/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/commands/server.rb:111
+/usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/Users/maloney/Desktop/weefolio/app/views/portfolios/edit.html.erb:53: syntax error, unexpected kENSURE, expecting $end) on line #53 of app/views/portfolios/edit.html.erb:
+50:   <% end %>
+51: </div>
+
+    app/views/portfolios/edit.html.erb:53:in `compile!'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (165.6ms)
+Rendered rescues/_request_and_response (3.1ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PortfoliosController#edit (for 127.0.0.1 at 2009-07-29 15:58:36) [GET]
+  Parameters: {"id"=>"14", "user_id"=>"12"}
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 12) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.6ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 12) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering portfolios/edit
+ERROR: compiling _run_erb_app47views47portfolios47edit46html46erb RAISED compile error
+/Users/maloney/Desktop/weefolio/app/views/portfolios/edit.html.erb:53: syntax error, unexpected kENSURE, expecting $end
+Function body:           def _run_erb_app47views47portfolios47edit46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<!--PAGE TITLE/CALL-TO-ACTION-->\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "<div id=\"page-header-container-outer\">\n"
+@output_buffer.concat "\t<div id=\"page-header-container-inner\">\n"
+@output_buffer.concat "\t\t<h1>Portfolio<small>  Manage your Weefolio</small></h1>\n"
+@output_buffer.concat "\t\t\n"
+@output_buffer.concat "\t\t<div class=\"call-to-action\">\n"
+@output_buffer.concat "\t\t\t<!--THIS IS WHERE YOU CAN PUT 'ADD NEW WORK' LINKS ETC.\n"
+@output_buffer.concat "\t\t\t<a href=\"#\">Call to action!</a>\n"
+@output_buffer.concat "\t\t\t-->\n"
+@output_buffer.concat "\t\t\t<p>\n"
+@output_buffer.concat "        "; @output_buffer.concat(( link_to 'Add Work', new_portfolio_piece_path(@user.portfolio) ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "      </p>\n"
+@output_buffer.concat "\t\t</div>\n"
+@output_buffer.concat "\t</div>\n"
+@output_buffer.concat "</div>\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "<!--PAGE CONTENT-->\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "<div id=\"content-container\">\n"
+@output_buffer.concat "  <p>\n"
+@output_buffer.concat "    "; @output_buffer.concat(( flash[:notice] ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "  </p>\n"
+@output_buffer.concat "\t<!--DUMP ALL OF YOUR SHIT HERE!-->\n"
+@output_buffer.concat "\t<ul id=\"pieces\">\n"
+@output_buffer.concat "\t";  @portfolio.pieces.each do |piece| ; @output_buffer.concat "\n"
+@output_buffer.concat "\t  ";  content_tag_for :li, piece do ; @output_buffer.concat "\n"
+@output_buffer.concat "      <p>\n"
+@output_buffer.concat "        "; @output_buffer.concat(( piece.title ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "      </p>\n"
+@output_buffer.concat "      <p> \n"
+@output_buffer.concat "        "; @output_buffer.concat(( piece.description ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "      </p>\n"
+@output_buffer.concat "      <p>\n"
+@output_buffer.concat "        "; @output_buffer.concat(( image_tag piece.image_1.url ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "        ";  unless @user.account_tier == 1 ; @output_buffer.concat "\n"
+@output_buffer.concat "          "; @output_buffer.concat(( image_tag piece.image_2.url ).to_s); @output_buffer.concat " \n"
+@output_buffer.concat "          "; @output_buffer.concat(( image_tag piece.image_3.url ).to_s); @output_buffer.concat " \n"
+@output_buffer.concat "          "; @output_buffer.concat(( image_tag piece.image_4.url ).to_s); @output_buffer.concat " \n"
+@output_buffer.concat "          "; @output_buffer.concat(( image_tag piece.image_5.url ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "      ";  end ; @output_buffer.concat "\n"
+@output_buffer.concat "      </p>\n"
+@output_buffer.concat "      <p>\n"
+@output_buffer.concat "        "; @output_buffer.concat(( link_to 'Edit', edit_portfolio_piece_path(@portfolio, piece)).to_s); @output_buffer.concat " | "; @output_buffer.concat(( link_to 'Delete', portfolio_piece_path(@portfolio, piece), :confirm => "Are you sure?", :method => :delete ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "      </p>\n"
+@output_buffer.concat "      ";  end ; @output_buffer.concat "\n"
+@output_buffer.concat "    ";  end ; @output_buffer.concat "\n"
+@output_buffer.concat "    </ul>\n"
+@output_buffer.concat "    "; @output_buffer.concat(( sortable_element("pieces", :url => sort_pieces_path)).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "  ";  end ; @output_buffer.concat "\n"
+@output_buffer.concat "</div>\n"
+@output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/maloney/Desktop/weefolio/app/views/portfolios/edit.html.erb:53:in `compile!'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/renderable.rb:61:in `compile'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/renderable.rb:28:in `render_without_trace_View___path__Rendering'
+/Users/maloney/Desktop/weefolio/vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:161:in `render'
+/Users/maloney/Desktop/weefolio/vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:62:in `trace_method_execution_with_scope'
+/Users/maloney/Desktop/weefolio/vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:160:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/template.rb:194:in `render_template'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:260:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:343:in `_render_with_layout'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:257:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1241:in `render_for_file'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:937:in `render_without_benchmark'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:51:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:51:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1317:in `default_render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1323:in `perform_action_without_filters'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:617:in `call_filters'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/flash.rb:141:in `perform_action_without_newrelic_trace'
+/Users/maloney/Desktop/weefolio/vendor/plugins/newrelic_rpm/lib/new_relic/agent/instrumentation/controller_instrumentation.rb:138:in `perform_action'
+/Users/maloney/Desktop/weefolio/vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:62:in `trace_method_execution_with_scope'
+/Users/maloney/Desktop/weefolio/vendor/plugins/newrelic_rpm/lib/new_relic/agent/instrumentation/controller_instrumentation.rb:122:in `perform_action'
+/Users/maloney/Desktop/weefolio/vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:38:in `trace_method_execution_no_scope'
+/Users/maloney/Desktop/weefolio/vendor/plugins/newrelic_rpm/lib/new_relic/agent/instrumentation/controller_instrumentation.rb:117:in `perform_action'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:523:in `send'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:523:in `process_without_filters'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:606:in `process'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:391:in `process'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:386:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:433:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:88:in `dispatch'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:111:in `_call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:82:in `initialize'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:9:in `cache'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:28:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/Users/maloney/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/head.rb:9:in `call'
+/Users/maloney/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/methodoverride.rb:24:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/params_parser.rb:15:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rewindable_input.rb:25:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/session/cookie_store.rb:93:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/reloader.rb:9:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/failsafe.rb:11:in `call'
+/Users/maloney/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/Users/maloney/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+/Users/maloney/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:106:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/rails/rack/static.rb:31:in `call'
+/Users/maloney/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:46:in `call'
+/Users/maloney/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `each'
+/Users/maloney/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/rails/rack/log_tailer.rb:17:in `call'
+/Users/maloney/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/content_length.rb:13:in `call'
+/Users/maloney/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/handler/webrick.rb:46:in `service'
+/usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/Users/maloney/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/handler/webrick.rb:13:in `run'
+/usr/local/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/commands/server.rb:111
+/usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/Users/maloney/Desktop/weefolio/app/views/portfolios/edit.html.erb:53: syntax error, unexpected kENSURE, expecting $end) on line #53 of app/views/portfolios/edit.html.erb:
+50:   <% end %>
+51: </div>
+
+    app/views/portfolios/edit.html.erb:53:in `compile!'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (185.4ms)
+Rendered rescues/_request_and_response (1.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PortfoliosController#edit (for 127.0.0.1 at 2009-07-29 15:59:13) [GET]
+  Parameters: {"id"=>"14", "user_id"=>"12"}
+  [4;36;1mUser Load (1.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 12) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.7ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 12) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering portfolios/edit
+  [4;36;1mPiece Load (1.4ms)[0m   [0;1mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 14) [0m
+
+ActionView::TemplateError (undefined local variable or method `sort_pieces_path' for #<ActionView::Base:0x24e8b38>) on line #48 of app/views/portfolios/edit.html.erb:
+45:       </p>
+46:     <% end %>
+47:     </ul>
+48:     <%= sortable_element("pieces", :url => sort_pieces_path)%>
+49:   <% end %>
+50: </div>
+
+    app/views/portfolios/edit.html.erb:48
+    app/views/portfolios/edit.html.erb:26
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (75.4ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PortfoliosController#edit (for 127.0.0.1 at 2009-07-29 15:59:13) [GET]
+  Parameters: {"id"=>"14", "user_id"=>"12"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 12) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.6ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 12) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering portfolios/edit
+  [4;35;1mPiece Load (1.2ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 14) [0m
+
+ActionView::TemplateError (undefined local variable or method `sort_pieces_path' for #<ActionView::Base:0x22efd2c>) on line #48 of app/views/portfolios/edit.html.erb:
+45:       </p>
+46:     <% end %>
+47:     </ul>
+48:     <%= sortable_element("pieces", :url => sort_pieces_path)%>
+49:   <% end %>
+50: </div>
+
+    app/views/portfolios/edit.html.erb:48
+    app/views/portfolios/edit.html.erb:26
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (73.7ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PortfoliosController#edit (for 127.0.0.1 at 2009-07-29 16:00:29) [GET]
+  Parameters: {"id"=>"14", "user_id"=>"12"}
+  [4;36;1mUser Load (1.7ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 12) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.7ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 12) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering portfolios/edit
+  [4;36;1mPiece Load (1.9ms)[0m   [0;1mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 14) [0m
+
+ActionView::TemplateError (sort_portfolio_pieces_url failed to generate from {:controller=>"pieces", :action=>"sort"} - you may have ambiguous routes, or you may need to supply additional parameters for this route.  content_url has the following required parameters: ["portfolios", :portfolio_id, "pieces", "sort"] - are they all satisfied?) on line #48 of app/views/portfolios/edit.html.erb:
+45:       </p>
+46:     <% end %>
+47:     </ul>
+48:     <%= sortable_element("pieces", :url => sort_portfolio_pieces_path)%>
+49:   <% end %>
+50: </div>
+
+    (eval):20:in `sort_portfolio_pieces_path'
+    app/views/portfolios/edit.html.erb:48
+    app/views/portfolios/edit.html.erb:26
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (182.7ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PortfoliosController#edit (for 127.0.0.1 at 2009-07-29 16:00:30) [GET]
+  Parameters: {"id"=>"14", "user_id"=>"12"}
+  [4;35;1mUser Load (1.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 12) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.6ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 12) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering portfolios/edit
+  [4;35;1mPiece Load (1.2ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 14) [0m
+
+ActionView::TemplateError (sort_portfolio_pieces_url failed to generate from {:controller=>"pieces", :action=>"sort"} - you may have ambiguous routes, or you may need to supply additional parameters for this route.  content_url has the following required parameters: ["portfolios", :portfolio_id, "pieces", "sort"] - are they all satisfied?) on line #48 of app/views/portfolios/edit.html.erb:
+45:       </p>
+46:     <% end %>
+47:     </ul>
+48:     <%= sortable_element("pieces", :url => sort_portfolio_pieces_path)%>
+49:   <% end %>
+50: </div>
+
+    (eval):20:in `sort_portfolio_pieces_path'
+    app/views/portfolios/edit.html.erb:48
+    app/views/portfolios/edit.html.erb:26
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (197.8ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PortfoliosController#edit (for 127.0.0.1 at 2009-07-29 16:02:38) [GET]
+  Parameters: {"id"=>"14", "user_id"=>"12"}
+  [4;36;1mUser Load (1.7ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 12) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.9ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 12) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering portfolios/edit
+  [4;36;1mPiece Load (1.4ms)[0m   [0;1mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 14) [0m
+
+ActionView::TemplateError (undefined local variable or method `portfolio_pieces_sort_path' for #<ActionView::Base:0x2378014>) on line #48 of app/views/portfolios/edit.html.erb:
+45:       </p>
+46:     <% end %>
+47:     </ul>
+48:     <%= sortable_element("pieces", :url => portfolio_pieces_sort_path)%>
+49:   <% end %>
+50: </div>
+
+    app/views/portfolios/edit.html.erb:48
+    app/views/portfolios/edit.html.erb:26
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (80.6ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PortfoliosController#edit (for 127.0.0.1 at 2009-07-29 16:02:39) [GET]
+  Parameters: {"id"=>"14", "user_id"=>"12"}
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 12) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.6ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 12) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering portfolios/edit
+  [4;35;1mPiece Load (1.2ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 14) [0m
+
+ActionView::TemplateError (undefined local variable or method `portfolio_pieces_sort_path' for #<ActionView::Base:0x22e159c>) on line #48 of app/views/portfolios/edit.html.erb:
+45:       </p>
+46:     <% end %>
+47:     </ul>
+48:     <%= sortable_element("pieces", :url => portfolio_pieces_sort_path)%>
+49:   <% end %>
+50: </div>
+
+    app/views/portfolios/edit.html.erb:48
+    app/views/portfolios/edit.html.erb:26
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (78.1ms)
+Rendered rescues/_request_and_response (1.7ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PortfoliosController#edit (for 127.0.0.1 at 2009-07-29 16:02:55) [GET]
+  Parameters: {"id"=>"14", "user_id"=>"12"}
+  [4;36;1mUser Load (1.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 12) LIMIT 1[0m
+  [4;35;1mPortfolio Load (180.6ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 12) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering portfolios/edit
+  [4;36;1mPiece Load (1.6ms)[0m   [0;1mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 14) [0m
+
+ActionView::TemplateError (sort_portfolio_pieces_url failed to generate from {:controller=>"pieces", :action=>"sort"} - you may have ambiguous routes, or you may need to supply additional parameters for this route.  content_url has the following required parameters: ["portfolios", :portfolio_id, "pieces", "sort"] - are they all satisfied?) on line #48 of app/views/portfolios/edit.html.erb:
+45:       </p>
+46:     <% end %>
+47:     </ul>
+48:     <%= sortable_element("pieces", :url => sort_portfolio_pieces_path)%>
+49:   <% end %>
+50: </div>
+
+    (eval):20:in `sort_portfolio_pieces_path'
+    app/views/portfolios/edit.html.erb:48
+    app/views/portfolios/edit.html.erb:26
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (192.1ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PortfoliosController#edit (for 127.0.0.1 at 2009-07-29 16:02:56) [GET]
+  Parameters: {"id"=>"14", "user_id"=>"12"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 12) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.6ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 12) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering portfolios/edit
+  [4;35;1mPiece Load (1.3ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 14) [0m
+
+ActionView::TemplateError (sort_portfolio_pieces_url failed to generate from {:controller=>"pieces", :action=>"sort"} - you may have ambiguous routes, or you may need to supply additional parameters for this route.  content_url has the following required parameters: ["portfolios", :portfolio_id, "pieces", "sort"] - are they all satisfied?) on line #48 of app/views/portfolios/edit.html.erb:
+45:       </p>
+46:     <% end %>
+47:     </ul>
+48:     <%= sortable_element("pieces", :url => sort_portfolio_pieces_path)%>
+49:   <% end %>
+50: </div>
+
+    (eval):20:in `sort_portfolio_pieces_path'
+    app/views/portfolios/edit.html.erb:48
+    app/views/portfolios/edit.html.erb:26
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (197.7ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (internal_server_error)
+New Relic Agent not running
+Starting the New Relic Agent
+  [4;36;1mSQL (1.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+
+
+Processing PortfoliosController#edit (for 127.0.0.1 at 2009-07-29 16:03:49) [GET]
+  Parameters: {"id"=>"14", "user_id"=>"12"}
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 12) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.6ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 12) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering portfolios/edit
+  [4;36;1mPiece Load (1.5ms)[0m   [0;1mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 14) [0m
+Completed in 207ms (View: 135, DB: 3) | 200 OK [http://0.0.0.0/users/12/portfolios/14/edit]
+
+
+Processing PortfoliosController#edit (for 127.0.0.1 at 2009-07-29 16:03:51) [GET]
+  Parameters: {"id"=>"14", "user_id"=>"12"}
+  [4;35;1mUser Load (1.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 12) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.6ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 12) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering portfolios/edit
+  [4;35;1mPiece Load (1.2ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 14) [0m
+Completed in 98ms (View: 49, DB: 3) | 200 OK [http://0.0.0.0/users/12/portfolios/14/edit]
+New Relic Agent not running
+  [4;36;1mUser Load (1.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'mcmaloney') LIMIT 1[0m
+Starting the New Relic Agent
+  [4;36;1mSQL (1.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+
+
+Processing SessionsController#destroy (for 127.0.0.1 at 2009-07-29 16:06:08) [GET]
+Redirected to http://0.0.0.0:3000/
+Completed in 39ms (DB: 0) | 302 Found [http://0.0.0.0/logout]
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-29 16:06:08) [GET]
+Rendering template within layouts/template
+Rendering main_pages/home
+Completed in 26ms (View: 25, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-29 16:06:09) [GET]
+Rendering template within layouts/template
+Rendering main_pages/home
+Completed in 7ms (View: 7, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-07-29 16:06:11) [GET]
+Rendering template within layouts/template
+Rendering sessions/new
+Completed in 19ms (View: 19, DB: 0) | 200 OK [http://0.0.0.0/login]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-07-29 16:06:12) [GET]
+Rendering template within layouts/template
+Rendering sessions/new
+Completed in 8ms (View: 8, DB: 0) | 200 OK [http://0.0.0.0/login]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2009-07-29 16:06:16) [POST]
+  Parameters: {"commit"=>"Login", "authenticity_token"=>"lgA40KNAE9brOiBNR0crtsnkOd+zHX8J+ttpmvTGEd4=", "login"=>"mcmaloney", "password"=>"fitzgoogoo"}
+  [4;36;1mUser Load (1.7ms)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'mcmaloney' and activated_at IS NOT NULL) LIMIT 1[0m
+[paperclip] Saving attachments.
+Redirected to http://0.0.0.0:3000/
+Completed in 43ms (DB: 2) | 302 Found [http://0.0.0.0/session]
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-29 16:06:17) [GET]
+Rendering template within layouts/template
+Rendering main_pages/home
+  [4;35;1mUser Load (1.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 12) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.7ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 12) LIMIT 1[0m
+Completed in 69ms (View: 67, DB: 2) | 200 OK [http://0.0.0.0/]
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-29 16:06:17) [GET]
+Rendering template within layouts/template
+Rendering main_pages/home
+  [4;35;1mUser Load (1.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 12) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.6ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 12) LIMIT 1[0m
+Completed in 217ms (View: 215, DB: 2) | 200 OK [http://0.0.0.0/]
+
+
+Processing PortfoliosController#edit (for 127.0.0.1 at 2009-07-29 16:06:19) [GET]
+  Parameters: {"id"=>"14", "user_id"=>"12"}
+  [4;35;1mUser Load (1.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 12) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.6ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 12) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering portfolios/edit
+  [4;35;1mPiece Load (1.2ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 14) [0m
+Completed in 166ms (View: 130, DB: 3) | 200 OK [http://0.0.0.0/users/12/portfolios/14/edit]
+
+
+Processing PortfoliosController#edit (for 127.0.0.1 at 2009-07-29 16:06:20) [GET]
+  Parameters: {"id"=>"14", "user_id"=>"12"}
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 12) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.6ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 12) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering portfolios/edit
+  [4;36;1mPiece Load (1.4ms)[0m   [0;1mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 14) [0m
+Completed in 212ms (View: 173, DB: 3) | 200 OK [http://0.0.0.0/users/12/portfolios/14/edit]
+
+
+Processing ApplicationController#new (for 127.0.0.1 at 2009-07-29 16:06:22) [GET]
+  Parameters: {"portfolio_id"=>"14"}
+
+SyntaxError (/Users/maloney/Desktop/weefolio/app/controllers/pieces_controller.rb:53: syntax error, unexpected tIDENTIFIER, expecting ']'
+      Piece.update_all(['position=?', index + 1], ['id=?' id])
+                                                            ^
+/Users/maloney/Desktop/weefolio/app/controllers/pieces_controller.rb:58: syntax error, unexpected $end, expecting kEND):
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (45.1ms)
+Rendered rescues/_request_and_response (3.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#new (for 127.0.0.1 at 2009-07-29 16:06:22) [GET]
+  Parameters: {"portfolio_id"=>"14"}
+
+SyntaxError (/Users/maloney/Desktop/weefolio/app/controllers/pieces_controller.rb:53: syntax error, unexpected tIDENTIFIER, expecting ']'
+      Piece.update_all(['position=?', index + 1], ['id=?' id])
+                                                            ^
+/Users/maloney/Desktop/weefolio/app/controllers/pieces_controller.rb:58: syntax error, unexpected $end, expecting kEND):
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (43.9ms)
+Rendered rescues/_request_and_response (124.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PiecesController#new (for 127.0.0.1 at 2009-07-29 16:06:42) [GET]
+  Parameters: {"portfolio_id"=>"14"}
+  [4;35;1mUser Load (1.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 12) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.8ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 12) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering pieces/new
+  [4;35;1mUser Load (1.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 12) [0m
+  [4;36;1mPiece Load (1.2ms)[0m   [0;1mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 14) [0m
+Rendered pieces/_fields (10.4ms)
+Rendered pieces/_form (34.7ms)
+Completed in 143ms (View: 56, DB: 4) | 200 OK [http://0.0.0.0/portfolios/14/pieces/new]
+
+
+Processing PiecesController#new (for 127.0.0.1 at 2009-07-29 16:06:44) [GET]
+  Parameters: {"portfolio_id"=>"14"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 12) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.6ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 12) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering pieces/new
+  [4;35;1mUser Load (1.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 12) [0m
+  [4;36;1mPiece Load (1.1ms)[0m   [0;1mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 14) [0m
+Rendered pieces/_fields (4.8ms)
+Rendered pieces/_form (25.0ms)
+Completed in 99ms (View: 30, DB: 4) | 200 OK [http://0.0.0.0/portfolios/14/pieces/new]
+
+
+Processing PiecesController#create (for 127.0.0.1 at 2009-07-29 16:07:04) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"lgA40KNAE9brOiBNR0crtsnkOd+zHX8J+ttpmvTGEd4=", "portfolio_id"=>"14", "piece"=>{"price"=>"", "title"=>"THingey", "image_1"=>#<File:/var/folders/o9/o9qY2FWWF20mb+bBzRnJqU+++TI/-Tmp-/RackMultipart.72545.1>, "description"=>"A thingey", "for_sale"=>"0"}}
+  [4;35;1mUser Load (1.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 12) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.7ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 12) LIMIT 1[0m
+  [4;35;1mPiece Load (2.8ms)[0m   [0mSELECT * FROM "pieces" WHERE (1 = 1) ORDER BY position DESC LIMIT 1[0m
+  [4;36;1mPiece Create (0.8ms)[0m   [0;1mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "position", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, 40869, '2009-07-29 20:07:05', NULL, NULL, 'THingey', NULL, NULL, '2009-07-29 20:07:04', NULL, NULL, NULL, NULL, 'A thingey', 'f', 14, NULL, 'image/jpeg', NULL, NULL, NULL, 1, '2009-07-29 20:07:05', NULL, NULL, NULL, 'cowphin.jpg')[0m
+[paperclip] Saving attachments.
+[paperclip] saving /Users/maloney/Desktop/weefolio/public/system/image_1s/14/original/cowphin.jpg
+[paperclip] saving /Users/maloney/Desktop/weefolio/public/system/image_1s/14/small_thumb/cowphin.jpg
+[paperclip] saving /Users/maloney/Desktop/weefolio/public/system/image_1s/14/large_thumb/cowphin.jpg
+[paperclip] saving /Users/maloney/Desktop/weefolio/public/system/image_1s/14/view/cowphin.jpg
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+Redirected to http://0.0.0.0:3000/users/12/portfolios/14/edit
+Completed in 1044ms (DB: 6) | 302 Found [http://0.0.0.0/portfolios/14/pieces]
+
+
+Processing PortfoliosController#edit (for 127.0.0.1 at 2009-07-29 16:07:05) [GET]
+  Parameters: {"id"=>"14", "user_id"=>"12"}
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 12) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.6ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 12) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering portfolios/edit
+  [4;35;1mPiece Load (1.6ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 14) [0m
+Completed in 90ms (View: 52, DB: 3) | 200 OK [http://0.0.0.0/users/12/portfolios/14/edit]
+
+
+Processing PortfoliosController#edit (for 127.0.0.1 at 2009-07-29 16:07:06) [GET]
+  Parameters: {"id"=>"14", "user_id"=>"12"}
+  [4;36;1mUser Load (1.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 12) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.7ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 12) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering portfolios/edit
+  [4;36;1mPiece Load (1.9ms)[0m   [0;1mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 14) [0m
+Completed in 134ms (View: 76, DB: 4) | 200 OK [http://0.0.0.0/users/12/portfolios/14/edit]
+
+
+Processing PiecesController#destroy (for 127.0.0.1 at 2009-07-29 16:08:12) [DELETE]
+  Parameters: {"authenticity_token"=>"lgA40KNAE9brOiBNR0crtsnkOd+zHX8J+ttpmvTGEd4=", "id"=>"14", "portfolio_id"=>"14"}
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 12) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.6ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 12) LIMIT 1[0m
+  [4;35;1mPiece Load (1.1ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces"."id" = 14) [0m
+[paperclip] Deleting attachments.
+[paperclip] deleting /Users/maloney/Desktop/weefolio/public/system/image_1s/14/original/cowphin.jpg
+[paperclip] deleting /Users/maloney/Desktop/weefolio/public/system/image_1s/14/small_thumb/cowphin.jpg
+[paperclip] deleting /Users/maloney/Desktop/weefolio/public/system/image_1s/14/large_thumb/cowphin.jpg
+[paperclip] deleting /Users/maloney/Desktop/weefolio/public/system/image_1s/14/view/cowphin.jpg
+[paperclip] Deleting attachments.
+[paperclip] Deleting attachments.
+[paperclip] Deleting attachments.
+[paperclip] Deleting attachments.
+  [4;36;1mPiece Update (0.9ms)[0m   [0;1mUPDATE "pieces" SET position = (position - 1) WHERE (1 = 1 AND position > 1) [0m
+  [4;35;1mPiece Update (0.4ms)[0m   [0mUPDATE "pieces" SET "image_1_file_size" = NULL, "image_1_updated_at" = NULL, "image_1_content_type" = NULL, "position" = NULL, "image_1_file_name" = NULL, "updated_at" = '2009-07-29 20:08:13' WHERE "id" = 14[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;36;1mPiece Destroy (0.2ms)[0m   [0;1mDELETE FROM "pieces" WHERE "id" = 14[0m
+Redirected to http://0.0.0.0:3000/users/12/portfolios/14/edit
+Completed in 102ms (DB: 4) | 302 Found [http://0.0.0.0/portfolios/14/pieces/14]
+
+
+Processing PortfoliosController#edit (for 127.0.0.1 at 2009-07-29 16:08:13) [GET]
+  Parameters: {"id"=>"14", "user_id"=>"12"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 12) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.6ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 12) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering portfolios/edit
+  [4;35;1mPiece Load (1.2ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 14) [0m
+Completed in 74ms (View: 42, DB: 3) | 200 OK [http://0.0.0.0/users/12/portfolios/14/edit]
+
+
+Processing PortfoliosController#edit (for 127.0.0.1 at 2009-07-29 16:08:13) [GET]
+  Parameters: {"id"=>"14", "user_id"=>"12"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 12) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.6ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 12) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering portfolios/edit
+  [4;36;1mPiece Load (1.4ms)[0m   [0;1mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 14) [0m
+Completed in 212ms (View: 175, DB: 3) | 200 OK [http://0.0.0.0/users/12/portfolios/14/edit]
+
+
+Processing PiecesController#new (for 127.0.0.1 at 2009-07-29 16:08:18) [GET]
+  Parameters: {"portfolio_id"=>"14"}
+  [4;35;1mUser Load (1.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 12) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.7ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 12) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering pieces/new
+  [4;35;1mUser Load (1.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 12) [0m
+  [4;36;1mPiece Load (1.7ms)[0m   [0;1mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 14) [0m
+Rendered pieces/_fields (7.3ms)
+Rendered pieces/_form (24.9ms)
+Completed in 108ms (View: 30, DB: 5) | 200 OK [http://0.0.0.0/portfolios/14/pieces/new]
+
+
+Processing PiecesController#new (for 127.0.0.1 at 2009-07-29 16:08:19) [GET]
+  Parameters: {"portfolio_id"=>"14"}
+  [4;35;1mUser Load (5.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 12) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.7ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 12) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering pieces/new
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 12) [0m
+  [4;36;1mPiece Load (1.2ms)[0m   [0;1mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 14) [0m
+Rendered pieces/_fields (7.7ms)
+Rendered pieces/_form (24.7ms)
+Completed in 109ms (View: 31, DB: 8) | 200 OK [http://0.0.0.0/portfolios/14/pieces/new]
+
+
+Processing PiecesController#create (for 127.0.0.1 at 2009-07-29 16:08:45) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"lgA40KNAE9brOiBNR0crtsnkOd+zHX8J+ttpmvTGEd4=", "portfolio_id"=>"14", "piece"=>{"price"=>"", "title"=>"Whatever", "image_1"=>#<File:/var/folders/o9/o9qY2FWWF20mb+bBzRnJqU+++TI/-Tmp-/RackMultipart.72545.1>, "description"=>"Whatever this is", "for_sale"=>"0"}}
+  [4;35;1mUser Load (1.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 12) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.9ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 12) LIMIT 1[0m
+  [4;35;1mPiece Load (3.1ms)[0m   [0mSELECT * FROM "pieces" WHERE (1 = 1) ORDER BY position DESC LIMIT 1[0m
+  [4;36;1mPiece Create (1.0ms)[0m   [0;1mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "position", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, 2513, '2009-07-29 20:08:45', NULL, NULL, 'Whatever', NULL, NULL, '2009-07-29 20:08:45', NULL, NULL, NULL, NULL, 'Whatever this is', 'f', 14, NULL, 'image/gif', NULL, NULL, NULL, 1, '2009-07-29 20:08:45', NULL, NULL, NULL, 'Argentina.gif')[0m
+[paperclip] Saving attachments.
+[paperclip] saving /Users/maloney/Desktop/weefolio/public/system/image_1s/15/original/Argentina.gif
+[paperclip] saving /Users/maloney/Desktop/weefolio/public/system/image_1s/15/small_thumb/Argentina.gif
+[paperclip] saving /Users/maloney/Desktop/weefolio/public/system/image_1s/15/large_thumb/Argentina.gif
+[paperclip] saving /Users/maloney/Desktop/weefolio/public/system/image_1s/15/view/Argentina.gif
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+Redirected to http://0.0.0.0:3000/users/12/portfolios/14/edit
+Completed in 626ms (DB: 6) | 302 Found [http://0.0.0.0/portfolios/14/pieces]
+
+
+Processing PortfoliosController#edit (for 127.0.0.1 at 2009-07-29 16:08:45) [GET]
+  Parameters: {"id"=>"14", "user_id"=>"12"}
+  [4;35;1mUser Load (1.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 12) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.6ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 12) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering portfolios/edit
+  [4;35;1mPiece Load (1.8ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 14) [0m
+Completed in 129ms (View: 87, DB: 4) | 200 OK [http://0.0.0.0/users/12/portfolios/14/edit]
+
+
+Processing PortfoliosController#edit (for 127.0.0.1 at 2009-07-29 16:08:46) [GET]
+  Parameters: {"id"=>"14", "user_id"=>"12"}
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 12) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.8ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 12) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering portfolios/edit
+  [4;36;1mPiece Load (2.0ms)[0m   [0;1mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 14) [0m
+Completed in 294ms (View: 239, DB: 4) | 200 OK [http://0.0.0.0/users/12/portfolios/14/edit]
+
+
+Processing PiecesController#edit (for 127.0.0.1 at 2009-07-29 16:11:11) [GET]
+  Parameters: {"id"=>"12", "portfolio_id"=>"14"}
+  [4;35;1mUser Load (1.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 12) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.8ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 12) LIMIT 1[0m
+  [4;35;1mPiece Load (1.3ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces"."id" = 12) [0m
+Rendering template within layouts/template
+Rendering pieces/edit
+  [4;36;1mUser Load (1.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 12) [0m
+Rendered pieces/_fields (22.0ms)
+Rendered pieces/_form (24.3ms)
+Completed in 120ms (View: 42, DB: 5) | 200 OK [http://0.0.0.0/portfolios/14/pieces/12/edit]
+
+
+Processing PiecesController#edit (for 127.0.0.1 at 2009-07-29 16:11:12) [GET]
+  Parameters: {"id"=>"12", "portfolio_id"=>"14"}
+  [4;35;1mUser Load (1.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 12) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.7ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 12) LIMIT 1[0m
+  [4;35;1mPiece Load (1.4ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces"."id" = 12) [0m
+Rendering template within layouts/template
+Rendering pieces/edit
+  [4;36;1mUser Load (1.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 12) [0m
+Rendered pieces/_fields (19.6ms)
+Rendered pieces/_form (22.2ms)
+Completed in 260ms (View: 29, DB: 4) | 200 OK [http://0.0.0.0/portfolios/14/pieces/12/edit]
+
+
+Processing PiecesController#edit (for 127.0.0.1 at 2009-07-29 16:12:18) [GET]
+  Parameters: {"id"=>"12", "portfolio_id"=>"14"}
+  [4;35;1mUser Load (1.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 12) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.7ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 12) LIMIT 1[0m
+  [4;35;1mPiece Load (1.2ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces"."id" = 12) [0m
+Rendering template within layouts/template
+Rendering pieces/edit
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.account_tier) on line #14 of app/views/pieces/_fields.html.erb:
+11:     <%= f.label :image_1 %><br />
+12:     <%= f.file_field :image_1 %>
+13:   </p>
+14:   <% unless @user.account_tier == 1 %>
+15:     <p>
+16:       <%= f.label :image_2 %><br />
+17:       <%= f.file_field :image_2 %>
+
+    app/views/pieces/_fields.html.erb:14
+    app/views/pieces/_fields.html.erb:1
+    app/helpers/pieces_helper.rb:20:in `form_content'
+    app/views/pieces/_form.html.erb:22
+    app/views/pieces/edit.html.erb:1
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (109.4ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PiecesController#edit (for 127.0.0.1 at 2009-07-29 16:12:18) [GET]
+  Parameters: {"id"=>"12", "portfolio_id"=>"14"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 12) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.6ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 12) LIMIT 1[0m
+  [4;36;1mPiece Load (1.1ms)[0m   [0;1mSELECT * FROM "pieces" WHERE ("pieces"."id" = 12) [0m
+Rendering template within layouts/template
+Rendering pieces/edit
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.account_tier) on line #14 of app/views/pieces/_fields.html.erb:
+11:     <%= f.label :image_1 %><br />
+12:     <%= f.file_field :image_1 %>
+13:   </p>
+14:   <% unless @user.account_tier == 1 %>
+15:     <p>
+16:       <%= f.label :image_2 %><br />
+17:       <%= f.file_field :image_2 %>
+
+    app/views/pieces/_fields.html.erb:14
+    app/views/pieces/_fields.html.erb:1
+    app/helpers/pieces_helper.rb:20:in `form_content'
+    app/views/pieces/_form.html.erb:22
+    app/views/pieces/edit.html.erb:1
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (218.3ms)
+Rendered rescues/_request_and_response (1.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PiecesController#edit (for 127.0.0.1 at 2009-07-29 16:12:45) [GET]
+  Parameters: {"id"=>"12", "portfolio_id"=>"14"}
+  [4;35;1mUser Load (1.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 12) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.8ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 12) LIMIT 1[0m
+  [4;35;1mPiece Load (1.3ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces"."id" = 12) [0m
+Rendering template within layouts/template
+Rendering pieces/edit
+Rendered pieces/_fields (22.5ms)
+Rendered pieces/_form (29.5ms)
+Completed in 120ms (View: 37, DB: 3) | 200 OK [http://0.0.0.0/portfolios/14/pieces/12/edit]
+
+
+Processing PiecesController#edit (for 127.0.0.1 at 2009-07-29 16:12:47) [GET]
+  Parameters: {"id"=>"12", "portfolio_id"=>"14"}
+  [4;36;1mUser Load (1.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 12) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.6ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 12) LIMIT 1[0m
+  [4;36;1mPiece Load (1.3ms)[0m   [0;1mSELECT * FROM "pieces" WHERE ("pieces"."id" = 12) [0m
+Rendering template within layouts/template
+Rendering pieces/edit
+Rendered pieces/_fields (14.7ms)
+Rendered pieces/_form (17.1ms)
+Completed in 94ms (View: 25, DB: 3) | 200 OK [http://0.0.0.0/portfolios/14/pieces/12/edit]
+
+
+Processing PiecesController#edit (for 127.0.0.1 at 2009-07-29 16:12:49) [GET]
+  Parameters: {"id"=>"12", "portfolio_id"=>"14"}
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 12) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.6ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 12) LIMIT 1[0m
+  [4;35;1mPiece Load (1.2ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces"."id" = 12) [0m
+Rendering template within layouts/template
+Rendering pieces/edit
+Rendered pieces/_fields (13.2ms)
+Rendered pieces/_form (14.9ms)
+Completed in 91ms (View: 22, DB: 3) | 200 OK [http://0.0.0.0/portfolios/14/pieces/12/edit]
+
+
+Processing PiecesController#edit (for 127.0.0.1 at 2009-07-29 16:12:50) [GET]
+  Parameters: {"id"=>"12", "portfolio_id"=>"14"}
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 12) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.6ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 12) LIMIT 1[0m
+  [4;36;1mPiece Load (1.1ms)[0m   [0;1mSELECT * FROM "pieces" WHERE ("pieces"."id" = 12) [0m
+Rendering template within layouts/template
+Rendering pieces/edit
+Rendered pieces/_fields (13.4ms)
+Rendered pieces/_form (15.0ms)
+Completed in 88ms (View: 22, DB: 3) | 200 OK [http://0.0.0.0/portfolios/14/pieces/12/edit]
+
+
+Processing PiecesController#edit (for 127.0.0.1 at 2009-07-29 16:13:30) [GET]
+  Parameters: {"id"=>"12", "portfolio_id"=>"14"}
+  [4;35;1mUser Load (6.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 12) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.7ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 12) LIMIT 1[0m
+  [4;35;1mPiece Load (1.3ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces"."id" = 12) [0m
+Rendering template within layouts/template
+Rendering pieces/edit
+  [4;36;1mUser Load (1.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 12) [0m
+Rendered pieces/_fields (31.4ms)
+Rendered pieces/_form (38.7ms)
+Completed in 136ms (View: 47, DB: 9) | 200 OK [http://0.0.0.0/portfolios/14/pieces/12/edit]
+
+
+Processing PiecesController#edit (for 127.0.0.1 at 2009-07-29 16:13:32) [GET]
+  Parameters: {"id"=>"12", "portfolio_id"=>"14"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 12) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.6ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 12) LIMIT 1[0m
+  [4;35;1mPiece Load (1.7ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces"."id" = 12) [0m
+Rendering template within layouts/template
+Rendering pieces/edit
+  [4;36;1mUser Load (1.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 12) [0m
+Rendered pieces/_fields (20.6ms)
+Rendered pieces/_form (22.7ms)
+Completed in 123ms (View: 28, DB: 5) | 200 OK [http://0.0.0.0/portfolios/14/pieces/12/edit]
+New Relic Agent not running
+  [4;36;1mUser Delete all (2.3ms)[0m   [0;1mDELETE FROM "users" WHERE 1=1[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" [0m
+Starting the New Relic Agent
+  [4;36;1mSQL (1.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+
+
+Processing PiecesController#edit (for 127.0.0.1 at 2009-07-29 16:15:58) [GET]
+  Parameters: {"id"=>"12", "portfolio_id"=>"14"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 12) LIMIT 1[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."remember_token" = '') LIMIT 1[0m
+
+NoMethodError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.portfolio):
+  app/controllers/pieces_controller.rb:24:in `edit'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (66.6ms)
+Rendered rescues/_request_and_response (3.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PiecesController#edit (for 127.0.0.1 at 2009-07-29 16:15:58) [GET]
+  Parameters: {"id"=>"12", "portfolio_id"=>"14"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = '') LIMIT 1[0m
+
+NoMethodError (You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.portfolio):
+  app/controllers/pieces_controller.rb:24:in `edit'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (51.8ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-29 16:16:04) [GET]
+Rendering template within layouts/template
+Rendering main_pages/home
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."remember_token" = '') LIMIT 1[0m
+Completed in 45ms (View: 44, DB: 1) | 200 OK [http://0.0.0.0/]
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-29 16:16:04) [GET]
+Rendering template within layouts/template
+Rendering main_pages/home
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = '') LIMIT 1[0m
+Completed in 31ms (View: 30, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-07-29 16:16:06) [GET]
+Rendering template within layouts/template
+Rendering users/new
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."remember_token" = '') LIMIT 1[0m
+Completed in 68ms (View: 40, DB: 1) | 200 OK [http://0.0.0.0/signup]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-07-29 16:16:07) [GET]
+Rendering template within layouts/template
+Rendering users/new
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."remember_token" = '') LIMIT 1[0m
+Completed in 43ms (View: 21, DB: 0) | 200 OK [http://0.0.0.0/signup]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-07-29 16:16:30) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"fitzgoogoo", "first_name"=>"Michael", "password"=>"fitzgoogoo", "login"=>"mcmaloney", "last_name"=>"Maloney", "email"=>"maloney.mc@gmail.com"}, "commit"=>"Sign Up", "authenticity_token"=>"lgA40KNAE9brOiBNR0crtsnkOd+zHX8J+ttpmvTGEd4="}
+  [4;35;1mPortfolio Create (1.1ms)[0m   [0mINSERT INTO "portfolios" ("updated_at", "user_id", "created_at") VALUES('2009-07-29 20:16:30', NULL, '2009-07-29 20:16:30')[0m
+  [4;36;1mUser Create (0.9ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "photo_file_name", "photo_file_size", "crypted_password", "account_tier", "about_me", "remember_token_expires_at", "activation_code", "photo_updated_at", "photo_content_type", "remember_token", "tag_line", "first_name", "login", "last_name", "design_type", "email", "created_at") VALUES('', '116528e18f5dd71f62fa46ed294d1c81fda9c3a7', '2009-07-29 20:16:31', '2009-07-29 20:16:30', NULL, NULL, '3a862bb443e3ee4cf5b84816ce5c88cde0319578', 1, NULL, NULL, 'a2700ed86e7305eaef86c0b11bc9fceadc5126a2', NULL, NULL, NULL, NULL, 'Michael', 'mcmaloney', 'Maloney', NULL, 'maloney.mc@gmail.com', '2009-07-29 20:16:31')[0m
+  [4;35;1mPortfolio Update (0.4ms)[0m   [0mUPDATE "portfolios" SET "updated_at" = '2009-07-29 20:16:31', "user_id" = 13 WHERE "id" = 15[0m
+[paperclip] Saving attachments.
+  [4;36;1mUser Exists (0.4ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login" = 'mcmaloney' AND "users".id <> 13) LIMIT 1[0m
+  [4;35;1mUser Exists (0.3ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'maloney.mc@gmail.com' AND "users".id <> 13) LIMIT 1[0m
+[paperclip] Saving attachments.
+Redirected to http://0.0.0.0:3000/
+Completed in 390ms (DB: 3) | 302 Found [http://0.0.0.0/users]
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-29 16:16:31) [GET]
+Rendering template within layouts/template
+Rendering main_pages/home
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 13) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.6ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 13) LIMIT 1[0m
+Completed in 43ms (View: 41, DB: 2) | 200 OK [http://0.0.0.0/]
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-29 16:16:31) [GET]
+Rendering template within layouts/template
+Rendering main_pages/home
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 13) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.7ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 13) LIMIT 1[0m
+Completed in 42ms (View: 39, DB: 2) | 200 OK [http://0.0.0.0/]
+
+
+Processing PortfoliosController#show (for 127.0.0.1 at 2009-07-29 16:16:36) [GET]
+  Parameters: {"id"=>"15", "user_id"=>"13"}
+  [4;36;1mUser Load (1.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 13) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.8ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 13) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering portfolios/show
+  [4;36;1mPiece Load (0.6ms)[0m   [0;1mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 15) [0m
+Completed in 263ms (View: 215, DB: 3) | 200 OK [http://0.0.0.0/users/13/portfolios/15]
+
+
+Processing PortfoliosController#show (for 127.0.0.1 at 2009-07-29 16:16:37) [GET]
+  Parameters: {"id"=>"15", "user_id"=>"13"}
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 13) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.7ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 13) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering portfolios/show
+  [4;35;1mPiece Load (0.5ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 15) [0m
+Completed in 55ms (View: 21, DB: 2) | 200 OK [http://0.0.0.0/users/13/portfolios/15]
+
+
+Processing PortfoliosController#edit (for 127.0.0.1 at 2009-07-29 16:16:39) [GET]
+  Parameters: {"id"=>"15", "user_id"=>"13"}
+  [4;36;1mUser Load (0.9ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 13) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.6ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 13) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering portfolios/edit
+ERROR: compiling _run_erb_app47views47portfolios47edit46html46erb RAISED compile error
+/Users/maloney/Desktop/weefolio/app/views/portfolios/edit.html.erb:49: syntax error, unexpected kENSURE, expecting $end
+Function body:           def _run_erb_app47views47portfolios47edit46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<!--PAGE TITLE/CALL-TO-ACTION-->\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "<div id=\"page-header-container-outer\">\n"
+@output_buffer.concat "\t<div id=\"page-header-container-inner\">\n"
+@output_buffer.concat "\t\t<h1>Portfolio<small>  Manage your Weefolio</small></h1>\n"
+@output_buffer.concat "\t\t\n"
+@output_buffer.concat "\t\t<div class=\"call-to-action\">\n"
+@output_buffer.concat "\t\t\t<!--THIS IS WHERE YOU CAN PUT 'ADD NEW WORK' LINKS ETC.\n"
+@output_buffer.concat "\t\t\t<a href=\"#\">Call to action!</a>\n"
+@output_buffer.concat "\t\t\t-->\n"
+@output_buffer.concat "\t\t\t<p>\n"
+@output_buffer.concat "        "; @output_buffer.concat(( link_to 'Add Work', new_portfolio_piece_path(@user.portfolio) ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "      </p>\n"
+@output_buffer.concat "\t\t</div>\n"
+@output_buffer.concat "\t</div>\n"
+@output_buffer.concat "</div>\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "<!--PAGE CONTENT-->\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "<div id=\"content-container\">\n"
+@output_buffer.concat "  <p>\n"
+@output_buffer.concat "    "; @output_buffer.concat(( flash[:notice] ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "  </p>\n"
+@output_buffer.concat "\t<!--DUMP ALL OF YOUR SHIT HERE!-->\n"
+@output_buffer.concat "\t<ul id=\"pieces\">\n"
+@output_buffer.concat "\t";  @portfolio.pieces.each do |piece| ; @output_buffer.concat "\n"
+@output_buffer.concat "    <p>\n"
+@output_buffer.concat "      "; @output_buffer.concat(( piece.title ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "    </p>\n"
+@output_buffer.concat "    <p> \n"
+@output_buffer.concat "      "; @output_buffer.concat(( piece.description ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "    </p>\n"
+@output_buffer.concat "    <p>\n"
+@output_buffer.concat "      "; @output_buffer.concat(( image_tag piece.image_1.url ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "      ";  unless @user.account_tier == 1 ; @output_buffer.concat "\n"
+@output_buffer.concat "        "; @output_buffer.concat(( image_tag piece.image_2.url ).to_s); @output_buffer.concat " \n"
+@output_buffer.concat "        "; @output_buffer.concat(( image_tag piece.image_3.url ).to_s); @output_buffer.concat " \n"
+@output_buffer.concat "        "; @output_buffer.concat(( image_tag piece.image_4.url ).to_s); @output_buffer.concat " \n"
+@output_buffer.concat "        "; @output_buffer.concat(( image_tag piece.image_5.url ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "      ";  end ; @output_buffer.concat "\n"
+@output_buffer.concat "    </p>\n"
+@output_buffer.concat "    <p>\n"
+@output_buffer.concat "      "; @output_buffer.concat(( link_to 'Edit', edit_portfolio_piece_path(@portfolio, piece)).to_s); @output_buffer.concat " | "; @output_buffer.concat(( link_to 'Delete', portfolio_piece_path(@portfolio, piece), :confirm => "Are you sure?", :method => :delete ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "    </p>\n"
+@output_buffer.concat "  ";  end ; @output_buffer.concat "\n"
+ end ; @output_buffer.concat "\n"
+@output_buffer.concat "</div>\n"
+@output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/maloney/Desktop/weefolio/app/views/portfolios/edit.html.erb:49:in `compile!'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/renderable.rb:61:in `compile'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/renderable.rb:28:in `render_without_trace_View___path__Rendering'
+/Users/maloney/Desktop/weefolio/vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:161:in `render'
+/Users/maloney/Desktop/weefolio/vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:62:in `trace_method_execution_with_scope'
+/Users/maloney/Desktop/weefolio/vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:160:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/template.rb:194:in `render_template'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:260:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:343:in `_render_with_layout'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:257:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1241:in `render_for_file'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:937:in `render_without_benchmark'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:51:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:51:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1317:in `default_render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1323:in `perform_action_without_filters'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:617:in `call_filters'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/flash.rb:141:in `perform_action_without_newrelic_trace'
+/Users/maloney/Desktop/weefolio/vendor/plugins/newrelic_rpm/lib/new_relic/agent/instrumentation/controller_instrumentation.rb:138:in `perform_action'
+/Users/maloney/Desktop/weefolio/vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:62:in `trace_method_execution_with_scope'
+/Users/maloney/Desktop/weefolio/vendor/plugins/newrelic_rpm/lib/new_relic/agent/instrumentation/controller_instrumentation.rb:122:in `perform_action'
+/Users/maloney/Desktop/weefolio/vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:38:in `trace_method_execution_no_scope'
+/Users/maloney/Desktop/weefolio/vendor/plugins/newrelic_rpm/lib/new_relic/agent/instrumentation/controller_instrumentation.rb:117:in `perform_action'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:523:in `send'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:523:in `process_without_filters'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:606:in `process'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:391:in `process'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:386:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:433:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:88:in `dispatch'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:111:in `_call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:82:in `initialize'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:9:in `cache'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:28:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/Users/maloney/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/head.rb:9:in `call'
+/Users/maloney/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/methodoverride.rb:24:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/params_parser.rb:15:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rewindable_input.rb:25:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/session/cookie_store.rb:93:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/reloader.rb:9:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/failsafe.rb:11:in `call'
+/Users/maloney/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/Users/maloney/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+/Users/maloney/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:106:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/rails/rack/static.rb:31:in `call'
+/Users/maloney/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:46:in `call'
+/Users/maloney/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `each'
+/Users/maloney/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/rails/rack/log_tailer.rb:17:in `call'
+/Users/maloney/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/content_length.rb:13:in `call'
+/Users/maloney/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/handler/webrick.rb:46:in `service'
+/usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/Users/maloney/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/handler/webrick.rb:13:in `run'
+/usr/local/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/commands/server.rb:111
+/usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/Users/maloney/Desktop/weefolio/app/views/portfolios/edit.html.erb:49: syntax error, unexpected kENSURE, expecting $end) on line #49 of app/views/portfolios/edit.html.erb:
+46: <% end %>
+47: </div>
+
+    app/views/portfolios/edit.html.erb:49:in `compile!'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (184.6ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PortfoliosController#edit (for 127.0.0.1 at 2009-07-29 16:16:40) [GET]
+  Parameters: {"id"=>"15", "user_id"=>"13"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 13) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.7ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 13) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering portfolios/edit
+ERROR: compiling _run_erb_app47views47portfolios47edit46html46erb RAISED compile error
+/Users/maloney/Desktop/weefolio/app/views/portfolios/edit.html.erb:49: syntax error, unexpected kENSURE, expecting $end
+Function body:           def _run_erb_app47views47portfolios47edit46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<!--PAGE TITLE/CALL-TO-ACTION-->\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "<div id=\"page-header-container-outer\">\n"
+@output_buffer.concat "\t<div id=\"page-header-container-inner\">\n"
+@output_buffer.concat "\t\t<h1>Portfolio<small>  Manage your Weefolio</small></h1>\n"
+@output_buffer.concat "\t\t\n"
+@output_buffer.concat "\t\t<div class=\"call-to-action\">\n"
+@output_buffer.concat "\t\t\t<!--THIS IS WHERE YOU CAN PUT 'ADD NEW WORK' LINKS ETC.\n"
+@output_buffer.concat "\t\t\t<a href=\"#\">Call to action!</a>\n"
+@output_buffer.concat "\t\t\t-->\n"
+@output_buffer.concat "\t\t\t<p>\n"
+@output_buffer.concat "        "; @output_buffer.concat(( link_to 'Add Work', new_portfolio_piece_path(@user.portfolio) ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "      </p>\n"
+@output_buffer.concat "\t\t</div>\n"
+@output_buffer.concat "\t</div>\n"
+@output_buffer.concat "</div>\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "<!--PAGE CONTENT-->\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "<div id=\"content-container\">\n"
+@output_buffer.concat "  <p>\n"
+@output_buffer.concat "    "; @output_buffer.concat(( flash[:notice] ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "  </p>\n"
+@output_buffer.concat "\t<!--DUMP ALL OF YOUR SHIT HERE!-->\n"
+@output_buffer.concat "\t<ul id=\"pieces\">\n"
+@output_buffer.concat "\t";  @portfolio.pieces.each do |piece| ; @output_buffer.concat "\n"
+@output_buffer.concat "    <p>\n"
+@output_buffer.concat "      "; @output_buffer.concat(( piece.title ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "    </p>\n"
+@output_buffer.concat "    <p> \n"
+@output_buffer.concat "      "; @output_buffer.concat(( piece.description ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "    </p>\n"
+@output_buffer.concat "    <p>\n"
+@output_buffer.concat "      "; @output_buffer.concat(( image_tag piece.image_1.url ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "      ";  unless @user.account_tier == 1 ; @output_buffer.concat "\n"
+@output_buffer.concat "        "; @output_buffer.concat(( image_tag piece.image_2.url ).to_s); @output_buffer.concat " \n"
+@output_buffer.concat "        "; @output_buffer.concat(( image_tag piece.image_3.url ).to_s); @output_buffer.concat " \n"
+@output_buffer.concat "        "; @output_buffer.concat(( image_tag piece.image_4.url ).to_s); @output_buffer.concat " \n"
+@output_buffer.concat "        "; @output_buffer.concat(( image_tag piece.image_5.url ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "      ";  end ; @output_buffer.concat "\n"
+@output_buffer.concat "    </p>\n"
+@output_buffer.concat "    <p>\n"
+@output_buffer.concat "      "; @output_buffer.concat(( link_to 'Edit', edit_portfolio_piece_path(@portfolio, piece)).to_s); @output_buffer.concat " | "; @output_buffer.concat(( link_to 'Delete', portfolio_piece_path(@portfolio, piece), :confirm => "Are you sure?", :method => :delete ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "    </p>\n"
+@output_buffer.concat "  ";  end ; @output_buffer.concat "\n"
+ end ; @output_buffer.concat "\n"
+@output_buffer.concat "</div>\n"
+@output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/maloney/Desktop/weefolio/app/views/portfolios/edit.html.erb:49:in `compile!'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/renderable.rb:61:in `compile'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/renderable.rb:28:in `render_without_trace_View___path__Rendering'
+/Users/maloney/Desktop/weefolio/vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:161:in `render'
+/Users/maloney/Desktop/weefolio/vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:62:in `trace_method_execution_with_scope'
+/Users/maloney/Desktop/weefolio/vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:160:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/template.rb:194:in `render_template'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:260:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:343:in `_render_with_layout'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:257:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1241:in `render_for_file'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:937:in `render_without_benchmark'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:51:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:51:in `render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1317:in `default_render'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1323:in `perform_action_without_filters'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:617:in `call_filters'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/flash.rb:141:in `perform_action_without_newrelic_trace'
+/Users/maloney/Desktop/weefolio/vendor/plugins/newrelic_rpm/lib/new_relic/agent/instrumentation/controller_instrumentation.rb:138:in `perform_action'
+/Users/maloney/Desktop/weefolio/vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:62:in `trace_method_execution_with_scope'
+/Users/maloney/Desktop/weefolio/vendor/plugins/newrelic_rpm/lib/new_relic/agent/instrumentation/controller_instrumentation.rb:122:in `perform_action'
+/Users/maloney/Desktop/weefolio/vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:38:in `trace_method_execution_no_scope'
+/Users/maloney/Desktop/weefolio/vendor/plugins/newrelic_rpm/lib/new_relic/agent/instrumentation/controller_instrumentation.rb:117:in `perform_action'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:523:in `send'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:523:in `process_without_filters'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:606:in `process'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:391:in `process'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:386:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:433:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:88:in `dispatch'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:111:in `_call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:82:in `initialize'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:9:in `cache'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:28:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/Users/maloney/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/head.rb:9:in `call'
+/Users/maloney/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/methodoverride.rb:24:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/params_parser.rb:15:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rewindable_input.rb:25:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/session/cookie_store.rb:93:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/reloader.rb:9:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/failsafe.rb:11:in `call'
+/Users/maloney/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/Users/maloney/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+/Users/maloney/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:106:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/rails/rack/static.rb:31:in `call'
+/Users/maloney/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:46:in `call'
+/Users/maloney/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `each'
+/Users/maloney/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `call'
+/usr/local/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/rails/rack/log_tailer.rb:17:in `call'
+/Users/maloney/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/content_length.rb:13:in `call'
+/Users/maloney/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/handler/webrick.rb:46:in `service'
+/usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/Users/maloney/.gem/ruby/1.8/gems/rack-1.0.0/lib/rack/handler/webrick.rb:13:in `run'
+/usr/local/lib/ruby/gems/1.8/gems/rails-2.3.2/lib/commands/server.rb:111
+/usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/usr/local/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/Users/maloney/Desktop/weefolio/app/views/portfolios/edit.html.erb:49: syntax error, unexpected kENSURE, expecting $end) on line #49 of app/views/portfolios/edit.html.erb:
+46: <% end %>
+47: </div>
+
+    app/views/portfolios/edit.html.erb:49:in `compile!'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (184.5ms)
+Rendered rescues/_request_and_response (1.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PortfoliosController#edit (for 127.0.0.1 at 2009-07-29 16:17:04) [GET]
+  Parameters: {"id"=>"15", "user_id"=>"13"}
+  [4;36;1mUser Load (1.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 13) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.7ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 13) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering portfolios/edit
+  [4;36;1mPiece Load (0.6ms)[0m   [0;1mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 15) [0m
+Completed in 84ms (View: 32, DB: 3) | 200 OK [http://0.0.0.0/users/13/portfolios/15/edit]
+
+
+Processing PortfoliosController#edit (for 127.0.0.1 at 2009-07-29 16:17:05) [GET]
+  Parameters: {"id"=>"15", "user_id"=>"13"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 13) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.6ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 13) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering portfolios/edit
+  [4;35;1mPiece Load (0.5ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 15) [0m
+Completed in 204ms (View: 164, DB: 2) | 200 OK [http://0.0.0.0/users/13/portfolios/15/edit]
+New Relic Agent not running
+  [4;36;1mUser Load (1.6ms)[0m   [0;1mSELECT * FROM "users" [0m
+  [4;35;1mUser Load (1.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 13) [0m
+Starting the New Relic Agent
+  [4;36;1mSQL (1.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+
+
+Processing PortfoliosController#edit (for 127.0.0.1 at 2009-07-29 16:17:59) [GET]
+  Parameters: {"id"=>"15", "user_id"=>"13"}
+  [4;36;1mUser Load (1.7ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 13) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.7ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 13) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering portfolios/edit
+  [4;36;1mPiece Load (0.6ms)[0m   [0;1mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 15) [0m
+Completed in 111ms (View: 40, DB: 3) | 200 OK [http://0.0.0.0/users/13/portfolios/15/edit]
+
+
+Processing PortfoliosController#edit (for 127.0.0.1 at 2009-07-29 16:18:00) [GET]
+  Parameters: {"id"=>"15", "user_id"=>"13"}
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 13) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.6ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 13) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering portfolios/edit
+  [4;35;1mPiece Load (0.5ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 15) [0m
+Completed in 57ms (View: 21, DB: 2) | 200 OK [http://0.0.0.0/users/13/portfolios/15/edit]
+
+
+Processing PortfoliosController#edit (for 127.0.0.1 at 2009-07-29 16:18:22) [GET]
+  Parameters: {"id"=>"15", "user_id"=>"13"}
+  [4;36;1mUser Load (1.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 13) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.9ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 13) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering portfolios/edit
+  [4;36;1mPiece Load (0.7ms)[0m   [0;1mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 15) [0m
+Completed in 220ms (View: 178, DB: 3) | 200 OK [http://0.0.0.0/users/13/portfolios/15/edit]
+
+
+Processing PortfoliosController#edit (for 127.0.0.1 at 2009-07-29 16:18:23) [GET]
+  Parameters: {"id"=>"15", "user_id"=>"13"}
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 13) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.6ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 13) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering portfolios/edit
+  [4;35;1mPiece Load (0.5ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 15) [0m
+Completed in 58ms (View: 21, DB: 2) | 200 OK [http://0.0.0.0/users/13/portfolios/15/edit]
+
+
+Processing PiecesController#new (for 127.0.0.1 at 2009-07-29 16:18:25) [GET]
+  Parameters: {"portfolio_id"=>"15"}
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 13) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.6ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 13) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering pieces/new
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 13) [0m
+  [4;35;1mPiece Load (0.5ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 15) [0m
+Rendered pieces/_fields (205.8ms)
+Rendered pieces/_form (349.4ms)
+Completed in 436ms (View: 372, DB: 3) | 200 OK [http://0.0.0.0/portfolios/15/pieces/new]
+
+
+Processing PiecesController#new (for 127.0.0.1 at 2009-07-29 16:18:26) [GET]
+  Parameters: {"portfolio_id"=>"15"}
+  [4;36;1mUser Load (1.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 13) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.8ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 13) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering pieces/new
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 13) [0m
+  [4;35;1mPiece Load (0.5ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 15) [0m
+Rendered pieces/_fields (6.5ms)
+Rendered pieces/_form (23.2ms)
+Completed in 109ms (View: 29, DB: 4) | 200 OK [http://0.0.0.0/portfolios/15/pieces/new]
+
+
+Processing PiecesController#new (for 127.0.0.1 at 2009-07-29 16:21:07) [GET]
+  Parameters: {"portfolio_id"=>"15"}
+  [4;36;1mUser Load (1.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 13) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.7ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 13) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering pieces/new
+  [4;36;1mUser Load (1.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 13) [0m
+  [4;35;1mPiece Load (0.5ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 15) [0m
+Rendered pieces/_fields (179.1ms)
+Rendered pieces/_form (202.0ms)
+Completed in 301ms (View: 208, DB: 4) | 200 OK [http://0.0.0.0/portfolios/15/pieces/new]
+
+
+Processing PiecesController#new (for 127.0.0.1 at 2009-07-29 16:21:08) [GET]
+  Parameters: {"portfolio_id"=>"15"}
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 13) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.6ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 13) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering pieces/new
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 13) [0m
+  [4;35;1mPiece Load (0.4ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 15) [0m
+Rendered pieces/_fields (4.5ms)
+Rendered pieces/_form (18.0ms)
+Completed in 84ms (View: 23, DB: 3) | 200 OK [http://0.0.0.0/portfolios/15/pieces/new]
+
+
+Processing PiecesController#new (for 127.0.0.1 at 2009-07-29 16:25:27) [GET]
+  Parameters: {"portfolio_id"=>"15"}
+  [4;36;1mUser Load (1.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 13) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.8ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 13) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering pieces/new
+  [4;36;1mUser Load (1.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 13) [0m
+  [4;35;1mPiece Load (0.5ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 15) [0m
+Rendered pieces/_fields (9.8ms)
+Rendered pieces/_form (31.0ms)
+Completed in 297ms (View: 36, DB: 4) | 200 OK [http://0.0.0.0/portfolios/15/pieces/new]
+
+
+Processing PiecesController#new (for 127.0.0.1 at 2009-07-29 16:25:28) [GET]
+  Parameters: {"portfolio_id"=>"15"}
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 13) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.6ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 13) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering pieces/new
+  [4;36;1mUser Load (1.7ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 13) [0m
+  [4;35;1mPiece Load (0.5ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 15) [0m
+Rendered pieces/_fields (5.2ms)
+Rendered pieces/_form (19.5ms)
+Completed in 86ms (View: 24, DB: 4) | 200 OK [http://0.0.0.0/portfolios/15/pieces/new]
+New Relic Agent not running
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 13) [0m
+  [4;35;1mUser Exists (0.4ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login" = 'mcmaloney' AND "users".id <> 13) LIMIT 1[0m
+  [4;36;1mUser Exists (0.3ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'maloney.mc@gmail.com' AND "users".id <> 13) LIMIT 1[0m
+  [4;35;1mUser Update (1.0ms)[0m   [0mUPDATE "users" SET "account_tier" = 2, "updated_at" = '2009-07-29 20:26:07' WHERE "id" = 13[0m
+[paperclip] Saving attachments.
+Starting the New Relic Agent
+  [4;36;1mSQL (1.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+
+
+Processing SessionsController#destroy (for 127.0.0.1 at 2009-07-29 16:26:31) [GET]
+Redirected to http://0.0.0.0:3000/
+Completed in 33ms (DB: 0) | 302 Found [http://0.0.0.0/logout]
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-29 16:26:31) [GET]
+Rendering template within layouts/template
+Rendering main_pages/home
+Completed in 24ms (View: 24, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-29 16:26:32) [GET]
+Rendering template within layouts/template
+Rendering main_pages/home
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-07-29 16:59:51) [GET]
+Rendering template within layouts/template
+Rendering sessions/new
+Completed in 24ms (View: 23, DB: 0) | 200 OK [http://0.0.0.0/login]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-07-29 16:59:52) [GET]
+Rendering template within layouts/template
+Rendering sessions/new
+Completed in 9ms (View: 9, DB: 0) | 200 OK [http://0.0.0.0/login]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2009-07-29 16:59:58) [POST]
+  Parameters: {"commit"=>"Login", "authenticity_token"=>"wJptZYCaMkoDBsCGpIYrk/UQhwBw2/MSWuVHl1ew4UU=", "login"=>"mcmaloney", "password"=>"fitzgoogoo"}
+  [4;36;1mUser Load (1.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'mcmaloney' and activated_at IS NOT NULL) LIMIT 1[0m
+[paperclip] Saving attachments.
+Redirected to http://0.0.0.0:3000/
+Completed in 37ms (DB: 2) | 302 Found [http://0.0.0.0/session]
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-29 16:59:58) [GET]
+Rendering template within layouts/template
+Rendering main_pages/home
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 13) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.7ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 13) LIMIT 1[0m
+Completed in 61ms (View: 58, DB: 2) | 200 OK [http://0.0.0.0/]
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-29 16:59:58) [GET]
+Rendering template within layouts/template
+Rendering main_pages/home
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 13) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.6ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 13) LIMIT 1[0m
+Completed in 42ms (View: 40, DB: 2) | 200 OK [http://0.0.0.0/]
+
+
+Processing PortfoliosController#edit (for 127.0.0.1 at 2009-07-29 17:00:00) [GET]
+  Parameters: {"id"=>"15", "user_id"=>"13"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 13) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.9ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 13) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering portfolios/edit
+  [4;35;1mPiece Load (0.9ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 15) [0m
+Completed in 465ms (View: 299, DB: 3) | 200 OK [http://0.0.0.0/users/13/portfolios/15/edit]
+
+
+Processing PortfoliosController#edit (for 127.0.0.1 at 2009-07-29 17:00:01) [GET]
+  Parameters: {"id"=>"15", "user_id"=>"13"}
+  [4;36;1mUser Load (2.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 13) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.7ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 13) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering portfolios/edit
+  [4;36;1mPiece Load (0.6ms)[0m   [0;1mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 15) [0m
+Completed in 63ms (View: 23, DB: 3) | 200 OK [http://0.0.0.0/users/13/portfolios/15/edit]
+
+
+Processing PiecesController#new (for 127.0.0.1 at 2009-07-29 17:00:02) [GET]
+  Parameters: {"portfolio_id"=>"15"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 13) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.7ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 13) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering pieces/new
+  [4;35;1mUser Load (1.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 13) [0m
+  [4;36;1mPiece Load (0.5ms)[0m   [0;1mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 15) [0m
+Rendered pieces/_fields (11.7ms)
+Rendered pieces/_form (172.9ms)
+Completed in 268ms (View: 193, DB: 4) | 200 OK [http://0.0.0.0/portfolios/15/pieces/new]
+
+
+Processing PiecesController#new (for 127.0.0.1 at 2009-07-29 17:00:03) [GET]
+  Parameters: {"portfolio_id"=>"15"}
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 13) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.6ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 13) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering pieces/new
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 13) [0m
+  [4;36;1mPiece Load (0.4ms)[0m   [0;1mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 15) [0m
+Rendered pieces/_fields (5.7ms)
+Rendered pieces/_form (19.6ms)
+Completed in 87ms (View: 24, DB: 3) | 200 OK [http://0.0.0.0/portfolios/15/pieces/new]
+
+
+Processing SessionsController#destroy (for 127.0.0.1 at 2009-07-29 17:01:39) [GET]
+Redirected to http://0.0.0.0:3000/
+Completed in 18ms (DB: 0) | 302 Found [http://0.0.0.0/logout]
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-29 17:01:39) [GET]
+Rendering template within layouts/template
+Rendering main_pages/home
+Completed in 10ms (View: 10, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-07-29 17:01:39) [GET]
+Rendering template within layouts/template
+Rendering main_pages/home
+Completed in 178ms (View: 177, DB: 0) | 200 OK [http://0.0.0.0/]

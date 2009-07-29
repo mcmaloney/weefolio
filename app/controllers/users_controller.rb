@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   end
   
   def edit
-    @page_title = "Weefolio :: Account"
+    @page_title = "Weefolio :: My Account"
     @user = current_user
   end
   

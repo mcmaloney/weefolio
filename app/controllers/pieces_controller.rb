@@ -2,6 +2,7 @@ class PiecesController < ApplicationController
   layout 'template'
   
   def new
+    @page_title = "Weefolio :: New Piece"
     @portfolio = current_user.portfolio
     @piece  = @portfolio.pieces.new
   end
@@ -22,6 +23,7 @@ class PiecesController < ApplicationController
   def edit
     @portfolio = current_user.portfolio
     @piece = Piece.find(params[:id])
+    @page_title = "Weefolio :: Edit '#{@piece.title}'"
   end
   
   def update
@@ -45,5 +47,4 @@ class PiecesController < ApplicationController
 
   def show
   end
-
 end
