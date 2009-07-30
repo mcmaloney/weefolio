@@ -1,7 +1,7 @@
 Given /^I add a piece called "([^\"]*)"$/ do |title|
   When %{I fill in "Title" with "#{title}"}
   When %{I fill in "Description" with "This is going to be bad."}
-  When %{I attach the file at "/Users/maloney/Desktop/weefolio/public/images/test_images/janus.jpg" to "Image 1"}
+  When %{I attach the file at "/Users/michael/desktop/weefolio/public/images/test_images/janus.jpg" to "Image 1"}
   When %{I press "Create"}
 end
 
@@ -38,7 +38,7 @@ end
 Given /^I add a piece that I want to sell called "([^\"]*)"$/ do |title|
   When %{I fill in "Title" with "#{title}"}
   When %{I fill in "Description" with "A hooker floating in the Sienne at dawn."}
-  When %{I attach the file at "/Users/maloney/Desktop/weefolio/public/images/test_images/janus.jpg" to "Image 1"}
+  When %{I attach the file at "/Users/michael/desktop/weefolio/public/images/test_images/janus.jpg" to "Image 1"}
   When %{I check "For Sale"}
   When %{I fill in "Price" with "150000.46"}
   When %{I press "Create"}

@@ -33,7 +33,7 @@ When /^I login as "([^\"]*)"$/ do |login|
 end
 
 Given /^I am logged in as "([^\"]*)"$/ do |login|
-  @user = Factory(:user, :first_name => "Michael", :last_name => "Michael", :login => login, :account_tier => 3)
+  @user = Factory(:user, :first_name => "Michael", :last_name => "Michael", :login => login)
   @user.make_portfolio
   @user.activate!
   visit login_path
@@ -59,7 +59,6 @@ Then /^I should see the logged in nav bar in all its glory$/ do
   Then %{I should see "Design"}
   Then %{I should see "Account"}
   Then %{I should see "My Weefolio"}
-  
 end
 
 
