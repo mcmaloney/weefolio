@@ -36,18 +36,8 @@ Piece
   image5 (image)
   
 
-Notes
-========
-
-Could use something like this for displaying edited styles in the head?
-<% content_for("head") do %>
-  <%= javascript_include_tag 'mootools-release-1-11' %>
-  <%= javascript_include_tag 'class_schedules' %>
-  <%= stylesheet_link_tag 'class_schedules' %>
-<% end %>
-
-
-Account Tiers:
+Account Tiers
+=================
 
 5 pieces, 1 image each
 then
@@ -55,3 +45,10 @@ the paid accounts are 15 pieces, 5 images each
 and
 25 pieces, 5 images each
 
+
+Image Sizing
+===============
+
+Small Thumb: 70x70
+Large Thumb: 116x116
+View Size: max width of 710, 400 height

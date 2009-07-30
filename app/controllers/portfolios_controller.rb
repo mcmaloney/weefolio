@@ -10,6 +10,7 @@ class PortfoliosController < ApplicationController
   
   # This is where you go when you want to manage the content of your Weefolio. (Portfolio)
   def edit 
+    @page_title = "Weefolio :: Manage My Work"
     @user = current_user
     @portfolio = current_user.portfolio
   end

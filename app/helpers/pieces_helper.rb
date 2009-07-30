@@ -1,7 +1,7 @@
 module PiecesHelper
   def form_title(object, default)
     if object.title
-      content_tag(:h1, "Edit #{object.title}")
+      content_tag(:h1, "Edit '#{object.title}'")
     else
       content_tag(:h1, "#{default}")
     end

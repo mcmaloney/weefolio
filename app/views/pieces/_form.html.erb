@@ -1,5 +1,23 @@
-<%= form_title(@piece, "Add a new piece to your Weefolio") %>
+<!--PAGE TITLE/CALL-TO-ACTION-->
+<%# YIELD %>
+<div id="page-header-container-outer">
+	<div id="page-header-container-inner">
+		<h1><%= form_title(@piece, "Add a new piece to your Weefolio") %><small></small></h1>
+		
+		<div class="call-to-action">
+			<!--THIS IS WHERE YOU CAN PUT 'ADD NEW WORK' LINKS ETC.
+			<a href="#">Call to action!</a>
+			-->
+		</div>
+	</div>
+</div>
 
-<%= form_content(@portfolio, @piece) %>
-
-<%= link_to 'Back', user_portfolio_path(current_user, current_user.portfolio) %>
+<!--PAGE CONTENT-->
+<%# YIELD %>
+<div id="content-container">
+  <p>
+    <%= flash[:notice] %>
+  </p>
+	<!--DUMP ALL OF YOUR SHIT HERE!-->
+	<%= form_content(@portfolio, @piece) %>
+</div>
