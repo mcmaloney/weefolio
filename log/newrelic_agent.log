@@ -117,3 +117,22 @@
 [07/29/09 22:57:40 -0400 michael-maloneys-imac.local (208)] INFO : Resolved collector.newrelic.com to 65.74.177.195
 [07/29/09 22:57:48 -0400 michael-maloneys-imac.local (208)] INFO : Connected to NewRelic Service at collector.newrelic.com:80
 [07/29/09 22:57:52 -0400 michael-maloneys-imac.local (208)] INFO : Reporting performance data every 60 seconds.
+[07/30/09 00:27:57 -0400 michael-maloneys-imac.local (361)] INFO : Web container: mongrel
+[07/30/09 00:27:57 -0400 michael-maloneys-imac.local (361)] INFO : Transaction tracing threshold is 2.0 seconds.
+[07/30/09 00:27:57 -0400 michael-maloneys-imac.local (361)] INFO : New Relic RPM Agent 2.9.4 Initialized: pid = 361
+[07/30/09 00:27:57 -0400 michael-maloneys-imac.local (361)] INFO : Agent Log found in /Users/michael/Desktop/weefolio/log/newrelic_agent.log
+[07/30/09 00:28:04 -0400 michael-maloneys-imac.local (361)] INFO : Resolved collector.newrelic.com to 65.74.177.195
+[07/30/09 00:28:21 -0400 michael-maloneys-imac.local (361)] INFO : Connected to NewRelic Service at collector.newrelic.com:80
+[07/30/09 00:28:33 -0400 michael-maloneys-imac.local (361)] INFO : Reporting performance data every 60 seconds.
+[07/30/09 00:32:26 -0400 michael-maloneys-imac.local (414)] INFO : Web container: mongrel
+[07/30/09 00:32:26 -0400 michael-maloneys-imac.local (414)] INFO : Transaction tracing threshold is 2.0 seconds.
+[07/30/09 00:32:26 -0400 michael-maloneys-imac.local (414)] INFO : New Relic RPM Agent 2.9.4 Initialized: pid = 414
+[07/30/09 00:32:26 -0400 michael-maloneys-imac.local (414)] INFO : Agent Log found in /Users/michael/Desktop/weefolio/log/newrelic_agent.log
+[07/30/09 00:32:34 -0400 michael-maloneys-imac.local (414)] INFO : Resolved collector.newrelic.com to 65.74.177.195
+[07/30/09 00:32:49 -0400 michael-maloneys-imac.local (414)] INFO : Connected to NewRelic Service at collector.newrelic.com:80
+[07/30/09 00:32:59 -0400 michael-maloneys-imac.local (414)] INFO : Reporting performance data every 60 seconds.
+[07/30/09 00:35:41 -0400 michael-maloneys-imac.local (414)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/system/image_1s/16/full_size/optimusprime.jpg" with {:method=>:get}
+[07/30/09 00:35:41 -0400 michael-maloneys-imac.local (414)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/system/image_1s/17/full_size/789px-Chinchillapets.jpg" with {:method=>:get}
+[07/30/09 00:35:44 -0400 michael-maloneys-imac.local (414)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/system/image_1s/17/full_size/789px-Chinchillapets.jpg" with {:method=>:get}
+[07/30/09 00:36:01 -0400 michael-maloneys-imac.local (414)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/system/image_1s/18/full_size/789px-Chinchillapets.jpg" with {:method=>:get}
+[07/30/09 00:36:37 -0400 michael-maloneys-imac.local (414)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/system/image_1s/18/full_size/789px-Chinchillapets.jpg" with {:method=>:get}
