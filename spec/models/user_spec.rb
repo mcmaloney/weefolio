@@ -35,4 +35,12 @@ describe User do
       user.has_blank_info.should be_true
     end
   end
+  
+  describe "account tier upgrades" do
+    it "should upgrade to level two" do
+      user = Factory(:user)
+      user.change_tier(2)
+      user.account_tier.should == 2
+    end
+  end
 end

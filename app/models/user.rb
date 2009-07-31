@@ -29,6 +29,12 @@ class User < ActiveRecord::Base
   
   # Paperclip settings
   has_attached_file :photo
+  
+  # Upgrade account 
+  def change_tier(tier)
+    self.account_tier -= self.account_tier
+    self.account_tier += tier
+  end
    
   # Should probably put this in the Portfolio model (make_portfolio_for(user))
   def make_portfolio
