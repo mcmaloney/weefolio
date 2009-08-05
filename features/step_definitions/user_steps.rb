@@ -20,9 +20,15 @@ Then /^I should have ([0-9]*) portfolio$/ do |count|
   Portfolio.count.should == count.to_i
 end
 
+Then /^I should have ([0-9]*) design$/ do |count|
+  Design.count.should == count.to_i
+end
+
+
 Given /^I have already signed up as "([^\"]*)"$/ do |login|
   @login_user = Factory(:user, :first_name => "Kevin", :last_name => "Gomez", :login => login)
   @login_user.make_portfolio
+  @login_user.make_design_editor
   @login_user.activate!
 end
 
@@ -35,6 +41,7 @@ end
 Given /^I am logged in as "([^\"]*)"$/ do |login|
   @user = Factory(:user, :first_name => "Michael", :last_name => "Michael", :login => login)
   @user.make_portfolio
+  @user.make_design_editor
   @user.activate!
   visit login_path
   When %{I fill in "Login" with "#{login}"}

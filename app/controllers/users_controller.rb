@@ -26,6 +26,8 @@ class UsersController < ApplicationController
     
     # Give the user a portfolio
     @user.make_portfolio
+    # And a design editor **** THESE SHOULD BE REFACTORED INTO A SETUP METHOD SO THEY HAPPEN TOGETHER
+    @user.make_design_editor
     
     @user.activate!
     success = @user && @user.save && @user.portfolio

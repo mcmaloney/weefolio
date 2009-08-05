@@ -1,0 +1,104 @@
+/*---PORTFOLIO GRID---*/
+
+div#portfolio-container ul#portfolio-grid {
+	list-style: none;
+	width: 730px;
+	overflow: hidden;
+	margin: 0;
+	padding: 0;
+	}
+	
+div#portfolio-container ul#portfolio-grid li {
+	float: left;
+	margin: 0 20px 20px 0;
+	}
+	
+/*---PORTFOLIO PIECES---*/
+
+div#portfolio-container div.piece-container {
+	overflow: hidden;
+	}
+	
+div#portfolio-container div.piece-container ul.thumb-grid {
+	list-style: none;
+	width: 730px;
+	overflow: hidden;
+	margin: 10px 0 20px 0;
+	padding: 0;
+	}
+	
+div#portfolio-container div.piece-container ul.thumb-grid li {
+	float: left;
+	margin: 0 10px 0 0;
+	}
+
+div#portfolio-container div.piece-container div.piece-info span.for-sale {
+	background: url(../images/for-sale.gif) 0 0 no-repeat;
+	padding: 2px 5px 3px 12px;
+	font-size: 10px;
+	font-weight: normal;
+	font-family: Arial, sans-serif;
+	line-height: 0;
+	color: #242420;
+	position: relative;
+	top: -2px;
+	left: 3px;
+	}
+	
+	
+/*---CONTACT FORM---*/
+
+div#info-container div#contact-container form {	
+	margin: 0;
+	padding: 0;
+	}
+	
+div#info-container div#contact-container form fieldset {	
+	margin: 0 0 5px 0;
+	padding: 0;
+	border: 0;
+	}
+	
+div#info-container div#contact-container form fieldset label {
+	display: block;
+	float: left;
+	width: 70px;
+	margin: 4px 0;
+	}
+	
+div#info-container div#contact-container form fieldset input,
+div#info-container div#contact-container form fieldset textarea {
+	width: 265px;
+	float: right;
+	}
+
+div#info-container div#contact-container form div#contact-submit {
+	overflow: hidden;
+	}
+		
+div#info-container div#contact-container form div#contact-submit input {	
+	float: right;
+	}
+	
+
+/*---FOOTER---*/
+
+div#footer-container {
+	overflow: hidden;
+	}
+	
+div#footer-container a:link,
+div#footer-container a:visited {
+	width: 63px;
+	height: 27px;
+	display: block;
+	background: url(../images/wee-mark.png) 0 0 no-repeat;
+	overflow: hidden;
+	text-indent: -500px;
+	opacity: .4;
+	}
+	
+div#footer-container a:hover,
+div#footer-container a:visited:hover {
+	opacity: 1;
+	}

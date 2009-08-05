@@ -9,6 +9,7 @@ Feature: User
     And I follow "Sign Up"
     Then I should be on the sign up page
   
+  @this
   Scenario: User signs up
     Given I am on the sign up page
     And there are no users 
@@ -17,6 +18,7 @@ Feature: User
     And I should see "Welcome to Weefolio, mcmaloney!"
     And I should have 1 user
     And I should have 1 portfolio
+    And I should have 1 design
     And I should see the logged in nav bar in all its glory
     And I should not see "Login"
     And I should not see "Sign Up"

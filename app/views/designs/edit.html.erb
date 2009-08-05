@@ -1,0 +1,62 @@
+<!--PAGE TITLE/CALL-TO-ACTION-->
+<%# YIELD %>
+<div id="page-header-container-outer">
+	<div id="page-header-container-inner">
+		<h1>Layout Editor<small></small></h1>
+		
+		<div class="call-to-action">
+			<!--THIS IS WHERE YOU CAN PUT 'ADD NEW WORK' LINKS ETC.
+			<a href="#">Call to action!</a>
+			-->
+		</div>
+	</div>
+</div>
+
+<!--PAGE CONTENT-->
+<%# YIELD %>
+<div id="content-container">
+  <p>
+    <%= flash[:notice] %>
+  </p>
+	<!--DUMP ALL OF YOUR SHIT HERE!-->
+	<% if current_user.design_type == 1 %>
+    <% form_for [current_user, current_user.design], :html => { :multipart => true } do |f| %>
+      <p>
+        <%= f.label :header_image %><br />
+        <%= f.file_field :header_image %>
+      </p>
+      <p>
+        <%= f.label :background_color %><br />
+        <%= f.text_field :background_color %>
+      </p>
+      <p>
+        <%= f.label :background_align %><br />
+        <%= f.text_field :background_align %>
+      </p>
+      <p>
+        <%= f.label :background_tile %><br />
+        <%= f.text_field :background_tile %>
+      </p>
+      <p>
+        <%= f.submit 'Save' %>
+      </p>
+    <% end %>
+  <% else %>
+    <p>
+      <% form_for [@user, @user.design], :html => { :multipart => true } do |f| %>
+        <p>
+          <%= f.label :header_image %><br />
+          <%= f.file_field :header_image %>
+        </p>
+        <p>
+          <%= f.label :css_text %><br />
+          <%= f.text_area :css_text %>
+        </p>
+      <% end %>
+    </p>
+  <% end %>
+</div>
+
+
+
+

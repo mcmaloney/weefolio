@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
   include Authentication::ByCookieToken
   
   has_one                   :portfolio
+  has_one                   :design
   has_many                  :pieces, :through => :portfolio
   validates_presence_of     :login
   validates_length_of       :login,    :within => 3..40
@@ -25,7 +26,7 @@ class User < ActiveRecord::Base
   # HACK HACK HACK -- how to do attr_accessible from here?
   # prevents a user from submitting a crafted form that bypasses activation
   # anything else you want your user to change should be added here.
-  attr_accessible :login, :email, :name, :password, :password_confirmation, :first_name, :last_name, :about_me, :tag_line, :design_type, :account_tier, :photo
+  attr_accessible :login, :email, :name, :password, :password_confirmation, :first_name, :last_name, :about_me, :tag_line, :design_type, :layout_type, :account_tier, :photo
   
   # Paperclip settings
   has_attached_file :photo
@@ -35,6 +36,18 @@ class User < ActiveRecord::Base
     self.account_tier -= self.account_tier
     self.account_tier += tier
   end
+  
+  # Change layout type
+  def set_layout_type(number)
+    self.layout_type -= self.layout_type
+    self.layout_type += number
+  end
+  
+  # Change design type
+  def set_design_type(number)
+    self.design_type -= self.design_type
+    self.design_type += number
+  end
    
   # Should probably put this in the Portfolio model (make_portfolio_for(user))
   def make_portfolio
@@ -43,6 +56,14 @@ class User < ActiveRecord::Base
     self.portfolio.save
   end
   
+  # Again, probably should be in Design model (make_design_for(user))
+  def make_design_editor
+    my_design_editor = Design.new
+    self.design = my_design_editor
+    self.design.save
+  end
+  
+  # This is dumb. It bullies the user.
   def has_blank_info
     if (self.tag_line.blank? || self.about_me.blank?)
       return true

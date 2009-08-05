@@ -1,0 +1,101 @@
+<html>
+	<head>
+		<title><%= @page_title %></title>
+		<%= stylesheet_link_tag 'editable.css'%>
+		<%= stylesheet_link_tag 'un-editable.css'%>
+		<%= javascript_include_tag 'jquery-1.3.1.min.js' %>
+	</head>
+	
+	<body class="">
+		<div id="page-container">
+			<div id="header-container">
+				<!--<img src="#" width="710" height="100" alt="header-image">-->
+				<%= image_tag @design.header_image.url(:header_format)%>
+			</div>
+			
+			<div id="tagline-container">
+				<h1>Hello! My name is <a href="#"><%= @user.login %></a> and this is my Weefolio!</h1>
+			</div>
+			
+			<hr/>
+			
+			<div id="portfolio-container">
+			  <% if @user.layout_type == 1 %>
+				  <ul id="portfolio-grid">
+				    <% for piece in @portfolio.pieces %>
+				      <li><%= image_tag piece.image_1.url(:large_thumb) %></li>
+					    <!--<li><a href="#"><img src="#" width="116" height="116" alt="item-thumbnail-large"/></a></li> -->
+					  <% end %>
+				  </ul>
+				<% else %>
+				  <% for piece in @portfolio.pieces %>
+				    <div class="piece-container">
+					    <div class="image-container">
+					      <%= image_tag piece.image_1.url(:full_size) %>
+						    <!--<img src="#" height="300" width="710" alt="piece-image"/>-->
+					    </div>
+					
+					    <ul class="thumb-grid">
+					      <!--<li><a href="#"><img src="#" width="70" height="70" alt="item-thumbnail-small"/></a></li>-->
+					      <li><%= image_tag piece.image_1.url(:small_thumb)%></li>
+					      <% unless @user.account_tier == 1 %>
+						      <li><%= image_tag piece.image_2.url(:small_thumb)%></li>
+						      <li><%= image_tag piece.image_3.url(:small_thumb)%></li>
+						      <li><%= image_tag piece.image_4.url(:small_thumb)%></li>
+						      <li><%= image_tag piece.image_5.url(:small_thumb)%></li>
+						    <% end %>
+					    </ul>
+					
+					    <div class="piece-info">
+						    <h2><%= piece.title %><% if piece.for_sale %><span class="for-sale">piece.display_price</span><% end %></h2>
+						    <p>
+						      <%= piece.description %>
+						    </p>
+					    </div>
+				    </div>
+				
+				    <hr/>
+				  <% end %>
+				<% end %>
+
+			
+			<div id="info-container">
+				<div id="about-container">
+					<h2>About <%= @user.login %></h2>
+					<p>
+					  <%= @user.about_me%>
+					</p>
+				</div>
+				
+				<div id="contact-container">
+					<h2>Contact <%= @user.login %></h2>
+					
+					<form action="mailto:#{@user.email}" method="post">
+						<fieldset>
+							<label for="#">Name</label>
+							<input id="contact-name" type="text" name="#"/>
+						</fieldset>
+						
+						<fieldset>
+							<label for="#">Email</label>
+							<input id="contact-email" type="text" name="#"/>
+						</fieldset>
+						
+						<fieldset>
+							<label for="#">Message</label>
+							<textarea rows="5" id="contact-message" name="#"></textarea>
+						</fieldset>
+						
+						<div id="contact-submit">
+							<input type="submit" value="Send Message"/>
+						</div>
+					</form>
+				</div>
+			</div>
+			
+			<div id="footer-container">
+				<a id="weefolio-logo" href="#">Weefolio</a>
+			</div>
+		</div>
+	</body>
+</html>
