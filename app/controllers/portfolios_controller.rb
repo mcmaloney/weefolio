@@ -1,5 +1,6 @@
 class PortfoliosController < ApplicationController
-  layout "template"
+  layout 'weefolio', :except => "edit"
+  layout 'template', :only => "edit"
   
   # This is what the world sees. (My Weefolio)
   def show

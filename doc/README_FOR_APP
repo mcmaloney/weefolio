@@ -15,7 +15,8 @@ User
   about_me (text)
   tag_line (string)
   avatar (image)
-  design_type (integer [1, 2])
+  design_type (integer [1, 2]) [1=editing css with forms, 2=edit css directly]
+  layout_type (integer [1, 2]) [1=grid, 2=list]
   
 Portfolio
   belongs_to :user

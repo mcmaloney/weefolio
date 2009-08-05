@@ -1,0 +1,132 @@
+/*---
+	EDITABLE VARIABLES
+	
+	Background:
+		- Color (#hex-code)
+		- Image (url)
+		- Alignment (Left, Right, Center)
+		- Tile (repeat, no-repeat)
+	
+	Page:
+		- Background Color (#hex-code)
+		
+	Links:
+		- Color (#hex-code)
+		
+	Text:
+		- Color (#hex-code)
+		- Size (8px, 10px, 12px, 14px, 16px, 18px, 20px, 22px, 24px)
+		- Font (Arial, Helvetica, Times New Roman, Courier, Georgia, Trebuchet MS, Verdana)
+	
+	Titles:
+		- Color (#hex-code)
+		- Bold (bold, normal)
+		- Italic (italic, normal)
+		- Font (Arial, Helvetica, Times New Roman, Courier, Georgia, Trebuchet MS, Verdana)
+		
+	Tagline:
+		- Size (8px, 10px, 12px, 14px, 16px, 18px, 20px, 22px, 24px, 28px, 32px, 36px, 48px, 72px)
+		- Color (#hex-code)
+		- Bold (bold, normal)
+		- Italic (italic, normal)
+		- Font (Arial, Helvetica, Times New Roman, Courier, Georgia, Trebuchet MS, Verdana)
+		
+	Border
+		- Color (#hex-code)
+---*/
+
+
+/*---GLOBAL---*/
+
+body {
+	margin: 20px;
+	background-color: #dedddb; /*---Background: Color---*/
+	background-position: top; /*---Background: Alignment---*/
+	background-image: none; /*---Background: Image---*/
+	background-repeat: repeat; /*---Background: Tile---*/
+	font-family: Arial, Helvetica, sans-serif; /*---Text: Font---*/
+	font-size: 12px; /*---Text: Size---*/
+	color: #767574; /*---Text: Color---*/
+	line-height: 150%;
+	}
+	
+a:link,
+a:visited {
+	color: #72b225; /*---Links: Color---*/
+	}
+	
+a:hover,
+a:visited:hover {
+	color: #242420; /*---Text: Color---*/
+	}
+
+h1 {
+	font-size: ; /*---Tagline: Size---*/
+	color: #242420; /*---Tagline: Color---*/
+	font-family: Georgia, serif; /*---Tagline: Font---*/
+	font-weight: normal; /*---Tagline: Bold---*/
+	font-style: normal; /*---Tagline: Italic---*/
+	}
+		
+h2, h3, h4, h5, h6 {
+	color: #242420; /*---Titles: Color---*/
+	font-family: Georgia, serif; /*---Titles: Font---*/
+	font-weight: normal; /*---Titles: Bold---*/
+	font-style: normal; /*---Titles: Italic---*/
+	}
+	
+hr {
+	border: 0;
+	height: 1px;
+	background: #eee; /*---Border: Color---*/
+	margin: 20px 0;
+	}
+	
+a:link img, a:visited img {
+	display: block;
+	border: 5px solid #f5f4f4; /*---Border: Color---*/
+	}
+	
+a:hover img, a:visited:hover img {	
+	border: 5px solid #72b225; /*---Link: Color---*/
+	}
+		
+	
+/*---STRUCTURE---*/
+
+div#page-container {
+	margin: 0 auto;
+	width: 710px;
+	background: #fff; /*---Page: Background Color---*/
+	overflow: hidden;
+	padding: 20px;
+	-webkit-border-radius: 10px;
+	}
+	
+div#header-container {
+	overflow: hidden;
+	margin: 0 0 20px 0;
+	}
+	
+div#tagline-container {
+	overflow: hidden;
+	text-align: left;
+	}
+	
+div#info-container {
+	overflow: hidden;
+	}
+	
+div#about-container {
+	width: 345px;
+	margin: 0 0 20px 0;
+	overflow: hidden;
+	float: left;
+	}
+	
+div#contact-container {
+	width: 345px;
+	margin: 0;
+	overflow: hidden;
+	float: right;
+	}

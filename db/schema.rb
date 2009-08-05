@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090729193934) do
+ActiveRecord::Schema.define(:version => 20090805024859) do
 
   create_table "pieces", :force => true do |t|
     t.string   "title"
@@ -70,6 +70,7 @@ ActiveRecord::Schema.define(:version => 20090729193934) do
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
+    t.integer  "layout_type",                              :default => 1
   end
 
   add_index "users", ["login"], :name => "index_users_on_login", :unique => true
