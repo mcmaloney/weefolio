@@ -6,6 +6,7 @@ Factory.define :user do |u|
   u.password "giraffe"
   u.password_confirmation { |c| c.password }
   u.account_tier 1
+  u.layout_type 1
 end
 
 Factory.define :piece do |p|

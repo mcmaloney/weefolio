@@ -1,7 +1,7 @@
 Given /^I add a piece called "([^\"]*)"$/ do |title|
   When %{I fill in "Title" with "#{title}"}
   When %{I fill in "Description" with "This is going to be bad."}
-  When %{I attach the file at "/Users/michael/desktop/weefolio/public/images/test_images/janus.jpg" to "Image 1"}
+  When %{I attach the file at "/Users/Maloney/desktop/weefolio/public/images/test_images/janus.jpg" to "Image 1"}
   When %{I press "Create"}
 end
 
@@ -38,7 +38,7 @@ end
 Given /^I add a piece that I want to sell called "([^\"]*)"$/ do |title|
   When %{I fill in "Title" with "#{title}"}
   When %{I fill in "Description" with "A hooker floating in the Sienne at dawn."}
-  When %{I attach the file at "/Users/michael/desktop/weefolio/public/images/test_images/janus.jpg" to "Image 1"}
+  When %{I attach the file at "/Users/Maloney/desktop/weefolio/public/images/test_images/janus.jpg" to "Image 1"}
   When %{I check "For Sale"}
   When %{I fill in "Price" with "150000.46"}
   When %{I press "Create"}
@@ -47,4 +47,15 @@ end
 Then /^I should have ([0-9]*) piece in my portfolio$/ do |count|
   @user.portfolio.pieces.count.should == count.to_i
 end
+
+###### WEEFOLIO STEPS ######
+Given /^my layout type is ([0-9]*)$/ do |number|
+  @user.set_layout_type(number.to_i)
+  @user.save
+end
+
+Then /^its layout type should be "([^\"]*)"$/ do |type|
+  @user.portfolio.layout_type.should == type
+end
+
 

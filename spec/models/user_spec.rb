@@ -27,7 +27,26 @@ describe User do
     it "should have a space for a photo" do
       @user.photo.should be_true
     end
+    
+    it "should have layout type 1" do
+      @user.layout_type.should == 1
+    end
   end
+  
+  describe "change layout type" do
+    it "should change layout type from 1 to 2" do
+      user = Factory(:user)
+      user.set_layout_type(2)
+      user.layout_type.should == 2
+    end
+    
+    it "should change layout from 2 to 1" do
+      user = Factory(:user, :layout_type => 2)
+      user.set_layout_type(1)
+      user.layout_type.should == 1
+    end
+  end
+    
   
   describe "being displayed" do
     it "should prompt if some info is blank" do

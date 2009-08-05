@@ -3,7 +3,6 @@ Feature: Pieces
   I want to create and manage the pieces that are in my Weefolio
   So that I can control what people see when they visit my page
   
-  @tits
   Scenario: User lists piece for sale
     Given I am logged in as "mcmaloney"
     And I have no pieces in my portfolio

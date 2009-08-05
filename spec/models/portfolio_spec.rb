@@ -3,11 +3,26 @@ require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 describe Portfolio do 
   describe "being created" do
     before(:each) do
-       @portfolio = Portfolio.new
-     end
+      @user = Factory(:user)
+      @user.make_portfolio
+    end
      
     it "should have no pieces in it" do
-      @portfolio.pieces.length.should == 0
+      @user.portfolio.pieces.length.should == 0
+    end
+  end
+  
+  describe "layout types" do
+    it "should have a grid layout" do
+      user = Factory(:user)
+      user.make_portfolio
+      user.portfolio.layout_type.should == "grid"
+    end
+    
+    it "should have a list layout" do
+      user = Factory(:user, :layout_type => 2)
+      user.make_portfolio
+      user.portfolio.layout_type.should == "list"
     end
   end
 
