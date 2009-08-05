@@ -15,6 +15,11 @@ describe User do
       @user.portfolio.should be_true
     end
     
+    it "should have a design" do
+      @user.make_design_editor
+      @user.design.should be_true
+    end
+    
     it "should be activated on creation" do
       @user.activate!
       @user.active?.should be_true

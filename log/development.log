@@ -16975,3 +16975,440 @@ New Relic Agent not running
   [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 15) [0m
   [4;35;1mPortfolio Load (0.7ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 15) LIMIT 1[0m
   [4;36;1mUser Load (1.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 15) [0m
+New Relic Agent not running
+New Relic Agent not running
+  [4;36;1mSQL (1.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20090718215859)
+Migrating to AddInfoToUsers (20090718220754)
+Migrating to CreatePortfolios (20090719031854)
+Migrating to RemoveTypeFromUsers (20090719032358)
+Migrating to AddAccountTierToUsers (20090719032501)
+Migrating to CreatePieces (20090720145132)
+Migrating to AddAvatarToUsers (20090720151551)
+Migrating to RemoveAvatarFromUsers (20090720202141)
+Migrating to AddAvatarToUsersForReal (20090720202338)
+Migrating to PleaseWorkPaperclipYouMotherfucker (20090721033045)
+Migrating to AddAttachmentsPhotoToUser (20090721033319)
+Migrating to AddAttachmentsImage1ToPortfolio (20090721152728)
+Migrating to AddAttachmentsImage2ToPiece (20090721170213)
+Migrating to AddAttachmentsImage3ToPiece (20090721170326)
+Migrating to AddAttachmentsImage4ToPiece (20090721170409)
+Migrating to AddAttachmentsImage5ToPiece (20090721170424)
+Migrating to RemoveImage1FromPortfolios (20090721210418)
+Migrating to AddAttachmentsImage1ToPiece (20090721210511)
+Migrating to CreateDesigns (20090805151853)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mCREATE TABLE "designs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090805151853')[0m
+  [4;35;1mSQL (0.9ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.9ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_list("designs")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_list("pieces")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("portfolios")[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mPRAGMA index_info('index_users_on_login')[0m
+New Relic Agent not running
+New Relic Agent not running
+New Relic Agent not running
+  [4;36;1mSQL (1.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mCREATE TABLE "designs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mCREATE TABLE "pieces" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "description" varchar(255), "price" decimal(10,2), "for_sale" boolean, "portfolio_id" integer, "created_at" datetime, "updated_at" datetime, "image_2_file_name" varchar(255), "image_2_content_type" varchar(255), "image_2_file_size" integer, "image_2_updated_at" datetime, "image_3_file_name" varchar(255), "image_3_content_type" varchar(255), "image_3_file_size" integer, "image_3_updated_at" datetime, "image_4_file_name" varchar(255), "image_4_content_type" varchar(255), "image_4_file_size" integer, "image_4_updated_at" datetime, "image_5_file_name" varchar(255), "image_5_content_type" varchar(255), "image_5_file_size" integer, "image_5_updated_at" datetime, "image_1_file_name" varchar(255), "image_1_content_type" varchar(255), "image_1_file_size" integer, "image_1_updated_at" datetime, "position" integer) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mCREATE TABLE "portfolios" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.8ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (9.1ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(40), "name" varchar(100) DEFAULT '', "email" varchar(100), "crypted_password" varchar(40), "salt" varchar(40), "created_at" datetime, "updated_at" datetime, "remember_token" varchar(40), "remember_token_expires_at" datetime, "activation_code" varchar(40), "activated_at" datetime, "first_name" varchar(255), "last_name" varchar(255), "about_me" text, "tag_line" varchar(500), "design_type" integer, "account_tier" integer DEFAULT 1, "photo_file_name" varchar(255), "photo_content_type" varchar(255), "photo_file_size" integer, "photo_updated_at" datetime, "layout_type" integer DEFAULT 1) [0m
+  [4;35;1mSQL (2.0ms)[0m   [0mCREATE UNIQUE INDEX "index_users_on_login" ON "users" ("login")[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.7ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090805151853')[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090718215859')[0m
+  [4;35;1mSQL (2.6ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090718220754')[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090719031854')[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090719032358')[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090719032501')[0m
+  [4;35;1mSQL (1.9ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090720145132')[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090720151551')[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090720202141')[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090720202338')[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090721033045')[0m
+  [4;36;1mSQL (17.4ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090721033319')[0m
+  [4;35;1mSQL (7.9ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090721152728')[0m
+  [4;36;1mSQL (16.9ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090721170213')[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090721170326')[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090721170409')[0m
+  [4;35;1mSQL (12.9ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090721170424')[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090721210418')[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090721210511')[0m
+New Relic Agent not running
+Starting the New Relic Agent
+  [4;36;1mSQL (1.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-08-05 11:38:05) [GET]
+Rendering template within layouts/template
+Rendering main_pages/home
+Completed in 70ms (View: 69, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-08-05 11:38:07) [GET]
+Rendering sessions/new
+Completed in 15ms (View: 14, DB: 0) | 200 OK [http://0.0.0.0/login]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2009-08-05 11:38:15) [POST]
+  Parameters: {"commit"=>"Login", "authenticity_token"=>"koomH86MaHQzu/R/BNgrjoHKaKzOxLBG0NXeqvWOEEI=", "login"=>"hvancockle", "password"=>"giraffe"}
+  [4;36;1mUser Load (1.7ms)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'hvancockle' and activated_at IS NOT NULL) LIMIT 1[0m
+[paperclip] Saving attachments.
+Redirected to http://0.0.0.0:3000/
+Completed in 55ms (DB: 2) | 302 Found [http://0.0.0.0/session]
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-08-05 11:38:15) [GET]
+Rendering template within layouts/template
+Rendering main_pages/home
+  [4;35;1mUser Load (1.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 15) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.6ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 15) LIMIT 1[0m
+Completed in 57ms (View: 55, DB: 2) | 200 OK [http://0.0.0.0/]
+
+
+Processing PortfoliosController#edit (for 127.0.0.1 at 2009-08-05 11:38:21) [GET]
+  Parameters: {"id"=>"17", "user_id"=>"15"}
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 15) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.6ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 15) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering portfolios/edit
+  [4;35;1mPiece Load (0.5ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 17) [0m
+Completed in 176ms (View: 141, DB: 2) | 200 OK [http://0.0.0.0/users/15/portfolios/17/edit]
+
+
+Processing PortfoliosController#edit (for 127.0.0.1 at 2009-08-05 11:39:47) [GET]
+  Parameters: {"id"=>"17", "user_id"=>"15"}
+  [4;36;1mUser Load (1.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 15) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.6ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 15) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering portfolios/edit
+  [4;36;1mPiece Load (0.7ms)[0m   [0;1mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 17) [0m
+  [4;35;1mDesign Load (0.4ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 15) LIMIT 1[0m
+
+ActionView::TemplateError (edit_user_design_url failed to generate from {:user_id=>#<User id: 15, login: "hvancockle", name: "", email: "hortense@gmail.com", crypted_password: "125818a72b52b5db790efb7a5f12b85fda549006", salt: "c125cb3d515c8641141e8b46f480f2ba2b285ece", created_at: "2009-08-05 02:51:56", updated_at: "2009-08-05 14:40:14", remember_token: nil, remember_token_expires_at: nil, activation_code: "c859e494472b5e6d20684a64d6b906590c1a4cdd", activated_at: "2009-08-05 02:51:56", first_name: "Hortense", last_name: "VanCockle", about_me: nil, tag_line: nil, design_type: nil, account_tier: 1, photo_file_name: nil, photo_content_type: nil, photo_file_size: nil, photo_updated_at: nil, layout_type: 2>, :controller=>"designs", :id=>nil, :action=>"edit"}, expected: {:controller=>"designs", :action=>"edit"}, diff: {:user_id=>#<User id: 15, login: "hvancockle", name: "", email: "hortense@gmail.com", crypted_password: "125818a72b52b5db790efb7a5f12b85fda549006", salt: "c125cb3d515c8641141e8b46f480f2ba2b285ece", created_at: "2009-08-05 02:51:56", updated_at: "2009-08-05 14:40:14", remember_token: nil, remember_token_expires_at: nil, activation_code: "c859e494472b5e6d20684a64d6b906590c1a4cdd", activated_at: "2009-08-05 02:51:56", first_name: "Hortense", last_name: "VanCockle", about_me: nil, tag_line: nil, design_type: nil, account_tier: 1, photo_file_name: nil, photo_content_type: nil, photo_file_size: nil, photo_updated_at: nil, layout_type: 2>, :id=>nil}) on line #27 of app/views/layouts/template.html.erb:
+24: 				  <!--USER NAV (LOGGED IN) -->
+25:   				<ul id="user-nav">
+26:   					<li id="portfolio" class="selected"><%= link_to 'Portfolio', edit_user_portfolio_path(current_user, current_user.portfolio) %></li>
+27:   					<li id="design"><%= link_to 'Design', edit_user_design_path(current_user, current_user.design) %></li>
+28:   					<li id="account"><%= link_to 'Account', edit_user_path(current_user) %></li>
+29:   					<li id="my-weefolio"><%= link_to 'My Weefolio', user_portfolio_path(current_user, current_user.portfolio) %></li>
+30:   				</ul>
+
+    (eval):16:in `edit_user_design_path'
+    app/views/layouts/template.html.erb:27
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (211.3ms)
+Rendered rescues/_request_and_response (3.1ms)
+Rendering rescues/layout (internal_server_error)
+New Relic Agent not running
+  [4;36;1mUser Delete all (2.6ms)[0m   [0;1mDELETE FROM "users" WHERE 1=1[0m
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM "users" [0m
+Starting the New Relic Agent
+  [4;36;1mSQL (1.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+
+
+Processing SessionsController#destroy (for 127.0.0.1 at 2009-08-05 11:40:42) [GET]
+Redirected to http://0.0.0.0:3000/
+Completed in 35ms (DB: 0) | 302 Found [http://0.0.0.0/logout]
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-08-05 11:40:42) [GET]
+Rendering template within layouts/template
+Rendering main_pages/home
+Completed in 25ms (View: 24, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-08-05 11:40:44) [GET]
+Rendering template within layouts/template
+Rendering users/new
+Completed in 210ms (View: 32, DB: 0) | 200 OK [http://0.0.0.0/signup]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-08-05 11:40:59) [POST]
+  Parameters: {"user"=>{"password_confirmation"=>"giraffe", "first_name"=>"Michael", "password"=>"giraffe", "login"=>"mcmaloney", "last_name"=>"Maloney", "email"=>"maloney.mc@gmail.com"}, "commit"=>"Sign Up", "authenticity_token"=>"Tkx73CSyniv4LVWjbmC/a+rTr1AebYNzW97wnKOZZTM="}
+  [4;36;1mPortfolio Create (0.9ms)[0m   [0;1mINSERT INTO "portfolios" ("updated_at", "user_id", "created_at") VALUES('2009-08-05 15:41:00', NULL, '2009-08-05 15:41:00')[0m
+  [4;35;1mDesign Create (0.8ms)[0m   [0mINSERT INTO "designs" ("updated_at", "user_id", "created_at") VALUES('2009-08-05 15:41:00', NULL, '2009-08-05 15:41:00')[0m
+  [4;36;1mUser Create (0.8ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "photo_file_name", "photo_file_size", "crypted_password", "account_tier", "about_me", "remember_token_expires_at", "activation_code", "photo_updated_at", "layout_type", "photo_content_type", "remember_token", "tag_line", "first_name", "login", "last_name", "design_type", "email", "created_at") VALUES('', '48f783619217566c1a6d86f88a9830e4a6b45523', '2009-08-05 15:41:00', '2009-08-05 15:41:00', NULL, NULL, 'd7fcfe9a662b864f9645c522e969e0b2d116b348', 1, NULL, NULL, '8bc586fcde694c86afbe3926e3eaa8cdb76315f6', NULL, 1, NULL, NULL, NULL, 'Michael', 'mcmaloney', 'Maloney', NULL, 'maloney.mc@gmail.com', '2009-08-05 15:41:00')[0m
+  [4;35;1mPortfolio Update (0.3ms)[0m   [0mUPDATE "portfolios" SET "updated_at" = '2009-08-05 15:41:00', "user_id" = 16 WHERE "id" = 18[0m
+  [4;36;1mDesign Update (0.4ms)[0m   [0;1mUPDATE "designs" SET "updated_at" = '2009-08-05 15:41:00', "user_id" = 16 WHERE "id" = 1[0m
+[paperclip] Saving attachments.
+  [4;35;1mUser Exists (0.4ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login" = 'mcmaloney' AND "users".id <> 16) LIMIT 1[0m
+  [4;36;1mUser Exists (0.3ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'maloney.mc@gmail.com' AND "users".id <> 16) LIMIT 1[0m
+[paperclip] Saving attachments.
+Redirected to http://0.0.0.0:3000/
+Completed in 233ms (DB: 4) | 302 Found [http://0.0.0.0/users]
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-08-05 11:41:00) [GET]
+Rendering template within layouts/template
+Rendering main_pages/home
+  [4;35;1mUser Load (1.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 16) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.7ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 16) LIMIT 1[0m
+  [4;35;1mDesign Load (0.6ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 16) LIMIT 1[0m
+Completed in 211ms (View: 208, DB: 3) | 200 OK [http://0.0.0.0/]
+
+
+Processing DesignsController#edit (for 127.0.0.1 at 2009-08-05 11:41:02) [GET]
+  Parameters: {"id"=>"1", "user_id"=>"16"}
+Rendering template within layouts/template
+Rendering designs/edit
+  [4;36;1mUser Load (1.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 16) LIMIT 1[0m
+  [4;35;1mPortfolio Load (1.0ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 16) LIMIT 1[0m
+  [4;36;1mDesign Load (0.6ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 16) LIMIT 1[0m
+Completed in 98ms (View: 94, DB: 3) | 200 OK [http://0.0.0.0/users/16/designs/1/edit]
+New Relic Agent not running
+  [4;36;1mSQL (1.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mCREATE TABLE "designs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (31.1ms)[0m   [0;1mCREATE TABLE "pieces" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "description" varchar(255), "price" decimal(10,2), "for_sale" boolean, "portfolio_id" integer, "created_at" datetime, "updated_at" datetime, "image_2_file_name" varchar(255), "image_2_content_type" varchar(255), "image_2_file_size" integer, "image_2_updated_at" datetime, "image_3_file_name" varchar(255), "image_3_content_type" varchar(255), "image_3_file_size" integer, "image_3_updated_at" datetime, "image_4_file_name" varchar(255), "image_4_content_type" varchar(255), "image_4_file_size" integer, "image_4_updated_at" datetime, "image_5_file_name" varchar(255), "image_5_content_type" varchar(255), "image_5_file_size" integer, "image_5_updated_at" datetime, "image_1_file_name" varchar(255), "image_1_content_type" varchar(255), "image_1_file_size" integer, "image_1_updated_at" datetime, "position" integer) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mCREATE TABLE "portfolios" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.7ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(40), "name" varchar(100) DEFAULT '', "email" varchar(100), "crypted_password" varchar(40), "salt" varchar(40), "created_at" datetime, "updated_at" datetime, "remember_token" varchar(40), "remember_token_expires_at" datetime, "activation_code" varchar(40), "activated_at" datetime, "first_name" varchar(255), "last_name" varchar(255), "about_me" text, "tag_line" varchar(500), "design_type" integer, "account_tier" integer DEFAULT 1, "photo_file_name" varchar(255), "photo_content_type" varchar(255), "photo_file_size" integer, "photo_updated_at" datetime, "layout_type" integer DEFAULT 1) [0m
+  [4;35;1mSQL (1.8ms)[0m   [0mCREATE UNIQUE INDEX "index_users_on_login" ON "users" ("login")[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (8.2ms)[0m   [0mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090805151853')[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090718215859')[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090718220754')[0m
+  [4;36;1mSQL (14.9ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090719031854')[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090719032358')[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090719032501')[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090720145132')[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090720151551')[0m
+  [4;35;1mSQL (9.1ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090720202141')[0m
+  [4;36;1mSQL (8.0ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090720202338')[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090721033045')[0m
+  [4;36;1mSQL (14.7ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090721033319')[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090721152728')[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090721170213')[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090721170326')[0m
+  [4;36;1mSQL (10.5ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090721170409')[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090721170424')[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090721210418')[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090721210511')[0m
+New Relic Agent not running
+New Relic Agent not running
+  [4;36;1mSQL (1.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20090718215859)
+Migrating to AddInfoToUsers (20090718220754)
+Migrating to CreatePortfolios (20090719031854)
+Migrating to RemoveTypeFromUsers (20090719032358)
+Migrating to AddAccountTierToUsers (20090719032501)
+Migrating to CreatePieces (20090720145132)
+Migrating to AddAvatarToUsers (20090720151551)
+Migrating to RemoveAvatarFromUsers (20090720202141)
+Migrating to AddAvatarToUsersForReal (20090720202338)
+Migrating to PleaseWorkPaperclipYouMotherfucker (20090721033045)
+Migrating to AddAttachmentsPhotoToUser (20090721033319)
+Migrating to AddAttachmentsImage1ToPortfolio (20090721152728)
+Migrating to AddAttachmentsImage2ToPiece (20090721170213)
+Migrating to AddAttachmentsImage3ToPiece (20090721170326)
+Migrating to AddAttachmentsImage4ToPiece (20090721170409)
+Migrating to AddAttachmentsImage5ToPiece (20090721170424)
+Migrating to RemoveImage1FromPortfolios (20090721210418)
+Migrating to AddAttachmentsImage1ToPiece (20090721210511)
+Migrating to CreateDesigns (20090805151853)
+Migrating to AddCssVariablesToDesign (20090805164948)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mALTER TABLE "designs" ADD "background_color" varchar(255) DEFAULT '#dedddb'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mALTER TABLE "designs" ADD "background_align" varchar(255) DEFAULT 'center'[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mALTER TABLE "designs" ADD "background_tile" varchar(255) DEFAULT 'repeat'[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mALTER TABLE "designs" ADD "page_bg_color" varchar(255) DEFAULT '#fff'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mALTER TABLE "designs" ADD "link_color" varchar(255) DEFAULT '#72b225'[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mALTER TABLE "designs" ADD "link_hover_color" varchar(255) DEFAULT '#242420'[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mALTER TABLE "designs" ADD "link_img_border_color" varchar(255) DEFAULT '#f5f4f4'[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mALTER TABLE "designs" ADD "text_color" varchar(255) DEFAULT '#767574'[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mALTER TABLE "designs" ADD "text_size" integer DEFAULT 12[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mALTER TABLE "designs" ADD "text_font_1" varchar(255) DEFAULT 'Arial'[0m
+  [4;35;1mSQL (9.9ms)[0m   [0mALTER TABLE "designs" ADD "text_font_2" varchar(255) DEFAULT 'Helvetica'[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mALTER TABLE "designs" ADD "text_serif" boolean DEFAULT 'f'[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mALTER TABLE "designs" ADD "title_color" varchar(255) DEFAULT '#242420'[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mALTER TABLE "designs" ADD "title_bold" boolean DEFAULT 'f'[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mALTER TABLE "designs" ADD "title_italic" boolean DEFAULT 'f'[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mALTER TABLE "designs" ADD "title_font" varchar(255) DEFAULT 'Georgia'[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mALTER TABLE "designs" ADD "title_serif" boolean DEFAULT 't'[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mALTER TABLE "designs" ADD "tagline_size" integer[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mALTER TABLE "designs" ADD "tagline_color" varchar(255) DEFAULT '#242420'[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mALTER TABLE "designs" ADD "tagline_bold" boolean DEFAULT 'f'[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mALTER TABLE "designs" ADD "tagline_italic" boolean DEFAULT 'f'[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mALTER TABLE "designs" ADD "tagline_font" varchar(255) DEFAULT 'Georgia'[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mALTER TABLE "designs" ADD "tagline_serif" boolean DEFAULT 't'[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mALTER TABLE "designs" ADD "border_color" varchar(255) DEFAULT '#eee'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090805164948')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_list("designs")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_list("pieces")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("portfolios")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mPRAGMA index_info('index_users_on_login')[0m
+New Relic Agent not running
+  [4;36;1mSQL (0.4ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (1.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_list("designs")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_list("pieces")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("portfolios")[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mPRAGMA index_info('index_users_on_login')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (3.6ms)[0m   [0mCREATE TABLE "designs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "created_at" datetime, "updated_at" datetime, "background_color" varchar(255) DEFAULT '#dedddb', "background_align" varchar(255) DEFAULT 'center', "background_tile" varchar(255) DEFAULT 'repeat', "page_bg_color" varchar(255) DEFAULT '#fff', "link_color" varchar(255) DEFAULT '#72b225', "link_hover_color" varchar(255) DEFAULT '#242420', "link_img_border_color" varchar(255) DEFAULT '#f5f4f4', "text_color" varchar(255) DEFAULT '#767574', "text_size" integer DEFAULT 12, "text_font_1" varchar(255) DEFAULT 'Arial', "text_font_2" varchar(255) DEFAULT 'Helvetica', "text_serif" boolean DEFAULT 'f', "title_color" varchar(255) DEFAULT '#242420', "title_bold" boolean DEFAULT 'f', "title_italic" boolean DEFAULT 'f', "title_font" varchar(255) DEFAULT 'Georgia', "title_serif" boolean DEFAULT 't', "tagline_size" integer, "tagline_color" varchar(255) DEFAULT '#242420', "tagline_bold" boolean DEFAULT 'f', "tagline_italic" boolean DEFAULT 'f', "tagline_font" varchar(255) DEFAULT 'Georgia', "tagline_serif" boolean DEFAULT 't', "border_color" varchar(255) DEFAULT '#eee') [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mCREATE TABLE "pieces" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "description" varchar(255), "price" decimal(10,2), "for_sale" boolean, "portfolio_id" integer, "created_at" datetime, "updated_at" datetime, "image_2_file_name" varchar(255), "image_2_content_type" varchar(255), "image_2_file_size" integer, "image_2_updated_at" datetime, "image_3_file_name" varchar(255), "image_3_content_type" varchar(255), "image_3_file_size" integer, "image_3_updated_at" datetime, "image_4_file_name" varchar(255), "image_4_content_type" varchar(255), "image_4_file_size" integer, "image_4_updated_at" datetime, "image_5_file_name" varchar(255), "image_5_content_type" varchar(255), "image_5_file_size" integer, "image_5_updated_at" datetime, "image_1_file_name" varchar(255), "image_1_content_type" varchar(255), "image_1_file_size" integer, "image_1_updated_at" datetime, "position" integer) [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (9.0ms)[0m   [0mCREATE TABLE "portfolios" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(40), "name" varchar(100) DEFAULT '', "email" varchar(100), "crypted_password" varchar(40), "salt" varchar(40), "created_at" datetime, "updated_at" datetime, "remember_token" varchar(40), "remember_token_expires_at" datetime, "activation_code" varchar(40), "activated_at" datetime, "first_name" varchar(255), "last_name" varchar(255), "about_me" text, "tag_line" varchar(500), "design_type" integer, "account_tier" integer DEFAULT 1, "photo_file_name" varchar(255), "photo_content_type" varchar(255), "photo_file_size" integer, "photo_updated_at" datetime, "layout_type" integer DEFAULT 1) [0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mCREATE UNIQUE INDEX "index_users_on_login" ON "users" ("login")[0m
+  [4;35;1mSQL (0.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (3.3ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (1.6ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090805164948')[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090718215859')[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090718220754')[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090719031854')[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090719032358')[0m
+  [4;35;1mSQL (17.9ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090719032501')[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090720145132')[0m
+  [4;35;1mSQL (6.4ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090720151551')[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090720202141')[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090720202338')[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090721033045')[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090721033319')[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090721152728')[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090721170213')[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090721170326')[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090721170409')[0m
+  [4;36;1mSQL (2.3ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090721170424')[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090721210418')[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090721210511')[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090805151853')[0m

@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
   include Authentication::ByCookieToken
   
   has_one                   :portfolio
+  has_one                   :design
   has_many                  :pieces, :through => :portfolio
   validates_presence_of     :login
   validates_length_of       :login,    :within => 3..40
@@ -49,6 +50,14 @@ class User < ActiveRecord::Base
     self.portfolio.save
   end
   
+  # Again, probably should be in Design model (make_design_for(user))
+  def make_design_editor
+    my_design_editor = Design.new
+    self.design = my_design_editor
+    self.design.save
+  end
+  
+  # This is dumb. It bullies the user.
   def has_blank_info
     if (self.tag_line.blank? || self.about_me.blank?)
       return true

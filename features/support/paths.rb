@@ -25,6 +25,10 @@ module NavigationHelpers
     when /the page for my weefolio/
       user = User.find_by_login("mcmaloney")
       user_portfolio_path(user, user.portfolio)
+    when /my design editor page/
+      user = User.find_by_login("mcmaloney")
+      edit_user_design_path(user, user.design)
+      
     
     # Add more mappings here.
     # Here is a more fancy example:

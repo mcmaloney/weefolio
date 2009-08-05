@@ -3,6 +3,7 @@ Data Structure
 
 User
   has_one :portfolio
+  has_one :design
   has_many :pieces, through :portfolio
   
   first_name (string)
@@ -21,6 +22,37 @@ User
 Portfolio
   belongs_to :user
   has_many :pieces
+  
+Design
+  belongs_to :user
+  
+  design_type (integer [1, 2]) *virtual, from self.user.design_type
+  background_color (string), :default => "#dedddb"
+  background_image (image)
+  background_align (string [left, right, center]
+  background_tile (string [repeat, no-repeat]), :default => "repeat"
+  page_bg_color (string), :default => "#fff"
+  link_color (string), :default => "#72b225"
+  link_hover_color (string), :default => "#242420"
+  link_img_border_color (string), :default => "f5f4f4"
+  text_color (string), :default => "#767574"
+  text_size (integer [8, 10, 12, 14, 16, 18, 20, 22, 24]), :default => 12
+  text_font_1 (string [Arial, Helvetica, Times New Roman, Courier, Georgia, Trebuchet MS, Verdana]), :default => "Arial"
+  text_font_2 (string [Arial, Helvetica, Times New Roman, Courier, Georgia, Trebuchet MS, Verdana]), :default => "Helvetica"
+  text_serif (boolean), :default => false
+  title_color (string), :default => "#242420"
+  title_bold (boolean), :default => false
+  title_size (integer [8, 10, 12, 14, 16, 18, 20, 22, 24])
+  title_italic (boolean), :default => false
+  title_font (string [Arial, Helvetica, Times New Roman, Courier, Georgia, Trebuchet MS, Verdana]), :default => "Georgia"
+  title_serif (boolean), :default => true
+  tagline_size (integer [8, 10, 12, 14, 16, 18, 20, 22, 24])
+  tagline_color (string), :default => "#242420"
+  tagline_bold (boolean), :default => false
+  tagline_italic (boolean), :default => false
+  tagline_font (string [Arial, Helvetica, Times New Roman, Courier, Georgia, Trebuchet MS, Verdana]), :default => "Georgia"
+  tagline_serif (boolean), :default => true
+  border_color (string), :default => "#eee"
   
 Piece
   belongs_to :user
