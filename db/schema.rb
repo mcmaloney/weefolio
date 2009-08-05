@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090805164948) do
+ActiveRecord::Schema.define(:version => 20090805171518) do
 
   create_table "designs", :force => true do |t|
     t.integer  "user_id"
@@ -94,13 +94,13 @@ ActiveRecord::Schema.define(:version => 20090805164948) do
     t.string   "last_name"
     t.text     "about_me"
     t.string   "tag_line",                  :limit => 500
-    t.integer  "design_type"
     t.integer  "account_tier",                             :default => 1
     t.string   "photo_file_name"
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
     t.integer  "layout_type",                              :default => 1
+    t.integer  "design_type",                              :default => 1
   end
 
   add_index "users", ["login"], :name => "index_users_on_login", :unique => true
