@@ -42,6 +42,12 @@ class User < ActiveRecord::Base
     self.layout_type -= self.layout_type
     self.layout_type += number
   end
+  
+  # Change design type
+  def set_design_type(number)
+    self.design_type -= self.design_type
+    self.design_type += number
+  end
    
   # Should probably put this in the Portfolio model (make_portfolio_for(user))
   def make_portfolio
