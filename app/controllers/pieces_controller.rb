@@ -1,5 +1,5 @@
 class PiecesController < ApplicationController
-  layout 'template'
+  layout :choose_layout
   
   def new
     @page_title = "Weefolio :: New Piece"
@@ -46,5 +46,17 @@ class PiecesController < ApplicationController
   end
 
   def show
+    @piece = Piece.find(params[:id])
+    @user = current_user
+    @design = current_user.design
+  end
+  
+private
+  def choose_layout
+    if ['show'].include? action_name
+      'weefolio'
+    else
+      'template'
+    end
   end
 end

@@ -3,62 +3,32 @@
 		<title><%= @page_title %></title>
 		<%= stylesheet_link_tag 'editable.css'%>
 		<%= stylesheet_link_tag 'un-editable.css'%>
-		<%= javascript_include_tag 'jquery-1.3.1.min.js' %>
+		<%= javascript_include_tag ['jquery-1.3.1.min.js', 'wee.js'] %>
 	</head>
 	
 	<body class="">
 		<div id="page-container">
 			<div id="header-container">
 				<!--<img src="#" width="710" height="100" alt="header-image">-->
-				<%= image_tag @design.header_image.url(:header_format)%>
+				<% if @design.header_image %>
+				  <%= image_tag @design.header_image.url(:header_format) %>
+				<% end %>
 			</div>
 			
 			<div id="tagline-container">
-				<h1>Hello! My name is <a href="#"><%= @user.login %></a> and this is my Weefolio!</h1>
+			  <% if @user.tag_line.blank? %>
+				  <h1>Hello! My name is <a href="#"><%= @user.login %></a> and this is my Weefolio!</h1>
+				<% else %>
+				  <h1><%= @user.tag_line %></h1>
+				<% end %>
 			</div>
 			
 			<hr/>
 			
 			<div id="portfolio-container">
-			  <% if @user.layout_type == 1 %>
-				  <ul id="portfolio-grid">
-				    <% for piece in @portfolio.pieces %>
-				      <li><%= image_tag piece.image_1.url(:large_thumb) %></li>
-					    <!--<li><a href="#"><img src="#" width="116" height="116" alt="item-thumbnail-large"/></a></li> -->
-					  <% end %>
-				  </ul>
-				<% else %>
-				  <% for piece in @portfolio.pieces %>
-				    <div class="piece-container">
-					    <div class="image-container">
-					      <%= image_tag piece.image_1.url(:full_size) %>
-						    <!--<img src="#" height="300" width="710" alt="piece-image"/>-->
-					    </div>
-					
-					    <ul class="thumb-grid">
-					      <!--<li><a href="#"><img src="#" width="70" height="70" alt="item-thumbnail-small"/></a></li>-->
-					      <li><%= image_tag piece.image_1.url(:small_thumb)%></li>
-					      <% unless @user.account_tier == 1 %>
-						      <li><%= image_tag piece.image_2.url(:small_thumb)%></li>
-						      <li><%= image_tag piece.image_3.url(:small_thumb)%></li>
-						      <li><%= image_tag piece.image_4.url(:small_thumb)%></li>
-						      <li><%= image_tag piece.image_5.url(:small_thumb)%></li>
-						    <% end %>
-					    </ul>
-					
-					    <div class="piece-info">
-						    <h2><%= piece.title %><% if piece.for_sale %><span class="for-sale">piece.display_price</span><% end %></h2>
-						    <p>
-						      <%= piece.description %>
-						    </p>
-					    </div>
-				    </div>
-				
-				    <hr/>
-				  <% end %>
-				<% end %>
-
-			
+			  
+			  <%= yield %>
+			  
 			<div id="info-container">
 				<div id="about-container">
 					<h2>About <%= @user.login %></h2>

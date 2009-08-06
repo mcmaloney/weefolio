@@ -58,4 +58,12 @@ Then /^its layout type should be "([^\"]*)"$/ do |type|
   @user.portfolio.layout_type.should == type
 end
 
+Given /^I have uploaded a piece called "([^\"]*)" to my portfolio$/ do |title|
+  visit new_portfolio_piece_path(@user.portfolio)
+  When %{I fill in "Title" with "#{title}"}
+  When %{I fill in "Description" with "Some shit I did a while back."}
+  When %{I attach the file at "/Users/Maloney/desktop/weefolio/public/images/test_images/janus.jpg" to "Image 1"}
+  When %{I press "Create"}
+end
+
 

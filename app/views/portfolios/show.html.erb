@@ -1,3 +1,35 @@
-
+<% if @user.layout_type == 1 %>
+  <ul id="portfolio-grid">
+    <% for piece in @portfolio.pieces %>
+      <li><%= link_to image_tag(piece.image_1.url(:large_thumb), :alt => h(piece.title)), portfolio_piece_path(@portfolio, piece) %></li>
+	    <!--<li><a href="#"><img src="#" width="116" height="116" alt="item-thumbnail-large"/></a></li> -->
+	  <% end %>
+  </ul>
+<% else %>
+  <% for piece in @portfolio.pieces %>
+    <div class="piece-container">
+	    <div class="image-container">
+	      <img id="big_pic" src=<%=piece.image_2.url(:full_size) %> >
+		    <!--<img src="#" height="300" width="710" alt="piece-image"/>-->
+	    </div>
+	
+	    <ul class="thumb-grid">
+	      <!--<li><a href="#"><img src="#" width="70" height="70" alt="item-thumbnail-small"/></a></li>-->
+	      <li><a href="javascript:switch_image(1)"><%= image_tag(piece.image_1.url(:small_thumb)) %></a></li>
+	      <% unless @user.account_tier == 1 %>
+		      <li><a href="javascript:void(0)"><%= image_tag(piece.image_2.url(:small_thumb)) %></a></li>
+		    <% end %>
+	    </ul>
+	
+	    <div class="piece-info">
+		    <h2><%= piece.title %><% if piece.for_sale %><span class="for-sale">piece.display_price</span><% end %></h2>
+		    <p>
+		      <%= piece.description %>
+		    </p>
+	    </div>
+    </div>
+    <hr/>
+  <% end %>
+<% end %>
 
 

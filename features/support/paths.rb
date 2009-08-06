@@ -28,6 +28,8 @@ module NavigationHelpers
     when /my design editor page/
       user = User.find_by_login("mcmaloney")
       edit_user_design_path(user, user.design)
+    when /^the piece page for "(.*)"$/i
+      portfolio_piece_path(@user.portfolio, Piece.find_by_title($1))
       
     
     # Add more mappings here.
