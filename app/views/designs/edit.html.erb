@@ -58,12 +58,60 @@
         <%= f.text_field :text_color %>
       </p>
       <p>
+        <%= f.label :text_font_1 %><br />
+        <%= f.select :text_font_1, @design.font_families %>
+      </p>
+      <p>
+        <%= f.label :text_font_2 %><br />
+        <%= f.select :text_font_2, @design.font_families, :include_blank => true %>
+      </p>
+      <p>
+        <%= f.label :text_serif %><br />
+        <%= f.check_box :text_serif %>
+      </p>
+      <p>
+        <%= f.label :text_size %><br />
+        <%= f.select :text_size, @design.font_sizes %>
+      </p>
+      <p>
+        <%= f.label :title_font %><br />
+        <%= f.select :title_font, @design.font_families %>
+      </p>
+      <p>
         <%= f.label :title_color %><br />
         <%= f.text_field :title_color %>
       </p>
       <p>
+        <%= f.label :title_bold %><br />
+        <%= f.check_box :title_bold %>
+      </p>
+      <p>
+        <%= f.label :title_italic %><br />
+        <%= f.check_box :title_italic %>
+      </p>
+      <p>
+        <%= f.label :tagline_font %><br />
+        <%= f.select :tagline_font, @design.font_families %>
+      </p>
+      <p>
         <%= f.label :tagline_color %><br />
         <%= f.text_field :tagline_color %>
+      </p>
+      <p>
+        <%= f.label :tagline_size %><br />
+        <%= f.select :tagline_size, [8, 10, 12, 14, 16, 18, 20, 22, 24], :include_blank => true %>
+      </p>
+      <p>
+        <%= f.label :tagline_serif %><br />
+        <%= f.check_box :tagline_serif %>
+      </p>
+      <p>
+        <%= f.label :tagline_bold %><br />
+        <%= f.check_box :tagline_bold %>
+      </p>
+      <p>
+        <%= f.label :tagline_italic %><br />
+        <%= f.check_box :tagline_italic %>
       </p>
       <p>
         <%= f.label :border_color %><br />

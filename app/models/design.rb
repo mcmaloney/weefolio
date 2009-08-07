@@ -31,4 +31,16 @@ class Design < ActiveRecord::Base
       "normal"
     end
   end
+  
+  def render_font_size(font)
+    "#{font.to_s}px"
+  end
+  
+  def font_sizes
+    font_sizes = [8, 10, 12, 14, 16, 18, 20, 22, 24]
+  end
+  
+  def font_families
+    font_families = ["Arial", "Helvetica", "Times New Roman", "Courier", "Georgia", "Trebuchet MS", "Verdana"]
+  end
 end

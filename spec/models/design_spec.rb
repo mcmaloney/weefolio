@@ -33,4 +33,11 @@ describe Design do
       @design.render_bold(@design.tagline_bold).should == "normal"
     end
   end
+  
+  describe "render integer values to strings" do
+    it "should render a font size to a string" do
+      @design = @user.design
+      @design.render_font_size(@design.text_size).should == "12px"
+    end
+  end
 end

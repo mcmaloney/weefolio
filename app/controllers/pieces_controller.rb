@@ -48,6 +48,7 @@ class PiecesController < ApplicationController
   def show
     @piece = Piece.find(params[:id])
     @user = current_user
+    @page_title = "#{@user.login} :: #{@piece.title}"
     @design = current_user.design
   end
   

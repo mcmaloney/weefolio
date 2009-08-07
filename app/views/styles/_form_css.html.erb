@@ -6,7 +6,7 @@
   	background-image: none; /*---Background: Image---*/
   	background-repeat: <%= @design.background_tile %>; /*---Background: Tile---*/
   	font-family: <%= @design.text_font_1 %>, <%= @design.text_font_2 %>, <%= @design.render_serif(@design.text_serif) %>; /*---Text: Font---*/
-  	font-size: <%= @design.text_size %>px; /*---Text: Size---*/
+  	font-size: <%= @design.render_font_size(@design.text_size) %>; /*---Text: Size---*/
   	color: <%= @design.text_color %>; /*---Text: Color---*/
   	line-height: 150%;
   }
