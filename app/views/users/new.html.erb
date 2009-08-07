@@ -2,7 +2,7 @@
 <%# YIELD %>
 <div id="page-header-container-outer">
 	<div id="page-header-container-inner">
-		<h1>Sign Up<small>  Sign up for Weefolio!</small></h1>
+		<h1>Pricing &amp; Sign Up<small>Sign up for <strong>free</strong> &amp; upgrade anytime!</small></h1>
 		
 		<div class="call-to-action">
 			<!--THIS IS WHERE YOU CAN PUT 'ADD NEW WORK' LINKS ETC.
@@ -15,42 +15,60 @@
 <!--PAGE CONTENT-->
 <%# YIELD %>
 <div id="content-container">
-  <p>
+   
     <%= flash[:notice] %>
-  </p>
 	<!--DUMP ALL OF YOUR SHIT HERE!-->
 	<% @user.password = @user.password_confirmation = nil %>
 
   <%= error_messages_for :user %>
+  
   <% form_for(@user) do |f| -%>
-    <p>
-      <%= f.label :first_name %><br/>
-      <%= f.text_field :first_name %>
-    </p>
-    <p>
-      <%= f.label :last_name %><br/>
-      <%= f.text_field :last_name %>
-    </p>
-    <p>
-      <%= f.label :login %><br/>
-      <%= f.text_field :login %>
-    </p>
-    <p>
-      <%= f.label :email %><br/>
-      <%= f.text_field :email %>
-    </p>
-    <p>
-      <%= f.label :password %><br/>
-      <%= f.password_field :password %>
-    </p>
-
-    <p>
-      <%= f.label :password_confirmation %><br/>
-      <%= f.password_field :password_confirmation %>
-    </p>
-    <p>
+  	
+    <fieldset>
+    	<h2>Tell us a lil' about yourself...</h2>
+	    <dl>
+	    	<dt>
+	    		<%= f.label :login %>
+	    	</dt>
+	    	<dd>
+	      		<%= f.text_field :login %>
+	      		<p>This is how we and others in the Weefolio community will address you.</p>
+	      	</dt>
+	      
+	      	<dt>
+	      		<%= f.label :email %>
+	      	</dt>
+	    	<dd>
+	      		<%= f.text_field :email %>
+	      		<p>This is where we'll send information regarding you account.</p>
+	      	</dt>
+	      
+	      	<dt>
+	      		<%= f.label :password %>
+	      	</dt>
+	    	<dd>
+	      		<%= f.password_field :password %>
+	      	</dt>
+	      
+	      	<dt>
+	      		<%= f.label :password_confirmation %>
+	      	</dt>
+	    	<dd>
+	      		<%= f.password_field :password_confirmation %>
+	      	</dt>
+	      	
+	      	<dt>
+	      	</dt>
+	      	<dd>
+	      		<input type="checkbox"/>
+		      	<label>I have read and agree with the <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a>.</label>
+	      	</dd>
+	    </dl>    
+    </fieldset>
+    
+    <div class="submit">
       <%= f.submit 'Sign Up' %>
-    </p>
+    </div>
   <% end -%>
 </div>
 

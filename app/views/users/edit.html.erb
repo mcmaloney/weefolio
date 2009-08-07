@@ -2,12 +2,10 @@
 <%# YIELD %>
 <div id="page-header-container-outer">
 	<div id="page-header-container-inner">
-		<h1>Account<small>  Edit your account</small></h1>
+		<h1>Account </h1>
 		
 		<div class="call-to-action">
-			<!--THIS IS WHERE YOU CAN PUT 'ADD NEW WORK' LINKS ETC.
-			<a href="#">Call to action!</a>
-			-->
+			<a href="#">Cancel my Account</a>
 		</div>
 	</div>
 </div>
@@ -15,41 +13,79 @@
 <!--PAGE CONTENT-->
 <%# YIELD %>
 <div id="content-container">
-  <p>
     <%= flash[:notice] %>
-  </p>
 	<!--DUMP ALL OF YOUR SHIT HERE!-->
 	<% form_for @user, :html => {:multipart => true}  do |f| %>
-    <p>
-      <%= f.label :first_name %><br/>
-      <%= f.text_field :first_name %>
-    </p>
-    <p>
-      <%= f.label :last_name %><br/>
-      <%= f.text_field :last_name %>
-    </p>
-    <p>
-      <%= f.label :login %><br/>
-      <%= f.text_field :login %>
-    </p>
-
-    <p>
-      <%= f.label :email %><br/>
-      <%= f.text_field :email %>
-    </p>
-    <p>
-      <%= f.label :tag_line %><br />
-      <%= f.text_field :tag_line %>
-    </p>
-    <p>
-      <%= f.label :about_me %><br />
-      <%= f.text_area :about_me %>
-    </p>
-    <p>
-      <%= f.file_field :photo %>
-    </p>
-    <p>
-      <%= f.submit 'Update' %>
-    </p>
+		<fieldset>
+			<h2>Personal</h2>
+			
+    		<dl>
+    			<dt>
+     				 <%= f.label :first_name %>
+      			</dt>
+      			<dd>
+      				<%= f.text_field :first_name %>
+    			</dd>
+    			
+			    <dt>
+			      <%= f.label :last_name %>
+			    </dt>
+      			<dd>
+			      <%= f.text_field :last_name %>
+			    </dd>
+			    
+			    <dt>
+			      <%= f.label :login %>
+			    </dt>
+      			<dd>
+			      <%= f.text_field :login %>
+			      <p>This is how we and others in the Weefolio community will address you.</p>
+			    </dd>
+			
+			    <dt>
+			      <%= f.label :email %>
+			    </dt>
+      			<dd>
+			      <%= f.text_field :email %>
+			      <p>This is where we'll send information regarding you account.</p>
+			    </dd>
+			    
+			    <dt>
+			    	<label>Avatar</label>
+			    </dt>
+			    <dd>
+			      <%= f.file_field :photo %>
+			    </dd>
+			 </dl>
+		</fieldset>
+			 
+		<fieldset>
+			<h2>Portfolio</h2>
+			
+			 <dl>
+			    <dt>
+			      <%= f.label :tag_line %>
+			    </dt>
+      			<dd>
+			      <%= f.text_field :tag_line %>
+			      <p>This is whatever you want it to be. It can be a welcome message, catch phrase, or just something you always say. If you don't want your tagline to appear in your portfolio simply leave the field blank.</p>
+			    </dd>
+			    
+			  	<dt>
+			      <%= f.label :about_me %>
+			    </dt>
+      			<dd>
+			      <%= f.text_area :about_me %>
+			    </dd>
+    		</dl>
+    	</fieldset>
+    	
+    	<fieldset>
+			<h2>Billing</h2>
+		</fieldset>
+    	
+    	<div class="submit">
+			      <%= f.submit 'Save' %>
+    	</div>
   <% end %>
 </div>

@@ -1,9 +1,9 @@
 /*---GLOBAL---*/
 
 body {
-	background: #dedddb url(../images/body_background.gif) center top;
+	background: #f5f5f3;
 	margin: 0 0 80px 0;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: "Lucida Grande", Arial, sans-serif;
 	font-size: 11px;
 	line-height: 15px;
 	color: #767574;
@@ -35,7 +35,7 @@ div#header-container {
 	}
 	
 div#page-header-container-outer {
-	background: #242420 url(../images/page_header_container_outer_background.gif) no-repeat 0 0;
+	background: url(../images/page_header_container_outer_background.gif) no-repeat 0 0;
 	overflow: hidden;
 	}
 	
@@ -48,8 +48,6 @@ div#page-header-container-inner {
 div#content-container {
 	background: #fff;
 	padding: 20px;
-	border-bottom: 1px solid #c2bdb4;
-	min-height: 300px;
 	}
 	
 div#footer-container {
@@ -100,6 +98,12 @@ ul#global-nav li:first-child a:visited {
 ul#global-nav li:first-child a:hover,
 ul#global-nav li:first-child a:visited:hover {
 	background-position: 0 -10px;
+	}
+
+
+/*--GLOBAL NOTIFICATIONS--*/
+
+div.errorExplanation {
 	}
 
 
@@ -212,16 +216,17 @@ div#page-header-container-inner h1 {
 	}
 	
 div#page-header-container-inner h1 small {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 11px;
+	font-size: 13px;
 	color: #9e9d9b;
+	font-style: italic;
+	margin: 0 0 0 5px;
 	}
 	
 div#page-header-container-inner div.call-to-action {
 	float: right;
 	}
-
-
+	
+	
 /*--FOOTER--*/
 
 div#footer-container a#footer-logo {
@@ -235,6 +240,7 @@ div#footer-container a#footer-logo {
 	margin: 0 10px 0 0;
 	position: relative;
 	top: -1px;
+	display: none;
 	}
 	
 div#footer-container div#legal {
@@ -265,3 +271,94 @@ div#footer-container ul#footer-nav li a:hover,
 div#footer-container ul#footer-nav li a:visited:hover {
 	color: #242420;
 	}
+	
+
+/*-- GLOBAL FORMS --*/
+
+div#content-container form {
+	overflow: hidden;
+	margin: 0;
+	padding:  0;
+	}
+	
+div#content-container form fieldset {
+	border: 0;
+	overflow: hidden;
+	margin: 0 0 20px 0;
+	border-bottom: 1px dashed #ddd;
+	}
+	
+div#content-container form h2 {
+	margin: 0 0 20px 125px;
+	padding: 4px 0 2px 40px;
+	color: #242420;
+	font-weight: normal;
+	font-family: Georgia, "Times New Roman", serif;
+	font-size: 18px;
+	background: url(../images/form-h2-arrow.gif) left center no-repeat;
+	}
+	
+div#content-container form fieldset dl {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	}
+
+	
+div#content-container form fieldset dl dt {
+	width: 145px;
+	text-align: right;
+	padding: 7px 20px 0 0;
+	margin: 0 0 20px 0;
+	float: left;
+	font-weight: bold;
+	color: #242420;
+	font-size: 12px;
+	}
+
+div#content-container form fieldset dl dd {
+	width: 500px;
+	padding: 0;
+	float: left;
+	margin: 0 0 20px 0;
+	}
+	
+div#content-container form fieldset dl dd input,
+div#content-container form fieldset dl dd textarea {
+	padding: 6px;
+	font-size: 12px;
+	background: #f5f5f3;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border: 1px solid #ddd;
+	margin: 0;
+	}
+	
+div#content-container form fieldset dl dd p {
+	margin: 5px 0 5px 0;
+	}
+	
+div#content-container form div.submit {
+	margin: 0 0 0 175px;
+	overflow: hidden;
+	}
+
+div#content-container form div.submit input {
+	background: #9fcf44;
+	padding: 7px 15px;
+	border: 0;
+	color: #fff;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	text-transform: uppercase;
+	font-family: "Lucida Grande", Arial, sans-serif;
+	font-weight: bold;
+	font-size: 12px;
+	margin: 0;
+	}
+	
+div#content-container form div.submit input:hover {
+	background: #242420;
+	}
+
+	
