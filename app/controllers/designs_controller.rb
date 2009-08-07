@@ -1,6 +1,7 @@
 class DesignsController < ApplicationController
   layout 'template'
   def edit
+    @user = current_user
     @page_title = "Weefolio :: Layout Editor"
   end
 

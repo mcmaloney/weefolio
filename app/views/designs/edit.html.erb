@@ -19,8 +19,8 @@
     <%= flash[:notice] %>
   </p>
 	<!--DUMP ALL OF YOUR SHIT HERE!-->
-	<% if current_user.design_type == 1 %>
-    <% form_for [current_user, current_user.design], :html => { :multipart => true } do |f| %>
+	<% if @user.design_type == 1 %>
+    <% form_for [@user, @user.design], :html => { :multipart => true } do |f| %>
       <p>
         <%= f.label :header_image %><br />
         <%= f.file_field :header_image %>
