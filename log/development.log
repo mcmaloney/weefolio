@@ -33577,3 +33577,596 @@ New Relic Agent not running
   [4;36;1mSQL (1.9ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090805174329')[0m
   [4;35;1mSQL (2.4ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090805191833')[0m
   [4;36;1mSQL (6.4ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090805192350')[0m
+Starting the New Relic Agent
+  [4;36;1mSQL (1.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Starting the New Relic Agent
+  [4;36;1mSQL (2.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-08-07 13:31:27) [GET]
+Rendering template within layouts/template
+Rendering main_pages/home
+  [4;36;1mUser Load (1.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 16) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.7ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 16) LIMIT 1[0m
+  [4;36;1mDesign Load (1.4ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 16) LIMIT 1[0m
+Completed in 119ms (View: 115, DB: 3) | 200 OK [http://0.0.0.0/]
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-08-07 13:31:28) [GET]
+Rendering template within layouts/template
+Rendering main_pages/home
+  [4;35;1mUser Load (1.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 16) LIMIT 1[0m
+  [4;36;1mPortfolio Load (1.3ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 16) LIMIT 1[0m
+  [4;35;1mDesign Load (4.5ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 16) LIMIT 1[0m
+Completed in 77ms (View: 70, DB: 7) | 200 OK [http://0.0.0.0/]
+
+
+Processing PortfoliosController#show (for 127.0.0.1 at 2009-08-07 13:31:29) [GET]
+  Parameters: {"id"=>"18", "user_id"=>"16"}
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 16) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.6ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 16) LIMIT 1[0m
+  [4;36;1mDesign Load (1.4ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 16) LIMIT 1[0m
+Rendering template within layouts/weefolio
+Rendering portfolios/show
+  [4;35;1mPiece Load (1.2ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 18) [0m
+Rendered styles/_form_css (32.4ms)
+Completed in 350ms (View: 292, DB: 4) | 200 OK [http://0.0.0.0/users/16/portfolios/18]
+
+
+Processing PortfoliosController#show (for 127.0.0.1 at 2009-08-07 13:31:30) [GET]
+  Parameters: {"id"=>"18", "user_id"=>"16"}
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 16) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.6ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 16) LIMIT 1[0m
+  [4;36;1mDesign Load (2.0ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 16) LIMIT 1[0m
+Rendering template within layouts/weefolio
+Rendering portfolios/show
+  [4;35;1mPiece Load (1.1ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 18) [0m
+Rendered styles/_form_css (19.1ms)
+Completed in 144ms (View: 70, DB: 5) | 200 OK [http://0.0.0.0/users/16/portfolios/18]
+
+
+Processing PortfoliosController#show (for 127.0.0.1 at 2009-08-07 13:32:04) [GET]
+  Parameters: {"id"=>"18", "user_id"=>"16"}
+  [4;36;1mUser Load (1.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 16) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.7ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 16) LIMIT 1[0m
+  [4;36;1mDesign Load (1.7ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 16) LIMIT 1[0m
+Rendering template within layouts/weefolio
+Rendering portfolios/show
+  [4;35;1mPiece Load (1.4ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 18) [0m
+Rendered styles/_form_css (18.0ms)
+Completed in 331ms (View: 261, DB: 5) | 200 OK [http://0.0.0.0/users/16/portfolios/18]
+
+
+Processing PortfoliosController#show (for 127.0.0.1 at 2009-08-07 13:32:05) [GET]
+  Parameters: {"id"=>"18", "user_id"=>"16"}
+  [4;36;1mUser Load (6.9ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 16) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.7ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 16) LIMIT 1[0m
+  [4;36;1mDesign Load (1.3ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 16) LIMIT 1[0m
+Rendering template within layouts/weefolio
+Rendering portfolios/show
+  [4;35;1mPiece Load (3.6ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 18) [0m
+Rendered styles/_form_css (59.3ms)
+Completed in 304ms (View: 111, DB: 12) | 200 OK [http://0.0.0.0/users/16/portfolios/18]
+
+
+Processing PortfoliosController#show (for 127.0.0.1 at 2009-08-07 13:32:24) [GET]
+  Parameters: {"id"=>"18", "user_id"=>"16"}
+  [4;36;1mUser Load (2.7ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 16) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.8ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 16) LIMIT 1[0m
+  [4;36;1mDesign Load (1.7ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 16) LIMIT 1[0m
+Rendering template within layouts/weefolio
+Rendering portfolios/show
+  [4;35;1mPiece Load (1.6ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 18) [0m
+Rendered styles/_form_css (16.6ms)
+Completed in 355ms (View: 71, DB: 7) | 200 OK [http://0.0.0.0/users/16/portfolios/18]
+
+
+Processing PortfoliosController#show (for 127.0.0.1 at 2009-08-07 13:32:26) [GET]
+  Parameters: {"id"=>"18", "user_id"=>"16"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 16) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.7ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 16) LIMIT 1[0m
+  [4;36;1mDesign Load (1.3ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 16) LIMIT 1[0m
+Rendering template within layouts/weefolio
+Rendering portfolios/show
+  [4;35;1mPiece Load (1.2ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 18) [0m
+Rendered styles/_form_css (40.6ms)
+Completed in 143ms (View: 88, DB: 4) | 200 OK [http://0.0.0.0/users/16/portfolios/18]
+New Relic Agent not running
+New Relic Agent not running
+  [4;36;1mSQL (1.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20090718215859)
+Migrating to AddInfoToUsers (20090718220754)
+Migrating to CreatePortfolios (20090719031854)
+Migrating to RemoveTypeFromUsers (20090719032358)
+Migrating to AddAccountTierToUsers (20090719032501)
+Migrating to CreatePieces (20090720145132)
+Migrating to AddAvatarToUsers (20090720151551)
+Migrating to RemoveAvatarFromUsers (20090720202141)
+Migrating to AddAvatarToUsersForReal (20090720202338)
+Migrating to PleaseWorkPaperclipYouMotherfucker (20090721033045)
+Migrating to AddAttachmentsPhotoToUser (20090721033319)
+Migrating to AddAttachmentsImage1ToPortfolio (20090721152728)
+Migrating to AddAttachmentsImage2ToPiece (20090721170213)
+Migrating to AddAttachmentsImage3ToPiece (20090721170326)
+Migrating to AddAttachmentsImage4ToPiece (20090721170409)
+Migrating to AddAttachmentsImage5ToPiece (20090721170424)
+Migrating to RemoveImage1FromPortfolios (20090721210418)
+Migrating to AddAttachmentsImage1ToPiece (20090721210511)
+Migrating to CreateDesigns (20090805151853)
+Migrating to AddCssVariablesToDesign (20090805164948)
+Migrating to RemoveOldDesignTypeFromUsers (20090805171338)
+Migrating to AddDesignTypeToUsersWithDefaultValue (20090805171518)
+Migrating to AddCssTextToDesign (20090805174329)
+Migrating to AddAttachmentsHeaderImageToUser (20090805191833)
+Migrating to RemoveHeaderImageFromUsers (20090805192350)
+Migrating to AddAttachmentsHeaderImageToDesign (20090805192452)
+Migrating to RemoveOldCssTextFromDesigns (20090807174016)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mCREATE TEMPORARY TABLE "altered_designs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "created_at" datetime, "updated_at" datetime, "background_color" varchar(255) DEFAULT '#dedddb', "background_align" varchar(255) DEFAULT 'center', "background_tile" varchar(255) DEFAULT 'repeat', "page_bg_color" varchar(255) DEFAULT '#fff', "link_color" varchar(255) DEFAULT '#72b225', "link_hover_color" varchar(255) DEFAULT '#242420', "link_img_border_color" varchar(255) DEFAULT '#f5f4f4', "text_color" varchar(255) DEFAULT '#767574', "text_size" integer DEFAULT 12, "text_font_1" varchar(255) DEFAULT 'Arial', "text_font_2" varchar(255) DEFAULT 'Helvetica', "text_serif" boolean DEFAULT 'f', "title_color" varchar(255) DEFAULT '#242420', "title_bold" boolean DEFAULT 'f', "title_italic" boolean DEFAULT 'f', "title_font" varchar(255) DEFAULT 'Georgia', "title_serif" boolean DEFAULT 't', "tagline_size" integer, "tagline_color" varchar(255) DEFAULT '#242420', "tagline_bold" boolean DEFAULT 'f', "tagline_italic" boolean DEFAULT 'f', "tagline_font" varchar(255) DEFAULT 'Georgia', "tagline_serif" boolean DEFAULT 't', "border_color" varchar(255) DEFAULT '#eee', "css_text" text, "header_image_file_name" varchar(255), "header_image_content_type" varchar(255), "header_image_file_size" integer, "header_image_updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_list("designs")[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mDROP TABLE "designs"[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCREATE TABLE "designs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "created_at" datetime, "updated_at" datetime, "background_color" varchar(255) DEFAULT '#dedddb', "background_align" varchar(255) DEFAULT 'center', "background_tile" varchar(255) DEFAULT 'repeat', "page_bg_color" varchar(255) DEFAULT '#fff', "link_color" varchar(255) DEFAULT '#72b225', "link_hover_color" varchar(255) DEFAULT '#242420', "link_img_border_color" varchar(255) DEFAULT '#f5f4f4', "text_color" varchar(255) DEFAULT '#767574', "text_size" integer DEFAULT 12, "text_font_1" varchar(255) DEFAULT 'Arial', "text_font_2" varchar(255) DEFAULT 'Helvetica', "text_serif" boolean DEFAULT 'f', "title_color" varchar(255) DEFAULT '#242420', "title_bold" boolean DEFAULT 'f', "title_italic" boolean DEFAULT 'f', "title_font" varchar(255) DEFAULT 'Georgia', "title_serif" boolean DEFAULT 't', "tagline_size" integer, "tagline_color" varchar(255) DEFAULT '#242420', "tagline_bold" boolean DEFAULT 'f', "tagline_italic" boolean DEFAULT 'f', "tagline_font" varchar(255) DEFAULT 'Georgia', "tagline_serif" boolean DEFAULT 't', "border_color" varchar(255) DEFAULT '#eee', "header_image_file_name" varchar(255), "header_image_content_type" varchar(255), "header_image_file_size" integer, "header_image_updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("altered_designs")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mDROP TABLE "altered_designs"[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090807174016')[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_list("designs")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mPRAGMA index_list("pieces")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_list("portfolios")[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mPRAGMA index_info('index_users_on_login')[0m
+New Relic Agent not running
+New Relic Agent not running
+New Relic Agent not running
+  [4;36;1mSQL (1.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.9ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20090718215859)
+Migrating to AddInfoToUsers (20090718220754)
+Migrating to CreatePortfolios (20090719031854)
+Migrating to RemoveTypeFromUsers (20090719032358)
+Migrating to AddAccountTierToUsers (20090719032501)
+Migrating to CreatePieces (20090720145132)
+Migrating to AddAvatarToUsers (20090720151551)
+Migrating to RemoveAvatarFromUsers (20090720202141)
+Migrating to AddAvatarToUsersForReal (20090720202338)
+Migrating to PleaseWorkPaperclipYouMotherfucker (20090721033045)
+Migrating to AddAttachmentsPhotoToUser (20090721033319)
+Migrating to AddAttachmentsImage1ToPortfolio (20090721152728)
+Migrating to AddAttachmentsImage2ToPiece (20090721170213)
+Migrating to AddAttachmentsImage3ToPiece (20090721170326)
+Migrating to AddAttachmentsImage4ToPiece (20090721170409)
+Migrating to AddAttachmentsImage5ToPiece (20090721170424)
+Migrating to RemoveImage1FromPortfolios (20090721210418)
+Migrating to AddAttachmentsImage1ToPiece (20090721210511)
+Migrating to CreateDesigns (20090805151853)
+Migrating to AddCssVariablesToDesign (20090805164948)
+Migrating to RemoveOldDesignTypeFromUsers (20090805171338)
+Migrating to AddDesignTypeToUsersWithDefaultValue (20090805171518)
+Migrating to AddCssTextToDesign (20090805174329)
+Migrating to AddAttachmentsHeaderImageToUser (20090805191833)
+Migrating to RemoveHeaderImageFromUsers (20090805192350)
+Migrating to AddAttachmentsHeaderImageToDesign (20090805192452)
+Migrating to RemoveOldCssTextFromDesigns (20090807174016)
+Migrating to AddCssTextToDesigns (20090807174232)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mALTER TABLE "designs" ADD "css_text" text DEFAULT 'body {
+ 	margin: 20px;
+ 	background-color: #dedddb; /*---Background: Color---*/
+ 	background-position: top; /*---Background: Alignment---*/
+ 	background-image: none; /*---Background: Image---*/
+ 	background-repeat: repeat; /*---Background: Tile---*/
+ 	font-family: Arial, Helvetica, sans-serif; /*---Text: Font---*/
+ 	font-size: 12px; /*---Text: Size---*/
+ 	color: #767574; /*---Text: Color---*/
+ 	line-height: 150%;
+ 	}
+
+ a:link,
+ a:visited {
+ 	color: #72b225; /*---Links: Color---*/
+ 	}
+
+ a:hover,
+ a:visited:hover {
+ 	color: #242420; /*---Text: Color---*/
+ 	}
+
+ h1 {
+ 	font-size: ; /*---Tagline: Size---*/
+ 	color: #242420; /*---Tagline: Color---*/
+ 	font-family: Georgia, serif; /*---Tagline: Font---*/
+ 	font-weight: normal; /*---Tagline: Bold---*/
+ 	font-style: normal; /*---Tagline: Italic---*/
+ 	}
+
+ h2, h3, h4, h5, h6 {
+ 	color: #242420; /*---Titles: Color---*/
+ 	font-family: Georgia, serif; /*---Titles: Font---*/
+ 	font-weight: normal; /*---Titles: Bold---*/
+ 	font-style: normal; /*---Titles: Italic---*/
+ 	}
+
+ hr {
+ 	border: 0;
+ 	height: 1px;
+ 	background: #eee; /*---Border: Color---*/
+ 	margin: 20px 0;
+ 	}
+
+ a:link img, a:visited img {
+ 	display: block;
+ 	border: 5px solid #f5f4f4; /*---Border: Color---*/
+ 	}
+
+ a:hover img, a:visited:hover img {	
+ 	border: 5px solid #72b225; /*---Link: Color---*/
+ 	}
+
+
+ /*---STRUCTURE---*/
+
+ div#page-container {
+ 	margin: 0 auto;
+ 	width: 710px;
+ 	background: #fff; /*---Page: Background Color---*/
+ 	overflow: hidden;
+ 	padding: 20px;
+ 	-webkit-border-radius: 10px;
+ 	}
+
+ div#header-container {
+ 	overflow: hidden;
+ 	margin: 0 0 20px 0;
+ 	}
+
+ div#tagline-container {
+ 	overflow: hidden;
+ 	text-align: left;
+ 	}
+
+ div#info-container {
+ 	overflow: hidden;
+ 	}
+
+ div#about-container {
+ 	width: 345px;
+ 	margin: 0 0 20px 0;
+ 	overflow: hidden;
+ 	float: left;
+ 	}
+
+ div#contact-container {
+ 	width: 345px;
+ 	margin: 0;
+ 	overflow: hidden;
+ 	float: right;
+ 	}'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090807174232')[0m
+  [4;35;1mSQL (0.7ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_list("designs")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_list("pieces")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_list("portfolios")[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mPRAGMA index_info('index_users_on_login')[0m
+New Relic Agent not running
+New Relic Agent not running
+  [4;36;1mUser Load (2.2ms)[0m   [0;1mSELECT * FROM "users" [0m
+  [4;35;1mUser Load (1.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 16) [0m
+  [4;36;1mDesign Load (1.9ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 16) LIMIT 1[0m
+  [4;35;1mUser Exists (0.4ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login" = 'mcmaloney' AND "users".id <> 16) LIMIT 1[0m
+  [4;36;1mUser Exists (0.3ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'maloney.mc@gmail.com' AND "users".id <> 16) LIMIT 1[0m
+  [4;35;1mUser Update (0.9ms)[0m   [0mUPDATE "users" SET "design_type" = 2, "updated_at" = '2009-08-07 17:47:15' WHERE "id" = 16[0m
+[paperclip] Saving attachments.
+Starting the New Relic Agent
+  [4;36;1mSQL (1.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+
+
+Processing PortfoliosController#show (for 127.0.0.1 at 2009-08-07 13:47:27) [GET]
+  Parameters: {"id"=>"18", "user_id"=>"16"}
+  [4;36;1mUser Load (1.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 16) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.8ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 16) LIMIT 1[0m
+  [4;36;1mDesign Load (1.4ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 16) LIMIT 1[0m
+Rendering template within layouts/weefolio
+Rendering portfolios/show
+  [4;35;1mPiece Load (1.8ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 18) [0m
+Rendered styles/_text_css (18.9ms)
+Completed in 358ms (View: 267, DB: 5) | 200 OK [http://0.0.0.0/users/16/portfolios/18]
+
+
+Processing PortfoliosController#show (for 127.0.0.1 at 2009-08-07 13:47:29) [GET]
+  Parameters: {"id"=>"18", "user_id"=>"16"}
+  [4;36;1mUser Load (1.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 16) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.9ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 16) LIMIT 1[0m
+  [4;36;1mDesign Load (1.3ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 16) LIMIT 1[0m
+Rendering template within layouts/weefolio
+Rendering portfolios/show
+  [4;35;1mPiece Load (1.2ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 18) [0m
+Rendered styles/_text_css (17.7ms)
+Completed in 115ms (View: 60, DB: 5) | 200 OK [http://0.0.0.0/users/16/portfolios/18]
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-08-07 13:47:48) [GET]
+Rendering template within layouts/template
+Rendering main_pages/home
+  [4;36;1mUser Load (1.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 16) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.6ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 16) LIMIT 1[0m
+  [4;36;1mDesign Load (1.6ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 16) LIMIT 1[0m
+Completed in 269ms (View: 265, DB: 3) | 200 OK [http://0.0.0.0/]
+
+
+Processing DesignsController#edit (for 127.0.0.1 at 2009-08-07 13:47:50) [GET]
+  Parameters: {"id"=>"1", "user_id"=>"16"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 16) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering designs/edit
+  [4;36;1mDesign Load (1.4ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 16) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.7ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 16) LIMIT 1[0m
+Completed in 95ms (View: 66, DB: 3) | 200 OK [http://0.0.0.0/users/16/designs/1/edit]
+
+
+Processing DesignsController#edit (for 127.0.0.1 at 2009-08-07 13:47:51) [GET]
+  Parameters: {"id"=>"1", "user_id"=>"16"}
+  [4;36;1mUser Load (1.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 16) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering designs/edit
+  [4;35;1mDesign Load (1.8ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 16) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.8ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 16) LIMIT 1[0m
+Completed in 213ms (View: 180, DB: 4) | 200 OK [http://0.0.0.0/users/16/designs/1/edit]
+
+
+Processing PortfoliosController#show (for 127.0.0.1 at 2009-08-07 13:48:34) [GET]
+  Parameters: {"id"=>"18", "user_id"=>"16"}
+  [4;35;1mUser Load (1.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 16) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.7ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 16) LIMIT 1[0m
+  [4;35;1mDesign Load (1.8ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 16) LIMIT 1[0m
+Rendering template within layouts/weefolio
+Rendering portfolios/show
+  [4;36;1mPiece Load (1.7ms)[0m   [0;1mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 18) [0m
+Rendered styles/_text_css (17.2ms)
+Completed in 138ms (View: 70, DB: 6) | 200 OK [http://0.0.0.0/users/16/portfolios/18]
+
+
+Processing PortfoliosController#show (for 127.0.0.1 at 2009-08-07 13:48:35) [GET]
+  Parameters: {"id"=>"18", "user_id"=>"16"}
+  [4;35;1mUser Load (1.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 16) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.7ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 16) LIMIT 1[0m
+  [4;35;1mDesign Load (1.6ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 16) LIMIT 1[0m
+Rendering template within layouts/weefolio
+Rendering portfolios/show
+  [4;36;1mPiece Load (1.8ms)[0m   [0;1mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 18) [0m
+Rendered styles/_text_css (18.8ms)
+Completed in 304ms (View: 239, DB: 5) | 200 OK [http://0.0.0.0/users/16/portfolios/18]
+
+
+Processing PortfoliosController#show (for 127.0.0.1 at 2009-08-07 13:49:06) [GET]
+  Parameters: {"id"=>"18", "user_id"=>"16"}
+  [4;35;1mUser Load (1.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 16) LIMIT 1[0m
+  [4;36;1mPortfolio Load (1.0ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 16) LIMIT 1[0m
+  [4;35;1mDesign Load (1.9ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 16) LIMIT 1[0m
+Rendering template within layouts/weefolio
+Rendering portfolios/show
+  [4;36;1mPiece Load (1.6ms)[0m   [0;1mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 18) [0m
+Rendered styles/_text_css (21.0ms)
+Completed in 196ms (View: 119, DB: 6) | 200 OK [http://0.0.0.0/users/16/portfolios/18]
+
+
+Processing PortfoliosController#show (for 127.0.0.1 at 2009-08-07 13:49:07) [GET]
+  Parameters: {"id"=>"18", "user_id"=>"16"}
+  [4;35;1mUser Load (2.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 16) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.7ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 16) LIMIT 1[0m
+  [4;35;1mDesign Load (1.8ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 16) LIMIT 1[0m
+Rendering template within layouts/weefolio
+Rendering portfolios/show
+  [4;36;1mPiece Load (1.2ms)[0m   [0;1mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 18) [0m
+Rendered styles/_text_css (16.1ms)
+Completed in 345ms (View: 62, DB: 6) | 200 OK [http://0.0.0.0/users/16/portfolios/18]
+
+
+Processing DesignsController#edit (for 127.0.0.1 at 2009-08-07 13:49:47) [GET]
+  Parameters: {"id"=>"1", "user_id"=>"16"}
+  [4;35;1mUser Load (1.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 16) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering designs/edit
+  [4;36;1mDesign Load (1.8ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 16) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.7ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 16) LIMIT 1[0m
+Completed in 113ms (View: 80, DB: 4) | 200 OK [http://0.0.0.0/users/16/designs/1/edit]
+
+
+Processing DesignsController#edit (for 127.0.0.1 at 2009-08-07 13:49:48) [GET]
+  Parameters: {"id"=>"1", "user_id"=>"16"}
+  [4;36;1mUser Load (2.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 16) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering designs/edit
+  [4;35;1mDesign Load (2.0ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 16) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.7ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 16) LIMIT 1[0m
+Completed in 279ms (View: 240, DB: 5) | 200 OK [http://0.0.0.0/users/16/designs/1/edit]
+
+
+Processing DesignsController#edit (for 127.0.0.1 at 2009-08-07 13:49:50) [GET]
+  Parameters: {"id"=>"1", "user_id"=>"16"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 16) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering designs/edit
+  [4;36;1mDesign Load (1.4ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 16) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.6ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 16) LIMIT 1[0m
+Completed in 83ms (View: 51, DB: 3) | 200 OK [http://0.0.0.0/users/16/designs/1/edit]
+
+
+Processing DesignsController#update (for 127.0.0.1 at 2009-08-07 13:49:53) [PUT]
+  Parameters: {"design"=>{"css_text"=>"body {\r\n    \tmargin: 20px;\r\n    \tbackground-color: #aaaaaa; /*---Background: Color---*/\r\n    \tbackground-position: top; /*---Background: Alignment---*/\r\n    \tbackground-image: none; /*---Background: Image---*/\r\n    \tbackground-repeat: repeat; /*---Background: Tile---*/\r\n    \tfont-family: Arial, Helvetica, sans-serif; /*---Text: Font---*/\r\n    \tfont-size: 12px; /*---Text: Size---*/\r\n    \tcolor: #767574; /*---Text: Color---*/\r\n    \tline-height: 150%;\r\n    \t}\r\n\r\n    a:link,\r\n    a:visited {\r\n    \tcolor: #72b225; /*---Links: Color---*/\r\n    \t}\r\n\r\n    a:hover,\r\n    a:visited:hover {\r\n    \tcolor: #242420; /*---Text: Color---*/\r\n    \t}\r\n\r\n    h1 {\r\n    \tfont-size: ; /*---Tagline: Size---*/\r\n    \tcolor: #242420; /*---Tagline: Color---*/\r\n    \tfont-family: Georgia, serif; /*---Tagline: Font---*/\r\n    \tfont-weight: normal; /*---Tagline: Bold---*/\r\n    \tfont-style: normal; /*---Tagline: Italic---*/\r\n    \t}\r\n\r\n    h2, h3, h4, h5, h6 {\r\n    \tcolor: #242420; /*---Titles: Color---*/\r\n    \tfont-family: Georgia, serif; /*---Titles: Font---*/\r\n    \tfont-weight: normal; /*---Titles: Bold---*/\r\n    \tfont-style: normal; /*---Titles: Italic---*/\r\n    \t}\r\n\r\n    hr {\r\n    \tborder: 0;\r\n    \theight: 1px;\r\n    \tbackground: #eee; /*---Border: Color---*/\r\n    \tmargin: 20px 0;\r\n    \t}\r\n\r\n    a:link img, a:visited img {\r\n    \tdisplay: block;\r\n    \tborder: 5px solid #f5f4f4; /*---Border: Color---*/\r\n    \t}\r\n\r\n    a:hover img, a:visited:hover img {\t\r\n    \tborder: 5px solid #72b225; /*---Link: Color---*/\r\n    \t}\r\n\r\n\r\n    /*---STRUCTURE---*/\r\n\r\n    div#page-container {\r\n    \tmargin: 0 auto;\r\n    \twidth: 710px;\r\n    \tbackground: #fff; /*---Page: Background Color---*/\r\n    \toverflow: hidden;\r\n    \tpadding: 20px;\r\n    \t-webkit-border-radius: 10px;\r\n    \t}\r\n\r\n    div#header-container {\r\n    \toverflow: hidden;\r\n    \tmargin: 0 0 20px 0;\r\n    \t}\r\n\r\n    div#tagline-container {\r\n    \toverflow: hidden;\r\n    \ttext-align: left;\r\n    \t}\r\n\r\n    div#info-container {\r\n    \toverflow: hidden;\r\n    \t}\r\n\r\n    div#about-container {\r\n    \twidth: 345px;\r\n    \tmargin: 0 0 20px 0;\r\n    \toverflow: hidden;\r\n    \tfloat: left;\r\n    \t}\r\n\r\n    div#contact-container {\r\n    \twidth: 345px;\r\n    \tmargin: 0;\r\n    \toverflow: hidden;\r\n    \tfloat: right;\r\n    \t}"}, "commit"=>"Save", "authenticity_token"=>"cH5uP5qryyriaedPs5AAEuMe9ggMYXK21y6LKPAqX3s=", "id"=>"1", "user_id"=>"16"}
+  [4;36;1mUser Load (1.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 16) LIMIT 1[0m
+  [4;35;1mDesign Load (1.6ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 16) LIMIT 1[0m
+  [4;36;1mDesign Update (1.0ms)[0m   [0;1mUPDATE "designs" SET "css_text" = 'body {
+ 	margin: 20px;
+ 	background-color: #aaaaaa; /*---Background: Color---*/
+ 	background-position: top; /*---Background: Alignment---*/
+ 	background-image: none; /*---Background: Image---*/
+ 	background-repeat: repeat; /*---Background: Tile---*/
+ 	font-family: Arial, Helvetica, sans-serif; /*---Text: Font---*/
+ 	font-size: 12px; /*---Text: Size---*/
+ 	color: #767574; /*---Text: Color---*/
+ 	line-height: 150%;
+ 	}
+
+ a:link,
+ a:visited {
+ 	color: #72b225; /*---Links: Color---*/
+ 	}
+
+ a:hover,
+ a:visited:hover {
+ 	color: #242420; /*---Text: Color---*/
+ 	}
+
+ h1 {
+ 	font-size: ; /*---Tagline: Size---*/
+ 	color: #242420; /*---Tagline: Color---*/
+ 	font-family: Georgia, serif; /*---Tagline: Font---*/
+ 	font-weight: normal; /*---Tagline: Bold---*/
+ 	font-style: normal; /*---Tagline: Italic---*/
+ 	}
+
+ h2, h3, h4, h5, h6 {
+ 	color: #242420; /*---Titles: Color---*/
+ 	font-family: Georgia, serif; /*---Titles: Font---*/
+ 	font-weight: normal; /*---Titles: Bold---*/
+ 	font-style: normal; /*---Titles: Italic---*/
+ 	}
+
+ hr {
+ 	border: 0;
+ 	height: 1px;
+ 	background: #eee; /*---Border: Color---*/
+ 	margin: 20px 0;
+ 	}
+
+ a:link img, a:visited img {
+ 	display: block;
+ 	border: 5px solid #f5f4f4; /*---Border: Color---*/
+ 	}
+
+ a:hover img, a:visited:hover img {	
+ 	border: 5px solid #72b225; /*---Link: Color---*/
+ 	}
+
+
+ /*---STRUCTURE---*/
+
+ div#page-container {
+ 	margin: 0 auto;
+ 	width: 710px;
+ 	background: #fff; /*---Page: Background Color---*/
+ 	overflow: hidden;
+ 	padding: 20px;
+ 	-webkit-border-radius: 10px;
+ 	}
+
+ div#header-container {
+ 	overflow: hidden;
+ 	margin: 0 0 20px 0;
+ 	}
+
+ div#tagline-container {
+ 	overflow: hidden;
+ 	text-align: left;
+ 	}
+
+ div#info-container {
+ 	overflow: hidden;
+ 	}
+
+ div#about-container {
+ 	width: 345px;
+ 	margin: 0 0 20px 0;
+ 	overflow: hidden;
+ 	float: left;
+ 	}
+
+ div#contact-container {
+ 	width: 345px;
+ 	margin: 0;
+ 	overflow: hidden;
+ 	float: right;
+ 	}', "updated_at" = '2009-08-07 17:49:53' WHERE "id" = 1[0m
+[paperclip] Saving attachments.
+Redirected to http://0.0.0.0:3000/users/16/designs/1/edit
+Completed in 59ms (DB: 4) | 302 Found [http://0.0.0.0/users/16/designs/1]
+
+
+Processing DesignsController#edit (for 127.0.0.1 at 2009-08-07 13:49:53) [GET]
+  Parameters: {"id"=>"1", "user_id"=>"16"}
+  [4;35;1mUser Load (1.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 16) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering designs/edit
+  [4;36;1mDesign Load (1.4ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 16) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.7ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 16) LIMIT 1[0m
+Completed in 88ms (View: 54, DB: 3) | 200 OK [http://0.0.0.0/users/16/designs/1/edit]
+
+
+Processing DesignsController#edit (for 127.0.0.1 at 2009-08-07 13:49:54) [GET]
+  Parameters: {"id"=>"1", "user_id"=>"16"}
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 16) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering designs/edit
+  [4;35;1mDesign Load (1.4ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 16) LIMIT 1[0m
+  [4;36;1mPortfolio Load (2.1ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 16) LIMIT 1[0m
+Completed in 77ms (View: 48, DB: 5) | 200 OK [http://0.0.0.0/users/16/designs/1/edit]
+
+
+Processing PortfoliosController#show (for 127.0.0.1 at 2009-08-07 13:49:56) [GET]
+  Parameters: {"id"=>"18", "user_id"=>"16"}
+  [4;35;1mUser Load (1.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 16) LIMIT 1[0m
+  [4;36;1mPortfolio Load (1.2ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 16) LIMIT 1[0m
+  [4;35;1mDesign Load (1.9ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 16) LIMIT 1[0m
+Rendering template within layouts/weefolio
+Rendering portfolios/show
+  [4;36;1mPiece Load (1.7ms)[0m   [0;1mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 18) [0m
+Rendered styles/_text_css (18.1ms)
+Completed in 350ms (View: 274, DB: 6) | 200 OK [http://0.0.0.0/users/16/portfolios/18]
+
+
+Processing PortfoliosController#show (for 127.0.0.1 at 2009-08-07 13:49:57) [GET]
+  Parameters: {"id"=>"18", "user_id"=>"16"}
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 16) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.7ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 16) LIMIT 1[0m
+  [4;35;1mDesign Load (1.6ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 16) LIMIT 1[0m
+Rendering template within layouts/weefolio
+Rendering portfolios/show
+  [4;36;1mPiece Load (1.5ms)[0m   [0;1mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 18) [0m
+Rendered styles/_text_css (16.0ms)
+Completed in 119ms (View: 60, DB: 5) | 200 OK [http://0.0.0.0/users/16/portfolios/18]

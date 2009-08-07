@@ -26,8 +26,4 @@ module PiecesHelper
       end
     end
   end
-  
-  def form_content_type(portfolio)
-    # Gets rid of the view logic for displaying the other image fields. Maybe put this in application_helper.rb so it can be used by /portfolios/show ?
-  end
 end
