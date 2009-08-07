@@ -616,3 +616,17 @@
 [08/06/09 14:39:15 -0400 Macintosh.local (18895)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_5s/small_thumb/missing.png" with {:method=>:get}
 [08/06/09 14:39:15 -0400 Macintosh.local (18895)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_3s/small_thumb/missing.png" with {:method=>:get}
 [08/06/09 14:39:15 -0400 Macintosh.local (18895)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_4s/small_thumb/missing.png" with {:method=>:get}
+[08/07/09 12:10:29 -0400 Macintosh.local (31258)] INFO : Web container: webrick
+[08/07/09 12:10:29 -0400 Macintosh.local (31258)] INFO : Transaction tracing threshold is 2.0 seconds.
+[08/07/09 12:10:29 -0400 Macintosh.local (31258)] INFO : New Relic RPM Agent 2.9.4 Initialized: pid = 31258
+[08/07/09 12:10:29 -0400 Macintosh.local (31258)] INFO : Agent Log found in /Users/maloney/Desktop/weefolio/log/newrelic_agent.log
+[08/07/09 12:10:34 -0400 Macintosh.local (31258)] INFO : Resolved collector.newrelic.com to 65.74.177.195
+[08/07/09 12:10:39 -0400 Macintosh.local (31258)] INFO : Connected to NewRelic Service at collector.newrelic.com:80
+[08/07/09 12:10:43 -0400 Macintosh.local (31258)] INFO : Reporting performance data every 60 seconds.
+[08/07/09 12:19:47 -0400 Macintosh.local (31444)] INFO : Web container: webrick
+[08/07/09 12:19:47 -0400 Macintosh.local (31444)] INFO : Transaction tracing threshold is 2.0 seconds.
+[08/07/09 12:19:47 -0400 Macintosh.local (31444)] INFO : New Relic RPM Agent 2.9.4 Initialized: pid = 31444
+[08/07/09 12:19:47 -0400 Macintosh.local (31444)] INFO : Agent Log found in /Users/maloney/Desktop/weefolio/log/newrelic_agent.log
+[08/07/09 12:19:52 -0400 Macintosh.local (31444)] INFO : Resolved collector.newrelic.com to 65.74.177.195
+[08/07/09 12:19:53 -0400 Macintosh.local (31444)] INFO : Connected to NewRelic Service at collector.newrelic.com:80
+[08/07/09 12:19:56 -0400 Macintosh.local (31444)] INFO : Reporting performance data every 60 seconds.

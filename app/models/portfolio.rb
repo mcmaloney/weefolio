@@ -1,7 +1,7 @@
 class Portfolio < ActiveRecord::Base
   belongs_to :user
   has_many :pieces
-  
+     
   # Virtual attribute for account tier.
   def account_tier
     self.user.account_tier
