@@ -909,3 +909,620 @@ Rendering main_pages/directory
   [4;35;1mPortfolio Load (0.2ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 17) LIMIT 1[0m
   [4;36;1mDesign Load (0.5ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 17) LIMIT 1[0m
 Completed in 23ms (View: 22, DB: 1) | 200 OK [http://0.0.0.0/directory]
+Starting the New Relic Agent
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mSELECT version FROM schema_migrations[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-08-09 15:43:22) [GET]
+Rendering template within layouts/template
+Rendering users/new
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 18) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.3ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 18) LIMIT 1[0m
+  [4;36;1mDesign Load (0.7ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 18) LIMIT 1[0m
+Completed in 66ms (View: 44, DB: 2) | 200 OK [http://localhost/signup]
+
+
+Processing MainPagesController#directory (for 127.0.0.1 at 2009-08-09 15:43:24) [GET]
+Rendering template within layouts/template
+Rendering main_pages/directory
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 18) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.3ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 18) LIMIT 1[0m
+  [4;35;1mDesign Load (0.7ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 18) LIMIT 1[0m
+Completed in 33ms (View: 32, DB: 1) | 200 OK [http://localhost/directory]
+
+
+Processing MainPagesController#help (for 127.0.0.1 at 2009-08-09 15:43:25) [GET]
+Rendering template within layouts/template
+Rendering main_pages/help
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 18) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.3ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 18) LIMIT 1[0m
+  [4;36;1mDesign Load (0.7ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 18) LIMIT 1[0m
+Completed in 30ms (View: 28, DB: 1) | 200 OK [http://localhost/help]
+
+
+Processing MainPagesController#contact (for 127.0.0.1 at 2009-08-09 15:43:29) [GET]
+Rendering template within layouts/template
+Rendering main_pages/contact
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 18) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.3ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 18) LIMIT 1[0m
+  [4;35;1mDesign Load (0.8ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 18) LIMIT 1[0m
+Completed in 90ms (View: 88, DB: 2) | 200 OK [http://localhost/contact_us]
+
+
+Processing PortfoliosController#edit (for 127.0.0.1 at 2009-08-09 15:43:34) [GET]
+  Parameters: {"id"=>"20", "user_id"=>"18"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 18) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.3ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 18) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering portfolios/edit
+  [4;36;1mPiece Load (0.3ms)[0m   [0;1mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 20) [0m
+  [4;35;1mDesign Load (0.8ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 18) LIMIT 1[0m
+Completed in 45ms (View: 26, DB: 2) | 200 OK [http://localhost/users/18/portfolios/20/edit]
+
+
+Processing DesignsController#edit (for 127.0.0.1 at 2009-08-09 15:43:36) [GET]
+  Parameters: {"id"=>"3", "user_id"=>"18"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 18) LIMIT 1[0m
+  [4;35;1mDesign Load (0.7ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 18) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering designs/edit
+  [4;36;1mPortfolio Load (0.3ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 18) LIMIT 1[0m
+Completed in 48ms (View: 30, DB: 1) | 200 OK [http://localhost/users/18/designs/3/edit]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2009-08-09 15:43:37) [GET]
+  Parameters: {"id"=>"18"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 18) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering users/edit
+  [4;36;1mPortfolio Load (0.3ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 18) LIMIT 1[0m
+  [4;35;1mDesign Load (0.7ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 18) LIMIT 1[0m
+Completed in 38ms (View: 25, DB: 2) | 200 OK [http://localhost/users/18/edit]
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-08-09 15:43:40) [GET]
+Rendering template within layouts/template
+Rendering main_pages/home
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 18) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.3ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 18) LIMIT 1[0m
+  [4;36;1mDesign Load (0.8ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 18) LIMIT 1[0m
+Completed in 38ms (View: 36, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing MainPagesController#directory (for 127.0.0.1 at 2009-08-09 15:43:59) [GET]
+Rendering template within layouts/template
+Rendering main_pages/directory
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 18) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.3ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 18) LIMIT 1[0m
+  [4;35;1mDesign Load (0.7ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 18) LIMIT 1[0m
+Completed in 31ms (View: 30, DB: 1) | 200 OK [http://localhost/directory]
+
+
+Processing MainPagesController#help (for 127.0.0.1 at 2009-08-09 15:48:12) [GET]
+Rendering template within layouts/template
+Rendering main_pages/help
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 18) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.3ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 18) LIMIT 1[0m
+  [4;36;1mDesign Load (0.7ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 18) LIMIT 1[0m
+Completed in 36ms (View: 35, DB: 2) | 200 OK [http://localhost/help]
+
+
+Processing MainPagesController#help (for 127.0.0.1 at 2009-08-09 15:48:22) [GET]
+Rendering template within layouts/template
+Rendering main_pages/help
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 18) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.3ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 18) LIMIT 1[0m
+  [4;35;1mDesign Load (0.7ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 18) LIMIT 1[0m
+Completed in 36ms (View: 34, DB: 2) | 200 OK [http://localhost/help]
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-08-09 15:48:33) [GET]
+Rendering template within layouts/template
+Rendering main_pages/home
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 18) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.3ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 18) LIMIT 1[0m
+  [4;36;1mDesign Load (0.7ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 18) LIMIT 1[0m
+Completed in 29ms (View: 28, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing MainPagesController#directory (for 127.0.0.1 at 2009-08-09 15:48:36) [GET]
+Rendering template within layouts/template
+Rendering main_pages/directory
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 18) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.3ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 18) LIMIT 1[0m
+  [4;35;1mDesign Load (0.7ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 18) LIMIT 1[0m
+Completed in 28ms (View: 26, DB: 1) | 200 OK [http://localhost/directory]
+
+
+Processing MainPagesController#directory (for 127.0.0.1 at 2009-08-09 15:48:38) [GET]
+Rendering template within layouts/template
+Rendering main_pages/directory
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 18) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.3ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 18) LIMIT 1[0m
+  [4;36;1mDesign Load (0.8ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 18) LIMIT 1[0m
+Completed in 32ms (View: 30, DB: 2) | 200 OK [http://localhost/directory]
+
+
+Processing MainPagesController#help (for 127.0.0.1 at 2009-08-09 15:48:40) [GET]
+Rendering template within layouts/template
+Rendering main_pages/help
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 18) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.3ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 18) LIMIT 1[0m
+  [4;35;1mDesign Load (0.7ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 18) LIMIT 1[0m
+Completed in 29ms (View: 27, DB: 1) | 200 OK [http://localhost/help]
+
+
+Processing MainPagesController#help (for 127.0.0.1 at 2009-08-09 15:49:50) [GET]
+Rendering template within layouts/template
+Rendering main_pages/help
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 18) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.3ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 18) LIMIT 1[0m
+  [4;36;1mDesign Load (0.7ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 18) LIMIT 1[0m
+Completed in 34ms (View: 32, DB: 2) | 200 OK [http://localhost/help]
+
+
+Processing MainPagesController#contact (for 127.0.0.1 at 2009-08-09 15:49:52) [GET]
+Rendering template within layouts/template
+Rendering main_pages/contact
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 18) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.3ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 18) LIMIT 1[0m
+  [4;35;1mDesign Load (0.8ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 18) LIMIT 1[0m
+Completed in 111ms (View: 110, DB: 2) | 200 OK [http://localhost/contact_us]
+
+
+Processing MainPagesController#help (for 127.0.0.1 at 2009-08-09 15:49:58) [GET]
+Rendering template within layouts/template
+Rendering main_pages/help
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 18) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.3ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 18) LIMIT 1[0m
+  [4;36;1mDesign Load (0.7ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 18) LIMIT 1[0m
+Completed in 31ms (View: 29, DB: 2) | 200 OK [http://localhost/help]
+
+
+Processing MainPagesController#contact (for 127.0.0.1 at 2009-08-09 15:50:00) [GET]
+Rendering template within layouts/template
+Rendering main_pages/contact
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 18) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.3ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 18) LIMIT 1[0m
+  [4;35;1mDesign Load (0.7ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 18) LIMIT 1[0m
+Completed in 27ms (View: 26, DB: 1) | 200 OK [http://localhost/contact_us]
+
+
+Processing MainPagesController#directory (for 127.0.0.1 at 2009-08-09 15:51:07) [GET]
+Rendering template within layouts/template
+Rendering main_pages/directory
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 18) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.4ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 18) LIMIT 1[0m
+  [4;36;1mDesign Load (0.7ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 18) LIMIT 1[0m
+Completed in 118ms (View: 116, DB: 2) | 200 OK [http://localhost/directory]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2009-08-09 15:52:00) [GET]
+  Parameters: {"id"=>"18"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 18) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering users/edit
+  [4;36;1mPortfolio Load (0.4ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 18) LIMIT 1[0m
+  [4;35;1mDesign Load (0.7ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 18) LIMIT 1[0m
+Completed in 36ms (View: 21, DB: 2) | 200 OK [http://localhost/users/18/edit]
+
+
+Processing DesignsController#edit (for 127.0.0.1 at 2009-08-09 15:52:01) [GET]
+  Parameters: {"id"=>"3", "user_id"=>"18"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 18) LIMIT 1[0m
+  [4;35;1mDesign Load (0.8ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 18) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering designs/edit
+  [4;36;1mPortfolio Load (0.3ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 18) LIMIT 1[0m
+Completed in 41ms (View: 21, DB: 2) | 200 OK [http://localhost/users/18/designs/3/edit]
+
+
+Processing MainPagesController#directory (for 127.0.0.1 at 2009-08-09 15:52:05) [GET]
+Rendering template within layouts/template
+Rendering main_pages/directory
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 18) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.3ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 18) LIMIT 1[0m
+  [4;35;1mDesign Load (0.7ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 18) LIMIT 1[0m
+Completed in 108ms (View: 106, DB: 2) | 200 OK [http://localhost/directory]
+
+
+Processing MainPagesController#help (for 127.0.0.1 at 2009-08-09 15:52:11) [GET]
+Rendering template within layouts/template
+Rendering main_pages/help
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 18) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.3ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 18) LIMIT 1[0m
+  [4;36;1mDesign Load (0.7ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 18) LIMIT 1[0m
+Completed in 33ms (View: 32, DB: 2) | 200 OK [http://localhost/help]
+
+
+Processing DesignsController#edit (for 127.0.0.1 at 2009-08-09 15:53:50) [GET]
+  Parameters: {"id"=>"3", "user_id"=>"18"}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 18) LIMIT 1[0m
+  [4;36;1mDesign Load (0.7ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 18) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering designs/edit
+  [4;35;1mPortfolio Load (0.3ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 18) LIMIT 1[0m
+Completed in 40ms (View: 21, DB: 2) | 200 OK [http://localhost/users/18/designs/3/edit]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2009-08-09 15:53:52) [GET]
+  Parameters: {"id"=>"18"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 18) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering users/edit
+  [4;35;1mPortfolio Load (0.3ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 18) LIMIT 1[0m
+  [4;36;1mDesign Load (0.7ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 18) LIMIT 1[0m
+Completed in 113ms (View: 99, DB: 2) | 200 OK [http://localhost/users/18/edit]
+
+
+Processing MainPagesController#directory (for 127.0.0.1 at 2009-08-09 15:54:13) [GET]
+Rendering template within layouts/template
+Rendering main_pages/directory
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 18) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.3ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 18) LIMIT 1[0m
+  [4;35;1mDesign Load (0.7ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 18) LIMIT 1[0m
+Completed in 33ms (View: 32, DB: 2) | 200 OK [http://localhost/directory]
+
+
+Processing MainPagesController#help (for 127.0.0.1 at 2009-08-09 15:55:59) [GET]
+Rendering template within layouts/template
+Rendering main_pages/help
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 18) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.3ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 18) LIMIT 1[0m
+  [4;36;1mDesign Load (0.7ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 18) LIMIT 1[0m
+Completed in 34ms (View: 32, DB: 2) | 200 OK [http://localhost/help]
+
+
+Processing MainPagesController#help (for 127.0.0.1 at 2009-08-09 15:56:00) [GET]
+Rendering template within layouts/template
+Rendering main_pages/help
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 18) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.3ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 18) LIMIT 1[0m
+  [4;35;1mDesign Load (0.7ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 18) LIMIT 1[0m
+Completed in 115ms (View: 113, DB: 2) | 200 OK [http://localhost/help]
+
+
+Processing MainPagesController#help (for 127.0.0.1 at 2009-08-09 15:56:28) [GET]
+Rendering template within layouts/template
+Rendering main_pages/help
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 18) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.3ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 18) LIMIT 1[0m
+  [4;36;1mDesign Load (0.7ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 18) LIMIT 1[0m
+Completed in 36ms (View: 35, DB: 2) | 200 OK [http://localhost/help]
+
+
+Processing MainPagesController#directory (for 127.0.0.1 at 2009-08-09 15:56:34) [GET]
+Rendering template within layouts/template
+Rendering main_pages/directory
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 18) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.3ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 18) LIMIT 1[0m
+  [4;35;1mDesign Load (0.7ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 18) LIMIT 1[0m
+Completed in 37ms (View: 35, DB: 2) | 200 OK [http://localhost/directory]
+
+
+Processing MainPagesController#help (for 127.0.0.1 at 2009-08-09 15:56:36) [GET]
+Rendering template within layouts/template
+Rendering main_pages/help
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 18) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.3ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 18) LIMIT 1[0m
+  [4;36;1mDesign Load (0.7ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 18) LIMIT 1[0m
+Completed in 30ms (View: 28, DB: 1) | 200 OK [http://localhost/help]
+
+
+Processing PortfoliosController#edit (for 127.0.0.1 at 2009-08-09 15:57:16) [GET]
+  Parameters: {"id"=>"20", "user_id"=>"18"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 18) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.3ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 18) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering portfolios/edit
+  [4;35;1mPiece Load (0.3ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 20) [0m
+  [4;36;1mDesign Load (0.8ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 18) LIMIT 1[0m
+Completed in 38ms (View: 20, DB: 2) | 200 OK [http://localhost/users/18/portfolios/20/edit]
+
+
+Processing PortfoliosController#edit (for 127.0.0.1 at 2009-08-09 15:57:31) [GET]
+  Parameters: {"id"=>"20", "user_id"=>"18"}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 18) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.3ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 18) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering portfolios/edit
+  [4;35;1mPiece Load (0.3ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 20) [0m
+  [4;36;1mDesign Load (0.8ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 18) LIMIT 1[0m
+Completed in 38ms (View: 19, DB: 2) | 200 OK [http://localhost/users/18/portfolios/20/edit]
+
+
+Processing MainPagesController#directory (for 127.0.0.1 at 2009-08-09 15:57:33) [GET]
+Rendering template within layouts/template
+Rendering main_pages/directory
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 18) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.3ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 18) LIMIT 1[0m
+  [4;35;1mDesign Load (0.7ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 18) LIMIT 1[0m
+Completed in 29ms (View: 28, DB: 1) | 200 OK [http://localhost/directory]
+
+
+Processing MainPagesController#help (for 127.0.0.1 at 2009-08-09 15:57:59) [GET]
+Rendering template within layouts/template
+Rendering main_pages/help
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 18) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.3ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 18) LIMIT 1[0m
+  [4;36;1mDesign Load (0.7ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 18) LIMIT 1[0m
+Completed in 34ms (View: 32, DB: 2) | 200 OK [http://localhost/help]
+
+
+Processing MainPagesController#help (for 127.0.0.1 at 2009-08-09 16:00:33) [GET]
+Rendering template within layouts/template
+Rendering main_pages/help
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 18) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.4ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 18) LIMIT 1[0m
+  [4;35;1mDesign Load (0.7ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 18) LIMIT 1[0m
+Completed in 116ms (View: 114, DB: 2) | 200 OK [http://localhost/help]
+
+
+Processing MainPagesController#help (for 127.0.0.1 at 2009-08-09 16:00:41) [GET]
+Rendering template within layouts/template
+Rendering main_pages/help
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 18) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.3ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 18) LIMIT 1[0m
+  [4;36;1mDesign Load (0.7ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 18) LIMIT 1[0m
+Completed in 34ms (View: 32, DB: 2) | 200 OK [http://localhost/help]
+
+
+Processing MainPagesController#help (for 127.0.0.1 at 2009-08-09 16:00:42) [GET]
+Rendering template within layouts/template
+Rendering main_pages/help
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 18) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.3ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 18) LIMIT 1[0m
+  [4;35;1mDesign Load (0.7ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 18) LIMIT 1[0m
+Completed in 31ms (View: 30, DB: 2) | 200 OK [http://localhost/help]
+
+
+Processing MainPagesController#help (for 127.0.0.1 at 2009-08-09 16:02:15) [GET]
+Rendering template within layouts/template
+Rendering main_pages/help
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 18) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.3ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 18) LIMIT 1[0m
+  [4;36;1mDesign Load (0.7ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 18) LIMIT 1[0m
+Completed in 32ms (View: 30, DB: 1) | 200 OK [http://localhost/help]
+
+
+Processing MainPagesController#help (for 127.0.0.1 at 2009-08-09 16:04:04) [GET]
+Rendering template within layouts/template
+Rendering main_pages/help
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 18) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.3ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 18) LIMIT 1[0m
+  [4;35;1mDesign Load (0.8ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 18) LIMIT 1[0m
+Completed in 38ms (View: 36, DB: 2) | 200 OK [http://localhost/help]
+
+
+Processing MainPagesController#help (for 127.0.0.1 at 2009-08-09 16:04:22) [GET]
+Rendering template within layouts/template
+Rendering main_pages/help
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 18) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.3ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 18) LIMIT 1[0m
+  [4;36;1mDesign Load (0.7ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 18) LIMIT 1[0m
+Completed in 116ms (View: 115, DB: 2) | 200 OK [http://localhost/help]
+
+
+Processing MainPagesController#help (for 127.0.0.1 at 2009-08-09 16:04:30) [GET]
+Rendering template within layouts/template
+Rendering main_pages/help
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 18) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.3ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 18) LIMIT 1[0m
+  [4;35;1mDesign Load (0.7ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 18) LIMIT 1[0m
+Completed in 30ms (View: 29, DB: 2) | 200 OK [http://localhost/help]
+
+
+Processing MainPagesController#help (for 127.0.0.1 at 2009-08-09 16:05:24) [GET]
+Rendering template within layouts/template
+Rendering main_pages/help
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 18) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.3ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 18) LIMIT 1[0m
+  [4;36;1mDesign Load (0.7ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 18) LIMIT 1[0m
+Completed in 35ms (View: 33, DB: 2) | 200 OK [http://localhost/help]
+
+
+Processing MainPagesController#help (for 127.0.0.1 at 2009-08-09 16:06:51) [GET]
+Rendering template within layouts/template
+Rendering main_pages/help
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 18) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.3ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 18) LIMIT 1[0m
+  [4;35;1mDesign Load (0.8ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 18) LIMIT 1[0m
+Completed in 33ms (View: 32, DB: 2) | 200 OK [http://localhost/help]
+
+
+Processing MainPagesController#help (for 127.0.0.1 at 2009-08-09 16:07:14) [GET]
+Rendering template within layouts/template
+Rendering main_pages/help
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 18) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.5ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 18) LIMIT 1[0m
+  [4;36;1mDesign Load (0.8ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 18) LIMIT 1[0m
+Completed in 36ms (View: 34, DB: 2) | 200 OK [http://localhost/help]
+
+
+Processing MainPagesController#help (for 127.0.0.1 at 2009-08-09 16:10:53) [GET]
+Rendering template within layouts/template
+Rendering main_pages/help
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 18) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.3ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 18) LIMIT 1[0m
+  [4;35;1mDesign Load (0.7ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 18) LIMIT 1[0m
+Completed in 30ms (View: 28, DB: 2) | 200 OK [http://localhost/help]
+
+
+Processing MainPagesController#help (for 127.0.0.1 at 2009-08-09 16:11:05) [GET]
+Rendering template within layouts/template
+Rendering main_pages/help
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 18) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.3ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 18) LIMIT 1[0m
+  [4;36;1mDesign Load (0.8ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 18) LIMIT 1[0m
+Completed in 34ms (View: 32, DB: 2) | 200 OK [http://localhost/help]
+
+
+Processing MainPagesController#help (for 127.0.0.1 at 2009-08-09 16:15:15) [GET]
+Rendering template within layouts/template
+Rendering main_pages/help
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 18) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.3ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 18) LIMIT 1[0m
+  [4;35;1mDesign Load (0.8ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 18) LIMIT 1[0m
+Completed in 113ms (View: 111, DB: 2) | 200 OK [http://localhost/help]
+
+
+Processing MainPagesController#help (for 127.0.0.1 at 2009-08-09 16:17:20) [GET]
+Rendering template within layouts/template
+Rendering main_pages/help
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 18) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.3ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 18) LIMIT 1[0m
+  [4;36;1mDesign Load (0.8ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 18) LIMIT 1[0m
+Completed in 34ms (View: 32, DB: 2) | 200 OK [http://localhost/help]
+
+
+Processing MainPagesController#help (for 127.0.0.1 at 2009-08-09 16:18:19) [GET]
+Rendering template within layouts/template
+Rendering main_pages/help
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 18) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.3ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 18) LIMIT 1[0m
+  [4;35;1mDesign Load (0.8ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 18) LIMIT 1[0m
+Completed in 113ms (View: 111, DB: 2) | 200 OK [http://localhost/help]
+
+
+Processing MainPagesController#help (for 127.0.0.1 at 2009-08-09 16:19:03) [GET]
+Rendering template within layouts/template
+Rendering main_pages/help
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 18) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.3ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 18) LIMIT 1[0m
+  [4;36;1mDesign Load (0.8ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 18) LIMIT 1[0m
+Completed in 34ms (View: 32, DB: 2) | 200 OK [http://localhost/help]
+
+
+Processing MainPagesController#help (for 127.0.0.1 at 2009-08-09 16:21:22) [GET]
+Rendering template within layouts/template
+Rendering main_pages/help
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 18) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.3ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 18) LIMIT 1[0m
+  [4;35;1mDesign Load (0.7ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 18) LIMIT 1[0m
+Completed in 34ms (View: 32, DB: 2) | 200 OK [http://localhost/help]
+
+
+Processing MainPagesController#help (for 127.0.0.1 at 2009-08-09 16:21:46) [GET]
+Rendering template within layouts/template
+Rendering main_pages/help
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 18) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.3ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 18) LIMIT 1[0m
+  [4;36;1mDesign Load (0.8ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 18) LIMIT 1[0m
+Completed in 33ms (View: 31, DB: 2) | 200 OK [http://localhost/help]
+
+
+Processing MainPagesController#help (for 127.0.0.1 at 2009-08-09 16:22:15) [GET]
+Rendering template within layouts/template
+Rendering main_pages/help
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 18) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.3ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 18) LIMIT 1[0m
+  [4;35;1mDesign Load (0.8ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 18) LIMIT 1[0m
+Completed in 38ms (View: 36, DB: 2) | 200 OK [http://localhost/help]
+
+
+Processing MainPagesController#help (for 127.0.0.1 at 2009-08-09 16:22:41) [GET]
+Rendering template within layouts/template
+Rendering main_pages/help
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 18) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.3ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 18) LIMIT 1[0m
+  [4;36;1mDesign Load (0.7ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 18) LIMIT 1[0m
+Completed in 113ms (View: 111, DB: 2) | 200 OK [http://localhost/help]
+
+
+Processing MainPagesController#help (for 127.0.0.1 at 2009-08-09 16:23:53) [GET]
+Rendering template within layouts/template
+Rendering main_pages/help
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 18) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.3ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 18) LIMIT 1[0m
+  [4;35;1mDesign Load (0.7ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 18) LIMIT 1[0m
+Completed in 35ms (View: 33, DB: 2) | 200 OK [http://localhost/help]
+
+
+Processing MainPagesController#help (for 127.0.0.1 at 2009-08-09 16:24:00) [GET]
+Rendering template within layouts/template
+Rendering main_pages/help
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 18) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.3ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 18) LIMIT 1[0m
+  [4;36;1mDesign Load (0.8ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 18) LIMIT 1[0m
+Completed in 105ms (View: 103, DB: 2) | 200 OK [http://localhost/help]
+
+
+Processing MainPagesController#help (for 127.0.0.1 at 2009-08-09 16:24:19) [GET]
+Rendering template within layouts/template
+Rendering main_pages/help
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 18) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.3ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 18) LIMIT 1[0m
+  [4;35;1mDesign Load (0.8ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 18) LIMIT 1[0m
+Completed in 34ms (View: 32, DB: 2) | 200 OK [http://localhost/help]
+
+
+Processing MainPagesController#help (for 127.0.0.1 at 2009-08-09 16:24:52) [GET]
+Rendering template within layouts/template
+Rendering main_pages/help
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 18) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.3ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 18) LIMIT 1[0m
+  [4;36;1mDesign Load (0.7ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 18) LIMIT 1[0m
+Completed in 39ms (View: 37, DB: 2) | 200 OK [http://localhost/help]
+
+
+Processing MainPagesController#help (for 127.0.0.1 at 2009-08-09 16:25:22) [GET]
+Rendering template within layouts/template
+Rendering main_pages/help
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 18) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.3ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 18) LIMIT 1[0m
+  [4;35;1mDesign Load (0.7ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 18) LIMIT 1[0m
+Completed in 29ms (View: 27, DB: 1) | 200 OK [http://localhost/help]
+
+
+Processing MainPagesController#help (for 127.0.0.1 at 2009-08-09 16:32:23) [GET]
+Rendering template within layouts/template
+Rendering main_pages/help
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 18) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.3ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 18) LIMIT 1[0m
+  [4;36;1mDesign Load (0.7ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 18) LIMIT 1[0m
+Completed in 35ms (View: 33, DB: 2) | 200 OK [http://localhost/help]
+
+
+Processing PortfoliosController#edit (for 127.0.0.1 at 2009-08-09 16:32:52) [GET]
+  Parameters: {"id"=>"20", "user_id"=>"18"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 18) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.3ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 18) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering portfolios/edit
+  [4;35;1mPiece Load (0.3ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 20) [0m
+  [4;36;1mDesign Load (0.8ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 18) LIMIT 1[0m
+Completed in 123ms (View: 18, DB: 2) | 200 OK [http://localhost/users/18/portfolios/20/edit]
+
+
+Processing DesignsController#edit (for 127.0.0.1 at 2009-08-09 16:32:54) [GET]
+  Parameters: {"id"=>"3", "user_id"=>"18"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 18) LIMIT 1[0m
+  [4;36;1mDesign Load (0.7ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 18) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering designs/edit
+  [4;35;1mPortfolio Load (0.3ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 18) LIMIT 1[0m
+Completed in 35ms (View: 19, DB: 1) | 200 OK [http://localhost/users/18/designs/3/edit]
+
+
+Processing DesignsController#edit (for 127.0.0.1 at 2009-08-09 16:32:57) [GET]
+  Parameters: {"id"=>"3", "user_id"=>"18"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 18) LIMIT 1[0m
+  [4;35;1mDesign Load (0.7ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 18) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering designs/edit
+  [4;36;1mPortfolio Load (0.3ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 18) LIMIT 1[0m
+Completed in 34ms (View: 19, DB: 1) | 200 OK [http://localhost/users/18/designs/3/edit]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2009-08-09 16:32:59) [GET]
+  Parameters: {"id"=>"18"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 18) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering users/edit
+  [4;36;1mPortfolio Load (0.4ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 18) LIMIT 1[0m
+  [4;35;1mDesign Load (0.7ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 18) LIMIT 1[0m
+Completed in 92ms (View: 80, DB: 2) | 200 OK [http://localhost/users/18/edit]

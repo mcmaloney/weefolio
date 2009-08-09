@@ -657,3 +657,9 @@ div#content-container ul.pieces li.piece ul.piece-options li#view a {
 	background-image: url(/images/portfolio-view-icon.gif);
 	display: none;
 	}
+	
+/*--ACCOUNT > EDIT--*/
+	
+div#billing_info {
+	display: none;
+	}
