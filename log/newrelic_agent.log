@@ -48,6 +48,7 @@
 [08/09/09 15:37:03 -0400 michael-maloneys-imac.local (876)] INFO : Resolved collector.newrelic.com to 65.74.177.195
 [08/09/09 15:37:06 -0400 michael-maloneys-imac.local (876)] INFO : Connected to NewRelic Service at collector.newrelic.com:80
 [08/09/09 15:37:08 -0400 michael-maloneys-imac.local (876)] INFO : Reporting performance data every 60 seconds.
+<<<<<<< HEAD:log/newrelic_agent.log
 [08/09/09 16:22:20 -0400 michael-maloneys-imac.local (984)] INFO : Web container: mongrel
 [08/09/09 16:22:20 -0400 michael-maloneys-imac.local (984)] INFO : Transaction tracing threshold is 2.0 seconds.
 [08/09/09 16:22:20 -0400 michael-maloneys-imac.local (984)] INFO : New Relic RPM Agent 2.9.4 Initialized: pid = 984
@@ -91,3 +92,12 @@
 [08/09/09 16:56:54 -0400 michael-maloneys-imac.local (1229)] INFO : Resolved collector.newrelic.com to 65.74.177.195
 [08/09/09 16:56:55 -0400 michael-maloneys-imac.local (1229)] INFO : Connected to NewRelic Service at collector.newrelic.com:80
 [08/09/09 16:56:56 -0400 michael-maloneys-imac.local (1229)] INFO : Reporting performance data every 60 seconds.
+=======
+[08/09/09 15:43:20 -0400 kevin-gomezs-macbook.local (31117)] INFO : Web container: mongrel
+[08/09/09 15:43:20 -0400 kevin-gomezs-macbook.local (31117)] INFO : Transaction tracing threshold is 2.0 seconds.
+[08/09/09 15:43:20 -0400 kevin-gomezs-macbook.local (31117)] INFO : New Relic RPM Agent 2.9.4 Initialized: pid = 31117
+[08/09/09 15:43:20 -0400 kevin-gomezs-macbook.local (31117)] INFO : Agent Log found in /Users/Kevin/Projects/weefolio/log/newrelic_agent.log
+[08/09/09 15:43:30 -0400 kevin-gomezs-macbook.local (31117)] WARN : DNS Error caching IP address: wrong number of arguments (0 for 1)
+[08/09/09 15:43:31 -0400 kevin-gomezs-macbook.local (31117)] INFO : Connected to NewRelic Service at collector.newrelic.com:80
+[08/09/09 15:43:32 -0400 kevin-gomezs-macbook.local (31117)] INFO : Reporting performance data every 60 seconds.
+>>>>>>> f24f18385c7eb48f769ca2d76fdbf6ac2f46dd2d:log/newrelic_agent.log
