@@ -4,6 +4,12 @@ ActionController::Routing::Routes.draw do |map|
   map.register '/register', :controller => 'users', :action => 'create'
   map.signup '/signup', :controller => 'users', :action => 'new'
   
+  map.contact '/contact_us', :controller => 'main_pages', :action => 'contact'
+  map.directory '/directory', :controller => 'main_pages', :action => 'directory'
+  map.help '/help', :controller => 'main_pages', :action => 'help'
+  map.privacy_policy '/privacy_policy', :controller => 'main_pages', :action => 'privacy_policy'
+  map.terms_of_use '/terms_of_use', :controller => 'main_pages', :action => 'terms_of_use'
+  
   map.resources :users do |users|
     users.resources :portfolios
     users.resources :designs
