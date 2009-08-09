@@ -30,6 +30,7 @@ Feature: User
     And I login as "kevingomez"
     Then I should be on the home page
     And I should see "Logged in as kevingomez"
+    And I should see "Logout"
   
   Scenario: User visits account page
     Given I am logged in as "mcmaloney"
@@ -42,7 +43,7 @@ Feature: User
     And I am on the account page for "mcmaloney"
     And I update my about me to say "I am one cool cat"
     And I update my tag line to say "See above."
-    And I press "Update"
+    And I press "Save"
     Then I should see "Account info updated."
     
     

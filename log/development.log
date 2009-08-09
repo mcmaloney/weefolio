@@ -909,3 +909,48 @@ Rendering main_pages/directory
   [4;35;1mPortfolio Load (0.2ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 17) LIMIT 1[0m
   [4;36;1mDesign Load (0.5ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 17) LIMIT 1[0m
 Completed in 23ms (View: 22, DB: 1) | 200 OK [http://0.0.0.0/directory]
+Starting the New Relic Agent
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSELECT version FROM schema_migrations[0m
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-08-09 16:22:31) [GET]
+Rendering template within layouts/template
+Rendering main_pages/home
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 17) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.2ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 17) LIMIT 1[0m
+  [4;36;1mDesign Load (0.5ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 17) LIMIT 1[0m
+Completed in 46ms (View: 44, DB: 1) | 200 OK [http://0.0.0.0/]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2009-08-09 16:22:34) [GET]
+  Parameters: {"id"=>"17"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 17) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering users/edit
+  [4;36;1mPortfolio Load (0.2ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 17) LIMIT 1[0m
+  [4;35;1mDesign Load (0.5ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 17) LIMIT 1[0m
+Completed in 32ms (View: 22, DB: 1) | 200 OK [http://0.0.0.0/users/17/edit]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2009-08-09 16:25:24) [GET]
+  Parameters: {"id"=>"17"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 17) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering users/edit
+  [4;35;1mPortfolio Load (0.2ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 17) LIMIT 1[0m
+  [4;36;1mDesign Load (0.5ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 17) LIMIT 1[0m
+Completed in 95ms (View: 83, DB: 1) | 200 OK [http://0.0.0.0/users/17/edit]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2009-08-09 16:26:06) [GET]
+  Parameters: {"id"=>"17"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 17) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering users/edit
+  [4;36;1mPortfolio Load (0.2ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 17) LIMIT 1[0m
+  [4;35;1mDesign Load (0.5ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 17) LIMIT 1[0m
+Completed in 34ms (View: 21, DB: 1) | 200 OK [http://0.0.0.0/users/17/edit]

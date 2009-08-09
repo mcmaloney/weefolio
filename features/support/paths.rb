@@ -10,6 +10,12 @@ module NavigationHelpers
     
     when /the home page/
       root_path
+    when /contact page/
+      contact_path
+    when /directory page/
+      directory_path
+    when /help page/
+      help_path
     when /the sign up page/
       signup_path
     when /the login page/

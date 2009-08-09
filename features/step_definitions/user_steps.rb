@@ -3,8 +3,6 @@ Given /^there are no users$/ do
 end
 
 When /^I sign up as "([^\"]*)"$/ do |login|
-  When %{I fill in "First Name" with "Michael"}
-  When %{I fill in "Last Name" with "Maloney"}
   When %{I fill in "Login" with "#{login}"}
   When %{I fill in "Email" with "michael@maloney.com"}
   When %{I fill in "Password" with "giraffe"}

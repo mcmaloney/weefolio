@@ -89,12 +89,12 @@
 				</dt>
 				<dd>
 					<ul>
-						<li><input type="radio"/> <label>Basic (Free)</label></li>
-						<li><input type="radio"/> <label>Plus ($2.99/month)</label></li>
-						<li><input type="radio"/> <label>Pro ($4.99/month)</label></li>
+						<li><input type="radio" name="account_tier" value="basic" onclick="hide_billing()" /> <label>Basic (Free)</label></li>
+						<li><input type="radio" name="account_tier" value="plus" onclick="show_billing()" /> <label>Plus ($2.99/month)</label></li>
+						<li><input type="radio" name="account_tier" value="pro" onclick="show_billing()" /> <label>Pro ($4.99/month)</label></li>
 					</ul>
 				</dd>
-				
+			<div id="billing_info">
 				<dt>
 					<label>Card Type</label>
 				</dt>
@@ -132,6 +132,7 @@
 						<option>2009</option>
 					</select>
 				</dd>
+			</div>
 			</dl>
 		</fieldset>
     	

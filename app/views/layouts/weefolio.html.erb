@@ -70,9 +70,11 @@
 				</div>
 			</div>
 			
-			<div id="footer-container">
-				<a id="weefolio-logo" href="#">Weefolio</a>
-			</div>
+			<% if @user.account_tier == 1 %>
+			  <div id="footer-container">
+				  <a id="weefolio-logo" href="#">Weefolio</a>
+			  </div>
+			<% end %>
 		</div>
 	</body>
 </html>
