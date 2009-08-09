@@ -1,16 +1,45 @@
-<% form_tag session_path do %>
-  <p>
-    <%= label_tag 'login' %><br />
-    <%= text_field_tag 'login', @login %>
-  </p>
+<!--PAGE TITLE/CALL-TO-ACTION-->
+<%# YIELD %>
+<div id="page-header-container-outer">
+	<div id="page-header-container-inner">
+		<div class="welcome-container">
+			<h1>Lil' portfolios for<br/> the rest of us!</h1>
+			
+			<p>
+				Weefolios are simple, little online portfolios for all kinds of creative professionals. Weefolio is a great place to showcase your work online.
+			</p>
+			
+			<div class="sign-up-button">
+				<a href="/signup">Sign Up! free!</a>
+			</div>
+		</div>
+	</div>
+</div>
 
+<!--PAGE CONTENT-->
+<%# YIELD %>
+<div id="content-container">
   <p>
-    <%= label_tag 'password' %><br/>
-    <%= password_field_tag 'password', nil %>
+    <%= flash[:notice] %>
   </p>
-  
-  <p>
-    <%= submit_tag 'Login' %>
-  </p>
-<% end %> 
+	<!--DUMP ALL OF YOUR SHIT HERE!-->
+	<% form_tag session_path do %>
+    <p>
+      <%= label_tag 'login' %><br />
+      <%= text_field_tag 'login', @login %>
+    </p>
+
+    <p>
+      <%= label_tag 'password' %><br/>
+      <%= password_field_tag 'password', nil %>
+    </p>
+
+    <p>
+      <%= submit_tag 'Login' %>
+    </p>
+  <% end %>
+</div>
+
+
+
 

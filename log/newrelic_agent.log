@@ -101,3 +101,18 @@
 [08/09/09 15:43:31 -0400 kevin-gomezs-macbook.local (31117)] INFO : Connected to NewRelic Service at collector.newrelic.com:80
 [08/09/09 15:43:32 -0400 kevin-gomezs-macbook.local (31117)] INFO : Reporting performance data every 60 seconds.
 >>>>>>> f24f18385c7eb48f769ca2d76fdbf6ac2f46dd2d:log/newrelic_agent.log
+[08/09/09 17:11:24 -0400 michael-maloneys-imac.local (1370)] INFO : Web container: mongrel
+[08/09/09 17:11:24 -0400 michael-maloneys-imac.local (1370)] INFO : Transaction tracing threshold is 2.0 seconds.
+[08/09/09 17:11:24 -0400 michael-maloneys-imac.local (1370)] INFO : New Relic RPM Agent 2.9.4 Initialized: pid = 1370
+[08/09/09 17:11:24 -0400 michael-maloneys-imac.local (1370)] INFO : Agent Log found in /Users/michael/Desktop/weefolio/log/newrelic_agent.log
+[08/09/09 17:11:30 -0400 michael-maloneys-imac.local (1370)] INFO : Resolved collector.newrelic.com to 65.74.177.195
+[08/09/09 17:11:35 -0400 michael-maloneys-imac.local (1370)] INFO : Connected to NewRelic Service at collector.newrelic.com:80
+[08/09/09 17:11:37 -0400 michael-maloneys-imac.local (1370)] INFO : Reporting performance data every 60 seconds.
+[08/09/09 17:22:10 -0400 michael-maloneys-imac.local (1393)] INFO : Web container: mongrel
+[08/09/09 17:22:10 -0400 michael-maloneys-imac.local (1393)] INFO : Transaction tracing threshold is 2.0 seconds.
+[08/09/09 17:22:10 -0400 michael-maloneys-imac.local (1393)] INFO : New Relic RPM Agent 2.9.4 Initialized: pid = 1393
+[08/09/09 17:22:10 -0400 michael-maloneys-imac.local (1393)] INFO : Agent Log found in /Users/michael/Desktop/weefolio/log/newrelic_agent.log
+[08/09/09 17:22:15 -0400 michael-maloneys-imac.local (1393)] INFO : Resolved collector.newrelic.com to 65.74.177.195
+[08/09/09 17:22:22 -0400 michael-maloneys-imac.local (1393)] INFO : Connected to NewRelic Service at collector.newrelic.com:80
+[08/09/09 17:22:32 -0400 michael-maloneys-imac.local (1393)] INFO : Unable to establish connection with New Relic RPM Service at collector.newrelic.com:80
+[08/09/09 17:22:32 -0400 michael-maloneys-imac.local (1393)] INFO : Will re-attempt in 1 minute
