@@ -1,41 +1,74 @@
 <% form_for [@portfolio, @piece], :html => {:multipart => true} do |f| %>
-  <p>
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </p>
-  <p>
-    <%= f.label :description %><br />
-    <%= f.text_field :description %>
-  </p>
-  <p>
-    <%= f.label :image_1 %><br />
-    <%= f.file_field :image_1 %>
-  </p>
-  <% unless @portfolio.account_tier == 1 %>
-    <p>
-      <%= f.label :image_2 %><br />
-      <%= f.file_field :image_2 %>
-    </p>
-    <p>
-      <%= f.label :image_3 %><br />
-      <%= f.file_field :image_3 %>
-    </p>
-    <p>
-      <%= f.label :image_4 %><br />
-      <%= f.file_field :image_4 %>
-    </p>
-    <p>
-      <%= f.label :image_5 %><br />
-      <%= f.file_field :image_5 %>
-    </p>
-  <% end %>
-  <p>
-    <%= f.label :for_sale %><br />
-    <%= f.check_box :for_sale %>
-  </p>
-  <p>
-    <%= f.label :price %><br />
-    <%= f.text_field :price %>
-  </p>
-  <%= form_button(@piece, f)%>
+	<fieldset>
+		<h2>Piece</h2>
+		<dl>
+			<dt>
+				<label for="piece_title">Title</label>
+			</dt>
+			<dd>
+				<%= f.text_field :title %>
+			</dd>
+			
+			  <dt>
+			    <label for="piece_description">Description</label>
+			    </dt>
+				<dd>
+			    <%= f.text_area :description, :rows => 8 %>
+			  </dd>
+			  
+			  <dt>
+			    <label for="piece_image_1">Image</label>
+			     </dt>
+				<dd>
+			    <%= f.file_field :image_1 %>
+			  </dd>
+			  <% unless @portfolio.account_tier == 1 %>
+			    
+			   <dt>
+			      <label for="piece_image_2">Image #2</label>
+			       </dt>
+				<dd>
+			      <%= f.file_field :image_2 %>
+			    </dd>
+			    
+			    <dt>
+			      <label for="piece_image_3">Image #3</label>
+			       </dt>
+				<dd>
+			      <%= f.file_field :image_3 %>
+			    </dd>
+			    
+			    <dt>
+			      <label for="piece_image_4">Image #4</label>
+			       </dt>
+				<dd>
+			      <%= f.file_field :image_4 %>
+			    </dd>
+			    
+			    <dt>
+			      <%= f.label :image_5 %>
+			       </dt>
+				<dd>
+			      <%= f.file_field :image_5 %>
+			    </dd>
+			  <% end %>
+			  <dt>
+			    &nbsp;
+			     </dt>
+				<dd>
+			    <%= f.check_box :for_sale %> <label for="piece_for_sale">For Sale?</label>
+			  </dd>
+			  
+			  <!--<dt>
+			    <label for="piece_price">Price</label>
+			   </dt>
+				<dd>
+			    <%= f.text_field :price, :size => 8 %>
+			  </dd>-->
+  		</dl>
+	</fieldset>
+	
+	<div class="submit">
+		 <%= form_button(@piece, f)%>	
+	</div>
 <% end %>

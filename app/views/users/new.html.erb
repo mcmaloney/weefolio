@@ -2,12 +2,151 @@
 <%# YIELD %>
 <div id="page-header-container-outer">
 	<div id="page-header-container-inner">
-		<h1>Pricing &amp; Sign Up<small>Sign up for <strong>free</strong> &amp; upgrade anytime!</small></h1>
+		<h1>Pricing &amp; Sign Up <small>Sign up for <strong>free</strong> &amp; upgrade anytime!</small></h1>
 		
 		<div class="call-to-action">
 			<!--THIS IS WHERE YOU CAN PUT 'ADD NEW WORK' LINKS ETC.
 			<a href="#">Call to action!</a>
 			-->
+		</div>
+		
+		<div class="pricing">
+			<table class="chart" cellpadding="0" cellspacing="0">
+				<tr class="plans">
+					<th>
+						&nbsp;
+					</th>
+					<th class="dark">
+						Basic
+					</th>
+					<th>
+						Plus
+					</th>
+					<th class="dark">
+						Pro
+					</th>
+				</tr>
+				
+				<tr class="pieces">
+					<td class="feature">
+						Pieces
+					</td>
+					<td class="dark">
+						5
+					</td>
+					<td>
+						15
+					</td>
+					<td class="dark">
+						25
+					</td>
+				</tr>
+				
+				<tr class="images">
+					<td class="feature">
+						Images Per Piece
+					</td>
+					<td class="dark">
+						1
+					</td>
+					<td>
+						3
+					</td>
+					<td class="dark">
+						5
+					</td>
+				</tr>
+				
+				<tr class="design">
+					<td class="feature">
+						Design Editor
+					</td>
+					<td class="dark">
+						<span class="yes">Yes</span>
+					</td>
+					<td>
+						<span class="yes">Yes</span>
+					</td>
+					<td class="dark">
+						<span class="yes">Yes</span>
+					</td>
+				</tr>
+				
+				<tr class="css">
+					<td class="feature">
+						Custom CSS 
+					</td>
+					<td class="dark">
+						&nbsp;
+					</td>
+					<td>
+						<span class="yes">Yes</span>
+					</td>
+					<td class="dark">
+						<span class="yes">Yes</span>
+					</td>
+				</tr>
+				
+				<tr class="rss">
+					<td class="feature">
+						RSS Feed 
+					</td>
+					<td class="dark">
+						<span class="yes">Yes</span>
+					</td>
+					<td>
+						<span class="yes">Yes</span>
+					</td>
+					<td class="dark">
+						<span class="yes">Yes</span>
+					</td>
+				</tr>
+				
+				<tr class="for-sale">
+					<td class="feature">
+						For Sale 
+					</td>
+					<td class="dark">
+						&nbsp;
+					</td>
+					<td>
+						<span class="yes">Yes</span>
+					</td>
+					<td class="dark">
+						<span class="yes">Yes</span>
+					</td>
+				</tr>
+				
+				<tr class="watermark">
+					<td class="feature">
+						Watermark
+					</td>
+					<td class="dark">
+						<span class="yes">Yes</span>
+					</td>
+					<td>
+						&nbsp;
+					</td>
+					<td class="dark">
+						&nbsp;
+					</td>
+				</tr>
+				
+				<tr class="pricing">
+					<td class="feature">
+						&nbsp; 
+					</td>
+					<td>
+						<span class="price">free</span>
+					</td>
+					<td>
+						<span class="price">$2.99</span> /month
+					</td>
+					<td>
+						<span class="price">$4.99</span> /month
+					</td>
+				</tr>
+			</table>
 		</div>
 	</div>
 </div>
@@ -25,10 +164,10 @@
   <% form_for(@user) do |f| -%>
   	
     <fieldset>
-    	<h2>Tell us a lil' about yourself...</h2>
+    	<h2>Sign up for <strong><em>free</em></strong> &amp; upgrade anytime!</h2>
 	    <dl>
 	    	<dt>
-	    		<%= f.label :login %>
+	    		<label for="user_login">Username</label>
 	    	</dt>
 	    	<dd>
 	      		<%= f.text_field :login %>
@@ -36,7 +175,7 @@
 	      	</dt>
 	      
 	      	<dt>
-	      		<%= f.label :email %>
+	      		<label for="user_email">Email</label>
 	      	</dt>
 	    	<dd>
 	      		<%= f.text_field :email %>
@@ -44,14 +183,14 @@
 	      	</dt>
 	      
 	      	<dt>
-	      		<%= f.label :password %>
+	      		<label for="user_password">Password</label>
 	      	</dt>
 	    	<dd>
 	      		<%= f.password_field :password %>
 	      	</dt>
 	      
 	      	<dt>
-	      		<%= f.label :password_confirmation %>
+	      		<label for="user_password_confirmation">Repeat Password</label>
 	      	</dt>
 	    	<dd>
 	      		<%= f.password_field :password_confirmation %>

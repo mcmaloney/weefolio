@@ -13,3 +13,17 @@
 [08/07/09 15:28:36 -0400 kevin-gomezs-macbook.local (13262)] INFO : Resolved collector.newrelic.com to 65.74.177.195
 [08/07/09 15:28:37 -0400 kevin-gomezs-macbook.local (13262)] INFO : Connected to NewRelic Service at collector.newrelic.com:80
 [08/07/09 15:28:38 -0400 kevin-gomezs-macbook.local (13262)] INFO : Reporting performance data every 60 seconds.
+[08/09/09 14:50:30 -0400 kevin-gomezs-macbook.local (30629)] INFO : Web container: mongrel
+[08/09/09 14:50:30 -0400 kevin-gomezs-macbook.local (30629)] INFO : Transaction tracing threshold is 2.0 seconds.
+[08/09/09 14:50:30 -0400 kevin-gomezs-macbook.local (30629)] INFO : New Relic RPM Agent 2.9.4 Initialized: pid = 30629
+[08/09/09 14:50:30 -0400 kevin-gomezs-macbook.local (30629)] INFO : Agent Log found in /Users/Kevin/Projects/weefolio/log/newrelic_agent.log
+[08/09/09 14:50:35 -0400 kevin-gomezs-macbook.local (30629)] INFO : Resolved collector.newrelic.com to 65.74.177.195
+[08/09/09 14:50:37 -0400 kevin-gomezs-macbook.local (30629)] INFO : Connected to NewRelic Service at collector.newrelic.com:80
+[08/09/09 14:50:37 -0400 kevin-gomezs-macbook.local (30629)] INFO : Reporting performance data every 60 seconds.
+[08/09/09 14:52:17 -0400 kevin-gomezs-macbook.local (30661)] INFO : Web container: mongrel
+[08/09/09 14:52:17 -0400 kevin-gomezs-macbook.local (30661)] INFO : Transaction tracing threshold is 2.0 seconds.
+[08/09/09 14:52:17 -0400 kevin-gomezs-macbook.local (30661)] INFO : New Relic RPM Agent 2.9.4 Initialized: pid = 30661
+[08/09/09 14:52:17 -0400 kevin-gomezs-macbook.local (30661)] INFO : Agent Log found in /Users/Kevin/Projects/weefolio/log/newrelic_agent.log
+[08/09/09 14:52:22 -0400 kevin-gomezs-macbook.local (30661)] INFO : Resolved collector.newrelic.com to 65.74.177.195
+[08/09/09 14:52:23 -0400 kevin-gomezs-macbook.local (30661)] INFO : Connected to NewRelic Service at collector.newrelic.com:80
+[08/09/09 14:52:24 -0400 kevin-gomezs-macbook.local (30661)] INFO : Reporting performance data every 60 seconds.

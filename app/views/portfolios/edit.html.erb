@@ -2,15 +2,10 @@
 <%# YIELD %>
 <div id="page-header-container-outer">
 	<div id="page-header-container-inner">
-		<h1>Portfolio<small>  Manage your Weefolio</small></h1>
+		<h1>Portfolio<small> Manage your work</small></h1>
 		
-		<div class="call-to-action">
-			<!--THIS IS WHERE YOU CAN PUT 'ADD NEW WORK' LINKS ETC.
-			<a href="#">Call to action!</a>
-			-->
-			<p>
-        <%= link_to 'Add Work', new_portfolio_piece_path(@user.portfolio) %>
-      </p>
+		<div class="call-to-action" id="portfolio-add-work">
+			 <%= link_to 'Add Work', new_portfolio_piece_path(@user.portfolio) %>
 		</div>
 	</div>
 </div>
@@ -18,9 +13,9 @@
 <!--PAGE CONTENT-->
 <%# YIELD %>
 <div id="content-container">
-  <p>
+  
     <%= flash[:notice] %>
-  </p>
+  
 	<!--DUMP ALL OF YOUR SHIT HERE!-->
 	<% @portfolio.pieces.each do |piece| %>
     <p>
@@ -42,4 +37,28 @@
       <%= link_to 'Edit', edit_portfolio_piece_path(@portfolio, piece)%> | <%= link_to 'Delete', portfolio_piece_path(@portfolio, piece), :confirm => "Are you sure?", :method => :delete %>
     </p>
   <% end %>
+ 
+  <p class="count">You're using <strong>1</strong> of your <strong>5</strong> pieces.</p>
+  
+  <ul class="pieces">
+  	<% @portfolio.pieces.each do |piece| %>
+  	<li class="piece">
+  		<img src="#" alt="small thumb" width="60" height="60"/>
+  		
+  		<div class="piece-info">	
+  			<h3><a href="#"><%= piece.title %></a></h3>
+  			<p><%= piece.description %></p>
+  		</div>
+  		
+  		<ul class="piece-options">
+  			<li class="option" id="edit">
+  				<%= link_to 'Edit', edit_portfolio_piece_path(@portfolio, piece)%>
+  			</li>
+  			<li class="option" id="delete">
+  				<%= link_to 'Delete', portfolio_piece_path(@portfolio, piece), :confirm => "Are you sure?", :method => :delete %>
+  			</li>
+  		</ul>
+  	</li>
+  	<% end %>
+  </ul>
 </div>

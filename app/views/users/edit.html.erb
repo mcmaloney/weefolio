@@ -2,7 +2,7 @@
 <%# YIELD %>
 <div id="page-header-container-outer">
 	<div id="page-header-container-inner">
-		<h1>Account </h1>
+		<h1>Account <small>Manage your account settings</small></h1>
 		
 		<div class="call-to-action">
 			<a href="#">Cancel my Account</a>
@@ -21,21 +21,21 @@
 			
     		<dl>
     			<dt>
-     				 <%= f.label :first_name %>
+     				 <label for="user_first_name">First Name</label>
       			</dt>
       			<dd>
       				<%= f.text_field :first_name %>
     			</dd>
     			
 			    <dt>
-			      <%= f.label :last_name %>
+			      <label for="user_last_name">Last Name</label>
 			    </dt>
       			<dd>
 			      <%= f.text_field :last_name %>
 			    </dd>
 			    
 			    <dt>
-			      <%= f.label :login %>
+			      <label for="user_login">Username</label>
 			    </dt>
       			<dd>
 			      <%= f.text_field :login %>
@@ -43,7 +43,7 @@
 			    </dd>
 			
 			    <dt>
-			      <%= f.label :email %>
+			      <label for="user_email">Email</label>
 			    </dt>
       			<dd>
 			      <%= f.text_field :email %>
@@ -64,24 +64,75 @@
 			
 			 <dl>
 			    <dt>
-			      <%= f.label :tag_line %>
+			     	<label for="user_tag_line">Tagline</label>
 			    </dt>
       			<dd>
 			      <%= f.text_field :tag_line %>
-			      <p>This is whatever you want it to be. It can be a welcome message, catch phrase, or just something you always say. If you don't want your tagline to appear in your portfolio simply leave the field blank.</p>
+			      <p>This is whatever you want it to be. It can be a welcome message, a catch phrase, or just something you always say. If you don't want your tagline to appear in your portfolio simply leave the field blank.</p>
 			    </dd>
 			    
 			  	<dt>
-			      <%= f.label :about_me %>
+			      <label for="user_about_me">About Me</label>
 			    </dt>
       			<dd>
-			      <%= f.text_area :about_me %>
+			      <%= f.text_area :about_me, :rows => 8 %>
 			    </dd>
     		</dl>
     	</fieldset>
     	
     	<fieldset>
 			<h2>Billing</h2>
+			
+			<dl>
+				<dt>
+					Plan
+				</dt>
+				<dd>
+					<ul>
+						<li><input type="radio"/> <label>Basic (Free)</label></li>
+						<li><input type="radio"/> <label>Plus ($2.99/month)</label></li>
+						<li><input type="radio"/> <label>Pro ($4.99/month)</label></li>
+					</ul>
+				</dd>
+				
+				<dt>
+					<label>Card Type</label>
+				</dt>
+				<dd>
+					<select>
+						<option>Mastercard</option>
+						<option>Visa</option>
+						<option>Discovery</option>
+						<option>American Express</option>
+					</select>
+				</dd>
+				
+				<dt>
+					<label>Card Number</label>
+				</dt>
+				<dd>
+					<input type="text" size="16"/>
+				</dd>
+				
+				<dt>
+					<label>Card Verification</label>
+				</dt>
+				<dd>
+					<input type="text" size="3"/>
+				</dd>
+				
+				<dt>
+					<label>Card Expiration</label>
+				</dt>
+				<dd>
+					<select>
+						<option>01</option>
+					</select>
+					<select>
+						<option>2009</option>
+					</select>
+				</dd>
+			</dl>
 		</fieldset>
     	
     	<div class="submit">

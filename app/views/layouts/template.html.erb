@@ -9,21 +9,24 @@
 		<div id="page-container">
 			
 			<!--GLOBAL NAVIGATION-->
+			
 			<ul id="global-nav">
 				<li><%= link_to 'Home', root_path %></li>
-				<li><a href="#">Portfolios</a></li>
-				<li><a href="#">Questions</a></li>
+				<li><a href="#">Directory</a></li>
+				<li><a href="#">Help</a></li>
 				<li><a href="#">Blog</a></li>
+				<li><a href="#">Contact</a></li>
+				<li class="welcome">Logged in as <a href="#">Username</a> | <a href="#">Logout</a></li>				
 			</ul>
 			
 			<!--HEADER-->
 			<div id="header-container">
-				<a id="header-logo">Weefolio</a>
+				<%= link_to 'Home', root_path, :id => "header-logo" %>
 				
 				<% if logged_in? %>
 				  <!--USER NAV (LOGGED IN) -->
   				<ul id="user-nav">
-  					<li id="portfolio" class="selected"><%= link_to 'Portfolio', edit_user_portfolio_path(current_user, current_user.portfolio) %></li>
+  					<li id="portfolio"><%= link_to 'Portfolio', edit_user_portfolio_path(current_user, current_user.portfolio) %></li>
   					<li id="design"><%= link_to 'Design', edit_user_design_path(current_user, current_user.design) %></li>
   					<li id="account"><%= link_to 'Account', edit_user_path(current_user) %></li>
   					<li id="my-weefolio"><%= link_to 'My Weefolio', user_portfolio_path(current_user, current_user.portfolio) %></li>
@@ -45,7 +48,7 @@
 				<a id="footer-logo" href="#">Fancy Labs</a>
 				
 				<div id="legal">
-					Brought to you by <strong>Fancy Labs, LLC</strong> &copy; 2009
+					Brought to you by <strong><a href="http://fancylabs.com" target="_blank">Fancy Labs, LLC</a></strong> &copy; 2009
 				</div>
 				
 				<ul id="footer-nav">

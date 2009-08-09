@@ -2,12 +2,10 @@
 <%# YIELD %>
 <div id="page-header-container-outer">
 	<div id="page-header-container-inner">
-		<h1>Layout Editor<small></small></h1>
+		<h1>Design Editor <small>Customize your weefolio</small></h1>
 		
 		<div class="call-to-action">
-			<!--THIS IS WHERE YOU CAN PUT 'ADD NEW WORK' LINKS ETC.
-			<a href="#">Call to action!</a>
-			-->
+			<a href="#">Edit Custom CSS</a>
 		</div>
 	</div>
 </div>
@@ -15,111 +13,125 @@
 <!--PAGE CONTENT-->
 <%# YIELD %>
 <div id="content-container">
-  <p>
+
     <%= flash[:notice] %>
-  </p>
+    
 	<!--DUMP ALL OF YOUR SHIT HERE!-->
 	<% if @user.design_type == 1 %>
     <% form_for [@user, @user.design], :html => { :multipart => true } do |f| %>
-      <p>
-        <%= f.label :header_image %><br />
-        <%= f.file_field :header_image %>
-      </p>
-      <p>
-        <%= f.label :background_color %><br />
-        <%= f.text_field :background_color %>
-      </p>
-      <p>
-        <%= f.label :background_align %><br />
-        <%= f.text_field :background_align %>
-      </p>
-      <p>
-        <%= f.label :background_tile %><br />
-        <%= f.text_field :background_tile %>
-      </p>
-      <p>
-        <%= f.label :page_bg_color %><br />
-        <%= f.text_field :page_bg_color %>
-      </p>
-      <p>
-        <%= f.label :link_color %><br />
-        <%= f.text_field :link_color %>
-      </p>
-      <p>
-        <%= f.label :link_hover_color %><br />
-        <%= f.text_field :link_hover_color %>
-      </p>
-      <p>
-        <%= f.label :link_img_border_color %><br />
-        <%= f.text_field :link_img_border_color %>
-      </p>
-      <p>
-        <%= f.label :text_color %><br />
-        <%= f.text_field :text_color %>
-      </p>
-      <p>
-        <%= f.label :text_font_1 %><br />
-        <%= f.select :text_font_1, @design.font_families %>
-      </p>
-      <p>
-        <%= f.label :text_font_2 %><br />
-        <%= f.select :text_font_2, @design.font_families, :include_blank => true %>
-      </p>
-      <p>
-        <%= f.label :text_serif %><br />
-        <%= f.check_box :text_serif %>
-      </p>
-      <p>
-        <%= f.label :text_size %><br />
-        <%= f.select :text_size, @design.font_sizes %>
-      </p>
-      <p>
-        <%= f.label :title_font %><br />
-        <%= f.select :title_font, @design.font_families %>
-      </p>
-      <p>
-        <%= f.label :title_color %><br />
-        <%= f.text_field :title_color %>
-      </p>
-      <p>
-        <%= f.label :title_bold %><br />
-        <%= f.check_box :title_bold %>
-      </p>
-      <p>
-        <%= f.label :title_italic %><br />
-        <%= f.check_box :title_italic %>
-      </p>
-      <p>
-        <%= f.label :tagline_font %><br />
-        <%= f.select :tagline_font, @design.font_families %>
-      </p>
-      <p>
-        <%= f.label :tagline_color %><br />
-        <%= f.text_field :tagline_color %>
-      </p>
-      <p>
-        <%= f.label :tagline_size %><br />
-        <%= f.select :tagline_size, [8, 10, 12, 14, 16, 18, 20, 22, 24], :include_blank => true %>
-      </p>
-      <p>
-        <%= f.label :tagline_serif %><br />
-        <%= f.check_box :tagline_serif %>
-      </p>
-      <p>
-        <%= f.label :tagline_bold %><br />
-        <%= f.check_box :tagline_bold %>
-      </p>
-      <p>
-        <%= f.label :tagline_italic %><br />
-        <%= f.check_box :tagline_italic %>
-      </p>
-      <p>
-        <%= f.label :border_color %><br />
-        <%= f.text_field :border_color %>
-      </p>
-      <p>
-        <%= f.submit 'Save' %>
-      </p>
+    	<div class="layout-selection-container">
+    		<ul>
+	    		<li class="option">
+	    			<img src="/images/layout-grid-icon.gif" width="111" height="130"/>
+	    			<input type="radio"/>
+	    			<label>Grid</label>
+	    		</li>
+	    		
+	    		<li class="option">
+	    			<img src="/images/layout-list-icon.gif" width="111" height="130"/>
+	    			<input type="radio"/>
+	    			<label>List</label>
+	    		</li>
+    		</ul>
+    	</div>
+    	
+    	<fieldset>
+    		<h2>Header</h2>
+    		<dl>
+    			<dt>
+    				<label for="design_header_image">Header Image</label>
+    			</dt>
+    			<dd>
+    				<%= f.file_field :header_image %>
+    			</dd>
+    		</dl>
+      	</fieldset>
+      	
+      	<fieldset id="design-color">
+      		<h2>Colors</h2>	
+      		<dl>
+      			<dt>
+      				<label for="design_background_color">Background</label>
+      			</dt>
+      			<dd>
+      				<%= f.text_field :background_color, :size => 7 %>
+      				<div class="color-preview" style="background:#f5f5f3;"></div>
+      			</dd>
+      			
+      			<dt>
+      				<label for="design_page_bg_color">Page</label>
+      			</dt>
+      			<dd>
+      				<%= f.text_field :page_bg_color, :size => 7 %>
+      				<div class="color-preview" style="background:#ffffff;"></div>
+      			</dd>
+      			
+      			<dt>
+      				<label for="design_border_color">Border</label>
+      			</dt>
+      			<dd>
+      			<%= f.text_field :border_color, :size => 7 %>
+      			<div class="color-preview" style="background:#eeeeee;"></div>
+      			</dd>
+      			
+      			<dt>
+      				<label for="design_text_color">Body Text</label>
+      			</dt>
+      			<dd>
+      				<%= f.text_field :text_color, :size => 7 %>
+      				<div class="color-preview" style="background:#767574;"></div>
+      			</dd>
+      			
+      			<dt>
+      				<label for="design_title_color">Titles</label>
+      			</dt>
+      			<dd>
+      				<%= f.text_field :title_color, :size => 7 %>
+      				<div class="color-preview" style="background:#242420;"></div>
+      			</dd>
+      			
+      			
+      			<dt>
+      				<label for="design_link_color">Links</label>
+      			</dt>
+      			<dd>
+      				<%= f.text_field :link_color, :size => 7 %>
+      				<div class="color-preview" style="background:#9fcf44;"></div>
+      			</dd>
+      			
+      			<dt>
+      				<label for="design_link_hover_color">Link Rollovers</label>
+      			</dt>
+      			<dd>
+      				<%= f.text_field :link_hover_color, :size => 7 %>
+      				<div class="color-preview" style="background:#242420;"></div>
+      			</dd>
+      		</dl>
+      	</fieldset>
+      	
+      	<fieldset>
+      		<h2>Text</h2>
+      		
+      		<dl>
+      			<dt>
+      				<label for="design_text_font_1">Font</label>
+      			</dt>
+      			<dd>
+      				<%= f.select :text_font_1, @design.font_families %>
+      			</dd>
+      			
+      			<dt>
+      				<label for="design_text_size">Size</label>
+      			</dt>
+      			<dd>
+      				<%= f.select :text_size, @design.font_sizes %>
+      			</dd>
+      		</dl>
+      	</fieldset>
+      
+      	<div class="submit">
+        	<%= f.submit 'Save' %>
+      	</div>
     <% end %>
   <% else %>
     <p>

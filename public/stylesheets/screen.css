@@ -11,7 +11,7 @@ body {
 	
 a:link,
 a:visited {
-	color: #72b225;
+	color: #9fcf44;
 	}
 	
 a:hover,
@@ -55,7 +55,6 @@ div#footer-container {
 	padding: 0 20px;
 	}
 	
-
 /*--GLOBAL NAV--*/
 
 ul#global-nav {
@@ -67,6 +66,28 @@ ul#global-nav {
 	
 ul#global-nav li {
 	display: inline;
+	margin: 0 0 0 15px;
+	}
+	
+ul#global-nav li.welcome {
+	background: #fff;
+	padding: 5px 8px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border: 1px solid #ddd;
+	}
+	
+ul#global-nav li.welcome a:link,
+ul#global-nav li.welcome a:visited {
+	color: #9fcf44;
+	text-shadow: none;
+	text-decoration: underline;
+	}
+	
+ul#global-nav li.welcome a:hover,
+ul#global-nav li.welcome a:visited:hover {	
+	color: #242420;
+	text-decoration: underline;
 	}
 	
 ul#global-nav li a:link,
@@ -74,7 +95,6 @@ ul#global-nav li a:visited {
 	color: #767574;
 	text-shadow: 0 1px 0 #fff;
 	text-decoration: none;
-	margin: 0 0 0 15px;
 	}
 	
 ul#global-nav li a:hover,
@@ -211,15 +231,17 @@ div#page-header-container-inner h1 {
 	font-size: 26px;
 	color: #fff;
 	font-weight: normal;
-	margin: 0;
+	margin: 3px 0;
 	float: left;
+	line-height: 25px;
+	display: block;
 	}
 	
 div#page-header-container-inner h1 small {
 	font-size: 13px;
 	color: #9e9d9b;
 	font-style: italic;
-	margin: 0 0 0 5px;
+	margin: 0;
 	}
 	
 div#page-header-container-inner div.call-to-action {
@@ -257,18 +279,18 @@ div#footer-container ul#footer-nav {
 	
 div#footer-container ul#footer-nav li {
 	display: inline;
-	}
-	
-div#footer-container ul#footer-nav li a:link,
-div#footer-container ul#footer-nav li a:visited {
-	color: #767574;
-	text-shadow: 0 1px 0 #fff;
-	text-decoration: none;
 	margin: 0 0 0 15px;
 	}
 	
-div#footer-container ul#footer-nav li a:hover,
-div#footer-container ul#footer-nav li a:visited:hover {
+div#footer-container a:link,
+div#footer-container a:visited {
+	color: #767574;
+	text-shadow: 0 1px 0 #fff;
+	text-decoration: none;
+	}
+	
+div#footer-container a:hover,
+div#footer-container a:visited:hover {
 	color: #242420;
 	}
 	
@@ -314,6 +336,7 @@ div#content-container form fieldset dl dt {
 	font-weight: bold;
 	color: #242420;
 	font-size: 12px;
+	clear: both;
 	}
 
 div#content-container form fieldset dl dd {
@@ -334,12 +357,26 @@ div#content-container form fieldset dl dd textarea {
 	margin: 0;
 	}
 	
+div#content-container form fieldset dl dd select {
+	margin: 5px 0;
+	}
+	
 div#content-container form fieldset dl dd p {
 	margin: 5px 0 5px 0;
 	}
 	
+div#content-container form fieldset dl dd ul {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	}
+	
+div#content-container form fieldset dl dd ul li {
+	margin: 7px 0;
+	}
+	
 div#content-container form div.submit {
-	margin: 0 0 0 175px;
+	margin: 0 0 0 172px;
 	overflow: hidden;
 	}
 
@@ -361,4 +398,262 @@ div#content-container form div.submit input:hover {
 	background: #242420;
 	}
 
+
+/*---HOME---*/
+
+div#page-header-container-inner div.welcome-container {
+	width: 240px;
+	float: left;
+	}
 	
+div#page-header-container-inner div.welcome-container h1 {
+	line-height: 25px;
+	float: none;
+	}
+	
+div#page-header-container-inner div.welcome-container p {
+	margin: 15px 0;
+	}
+	
+div#page-header-container-inner div.welcome-container div.sign-up-button a:link,
+div#page-header-container-inner div.welcome-container div.sign-up-button a:visited {
+	display: block;
+	height: 36px;
+	width: 144px;
+	background-image: url(/images/home-sign-up-button.gif);
+	background-position: 0 0;
+	background-repeat: no-repeat;
+	overflow: hidden;
+	text-indent: -5000px;
+	position: relative;
+	left: -5px;
+	}
+	
+div#page-header-container-inner div.welcome-container div.sign-up-button a:hover,
+div#page-header-container-inner div.welcome-container div.sign-up-button a:visited:hover {
+	background-position: 0 -36px;
+	}
+
+
+/*---USERS > NEW (Pricing & Sign Up)---*/
+
+div#page-header-container-inner div.pricing {
+	padding:0;
+	clear: both;
+	overflow: hidden;
+	}
+	
+div#page-header-container-inner div.pricing table.chart {
+	font-size: 11px;
+	width: 100%;
+	padding: 10px 20px;
+	background: #1d1d1a;
+	border: 5px solid #2e2e29;
+	margin: 15px 0 0 0;
+	}
+
+div#page-header-container-inner div.pricing table.chart tr th {
+	padding: 0 0 5px 0;
+	text-align: center;
+	font-family: Georgia, "Times New Roman", Serif;
+	font-weight: normal;
+	font-size: 14px;
+	color: #fff;
+	}
+	
+div#page-header-container-inner div.pricing table.chart tr td {
+	padding: 5px;
+	text-align: center;
+	border-top: 1px solid #2e2e29;
+	width: 20%;
+	
+	}
+	
+div#page-header-container-inner div.pricing table.chart tr td.dark {
+	background: #181815;
+	}
+		
+div#page-header-container-inner div.pricing table.chart tr td.feature {
+	text-align: left;
+	color: #fff;
+	width: 40%;
+	}
+
+div#page-header-container-inner div.pricing table.chart tr.pricing span.price {
+	font-family: Georgia, "Times New Roman", Serif;
+	font-size: 14px;
+	font-style: italic;
+	color: #fff;
+	font-weight: bold;
+	}
+	
+div#page-header-container-inner div.pricing table.chart tr.pricing td {
+	padding: 5px 0 0 0;
+	}
+	
+div#page-header-container-inner div.pricing table.chart tr td span.yes {
+	width: 10px;
+	height: 10px;
+	overflow: hidden;
+	text-indent: -500px;
+	background: url(/images/feature-dot.png) 0 0 no-repeat;
+	display: inline-block;
+	}
+
+
+/*---DESIGNS > EDIT ---*/
+
+div#content-container form div.layout-selection-container {
+	padding: 20px;
+	background: #f5f5f3;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border: 1px solid #ddd;
+	margin: 0 0 20px 0;
+	overflow: hidden;
+	}
+	
+div#content-container form div.layout-selection-container ul {
+	width: 386px;
+	list-style: none;
+	margin: 0 auto;
+	padding: 0;
+	}
+	
+div#content-container form div.layout-selection-container ul li.option {
+	width: 113px;
+	float: left;
+	margin: 0 40px;
+	text-align: center;
+	}
+
+div#content-container form div.layout-selection-container ul li.option img {
+	margin: 0 0 10px 0;
+	}
+	
+
+div#content-container form fieldset#design-color dl dd input {
+	float: left;
+	display: block;
+	}
+		
+div#content-container form fieldset dl dd div.color-preview {
+	height: 17px;
+	width: 300px;
+	margin: 0 0 0 20px;
+	padding: 6px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	float: left;
+	}
+	
+/*---PORTFOLIO > INDEX---*/
+
+div#page-header-container-inner div#portfolio-add-work a:link,
+div#page-header-container-inner div#portfolio-add-work a:visited {
+	display: block;
+	height: 36px;
+	width: 132px;
+	background-image: url(/images/portfolio-add-work-button.gif);
+	background-position: 0 0;
+	background-repeat: no-repeat;
+	overflow: hidden;
+	text-indent: -5000px;
+	position: relative;
+	right: -5px;
+	}
+	
+div#page-header-container-inner div#portfolio-add-work a:hover,
+div#page-header-container-inner div#portfolio-add-work a:visited:hover {
+	background-position: 0 -36px;
+	}
+
+div#content-container p.count {
+	padding: 15px;
+	background: #f5f5f3;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border: 1px solid #ddd;
+	margin: 0 0 20px 0;
+	}
+		
+div#content-container ul.pieces {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	}
+	
+div#content-container ul.pieces li:first-child {
+	border-top: none;
+	margin: 0 10px 15px 10px;
+	}
+	
+div#content-container ul.pieces li.piece {
+	overflow: hidden;
+	padding: 15px 10px;
+	border-top: 1px dashed #ddd;
+	}
+	
+div#content-container ul.pieces li.piece img {
+	display: block;
+	float: left;
+	padding: 4px;
+	background: #f5f5f3;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border: 1px solid #ddd;
+	margin: 0 20px 0 0;
+	}
+
+div#content-container ul.pieces li.piece div.piece-info {
+	float: left;
+	width: 500px;
+	}
+		
+div#content-container ul.pieces li.piece div.piece-info h3 {
+	margin: 8px 0 0 0;
+	}
+	
+div#content-container ul.pieces li.piece div.piece-info p {
+	margin: 5px 0 8px 0;
+	}
+	
+div#content-container ul.pieces li.piece ul.piece-options {
+	float: right;
+	margin: 0;
+	padding: 0;
+	}
+
+div#content-container ul.pieces li.piece ul.piece-options li.option {
+	margin:  0 0 0 10px;
+	overflow: hidden;
+	float: left;
+	}
+	
+div#content-container ul.pieces li.piece ul.piece-options li.option a:link,
+div#content-container ul.pieces li.piece ul.piece-options li.option a:visited {
+	display: block;
+	overflow: hidden;
+	text-indent: -500px;
+	width: 16px;
+	height: 16px;
+	background-position: 0 0;
+	}
+	
+div#content-container ul.pieces li.piece ul.piece-options li.option a:hover,
+div#content-container ul.pieces li.piece ul.piece-options li.option a:visited:hover {
+	background-position: 0 -16px;
+	}
+	
+div#content-container ul.pieces li.piece ul.piece-options li#delete a {
+	background-image: url(/images/portfolio-delete-icon.gif);
+	}
+	
+div#content-container ul.pieces li.piece ul.piece-options li#edit a {
+	background-image: url(/images/portfolio-edit-icon.gif);
+	}
+	
+div#content-container ul.pieces li.piece ul.piece-options li#view a {
+	background-image: url(/images/portfolio-view-icon.gif);
+	display: none;
+	}
