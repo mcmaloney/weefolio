@@ -161,7 +161,7 @@
 
   <%= error_messages_for :user %>
   
-  <% form_for(@user) do |f| -%>
+  <% form_for(User.new) do |f| %>
   	
     <fieldset>
     	<h2>Sign up for <strong><em>free</em></strong> &amp; upgrade anytime!</h2>
@@ -199,7 +199,7 @@
 	      	<dt>
 	      	</dt>
 	      	<dd>
-	      		<input type="checkbox"/>
+	      		<%= f.check_box :has_read_terms %>
 		      	<label>I have read and agree with the <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a>.</label>
 	      	</dd>
 	    </dl>    
@@ -208,7 +208,7 @@
     <div class="submit">
       <%= f.submit 'Sign Up' %>
     </div>
-  <% end -%>
+  <% end %>
 </div>
 
 

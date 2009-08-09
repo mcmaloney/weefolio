@@ -38,12 +38,12 @@
     </p>
   <% end %>
  
-  <p class="count">You're using <strong>1</strong> of your <strong>5</strong> pieces.</p>
+  <p class="count">You're using <strong><%= @portfolio.pieces.count %></strong> of your <strong><%= @portfolio.max_pieces %></strong> pieces.</p>
   
   <ul class="pieces">
   	<% @portfolio.pieces.each do |piece| %>
   	<li class="piece">
-  		<img src="#" alt="small thumb" width="60" height="60"/>
+  		<%= image_tag piece.image_1.url(:small_thumb) %>
   		
   		<div class="piece-info">	
   			<h3><a href="#"><%= piece.title %></a></h3>

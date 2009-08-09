@@ -17,7 +17,7 @@
 				<li><a href="#">Blog</a></li>
 				<li><%= link_to 'Contact', contact_path %></li>
 				<% if logged_in? %>
-				<li class="welcome">Logged in as <a href="#">Username</a> | <a href="#">Logout</a></li>	
+				<li class="welcome">Logged in as <a href="#">Username</a> | <%= link_to 'Logout', logout_path %></li>	
 				<% end %>			
 			</ul>
 			

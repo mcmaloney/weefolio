@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090807182945) do
+ActiveRecord::Schema.define(:version => 20090809203350) do
 
   create_table "designs", :force => true do |t|
     t.integer  "user_id"
@@ -106,6 +106,7 @@ ActiveRecord::Schema.define(:version => 20090807182945) do
     t.datetime "photo_updated_at"
     t.integer  "layout_type",                              :default => 1
     t.integer  "design_type",                              :default => 1
+    t.boolean  "has_read_terms",                           :default => false
   end
 
   add_index "users", ["login"], :name => "index_users_on_login", :unique => true

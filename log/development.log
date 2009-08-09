@@ -954,3 +954,1399 @@ Rendering users/edit
   [4;36;1mPortfolio Load (0.2ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 17) LIMIT 1[0m
   [4;35;1mDesign Load (0.5ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 17) LIMIT 1[0m
 Completed in 34ms (View: 21, DB: 1) | 200 OK [http://0.0.0.0/users/17/edit]
+Starting the New Relic Agent
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSELECT version FROM schema_migrations[0m
+
+
+Processing DesignsController#edit (for 127.0.0.1 at 2009-08-09 16:27:44) [GET]
+  Parameters: {"id"=>"2", "user_id"=>"17"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 17) LIMIT 1[0m
+  [4;35;1mDesign Load (0.5ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 17) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering designs/edit
+  [4;36;1mPortfolio Load (0.2ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 17) LIMIT 1[0m
+Completed in 103ms (View: 28, DB: 1) | 200 OK [http://0.0.0.0/users/17/designs/2/edit]
+New Relic Agent not running
+New Relic Agent not running
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20090718215859)
+Migrating to AddInfoToUsers (20090718220754)
+Migrating to CreatePortfolios (20090719031854)
+Migrating to RemoveTypeFromUsers (20090719032358)
+Migrating to AddAccountTierToUsers (20090719032501)
+Migrating to CreatePieces (20090720145132)
+Migrating to AddAvatarToUsers (20090720151551)
+Migrating to RemoveAvatarFromUsers (20090720202141)
+Migrating to AddAvatarToUsersForReal (20090720202338)
+Migrating to PleaseWorkPaperclipYouMotherfucker (20090721033045)
+Migrating to AddAttachmentsPhotoToUser (20090721033319)
+Migrating to AddAttachmentsImage1ToPortfolio (20090721152728)
+Migrating to AddAttachmentsImage2ToPiece (20090721170213)
+Migrating to AddAttachmentsImage3ToPiece (20090721170326)
+Migrating to AddAttachmentsImage4ToPiece (20090721170409)
+Migrating to AddAttachmentsImage5ToPiece (20090721170424)
+Migrating to RemoveImage1FromPortfolios (20090721210418)
+Migrating to AddAttachmentsImage1ToPiece (20090721210511)
+Migrating to CreateDesigns (20090805151853)
+Migrating to AddCssVariablesToDesign (20090805164948)
+Migrating to RemoveOldDesignTypeFromUsers (20090805171338)
+Migrating to AddDesignTypeToUsersWithDefaultValue (20090805171518)
+Migrating to AddCssTextToDesign (20090805174329)
+Migrating to AddAttachmentsHeaderImageToUser (20090805191833)
+Migrating to RemoveHeaderImageFromUsers (20090805192350)
+Migrating to AddAttachmentsHeaderImageToDesign (20090805192452)
+Migrating to AddReadTermsToUsers (20090809203350)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mALTER TABLE "users" ADD "has_read_terms" boolean DEFAULT 'f'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090809203350')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("designs")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("pieces")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("portfolios")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_users_on_login')[0m
+Starting the New Relic Agent
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSELECT version FROM schema_migrations[0m
+
+
+Processing DesignsController#edit (for 127.0.0.1 at 2009-08-09 16:37:36) [GET]
+  Parameters: {"id"=>"2", "user_id"=>"17"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 17) LIMIT 1[0m
+  [4;35;1mDesign Load (0.5ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 17) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering designs/edit
+  [4;36;1mPortfolio Load (0.2ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 17) LIMIT 1[0m
+Completed in 55ms (View: 28, DB: 1) | 200 OK [http://0.0.0.0/users/17/designs/2/edit]
+
+
+Processing SessionsController#destroy (for 127.0.0.1 at 2009-08-09 16:37:38) [GET]
+Redirected to http://0.0.0.0:3000/
+Completed in 5ms (DB: 0) | 302 Found [http://0.0.0.0/logout]
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-08-09 16:37:38) [GET]
+Rendering template within layouts/template
+Rendering main_pages/home
+Completed in 6ms (View: 6, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-08-09 16:37:40) [GET]
+Rendering template within layouts/template
+Rendering users/new
+
+ActionView::TemplateError (undefined method `checkbox' for #<ActionView::Helpers::FormBuilder:0x22cc4f8>) on line #202 of app/views/users/new.html.erb:
+199: 	      	<dt>
+200: 	      	</dt>
+201: 	      	<dd>
+202: 	      		<%= f.checkbox :has_read_terms %>
+203: 		      	<label>I have read and agree with the <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a>.</label>
+204: 	      	</dd>
+205: 	    </dl>    
+
+    app/views/users/new.html.erb:202
+    app/views/users/new.html.erb:164
+
+Rendered rescues/_trace (35.2ms)
+Rendered rescues/_request_and_response (1.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-08-09 16:37:58) [GET]
+Rendering template within layouts/template
+Rendering users/new
+Completed in 22ms (View: 13, DB: 0) | 200 OK [http://0.0.0.0/signup]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-08-09 16:38:24) [POST]
+  Parameters: {"user"=>{"has_read_terms"=>"0", "password_confirmation"=>"giraffe", "password"=>"giraffe", "login"=>"elmardonkeygumbo", "email"=>"mkea920@gmail.com"}, "commit"=>"Sign Up", "authenticity_token"=>"xW/iyWhxrfMXLYZFxKCc1vG4uIZdZPbmiLWBzXuiPUU="}
+WARNING: Can't mass-assign these protected attributes: has_read_terms
+  [4;35;1mPortfolio Create (0.4ms)[0m   [0mINSERT INTO "portfolios" ("updated_at", "user_id", "created_at") VALUES('2009-08-09 20:38:24', NULL, '2009-08-09 20:38:24')[0m
+  [4;36;1mDesign Create (0.4ms)[0m   [0;1mINSERT INTO "designs" ("background_color", "text_serif", "title_serif", "tagline_color", "tagline_bold", "header_image_content_type", "updated_at", "link_color", "title_bold", "tagline_serif", "text_size", "header_image_file_name", "header_image_updated_at", "css_text", "header_image_file_size", "title_font", "tagline_font", "title_italic", "tagline_italic", "link_img_border_color", "text_color", "title_color", "page_bg_color", "tagline_size", "user_id", "text_font_1", "background_align", "background_tile", "link_hover_color", "text_font_2", "border_color", "created_at") VALUES('#dedddb', 'f', 't', '#242420', 'f', NULL, '2009-08-09 20:38:24', '#72b225', 'f', 't', '12', NULL, NULL, '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''body {
+ 	margin: 20px;
+ 	background-color: #dedddb; /*---Background: Color---*/
+ 	background-position: top; /*---Background: Alignment---*/
+ 	background-image: none; /*---Background: Image---*/
+ 	background-repeat: repeat; /*---Background: Tile---*/
+ 	font-family: Arial, Helvetica, sans-serif; /*---Text: Font---*/
+ 	font-size: 12px; /*---Text: Size---*/
+ 	color: #767574; /*---Text: Color---*/
+ 	line-height: 150%;
+ 	}
+
+ a:link,
+ a:visited {
+ 	color: #72b225; /*---Links: Color---*/
+ 	}
+
+ a:hover,
+ a:visited:hover {
+ 	color: #242420; /*---Text: Color---*/
+ 	}
+
+ h1 {
+ 	font-size: ; /*---Tagline: Size---*/
+ 	color: #242420; /*---Tagline: Color---*/
+ 	font-family: Georgia, serif; /*---Tagline: Font---*/
+ 	font-weight: normal; /*---Tagline: Bold---*/
+ 	font-style: normal; /*---Tagline: Italic---*/
+ 	}
+
+ h2, h3, h4, h5, h6 {
+ 	color: #242420; /*---Titles: Color---*/
+ 	font-family: Georgia, serif; /*---Titles: Font---*/
+ 	font-weight: normal; /*---Titles: Bold---*/
+ 	font-style: normal; /*---Titles: Italic---*/
+ 	}
+
+ hr {
+ 	border: 0;
+ 	height: 1px;
+ 	background: #eee; /*---Border: Color---*/
+ 	margin: 20px 0;
+ 	}
+
+ a:link img, a:visited img {
+ 	display: block;
+ 	border: 5px solid #f5f4f4; /*---Border: Color---*/
+ 	}
+
+ a:hover img, a:visited:hover img {	
+ 	border: 5px solid #72b225; /*---Link: Color---*/
+ 	}
+
+
+ /*---STRUCTURE---*/
+
+ div#page-container {
+ 	margin: 0 auto;
+ 	width: 710px;
+ 	background: #fff; /*---Page: Background Color---*/
+ 	overflow: hidden;
+ 	padding: 20px;
+ 	-webkit-border-radius: 10px;
+ 	}
+
+ div#header-container {
+ 	overflow: hidden;
+ 	margin: 0 0 20px 0;
+ 	}
+
+ div#tagline-container {
+ 	overflow: hidden;
+ 	text-align: left;
+ 	}
+
+ div#info-container {
+ 	overflow: hidden;
+ 	}
+
+ div#about-container {
+ 	width: 345px;
+ 	margin: 0 0 20px 0;
+ 	overflow: hidden;
+ 	float: left;
+ 	}
+
+ div#contact-container {
+ 	width: 345px;
+ 	margin: 0;
+ 	overflow: hidden;
+ 	float: right;
+ 	}''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''', NULL, 'Georgia', 'Georgia', 'f', 'f', '#f5f4f4', '#767574', '#242420', '#fff', NULL, NULL, 'Arial', 'center', 'repeat', '#242420', 'Helvetica', '#eee', '2009-08-09 20:38:24')[0m
+[paperclip] Saving attachments.
+  [4;35;1mUser Create (0.3ms)[0m   [0mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "photo_file_name", "photo_file_size", "crypted_password", "account_tier", "about_me", "has_read_terms", "remember_token_expires_at", "activation_code", "photo_updated_at", "layout_type", "photo_content_type", "remember_token", "tag_line", "first_name", "login", "last_name", "design_type", "email", "created_at") VALUES('', '4422227564dd352a8a1d098f2c493b74097d48e4', '2009-08-09 20:38:24', '2009-08-09 20:38:24', NULL, NULL, '8b6eb745d2a27ff1ea57d0f096f048f837d12a2d', 1, NULL, 'f', NULL, '0e720ac17d4c37086d34ffcf64328068296045db', NULL, 1, NULL, NULL, NULL, NULL, 'elmardonkeygumbo', NULL, 1, 'mkea920@gmail.com', '2009-08-09 20:38:24')[0m
+  [4;36;1mPortfolio Update (0.1ms)[0m   [0;1mUPDATE "portfolios" SET "updated_at" = '2009-08-09 20:38:24', "user_id" = 19 WHERE "id" = 21[0m
+  [4;35;1mDesign Update (0.1ms)[0m   [0mUPDATE "designs" SET "updated_at" = '2009-08-09 20:38:24', "user_id" = 19 WHERE "id" = 4[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login" = 'elmardonkeygumbo' AND "users".id <> 19) LIMIT 1[0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'mkea920@gmail.com' AND "users".id <> 19) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering users/new
+Completed in 152ms (View: 3, DB: 1) | 200 OK [http://0.0.0.0/users]
+
+
+Processing UsersController#update (for 127.0.0.1 at 2009-08-09 16:38:35) [PUT]
+  Parameters: {"user"=>{"has_read_terms"=>"1", "password_confirmation"=>"giraffe", "password"=>"giraffe", "login"=>"elmardonkeygumbo", "email"=>"mkea920@gmail.com"}, "commit"=>"Sign Up", "authenticity_token"=>"xW/iyWhxrfMXLYZFxKCc1vG4uIZdZPbmiLWBzXuiPUU=", "id"=>"19"}
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of ActiveRecord::Base.
+The error occurred while evaluating nil.update_attributes):
+  app/controllers/users_controller.rb:17:in `update'
+
+Rendered rescues/_trace (32.0ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#update (for 127.0.0.1 at 2009-08-09 16:40:14) [PUT]
+  Parameters: {"user"=>{"has_read_terms"=>"0", "password_confirmation"=>"fitzgoogoo", "password"=>"fitzgoogoo", "login"=>"elmardonkeygumbo", "email"=>"mkea920@gmail.com"}, "commit"=>"Sign Up", "authenticity_token"=>"xW/iyWhxrfMXLYZFxKCc1vG4uIZdZPbmiLWBzXuiPUU=", "id"=>"19"}
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of ActiveRecord::Base.
+The error occurred while evaluating nil.update_attributes):
+  app/controllers/users_controller.rb:17:in `update'
+
+Rendered rescues/_trace (99.3ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#update (for 127.0.0.1 at 2009-08-09 16:40:28) [PUT]
+  Parameters: {"user"=>{"has_read_terms"=>"0", "password_confirmation"=>"giraffe", "password"=>"giraffe", "login"=>"elmardonkeygumbo", "email"=>"mkea920@gmail.com"}, "commit"=>"Sign Up", "authenticity_token"=>"xW/iyWhxrfMXLYZFxKCc1vG4uIZdZPbmiLWBzXuiPUU=", "id"=>"19"}
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of ActiveRecord::Base.
+The error occurred while evaluating nil.update_attributes):
+  app/controllers/users_controller.rb:17:in `update'
+
+Rendered rescues/_trace (30.2ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-08-09 16:42:30) [GET]
+Rendering template within layouts/template
+Rendering main_pages/home
+Completed in 2ms (View: 2, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-08-09 16:42:31) [GET]
+Rendering template within layouts/template
+Rendering users/new
+Completed in 22ms (View: 13, DB: 0) | 200 OK [http://0.0.0.0/signup]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-08-09 16:42:57) [GET]
+Rendering template within layouts/template
+Rendering users/new
+Completed in 85ms (View: 5, DB: 0) | 200 OK [http://0.0.0.0/signup]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-08-09 16:43:58) [POST]
+  Parameters: {"user"=>{"has_read_terms"=>"0", "password_confirmation"=>"fitzgoogoo", "password"=>"fitzgoogoo", "login"=>"mmaloney", "email"=>"michael@maloney.com"}, "commit"=>"Sign Up", "authenticity_token"=>"xW/iyWhxrfMXLYZFxKCc1vG4uIZdZPbmiLWBzXuiPUU="}
+WARNING: Can't mass-assign these protected attributes: has_read_terms
+  [4;36;1mPortfolio Create (0.3ms)[0m   [0;1mINSERT INTO "portfolios" ("updated_at", "user_id", "created_at") VALUES('2009-08-09 20:43:58', NULL, '2009-08-09 20:43:58')[0m
+  [4;35;1mDesign Create (0.4ms)[0m   [0mINSERT INTO "designs" ("background_color", "text_serif", "title_serif", "tagline_color", "tagline_bold", "header_image_content_type", "updated_at", "link_color", "title_bold", "tagline_serif", "text_size", "header_image_file_name", "header_image_updated_at", "css_text", "header_image_file_size", "title_font", "tagline_font", "title_italic", "tagline_italic", "link_img_border_color", "text_color", "title_color", "page_bg_color", "tagline_size", "user_id", "text_font_1", "background_align", "background_tile", "link_hover_color", "text_font_2", "border_color", "created_at") VALUES('#dedddb', 'f', 't', '#242420', 'f', NULL, '2009-08-09 20:43:58', '#72b225', 'f', 't', '12', NULL, NULL, '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''body {
+ 	margin: 20px;
+ 	background-color: #dedddb; /*---Background: Color---*/
+ 	background-position: top; /*---Background: Alignment---*/
+ 	background-image: none; /*---Background: Image---*/
+ 	background-repeat: repeat; /*---Background: Tile---*/
+ 	font-family: Arial, Helvetica, sans-serif; /*---Text: Font---*/
+ 	font-size: 12px; /*---Text: Size---*/
+ 	color: #767574; /*---Text: Color---*/
+ 	line-height: 150%;
+ 	}
+
+ a:link,
+ a:visited {
+ 	color: #72b225; /*---Links: Color---*/
+ 	}
+
+ a:hover,
+ a:visited:hover {
+ 	color: #242420; /*---Text: Color---*/
+ 	}
+
+ h1 {
+ 	font-size: ; /*---Tagline: Size---*/
+ 	color: #242420; /*---Tagline: Color---*/
+ 	font-family: Georgia, serif; /*---Tagline: Font---*/
+ 	font-weight: normal; /*---Tagline: Bold---*/
+ 	font-style: normal; /*---Tagline: Italic---*/
+ 	}
+
+ h2, h3, h4, h5, h6 {
+ 	color: #242420; /*---Titles: Color---*/
+ 	font-family: Georgia, serif; /*---Titles: Font---*/
+ 	font-weight: normal; /*---Titles: Bold---*/
+ 	font-style: normal; /*---Titles: Italic---*/
+ 	}
+
+ hr {
+ 	border: 0;
+ 	height: 1px;
+ 	background: #eee; /*---Border: Color---*/
+ 	margin: 20px 0;
+ 	}
+
+ a:link img, a:visited img {
+ 	display: block;
+ 	border: 5px solid #f5f4f4; /*---Border: Color---*/
+ 	}
+
+ a:hover img, a:visited:hover img {	
+ 	border: 5px solid #72b225; /*---Link: Color---*/
+ 	}
+
+
+ /*---STRUCTURE---*/
+
+ div#page-container {
+ 	margin: 0 auto;
+ 	width: 710px;
+ 	background: #fff; /*---Page: Background Color---*/
+ 	overflow: hidden;
+ 	padding: 20px;
+ 	-webkit-border-radius: 10px;
+ 	}
+
+ div#header-container {
+ 	overflow: hidden;
+ 	margin: 0 0 20px 0;
+ 	}
+
+ div#tagline-container {
+ 	overflow: hidden;
+ 	text-align: left;
+ 	}
+
+ div#info-container {
+ 	overflow: hidden;
+ 	}
+
+ div#about-container {
+ 	width: 345px;
+ 	margin: 0 0 20px 0;
+ 	overflow: hidden;
+ 	float: left;
+ 	}
+
+ div#contact-container {
+ 	width: 345px;
+ 	margin: 0;
+ 	overflow: hidden;
+ 	float: right;
+ 	}''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''', NULL, 'Georgia', 'Georgia', 'f', 'f', '#f5f4f4', '#767574', '#242420', '#fff', NULL, NULL, 'Arial', 'center', 'repeat', '#242420', 'Helvetica', '#eee', '2009-08-09 20:43:58')[0m
+[paperclip] Saving attachments.
+  [4;36;1mUser Create (0.4ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "photo_file_name", "photo_file_size", "crypted_password", "account_tier", "about_me", "has_read_terms", "remember_token_expires_at", "activation_code", "photo_updated_at", "layout_type", "photo_content_type", "remember_token", "tag_line", "first_name", "login", "last_name", "design_type", "email", "created_at") VALUES('', 'cf056c82fb0a3d2f97848f1f668806c10e625a6e', '2009-08-09 20:43:58', '2009-08-09 20:43:58', NULL, NULL, 'fea47732276111bf9f3b043b6085d8f9e64389bc', 1, NULL, 'f', NULL, '7e29fa8aa456ca7bfdfa537620d2f16a14791007', NULL, 1, NULL, NULL, NULL, NULL, 'mmaloney', NULL, 1, 'michael@maloney.com', '2009-08-09 20:43:58')[0m
+  [4;35;1mPortfolio Update (0.1ms)[0m   [0mUPDATE "portfolios" SET "updated_at" = '2009-08-09 20:43:58', "user_id" = 20 WHERE "id" = 22[0m
+  [4;36;1mDesign Update (0.2ms)[0m   [0;1mUPDATE "designs" SET "updated_at" = '2009-08-09 20:43:58', "user_id" = 20 WHERE "id" = 5[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login" = 'mmaloney' AND "users".id <> 20) LIMIT 1[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'michael@maloney.com' AND "users".id <> 20) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering users/new
+Completed in 70ms (View: 14, DB: 2) | 200 OK [http://0.0.0.0/users]
+
+
+Processing UsersController#update (for 127.0.0.1 at 2009-08-09 16:44:02) [PUT]
+  Parameters: {"user"=>{"has_read_terms"=>"1", "password_confirmation"=>"", "password"=>"", "login"=>"mmaloney", "email"=>"michael@maloney.com"}, "commit"=>"Sign Up", "authenticity_token"=>"xW/iyWhxrfMXLYZFxKCc1vG4uIZdZPbmiLWBzXuiPUU=", "id"=>"20"}
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of ActiveRecord::Base.
+The error occurred while evaluating nil.update_attributes):
+  app/controllers/users_controller.rb:17:in `update'
+
+Rendered rescues/_trace (28.8ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-08-09 16:44:23) [GET]
+Rendering template within layouts/template
+Rendering main_pages/home
+Completed in 2ms (View: 2, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-08-09 16:44:26) [GET]
+Rendering template within layouts/template
+Rendering users/new
+Completed in 14ms (View: 5, DB: 0) | 200 OK [http://0.0.0.0/signup]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-08-09 16:44:48) [GET]
+Rendering template within layouts/template
+Rendering users/new
+Completed in 24ms (View: 14, DB: 0) | 200 OK [http://0.0.0.0/signup]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-08-09 16:45:04) [POST]
+  Parameters: {"user"=>{"has_read_terms"=>"1", "password_confirmation"=>"fitzgoogoo", "password"=>"fitzgoogoo", "login"=>"mmaloney", "email"=>"michael@maloney.com"}, "commit"=>"Sign Up", "authenticity_token"=>"xW/iyWhxrfMXLYZFxKCc1vG4uIZdZPbmiLWBzXuiPUU="}
+WARNING: Can't mass-assign these protected attributes: has_read_terms
+  [4;35;1mPortfolio Create (0.3ms)[0m   [0mINSERT INTO "portfolios" ("updated_at", "user_id", "created_at") VALUES('2009-08-09 20:45:04', NULL, '2009-08-09 20:45:04')[0m
+  [4;36;1mDesign Create (0.4ms)[0m   [0;1mINSERT INTO "designs" ("background_color", "text_serif", "title_serif", "tagline_color", "tagline_bold", "header_image_content_type", "updated_at", "link_color", "title_bold", "tagline_serif", "text_size", "header_image_file_name", "header_image_updated_at", "css_text", "header_image_file_size", "title_font", "tagline_font", "title_italic", "tagline_italic", "link_img_border_color", "text_color", "title_color", "page_bg_color", "tagline_size", "user_id", "text_font_1", "background_align", "background_tile", "link_hover_color", "text_font_2", "border_color", "created_at") VALUES('#dedddb', 'f', 't', '#242420', 'f', NULL, '2009-08-09 20:45:04', '#72b225', 'f', 't', '12', NULL, NULL, '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''body {
+ 	margin: 20px;
+ 	background-color: #dedddb; /*---Background: Color---*/
+ 	background-position: top; /*---Background: Alignment---*/
+ 	background-image: none; /*---Background: Image---*/
+ 	background-repeat: repeat; /*---Background: Tile---*/
+ 	font-family: Arial, Helvetica, sans-serif; /*---Text: Font---*/
+ 	font-size: 12px; /*---Text: Size---*/
+ 	color: #767574; /*---Text: Color---*/
+ 	line-height: 150%;
+ 	}
+
+ a:link,
+ a:visited {
+ 	color: #72b225; /*---Links: Color---*/
+ 	}
+
+ a:hover,
+ a:visited:hover {
+ 	color: #242420; /*---Text: Color---*/
+ 	}
+
+ h1 {
+ 	font-size: ; /*---Tagline: Size---*/
+ 	color: #242420; /*---Tagline: Color---*/
+ 	font-family: Georgia, serif; /*---Tagline: Font---*/
+ 	font-weight: normal; /*---Tagline: Bold---*/
+ 	font-style: normal; /*---Tagline: Italic---*/
+ 	}
+
+ h2, h3, h4, h5, h6 {
+ 	color: #242420; /*---Titles: Color---*/
+ 	font-family: Georgia, serif; /*---Titles: Font---*/
+ 	font-weight: normal; /*---Titles: Bold---*/
+ 	font-style: normal; /*---Titles: Italic---*/
+ 	}
+
+ hr {
+ 	border: 0;
+ 	height: 1px;
+ 	background: #eee; /*---Border: Color---*/
+ 	margin: 20px 0;
+ 	}
+
+ a:link img, a:visited img {
+ 	display: block;
+ 	border: 5px solid #f5f4f4; /*---Border: Color---*/
+ 	}
+
+ a:hover img, a:visited:hover img {	
+ 	border: 5px solid #72b225; /*---Link: Color---*/
+ 	}
+
+
+ /*---STRUCTURE---*/
+
+ div#page-container {
+ 	margin: 0 auto;
+ 	width: 710px;
+ 	background: #fff; /*---Page: Background Color---*/
+ 	overflow: hidden;
+ 	padding: 20px;
+ 	-webkit-border-radius: 10px;
+ 	}
+
+ div#header-container {
+ 	overflow: hidden;
+ 	margin: 0 0 20px 0;
+ 	}
+
+ div#tagline-container {
+ 	overflow: hidden;
+ 	text-align: left;
+ 	}
+
+ div#info-container {
+ 	overflow: hidden;
+ 	}
+
+ div#about-container {
+ 	width: 345px;
+ 	margin: 0 0 20px 0;
+ 	overflow: hidden;
+ 	float: left;
+ 	}
+
+ div#contact-container {
+ 	width: 345px;
+ 	margin: 0;
+ 	overflow: hidden;
+ 	float: right;
+ 	}''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''', NULL, 'Georgia', 'Georgia', 'f', 'f', '#f5f4f4', '#767574', '#242420', '#fff', NULL, NULL, 'Arial', 'center', 'repeat', '#242420', 'Helvetica', '#eee', '2009-08-09 20:45:04')[0m
+[paperclip] Saving attachments.
+  [4;35;1mUser Create (0.0ms)[0m   [0mSQLite3::SQLException: column login is not unique: INSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "photo_file_name", "photo_file_size", "crypted_password", "account_tier", "about_me", "has_read_terms", "remember_token_expires_at", "activation_code", "photo_updated_at", "layout_type", "photo_content_type", "remember_token", "tag_line", "first_name", "login", "last_name", "design_type", "email", "created_at") VALUES('', 'eda4b05a8f82eb594b1ee1ecfc00daedbc3246f1', '2009-08-09 20:45:04', '2009-08-09 20:45:04', NULL, NULL, 'f73f94fab6b895611fe7abec4b8fd48fc8ead962', 1, NULL, 'f', NULL, 'd994a87ca5960e90a07d38cdee826dc4823c74e0', NULL, 1, NULL, NULL, NULL, NULL, 'mmaloney', NULL, 1, 'michael@maloney.com', '2009-08-09 20:45:04')[0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: column login is not unique: INSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "photo_file_name", "photo_file_size", "crypted_password", "account_tier", "about_me", "has_read_terms", "remember_token_expires_at", "activation_code", "photo_updated_at", "layout_type", "photo_content_type", "remember_token", "tag_line", "first_name", "login", "last_name", "design_type", "email", "created_at") VALUES('', 'eda4b05a8f82eb594b1ee1ecfc00daedbc3246f1', '2009-08-09 20:45:04', '2009-08-09 20:45:04', NULL, NULL, 'f73f94fab6b895611fe7abec4b8fd48fc8ead962', 1, NULL, 'f', NULL, 'd994a87ca5960e90a07d38cdee826dc4823c74e0', NULL, 1, NULL, NULL, NULL, NULL, 'mmaloney', NULL, 1, 'michael@maloney.com', '2009-08-09 20:45:04')):
+  app/models/user.rb:82:in `activate!'
+  app/controllers/users_controller.rb:32:in `create'
+
+Rendered rescues/_trace (103.9ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-08-09 16:45:22) [POST]
+  Parameters: {"user"=>{"has_read_terms"=>"1", "password_confirmation"=>"fitzgoogoo", "password"=>"fitzgoogoo", "login"=>"mcm1983", "email"=>"michael@maloney.com"}, "commit"=>"Sign Up", "authenticity_token"=>"xW/iyWhxrfMXLYZFxKCc1vG4uIZdZPbmiLWBzXuiPUU="}
+WARNING: Can't mass-assign these protected attributes: has_read_terms
+  [4;36;1mPortfolio Create (0.3ms)[0m   [0;1mINSERT INTO "portfolios" ("updated_at", "user_id", "created_at") VALUES('2009-08-09 20:45:22', NULL, '2009-08-09 20:45:22')[0m
+  [4;35;1mDesign Create (0.3ms)[0m   [0mINSERT INTO "designs" ("background_color", "text_serif", "title_serif", "tagline_color", "tagline_bold", "header_image_content_type", "updated_at", "link_color", "title_bold", "tagline_serif", "text_size", "header_image_file_name", "header_image_updated_at", "css_text", "header_image_file_size", "title_font", "tagline_font", "title_italic", "tagline_italic", "link_img_border_color", "text_color", "title_color", "page_bg_color", "tagline_size", "user_id", "text_font_1", "background_align", "background_tile", "link_hover_color", "text_font_2", "border_color", "created_at") VALUES('#dedddb', 'f', 't', '#242420', 'f', NULL, '2009-08-09 20:45:22', '#72b225', 'f', 't', '12', NULL, NULL, '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''body {
+ 	margin: 20px;
+ 	background-color: #dedddb; /*---Background: Color---*/
+ 	background-position: top; /*---Background: Alignment---*/
+ 	background-image: none; /*---Background: Image---*/
+ 	background-repeat: repeat; /*---Background: Tile---*/
+ 	font-family: Arial, Helvetica, sans-serif; /*---Text: Font---*/
+ 	font-size: 12px; /*---Text: Size---*/
+ 	color: #767574; /*---Text: Color---*/
+ 	line-height: 150%;
+ 	}
+
+ a:link,
+ a:visited {
+ 	color: #72b225; /*---Links: Color---*/
+ 	}
+
+ a:hover,
+ a:visited:hover {
+ 	color: #242420; /*---Text: Color---*/
+ 	}
+
+ h1 {
+ 	font-size: ; /*---Tagline: Size---*/
+ 	color: #242420; /*---Tagline: Color---*/
+ 	font-family: Georgia, serif; /*---Tagline: Font---*/
+ 	font-weight: normal; /*---Tagline: Bold---*/
+ 	font-style: normal; /*---Tagline: Italic---*/
+ 	}
+
+ h2, h3, h4, h5, h6 {
+ 	color: #242420; /*---Titles: Color---*/
+ 	font-family: Georgia, serif; /*---Titles: Font---*/
+ 	font-weight: normal; /*---Titles: Bold---*/
+ 	font-style: normal; /*---Titles: Italic---*/
+ 	}
+
+ hr {
+ 	border: 0;
+ 	height: 1px;
+ 	background: #eee; /*---Border: Color---*/
+ 	margin: 20px 0;
+ 	}
+
+ a:link img, a:visited img {
+ 	display: block;
+ 	border: 5px solid #f5f4f4; /*---Border: Color---*/
+ 	}
+
+ a:hover img, a:visited:hover img {	
+ 	border: 5px solid #72b225; /*---Link: Color---*/
+ 	}
+
+
+ /*---STRUCTURE---*/
+
+ div#page-container {
+ 	margin: 0 auto;
+ 	width: 710px;
+ 	background: #fff; /*---Page: Background Color---*/
+ 	overflow: hidden;
+ 	padding: 20px;
+ 	-webkit-border-radius: 10px;
+ 	}
+
+ div#header-container {
+ 	overflow: hidden;
+ 	margin: 0 0 20px 0;
+ 	}
+
+ div#tagline-container {
+ 	overflow: hidden;
+ 	text-align: left;
+ 	}
+
+ div#info-container {
+ 	overflow: hidden;
+ 	}
+
+ div#about-container {
+ 	width: 345px;
+ 	margin: 0 0 20px 0;
+ 	overflow: hidden;
+ 	float: left;
+ 	}
+
+ div#contact-container {
+ 	width: 345px;
+ 	margin: 0;
+ 	overflow: hidden;
+ 	float: right;
+ 	}''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''', NULL, 'Georgia', 'Georgia', 'f', 'f', '#f5f4f4', '#767574', '#242420', '#fff', NULL, NULL, 'Arial', 'center', 'repeat', '#242420', 'Helvetica', '#eee', '2009-08-09 20:45:22')[0m
+[paperclip] Saving attachments.
+  [4;36;1mUser Create (0.3ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "photo_file_name", "photo_file_size", "crypted_password", "account_tier", "about_me", "has_read_terms", "remember_token_expires_at", "activation_code", "photo_updated_at", "layout_type", "photo_content_type", "remember_token", "tag_line", "first_name", "login", "last_name", "design_type", "email", "created_at") VALUES('', '3d05d643e9fa4cb76213f95ec516343ab8eae77e', '2009-08-09 20:45:22', '2009-08-09 20:45:22', NULL, NULL, '0df097a586b3d13a0c3ded7f7a4614b3a7476fab', 1, NULL, 'f', NULL, '284dc1be66c6e0af9493de3c4d4351f961647ac8', NULL, 1, NULL, NULL, NULL, NULL, 'mcm1983', NULL, 1, 'michael@maloney.com', '2009-08-09 20:45:22')[0m
+  [4;35;1mPortfolio Update (0.1ms)[0m   [0mUPDATE "portfolios" SET "updated_at" = '2009-08-09 20:45:22', "user_id" = 21 WHERE "id" = 24[0m
+  [4;36;1mDesign Update (0.1ms)[0m   [0;1mUPDATE "designs" SET "updated_at" = '2009-08-09 20:45:22', "user_id" = 21 WHERE "id" = 7[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login" = 'mcm1983' AND "users".id <> 21) LIMIT 1[0m
+  [4;36;1mUser Exists (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'michael@maloney.com' AND "users".id <> 21) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering users/new
+Completed in 56ms (View: 4, DB: 1) | 200 OK [http://0.0.0.0/users]
+
+
+Processing UsersController#update (for 127.0.0.1 at 2009-08-09 16:45:49) [PUT]
+  Parameters: {"user"=>{"has_read_terms"=>"1", "password_confirmation"=>"fitzgoogoo", "password"=>"fitzgoogoo", "login"=>"mcm1983", "email"=>"mcm@crushlovely.com"}, "commit"=>"Sign Up", "authenticity_token"=>"xW/iyWhxrfMXLYZFxKCc1vG4uIZdZPbmiLWBzXuiPUU=", "id"=>"21"}
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of ActiveRecord::Base.
+The error occurred while evaluating nil.update_attributes):
+  app/controllers/users_controller.rb:17:in `update'
+
+Rendered rescues/_trace (32.4ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-08-09 16:50:10) [GET]
+Rendering template within layouts/template
+Rendering main_pages/home
+Completed in 2ms (View: 2, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-08-09 16:50:12) [GET]
+Rendering template within layouts/template
+Rendering users/new
+Completed in 20ms (View: 12, DB: 0) | 200 OK [http://0.0.0.0/signup]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-08-09 16:50:29) [POST]
+  Parameters: {"user"=>{"has_read_terms"=>"1", "password_confirmation"=>"giraffe", "password"=>"giraffe", "login"=>"mcm1983", "email"=>"mcm@crushlovely.com"}, "commit"=>"Sign Up", "authenticity_token"=>"xW/iyWhxrfMXLYZFxKCc1vG4uIZdZPbmiLWBzXuiPUU="}
+WARNING: Can't mass-assign these protected attributes: has_read_terms
+  [4;35;1mPortfolio Create (0.3ms)[0m   [0mINSERT INTO "portfolios" ("updated_at", "user_id", "created_at") VALUES('2009-08-09 20:50:29', NULL, '2009-08-09 20:50:29')[0m
+  [4;36;1mDesign Create (0.4ms)[0m   [0;1mINSERT INTO "designs" ("background_color", "text_serif", "title_serif", "tagline_color", "tagline_bold", "header_image_content_type", "updated_at", "link_color", "title_bold", "tagline_serif", "text_size", "header_image_file_name", "header_image_updated_at", "css_text", "header_image_file_size", "title_font", "tagline_font", "title_italic", "tagline_italic", "link_img_border_color", "text_color", "title_color", "page_bg_color", "tagline_size", "user_id", "text_font_1", "background_align", "background_tile", "link_hover_color", "text_font_2", "border_color", "created_at") VALUES('#dedddb', 'f', 't', '#242420', 'f', NULL, '2009-08-09 20:50:29', '#72b225', 'f', 't', '12', NULL, NULL, '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''body {
+ 	margin: 20px;
+ 	background-color: #dedddb; /*---Background: Color---*/
+ 	background-position: top; /*---Background: Alignment---*/
+ 	background-image: none; /*---Background: Image---*/
+ 	background-repeat: repeat; /*---Background: Tile---*/
+ 	font-family: Arial, Helvetica, sans-serif; /*---Text: Font---*/
+ 	font-size: 12px; /*---Text: Size---*/
+ 	color: #767574; /*---Text: Color---*/
+ 	line-height: 150%;
+ 	}
+
+ a:link,
+ a:visited {
+ 	color: #72b225; /*---Links: Color---*/
+ 	}
+
+ a:hover,
+ a:visited:hover {
+ 	color: #242420; /*---Text: Color---*/
+ 	}
+
+ h1 {
+ 	font-size: ; /*---Tagline: Size---*/
+ 	color: #242420; /*---Tagline: Color---*/
+ 	font-family: Georgia, serif; /*---Tagline: Font---*/
+ 	font-weight: normal; /*---Tagline: Bold---*/
+ 	font-style: normal; /*---Tagline: Italic---*/
+ 	}
+
+ h2, h3, h4, h5, h6 {
+ 	color: #242420; /*---Titles: Color---*/
+ 	font-family: Georgia, serif; /*---Titles: Font---*/
+ 	font-weight: normal; /*---Titles: Bold---*/
+ 	font-style: normal; /*---Titles: Italic---*/
+ 	}
+
+ hr {
+ 	border: 0;
+ 	height: 1px;
+ 	background: #eee; /*---Border: Color---*/
+ 	margin: 20px 0;
+ 	}
+
+ a:link img, a:visited img {
+ 	display: block;
+ 	border: 5px solid #f5f4f4; /*---Border: Color---*/
+ 	}
+
+ a:hover img, a:visited:hover img {	
+ 	border: 5px solid #72b225; /*---Link: Color---*/
+ 	}
+
+
+ /*---STRUCTURE---*/
+
+ div#page-container {
+ 	margin: 0 auto;
+ 	width: 710px;
+ 	background: #fff; /*---Page: Background Color---*/
+ 	overflow: hidden;
+ 	padding: 20px;
+ 	-webkit-border-radius: 10px;
+ 	}
+
+ div#header-container {
+ 	overflow: hidden;
+ 	margin: 0 0 20px 0;
+ 	}
+
+ div#tagline-container {
+ 	overflow: hidden;
+ 	text-align: left;
+ 	}
+
+ div#info-container {
+ 	overflow: hidden;
+ 	}
+
+ div#about-container {
+ 	width: 345px;
+ 	margin: 0 0 20px 0;
+ 	overflow: hidden;
+ 	float: left;
+ 	}
+
+ div#contact-container {
+ 	width: 345px;
+ 	margin: 0;
+ 	overflow: hidden;
+ 	float: right;
+ 	}''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''', NULL, 'Georgia', 'Georgia', 'f', 'f', '#f5f4f4', '#767574', '#242420', '#fff', NULL, NULL, 'Arial', 'center', 'repeat', '#242420', 'Helvetica', '#eee', '2009-08-09 20:50:29')[0m
+[paperclip] Saving attachments.
+  [4;35;1mUser Create (0.0ms)[0m   [0mSQLite3::SQLException: column login is not unique: INSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "photo_file_name", "photo_file_size", "crypted_password", "account_tier", "about_me", "has_read_terms", "remember_token_expires_at", "activation_code", "photo_updated_at", "layout_type", "photo_content_type", "remember_token", "tag_line", "first_name", "login", "last_name", "design_type", "email", "created_at") VALUES('', 'df35410d4bb45b4cb836440e02d4159a39ec70c5', '2009-08-09 20:50:29', '2009-08-09 20:50:29', NULL, NULL, 'e8efadae9590323aae2edd98e033c5209d96dd77', 1, NULL, 'f', NULL, '98340c4b6db8a246d5e50e2512cca44f20d6aaaa', NULL, 1, NULL, NULL, NULL, NULL, 'mcm1983', NULL, 1, 'mcm@crushlovely.com', '2009-08-09 20:50:29')[0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: column login is not unique: INSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "photo_file_name", "photo_file_size", "crypted_password", "account_tier", "about_me", "has_read_terms", "remember_token_expires_at", "activation_code", "photo_updated_at", "layout_type", "photo_content_type", "remember_token", "tag_line", "first_name", "login", "last_name", "design_type", "email", "created_at") VALUES('', 'df35410d4bb45b4cb836440e02d4159a39ec70c5', '2009-08-09 20:50:29', '2009-08-09 20:50:29', NULL, NULL, 'e8efadae9590323aae2edd98e033c5209d96dd77', 1, NULL, 'f', NULL, '98340c4b6db8a246d5e50e2512cca44f20d6aaaa', NULL, 1, NULL, NULL, NULL, NULL, 'mcm1983', NULL, 1, 'mcm@crushlovely.com', '2009-08-09 20:50:29')):
+  app/models/user.rb:82:in `activate!'
+  app/controllers/users_controller.rb:32:in `create'
+
+Rendered rescues/_trace (50.1ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+New Relic Agent not running
+  [4;36;1mUser Load (1.5ms)[0m   [0;1mSELECT * FROM "users" [0m
+  [4;35;1mUser Delete all (1.6ms)[0m   [0mDELETE FROM "users" WHERE 1=1[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" [0m
+Starting the New Relic Agent
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSELECT version FROM schema_migrations[0m
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-08-09 16:52:25) [GET]
+Rendering template within layouts/template
+Rendering main_pages/home
+Completed in 10ms (View: 10, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing MainPagesController#directory (for 127.0.0.1 at 2009-08-09 16:52:29) [GET]
+Rendering template within layouts/template
+Rendering main_pages/directory
+Completed in 5ms (View: 5, DB: 0) | 200 OK [http://0.0.0.0/directory]
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-08-09 16:52:31) [GET]
+Rendering template within layouts/template
+Rendering main_pages/home
+Completed in 2ms (View: 2, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-08-09 16:52:32) [GET]
+Rendering template within layouts/template
+Rendering users/new
+Completed in 33ms (View: 15, DB: 0) | 200 OK [http://0.0.0.0/signup]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-08-09 16:52:47) [POST]
+  Parameters: {"user"=>{"has_read_terms"=>"1", "password_confirmation"=>"giraffe", "password"=>"giraffe", "login"=>"mcmaloney", "email"=>"mcm@crushlovely.com"}, "commit"=>"Sign Up", "authenticity_token"=>"xW/iyWhxrfMXLYZFxKCc1vG4uIZdZPbmiLWBzXuiPUU="}
+WARNING: Can't mass-assign these protected attributes: has_read_terms
+  [4;36;1mPortfolio Create (0.5ms)[0m   [0;1mINSERT INTO "portfolios" ("updated_at", "user_id", "created_at") VALUES('2009-08-09 20:52:47', NULL, '2009-08-09 20:52:47')[0m
+  [4;35;1mDesign Create (0.4ms)[0m   [0mINSERT INTO "designs" ("background_color", "text_serif", "title_serif", "tagline_color", "tagline_bold", "header_image_content_type", "updated_at", "link_color", "title_bold", "tagline_serif", "text_size", "header_image_file_name", "header_image_updated_at", "css_text", "header_image_file_size", "title_font", "tagline_font", "title_italic", "tagline_italic", "link_img_border_color", "text_color", "title_color", "page_bg_color", "tagline_size", "user_id", "text_font_1", "background_align", "background_tile", "link_hover_color", "text_font_2", "border_color", "created_at") VALUES('#dedddb', 'f', 't', '#242420', 'f', NULL, '2009-08-09 20:52:47', '#72b225', 'f', 't', '12', NULL, NULL, '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''body {
+ 	margin: 20px;
+ 	background-color: #dedddb; /*---Background: Color---*/
+ 	background-position: top; /*---Background: Alignment---*/
+ 	background-image: none; /*---Background: Image---*/
+ 	background-repeat: repeat; /*---Background: Tile---*/
+ 	font-family: Arial, Helvetica, sans-serif; /*---Text: Font---*/
+ 	font-size: 12px; /*---Text: Size---*/
+ 	color: #767574; /*---Text: Color---*/
+ 	line-height: 150%;
+ 	}
+
+ a:link,
+ a:visited {
+ 	color: #72b225; /*---Links: Color---*/
+ 	}
+
+ a:hover,
+ a:visited:hover {
+ 	color: #242420; /*---Text: Color---*/
+ 	}
+
+ h1 {
+ 	font-size: ; /*---Tagline: Size---*/
+ 	color: #242420; /*---Tagline: Color---*/
+ 	font-family: Georgia, serif; /*---Tagline: Font---*/
+ 	font-weight: normal; /*---Tagline: Bold---*/
+ 	font-style: normal; /*---Tagline: Italic---*/
+ 	}
+
+ h2, h3, h4, h5, h6 {
+ 	color: #242420; /*---Titles: Color---*/
+ 	font-family: Georgia, serif; /*---Titles: Font---*/
+ 	font-weight: normal; /*---Titles: Bold---*/
+ 	font-style: normal; /*---Titles: Italic---*/
+ 	}
+
+ hr {
+ 	border: 0;
+ 	height: 1px;
+ 	background: #eee; /*---Border: Color---*/
+ 	margin: 20px 0;
+ 	}
+
+ a:link img, a:visited img {
+ 	display: block;
+ 	border: 5px solid #f5f4f4; /*---Border: Color---*/
+ 	}
+
+ a:hover img, a:visited:hover img {	
+ 	border: 5px solid #72b225; /*---Link: Color---*/
+ 	}
+
+
+ /*---STRUCTURE---*/
+
+ div#page-container {
+ 	margin: 0 auto;
+ 	width: 710px;
+ 	background: #fff; /*---Page: Background Color---*/
+ 	overflow: hidden;
+ 	padding: 20px;
+ 	-webkit-border-radius: 10px;
+ 	}
+
+ div#header-container {
+ 	overflow: hidden;
+ 	margin: 0 0 20px 0;
+ 	}
+
+ div#tagline-container {
+ 	overflow: hidden;
+ 	text-align: left;
+ 	}
+
+ div#info-container {
+ 	overflow: hidden;
+ 	}
+
+ div#about-container {
+ 	width: 345px;
+ 	margin: 0 0 20px 0;
+ 	overflow: hidden;
+ 	float: left;
+ 	}
+
+ div#contact-container {
+ 	width: 345px;
+ 	margin: 0;
+ 	overflow: hidden;
+ 	float: right;
+ 	}''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''', NULL, 'Georgia', 'Georgia', 'f', 'f', '#f5f4f4', '#767574', '#242420', '#fff', NULL, NULL, 'Arial', 'center', 'repeat', '#242420', 'Helvetica', '#eee', '2009-08-09 20:52:47')[0m
+[paperclip] Saving attachments.
+  [4;36;1mUser Create (0.4ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "photo_file_name", "photo_file_size", "crypted_password", "account_tier", "about_me", "has_read_terms", "remember_token_expires_at", "activation_code", "photo_updated_at", "layout_type", "photo_content_type", "remember_token", "tag_line", "first_name", "login", "last_name", "design_type", "email", "created_at") VALUES('', '630c567c6b2f1a66e7336acdce9b6c46320608b9', '2009-08-09 20:52:47', '2009-08-09 20:52:47', NULL, NULL, '78064940100cd8c7d6ec322e9188b05b719df932', 1, NULL, 'f', NULL, '1b8ede14350531b63dfb5ed0c82db2a5c4b33e0a', NULL, 1, NULL, NULL, NULL, NULL, 'mcmaloney', NULL, 1, 'mcm@crushlovely.com', '2009-08-09 20:52:47')[0m
+  [4;35;1mPortfolio Update (0.1ms)[0m   [0mUPDATE "portfolios" SET "updated_at" = '2009-08-09 20:52:47', "user_id" = 22 WHERE "id" = 26[0m
+  [4;36;1mDesign Update (0.1ms)[0m   [0;1mUPDATE "designs" SET "updated_at" = '2009-08-09 20:52:47', "user_id" = 22 WHERE "id" = 9[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login" = 'mcmaloney' AND "users".id <> 22) LIMIT 1[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'mcm@crushlovely.com' AND "users".id <> 22) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering users/new
+Completed in 153ms (View: 3, DB: 2) | 200 OK [http://0.0.0.0/users]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-08-09 16:53:07) [POST]
+  Parameters: {"user"=>{"has_read_terms"=>"1", "password_confirmation"=>"fitzgoogoo", "password"=>"fitzgoogoo", "login"=>"mcmaloney", "email"=>"mcm@crushlovely.com"}, "commit"=>"Sign Up", "authenticity_token"=>"xW/iyWhxrfMXLYZFxKCc1vG4uIZdZPbmiLWBzXuiPUU="}
+WARNING: Can't mass-assign these protected attributes: has_read_terms
+  [4;35;1mPortfolio Create (0.3ms)[0m   [0mINSERT INTO "portfolios" ("updated_at", "user_id", "created_at") VALUES('2009-08-09 20:53:07', NULL, '2009-08-09 20:53:07')[0m
+  [4;36;1mDesign Create (0.4ms)[0m   [0;1mINSERT INTO "designs" ("background_color", "text_serif", "title_serif", "tagline_color", "tagline_bold", "header_image_content_type", "updated_at", "link_color", "title_bold", "tagline_serif", "text_size", "header_image_file_name", "header_image_updated_at", "css_text", "header_image_file_size", "title_font", "tagline_font", "title_italic", "tagline_italic", "link_img_border_color", "text_color", "title_color", "page_bg_color", "tagline_size", "user_id", "text_font_1", "background_align", "background_tile", "link_hover_color", "text_font_2", "border_color", "created_at") VALUES('#dedddb', 'f', 't', '#242420', 'f', NULL, '2009-08-09 20:53:07', '#72b225', 'f', 't', '12', NULL, NULL, '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''body {
+ 	margin: 20px;
+ 	background-color: #dedddb; /*---Background: Color---*/
+ 	background-position: top; /*---Background: Alignment---*/
+ 	background-image: none; /*---Background: Image---*/
+ 	background-repeat: repeat; /*---Background: Tile---*/
+ 	font-family: Arial, Helvetica, sans-serif; /*---Text: Font---*/
+ 	font-size: 12px; /*---Text: Size---*/
+ 	color: #767574; /*---Text: Color---*/
+ 	line-height: 150%;
+ 	}
+
+ a:link,
+ a:visited {
+ 	color: #72b225; /*---Links: Color---*/
+ 	}
+
+ a:hover,
+ a:visited:hover {
+ 	color: #242420; /*---Text: Color---*/
+ 	}
+
+ h1 {
+ 	font-size: ; /*---Tagline: Size---*/
+ 	color: #242420; /*---Tagline: Color---*/
+ 	font-family: Georgia, serif; /*---Tagline: Font---*/
+ 	font-weight: normal; /*---Tagline: Bold---*/
+ 	font-style: normal; /*---Tagline: Italic---*/
+ 	}
+
+ h2, h3, h4, h5, h6 {
+ 	color: #242420; /*---Titles: Color---*/
+ 	font-family: Georgia, serif; /*---Titles: Font---*/
+ 	font-weight: normal; /*---Titles: Bold---*/
+ 	font-style: normal; /*---Titles: Italic---*/
+ 	}
+
+ hr {
+ 	border: 0;
+ 	height: 1px;
+ 	background: #eee; /*---Border: Color---*/
+ 	margin: 20px 0;
+ 	}
+
+ a:link img, a:visited img {
+ 	display: block;
+ 	border: 5px solid #f5f4f4; /*---Border: Color---*/
+ 	}
+
+ a:hover img, a:visited:hover img {	
+ 	border: 5px solid #72b225; /*---Link: Color---*/
+ 	}
+
+
+ /*---STRUCTURE---*/
+
+ div#page-container {
+ 	margin: 0 auto;
+ 	width: 710px;
+ 	background: #fff; /*---Page: Background Color---*/
+ 	overflow: hidden;
+ 	padding: 20px;
+ 	-webkit-border-radius: 10px;
+ 	}
+
+ div#header-container {
+ 	overflow: hidden;
+ 	margin: 0 0 20px 0;
+ 	}
+
+ div#tagline-container {
+ 	overflow: hidden;
+ 	text-align: left;
+ 	}
+
+ div#info-container {
+ 	overflow: hidden;
+ 	}
+
+ div#about-container {
+ 	width: 345px;
+ 	margin: 0 0 20px 0;
+ 	overflow: hidden;
+ 	float: left;
+ 	}
+
+ div#contact-container {
+ 	width: 345px;
+ 	margin: 0;
+ 	overflow: hidden;
+ 	float: right;
+ 	}''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''', NULL, 'Georgia', 'Georgia', 'f', 'f', '#f5f4f4', '#767574', '#242420', '#fff', NULL, NULL, 'Arial', 'center', 'repeat', '#242420', 'Helvetica', '#eee', '2009-08-09 20:53:07')[0m
+[paperclip] Saving attachments.
+  [4;35;1mUser Create (0.0ms)[0m   [0mSQLite3::SQLException: column login is not unique: INSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "photo_file_name", "photo_file_size", "crypted_password", "account_tier", "about_me", "has_read_terms", "remember_token_expires_at", "activation_code", "photo_updated_at", "layout_type", "photo_content_type", "remember_token", "tag_line", "first_name", "login", "last_name", "design_type", "email", "created_at") VALUES('', 'd956033c21a20d189bef906fd49c83deeb95ccd6', '2009-08-09 20:53:07', '2009-08-09 20:53:07', NULL, NULL, '7995b16c77c0cfced4c3dde1612db706d4f83b2f', 1, NULL, 'f', NULL, 'b93a018b07b68fb73a19a7f2bd5a323de9646818', NULL, 1, NULL, NULL, NULL, NULL, 'mcmaloney', NULL, 1, 'mcm@crushlovely.com', '2009-08-09 20:53:07')[0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: column login is not unique: INSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "photo_file_name", "photo_file_size", "crypted_password", "account_tier", "about_me", "has_read_terms", "remember_token_expires_at", "activation_code", "photo_updated_at", "layout_type", "photo_content_type", "remember_token", "tag_line", "first_name", "login", "last_name", "design_type", "email", "created_at") VALUES('', 'd956033c21a20d189bef906fd49c83deeb95ccd6', '2009-08-09 20:53:07', '2009-08-09 20:53:07', NULL, NULL, '7995b16c77c0cfced4c3dde1612db706d4f83b2f', 1, NULL, 'f', NULL, 'b93a018b07b68fb73a19a7f2bd5a323de9646818', NULL, 1, NULL, NULL, NULL, NULL, 'mcmaloney', NULL, 1, 'mcm@crushlovely.com', '2009-08-09 20:53:07')):
+  app/models/user.rb:82:in `activate!'
+  app/controllers/users_controller.rb:32:in `create'
+
+Rendered rescues/_trace (43.4ms)
+Rendered rescues/_request_and_response (1.6ms)
+Rendering rescues/layout (internal_server_error)
+New Relic Agent not running
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT * FROM "users" [0m
+  [4;35;1mUser Delete all (1.4ms)[0m   [0mDELETE FROM "users" WHERE 1=1[0m
+Starting the New Relic Agent
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSELECT version FROM schema_migrations[0m
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-08-09 16:54:43) [GET]
+Rendering template within layouts/template
+Rendering main_pages/home
+Completed in 59ms (View: 59, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-08-09 16:54:46) [GET]
+Rendering template within layouts/template
+Rendering users/new
+Completed in 32ms (View: 15, DB: 0) | 200 OK [http://0.0.0.0/signup]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-08-09 16:55:05) [POST]
+  Parameters: {"user"=>{"has_read_terms"=>"1", "password_confirmation"=>"giraffe", "password"=>"giraffe", "login"=>"hrwalker", "email"=>"hilary@walker.com"}, "commit"=>"Sign Up", "authenticity_token"=>"xW/iyWhxrfMXLYZFxKCc1vG4uIZdZPbmiLWBzXuiPUU="}
+WARNING: Can't mass-assign these protected attributes: has_read_terms
+  [4;36;1mPortfolio Create (0.4ms)[0m   [0;1mINSERT INTO "portfolios" ("updated_at", "user_id", "created_at") VALUES('2009-08-09 20:55:05', NULL, '2009-08-09 20:55:05')[0m
+  [4;35;1mDesign Create (0.4ms)[0m   [0mINSERT INTO "designs" ("background_color", "text_serif", "title_serif", "tagline_color", "tagline_bold", "header_image_content_type", "updated_at", "link_color", "title_bold", "tagline_serif", "text_size", "header_image_file_name", "header_image_updated_at", "css_text", "header_image_file_size", "title_font", "tagline_font", "title_italic", "tagline_italic", "link_img_border_color", "text_color", "title_color", "page_bg_color", "tagline_size", "user_id", "text_font_1", "background_align", "background_tile", "link_hover_color", "text_font_2", "border_color", "created_at") VALUES('#dedddb', 'f', 't', '#242420', 'f', NULL, '2009-08-09 20:55:05', '#72b225', 'f', 't', '12', NULL, NULL, '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''body {
+ 	margin: 20px;
+ 	background-color: #dedddb; /*---Background: Color---*/
+ 	background-position: top; /*---Background: Alignment---*/
+ 	background-image: none; /*---Background: Image---*/
+ 	background-repeat: repeat; /*---Background: Tile---*/
+ 	font-family: Arial, Helvetica, sans-serif; /*---Text: Font---*/
+ 	font-size: 12px; /*---Text: Size---*/
+ 	color: #767574; /*---Text: Color---*/
+ 	line-height: 150%;
+ 	}
+
+ a:link,
+ a:visited {
+ 	color: #72b225; /*---Links: Color---*/
+ 	}
+
+ a:hover,
+ a:visited:hover {
+ 	color: #242420; /*---Text: Color---*/
+ 	}
+
+ h1 {
+ 	font-size: ; /*---Tagline: Size---*/
+ 	color: #242420; /*---Tagline: Color---*/
+ 	font-family: Georgia, serif; /*---Tagline: Font---*/
+ 	font-weight: normal; /*---Tagline: Bold---*/
+ 	font-style: normal; /*---Tagline: Italic---*/
+ 	}
+
+ h2, h3, h4, h5, h6 {
+ 	color: #242420; /*---Titles: Color---*/
+ 	font-family: Georgia, serif; /*---Titles: Font---*/
+ 	font-weight: normal; /*---Titles: Bold---*/
+ 	font-style: normal; /*---Titles: Italic---*/
+ 	}
+
+ hr {
+ 	border: 0;
+ 	height: 1px;
+ 	background: #eee; /*---Border: Color---*/
+ 	margin: 20px 0;
+ 	}
+
+ a:link img, a:visited img {
+ 	display: block;
+ 	border: 5px solid #f5f4f4; /*---Border: Color---*/
+ 	}
+
+ a:hover img, a:visited:hover img {	
+ 	border: 5px solid #72b225; /*---Link: Color---*/
+ 	}
+
+
+ /*---STRUCTURE---*/
+
+ div#page-container {
+ 	margin: 0 auto;
+ 	width: 710px;
+ 	background: #fff; /*---Page: Background Color---*/
+ 	overflow: hidden;
+ 	padding: 20px;
+ 	-webkit-border-radius: 10px;
+ 	}
+
+ div#header-container {
+ 	overflow: hidden;
+ 	margin: 0 0 20px 0;
+ 	}
+
+ div#tagline-container {
+ 	overflow: hidden;
+ 	text-align: left;
+ 	}
+
+ div#info-container {
+ 	overflow: hidden;
+ 	}
+
+ div#about-container {
+ 	width: 345px;
+ 	margin: 0 0 20px 0;
+ 	overflow: hidden;
+ 	float: left;
+ 	}
+
+ div#contact-container {
+ 	width: 345px;
+ 	margin: 0;
+ 	overflow: hidden;
+ 	float: right;
+ 	}''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''', NULL, 'Georgia', 'Georgia', 'f', 'f', '#f5f4f4', '#767574', '#242420', '#fff', NULL, NULL, 'Arial', 'center', 'repeat', '#242420', 'Helvetica', '#eee', '2009-08-09 20:55:05')[0m
+[paperclip] Saving attachments.
+  [4;36;1mUser Create (0.4ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "photo_file_name", "photo_file_size", "crypted_password", "account_tier", "about_me", "has_read_terms", "remember_token_expires_at", "activation_code", "photo_updated_at", "layout_type", "photo_content_type", "remember_token", "tag_line", "first_name", "login", "last_name", "design_type", "email", "created_at") VALUES('', 'bcecee671674e31bee054fd7730730b3e8664b1d', '2009-08-09 20:55:05', '2009-08-09 20:55:05', NULL, NULL, '095c8bebce1d055fa8cb702081b99824a7cf1d53', 1, NULL, 'f', NULL, '6ec5380aa767440afcd101057b64f83c42bcbd03', NULL, 1, NULL, NULL, NULL, NULL, 'hrwalker', NULL, 1, 'hilary@walker.com', '2009-08-09 20:55:05')[0m
+  [4;35;1mPortfolio Update (0.1ms)[0m   [0mUPDATE "portfolios" SET "updated_at" = '2009-08-09 20:55:05', "user_id" = 23 WHERE "id" = 28[0m
+  [4;36;1mDesign Update (0.1ms)[0m   [0;1mUPDATE "designs" SET "updated_at" = '2009-08-09 20:55:05', "user_id" = 23 WHERE "id" = 11[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login" = 'hrwalker' AND "users".id <> 23) LIMIT 1[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'hilary@walker.com' AND "users".id <> 23) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering users/new
+Completed in 93ms (View: 3, DB: 2) | 200 OK [http://0.0.0.0/users]
+New Relic Agent not running
+  [4;36;1mUser Delete all (1.6ms)[0m   [0;1mDELETE FROM "users" WHERE 1=1[0m
+Starting the New Relic Agent
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSELECT version FROM schema_migrations[0m
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-08-09 16:56:55) [GET]
+Rendering template within layouts/template
+Rendering main_pages/home
+Completed in 11ms (View: 11, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-08-09 16:56:57) [GET]
+Rendering template within layouts/template
+Rendering users/new
+Completed in 31ms (View: 14, DB: 0) | 200 OK [http://0.0.0.0/signup]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-08-09 16:57:11) [POST]
+  Parameters: {"user"=>{"has_read_terms"=>"1", "password_confirmation"=>"giraffe", "password"=>"giraffe", "login"=>"hrwalker", "email"=>"hilary@walker.com"}, "commit"=>"Sign Up", "authenticity_token"=>"xW/iyWhxrfMXLYZFxKCc1vG4uIZdZPbmiLWBzXuiPUU="}
+WARNING: Can't mass-assign these protected attributes: has_read_terms
+  [4;36;1mPortfolio Create (0.4ms)[0m   [0;1mINSERT INTO "portfolios" ("updated_at", "user_id", "created_at") VALUES('2009-08-09 20:57:11', NULL, '2009-08-09 20:57:11')[0m
+  [4;35;1mDesign Create (0.4ms)[0m   [0mINSERT INTO "designs" ("background_color", "text_serif", "title_serif", "tagline_color", "tagline_bold", "header_image_content_type", "updated_at", "link_color", "title_bold", "tagline_serif", "text_size", "header_image_file_name", "header_image_updated_at", "css_text", "header_image_file_size", "title_font", "tagline_font", "title_italic", "tagline_italic", "link_img_border_color", "text_color", "title_color", "page_bg_color", "tagline_size", "user_id", "text_font_1", "background_align", "background_tile", "link_hover_color", "text_font_2", "border_color", "created_at") VALUES('#dedddb', 'f', 't', '#242420', 'f', NULL, '2009-08-09 20:57:11', '#72b225', 'f', 't', '12', NULL, NULL, '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''body {
+ 	margin: 20px;
+ 	background-color: #dedddb; /*---Background: Color---*/
+ 	background-position: top; /*---Background: Alignment---*/
+ 	background-image: none; /*---Background: Image---*/
+ 	background-repeat: repeat; /*---Background: Tile---*/
+ 	font-family: Arial, Helvetica, sans-serif; /*---Text: Font---*/
+ 	font-size: 12px; /*---Text: Size---*/
+ 	color: #767574; /*---Text: Color---*/
+ 	line-height: 150%;
+ 	}
+
+ a:link,
+ a:visited {
+ 	color: #72b225; /*---Links: Color---*/
+ 	}
+
+ a:hover,
+ a:visited:hover {
+ 	color: #242420; /*---Text: Color---*/
+ 	}
+
+ h1 {
+ 	font-size: ; /*---Tagline: Size---*/
+ 	color: #242420; /*---Tagline: Color---*/
+ 	font-family: Georgia, serif; /*---Tagline: Font---*/
+ 	font-weight: normal; /*---Tagline: Bold---*/
+ 	font-style: normal; /*---Tagline: Italic---*/
+ 	}
+
+ h2, h3, h4, h5, h6 {
+ 	color: #242420; /*---Titles: Color---*/
+ 	font-family: Georgia, serif; /*---Titles: Font---*/
+ 	font-weight: normal; /*---Titles: Bold---*/
+ 	font-style: normal; /*---Titles: Italic---*/
+ 	}
+
+ hr {
+ 	border: 0;
+ 	height: 1px;
+ 	background: #eee; /*---Border: Color---*/
+ 	margin: 20px 0;
+ 	}
+
+ a:link img, a:visited img {
+ 	display: block;
+ 	border: 5px solid #f5f4f4; /*---Border: Color---*/
+ 	}
+
+ a:hover img, a:visited:hover img {	
+ 	border: 5px solid #72b225; /*---Link: Color---*/
+ 	}
+
+
+ /*---STRUCTURE---*/
+
+ div#page-container {
+ 	margin: 0 auto;
+ 	width: 710px;
+ 	background: #fff; /*---Page: Background Color---*/
+ 	overflow: hidden;
+ 	padding: 20px;
+ 	-webkit-border-radius: 10px;
+ 	}
+
+ div#header-container {
+ 	overflow: hidden;
+ 	margin: 0 0 20px 0;
+ 	}
+
+ div#tagline-container {
+ 	overflow: hidden;
+ 	text-align: left;
+ 	}
+
+ div#info-container {
+ 	overflow: hidden;
+ 	}
+
+ div#about-container {
+ 	width: 345px;
+ 	margin: 0 0 20px 0;
+ 	overflow: hidden;
+ 	float: left;
+ 	}
+
+ div#contact-container {
+ 	width: 345px;
+ 	margin: 0;
+ 	overflow: hidden;
+ 	float: right;
+ 	}''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''', NULL, 'Georgia', 'Georgia', 'f', 'f', '#f5f4f4', '#767574', '#242420', '#fff', NULL, NULL, 'Arial', 'center', 'repeat', '#242420', 'Helvetica', '#eee', '2009-08-09 20:57:11')[0m
+[paperclip] Saving attachments.
+  [4;36;1mUser Create (0.4ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "photo_file_name", "photo_file_size", "crypted_password", "account_tier", "about_me", "has_read_terms", "remember_token_expires_at", "activation_code", "photo_updated_at", "layout_type", "photo_content_type", "remember_token", "tag_line", "first_name", "login", "last_name", "design_type", "email", "created_at") VALUES('', '7e5a3ba71730aab028cc5ddc7f43d3aa73fdd00d', '2009-08-09 20:57:11', '2009-08-09 20:57:11', NULL, NULL, '7b1c8220c6cc0c7c2bf2df27b081ca1cfd4469a4', 1, NULL, 'f', NULL, 'f6a5e99d40ebcdb74faa15b173adaeff5ed2ae6a', NULL, 1, NULL, NULL, NULL, NULL, 'hrwalker', NULL, 1, 'hilary@walker.com', '2009-08-09 20:57:11')[0m
+  [4;35;1mPortfolio Update (0.1ms)[0m   [0mUPDATE "portfolios" SET "updated_at" = '2009-08-09 20:57:11', "user_id" = 24 WHERE "id" = 29[0m
+  [4;36;1mDesign Update (0.1ms)[0m   [0;1mUPDATE "designs" SET "updated_at" = '2009-08-09 20:57:11', "user_id" = 24 WHERE "id" = 12[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login" = 'hrwalker' AND "users".id <> 24) LIMIT 1[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'hilary@walker.com' AND "users".id <> 24) LIMIT 1[0m
+[paperclip] Saving attachments.
+Redirected to http://0.0.0.0:3000/
+Completed in 96ms (DB: 2) | 302 Found [http://0.0.0.0/users]
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-08-09 16:57:12) [GET]
+Rendering template within layouts/template
+Rendering main_pages/home
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 24) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.2ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 24) LIMIT 1[0m
+  [4;35;1mDesign Load (0.5ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 24) LIMIT 1[0m
+Completed in 83ms (View: 82, DB: 1) | 200 OK [http://0.0.0.0/]
+
+
+Processing PortfoliosController#edit (for 127.0.0.1 at 2009-08-09 16:57:16) [GET]
+  Parameters: {"id"=>"29", "user_id"=>"24"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 24) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.2ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 24) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering portfolios/edit
+  [4;36;1mPiece Load (0.2ms)[0m   [0;1mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 29) [0m
+  [4;35;1mDesign Load (0.5ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 24) LIMIT 1[0m
+Completed in 31ms (View: 19, DB: 1) | 200 OK [http://0.0.0.0/users/24/portfolios/29/edit]
+
+
+Processing PortfoliosController#edit (for 127.0.0.1 at 2009-08-09 16:58:50) [GET]
+  Parameters: {"id"=>"29", "user_id"=>"24"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 24) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.2ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 24) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering portfolios/edit
+  [4;36;1mPiece Load (0.2ms)[0m   [0;1mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 29) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "pieces" WHERE ("pieces".portfolio_id = 29) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 24) [0m
+  [4;35;1mDesign Load (0.6ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 24) LIMIT 1[0m
+Completed in 104ms (View: 89, DB: 2) | 200 OK [http://0.0.0.0/users/24/portfolios/29/edit]
+
+
+Processing PiecesController#new (for 127.0.0.1 at 2009-08-09 16:58:54) [GET]
+  Parameters: {"portfolio_id"=>"29"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 24) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.2ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 24) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering pieces/new
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 24) [0m
+  [4;35;1mPiece Load (0.2ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 29) [0m
+Rendered pieces/_fields (3.4ms)
+Rendered pieces/_form (10.7ms)
+  [4;36;1mDesign Load (0.5ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 24) LIMIT 1[0m
+Completed in 47ms (View: 24, DB: 2) | 200 OK [http://0.0.0.0/portfolios/29/pieces/new]
+
+
+Processing PiecesController#create (for 127.0.0.1 at 2009-08-09 16:59:20) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"xW/iyWhxrfMXLYZFxKCc1vG4uIZdZPbmiLWBzXuiPUU=", "portfolio_id"=>"29", "piece"=>{"title"=>"My Masterpiece", "image_1"=>#<File:/var/folders/QO/QOtKcBYTHt0GW1RvqdSOyk+++TI/-Tmp-/RackMultipart.1229.1>, "description"=>"Here is something I have worked my whole life on.", "for_sale"=>"0"}}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 24) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.2ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 24) LIMIT 1[0m
+  [4;35;1mPiece Create (0.4ms)[0m   [0mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "position", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, 82469, '2009-08-09 20:59:20', NULL, NULL, 'My Masterpiece', NULL, NULL, '2009-08-09 20:59:20', NULL, NULL, NULL, NULL, 'Here is something I have worked my whole life on.', 'f', 29, NULL, 'image/jpeg', NULL, NULL, NULL, NULL, '2009-08-09 20:59:20', NULL, NULL, NULL, '789px-Chinchillapets.jpg')[0m
+[paperclip] Saving attachments.
+[paperclip] saving /Users/michael/Desktop/weefolio/public/system/image_1s/27/small_thumb/789px-Chinchillapets.jpg
+[paperclip] saving /Users/michael/Desktop/weefolio/public/system/image_1s/27/full_size/789px-Chinchillapets.jpg
+[paperclip] saving /Users/michael/Desktop/weefolio/public/system/image_1s/27/original/789px-Chinchillapets.jpg
+[paperclip] saving /Users/michael/Desktop/weefolio/public/system/image_1s/27/large_thumb/789px-Chinchillapets.jpg
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+Redirected to http://0.0.0.0:3000/users/24/portfolios/29/edit
+Completed in 449ms (DB: 1) | 302 Found [http://0.0.0.0/portfolios/29/pieces]
+
+
+Processing PortfoliosController#edit (for 127.0.0.1 at 2009-08-09 16:59:20) [GET]
+  Parameters: {"id"=>"29", "user_id"=>"24"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 24) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.3ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 24) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering portfolios/edit
+  [4;36;1mPiece Load (0.4ms)[0m   [0;1mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 29) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "pieces" WHERE ("pieces".portfolio_id = 29) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 24) [0m
+  [4;35;1mDesign Load (0.5ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 24) LIMIT 1[0m
+Completed in 38ms (View: 24, DB: 2) | 200 OK [http://0.0.0.0/users/24/portfolios/29/edit]
+
+
+Processing PortfoliosController#edit (for 127.0.0.1 at 2009-08-09 16:59:21) [GET]
+  Parameters: {"id"=>"29", "user_id"=>"24"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 24) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.2ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 24) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering portfolios/edit
+  [4;36;1mPiece Load (0.5ms)[0m   [0;1mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 29) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "pieces" WHERE ("pieces".portfolio_id = 29) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 24) [0m
+  [4;35;1mDesign Load (0.5ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 24) LIMIT 1[0m
+Completed in 40ms (View: 24, DB: 2) | 200 OK [http://0.0.0.0/users/24/portfolios/29/edit]
+
+
+Processing PortfoliosController#edit (for 127.0.0.1 at 2009-08-09 17:00:13) [GET]
+  Parameters: {"id"=>"29", "user_id"=>"24"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 24) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.2ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 24) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering portfolios/edit
+  [4;36;1mPiece Load (0.4ms)[0m   [0;1mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 29) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT count(*) AS count_all FROM "pieces" WHERE ("pieces".portfolio_id = 29) [0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 24) [0m
+  [4;35;1mDesign Load (0.5ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 24) LIMIT 1[0m
+Completed in 115ms (View: 28, DB: 2) | 200 OK [http://0.0.0.0/users/24/portfolios/29/edit]
