@@ -1,61 +1,61 @@
 <style type="text/css">
   body {
   	margin: 20px;
-  	background-color: <%= @design.background_color %>; /*---Background: Color---*/
-  	background-position: <%= @design.background_align %>; /*---Background: Alignment---*/
+  	background-color: <%= @user.design.background_color %>; /*---Background: Color---*/
+  	background-position: <%= @user.design.background_align %>; /*---Background: Alignment---*/
   	background-image: none; /*---Background: Image---*/
-  	background-repeat: <%= @design.background_tile %>; /*---Background: Tile---*/
-  	font-family: <%= @design.text_font_1 %>, <%= @design.text_font_2 %>, <%= @design.render_serif(@design.text_serif) %>; /*---Text: Font---*/
-  	font-size: <%= @design.render_font_size(@design.text_size) %>; /*---Text: Size---*/
-  	color: <%= @design.text_color %>; /*---Text: Color---*/
+  	background-repeat: <%= @user.design.background_tile %>; /*---Background: Tile---*/
+  	font-family: <%= @user.design.text_font_1 %>, <%= @user.design.text_font_2 %>, <%= @user.design.render_serif(@user.design.text_serif) %>; /*---Text: Font---*/
+  	font-size: <%= @user.design.render_font_size(@user.design.text_size) %>; /*---Text: Size---*/
+  	color: <%= @user.design.text_color %>; /*---Text: Color---*/
   	line-height: 150%;
   }
   
   a:link,
   a:visited {
-  	color: <%= @design.link_color %>; /*---Links: Color---*/
+  	color: <%= @user.design.link_color %>; /*---Links: Color---*/
   }
   
   a:hover,
   a:visited:hover {
-  	color: <%= @design.link_hover_color %>; /*---Text: Color---*/
+  	color: <%= @user.design.link_hover_color %>; /*---Text: Color---*/
   }
   
   h1 {
-  	font-size: <%= @design.tagline_size %>; /*---Tagline: Size---*/
-  	color: <%= @design.tagline_color %>; /*---Tagline: Color---*/
-  	font-family: <%= @design.tagline_font %>, <%= @design.render_serif(@design.tagline_serif) %>; /*---Tagline: Font---*/
-  	font-weight: <%= @design.render_bold(@design.tagline_bold) %>; /*---Tagline: Bold---*/
-  	font-style: <%= @design.render_italic(@design.tagline_italic) %>; /*---Tagline: Italic---*/
+  	font-size: <%= @user.design.tagline_size %>; /*---Tagline: Size---*/
+  	color: <%= @user.design.tagline_color %>; /*---Tagline: Color---*/
+  	font-family: <%= @user.design.tagline_font %>, <%= @user.design.render_serif(@user.design.tagline_serif) %>; /*---Tagline: Font---*/
+  	font-weight: <%= @user.design.render_bold(@user.design.tagline_bold) %>; /*---Tagline: Bold---*/
+  	font-style: <%= @user.design.render_italic(@user.design.tagline_italic) %>; /*---Tagline: Italic---*/
   }
   
   h2, h3, h4, h5, h6 {
-  	color: <%= @design.title_color %>; /*---Titles: Color---*/
-  	font-family: <%= @design.title_font %>, <%= @design.render_serif(@design.title_serif) %>; /*---Titles: Font---*/
-  	font-weight: <%= @design.render_bold(@design.title_bold) %>; /*---Titles: Bold---*/
-  	font-style: <%= @design.render_italic(@design.title_italic) %>; /*---Titles: Italic---*/
+  	color: <%= @user.design.title_color %>; /*---Titles: Color---*/
+  	font-family: <%= @user.design.title_font %>, <%= @user.design.render_serif(@user.design.title_serif) %>; /*---Titles: Font---*/
+  	font-weight: <%= @user.design.render_bold(@user.design.title_bold) %>; /*---Titles: Bold---*/
+  	font-style: <%= @user.design.render_italic(@user.design.title_italic) %>; /*---Titles: Italic---*/
   }
   
   hr {
   	border: 0;
   	height: 1px;
-  	background: <%= @design.border_color %>; /*---Border: Color---*/
+  	background: <%= @user.design.border_color %>; /*---Border: Color---*/
   	margin: 20px 0;
   }
   
   a:link img, a:visited img {
   	display: block;
-  	border: 5px solid <%= @design.border_color %>; /*---Border: Color---*/
+  	border: 5px solid <%= @user.design.border_color %>; /*---Border: Color---*/
   }
   
   a:hover img, a:visited:hover img {	
-  	border: 5px solid <%= @design.link_color %>; /*---Link: Color---*/
+  	border: 5px solid <%= @user.design.link_color %>; /*---Link: Color---*/
   }
   
   div#page-container {
   	margin: 0 auto;
   	width: 710px;
-  	background: <%= @design.page_bg_color %>; /*---Page: Background Color---*/
+  	background: <%= @user.design.page_bg_color %>; /*---Page: Background Color---*/
   	overflow: hidden;
   	padding: 20px;
   	-webkit-border-radius: 10px;

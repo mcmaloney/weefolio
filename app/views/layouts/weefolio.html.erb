@@ -16,8 +16,8 @@
 		<div id="page-container">
 			<div id="header-container">
 				<!--<img src="#" width="710" height="100" alt="header-image">-->
-				<% if @design.header_image %>
-				  <%= image_tag @design.header_image.url(:header_format) %>
+				<% if @user.design.header_image %>
+				  <%= image_tag @user.design.header_image.url(:header_format) %>
 				<% end %>
 			</div>
 			

@@ -57,6 +57,7 @@ class UsersController < ApplicationController
     end
   end
   
+  # This would be less expensive as an AJAX action. 
   def switch_design_type
     @user = current_user
     if @user.design_type == 1

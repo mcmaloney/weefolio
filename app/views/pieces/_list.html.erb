@@ -1,4 +1,4 @@
-<% for piece in @portfolio.pieces %>
+<% for piece in @user.portfolio.pieces %>
 <div class="piece-container">
   <div class="image-container" id="large_image">
     <%= image_tag piece.image_1.url(:full_size) %>

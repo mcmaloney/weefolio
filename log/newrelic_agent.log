@@ -405,3 +405,81 @@
 [08/10/09 15:34:59 -0400 Macintosh.local (73716)] INFO : Resolved collector.newrelic.com to 65.74.177.195
 [08/10/09 15:35:01 -0400 Macintosh.local (73716)] INFO : Connected to NewRelic Service at collector.newrelic.com:80
 [08/10/09 15:35:02 -0400 Macintosh.local (73716)] INFO : Reporting performance data every 60 seconds.
+[08/10/09 16:10:55 -0400 Macintosh.local (74294)] INFO : Web container: webrick
+[08/10/09 16:10:55 -0400 Macintosh.local (74294)] INFO : Transaction tracing threshold is 2.0 seconds.
+[08/10/09 16:10:55 -0400 Macintosh.local (74294)] INFO : New Relic RPM Agent 2.9.4 Initialized: pid = 74294
+[08/10/09 16:10:55 -0400 Macintosh.local (74294)] INFO : Agent Log found in /Users/maloney/Desktop/weefolio/log/newrelic_agent.log
+[08/10/09 16:11:00 -0400 Macintosh.local (74294)] INFO : Resolved collector.newrelic.com to 65.74.177.195
+[08/10/09 16:11:05 -0400 Macintosh.local (74294)] INFO : Connected to NewRelic Service at collector.newrelic.com:80
+[08/10/09 16:11:05 -0400 Macintosh.local (74294)] INFO : Unable to establish connection with New Relic RPM Service at collector.newrelic.com:80
+[08/10/09 16:11:05 -0400 Macintosh.local (74294)] INFO : Will re-attempt in 1 minute
+[08/10/09 16:18:25 -0400 Macintosh.local (74369)] INFO : Web container: webrick
+[08/10/09 16:18:25 -0400 Macintosh.local (74369)] INFO : Transaction tracing threshold is 2.0 seconds.
+[08/10/09 16:18:25 -0400 Macintosh.local (74369)] INFO : New Relic RPM Agent 2.9.4 Initialized: pid = 74369
+[08/10/09 16:18:25 -0400 Macintosh.local (74369)] INFO : Agent Log found in /Users/maloney/Desktop/weefolio/log/newrelic_agent.log
+[08/10/09 16:18:30 -0400 Macintosh.local (74369)] INFO : Resolved collector.newrelic.com to 65.74.177.195
+[08/10/09 16:18:31 -0400 Macintosh.local (74369)] INFO : Connected to NewRelic Service at collector.newrelic.com:80
+[08/10/09 16:18:32 -0400 Macintosh.local (74369)] INFO : Reporting performance data every 60 seconds.
+[08/10/09 16:34:50 -0400 Macintosh.local (74629)] INFO : Web container: webrick
+[08/10/09 16:34:50 -0400 Macintosh.local (74629)] INFO : Transaction tracing threshold is 2.0 seconds.
+[08/10/09 16:34:50 -0400 Macintosh.local (74629)] INFO : New Relic RPM Agent 2.9.4 Initialized: pid = 74629
+[08/10/09 16:34:50 -0400 Macintosh.local (74629)] INFO : Agent Log found in /Users/maloney/Desktop/weefolio/log/newrelic_agent.log
+[08/10/09 16:34:55 -0400 Macintosh.local (74629)] INFO : Resolved collector.newrelic.com to 65.74.177.195
+[08/10/09 16:34:56 -0400 Macintosh.local (74629)] INFO : Connected to NewRelic Service at collector.newrelic.com:80
+[08/10/09 16:34:57 -0400 Macintosh.local (74629)] INFO : Reporting performance data every 60 seconds.
+[08/10/09 16:37:58 -0400 Macintosh.local (74731)] INFO : Web container: webrick
+[08/10/09 16:37:58 -0400 Macintosh.local (74731)] INFO : Transaction tracing threshold is 2.0 seconds.
+[08/10/09 16:37:58 -0400 Macintosh.local (74731)] INFO : New Relic RPM Agent 2.9.4 Initialized: pid = 74731
+[08/10/09 16:37:58 -0400 Macintosh.local (74731)] INFO : Agent Log found in /Users/maloney/Desktop/weefolio/log/newrelic_agent.log
+[08/10/09 16:38:03 -0400 Macintosh.local (74731)] INFO : Resolved collector.newrelic.com to 65.74.177.195
+[08/10/09 16:38:04 -0400 Macintosh.local (74731)] INFO : Connected to NewRelic Service at collector.newrelic.com:80
+[08/10/09 16:38:05 -0400 Macintosh.local (74731)] INFO : Reporting performance data every 60 seconds.
+[08/10/09 16:41:25 -0400 Macintosh.local (74853)] INFO : Web container: webrick
+[08/10/09 16:41:25 -0400 Macintosh.local (74853)] INFO : Transaction tracing threshold is 2.0 seconds.
+[08/10/09 16:41:25 -0400 Macintosh.local (74853)] INFO : New Relic RPM Agent 2.9.4 Initialized: pid = 74853
+[08/10/09 16:41:25 -0400 Macintosh.local (74853)] INFO : Agent Log found in /Users/maloney/Desktop/weefolio/log/newrelic_agent.log
+[08/10/09 16:41:30 -0400 Macintosh.local (74853)] INFO : Resolved collector.newrelic.com to 65.74.177.195
+[08/10/09 16:41:31 -0400 Macintosh.local (74853)] INFO : Connected to NewRelic Service at collector.newrelic.com:80
+[08/10/09 16:41:32 -0400 Macintosh.local (74853)] INFO : Reporting performance data every 60 seconds.
+[08/10/09 16:56:40 -0400 Macintosh.local (75099)] INFO : Web container: webrick
+[08/10/09 16:56:40 -0400 Macintosh.local (75099)] INFO : Transaction tracing threshold is 2.0 seconds.
+[08/10/09 16:56:40 -0400 Macintosh.local (75099)] INFO : New Relic RPM Agent 2.9.4 Initialized: pid = 75099
+[08/10/09 16:56:40 -0400 Macintosh.local (75099)] INFO : Agent Log found in /Users/maloney/Desktop/weefolio/log/newrelic_agent.log
+[08/10/09 16:56:46 -0400 Macintosh.local (75099)] INFO : Resolved collector.newrelic.com to 65.74.177.195
+[08/10/09 16:56:50 -0400 Macintosh.local (75099)] INFO : Unable to establish connection with New Relic RPM Service at collector.newrelic.com:80
+[08/10/09 16:56:50 -0400 Macintosh.local (75099)] INFO : Will re-attempt in 1 minute
+[08/10/09 16:57:54 -0400 Macintosh.local (75099)] INFO : Connected to NewRelic Service at collector.newrelic.com:80
+[08/10/09 16:57:58 -0400 Macintosh.local (75099)] INFO : Reporting performance data every 60 seconds.
+[08/10/09 17:02:24 -0400 Macintosh.local (75190)] INFO : Web container: webrick
+[08/10/09 17:02:24 -0400 Macintosh.local (75190)] INFO : Transaction tracing threshold is 2.0 seconds.
+[08/10/09 17:02:24 -0400 Macintosh.local (75190)] INFO : New Relic RPM Agent 2.9.4 Initialized: pid = 75190
+[08/10/09 17:02:24 -0400 Macintosh.local (75190)] INFO : Agent Log found in /Users/maloney/Desktop/weefolio/log/newrelic_agent.log
+[08/10/09 17:02:29 -0400 Macintosh.local (75190)] INFO : Resolved collector.newrelic.com to 65.74.177.195
+[08/10/09 17:02:30 -0400 Macintosh.local (75190)] INFO : Connected to NewRelic Service at collector.newrelic.com:80
+[08/10/09 17:02:31 -0400 Macintosh.local (75190)] INFO : Reporting performance data every 60 seconds.
+[08/10/09 17:08:45 -0400 Macintosh.local (75190)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.portfolio
+[08/10/09 17:08:46 -0400 Macintosh.local (75190)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.portfolio
+[08/10/09 17:10:48 -0400 Macintosh.local (75190)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: Couldn't find User without an ID
+[08/10/09 17:10:49 -0400 Macintosh.local (75190)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: Couldn't find User without an ID
+[08/10/09 17:11:57 -0400 Macintosh.local (75190)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: Couldn't find User without an ID
+[08/10/09 17:12:07 -0400 Macintosh.local (75190)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: Couldn't find User without an ID
+[08/10/09 17:12:08 -0400 Macintosh.local (75190)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: Couldn't find User without an ID
+[08/10/09 17:12:24 -0400 Macintosh.local (75190)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: Couldn't find User with ID=current_user
+[08/10/09 17:12:25 -0400 Macintosh.local (75190)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: Couldn't find User with ID=current_user
+[08/10/09 17:13:57 -0400 Macintosh.local (75190)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: Couldn't find User with ID=36
+[08/10/09 17:13:58 -0400 Macintosh.local (75190)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: Couldn't find User with ID=36
+[08/10/09 17:14:12 -0400 Macintosh.local (75190)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: Couldn't find User with ID=36
+[08/10/09 17:14:13 -0400 Macintosh.local (75190)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: Couldn't find User with ID=36
+[08/10/09 17:14:34 -0400 Macintosh.local (75395)] INFO : Web container: webrick
+[08/10/09 17:14:34 -0400 Macintosh.local (75395)] INFO : Transaction tracing threshold is 2.0 seconds.
+[08/10/09 17:14:34 -0400 Macintosh.local (75395)] INFO : New Relic RPM Agent 2.9.4 Initialized: pid = 75395
+[08/10/09 17:14:34 -0400 Macintosh.local (75395)] INFO : Agent Log found in /Users/maloney/Desktop/weefolio/log/newrelic_agent.log
+[08/10/09 17:15:09 -0400 Macintosh.local (75404)] INFO : Web container: webrick
+[08/10/09 17:15:09 -0400 Macintosh.local (75404)] INFO : Transaction tracing threshold is 2.0 seconds.
+[08/10/09 17:15:09 -0400 Macintosh.local (75404)] INFO : New Relic RPM Agent 2.9.4 Initialized: pid = 75404
+[08/10/09 17:15:09 -0400 Macintosh.local (75404)] INFO : Agent Log found in /Users/maloney/Desktop/weefolio/log/newrelic_agent.log
+[08/10/09 17:15:14 -0400 Macintosh.local (75404)] INFO : Resolved collector.newrelic.com to 65.74.177.195
+[08/10/09 17:15:15 -0400 Macintosh.local (75404)] INFO : Connected to NewRelic Service at collector.newrelic.com:80
+[08/10/09 17:15:16 -0400 Macintosh.local (75404)] INFO : Reporting performance data every 60 seconds.

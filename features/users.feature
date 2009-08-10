@@ -7,7 +7,7 @@ Feature: User
     And I follow "Sign Up"
     Then I should be on the sign up page
   
-  @this
+  @focus
   Scenario: User signs up
     Given I am on the sign up page
     And there are no users 

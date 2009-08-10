@@ -7,6 +7,7 @@ When /^I sign up as "([^\"]*)"$/ do |login|
   When %{I fill in "Email" with "michael@maloney.com"}
   When %{I fill in "Password" with "giraffe"}
   When %{I fill in "Password Confirmation" with "giraffe"}
+  When %{I check "user_has_read_terms"}
   When %{I press "Sign Up"}
 end
 
@@ -24,7 +25,7 @@ end
 
 
 Given /^I have already signed up as "([^\"]*)"$/ do |login|
-  @login_user = Factory(:user, :first_name => "Kevin", :last_name => "Gomez", :login => login)
+  @login_user = Factory(:user, :first_name => "Kevin", :last_name => "Gomez", :login => login, :has_read_terms => true)
   @login_user.make_portfolio
   @login_user.make_design_editor
   @login_user.activate!
@@ -37,7 +38,7 @@ When /^I login as "([^\"]*)"$/ do |login|
 end
 
 Given /^I am logged in as "([^\"]*)"$/ do |login|
-  @user = Factory(:user, :first_name => "Michael", :last_name => "Michael", :login => login)
+  @user = Factory(:user, :first_name => "Michael", :last_name => "Michael", :login => login, :has_read_terms => true)
   @user.make_portfolio
   @user.make_design_editor
   @user.activate!
