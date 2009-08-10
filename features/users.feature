@@ -1,5 +1,3 @@
-## I NEED TO BE REFACTORED!!
-
 Feature: User
   I want to sign up for a Weefolio account
   So that I can show off my work in a portfolio

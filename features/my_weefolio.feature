@@ -11,22 +11,19 @@ Feature: My Weefolio
     And I should see "Hello! My name is mcmaloney and this is my Weefolio!"
     And I should see "About mcmaloney"
     And I should see "Contact mcmaloney"
-  
-  Scenario: View Weefolio in Grid mode
+    
+  Scenario Outline: View in Grid/List modes
     Given I am logged in as "mcmaloney"
-    And my layout type is 1
+    And my layout type is <type>
     And I am on the home page
     When I follow "My Weefolio"
     Then I should be on the page for my weefolio
-    And its layout type should be "grid"
-  
-  Scenario: View Weefolio in List mode
-    Given I am logged in as "mcmaloney"
-    And my layout type is 2
-    And I am on the home page
-    When I follow "My Weefolio"
-    Then I should be on the page for my weefolio
-    And its layout type should be "list"
+    And its layout type should be "<layout>"
+    
+    Examples:
+    | type | layout |
+    | 1    | grid   |
+    | 2    | list   |
   
   @tits
   Scenario: View piece from grid thumbnail link

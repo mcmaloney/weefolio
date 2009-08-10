@@ -18,7 +18,7 @@ Given /^I have a piece in my portfolio called "([^\"]*)"$/ do |title|
 end
 
 Given /^my account tier is ([0-30]*)$/ do |level|
-  @user.account_tier = level.to_i
+  @user.change_tier(level.to_i)
 end
 
 Given /^I have no pieces in my portfolio$/ do
