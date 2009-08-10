@@ -1,0 +1,23 @@
+<div class="piece-container">
+  <div class="image-container" id="large_image">
+    <%= image_tag @piece.image_1.url(:full_size) %>
+  </div>
+
+  <ul class="thumb-grid">
+    <li><a id=<%= @piece.image_1.url(:full_size) %> onclick="switch_large_image(this)"><%= image_tag @piece.image_1.url(:small_thumb) %></a></li>
+  <% unless @user.account_tier == 1 %>
+	  <li><a id=<%= @piece.image_2.url(:full_size) %> onclick="switch_large_image(this)"><%= image_tag @piece.image_2.url(:small_thumb) %></a></li>
+	  <li><a id=<%= @piece.image_3.url(:full_size) %> onclick="switch_large_image(this)"><%= image_tag @piece.image_3.url(:small_thumb) %></a></li>
+	  <li><a id=<%= @piece.image_4.url(:full_size) %> onclick="switch_large_image(this)"><%= image_tag @piece.image_4.url(:small_thumb) %></a></li>
+	  <li><a id=<%= @piece.image_5.url(:full_size) %> onclick="switch_large_image(this)"><%= image_tag @piece.image_5.url(:small_thumb) %></a></li>
+	<% end %>
+  </ul>
+
+  <div class="piece-info">
+	  <h2><%= @piece.title %><% if @piece.for_sale %><span class="for-sale">@piece.display_price</span><% end %></h2>
+	  <p>
+	    <%= @piece.description %>
+	  </p>
+  </div>
+</div>
+
