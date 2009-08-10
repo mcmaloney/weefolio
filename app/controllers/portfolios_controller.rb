@@ -3,13 +3,17 @@ class PortfoliosController < ApplicationController
   
   # This is what the world sees. (My Weefolio)
   def show
-    @user = User.find(params[:user_id], :include => [:design, :portfolio, :pieces])
+    @user = current_user
+    @design = current_user.design
+    @portfolio = current_user.portfolio
     @page_title = "Weefolio :: #{@user.login}"
   end
   
   # This is where you go when you want to manage the content of your Weefolio. (Portfolio)
   def edit 
-    @user = User.find(params[:user_id], :include => [:design, :portfolio, :pieces])
+    @user = current_user
+    @design = current_user.design
+    @portfolio = current_user.portfolio
     @page_title = "Weefolio :: Manage My Work"
   end
 

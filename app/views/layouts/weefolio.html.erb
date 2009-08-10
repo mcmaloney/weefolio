@@ -1,7 +1,7 @@
 <html>
 	<head>
 		<title><%= @page_title %></title>
-		<% if @user.design_type == 1 %>
+		<% if @design.design_type == 1 %>
 		  <%= render :partial => 'styles/form_css' %>
 		  <%= stylesheet_link_tag 'editable.css'%>
 		<% else %>
@@ -16,8 +16,8 @@
 		<div id="page-container">
 			<div id="header-container">
 				<!--<img src="#" width="710" height="100" alt="header-image">-->
-				<% if @user.design.header_image %>
-				  <%= image_tag @user.design.header_image.url(:header_format) %>
+				<% if @design.header_image %>
+				  <%= image_tag @design.header_image.url(:header_format) %>
 				<% end %>
 			</div>
 			

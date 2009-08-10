@@ -16,10 +16,10 @@
   
     <%= flash[:notice] %>
  
-  <p class="count">You're using <strong><%= @user.portfolio.pieces.count %></strong> of your <strong><%= @user.portfolio.max_pieces %></strong> pieces.</p>
+  <p class="count">You're using <strong><%= @portfolio.pieces.count %></strong> of your <strong><%= @portfolio.max_pieces %></strong> pieces.</p>
   
   <ul class="pieces">
-  	<% @user.portfolio.pieces.each do |piece| %>
+  	<% @portfolio.pieces.each do |piece| %>
   	<li class="piece">
   		<%= image_tag piece.image_1.url(:small_thumb) %>
   		
@@ -30,10 +30,10 @@
   		
   		<ul class="piece-options">
   			<li class="option" id="edit">
-  				<%= link_to 'Edit', edit_portfolio_piece_path(@user.portfolio, piece)%>
+  				<%= link_to 'Edit', edit_portfolio_piece_path(@portfolio, piece)%>
   			</li>
   			<li class="option" id="delete">
-  				<%= link_to 'Delete', portfolio_piece_path(@user.portfolio, piece), :confirm => "Are you sure?", :method => :delete %>
+  				<%= link_to 'Delete', portfolio_piece_path(@portfolio, piece), :confirm => "Are you sure?", :method => :delete %>
   			</li>
   		</ul>
   	</li>

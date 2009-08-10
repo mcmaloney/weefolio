@@ -483,3 +483,38 @@ The error occurred while evaluating nil.portfolio
 [08/10/09 17:15:14 -0400 Macintosh.local (75404)] INFO : Resolved collector.newrelic.com to 65.74.177.195
 [08/10/09 17:15:15 -0400 Macintosh.local (75404)] INFO : Connected to NewRelic Service at collector.newrelic.com:80
 [08/10/09 17:15:16 -0400 Macintosh.local (75404)] INFO : Reporting performance data every 60 seconds.
+[08/10/09 17:21:14 -0400 Macintosh.local (75526)] INFO : Web container: webrick
+[08/10/09 17:21:14 -0400 Macintosh.local (75526)] INFO : Transaction tracing threshold is 2.0 seconds.
+[08/10/09 17:21:14 -0400 Macintosh.local (75526)] INFO : New Relic RPM Agent 2.9.4 Initialized: pid = 75526
+[08/10/09 17:21:14 -0400 Macintosh.local (75526)] INFO : Agent Log found in /Users/maloney/Desktop/weefolio/log/newrelic_agent.log
+[08/10/09 17:21:19 -0400 Macintosh.local (75526)] INFO : Resolved collector.newrelic.com to 65.74.177.195
+[08/10/09 17:21:20 -0400 Macintosh.local (75526)] INFO : Connected to NewRelic Service at collector.newrelic.com:80
+[08/10/09 17:21:21 -0400 Macintosh.local (75526)] INFO : Reporting performance data every 60 seconds.
+[08/10/09 17:22:22 -0400 Macintosh.local (75552)] INFO : Web container: webrick
+[08/10/09 17:22:22 -0400 Macintosh.local (75552)] INFO : Transaction tracing threshold is 2.0 seconds.
+[08/10/09 17:22:22 -0400 Macintosh.local (75552)] INFO : New Relic RPM Agent 2.9.4 Initialized: pid = 75552
+[08/10/09 17:22:22 -0400 Macintosh.local (75552)] INFO : Agent Log found in /Users/maloney/Desktop/weefolio/log/newrelic_agent.log
+[08/10/09 17:22:27 -0400 Macintosh.local (75552)] INFO : Resolved collector.newrelic.com to 65.74.177.195
+[08/10/09 17:22:28 -0400 Macintosh.local (75552)] INFO : Connected to NewRelic Service at collector.newrelic.com:80
+[08/10/09 17:22:29 -0400 Macintosh.local (75552)] INFO : Reporting performance data every 60 seconds.
+[08/10/09 17:27:24 -0400 Macintosh.local (75644)] INFO : Web container: webrick
+[08/10/09 17:27:24 -0400 Macintosh.local (75644)] INFO : Transaction tracing threshold is 2.0 seconds.
+[08/10/09 17:27:24 -0400 Macintosh.local (75644)] INFO : New Relic RPM Agent 2.9.4 Initialized: pid = 75644
+[08/10/09 17:27:24 -0400 Macintosh.local (75644)] INFO : Agent Log found in /Users/maloney/Desktop/weefolio/log/newrelic_agent.log
+[08/10/09 17:27:29 -0400 Macintosh.local (75644)] INFO : Resolved collector.newrelic.com to 65.74.177.195
+[08/10/09 17:27:30 -0400 Macintosh.local (75644)] INFO : Connected to NewRelic Service at collector.newrelic.com:80
+[08/10/09 17:27:31 -0400 Macintosh.local (75644)] INFO : Reporting performance data every 60 seconds.
+[08/10/09 17:47:02 -0400 Macintosh.local (75983)] INFO : Web container: webrick
+[08/10/09 17:47:02 -0400 Macintosh.local (75983)] INFO : Transaction tracing threshold is 2.0 seconds.
+[08/10/09 17:47:02 -0400 Macintosh.local (75983)] INFO : New Relic RPM Agent 2.9.4 Initialized: pid = 75983
+[08/10/09 17:47:02 -0400 Macintosh.local (75983)] INFO : Agent Log found in /Users/maloney/Desktop/weefolio/log/newrelic_agent.log
+[08/10/09 17:47:07 -0400 Macintosh.local (75983)] INFO : Resolved collector.newrelic.com to 65.74.177.195
+[08/10/09 17:47:08 -0400 Macintosh.local (75983)] INFO : Connected to NewRelic Service at collector.newrelic.com:80
+[08/10/09 17:47:08 -0400 Macintosh.local (75983)] INFO : Reporting performance data every 60 seconds.
+[08/10/09 17:51:02 -0400 Macintosh.local (76042)] INFO : Web container: webrick
+[08/10/09 17:51:02 -0400 Macintosh.local (76042)] INFO : Transaction tracing threshold is 2.0 seconds.
+[08/10/09 17:51:02 -0400 Macintosh.local (76042)] INFO : New Relic RPM Agent 2.9.4 Initialized: pid = 76042
+[08/10/09 17:51:02 -0400 Macintosh.local (76042)] INFO : Agent Log found in /Users/maloney/Desktop/weefolio/log/newrelic_agent.log
+[08/10/09 17:51:07 -0400 Macintosh.local (76042)] INFO : Resolved collector.newrelic.com to 65.74.177.195
+[08/10/09 17:51:08 -0400 Macintosh.local (76042)] INFO : Connected to NewRelic Service at collector.newrelic.com:80
+[08/10/09 17:51:09 -0400 Macintosh.local (76042)] INFO : Reporting performance data every 60 seconds.
