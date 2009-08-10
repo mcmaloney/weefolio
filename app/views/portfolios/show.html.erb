@@ -1,4 +1,4 @@
-<% if @user.layout_type == 1 %>
+<% if @design.layout_type == 1 %>
   <ul id="portfolio-grid">
     <% for piece in @portfolio.pieces %>
       <li><%= link_to image_tag(piece.image_1.url(:large_thumb)), portfolio_piece_path(@portfolio, piece), :title => piece.title %></li>

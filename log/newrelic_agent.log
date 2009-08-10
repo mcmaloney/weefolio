@@ -377,3 +377,10 @@
 [08/10/09 13:34:06 -0400 Macintosh.local (71564)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No action responded to show. Actions: edit and update
 [08/10/09 13:34:37 -0400 Macintosh.local (71564)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: unknown attribute: layout_type
 [08/10/09 13:34:40 -0400 Macintosh.local (71564)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No action responded to show. Actions: edit and update
+[08/10/09 13:52:26 -0400 Macintosh.local (72225)] INFO : Web container: webrick
+[08/10/09 13:52:26 -0400 Macintosh.local (72225)] INFO : Transaction tracing threshold is 2.0 seconds.
+[08/10/09 13:52:26 -0400 Macintosh.local (72225)] INFO : New Relic RPM Agent 2.9.4 Initialized: pid = 72225
+[08/10/09 13:52:26 -0400 Macintosh.local (72225)] INFO : Agent Log found in /Users/maloney/Desktop/weefolio/log/newrelic_agent.log
+[08/10/09 13:52:32 -0400 Macintosh.local (72225)] INFO : Resolved collector.newrelic.com to 65.74.177.195
+[08/10/09 13:52:33 -0400 Macintosh.local (72225)] INFO : Connected to NewRelic Service at collector.newrelic.com:80
+[08/10/09 13:52:34 -0400 Macintosh.local (72225)] INFO : Reporting performance data every 60 seconds.
