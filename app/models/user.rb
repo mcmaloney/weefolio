@@ -38,12 +38,6 @@ class User < ActiveRecord::Base
     self.account_tier += tier
   end
   
-  # Change layout type
-  def set_layout_type(number)
-    self.layout_type -= self.layout_type
-    self.layout_type += number
-  end
-  
   # Change design type
   def set_design_type(number)
     self.design_type -= self.design_type

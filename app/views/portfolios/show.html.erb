@@ -5,10 +5,8 @@
 	  <% end %>
   </ul>
 <% else %>
-  <% for piece in @portfolio.pieces %>
     <%= render :partial => 'pieces/list' %>
     <hr/>
-  <% end %>
 <% end %>
 
 

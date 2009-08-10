@@ -8,6 +8,20 @@ class Design < ActiveRecord::Base
     self.user.design_type
   end
   
+  # Change layout type
+  def set_layout_type(number)
+    self.layout_type -= self.layout_type
+    self.layout_type += number
+  end
+  
+  def render_layout_type
+    if self.layout_type == 1
+      "grid"
+    else
+      "list"
+    end
+  end
+  
   def render_serif(element)
     if element
       "serif"

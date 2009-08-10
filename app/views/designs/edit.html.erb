@@ -23,13 +23,13 @@
     		<ul>
 	    		<li class="option">
 	    			<img src="/images/layout-grid-icon.gif" width="111" height="130"/>
-	    			<input type="radio"/>
+	    			<%= f.radio_button :layout_type, 1 %>
 	    			<label>Grid</label>
 	    		</li>
 	    		
 	    		<li class="option">
 	    			<img src="/images/layout-list-icon.gif" width="111" height="130"/>
-	    			<input type="radio"/>
+	    			<%= f.radio_button :layout_type, 2 %>
 	    			<label>List</label>
 	    		</li>
     		</ul>
