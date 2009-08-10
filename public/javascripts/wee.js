@@ -4,6 +4,13 @@ File: wee.js
 All the javascript that's fit to print.
 */
 
+function switch_large_image(image_path) {
+	var source = image_path.id;
+	$('#large_image').empty();
+	$('<img src=' + source + '>').appendTo('#large_image');
+	$('#large_image').fadeIn();
+}
+
 
 /** Shows the billing info form. */
 function show_billing() {

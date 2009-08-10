@@ -146,3 +146,193 @@
 [08/10/09 10:12:49 -0400 Macintosh.local (68915)] INFO : Resolved collector.newrelic.com to 65.74.177.195
 [08/10/09 10:12:49 -0400 Macintosh.local (68915)] INFO : Unable to establish connection with New Relic RPM Service at collector.newrelic.com:80
 [08/10/09 10:12:49 -0400 Macintosh.local (68915)] INFO : Will re-attempt in 1 minute
+[08/10/09 11:45:38 -0400 Macintosh.local (70255)] INFO : Web container: webrick
+[08/10/09 11:45:38 -0400 Macintosh.local (70255)] INFO : Transaction tracing threshold is 2.0 seconds.
+[08/10/09 11:45:38 -0400 Macintosh.local (70255)] INFO : New Relic RPM Agent 2.9.4 Initialized: pid = 70255
+[08/10/09 11:45:38 -0400 Macintosh.local (70255)] INFO : Agent Log found in /Users/maloney/Desktop/weefolio/log/newrelic_agent.log
+[08/10/09 11:45:43 -0400 Macintosh.local (70255)] INFO : Resolved collector.newrelic.com to 65.74.177.195
+[08/10/09 11:45:44 -0400 Macintosh.local (70255)] INFO : Unable to establish connection with New Relic RPM Service at collector.newrelic.com:80
+[08/10/09 11:45:44 -0400 Macintosh.local (70255)] INFO : Will re-attempt in 1 minute
+[08/10/09 11:46:53 -0400 Macintosh.local (70286)] INFO : Web container: webrick
+[08/10/09 11:46:53 -0400 Macintosh.local (70286)] INFO : Transaction tracing threshold is 2.0 seconds.
+[08/10/09 11:46:53 -0400 Macintosh.local (70286)] INFO : New Relic RPM Agent 2.9.4 Initialized: pid = 70286
+[08/10/09 11:46:53 -0400 Macintosh.local (70286)] INFO : Agent Log found in /Users/maloney/Desktop/weefolio/log/newrelic_agent.log
+[08/10/09 11:46:58 -0400 Macintosh.local (70286)] INFO : Resolved collector.newrelic.com to 65.74.177.195
+[08/10/09 11:46:58 -0400 Macintosh.local (70286)] INFO : Unable to establish connection with New Relic RPM Service at collector.newrelic.com:80
+[08/10/09 11:46:58 -0400 Macintosh.local (70286)] INFO : Will re-attempt in 1 minute
+[08/10/09 11:47:58 -0400 Macintosh.local (70286)] INFO : Unable to establish connection with New Relic RPM Service at collector.newrelic.com:80
+[08/10/09 11:47:58 -0400 Macintosh.local (70286)] INFO : Will re-attempt in 1 minute
+[08/10/09 11:48:26 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_5s/small_thumb/missing.png" with {:method=>:get}
+[08/10/09 11:48:59 -0400 Macintosh.local (70286)] INFO : Unable to establish connection with New Relic RPM Service at collector.newrelic.com:80
+[08/10/09 11:48:59 -0400 Macintosh.local (70286)] INFO : Will re-attempt in 2 minutes
+[08/10/09 11:49:44 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/header_images/header_format/missing.png" with {:method=>:get}
+[08/10/09 11:49:45 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_4s/small_thumb/missing.png" with {:method=>:get}
+[08/10/09 11:49:45 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_5s/small_thumb/missing.png" with {:method=>:get}
+[08/10/09 11:49:45 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/header_images/header_format/missing.png" with {:method=>:get}
+[08/10/09 11:49:46 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_4s/small_thumb/missing.png" with {:method=>:get}
+[08/10/09 11:49:46 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_5s/small_thumb/missing.png" with {:method=>:get}
+[08/10/09 11:50:46 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/header_images/header_format/missing.png" with {:method=>:get}
+[08/10/09 11:50:46 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_4s/small_thumb/missing.png" with {:method=>:get}
+[08/10/09 11:50:46 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_5s/small_thumb/missing.png" with {:method=>:get}
+[08/10/09 11:50:47 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/header_images/header_format/missing.png" with {:method=>:get}
+[08/10/09 11:50:47 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_4s/small_thumb/missing.png" with {:method=>:get}
+[08/10/09 11:50:47 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_5s/small_thumb/missing.png" with {:method=>:get}
+[08/10/09 11:51:16 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: undefined method `symbolize_keys!' for "/portfolios/31/pieces/28":String
+[08/10/09 11:51:16 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/header_images/header_format/missing.png" with {:method=>:get}
+[08/10/09 11:51:17 -0400 Macintosh.local (70286)] INFO : Unable to establish connection with New Relic RPM Service at collector.newrelic.com:80
+[08/10/09 11:51:17 -0400 Macintosh.local (70286)] INFO : Will re-attempt in 2 minutes
+[08/10/09 11:51:20 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/header_images/header_format/missing.png" with {:method=>:get}
+[08/10/09 11:51:20 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_4s/small_thumb/missing.png" with {:method=>:get}
+[08/10/09 11:51:20 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_5s/small_thumb/missing.png" with {:method=>:get}
+[08/10/09 11:51:21 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/header_images/header_format/missing.png" with {:method=>:get}
+[08/10/09 11:51:21 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_4s/small_thumb/missing.png" with {:method=>:get}
+[08/10/09 11:51:21 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_5s/small_thumb/missing.png" with {:method=>:get}
+[08/10/09 11:51:26 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: undefined method `symbolize_keys!' for "/portfolios/31/pieces/28":String
+[08/10/09 11:51:30 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: undefined method `symbolize_keys!' for "/portfolios/31/pieces/28":String
+[08/10/09 11:51:31 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: undefined method `symbolize_keys!' for "/portfolios/31/pieces/28":String
+[08/10/09 11:51:58 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_4s/large_thumb/missing.png" with {:method=>:get}
+[08/10/09 11:51:58 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_5s/large_thumb/missing.png" with {:method=>:get}
+[08/10/09 11:52:05 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: undefined method `symbolize_keys!' for "/portfolios/31/pieces/28":String
+[08/10/09 11:52:05 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: undefined method `symbolize_keys!' for "/portfolios/31/pieces/28":String
+[08/10/09 11:52:23 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/header_images/header_format/missing.png" with {:method=>:get}
+[08/10/09 11:52:24 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/header_images/header_format/missing.png" with {:method=>:get}
+[08/10/09 11:52:28 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/header_images/header_format/missing.png" with {:method=>:get}
+[08/10/09 11:52:28 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_4s/small_thumb/missing.png" with {:method=>:get}
+[08/10/09 11:52:28 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_5s/small_thumb/missing.png" with {:method=>:get}
+[08/10/09 11:52:29 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/header_images/header_format/missing.png" with {:method=>:get}
+[08/10/09 11:52:29 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_4s/small_thumb/missing.png" with {:method=>:get}
+[08/10/09 11:52:29 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_5s/small_thumb/missing.png" with {:method=>:get}
+[08/10/09 11:53:19 -0400 Macintosh.local (70286)] INFO : Connected to NewRelic Service at collector.newrelic.com:80
+[08/10/09 11:53:19 -0400 Macintosh.local (70286)] INFO : Unable to establish connection with New Relic RPM Service at collector.newrelic.com:80
+[08/10/09 11:53:19 -0400 Macintosh.local (70286)] INFO : Will re-attempt in 2 minutes
+[08/10/09 11:53:37 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/header_images/header_format/missing.png" with {:method=>:get}
+[08/10/09 11:53:37 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_4s/small_thumb/missing.png" with {:method=>:get}
+[08/10/09 11:53:38 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_5s/small_thumb/missing.png" with {:method=>:get}
+[08/10/09 11:53:38 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/header_images/header_format/missing.png" with {:method=>:get}
+[08/10/09 11:53:39 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_5s/small_thumb/missing.png" with {:method=>:get}
+[08/10/09 11:53:39 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_4s/small_thumb/missing.png" with {:method=>:get}
+[08/10/09 11:53:41 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_4s/full_size/missing.png" with {:method=>:get}
+[08/10/09 11:54:10 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/header_images/header_format/missing.png" with {:method=>:get}
+[08/10/09 11:54:10 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_4s/small_thumb/missing.png" with {:method=>:get}
+[08/10/09 11:54:10 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_5s/small_thumb/missing.png" with {:method=>:get}
+[08/10/09 11:54:11 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/header_images/header_format/missing.png" with {:method=>:get}
+[08/10/09 11:54:11 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_5s/small_thumb/missing.png" with {:method=>:get}
+[08/10/09 11:54:11 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_4s/small_thumb/missing.png" with {:method=>:get}
+[08/10/09 11:54:12 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_4s/full_size/missing.png" with {:method=>:get}
+[08/10/09 11:54:30 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/header_images/header_format/missing.png" with {:method=>:get}
+[08/10/09 11:54:31 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_4s/small_thumb/missing.png" with {:method=>:get}
+[08/10/09 11:54:31 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_5s/small_thumb/missing.png" with {:method=>:get}
+[08/10/09 11:54:31 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/header_images/header_format/missing.png" with {:method=>:get}
+[08/10/09 11:54:32 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_5s/small_thumb/missing.png" with {:method=>:get}
+[08/10/09 11:54:32 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_4s/small_thumb/missing.png" with {:method=>:get}
+[08/10/09 11:55:19 -0400 Macintosh.local (70286)] INFO : Unable to establish connection with New Relic RPM Service at collector.newrelic.com:80
+[08/10/09 11:55:19 -0400 Macintosh.local (70286)] INFO : Will re-attempt in 10 minutes
+[08/10/09 11:55:51 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/header_images/header_format/missing.png" with {:method=>:get}
+[08/10/09 11:55:52 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_4s/small_thumb/missing.png" with {:method=>:get}
+[08/10/09 11:55:52 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_5s/small_thumb/missing.png" with {:method=>:get}
+[08/10/09 11:55:53 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/header_images/header_format/missing.png" with {:method=>:get}
+[08/10/09 11:55:53 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_4s/small_thumb/missing.png" with {:method=>:get}
+[08/10/09 11:55:53 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_5s/small_thumb/missing.png" with {:method=>:get}
+[08/10/09 11:55:58 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/header_images/header_format/missing.png" with {:method=>:get}
+[08/10/09 11:55:58 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_5s/small_thumb/missing.png" with {:method=>:get}
+[08/10/09 11:55:58 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_4s/small_thumb/missing.png" with {:method=>:get}
+[08/10/09 11:57:25 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/header_images/header_format/missing.png" with {:method=>:get}
+[08/10/09 11:57:25 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_4s/small_thumb/missing.png" with {:method=>:get}
+[08/10/09 11:57:25 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_5s/small_thumb/missing.png" with {:method=>:get}
+[08/10/09 11:57:26 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/header_images/header_format/missing.png" with {:method=>:get}
+[08/10/09 11:57:26 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_4s/small_thumb/missing.png" with {:method=>:get}
+[08/10/09 11:57:26 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_5s/small_thumb/missing.png" with {:method=>:get}
+[08/10/09 11:57:27 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_4s/full_size/missing.png" with {:method=>:get}
+[08/10/09 11:59:53 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/header_images/header_format/missing.png" with {:method=>:get}
+[08/10/09 11:59:53 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_4s/small_thumb/missing.png" with {:method=>:get}
+[08/10/09 11:59:53 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_5s/small_thumb/missing.png" with {:method=>:get}
+[08/10/09 11:59:54 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/header_images/header_format/missing.png" with {:method=>:get}
+[08/10/09 11:59:54 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_4s/small_thumb/missing.png" with {:method=>:get}
+[08/10/09 11:59:54 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_5s/small_thumb/missing.png" with {:method=>:get}
+[08/10/09 12:00:45 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/header_images/header_format/missing.png" with {:method=>:get}
+[08/10/09 12:00:45 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_4s/small_thumb/missing.png" with {:method=>:get}
+[08/10/09 12:00:46 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_5s/small_thumb/missing.png" with {:method=>:get}
+[08/10/09 12:00:47 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/header_images/header_format/missing.png" with {:method=>:get}
+[08/10/09 12:00:47 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_4s/small_thumb/missing.png" with {:method=>:get}
+[08/10/09 12:00:47 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_5s/small_thumb/missing.png" with {:method=>:get}
+[08/10/09 12:02:03 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/header_images/header_format/missing.png" with {:method=>:get}
+[08/10/09 12:02:03 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_4s/small_thumb/missing.png" with {:method=>:get}
+[08/10/09 12:02:03 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_5s/small_thumb/missing.png" with {:method=>:get}
+[08/10/09 12:02:04 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/header_images/header_format/missing.png" with {:method=>:get}
+[08/10/09 12:02:04 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_4s/small_thumb/missing.png" with {:method=>:get}
+[08/10/09 12:02:04 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_5s/small_thumb/missing.png" with {:method=>:get}
+[08/10/09 12:02:35 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/header_images/header_format/missing.png" with {:method=>:get}
+[08/10/09 12:02:36 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_4s/small_thumb/missing.png" with {:method=>:get}
+[08/10/09 12:02:36 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_5s/small_thumb/missing.png" with {:method=>:get}
+[08/10/09 12:02:37 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_4s/small_thumb/missing.png" with {:method=>:get}
+[08/10/09 12:02:37 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_5s/small_thumb/missing.png" with {:method=>:get}
+[08/10/09 12:02:37 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/header_images/header_format/missing.png" with {:method=>:get}
+[08/10/09 12:02:37 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_4s/full_size/missing.png" with {:method=>:get}
+[08/10/09 12:05:25 -0400 Macintosh.local (70286)] INFO : Connected to NewRelic Service at collector.newrelic.com:80
+[08/10/09 12:05:25 -0400 Macintosh.local (70286)] INFO : Unable to establish connection with New Relic RPM Service at collector.newrelic.com:80
+[08/10/09 12:05:25 -0400 Macintosh.local (70286)] INFO : Will re-attempt in 10 minutes
+[08/10/09 12:05:58 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/header_images/header_format/missing.png" with {:method=>:get}
+[08/10/09 12:05:58 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_4s/small_thumb/missing.png" with {:method=>:get}
+[08/10/09 12:05:58 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_5s/small_thumb/missing.png" with {:method=>:get}
+[08/10/09 12:05:59 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/header_images/header_format/missing.png" with {:method=>:get}
+[08/10/09 12:05:59 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_5s/small_thumb/missing.png" with {:method=>:get}
+[08/10/09 12:05:59 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_4s/small_thumb/missing.png" with {:method=>:get}
+[08/10/09 12:06:01 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_4s/full_size/missing.png" with {:method=>:get}
+[08/10/09 12:07:50 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/header_images/header_format/missing.png" with {:method=>:get}
+[08/10/09 12:07:51 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_4s/small_thumb/missing.png" with {:method=>:get}
+[08/10/09 12:07:51 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_5s/small_thumb/missing.png" with {:method=>:get}
+[08/10/09 12:07:52 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/header_images/header_format/missing.png" with {:method=>:get}
+[08/10/09 12:07:52 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_4s/small_thumb/missing.png" with {:method=>:get}
+[08/10/09 12:07:52 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_5s/small_thumb/missing.png" with {:method=>:get}
+[08/10/09 12:07:53 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_4s/full_size/missing.png" with {:method=>:get}
+[08/10/09 12:12:53 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/header_images/header_format/missing.png" with {:method=>:get}
+[08/10/09 12:12:53 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_4s/small_thumb/missing.png" with {:method=>:get}
+[08/10/09 12:12:53 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_5s/small_thumb/missing.png" with {:method=>:get}
+[08/10/09 12:12:54 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/header_images/header_format/missing.png" with {:method=>:get}
+[08/10/09 12:12:54 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_5s/small_thumb/missing.png" with {:method=>:get}
+[08/10/09 12:12:54 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_4s/small_thumb/missing.png" with {:method=>:get}
+[08/10/09 12:14:52 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/header_images/header_format/missing.png" with {:method=>:get}
+[08/10/09 12:14:52 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_4s/small_thumb/missing.png" with {:method=>:get}
+[08/10/09 12:14:52 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_5s/small_thumb/missing.png" with {:method=>:get}
+[08/10/09 12:14:53 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/header_images/header_format/missing.png" with {:method=>:get}
+[08/10/09 12:14:53 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_4s/small_thumb/missing.png" with {:method=>:get}
+[08/10/09 12:14:53 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_5s/small_thumb/missing.png" with {:method=>:get}
+[08/10/09 12:15:29 -0400 Macintosh.local (70286)] INFO : Connected to NewRelic Service at collector.newrelic.com:80
+[08/10/09 12:15:33 -0400 Macintosh.local (70286)] INFO : Reporting performance data every 60 seconds.
+[08/10/09 12:16:53 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/header_images/header_format/missing.png" with {:method=>:get}
+[08/10/09 12:16:53 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_4s/small_thumb/missing.png" with {:method=>:get}
+[08/10/09 12:16:53 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_5s/small_thumb/missing.png" with {:method=>:get}
+[08/10/09 12:16:54 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/header_images/header_format/missing.png" with {:method=>:get}
+[08/10/09 12:16:54 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_5s/small_thumb/missing.png" with {:method=>:get}
+[08/10/09 12:16:54 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_4s/small_thumb/missing.png" with {:method=>:get}
+[08/10/09 12:17:22 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/header_images/header_format/missing.png" with {:method=>:get}
+[08/10/09 12:17:22 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_4s/small_thumb/missing.png" with {:method=>:get}
+[08/10/09 12:17:22 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_5s/small_thumb/missing.png" with {:method=>:get}
+[08/10/09 12:17:23 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/header_images/header_format/missing.png" with {:method=>:get}
+[08/10/09 12:17:23 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_5s/small_thumb/missing.png" with {:method=>:get}
+[08/10/09 12:17:23 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_4s/small_thumb/missing.png" with {:method=>:get}
+[08/10/09 12:18:44 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/header_images/header_format/missing.png" with {:method=>:get}
+[08/10/09 12:18:44 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/header_images/header_format/missing.png" with {:method=>:get}
+[08/10/09 12:19:45 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/header_images/header_format/missing.png" with {:method=>:get}
+[08/10/09 12:19:46 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/header_images/header_format/missing.png" with {:method=>:get}
+[08/10/09 12:22:22 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/header_images/header_format/missing.png" with {:method=>:get}
+[08/10/09 12:22:23 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/header_images/header_format/missing.png" with {:method=>:get}
+[08/10/09 12:22:48 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/header_images/header_format/missing.png" with {:method=>:get}
+[08/10/09 12:24:52 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/header_images/header_format/missing.png" with {:method=>:get}
+[08/10/09 12:24:53 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/header_images/header_format/missing.png" with {:method=>:get}
+[08/10/09 12:24:55 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: Couldn't find Piece with ID=undefined
+[08/10/09 12:25:08 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/header_images/header_format/missing.png" with {:method=>:get}
+[08/10/09 12:25:09 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/header_images/header_format/missing.png" with {:method=>:get}
+[08/10/09 12:26:04 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/header_images/header_format/missing.png" with {:method=>:get}
+[08/10/09 12:26:04 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/header_images/header_format/missing.png" with {:method=>:get}
+[08/10/09 12:26:31 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/header_images/header_format/missing.png" with {:method=>:get}
+[08/10/09 12:26:31 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/header_images/header_format/missing.png" with {:method=>:get}
+[08/10/09 12:27:13 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/header_images/header_format/missing.png" with {:method=>:get}
+[08/10/09 12:27:14 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/header_images/header_format/missing.png" with {:method=>:get}
+[08/10/09 12:27:33 -0400 Macintosh.local (70286)] WARN : Timed out trying to post data to RPM (timeout = 120 seconds)
+[08/10/09 12:29:13 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/header_images/header_format/missing.png" with {:method=>:get}
+[08/10/09 12:29:13 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_4s/small_thumb/missing.png" with {:method=>:get}
+[08/10/09 12:29:13 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_5s/small_thumb/missing.png" with {:method=>:get}
+[08/10/09 12:29:14 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/header_images/header_format/missing.png" with {:method=>:get}
+[08/10/09 12:29:14 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_4s/small_thumb/missing.png" with {:method=>:get}
+[08/10/09 12:29:14 -0400 Macintosh.local (70286)] INFO : The error reporting queue has reached 20. This error will not be reported to RPM: No route matches "/image_5s/small_thumb/missing.png" with {:method=>:get}
