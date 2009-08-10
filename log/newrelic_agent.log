@@ -391,3 +391,17 @@
 [08/10/09 14:19:15 -0400 Macintosh.local (72536)] INFO : Resolved collector.newrelic.com to 65.74.177.195
 [08/10/09 14:19:16 -0400 Macintosh.local (72536)] INFO : Connected to NewRelic Service at collector.newrelic.com:80
 [08/10/09 14:19:17 -0400 Macintosh.local (72536)] INFO : Reporting performance data every 60 seconds.
+[08/10/09 15:13:33 -0400 Macintosh.local (73396)] INFO : Web container: webrick
+[08/10/09 15:13:33 -0400 Macintosh.local (73396)] INFO : Transaction tracing threshold is 2.0 seconds.
+[08/10/09 15:13:33 -0400 Macintosh.local (73396)] INFO : New Relic RPM Agent 2.9.4 Initialized: pid = 73396
+[08/10/09 15:13:33 -0400 Macintosh.local (73396)] INFO : Agent Log found in /Users/maloney/Desktop/weefolio/log/newrelic_agent.log
+[08/10/09 15:13:38 -0400 Macintosh.local (73396)] INFO : Resolved collector.newrelic.com to 65.74.177.195
+[08/10/09 15:13:43 -0400 Macintosh.local (73396)] INFO : Connected to NewRelic Service at collector.newrelic.com:80
+[08/10/09 15:13:48 -0400 Macintosh.local (73396)] INFO : Reporting performance data every 60 seconds.
+[08/10/09 15:34:54 -0400 Macintosh.local (73716)] INFO : Web container: webrick
+[08/10/09 15:34:54 -0400 Macintosh.local (73716)] INFO : Transaction tracing threshold is 2.0 seconds.
+[08/10/09 15:34:54 -0400 Macintosh.local (73716)] INFO : New Relic RPM Agent 2.9.4 Initialized: pid = 73716
+[08/10/09 15:34:54 -0400 Macintosh.local (73716)] INFO : Agent Log found in /Users/maloney/Desktop/weefolio/log/newrelic_agent.log
+[08/10/09 15:34:59 -0400 Macintosh.local (73716)] INFO : Resolved collector.newrelic.com to 65.74.177.195
+[08/10/09 15:35:01 -0400 Macintosh.local (73716)] INFO : Connected to NewRelic Service at collector.newrelic.com:80
+[08/10/09 15:35:02 -0400 Macintosh.local (73716)] INFO : Reporting performance data every 60 seconds.
