@@ -50,6 +50,7 @@ class PiecesController < ApplicationController
     @user = current_user
     @page_title = "#{@user.login} :: #{@piece.title}"
     @design = current_user.design
+    @portfolio = current_user.portfolio
   end
   
 private

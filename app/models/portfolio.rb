@@ -26,12 +26,4 @@ class Portfolio < ActiveRecord::Base
       return true
     end
   end
-  
-  def layout_type
-    if self.user.layout_type == 1
-      "grid"
-    elsif self.user.layout_type == 2
-      "list"
-    end
-  end
 end

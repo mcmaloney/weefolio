@@ -28,6 +28,7 @@ Feature: My Weefolio
   @tits
   Scenario: View piece from grid thumbnail link
     Given I am logged in as "mcmaloney"
+    And my layout type is 1
     And I have uploaded a piece called "cowphin" to my portfolio
     And I am on the page for my weefolio
     And I follow "cowphin"

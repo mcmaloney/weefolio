@@ -37,7 +37,7 @@
 				<dd>
 			      <%= f.file_field :image_3 %>
 			    </dd>
-			    
+			  <% if @portfolio.account_tier == 3 %>
 			    <dt>
 			      <label for="piece_image_4">Image #4</label>
 			       </dt>
@@ -52,21 +52,24 @@
 			      <%= f.file_field :image_5 %>
 			    </dd>
 			  <% end %>
+			  <% end %>
 			  <dt>
 			    &nbsp;
 			     </dt>
-				<dd>
-			    <%= f.check_box :for_sale, :onclick => 'show_price_field()' %> <label for="piece_for_sale">For Sale?</label>
-			  </dd>
-			  
-			  <div id="piece_price">
-			    <dt>
-			      <label for="piece_price">Price</label>
-			    </dt>
+			  <% unless @portfolio.account_tier == 1 %>
 				  <dd>
-			      <%= f.text_field :price, :size => 8 %>
+			      <%= f.check_box :for_sale, :onclick => 'toggle_price_field()' %> <label for="piece_for_sale">For Sale?</label>
 			    </dd>
-			  </div>
+			  
+			    <div id="piece_price">
+			      <dt>
+			        <label for="piece_price">Price</label>
+			      </dt>
+				    <dd>
+			        <%= f.text_field :price, :size => 8 %>
+			      </dd>
+			    </div>
+			  <% end %>
   		</dl>
 	</fieldset>
 	

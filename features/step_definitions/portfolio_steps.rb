@@ -19,6 +19,7 @@ end
 
 Given /^my account tier is ([0-30]*)$/ do |level|
   @user.change_tier(level.to_i)
+  @user.save
 end
 
 Given /^I have no pieces in my portfolio$/ do
@@ -50,12 +51,12 @@ end
 
 ###### WEEFOLIO STEPS ######
 Given /^my layout type is ([0-9]*)$/ do |number|
-  @user.set_layout_type(number.to_i)
-  @user.save
+  @user.design.set_layout_type(number.to_i)
+  @user.design.save
 end
 
 Then /^its layout type should be "([^\"]*)"$/ do |type|
-  @user.portfolio.layout_type.should == type
+  @user.design.render_layout_type.should == type
 end
 
 Given /^I have uploaded a piece called "([^\"]*)" to my portfolio$/ do |title|
