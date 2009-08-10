@@ -17,7 +17,7 @@
 			  </dd>
 			  
 			  <dt>
-			    <label for="piece_image_1">Image</label>
+			    <%= f.label :image_1, 'Image' %>
 			     </dt>
 				<dd>
 			    <%= f.file_field :image_1 %>
@@ -56,15 +56,17 @@
 			    &nbsp;
 			     </dt>
 				<dd>
-			    <%= f.check_box :for_sale %> <label for="piece_for_sale">For Sale?</label>
+			    <%= f.check_box :for_sale, :onclick => 'show_price_field()' %> <label for="piece_for_sale">For Sale?</label>
 			  </dd>
 			  
-			  <!--<dt>
-			    <label for="piece_price">Price</label>
-			   </dt>
-				<dd>
-			    <%= f.text_field :price, :size => 8 %>
-			  </dd>-->
+			  <div id="piece_price">
+			    <dt>
+			      <label for="piece_price">Price</label>
+			    </dt>
+				  <dd>
+			      <%= f.text_field :price, :size => 8 %>
+			    </dd>
+			  </div>
   		</dl>
 	</fieldset>
 	

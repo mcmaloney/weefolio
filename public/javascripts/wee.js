@@ -18,3 +18,12 @@ function hide_billing() {
 		$('#billing_info').fadeOut();
 	} 
 }
+
+/** Toggles the visibility of the price field when user clicks "For Sale" */
+function toggle_price_field() {
+	if ($('#piece_price').is(":hidden")) {
+		$('#piece_price').fadeIn();
+	} else if ($('#piece_price').is(":visible")) {
+		$('#piece_price').fadeOut();
+	}
+}

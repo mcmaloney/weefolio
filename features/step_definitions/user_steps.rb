@@ -3,11 +3,10 @@ Given /^there are no users$/ do
 end
 
 When /^I sign up as "([^\"]*)"$/ do |login|
-  When %{I fill in "Login" with "#{login}"}
+  When %{I fill in "user_login" with "#{login}"}
   When %{I fill in "Email" with "michael@maloney.com"}
   When %{I fill in "Password" with "giraffe"}
   When %{I fill in "Password Confirmation" with "giraffe"}
-  When %{I check "Has Read Terms" }
   When %{I press "Sign Up"}
 end
 
@@ -57,7 +56,7 @@ Given /^I update my about me to say "([^\"]*)"$/ do |about_me|
 end
 
 Given /^I update my tag line to say "([^\"]*)"$/ do |tag_line|
-  When %{I fill in "Tag Line" with "#{tag_line}"}
+  When %{I fill in "user_tag_line" with "#{tag_line}"}
 end
 
 Then /^I should see the logged in nav bar in all its glory$/ do

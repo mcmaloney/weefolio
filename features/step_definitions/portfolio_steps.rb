@@ -1,7 +1,7 @@
 Given /^I add a piece called "([^\"]*)"$/ do |title|
   When %{I fill in "Title" with "#{title}"}
   When %{I fill in "Description" with "This is going to be bad."}
-  When %{I attach the file at "/Users/Maloney/desktop/weefolio/public/images/test_images/janus.jpg" to "Image 1"}
+  When %{I attach the file at "/Users/Maloney/desktop/weefolio/public/images/test_images/janus.jpg" to "piece_image_1"}
   When %{I press "Create"}
 end
 
@@ -38,9 +38,9 @@ end
 Given /^I add a piece that I want to sell called "([^\"]*)"$/ do |title|
   When %{I fill in "Title" with "#{title}"}
   When %{I fill in "Description" with "A hooker floating in the Sienne at dawn."}
-  When %{I attach the file at "/Users/Maloney/desktop/weefolio/public/images/test_images/janus.jpg" to "Image 1"}
+  When %{I attach the file at "/Users/Maloney/desktop/weefolio/public/images/test_images/janus.jpg" to "piece_image_1"}
   When %{I check "For Sale"}
-  When %{I fill in "Price" with "150000.46"}
+  When %{I fill in "piece_price" with "150000.46"}
   When %{I press "Create"}
 end
 
@@ -62,7 +62,7 @@ Given /^I have uploaded a piece called "([^\"]*)" to my portfolio$/ do |title|
   visit new_portfolio_piece_path(@user.portfolio)
   When %{I fill in "Title" with "#{title}"}
   When %{I fill in "Description" with "Some shit I did a while back."}
-  When %{I attach the file at "/Users/Maloney/desktop/weefolio/public/images/test_images/janus.jpg" to "Image 1"}
+  When %{I attach the file at "/Users/Maloney/desktop/weefolio/public/images/test_images/janus.jpg" to "piece_image_1"}
   When %{I press "Create"}
 end
 

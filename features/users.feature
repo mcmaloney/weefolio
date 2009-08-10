@@ -21,7 +21,8 @@ Feature: User
     And I should have 1 design
     And I should see the logged in nav bar in all its glory
     And I should not see "Login"
-    And I should not see "Sign Up"
+    And I should see "Logged in as mcmaloney"
+    And I should see "Logout"
   
   Scenario: Existing user logs in
     Given I have already signed up as "kevingomez"
