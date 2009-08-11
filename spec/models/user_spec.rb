@@ -5,6 +5,9 @@ describe User do
     before(:each) do
       @user = Factory(:user)
     end
+    it "should not be an administrator" do
+      @user.admin?.should be_false
+    end
     
     it "should have account tier 1" do
       @user.account_tier.should == 1

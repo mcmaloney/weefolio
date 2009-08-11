@@ -16,7 +16,7 @@ class UsersController < ApplicationController
   def update
     @user = current_user
     if @user.update_attributes(params[:user])
-      redirect_to root_path
+      redirect_to edit_user_path(@user)
       flash[:notice] = "Account info updated."
     end
   end
@@ -72,5 +72,6 @@ class UsersController < ApplicationController
   end
   
   def users_admin
+    @users = User.find(:all)
   end
 end

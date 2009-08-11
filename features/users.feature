@@ -42,6 +42,7 @@ Feature: User
     And I update my about me to say "I am one cool cat"
     And I update my tag line to say "See above."
     And I press "Save"
+    Then I should be on the account page for "mcmaloney"
     Then I should see "Account info updated."
     
     

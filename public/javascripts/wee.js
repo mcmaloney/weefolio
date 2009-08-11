@@ -1,9 +1,9 @@
 /**
 File: wee.js
-*****
-All the javascript that's fit to print.
+All the javascript that's fit to print. And that controls the UI functions in this app.
 */
 
+/** Switches the thumb into the full size view in the gallery. */
 function switch_large_image(image_path, piece) {
 	var source = image_path.id;
 	var full_size = '#' + piece
@@ -11,7 +11,6 @@ function switch_large_image(image_path, piece) {
 	$('<img src=' + source + '>').appendTo(full_size);
 	$(full_size).fadeIn();
 }
-
 
 /** Shows the billing info form. */
 function show_billing() {

@@ -23,6 +23,11 @@ Then /^I should have ([0-9]*) design$/ do |count|
   Design.count.should == count.to_i
 end
 
+Given /^the following users exist:$/ do |table|
+  table.hashes.each do |hash|
+    Factory(:user, hash)
+  end
+end
 
 Given /^I have already signed up as "([^\"]*)"$/ do |login|
   @login_user = Factory(:user, :first_name => "Kevin", :last_name => "Gomez", :login => login, :has_read_terms => true)
@@ -69,22 +74,20 @@ end
 
 #### ADMIN ####
 
-
-Given /^I login as an admin user$/ do
-  @admin_user = Factory(:user, :first_name => "Michael", :last_name => "Michael", :login => "admin", :has_read_terms => true, :password => "bart9937hobart")
+Given /^I am an admin user$/ do
+  @admin_user = Factory(:user, :login => "admin", :admin_user => true)
   @admin_user.make_portfolio
   @admin_user.make_design_editor
   @admin_user.activate!
+end
+
+Given /^I login$/ do
   visit login_path
-  When %{I fill in "Login" with "admin"}
+  When %{I fill in "Login" with "#{@admin_user.login}"}
   When %{I fill in "Password" with "#{@admin_user.password}"}
   When %{I press "Login"}
 end
 
-
-Given /^I visit the login page$/ do
-  visit login_path
-end
 
 
 

@@ -11,6 +11,7 @@ ActionController::Routing::Routes.draw do |map|
   map.terms_of_use '/terms_of_use', :controller => 'main_pages', :action => 'terms_of_use'
   
   map.users_admin '/users_admin', :controller => 'users', :action => 'users_admin'
+  map.pieces_admin '/pieces_admin', :controller => 'pieces', :action => 'pieces_admin'
   
   map.resources :users do |users|
     users.resources :portfolios

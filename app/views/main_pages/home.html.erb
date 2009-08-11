@@ -24,11 +24,13 @@
   </p>
 	<!--DUMP ALL OF YOUR SHIT HERE!-->
 	
-	<% if admin? %>
-	Admin Actions
-	  <p>
-	    <%= link_to 'Users Admin Console', users_admin_path %>
-	  </p>
+	<% if logged_in? %>
+	  <% if current_user.admin? %>
+	    Admin Actions
+	    <p>
+	      <%= link_to 'Users', users_admin_path %> | <%= link_to 'Pieces', pieces_admin_path %>
+	    </p>
+	  <% end %>
 	<% end %>
 </div>
 
