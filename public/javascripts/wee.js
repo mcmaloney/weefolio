@@ -4,11 +4,12 @@ File: wee.js
 All the javascript that's fit to print.
 */
 
-function switch_large_image(image_path) {
+function switch_large_image(image_path, piece) {
 	var source = image_path.id;
-	$('#large_image').empty();
-	$('<img src=' + source + '>').appendTo('#large_image');
-	$('#large_image').fadeIn();
+	var full_size = '#' + piece
+	$(full_size).empty();
+	$('<img src=' + source + '>').appendTo(full_size);
+	$(full_size).fadeIn();
 }
 
 

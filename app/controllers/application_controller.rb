@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
   
 protected
   def admin?
-    current_user.login == "admin"
+    false
   end
   
   def authorize
