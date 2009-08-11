@@ -14,7 +14,7 @@
 				<li><%= link_to 'Home', root_path %></li>
 				<li><%= link_to 'Directory', directory_path %></li>
 				<li><%= link_to 'Help', help_path %></li>
-				<li><a href="#">Blog</a></li>
+				<li><%= link_to 'Blog', posts_path %></li>
 				<li><%= link_to 'Contact', contact_path %></li>
 				<% if logged_in? %>
 				  <li class="welcome">Logged in as <%= current_user.login %> | <%= link_to 'Logout', logout_path %></li>	

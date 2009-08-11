@@ -21,6 +21,8 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :portfolios do |portfolios|
     portfolios.resources :pieces
   end
+  
+  map.resources :posts
 
   map.resource :session
 

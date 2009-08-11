@@ -40,6 +40,10 @@ module NavigationHelpers
       users_admin_path
     when /the pieces admin page/
       pieces_admin_path
+    when /the blog page/
+      posts_path
+    when /^the post page for "(.*)"$/i
+      post_path(Post.find_by_title($1))
       
     
     # Add more mappings here.

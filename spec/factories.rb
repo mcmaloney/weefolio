@@ -16,4 +16,9 @@ Factory.define :piece do |p|
   p.price 12.75
   p.for_sale false
 end
-  
+
+Factory.define :post do |p|
+  p.title "My New Post"
+  p.body "Here is a new post I wrote for the Weefolio community to look at."
+  p.author "kjgomez"
+end

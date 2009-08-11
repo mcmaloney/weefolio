@@ -1,0 +1,7 @@
+<h1>Weefolio Blog</h1>
+
+<% for post in @posts %>
+  <p>
+    <%= link_to h(post.title), post_path(post) %>
+  </p>
+<% end %>
