@@ -47,7 +47,7 @@ class PiecesController < ApplicationController
 
   def show
     @piece = Piece.find(params[:id])
-    @user = User.find_by_id(current_user.id, :include => [:design, :portfolio])
+    @user = current_user
     @page_title = "#{@user.login} :: #{@piece.title}"
     @design = @user.design
     @portfolio = @user.portfolio
