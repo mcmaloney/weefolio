@@ -23,6 +23,13 @@
     <%= flash[:notice] %>
   </p>
 	<!--DUMP ALL OF YOUR SHIT HERE!-->
+	
+	<% if admin? %>
+	Admin Actions
+	  <p>
+	    <%= link_to 'Users Admin Console', users_admin_path %>
+	  </p>
+	<% end %>
 </div>
 
 

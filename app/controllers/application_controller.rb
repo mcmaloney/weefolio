@@ -7,4 +7,19 @@ class ApplicationController < ActionController::Base
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
+  
+  helper_method :admin?
+  
+protected
+  def admin?
+    current_user.login == "admin"
+  end
+  
+  def authorize
+    unless admin?
+      flash[:error] = "Nosiree!"
+      redirect_to root_path
+      false
+    end
+  end
 end

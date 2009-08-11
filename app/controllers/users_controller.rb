@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
   layout 'template'
   
+  before_filter :authorize, :except => [:new, :edit]
+  
   def new
     @page_title = "Sign Up for Weefolio!"
     @user = User.new
@@ -67,5 +69,8 @@ class UsersController < ApplicationController
     end
     @user.save
     redirect_to edit_user_design_path(@user, @user.design)
+  end
+  
+  def users_admin
   end
 end

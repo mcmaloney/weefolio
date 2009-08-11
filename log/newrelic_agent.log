@@ -608,3 +608,17 @@ The error occurred while evaluating nil.portfolio
 [08/10/09 20:33:40 -0400 michael-maloneys-imac.local (703)] INFO : Resolved collector.newrelic.com to 65.74.177.195
 [08/10/09 20:33:42 -0400 michael-maloneys-imac.local (703)] INFO : Connected to NewRelic Service at collector.newrelic.com:80
 [08/10/09 20:33:43 -0400 michael-maloneys-imac.local (703)] INFO : Reporting performance data every 60 seconds.
+[08/10/09 22:27:11 -0400 michael-maloneys-imac.local (1024)] INFO : Web container: mongrel
+[08/10/09 22:27:11 -0400 michael-maloneys-imac.local (1024)] INFO : Transaction tracing threshold is 2.0 seconds.
+[08/10/09 22:27:11 -0400 michael-maloneys-imac.local (1024)] INFO : New Relic RPM Agent 2.9.4 Initialized: pid = 1024
+[08/10/09 22:27:11 -0400 michael-maloneys-imac.local (1024)] INFO : Agent Log found in /Users/michael/Desktop/weefolio/log/newrelic_agent.log
+[08/10/09 22:27:16 -0400 michael-maloneys-imac.local (1024)] INFO : Resolved collector.newrelic.com to 65.74.177.195
+[08/10/09 22:27:17 -0400 michael-maloneys-imac.local (1024)] INFO : Connected to NewRelic Service at collector.newrelic.com:80
+[08/10/09 22:27:19 -0400 michael-maloneys-imac.local (1024)] INFO : Reporting performance data every 60 seconds.
+[08/10/09 22:40:58 -0400 michael-maloneys-imac.local (1112)] INFO : Web container: mongrel
+[08/10/09 22:40:58 -0400 michael-maloneys-imac.local (1112)] INFO : Transaction tracing threshold is 2.0 seconds.
+[08/10/09 22:40:58 -0400 michael-maloneys-imac.local (1112)] INFO : New Relic RPM Agent 2.9.4 Initialized: pid = 1112
+[08/10/09 22:40:58 -0400 michael-maloneys-imac.local (1112)] INFO : Agent Log found in /Users/michael/Desktop/weefolio/log/newrelic_agent.log
+[08/10/09 22:41:03 -0400 michael-maloneys-imac.local (1112)] INFO : Resolved collector.newrelic.com to 65.74.177.195
+[08/10/09 22:41:05 -0400 michael-maloneys-imac.local (1112)] INFO : Connected to NewRelic Service at collector.newrelic.com:80
+[08/10/09 22:41:06 -0400 michael-maloneys-imac.local (1112)] INFO : Reporting performance data every 60 seconds.

@@ -10,6 +10,8 @@ ActionController::Routing::Routes.draw do |map|
   map.privacy_policy '/privacy_policy', :controller => 'main_pages', :action => 'privacy_policy'
   map.terms_of_use '/terms_of_use', :controller => 'main_pages', :action => 'terms_of_use'
   
+  map.users_admin '/users_admin', :controller => 'users', :action => 'users_admin'
+  
   map.resources :users do |users|
     users.resources :portfolios
     users.resources :designs

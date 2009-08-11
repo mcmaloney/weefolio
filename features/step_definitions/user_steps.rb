@@ -38,7 +38,7 @@ When /^I login as "([^\"]*)"$/ do |login|
 end
 
 Given /^I am logged in as "([^\"]*)"$/ do |login|
-  @user = Factory(:user, :first_name => "Michael", :last_name => "Michael", :login => login, :has_read_terms => true)
+  @user = Factory(:user, :first_name => "Michael", :last_name => "Michael", :login => login, :has_read_terms => true, :password => "giraffe")
   @user.make_portfolio
   @user.make_design_editor
   @user.activate!
@@ -66,6 +66,26 @@ Then /^I should see the logged in nav bar in all its glory$/ do
   Then %{I should see "Account"}
   Then %{I should see "My Weefolio"}
 end
+
+#### ADMIN ####
+
+
+Given /^I login as an admin user$/ do
+  @admin_user = Factory(:user, :first_name => "Michael", :last_name => "Michael", :login => "admin", :has_read_terms => true, :password => "bart9937hobart")
+  @admin_user.make_portfolio
+  @admin_user.make_design_editor
+  @admin_user.activate!
+  visit login_path
+  When %{I fill in "Login" with "admin"}
+  When %{I fill in "Password" with "#{@admin_user.password}"}
+  When %{I press "Login"}
+end
+
+
+Given /^I visit the login page$/ do
+  visit login_path
+end
+
 
 
 
