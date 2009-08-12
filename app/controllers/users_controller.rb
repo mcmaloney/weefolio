@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   layout 'template'
   
-  before_filter :authorize, :except => [:new, :edit, :update, :create, :activate]
+  before_filter :authorize, :except => [:new, :edit, :update, :create, :activate, :send_message]
   
   def new
     @page_title = "Sign Up for Weefolio!"

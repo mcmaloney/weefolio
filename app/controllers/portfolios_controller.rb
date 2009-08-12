@@ -16,6 +16,16 @@ class PortfoliosController < ApplicationController
     @portfolio = current_user.portfolio
     @page_title = "Weefolio :: Manage My Work"
   end
+  
+  def send_message
+    @user = User.find(params[:id])
+    @from = params[:from]
+    @from_name = params[:name]
+    @recip = @user.email
+    @message = params[:message]
+    UserMailer.deliver_user_message(@recip, @from, @from_name, @message)
+    redirect_to user_portfolio_path(@user, @user.portfolio)
+  end
 
 private
   def choose_layout

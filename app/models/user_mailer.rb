@@ -13,6 +13,14 @@ class UserMailer < ActionMailer::Base
     @body[:url]  = "http://YOURSITE/"
   end
   
+  def user_message(recip, from, from_name, message)
+    recipients recip
+    from from
+    subject from_name
+    sent_on Time.now
+    body message
+end
+
   protected
     def setup_email(user)
       @recipients  = "#{user.email}"
