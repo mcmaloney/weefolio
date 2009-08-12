@@ -72,6 +72,15 @@ Then /^I should see the logged in nav bar in all its glory$/ do
   Then %{I should see "My Weefolio"}
 end
 
+Given /^there is a user named "([^\"]*)"$/ do |login|
+  Factory(:user, :login => login)
+end
+
+Then /^I should have no users$/ do
+  User.count.should == 0
+end
+
+
 #### ADMIN ####
 
 Given /^I am an admin user$/ do

@@ -1,6 +1,6 @@
 class PiecesController < ApplicationController
   layout :choose_layout
-  before_filter :authorize, :except => [:new, :show, :edit]
+  before_filter :authorize, :except => [:new, :create, :show, :edit, :update, :destroy]
   
   def new
     @page_title = "Weefolio :: New Piece"

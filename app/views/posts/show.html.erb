@@ -1,5 +1,9 @@
 <h1><%= @post.title %></h1>
 
 <p>
+  <%= flash[:notice] %>
+</p>
+
+<p>
   <%= @post.body %>
 </p>

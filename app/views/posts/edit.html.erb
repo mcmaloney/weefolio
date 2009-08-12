@@ -1,2 +1,23 @@
-<h1>Posts#edit</h1>
-<p>Find me in app/views/posts/edit.html.erb</p>
+<h1>Edit <%= @post.title %></h1>
+
+<% form_for(@post) do |f| %>
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :author %><br />
+    <%= f.text_field :author %>
+  </p>
+  <p>
+    <%= f.label :body %><br />
+    <%= f.text_field :body %>
+  </p>
+  <p>
+    <%= f.submit 'Save' %>
+  </p>
+<% end %>
+
+<p>
+  <%= link_to 'Back', posts_path %>
+</p>

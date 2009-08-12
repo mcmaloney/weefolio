@@ -17,7 +17,7 @@ Feature: Admin
     Then I should not see "Admin Actions"
   
   @admin 
-  Scenario Outline: Admin Actions
+  Scenario Outline: Admin Pages
     Given I am an admin user
     And the following users exist:
       | login    |
@@ -27,6 +27,9 @@ Feature: Admin
       | title    |
       | Fred     |
       | Martha   |
+    And the following posts exist:
+      | title                            |
+      | Seriously, enough with the cats. |
     And I login
     And I follow "<admin action>"
     Then I should be on the <page>
@@ -34,6 +37,9 @@ Feature: Admin
     And I should see "<other thing I should see>"
     
     Examples:
-      | admin action | page              | thing I should see | other thing I should see |
-      | Users        | users admin page  | kjgomez            | mgmcadam                 |
-      | Pieces       | pieces admin page | Fred               | Martha                   |
+      | admin action | page              | thing I should see               | other thing I should see |
+      | Users        | users admin page  | kjgomez                          | mgmcadam                 |
+      | Pieces       | pieces admin page | Fred                             | Martha                   |
+      | Blog Console | blog page         | Seriously, enough with the cats. |                          |
+      
+  # STILL NEED A SCENARIO FOR DELETE USER
