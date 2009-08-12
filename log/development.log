@@ -24000,3 +24000,30 @@ Rendering main_pages/contact
   [4;35;1mPortfolio Load (0.8ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 32) LIMIT 1[0m
   [4;36;1mDesign Load (1.6ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 32) LIMIT 1[0m
 Completed in 81ms (View: 49, DB: 4) | 200 OK [http://0.0.0.0/contact_us]
+New Relic Agent not running
+** [Hoptoad] Notifier 1.2.4 ready to catch errors
+
+
+Processing HoptoadVerificationController#index (for 0.0.0.0 at 2009-08-12 16:07:18) [GET]
+** [Hoptoad] Success: Net::HTTPCreated
+** [Hoptoad] Environment Info: [Ruby: 1.8.6] [Rails: 2.3.2] [RailsEnv: development]
+** [Hoptoad] Response from Hoptoad: 
+<?xml version="1.0" encoding="UTF-8"?>
+<notice>
+  <action nil="true"></action>
+  <controller nil="true"></controller>
+  <created-at type="datetime">2009-08-12T20:12:31Z</created-at>
+  <error-class>HoptoadTestingException</error-class>
+  <error-message>HoptoadTestingException: Testing hoptoad via "rake hoptoad:test". If you can see this, it works.</error-message>
+  <file>[RAILS_ROOT]/vendor/plugins/hoptoad_notifier/tasks/hoptoad_notifier_tasks.rake</file>
+  <group-id type="integer">577584</group-id>
+  <id type="integer">113634163</id>
+  <line-number type="integer">39</line-number>
+  <project-id type="integer">7012</project-id>
+  <rails-env nil="true"></rails-env>
+  <request-method>GET</request-method>
+  <request-url>http://test.host/</request-url>
+  <updated-at type="datetime">2009-08-12T20:12:31Z</updated-at>
+  <user-agent>Rails Testing</user-agent>
+</notice>
+Rendering /Users/maloney/Desktop/weefolio/public/500.html (500 Internal Server Error)
