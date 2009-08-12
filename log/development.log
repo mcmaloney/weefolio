@@ -23758,3 +23758,245 @@ ActionController::RoutingError (No route matches "/header_images/header_format/m
   /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
 
 Rendering rescues/layout (not_found)
+New Relic Agent not running
+Starting the New Relic Agent
+  [4;36;1mSQL (2.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.9ms)[0m   [0mSELECT version FROM schema_migrations[0m
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-08-12 15:36:01) [GET]
+Rendering template within layouts/template
+Rendering main_pages/home
+  [4;36;1mUser Load (1.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 32) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.7ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 32) LIMIT 1[0m
+  [4;36;1mDesign Load (1.8ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 32) LIMIT 1[0m
+Completed in 251ms (View: 247, DB: 4) | 200 OK [http://0.0.0.0/]
+
+
+Processing PortfoliosController#show (for 127.0.0.1 at 2009-08-12 15:36:03) [GET]
+  Parameters: {"id"=>"38", "user_id"=>"32"}
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 32) LIMIT 1[0m
+  [4;36;1mDesign Load (1.7ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 32) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.7ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 32) LIMIT 1[0m
+Rendering template within layouts/weefolio
+Rendering portfolios/show
+  [4;36;1mPiece Load (1.4ms)[0m   [0;1mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 38) [0m
+  [4;35;1mUser Load (1.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 32) [0m
+Rendered styles/_form_css (8.6ms)
+Completed in 287ms (View: 223, DB: 6) | 200 OK [http://0.0.0.0/users/32/portfolios/38]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-12 15:36:04) [GET]
+
+ActionController::RoutingError (No route matches "/header_images/header_format/missing.png" with {:method=>:get}):
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing PortfoliosController#send_message (for 127.0.0.1 at 2009-08-12 15:36:33) [POST]
+  Parameters: {"name"=>"Hortense VanCockle", "message"=>"Hi there! I like your stuff.", "commit"=>"Send Message", "from"=>"mcm@crushlovely.com", "authenticity_token"=>"oKxRhl3P/qbCAV4yGGZsJ6qDm3JgWDJxGbD4Wel0TXA=", "id"=>"32"}
+  [4;36;1mUser Load (1.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 32) [0m
+Sent mail to maloney.mc@gmail.com
+
+Date: Wed, 12 Aug 2009 15:36:33 -0400
+From: mcm@crushlovely.com
+To: maloney.mc@gmail.com
+Subject: Hortense VanCockle
+Mime-Version: 1.0
+Content-Type: text/plain; charset=iso-8859-1
+
+Hi there! I like your stuff.
+  [4;35;1mPortfolio Load (1.3ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 32) LIMIT 1[0m
+Redirected to http://0.0.0.0:3000/users/32/portfolios/38
+Completed in 177ms (DB: 3) | 302 Found [http://0.0.0.0/portfolios/send_message/32]
+
+
+Processing PortfoliosController#show (for 127.0.0.1 at 2009-08-12 15:36:33) [GET]
+  Parameters: {"id"=>"38", "user_id"=>"32"}
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 32) LIMIT 1[0m
+  [4;35;1mDesign Load (1.9ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 32) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.7ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 32) LIMIT 1[0m
+Rendering template within layouts/weefolio
+Rendering portfolios/show
+  [4;35;1mPiece Load (1.3ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 38) [0m
+  [4;36;1mUser Load (1.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 32) [0m
+Rendered styles/_form_css (1.6ms)
+Completed in 137ms (View: 72, DB: 6) | 200 OK [http://0.0.0.0/users/32/portfolios/38]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-12 15:36:34) [GET]
+
+ActionController::RoutingError (No route matches "/header_images/header_format/missing.png" with {:method=>:get}):
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing PortfoliosController#show (for 127.0.0.1 at 2009-08-12 15:37:52) [GET]
+  Parameters: {"id"=>"38", "user_id"=>"32"}
+  [4;35;1mUser Load (1.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 32) LIMIT 1[0m
+  [4;36;1mDesign Load (1.8ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 32) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.7ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 32) LIMIT 1[0m
+Rendering template within layouts/weefolio
+Rendering portfolios/show
+  [4;36;1mPiece Load (1.6ms)[0m   [0;1mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 38) [0m
+  [4;35;1mUser Load (1.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 32) [0m
+Rendered styles/_form_css (1.4ms)
+Completed in 147ms (View: 79, DB: 7) | 200 OK [http://0.0.0.0/users/32/portfolios/38]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-12 15:37:52) [GET]
+
+ActionController::RoutingError (No route matches "/header_images/header_format/missing.png" with {:method=>:get}):
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing PortfoliosController#show (for 127.0.0.1 at 2009-08-12 15:38:47) [GET]
+  Parameters: {"id"=>"38", "user_id"=>"32"}
+  [4;36;1mUser Load (2.9ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 32) LIMIT 1[0m
+  [4;35;1mDesign Load (1.8ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 32) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.8ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 32) LIMIT 1[0m
+Rendering template within layouts/weefolio
+Rendering portfolios/show
+  [4;35;1mPiece Load (2.8ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 38) [0m
+  [4;36;1mUser Load (1.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 32) [0m
+Rendered styles/_form_css (1.6ms)
+Completed in 170ms (View: 94, DB: 10) | 200 OK [http://0.0.0.0/users/32/portfolios/38]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-12 15:38:48) [GET]
+
+ActionController::RoutingError (No route matches "/header_images/header_format/missing.png" with {:method=>:get}):
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing PortfoliosController#send_message (for 127.0.0.1 at 2009-08-12 15:39:02) [POST]
+  Parameters: {"name"=>"Elmar Donkeygumbo", "message"=>"Here's a nmessage", "commit"=>"Send Message", "from"=>"mcm@crushlovely.com", "authenticity_token"=>"oKxRhl3P/qbCAV4yGGZsJ6qDm3JgWDJxGbD4Wel0TXA=", "id"=>"32"}
+  [4;35;1mUser Load (1.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 32) [0m
+Sent mail to maloney.mc@gmail.com
+
+Date: Wed, 12 Aug 2009 15:39:02 -0400
+From: mcm@crushlovely.com
+To: maloney.mc@gmail.com
+Subject: Elmar Donkeygumbo
+Mime-Version: 1.0
+Content-Type: text/plain; charset=iso-8859-1
+
+Here's a nmessage
+  [4;36;1mPortfolio Load (1.1ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 32) LIMIT 1[0m
+Redirected to http://0.0.0.0:3000/users/32/portfolios/38
+Completed in 176ms (DB: 2) | 302 Found [http://0.0.0.0/portfolios/send_message/32]
+
+
+Processing PortfoliosController#show (for 127.0.0.1 at 2009-08-12 15:39:02) [GET]
+  Parameters: {"id"=>"38", "user_id"=>"32"}
+  [4;35;1mUser Load (1.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 32) LIMIT 1[0m
+  [4;36;1mDesign Load (2.0ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 32) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.7ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 32) LIMIT 1[0m
+Rendering template within layouts/weefolio
+Rendering portfolios/show
+  [4;36;1mPiece Load (1.6ms)[0m   [0;1mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 38) [0m
+  [4;35;1mUser Load (1.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 32) [0m
+Rendered styles/_form_css (1.5ms)
+Completed in 140ms (View: 74, DB: 7) | 200 OK [http://0.0.0.0/users/32/portfolios/38]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-12 15:39:03) [GET]
+
+ActionController::RoutingError (No route matches "/header_images/header_format/missing.png" with {:method=>:get}):
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+Starting the New Relic Agent
+  [4;36;1mSQL (1.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+
+
+Processing MainPagesController#contact (for 127.0.0.1 at 2009-08-12 15:47:31) [GET]
+  [4;36;1mUser Load (1.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 32) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering main_pages/contact
+  [4;35;1mPortfolio Load (0.8ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 32) LIMIT 1[0m
+  [4;36;1mDesign Load (1.5ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 32) LIMIT 1[0m
+Completed in 128ms (View: 65, DB: 4) | 200 OK [http://0.0.0.0/contact_us]
+
+
+Processing MainPagesController#send_us_mail (for 127.0.0.1 at 2009-08-12 15:47:54) [POST]
+  Parameters: {"message"=>"You guys want to sell the company to a Nigerian Prince?", "commit"=>"Send Message", "authenticity_token"=>"oKxRhl3P/qbCAV4yGGZsJ6qDm3JgWDJxGbD4Wel0TXA=", "id"=>"32", "subject"=>"Sell!"}
+  [4;35;1mUser Load (1.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 32) [0m
+Sent mail to maloney.mc@gmail.com
+
+From: maloney.mc@gmail.com
+To: maloney.mc@gmail.com
+Subject: Sell!
+Mime-Version: 1.0
+Content-Type: text/plain; charset=iso-8859-1
+
+You guys want to sell the company to a Nigerian Prince?
+Redirected to http://0.0.0.0:3000/contact_us
+Completed in 139ms (DB: 1) | 302 Found [http://0.0.0.0/main_pages/send_us_mail/32]
+
+
+Processing MainPagesController#contact (for 127.0.0.1 at 2009-08-12 15:47:54) [GET]
+  [4;36;1mUser Load (1.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 32) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering main_pages/contact
+  [4;35;1mPortfolio Load (0.8ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 32) LIMIT 1[0m
+  [4;36;1mDesign Load (1.6ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 32) LIMIT 1[0m
+Completed in 81ms (View: 49, DB: 4) | 200 OK [http://0.0.0.0/contact_us]

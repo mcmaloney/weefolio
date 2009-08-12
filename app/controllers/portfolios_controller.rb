@@ -17,6 +17,7 @@ class PortfoliosController < ApplicationController
     @page_title = "Weefolio :: Manage My Work"
   end
   
+  # Send message action for the contact user form.
   def send_message
     @user = User.find(params[:id])
     @from = params[:from]
@@ -25,6 +26,7 @@ class PortfoliosController < ApplicationController
     @message = params[:message]
     UserMailer.deliver_user_message(@recip, @from, @from_name, @message)
     redirect_to user_portfolio_path(@user, @user.portfolio)
+    flash[:notice] = "Message sent."
   end
 
 private

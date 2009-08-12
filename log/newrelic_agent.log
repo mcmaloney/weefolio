@@ -692,3 +692,21 @@ The error occurred while evaluating nil.portfolio
 [08/12/09 15:17:19 -0400 Macintosh.local (4011)] INFO : Resolved collector.newrelic.com to 65.74.177.195
 [08/12/09 15:17:19 -0400 Macintosh.local (4011)] INFO : Unable to establish connection with New Relic RPM Service at collector.newrelic.com:80
 [08/12/09 15:17:19 -0400 Macintosh.local (4011)] INFO : Will re-attempt in 1 minute
+[08/12/09 15:35:54 -0400 Macintosh.local (4244)] INFO : Web container: webrick
+[08/12/09 15:35:54 -0400 Macintosh.local (4244)] INFO : Transaction tracing threshold is 2.0 seconds.
+[08/12/09 15:35:54 -0400 Macintosh.local (4244)] INFO : New Relic RPM Agent 2.9.4 Initialized: pid = 4244
+[08/12/09 15:35:54 -0400 Macintosh.local (4244)] INFO : Agent Log found in /Users/maloney/Desktop/weefolio/log/newrelic_agent.log
+[08/12/09 15:35:59 -0400 Macintosh.local (4244)] INFO : Resolved collector.newrelic.com to 65.74.177.195
+[08/12/09 15:36:06 -0400 Macintosh.local (4244)] INFO : Connected to NewRelic Service at collector.newrelic.com:80
+[08/12/09 15:36:13 -0400 Macintosh.local (4244)] INFO : Reporting performance data every 60 seconds.
+[08/12/09 15:47:24 -0400 Macintosh.local (4406)] INFO : Web container: webrick
+[08/12/09 15:47:24 -0400 Macintosh.local (4406)] INFO : Transaction tracing threshold is 2.0 seconds.
+[08/12/09 15:47:24 -0400 Macintosh.local (4406)] INFO : New Relic RPM Agent 2.9.4 Initialized: pid = 4406
+[08/12/09 15:47:24 -0400 Macintosh.local (4406)] INFO : Agent Log found in /Users/maloney/Desktop/weefolio/log/newrelic_agent.log
+[08/12/09 15:47:29 -0400 Macintosh.local (4406)] INFO : Resolved collector.newrelic.com to 65.74.177.195
+[08/12/09 15:47:29 -0400 Macintosh.local (4406)] INFO : Unable to establish connection with New Relic RPM Service at collector.newrelic.com:80
+[08/12/09 15:47:29 -0400 Macintosh.local (4406)] INFO : Will re-attempt in 1 minute
+[08/12/09 15:49:00 -0400 Macintosh.local (4406)] INFO : Unable to establish connection with New Relic RPM Service at collector.newrelic.com:80
+[08/12/09 15:49:00 -0400 Macintosh.local (4406)] INFO : Will re-attempt in 1 minute
+[08/12/09 15:50:04 -0400 Macintosh.local (4406)] INFO : Connected to NewRelic Service at collector.newrelic.com:80
+[08/12/09 15:50:07 -0400 Macintosh.local (4406)] INFO : Reporting performance data every 60 seconds.

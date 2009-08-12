@@ -44,9 +44,9 @@
 				</div>
 				
 				<div id="contact-container">
+				  <%= flash[:notice] %>
 					<h2>Contact <%= @user.login %></h2>
 					
-					<%# Need an ActiveMailer for this form. mailto POST makes an ugly email in your preferred client. %>
 					<%= form_tag :controller => 'portfolios', :action => 'send_message', :id => @user %>
 					  <fieldset>
 							<label for="#">Name</label>
@@ -60,12 +60,13 @@
 						
 						<fieldset>
 							<label for="#">Message</label>
-							<%= text_field_tag :message %>
+							<%= text_area_tag :message %>
 						</fieldset>
 						
 						<div id="contact-submit">
 							<%= submit_tag 'Send Message' %>
 						</div>
+					</form>
 				</div>
 			</div>
 			
