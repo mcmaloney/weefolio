@@ -37,8 +37,8 @@ Given /^I have already signed up as "([^\"]*)"$/ do |login|
 end
 
 When /^I login as "([^\"]*)"$/ do |login|
-  When %{I fill in "user_login" with "#{login}"}
-  When %{I fill in "user_password" with "#{@login_user.password}"}
+  When %{I fill in "login" with "#{login}"}
+  When %{I fill in "password" with "#{@login_user.password}"}
   When %{I press "Login"}
 end
 
@@ -48,8 +48,8 @@ Given /^I am logged in as "([^\"]*)"$/ do |login|
   @user.make_design_editor
   @user.activate!
   visit login_path
-  When %{I fill in "user_login" with "#{login}"}
-  When %{I fill in "user_password" with "#{@user.password}"}
+  When %{I fill in "login" with "#{login}"}
+  When %{I fill in "password" with "#{@user.password}"}
   When %{I press "Login"}
 end
 
@@ -92,8 +92,8 @@ end
 
 Given /^I login$/ do
   visit login_path
-  When %{I fill in "user_login" with "#{@admin_user.login}"}
-  When %{I fill in "user_password" with "#{@admin_user.password}"}
+  When %{I fill in "login" with "#{@admin_user.login}"}
+  When %{I fill in "password" with "#{@admin_user.password}"}
   When %{I press "Login"}
 end
 
