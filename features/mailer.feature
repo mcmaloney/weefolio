@@ -1,5 +1,5 @@
 Feature: Mailer
-  We have several mailers for different uses. 
+  We have several mailers for different uses, listed below.
   
   # CONTACT WEEFOLIO USER
   As a weefolio viewer

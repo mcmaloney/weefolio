@@ -1,46 +1,21 @@
-class PostsController < ApplicationController
+class PostsController < InheritedResources::Base
   before_filter :authorize, :except => [:index, :show]
   
-  def index
-    @posts = Post.find(:all)
-  end
-
-  def new
-    @post = Post.new
-  end
-  
-  def create
-    @post = Post.create!(params[:post])
-    if @post.save
-      redirect_to posts_path
-      flash[:notice] = "Published '#{@post.title}'"
-    else
-      render :action => 'new'
+  def destroy
+    super do |format|
+      format.html {redirect_to posts_path, flash[:notice] = "'#{@post.title}' deleted."}
     end
-  end
-
-  def show
-    @post = Post.find(params[:id])
-  end
-
-  def edit
-    @post = Post.find(params[:id])
   end
   
   def update
-    @post = Post.find(params[:id])
-    if @post.update_attributes(params[:post])
-      redirect_to post_path(@post)
-      flash[:notice] = "Post updated."
-    else
-      render :action => 'edit'
+    super do |format|
+      format.html {redirect_to post_path(@post), flash[:notice] = "Post updated."}
     end
   end
   
-  def destroy
-    @post = Post.find(params[:id])
-    @post.destroy
-    redirect_to posts_path
-    flash[:notice] = "'#{@post.title}' deleted."
+  def create
+    super do |format|
+      format.html {redirect_to posts_path, flash[:notice] = "Published '#{@post.title}'"}
+    end
   end
 end
