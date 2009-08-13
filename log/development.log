@@ -28631,3 +28631,45 @@ Rendering template within layouts/template
 Rendering designs/edit
   [4;36;1mPortfolio Load (0.8ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
 Completed in 243ms (View: 173, DB: 3) | 200 OK [http://0.0.0.0/users/26/designs/14/edit]
+Starting the New Relic Agent
+  [4;36;1mSQL (1.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mSELECT version FROM schema_migrations[0m
+** [Hoptoad] Notifier 1.2.4 ready to catch errors
+
+
+Processing SessionsController#destroy (for 127.0.0.1 at 2009-08-12 22:46:25) [GET]
+Redirected to http://0.0.0.0:3000/
+Completed in 37ms (DB: 0) | 302 Found [http://0.0.0.0/logout]
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-08-12 22:46:25) [GET]
+Rendering template within layouts/template
+Rendering main_pages/home
+Completed in 167ms (View: 166, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-08-12 22:46:28) [GET]
+Rendering template within layouts/template
+Rendering sessions/new
+Completed in 26ms (View: 25, DB: 0) | 200 OK [http://0.0.0.0/login]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-08-12 22:47:41) [GET]
+Rendering template within layouts/template
+Rendering sessions/new
+Completed in 28ms (View: 27, DB: 0) | 200 OK [http://0.0.0.0/login]
+
+
+Processing MainPagesController#directory (for 127.0.0.1 at 2009-08-12 22:48:04) [GET]
+Rendering template within layouts/template
+Rendering main_pages/directory
+Completed in 12ms (View: 12, DB: 0) | 200 OK [http://0.0.0.0/directory]
+
+
+Processing MainPagesController#help (for 127.0.0.1 at 2009-08-12 22:48:10) [GET]
+Rendering template within layouts/template
+Rendering main_pages/help
+Completed in 22ms (View: 21, DB: 0) | 200 OK [http://0.0.0.0/help]
