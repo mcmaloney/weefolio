@@ -11,6 +11,7 @@ ActionController::Routing::Routes.draw do |map|
   map.help '/help', :controller => 'main_pages', :action => 'help'
   map.privacy_policy '/privacy_policy', :controller => 'main_pages', :action => 'privacy_policy'
   map.terms_of_use '/terms_of_use', :controller => 'main_pages', :action => 'terms_of_use'
+  map.forgot_password '/forgot_password', :controller => 'main_pages', :action => 'forgot_password'
   
   # ADMIN ROUTES. SHOULD NAMESPACE THESE.
   map.users_admin '/users_admin', :controller => 'users', :action => 'users_admin'

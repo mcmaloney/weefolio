@@ -80,7 +80,6 @@ Then /^I should have no users$/ do
   User.count.should == 0
 end
 
-
 #### ADMIN ####
 
 Given /^I am an admin user$/ do

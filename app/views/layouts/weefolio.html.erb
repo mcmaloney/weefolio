@@ -49,17 +49,17 @@
 					
 					<%= form_tag :controller => 'portfolios', :action => 'send_message', :id => @user %>
 					  <fieldset>
-							<label for="#">Name</label>
+							<label for="name">Name</label>
 							<%= text_field_tag :name %>
 						</fieldset>
 						
 						<fieldset>
-							<label for="#">Email</label>
+							<label for="email">Email</label>
 							<%= text_field_tag :from %>
 						</fieldset>
 						
 						<fieldset>
-							<label for="#">Message</label>
+							<label for="message">Message</label>
 							<%= text_area_tag :message %>
 						</fieldset>
 						

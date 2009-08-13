@@ -32,8 +32,19 @@ class User < ActiveRecord::Base
   # Paperclip settings
   has_attached_file :photo
   
+  # Is this user an admin?
   def admin?
     self.admin_user
+  end
+  
+  # Change the user's password
+  def change_password(new_password, email)
+    if self.email == email
+      self.password = new_password
+      self.save
+    else
+      false
+    end
   end
   
   # Upgrade account 

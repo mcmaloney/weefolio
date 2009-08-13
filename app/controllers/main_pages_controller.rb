@@ -25,6 +25,25 @@ class MainPagesController < ApplicationController
     @page_title = "Weefolio :: Privacy Policy"
   end
   
+  def forgot_password
+    @page_title = "Weefolio :: Forgot Password"
+  end
+  
+  def change_my_password
+    @user = User.find_by_login(params[:login])
+    @email = params[:email]
+    
+    
+    if @email == @user.email
+      @user.change_password(params[:new_password], @email)
+      redirect_to forgot_password_path
+      flash[:notice] = "Password changed. You can now login as '#{@user.login}' with your new password."
+    else
+      redirect_to forgot_password_path
+      flash[:notice] = "Bad login/email."
+    end
+  end
+  
   def send_us_mail
     @user = User.find(params[:id])
     @from = @user.email

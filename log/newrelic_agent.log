@@ -758,3 +758,31 @@ The error occurred while evaluating nil.portfolio
 [08/12/09 22:45:57 -0400 Macintosh.local (8622)] INFO : Resolved collector.newrelic.com to 65.74.177.195
 [08/12/09 22:45:58 -0400 Macintosh.local (8622)] INFO : Connected to NewRelic Service at collector.newrelic.com:80
 [08/12/09 22:45:58 -0400 Macintosh.local (8622)] INFO : Reporting performance data every 60 seconds.
+[08/13/09 11:10:25 -0400 Macintosh.local (15798)] INFO : Web container: webrick
+[08/13/09 11:10:25 -0400 Macintosh.local (15798)] INFO : Transaction tracing threshold is 2.0 seconds.
+[08/13/09 11:10:25 -0400 Macintosh.local (15798)] INFO : New Relic RPM Agent 2.9.4 Initialized: pid = 15798
+[08/13/09 11:10:25 -0400 Macintosh.local (15798)] INFO : Agent Log found in /Users/maloney/Desktop/weefolio/log/newrelic_agent.log
+[08/13/09 11:10:30 -0400 Macintosh.local (15798)] INFO : Resolved collector.newrelic.com to 65.74.177.195
+[08/13/09 11:10:31 -0400 Macintosh.local (15798)] INFO : Connected to NewRelic Service at collector.newrelic.com:80
+[08/13/09 11:10:34 -0400 Macintosh.local (15798)] INFO : Reporting performance data every 60 seconds.
+[08/13/09 11:45:58 -0400 Macintosh.local (16326)] INFO : Web container: webrick
+[08/13/09 11:45:58 -0400 Macintosh.local (16326)] INFO : Transaction tracing threshold is 2.0 seconds.
+[08/13/09 11:45:58 -0400 Macintosh.local (16326)] INFO : New Relic RPM Agent 2.9.4 Initialized: pid = 16326
+[08/13/09 11:45:58 -0400 Macintosh.local (16326)] INFO : Agent Log found in /Users/maloney/Desktop/weefolio/log/newrelic_agent.log
+[08/13/09 11:46:03 -0400 Macintosh.local (16326)] INFO : Resolved collector.newrelic.com to 65.74.177.195
+[08/13/09 11:46:03 -0400 Macintosh.local (16326)] INFO : Unable to establish connection with New Relic RPM Service at collector.newrelic.com:80
+[08/13/09 11:46:03 -0400 Macintosh.local (16326)] INFO : Will re-attempt in 1 minute
+[08/13/09 11:47:03 -0400 Macintosh.local (16326)] INFO : Unable to establish connection with New Relic RPM Service at collector.newrelic.com:80
+[08/13/09 11:47:03 -0400 Macintosh.local (16326)] INFO : Will re-attempt in 1 minute
+[08/13/09 11:48:03 -0400 Macintosh.local (16326)] INFO : Unable to establish connection with New Relic RPM Service at collector.newrelic.com:80
+[08/13/09 11:48:03 -0400 Macintosh.local (16326)] INFO : Will re-attempt in 2 minutes
+[08/13/09 12:58:21 -0400 Macintosh.local (17061)] INFO : Web container: webrick
+[08/13/09 12:58:21 -0400 Macintosh.local (17061)] INFO : Transaction tracing threshold is 2.0 seconds.
+[08/13/09 12:58:21 -0400 Macintosh.local (17061)] INFO : New Relic RPM Agent 2.9.4 Initialized: pid = 17061
+[08/13/09 12:58:21 -0400 Macintosh.local (17061)] INFO : Agent Log found in /Users/maloney/Desktop/weefolio/log/newrelic_agent.log
+[08/13/09 12:58:26 -0400 Macintosh.local (17061)] INFO : Resolved collector.newrelic.com to 65.74.177.195
+[08/13/09 12:58:30 -0400 Macintosh.local (17061)] INFO : Connected to NewRelic Service at collector.newrelic.com:80
+[08/13/09 12:58:30 -0400 Macintosh.local (17061)] INFO : Unable to establish connection with New Relic RPM Service at collector.newrelic.com:80
+[08/13/09 12:58:30 -0400 Macintosh.local (17061)] INFO : Will re-attempt in 1 minute
+[08/13/09 12:59:33 -0400 Macintosh.local (17061)] INFO : Connected to NewRelic Service at collector.newrelic.com:80
+[08/13/09 12:59:46 -0400 Macintosh.local (17061)] INFO : Reporting performance data every 60 seconds.

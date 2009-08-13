@@ -15,12 +15,12 @@
 	<!--DUMP ALL OF YOUR SHIT HERE!-->
 	<%= form_tag :controller => 'main_pages', :action => 'send_us_mail', :id => @user %>
 		<fieldset>
-			<label for="#">Subject</label>
+			<label for="subject">Subject</label>
 			<%= text_field_tag :subject %>
 		</fieldset>
 		
 		<fieldset>
-			<label for="#">Message</label>
+			<label for="message">Message</label>
 			<%= text_area_tag :message %>
 		</fieldset>
 		
