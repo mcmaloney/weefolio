@@ -786,3 +786,10 @@ The error occurred while evaluating nil.portfolio
 [08/13/09 12:58:30 -0400 Macintosh.local (17061)] INFO : Will re-attempt in 1 minute
 [08/13/09 12:59:33 -0400 Macintosh.local (17061)] INFO : Connected to NewRelic Service at collector.newrelic.com:80
 [08/13/09 12:59:46 -0400 Macintosh.local (17061)] INFO : Reporting performance data every 60 seconds.
+[08/13/09 17:34:30 -0400 Macintosh.local (20067)] INFO : Web container: webrick
+[08/13/09 17:34:30 -0400 Macintosh.local (20067)] INFO : Transaction tracing threshold is 2.0 seconds.
+[08/13/09 17:34:30 -0400 Macintosh.local (20067)] INFO : New Relic RPM Agent 2.9.4 Initialized: pid = 20067
+[08/13/09 17:34:30 -0400 Macintosh.local (20067)] INFO : Agent Log found in /Users/maloney/Desktop/weefolio/log/newrelic_agent.log
+[08/13/09 17:34:35 -0400 Macintosh.local (20067)] INFO : Resolved collector.newrelic.com to 65.74.177.195
+[08/13/09 17:34:36 -0400 Macintosh.local (20067)] INFO : Connected to NewRelic Service at collector.newrelic.com:80
+[08/13/09 17:34:37 -0400 Macintosh.local (20067)] INFO : Reporting performance data every 60 seconds.
