@@ -124,3 +124,5 @@
 [08/09/09 17:34:31 -0400 kevin-gomezs-macbook.local (31827)] INFO : Connected to NewRelic Service at collector.newrelic.com:80
 [08/09/09 17:34:32 -0400 kevin-gomezs-macbook.local (31827)] INFO : Reporting performance data every 60 seconds.
 [08/10/09 11:25:44 -0400 kevin-gomezs-macbook.local (31827)] WARN : Timed out trying to post data to RPM (timeout = 120 seconds)
+[08/12/09 10:37:01 -0400 kevin-gomezs-macbook.local (31827)] WARN : Timed out trying to post data to RPM (timeout = 120 seconds)
+[08/12/09 12:08:01 -0400 kevin-gomezs-macbook.local (31827)] WARN : Timed out trying to post data to RPM (timeout = 120 seconds)

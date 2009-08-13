@@ -48,6 +48,7 @@ div#page-header-container-inner {
 div#content-container {
 	background: #fff;
 	padding: 20px;
+	overflow: hidden;
 	}
 	
 div#footer-container {
@@ -262,6 +263,38 @@ div#content-container p.intro {
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
 	margin: 0 0 20px 0;	
+	}
+	
+div#content-container div.col-left {
+	width: 475px;
+	float: left;
+	}
+	
+div#content-container div.col-right {
+	width: 215px;
+	float: right;
+	}
+	
+div#content-container div.col-right ul.content-nav {
+	padding: 0;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	margin: 0 0 20px 0;
+	list-style: none;
+	}
+	
+div#content-container div.col-right ul.content-nav h2 {
+	font-size: 11px;
+	margin: -3px 0 0 0;
+	padding: 0 0 8px 0;
+	border-bottom: 1px dashed #ddd;
+	}
+	
+div#content-container div.col-right ul.content-nav li a {
+	padding: 7px 0 8px 15px;
+	border-bottom: 1px dashed #ddd;
+	display: block;
+	background: url(/images/content-nav-arrow.gif) left center no-repeat;
 	}
 	
 /*--FOOTER--*/
@@ -676,4 +709,38 @@ div#content-container ul.pieces li.piece ul.piece-options li#view a {
 	
 div#billing_info {
 	display: none;
+	}
+	
+/*--MAIN > HELP--*/
+
+div.main-help div.col-left ul.topics {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	}
+
+div.main-help div.col-left ul.topics li {
+	margin: 0 0 30px 0;
+	}
+		
+div.main-help div.col-left ul.topics li h2 {
+	font-size: 11px;
+	margin: 0 0 15px 15px;
+	}
+	
+div.main-help div.col-left ul.topics li dl dt {
+	margin: 0 0 0 15px;
+	padding: 4px 0 4px 30px;
+	color: #242420;
+	font-weight: normal;
+	font-family: Georgia, "Times New Roman", serif;
+	font-size: 18px;
+	background: url(../images/help-questions-icon.gif) left center no-repeat;	
+	line-height: 20px;
+	}
+	
+div.main-help div.col-left ul.topics li dl dd {
+	margin: 0 0 15px 0;
+	padding: 5px 15px 20px 45px;
+	border-bottom: 1px dashed #ddd;
 	}
