@@ -13,6 +13,21 @@
     <%= flash[:notice] %>
   </p>
 	<!--DUMP ALL OF YOUR SHIT HERE!-->
+	<%= form_tag :controller => 'main_pages', :action => 'send_us_mail', :id => @user %>
+		<fieldset>
+			<label for="#">Subject</label>
+			<%= text_field_tag :subject %>
+		</fieldset>
+		
+		<fieldset>
+			<label for="#">Message</label>
+			<%= text_area_tag :message %>
+		</fieldset>
+		
+		<div id="contact-submit">
+			<%= submit_tag 'Send Message' %>
+		</div>
+	</form>
 </div>
 
 

@@ -13,6 +13,7 @@ class MainPagesController < ApplicationController
   end
   
   def contact
+    @user = current_user
     @page_title = "Weefolio :: Contact Us"
   end
   
@@ -22,5 +23,15 @@ class MainPagesController < ApplicationController
   
   def privacy_policy
     @page_title = "Weefolio :: Privacy Policy"
+  end
+  
+  def send_us_mail
+    @user = User.find(params[:id])
+    @from = @user.email
+    @subject = params[:subject]
+    @message = params[:message]
+    UserMailer.deliver_contact_message(@from, @subject, @message)
+    redirect_to contact_path
+    flash[:notice] = "Thanks for sending us a note. We'll get back to you as soon as possible."
   end
 end

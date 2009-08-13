@@ -1,5 +1,6 @@
 class PiecesController < ApplicationController
   layout :choose_layout
+  before_filter :authorize, :except => [:new, :create, :show, :edit, :update, :destroy]
   
   def new
     @page_title = "Weefolio :: New Piece"
@@ -49,7 +50,12 @@ class PiecesController < ApplicationController
     @piece = Piece.find(params[:id])
     @user = current_user
     @page_title = "#{@user.login} :: #{@piece.title}"
-    @design = current_user.design
+    @design = @user.design
+    @portfolio = @user.portfolio
+  end
+  
+  def pieces_admin
+    @pieces = Piece.find(:all)
   end
   
 private

@@ -36,6 +36,15 @@ module NavigationHelpers
       edit_user_design_path(user, user.design)
     when /^the piece page for "(.*)"$/i
       portfolio_piece_path(@user.portfolio, Piece.find_by_title($1))
+    when /the users admin page/
+      users_admin_path
+    when /the pieces admin page/
+      pieces_admin_path
+    when /the blog page/
+      posts_path
+    when /^the post page for "(.*)"$/i
+      post_path(Post.find_by_title($1))
+
       
     
     # Add more mappings here.

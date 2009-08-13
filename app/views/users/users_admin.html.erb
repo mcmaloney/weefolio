@@ -1,0 +1,11 @@
+<h1>Users Admin</h1>
+
+<p>
+  <%= flash[:notice] %>
+</p>
+
+<% for user in @users %>
+  <p>
+    <%= user.login %> | <%= link_to 'Delete', user_path(user), :confirm => "Are you sure?", :method => :delete %>
+  </p>
+<% end %>

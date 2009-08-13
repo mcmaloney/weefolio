@@ -15,28 +15,6 @@
 <div id="content-container">
   
     <%= flash[:notice] %>
-  
-	<!--DUMP ALL OF YOUR SHIT HERE!-->
-	<% @portfolio.pieces.each do |piece| %>
-    <p>
-      <%= piece.title %>
-    </p>
-    <p> 
-      <%= piece.description %>
-    </p>
-    <p>
-      <%= image_tag piece.image_1.url(:large_thumb) %>
-      <% unless @user.account_tier == 1 %>
-        <%= image_tag piece.image_2.url(:large_thumb) %> 
-        <%= image_tag piece.image_3.url(:large_thumb) %> 
-        <%= image_tag piece.image_4.url(:large_thumb) %> 
-        <%= image_tag piece.image_5.url(:large_thumb) %>
-      <% end %>
-    </p>
-    <p>
-      <%= link_to 'Edit', edit_portfolio_piece_path(@portfolio, piece)%> | <%= link_to 'Delete', portfolio_piece_path(@portfolio, piece), :confirm => "Are you sure?", :method => :delete %>
-    </p>
-  <% end %>
  
   <p class="intro">You're using <strong><%= @portfolio.pieces.count %></strong> of your <strong><%= @portfolio.max_pieces %></strong> pieces.</p>
   

@@ -1,17 +1,4 @@
-<!--PAGE TITLE/CALL-TO-ACTION-->
-<%# YIELD %>
-<div id="page-header-container-outer">
-	<div id="page-header-container-inner">
-		<h1>Login</h1>
-	</div>
-</div>
 
-<!--PAGE CONTENT-->
-<%# YIELD %>
-<div id="content-container">
-    <%= flash[:notice] %>
-    
-	<!--DUMP ALL OF YOUR SHIT HERE!-->
 	<% form_tag session_path do %>
 		<fieldset>
 			<h2>Login</h2>
@@ -39,7 +26,7 @@
     	  <%= submit_tag 'Login' %>
     	</div>
   <% end %>
-</div>
+
 
 
 

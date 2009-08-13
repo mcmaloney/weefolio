@@ -1,7 +1,7 @@
 <html>
 	<head>
 		<title><%= @page_title %></title>
-		<% if @user.design_type == 1 %>
+		<% if @design.design_type == 1 %>
 		  <%= render :partial => 'styles/form_css' %>
 		  <%= stylesheet_link_tag 'editable.css'%>
 		<% else %>
@@ -44,27 +44,27 @@
 				</div>
 				
 				<div id="contact-container">
+				  <%= flash[:notice] %>
 					<h2>Contact <%= @user.login %></h2>
 					
-					<%# Need an ActiveMailer for this form. mailto POST makes an ugly email in your preferred client. %>
-					<form action="mailto:<%= @user.email %>" method="post">
-						<fieldset>
+					<%= form_tag :controller => 'portfolios', :action => 'send_message', :id => @user %>
+					  <fieldset>
 							<label for="#">Name</label>
-							<input id="contact-name" type="text" name="#"/>
+							<%= text_field_tag :name %>
 						</fieldset>
 						
 						<fieldset>
 							<label for="#">Email</label>
-							<input id="contact-email" type="text" name="#"/>
+							<%= text_field_tag :from %>
 						</fieldset>
 						
 						<fieldset>
 							<label for="#">Message</label>
-							<textarea rows="5" id="contact-message" name="#"></textarea>
+							<%= text_area_tag :message %>
 						</fieldset>
 						
 						<div id="contact-submit">
-							<input type="submit" value="Send Message"/>
+							<%= submit_tag 'Send Message' %>
 						</div>
 					</form>
 				</div>

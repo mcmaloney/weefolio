@@ -13,5 +13,4 @@ class DesignsController < ApplicationController
       flash[:notice] = "Layout saved."
     end
   end
-      
 end

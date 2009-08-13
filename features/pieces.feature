@@ -5,6 +5,7 @@ Feature: Pieces
   
   Scenario: User lists piece for sale
     Given I am logged in as "mcmaloney"
+    And my account tier is 2
     And I have no pieces in my portfolio
     And I am on my portfolio page
     And I follow "Add Work"

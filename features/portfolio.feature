@@ -1,5 +1,3 @@
-## I NEED TO BE REFACTORED!!
-
 Feature: Portfolio
   As a user
   I want to add work to my portfolio
@@ -48,29 +46,20 @@ Feature: Portfolio
     And I should have no pieces in my portfolio
   
   @skip
-  Scenario: Tier 1 user adds max (5) pieces
+  Scenario Outline: Account tiers with max pieces added
     Given I am logged in as "mcmaloney"
-    And my account tier is 1
-    And I have 5 pieces in my portfolio
+    And my account tier is <tier>
+    And I have <pieces> pieces in my portfolio
     And I am on my portfolio page
-    When I follow "Add Work"
+    And I follow "Add Work"
     Then I should see "You have uploaded the maximum amount of pieces for your account type."
-  
-  @skip
-  Scenario: Tier 2 user adds max (15) pieces
-    Given I am logged in as "mcmaloney"
-    And I have 15 pieces in my portfolio
-    And I am on my portfolio page
-    When I follow "Add Work"
-    Then I should see "You have uploaded the maximum amount of pieces for your account type."
-  
-  @skip
-  Scenario: Tier 3 user adds max (25) pieces
-    Given I am logged in as "mcmaloney"
-    And I have 25 pieces in my portfolio
-    And I am on my portfolio page
-    When I follow "Add Work"
-    Then I should see "You have uploaded the maximum amount of pieces for your account type."
+    
+    Examples:
+    |tier | pieces |
+    | 1   | 5      | 
+    | 2   | 15     |
+    | 3   | 25     |
+    
   
   
 

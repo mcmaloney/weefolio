@@ -167,7 +167,7 @@
     	<h2>Sign up for <strong><em>free</em></strong> &amp; upgrade anytime!</h2>
 	    <dl>
 	    	<dt>
-	    		<label for="user_login">Username</label>
+	    		<%= f.label :login, 'Username' %>
 	    	</dt>
 	    	<dd>
 	      		<%= f.text_field :login %>
@@ -183,14 +183,14 @@
 	      	</dt>
 	      
 	      	<dt>
-	      		<label for="user_password">Password</label>
+	      		<%= f.label :password, "Password" %>
 	      	</dt>
 	    	<dd>
 	      		<%= f.password_field :password %>
 	      	</dt>
 	      
 	      	<dt>
-	      		<label for="user_password_confirmation">Repeat Password</label>
+	      		<%= f.label :password_confirmation, "Password Confirmation" %>
 	      	</dt>
 	    	<dd>
 	      		<%= f.password_field :password_confirmation %>
@@ -200,7 +200,7 @@
 	      	</dt>
 	      	<dd>
 	      		<%= f.check_box :has_read_terms %>
-		      	<label>I have read and agree with the <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a>.</label>
+		      	<%= f.label :has_read_terms, 'I have read and agree with the <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a>.' %>
 	      	</dd>
 	    </dl>    
     </fieldset>

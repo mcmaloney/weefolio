@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090809203350) do
+ActiveRecord::Schema.define(:version => 20090811195015) do
 
   create_table "designs", :force => true do |t|
     t.integer  "user_id"
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(:version => 20090809203350) do
     t.text     "css_text",                  :default => "'''''''''''''''''''''''''''''''body {\n    \tmargin: 20px;\n    \tbackground-color: #dedddb; /*---Background: Color---*/\n    \tbackground-position: top; /*---Background: Alignment---*/\n    \tbackground-image: none; /*---Background: Image---*/\n    \tbackground-repeat: repeat; /*---Background: Tile---*/\n    \tfont-family: Arial, Helvetica, sans-serif; /*---Text: Font---*/\n    \tfont-size: 12px; /*---Text: Size---*/\n    \tcolor: #767574; /*---Text: Color---*/\n    \tline-height: 150%;\n    \t}\n\n    a:link,\n    a:visited {\n    \tcolor: #72b225; /*---Links: Color---*/\n    \t}\n\n    a:hover,\n    a:visited:hover {\n    \tcolor: #242420; /*---Text: Color---*/\n    \t}\n\n    h1 {\n    \tfont-size: ; /*---Tagline: Size---*/\n    \tcolor: #242420; /*---Tagline: Color---*/\n    \tfont-family: Georgia, serif; /*---Tagline: Font---*/\n    \tfont-weight: normal; /*---Tagline: Bold---*/\n    \tfont-style: normal; /*---Tagline: Italic---*/\n    \t}\n\n    h2, h3, h4, h5, h6 {\n    \tcolor: #242420; /*---Titles: Color---*/\n    \tfont-family: Georgia, serif; /*---Titles: Font---*/\n    \tfont-weight: normal; /*---Titles: Bold---*/\n    \tfont-style: normal; /*---Titles: Italic---*/\n    \t}\n\n    hr {\n    \tborder: 0;\n    \theight: 1px;\n    \tbackground: #eee; /*---Border: Color---*/\n    \tmargin: 20px 0;\n    \t}\n\n    a:link img, a:visited img {\n    \tdisplay: block;\n    \tborder: 5px solid #f5f4f4; /*---Border: Color---*/\n    \t}\n\n    a:hover img, a:visited:hover img {\t\n    \tborder: 5px solid #72b225; /*---Link: Color---*/\n    \t}\n\n\n    /*---STRUCTURE---*/\n\n    div#page-container {\n    \tmargin: 0 auto;\n    \twidth: 710px;\n    \tbackground: #fff; /*---Page: Background Color---*/\n    \toverflow: hidden;\n    \tpadding: 20px;\n    \t-webkit-border-radius: 10px;\n    \t}\n\n    div#header-container {\n    \toverflow: hidden;\n    \tmargin: 0 0 20px 0;\n    \t}\n\n    div#tagline-container {\n    \toverflow: hidden;\n    \ttext-align: left;\n    \t}\n\n    div#info-container {\n    \toverflow: hidden;\n    \t}\n\n    div#about-container {\n    \twidth: 345px;\n    \tmargin: 0 0 20px 0;\n    \toverflow: hidden;\n    \tfloat: left;\n    \t}\n\n    div#contact-container {\n    \twidth: 345px;\n    \tmargin: 0;\n    \toverflow: hidden;\n    \tfloat: right;\n    \t}'''''''''''''''''''''''''''''''"
     t.string   "text_size",                 :default => "12"
     t.string   "tagline_size"
+    t.integer  "layout_type",               :default => 1
   end
 
   create_table "pieces", :force => true do |t|
@@ -83,6 +84,14 @@ ActiveRecord::Schema.define(:version => 20090809203350) do
     t.datetime "updated_at"
   end
 
+  create_table "posts", :force => true do |t|
+    t.string   "title"
+    t.text     "body"
+    t.string   "author"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", :force => true do |t|
     t.string   "login",                     :limit => 40
     t.string   "name",                      :limit => 100, :default => ""
@@ -104,9 +113,9 @@ ActiveRecord::Schema.define(:version => 20090809203350) do
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
-    t.integer  "layout_type",                              :default => 1
     t.integer  "design_type",                              :default => 1
     t.boolean  "has_read_terms",                           :default => false
+    t.boolean  "admin_user",                               :default => false
   end
 
   add_index "users", ["login"], :name => "index_users_on_login", :unique => true

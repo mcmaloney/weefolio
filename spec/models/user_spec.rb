@@ -5,6 +5,9 @@ describe User do
     before(:each) do
       @user = Factory(:user)
     end
+    it "should not be an administrator" do
+      @user.admin?.should be_false
+    end
     
     it "should have account tier 1" do
       @user.account_tier.should == 1
@@ -33,28 +36,11 @@ describe User do
       @user.photo.should be_true
     end
     
-    it "should have layout type 1" do
-      @user.layout_type.should == 1
-    end
-    
     it "should have design type 1" do
       @user.design_type.should == 1
     end
   end
   
-  describe "change layout type" do
-    it "should change layout type from 1 to 2" do
-      user = Factory(:user)
-      user.set_layout_type(2)
-      user.layout_type.should == 2
-    end
-    
-    it "should change layout from 2 to 1" do
-      user = Factory(:user, :layout_type => 2)
-      user.set_layout_type(1)
-      user.layout_type.should == 1
-    end
-  end
   
   describe "change design type" do
     it "should change from 1 to 2" do

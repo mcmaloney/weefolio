@@ -744,3 +744,11 @@ div.main-help div.col-left ul.topics li dl dd {
 	padding: 5px 15px 20px 45px;
 	border-bottom: 1px dashed #ddd;
 	}
+	
+	
+/*--PIECE > NEW/EDIT--*/
+
+div#piece_price {
+	display: none;
+	}
+

@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   has_one                   :portfolio
   has_one                   :design
   has_many                  :pieces, :through => :portfolio
-  
+  validates_inclusion_of    :has_read_terms, :in => [true, false]
   validates_presence_of     :login
   validates_length_of       :login,    :within => 3..40
   validates_uniqueness_of   :login
@@ -32,16 +32,14 @@ class User < ActiveRecord::Base
   # Paperclip settings
   has_attached_file :photo
   
+  def admin?
+    self.admin_user
+  end
+  
   # Upgrade account 
   def change_tier(tier)
     self.account_tier -= self.account_tier
     self.account_tier += tier
-  end
-  
-  # Change layout type
-  def set_layout_type(number)
-    self.layout_type -= self.layout_type
-    self.layout_type += number
   end
   
   # Change design type

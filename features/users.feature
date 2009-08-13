@@ -1,5 +1,3 @@
-## I NEED TO BE REFACTORED!!
-
 Feature: User
   I want to sign up for a Weefolio account
   So that I can show off my work in a portfolio
@@ -9,7 +7,6 @@ Feature: User
     And I follow "Sign Up"
     Then I should be on the sign up page
   
-  @this
   Scenario: User signs up
     Given I am on the sign up page
     And there are no users 
@@ -21,7 +18,8 @@ Feature: User
     And I should have 1 design
     And I should see the logged in nav bar in all its glory
     And I should not see "Login"
-    And I should not see "Sign Up"
+    And I should see "Logged in as mcmaloney"
+    And I should see "Logout"
   
   Scenario: Existing user logs in
     Given I have already signed up as "kevingomez"
@@ -44,6 +42,7 @@ Feature: User
     And I update my about me to say "I am one cool cat"
     And I update my tag line to say "See above."
     And I press "Save"
+    Then I should be on the account page for "mcmaloney"
     Then I should see "Account info updated."
     
     

@@ -8,6 +8,22 @@ class Design < ActiveRecord::Base
     self.user.design_type
   end
   
+  # Change layout type
+  def set_layout_type(number)
+    self.layout_type -= self.layout_type
+    self.layout_type += number
+  end
+  
+  # Explicit decalration of layout type
+  def render_layout_type
+    if self.layout_type == 1
+      "grid"
+    else
+      "list"
+    end
+  end
+  
+  # Set serif mode on a given element
   def render_serif(element)
     if element
       "serif"
@@ -16,6 +32,7 @@ class Design < ActiveRecord::Base
     end
   end
   
+  # Set italic mode on a given element
   def render_italic(element)
     if element
       "italic"
@@ -24,6 +41,7 @@ class Design < ActiveRecord::Base
     end
   end
   
+  # Set bold on a given element
   def render_bold(element)
     if element
       "bold"
@@ -32,14 +50,17 @@ class Design < ActiveRecord::Base
     end
   end
   
+  # Render the font size for use in dynamic CSS
   def render_font_size(font)
     "#{font.to_s}px"
   end
   
+  # List of available font sizes for dropdowns
   def font_sizes
     font_sizes = [8, 10, 12, 14, 16, 18, 20, 22, 24]
   end
   
+  # List of  available font families for dropdowns
   def font_families
     font_families = ["Arial", "Helvetica", "Times New Roman", "Courier", "Georgia", "Trebuchet MS", "Verdana"]
   end
