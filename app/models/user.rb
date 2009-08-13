@@ -37,16 +37,6 @@ class User < ActiveRecord::Base
     self.admin_user
   end
   
-  # Change the user's password
-  def change_password(new_password, email)
-    if self.email == email
-      self.password = new_password
-      self.save
-    else
-      false
-    end
-  end
-  
   # Upgrade account 
   def change_tier(tier)
     self.account_tier -= self.account_tier

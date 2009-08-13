@@ -15,18 +15,3 @@ Given /^I have forgotten my password$/ do
   @forgot_user = Factory(:user, :login => "mcmaloney", :email => "maloney.mc@gmail.com")
 end
 
-When /^I fill in the account details I do remember$/ do
-  When %{I fill in "login" with "mcmaloney"}
-  When %{I fill in "email" with "maloney.mc@gmail.com"}
-  When %{I fill in "new password" with "giraffe"}
-  When %{I fill in "new password confirm" with "giraffe"}
-  When %{I press "Change my Password"}
-end
-
-Given /^I fill in incorrect details$/ do
-  When %{I fill in "login" with "mcmaloney"}
-  When %{I fill in "email" with "hacker@incorrect.com"}
-  When %{I fill in "new password" with "giraffe"}
-  When %{I fill in "new password confirm" with "giraffe"}
-  When %{I press "Change my Password"}
-end

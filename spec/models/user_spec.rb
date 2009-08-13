@@ -71,18 +71,4 @@ describe User do
       user.account_tier.should == 2
     end
   end
-  
-  describe "changing password" do
-    it "should change the password if attributes match" do
-      user = Factory(:user, :login => "mcmaloney", :email => "maloney.mc@gmail.com")
-      email = "maloney.mc@gmail.com"
-      user.change_password("giraffe", email).should be_true
-    end
-    
-    it "should not change the password if the attributes do not match" do
-      user = Factory(:user, :login => "mcmaloney", :email => "maloney.mc@gmail.com")
-      email = "nigerian_prince@hackingyou.com"
-      user.change_password("giraffe", email).should be_false
-    end
-  end
 end
