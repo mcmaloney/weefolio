@@ -70,5 +70,24 @@ describe User do
       user.change_tier(2)
       user.account_tier.should == 2
     end
+    
+    it "should render a text equivalent of account tier 1" do
+      user = Factory(:user)
+      user.render_account_tier.should == "Basic"
+    end
+    
+    it "should render a text equivalent of account tier 2" do
+      user = Factory(:user)
+      user.change_tier(2)
+      user.render_account_tier.should == "Plus"
+    end
+    
+    it "should render a text equivalent of account tier 3" do
+      user = Factory(:user)
+      user.change_tier(3)
+      user.render_account_tier.should == "Pro"
+    end
+    
+    
   end
 end

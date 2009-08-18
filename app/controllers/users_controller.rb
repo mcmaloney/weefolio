@@ -13,11 +13,18 @@ class UsersController < ApplicationController
     @user = current_user
   end
   
+  # THIS IS CHEAP AND CRAPPY FOR NOW. WILL BE BETTER WHEN WE CAN AUTHORIZE PAYMENTS.
   def update
     @user = current_user
     if @user.update_attributes(params[:user])
-      redirect_to edit_user_path(@user)
-      flash[:notice] = "Account info updated."
+      if @user.account_tier != 1
+        @user.change_tier(@user.account_tier)
+        redirect_to edit_user_path(@user)
+        flash[:notice] = "Thanks for upgrading your account! You now have access to all the #{@user.render_account_tier} features"
+      else
+        redirect_to edit_user_path(@user)
+        flash[:notice] = "Account info updated."
+      end
     end
   end
  

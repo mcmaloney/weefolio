@@ -89,9 +89,9 @@
 				</dt>
 				<dd>
 					<ul>
-						<li><input type="radio" name="account_tier" value="basic" onclick="hide_billing()" /> <label>Basic (Free)</label></li>
-						<li><input type="radio" name="account_tier" value="plus" onclick="show_billing()" /> <label>Plus ($2.99/month)</label></li>
-						<li><input type="radio" name="account_tier" value="pro" onclick="show_billing()" /> <label>Pro ($4.99/month)</label></li>
+					  <li><%= f.radio_button :account_tier, 1, :onclick => "hide_billing()" %> <label>Basic (Free)</label></li>
+					  <li><%= f.radio_button :account_tier, 2, :onclick => "show_billing()" %> <label>Plus ($2.99/month)</label></li>
+            <li><%= f.radio_button :account_tier, 3, :onclick => "show_billing()" %> <label>Pro ($4.99/month)</label></li>
 					</ul>
 				</dd>
 			<div id="billing_info">
@@ -99,38 +99,29 @@
 					<label>Card Type</label>
 				</dt>
 				<dd>
-					<select>
-						<option>Mastercard</option>
-						<option>Visa</option>
-						<option>Discovery</option>
-						<option>American Express</option>
-					</select>
+				  <%= f.select :card_type, @user.card_types %>
 				</dd>
 				
 				<dt>
 					<label>Card Number</label>
 				</dt>
 				<dd>
-					<input type="text" size="16"/>
+				  <%= f.text_field :card_number, :size => 16 %>
 				</dd>
 				
 				<dt>
 					<label>Card Verification</label>
 				</dt>
 				<dd>
-					<input type="text" size="3"/>
+				  <%= f.text_field :card_verification, :size => 3 %>
 				</dd>
 				
 				<dt>
 					<label>Card Expiration</label>
 				</dt>
 				<dd>
-					<select>
-						<option>01</option>
-					</select>
-					<select>
-						<option>2009</option>
-					</select>
+					<%= f.date_select(:card_expiration_month, :order => [:month], :use_month_numbers => true) %>
+					<%= f.date_select(:card_expiration_year, :order => [:year], :end_year => @user.end_year) %>
 				</dd>
 			</div>
 			</dl>

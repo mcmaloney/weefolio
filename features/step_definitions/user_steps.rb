@@ -80,6 +80,17 @@ Then /^I should have no users$/ do
   User.count.should == 0
 end
 
+#### PAYMENT STUFF ####
+
+Given /^I enter my credit card information in the given fields$/ do
+  When %{I select "Visa" from "user_card_type"}
+  When %{I fill in "user_card_number" with "1234567812345678"}
+  When %{I fill in "user_card_verification" with "123"}
+  When %{I select "6" from "user_card_expiration_month_2i"}
+  When %{I select "2011" from "user_card_expiration_year_1i"}
+end
+
+
 #### ADMIN ####
 
 Given /^I am an admin user$/ do

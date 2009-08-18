@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090813023933) do
+ActiveRecord::Schema.define(:version => 20090818210320) do
 
   create_table "designs", :force => true do |t|
     t.integer  "user_id"
@@ -116,6 +116,17 @@ ActiveRecord::Schema.define(:version => 20090813023933) do
     t.integer  "design_type",                              :default => 1
     t.boolean  "has_read_terms",                           :default => false
     t.boolean  "admin_user",                               :default => false
+    t.string   "address1"
+    t.string   "address2"
+    t.string   "city"
+    t.string   "state"
+    t.string   "country"
+    t.string   "zip"
+    t.string   "card_number"
+    t.string   "card_verification"
+    t.string   "card_expiration_month"
+    t.string   "card_expiration_year"
+    t.string   "card_type"
   end
 
   add_index "users", ["login"], :name => "index_users_on_login", :unique => true

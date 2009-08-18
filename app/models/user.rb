@@ -37,10 +37,31 @@ class User < ActiveRecord::Base
     self.admin_user
   end
   
+  # Array of card types for payments.
+  def card_types
+    card_types = ["Visa", "Mastercard", "Discover", "American Express"]
+  end
+  
+  # The ending year for credit card expiration year.
+  def end_year
+    Time.now.year + 20
+  end
+  
   # Upgrade account 
   def change_tier(tier)
     self.account_tier -= self.account_tier
     self.account_tier += tier
+  end
+  
+  # Shows the text equivalent of the account tier for display to the user.
+  def render_account_tier
+    if self.account_tier == 1
+      "Basic"
+    elsif self.account_tier == 2
+      "Plus"
+    elsif self.account_tier == 3
+      "Pro"
+    end
   end
   
   # Change design type
