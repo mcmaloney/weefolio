@@ -25,10 +25,6 @@ class MainPagesController < ApplicationController
     @page_title = "Weefolio :: Privacy Policy"
   end
   
-  def forgot_password
-    @page_title = "Weefolio :: Forgot Password"
-  end
-  
   def send_us_mail
     @user = User.find(params[:id])
     @from = @user.email

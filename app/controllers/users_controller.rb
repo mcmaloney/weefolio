@@ -13,6 +13,25 @@ class UsersController < ApplicationController
     @user = current_user
   end
   
+  def reset_password
+    @page_title = "Weefolio :: Change my Password"
+    if request.post?
+      user = User.find_by_email(params[:user][:email])
+      if user && user.login == params[:user][:login]
+        if user.update_attributes(:password => params[:user][:new_password], :password_confirmation => params[:user][:new_password_confirm])
+          redirect_to login_path
+          flash[:notice] = "Password changed. You can now login with your new password."
+        else
+          redirect_to forgot_password_path
+          flash[:notice] = "Something went wrong. Please try again."
+        end
+      else
+        flash[:notice] = "Bad login/email. Please try again."
+      end
+    end
+  end
+  
+  
   # THIS IS CHEAP AND CRAPPY FOR NOW. WILL BE BETTER WHEN WE CAN AUTHORIZE PAYMENTS.
   def update
     @user = current_user

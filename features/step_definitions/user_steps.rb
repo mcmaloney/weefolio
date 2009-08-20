@@ -80,6 +80,24 @@ Then /^I should have no users$/ do
   User.count.should == 0
 end
 
+#### RESET PASSWORD ####
+
+Given /^I change my password to "([^\"]*)"$/ do |password|
+  When %{I fill in "login" with "#{@login_user.login}"}
+  When %{I fill in "email" with "#{@login_user.email}"}
+  When %{I fill in "new password" with "#{password}"}
+  When %{I fill in "new password confirm" with "#{password}"}
+  When %{I press "Reset Password"}
+end
+
+Given /^I enter bad info for changing my password to "([^\"]*)"$/ do |password|
+  When %{I fill in "login" with "mcmaloney"}
+  When %{I fill in "email" with "#{@login_user.email}"}
+  When %{I fill in "new password" with "#{password}"}
+  When %{I fill in "new password confirm" with "#{password}"}
+  When %{I press "Reset Password"}
+end
+
 #### PAYMENT STUFF ####
 
 Given /^I enter my credit card information in the given fields$/ do

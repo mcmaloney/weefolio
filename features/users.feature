@@ -44,6 +44,25 @@ Feature: User
     And I press "Save"
     Then I should be on the account page for "mcmaloney"
     Then I should see "Account info updated."
+  
+  @focus
+  Scenario: User changes password
+    Given I have already signed up as "kevingomez"
+    And I am on the login page
+    And I follow "Forgot your password?"
+    And I change my password to "bloodfist"
+    Then I should be on the login page
+    And I should see "Password changed."
+  
+  @focus
+  Scenario: User enters incorrect info for changing password
+    Given I have already signed up as "kevingomez"
+    And I am on the login page
+    And I follow "Forgot your password?"
+    And I enter bad info for changing my password to "bloodfist"
+    Then I should see "Bad login/email. Please try again."
+    
+
     
     
     

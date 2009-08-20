@@ -32469,3 +32469,381 @@ New Relic Agent not running
   [4;35;1mSQL (2.0ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090811195015')[0m
   [4;36;1mSQL (5.1ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090813023933')[0m
   [4;35;1mSQL (2.0ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090818205835')[0m
+Starting the New Relic Agent
+  [4;36;1mSQL (1.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.5ms)[0m   [0mSELECT version FROM schema_migrations[0m
+** [Hoptoad] Notifier 1.2.4 ready to catch errors
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-08-18 18:19:09) [GET]
+  Parameters: {"action"=>"home", "controller"=>"main_pages"}
+Rendering template within layouts/template
+Rendering main_pages/home
+  [4;36;1mUser Load (1.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.6ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+  [4;36;1mDesign Load (1.5ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+Completed in 333ms (View: 329, DB: 4) | 200 OK [http://0.0.0.0/]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2009-08-18 18:19:13) [GET]
+  Parameters: {"action"=>"edit", "id"=>"26", "controller"=>"users"}
+  [4;35;1mUser Load (1.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering users/edit
+  [4;36;1mPortfolio Load (0.7ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+  [4;35;1mDesign Load (1.7ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+Completed in 438ms (View: 398, DB: 4) | 200 OK [http://0.0.0.0/users/26/edit]
+
+
+Processing UsersController#update (for 127.0.0.1 at 2009-08-18 18:21:29) [PUT]
+  Parameters: {"user"=>{"card_expiration_month(1i)"=>"2009", "card_expiration_month(2i)"=>"8", "card_type"=>"Visa", "account_tier"=>"2", "card_expiration_month(3i)"=>"1", "about_me"=>"", "card_number"=>"[FILTERED]", "card_expiration_year(1i)"=>"2009", "tag_line"=>"", "card_expiration_year(2i)"=>"8", "first_name"=>"", "card_expiration_year(3i)"=>"18", "login"=>"mcmaloney", "last_name"=>"", "card_verification"=>"[FILTERED]", "email"=>"maloney.mc@gmail.com"}, "commit"=>"Save", "action"=>"update", "_method"=>"put", "authenticity_token"=>"aqRQUw1Su9HIZIDQaJ7xpXuuU5iagG+u/0vvRVvzilM=", "id"=>"26", "controller"=>"users"}
+  [4;36;1mUser Load (1.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+WARNING: Can't mass-assign these protected attributes: card_expiration_month(1i), card_expiration_month(2i), card_type, card_expiration_month(3i), card_number, card_expiration_year(1i), card_expiration_year(2i), card_expiration_year(3i), card_verification
+  [4;35;1mUser Exists (0.4ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login" = 'mcmaloney' AND "users".id <> 26) LIMIT 1[0m
+  [4;36;1mUser Exists (0.3ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'maloney.mc@gmail.com' AND "users".id <> 26) LIMIT 1[0m
+  [4;35;1mUser Update (1.0ms)[0m   [0mUPDATE "users" SET "about_me" = '', "account_tier" = 2, "tag_line" = '', "last_name" = '', "updated_at" = '2009-08-18 22:21:29', "first_name" = '' WHERE "id" = 26[0m
+[paperclip] Saving attachments.
+Redirected to http://0.0.0.0:3000/users/26/edit
+Completed in 69ms (DB: 3) | 302 Found [http://0.0.0.0/users/26]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2009-08-18 18:21:29) [GET]
+  Parameters: {"action"=>"edit", "id"=>"26", "controller"=>"users"}
+  [4;36;1mUser Load (1.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering users/edit
+  [4;35;1mPortfolio Load (0.8ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+  [4;36;1mDesign Load (2.0ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+Completed in 261ms (View: 65, DB: 4) | 200 OK [http://0.0.0.0/users/26/edit]
+
+
+Processing PortfoliosController#edit (for 127.0.0.1 at 2009-08-18 18:21:38) [GET]
+  Parameters: {"action"=>"edit", "id"=>"31", "controller"=>"portfolios", "user_id"=>"26"}
+  [4;35;1mUser Load (1.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;36;1mDesign Load (2.3ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.7ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering portfolios/edit
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSELECT count(*) AS count_all FROM "pieces" WHERE ("pieces".portfolio_id = 31) [0m
+  [4;35;1mUser Load (1.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) [0m
+  [4;36;1mPiece Load (0.5ms)[0m   [0;1mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 31) [0m
+Completed in 145ms (View: 76, DB: 7) | 200 OK [http://0.0.0.0/users/26/portfolios/31/edit]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2009-08-18 18:21:40) [GET]
+  Parameters: {"action"=>"edit", "id"=>"26", "controller"=>"users"}
+  [4;35;1mUser Load (1.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering users/edit
+  [4;36;1mPortfolio Load (0.8ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+  [4;35;1mDesign Load (1.8ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+Completed in 94ms (View: 57, DB: 4) | 200 OK [http://0.0.0.0/users/26/edit]
+
+
+Processing PortfoliosController#edit (for 127.0.0.1 at 2009-08-18 18:21:47) [GET]
+  Parameters: {"action"=>"edit", "id"=>"31", "controller"=>"portfolios", "user_id"=>"26"}
+  [4;36;1mUser Load (1.9ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;35;1mDesign Load (3.0ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.8ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering portfolios/edit
+  [4;35;1mSQL (0.7ms)[0m   [0mSELECT count(*) AS count_all FROM "pieces" WHERE ("pieces".portfolio_id = 31) [0m
+  [4;36;1mUser Load (1.7ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 26) [0m
+  [4;35;1mPiece Load (0.5ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 31) [0m
+Completed in 135ms (View: 67, DB: 9) | 200 OK [http://0.0.0.0/users/26/portfolios/31/edit]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2009-08-18 18:21:50) [GET]
+  Parameters: {"action"=>"edit", "id"=>"26", "controller"=>"users"}
+  [4;36;1mUser Load (1.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering users/edit
+  [4;35;1mPortfolio Load (0.7ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+  [4;36;1mDesign Load (1.7ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+Completed in 93ms (View: 58, DB: 4) | 200 OK [http://0.0.0.0/users/26/edit]
+
+
+Processing UsersController#update (for 127.0.0.1 at 2009-08-18 18:21:55) [PUT]
+  Parameters: {"user"=>{"card_expiration_month(1i)"=>"2009", "card_expiration_month(2i)"=>"8", "card_type"=>"Visa", "account_tier"=>"3", "card_expiration_month(3i)"=>"1", "about_me"=>"", "card_number"=>"[FILTERED]", "card_expiration_year(1i)"=>"2009", "tag_line"=>"", "card_expiration_year(2i)"=>"8", "first_name"=>"", "card_expiration_year(3i)"=>"18", "login"=>"mcmaloney", "last_name"=>"", "card_verification"=>"[FILTERED]", "email"=>"maloney.mc@gmail.com"}, "commit"=>"Save", "action"=>"update", "_method"=>"put", "authenticity_token"=>"aqRQUw1Su9HIZIDQaJ7xpXuuU5iagG+u/0vvRVvzilM=", "id"=>"26", "controller"=>"users"}
+  [4;35;1mUser Load (2.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+WARNING: Can't mass-assign these protected attributes: card_expiration_month(1i), card_expiration_month(2i), card_type, card_expiration_month(3i), card_number, card_expiration_year(1i), card_expiration_year(2i), card_expiration_year(3i), card_verification
+  [4;36;1mUser Exists (0.5ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login" = 'mcmaloney' AND "users".id <> 26) LIMIT 1[0m
+  [4;35;1mUser Exists (0.3ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'maloney.mc@gmail.com' AND "users".id <> 26) LIMIT 1[0m
+  [4;36;1mUser Update (0.9ms)[0m   [0;1mUPDATE "users" SET "account_tier" = 3, "updated_at" = '2009-08-18 22:21:55' WHERE "id" = 26[0m
+[paperclip] Saving attachments.
+Redirected to http://0.0.0.0:3000/users/26/edit
+Completed in 77ms (DB: 4) | 302 Found [http://0.0.0.0/users/26]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2009-08-18 18:21:55) [GET]
+  Parameters: {"action"=>"edit", "id"=>"26", "controller"=>"users"}
+  [4;35;1mUser Load (1.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering users/edit
+  [4;36;1mPortfolio Load (1.1ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+  [4;35;1mDesign Load (1.9ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+Completed in 102ms (View: 65, DB: 5) | 200 OK [http://0.0.0.0/users/26/edit]
+
+
+Processing PortfoliosController#edit (for 127.0.0.1 at 2009-08-18 18:21:59) [GET]
+  Parameters: {"action"=>"edit", "id"=>"31", "controller"=>"portfolios", "user_id"=>"26"}
+  [4;36;1mUser Load (1.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;35;1mDesign Load (2.2ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.7ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering portfolios/edit
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM "pieces" WHERE ("pieces".portfolio_id = 31) [0m
+  [4;36;1mUser Load (1.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 26) [0m
+  [4;35;1mPiece Load (0.5ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 31) [0m
+Completed in 104ms (View: 50, DB: 6) | 200 OK [http://0.0.0.0/users/26/portfolios/31/edit]
+
+
+Processing DesignsController#edit (for 127.0.0.1 at 2009-08-18 18:22:03) [GET]
+  Parameters: {"action"=>"edit", "id"=>"14", "controller"=>"designs", "user_id"=>"26"}
+  [4;36;1mUser Load (2.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;35;1mDesign Load (1.7ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering designs/edit
+  [4;36;1mPortfolio Load (0.8ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Completed in 120ms (View: 68, DB: 5) | 200 OK [http://0.0.0.0/users/26/designs/14/edit]
+
+
+Processing DesignsController#edit (for 127.0.0.1 at 2009-08-18 18:22:17) [GET]
+  Parameters: {"action"=>"edit", "id"=>"14", "controller"=>"designs", "user_id"=>"26"}
+  [4;35;1mUser Load (2.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;36;1mDesign Load (1.9ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering designs/edit
+  [4;35;1mPortfolio Load (0.9ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Completed in 310ms (View: 58, DB: 5) | 200 OK [http://0.0.0.0/users/26/designs/14/edit]
+
+
+Processing PortfoliosController#show (for 127.0.0.1 at 2009-08-18 18:22:18) [GET]
+  Parameters: {"action"=>"show", "id"=>"31", "controller"=>"portfolios", "user_id"=>"26"}
+  [4;36;1mUser Load (1.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;35;1mDesign Load (2.0ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.6ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Rendering template within layouts/weefolio
+Rendering portfolios/show
+  [4;35;1mPiece Load (0.5ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 31) [0m
+  [4;36;1mUser Load (1.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 26) [0m
+Rendered styles/_form_css (6.7ms)
+Completed in 162ms (View: 82, DB: 6) | 200 OK [http://0.0.0.0/users/26/portfolios/31]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-18 18:22:18) [GET]
+
+ActionController::RoutingError (No route matches "/header_images/header_format/missing.png" with {:method=>:get}):
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing SessionsController#destroy (for 127.0.0.1 at 2009-08-18 18:22:40) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"sessions"}
+Redirected to http://0.0.0.0:3000/
+Completed in 23ms (DB: 0) | 302 Found [http://0.0.0.0/logout]
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-08-18 18:22:40) [GET]
+  Parameters: {"action"=>"home", "controller"=>"main_pages"}
+Rendering template within layouts/template
+Rendering main_pages/home
+Completed in 7ms (View: 6, DB: 0) | 200 OK [http://0.0.0.0/]
+New Relic Agent not running
+** [Hoptoad] Notifier 1.2.4 ready to catch errors
+  [4;36;1mUser Load (2.1ms)[0m   [0;1mSELECT * FROM "users" [0m
+  [4;35;1mUser Load (1.7ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) [0m
+Starting the New Relic Agent
+  [4;36;1mSQL (4.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.5ms)[0m   [0mSELECT version FROM schema_migrations[0m
+** [Hoptoad] Notifier 1.2.4 ready to catch errors
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-08-20 16:12:49) [GET]
+  Parameters: {"action"=>"home", "controller"=>"main_pages"}
+Rendering template within layouts/template
+Rendering main_pages/home
+Completed in 185ms (View: 184, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-08-20 16:12:51) [GET]
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering template within layouts/template
+Rendering sessions/new
+Completed in 24ms (View: 24, DB: 0) | 200 OK [http://0.0.0.0/login]
+
+
+Processing UsersController#reset_password (for 127.0.0.1 at 2009-08-20 16:12:53) [GET]
+  Parameters: {"action"=>"reset_password", "controller"=>"users"}
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of ActiveRecord::Base.
+The error occurred while evaluating nil.[]):
+  app/controllers/users_controller.rb:19:in `reset_password'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (207.4ms)
+Rendered rescues/_request_and_response (3.2ms)
+Rendering rescues/layout (internal_server_error)
+New Relic Agent not running
+** [Hoptoad] Notifier 1.2.4 ready to catch errors
+  [4;36;1mUser Load (2.4ms)[0m   [0;1mSELECT * FROM "users" [0m
+  [4;35;1mUser Load (2.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) [0m
+Starting the New Relic Agent
+  [4;36;1mSQL (1.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+** [Hoptoad] Notifier 1.2.4 ready to catch errors
+
+
+Processing UsersController#reset_password (for 127.0.0.1 at 2009-08-20 16:18:13) [GET]
+  Parameters: {"action"=>"reset_password", "controller"=>"users"}
+Rendering template within layouts/template
+Rendering users/reset_password
+Completed in 157ms (View: 155, DB: 0) | 200 OK [http://0.0.0.0/forgot_password]
+
+
+Processing UsersController#reset_password (for 127.0.0.1 at 2009-08-20 16:18:34) [POST]
+  Parameters: {"user"=>{"new_password_confirm"=>"[FILTERED]", "new_password"=>"[FILTERED]", "login"=>"mcmaloney", "email"=>"maloney.mc@gmail.com"}, "commit"=>"Reset Password", "action"=>"reset_password", "authenticity_token"=>"MDDnmbpcwelTItFvxQYzbdx2oILSiZWt6mQsQSH5tH4=", "controller"=>"users"}
+  [4;36;1mUser Load (1.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."email" = 'maloney.mc@gmail.com') LIMIT 1[0m
+  [4;35;1mUser Exists (0.5ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login" = 'mcmaloney' AND "users".id <> 26) LIMIT 1[0m
+  [4;36;1mUser Exists (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'maloney.mc@gmail.com' AND "users".id <> 26) LIMIT 1[0m
+  [4;35;1mUser Update (0.9ms)[0m   [0mUPDATE "users" SET "crypted_password" = 'e7fdd4552ce688a2a122a13476ab41e642b1ebb8', "updated_at" = '2009-08-20 20:18:34' WHERE "id" = 26[0m
+[paperclip] Saving attachments.
+Redirected to http://0.0.0.0:3000/login
+Completed in 109ms (DB: 3) | 302 Found [http://0.0.0.0/forgot_password]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-08-20 16:18:34) [GET]
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering template within layouts/template
+Rendering sessions/new
+Completed in 20ms (View: 20, DB: 0) | 200 OK [http://0.0.0.0/login]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2009-08-20 16:18:41) [POST]
+  Parameters: {"commit"=>"Login", "action"=>"create", "authenticity_token"=>"MDDnmbpcwelTItFvxQYzbdx2oILSiZWt6mQsQSH5tH4=", "controller"=>"sessions", "login"=>"mcmaloney", "password"=>"[FILTERED]"}
+  [4;36;1mUser Load (3.0ms)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'mcmaloney' and activated_at IS NOT NULL) LIMIT 1[0m
+[paperclip] Saving attachments.
+Redirected to http://0.0.0.0:3000/
+Completed in 45ms (DB: 3) | 302 Found [http://0.0.0.0/session]
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-08-20 16:18:41) [GET]
+  Parameters: {"action"=>"home", "controller"=>"main_pages"}
+Rendering template within layouts/template
+Rendering main_pages/home
+  [4;35;1mUser Load (1.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;36;1mPortfolio Load (19.1ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+  [4;35;1mDesign Load (2.3ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+Completed in 111ms (View: 87, DB: 23) | 200 OK [http://0.0.0.0/]
+
+
+Processing SessionsController#destroy (for 127.0.0.1 at 2009-08-20 16:19:11) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"sessions"}
+Redirected to http://0.0.0.0:3000/
+Completed in 20ms (DB: 0) | 302 Found [http://0.0.0.0/logout]
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-08-20 16:19:12) [GET]
+  Parameters: {"action"=>"home", "controller"=>"main_pages"}
+Rendering template within layouts/template
+Rendering main_pages/home
+Completed in 8ms (View: 7, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-08-20 16:19:13) [GET]
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering template within layouts/template
+Rendering sessions/new
+Completed in 8ms (View: 7, DB: 0) | 200 OK [http://0.0.0.0/login]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2009-08-20 16:19:20) [POST]
+  Parameters: {"commit"=>"Login", "action"=>"create", "authenticity_token"=>"C3Rr1rR0ctloaglIkvK7+N4Aa+UJ203lIvaMrgzjIek=", "controller"=>"sessions", "login"=>"mcmaloney", "password"=>"[FILTERED]"}
+  [4;36;1mUser Load (2.4ms)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'mcmaloney' and activated_at IS NOT NULL) LIMIT 1[0m
+Failed login for 'mcmaloney' from 127.0.0.1 at Thu Aug 20 20:19:20 UTC 2009
+Rendering template within layouts/template
+Rendering sessions/new
+Completed in 56ms (View: 8, DB: 2) | 200 OK [http://0.0.0.0/session]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2009-08-20 16:19:25) [POST]
+  Parameters: {"commit"=>"Login", "action"=>"create", "authenticity_token"=>"C3Rr1rR0ctloaglIkvK7+N4Aa+UJ203lIvaMrgzjIek=", "controller"=>"sessions", "login"=>"mcmaloney", "password"=>"[FILTERED]"}
+  [4;35;1mUser Load (3.1ms)[0m   [0mSELECT * FROM "users" WHERE (login = 'mcmaloney' and activated_at IS NOT NULL) LIMIT 1[0m
+Failed login for 'mcmaloney' from 127.0.0.1 at Thu Aug 20 20:19:25 UTC 2009
+Rendering template within layouts/template
+Rendering sessions/new
+Completed in 225ms (View: 7, DB: 3) | 200 OK [http://0.0.0.0/session]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2009-08-20 16:19:29) [POST]
+  Parameters: {"commit"=>"Login", "action"=>"create", "authenticity_token"=>"C3Rr1rR0ctloaglIkvK7+N4Aa+UJ203lIvaMrgzjIek=", "controller"=>"sessions", "login"=>"mcmaloney", "password"=>"[FILTERED]"}
+  [4;36;1mUser Load (2.6ms)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'mcmaloney' and activated_at IS NOT NULL) LIMIT 1[0m
+[paperclip] Saving attachments.
+Redirected to http://0.0.0.0:3000/
+Completed in 53ms (DB: 3) | 302 Found [http://0.0.0.0/session]
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-08-20 16:19:29) [GET]
+  Parameters: {"action"=>"home", "controller"=>"main_pages"}
+Rendering template within layouts/template
+Rendering main_pages/home
+  [4;35;1mUser Load (1.7ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;36;1mPortfolio Load (1.0ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+  [4;35;1mDesign Load (1.7ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+Completed in 90ms (View: 85, DB: 4) | 200 OK [http://0.0.0.0/]
+
+
+Processing SessionsController#destroy (for 127.0.0.1 at 2009-08-20 16:21:27) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"sessions"}
+Redirected to http://0.0.0.0:3000/
+Completed in 17ms (DB: 0) | 302 Found [http://0.0.0.0/logout]
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-08-20 16:21:27) [GET]
+  Parameters: {"action"=>"home", "controller"=>"main_pages"}
+Rendering template within layouts/template
+Rendering main_pages/home
+Completed in 6ms (View: 6, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-08-20 16:21:28) [GET]
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering template within layouts/template
+Rendering sessions/new
+Completed in 8ms (View: 8, DB: 0) | 200 OK [http://0.0.0.0/login]
+
+
+Processing UsersController#reset_password (for 127.0.0.1 at 2009-08-20 16:21:30) [GET]
+  Parameters: {"action"=>"reset_password", "controller"=>"users"}
+Rendering template within layouts/template
+Rendering users/reset_password
+Completed in 22ms (View: 21, DB: 0) | 200 OK [http://0.0.0.0/forgot_password]
