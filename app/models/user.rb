@@ -69,16 +69,12 @@ class User < ActiveRecord::Base
     self.design_type -= self.design_type
     self.design_type += number
   end
-   
-  # Should probably put this in the Portfolio model (make_portfolio_for(user))
-  def make_portfolio
+  
+  def setup_portfolio_and_design
     my_portfolio = Portfolio.new
     self.portfolio = my_portfolio
     self.portfolio.save
-  end
-  
-  # Again, probably should be in Design model (make_design_for(user))
-  def make_design_editor
+    
     my_design_editor = Design.new
     self.design = my_design_editor
     self.design.save

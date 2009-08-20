@@ -4,7 +4,7 @@ describe Portfolio do
   describe "being created" do
     before(:each) do
       @user = Factory(:user)
-      @user.make_portfolio
+      @user.setup_portfolio_and_design
     end
      
     it "should have no pieces in it" do
@@ -15,7 +15,7 @@ describe Portfolio do
   describe "account tier 1" do
     before(:each) do
       @user = Factory(:user)
-      @user.make_portfolio
+      @user.setup_portfolio_and_design
     end
     
     it "should read the tier from the user" do
@@ -38,7 +38,7 @@ describe Portfolio do
   describe "account tier 2" do
     before(:each) do
       @user = Factory(:user, :account_tier => 2)
-      @user.make_portfolio
+      @user.setup_portfolio_and_design
     end
     
     it "should read the tier from the user" do
@@ -61,7 +61,7 @@ describe Portfolio do
   describe "account tier 3" do
     before(:each) do
       @user = Factory(:user, :account_tier => 3)
-      @user.make_portfolio
+      @user.setup_portfolio_and_design
     end
     
     it "should read the tier from the user" do

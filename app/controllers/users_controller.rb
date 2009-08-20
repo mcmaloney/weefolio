@@ -15,6 +15,7 @@ class UsersController < ApplicationController
   
   def reset_password
     @page_title = "Weefolio :: Change my Password"
+    
     if request.post?
       user = User.find_by_email(params[:user][:email])
       if user && user.login == params[:user][:login]
@@ -30,7 +31,6 @@ class UsersController < ApplicationController
       end
     end
   end
-  
   
   # THIS IS CHEAP AND CRAPPY FOR NOW. WILL BE BETTER WHEN WE CAN AUTHORIZE PAYMENTS.
   def update
@@ -51,10 +51,7 @@ class UsersController < ApplicationController
     logout_keeping_session!
     @user = User.new(params[:user])
     
-    # Give the user a portfolio
-    @user.make_portfolio
-    # And a design editor **** THESE SHOULD BE REFACTORED INTO A SETUP METHOD SO THEY HAPPEN TOGETHER
-    @user.make_design_editor
+    @user.setup_portfolio_and_design
     
     @user.activate!
     success = @user && @user.save && @user.portfolio

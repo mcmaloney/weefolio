@@ -31,8 +31,7 @@ end
 
 Given /^I have already signed up as "([^\"]*)"$/ do |login|
   @login_user = Factory(:user, :first_name => "Kevin", :last_name => "Gomez", :login => login, :has_read_terms => true)
-  @login_user.make_portfolio
-  @login_user.make_design_editor
+  @login_user.setup_portfolio_and_design
   @login_user.activate!
 end
 
@@ -44,8 +43,7 @@ end
 
 Given /^I am logged in as "([^\"]*)"$/ do |login|
   @user = Factory(:user, :first_name => "Michael", :last_name => "Michael", :login => login, :has_read_terms => true, :password => "giraffe")
-  @user.make_portfolio
-  @user.make_design_editor
+  @user.setup_portfolio_and_design
   @user.activate!
   visit login_path
   When %{I fill in "login" with "#{login}"}
@@ -113,8 +111,7 @@ end
 
 Given /^I am an admin user$/ do
   @admin_user = Factory(:user, :login => "admin", :admin_user => true)
-  @admin_user.make_portfolio
-  @admin_user.make_design_editor
+  @admin_user.setup_portfolio_and_design
   @admin_user.activate!
 end
 

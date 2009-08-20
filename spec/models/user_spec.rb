@@ -4,6 +4,8 @@ describe User do
   describe "being created" do
     before(:each) do
       @user = Factory(:user)
+      @user.setup_portfolio_and_design
+      @user.activate!
     end
     it "should not be an administrator" do
       @user.admin?.should be_false
@@ -14,17 +16,14 @@ describe User do
     end
     
     it "should have a portfolio" do
-      @user.make_portfolio
       @user.portfolio.should be_true
     end
     
     it "should have a design" do
-      @user.make_design_editor
       @user.design.should be_true
     end
     
     it "should be activated on creation" do
-      @user.activate!
       @user.active?.should be_true
     end
     
@@ -40,7 +39,6 @@ describe User do
       @user.design_type.should == 1
     end
   end
-  
   
   describe "change design type" do
     it "should change from 1 to 2" do
@@ -87,7 +85,5 @@ describe User do
       user.change_tier(3)
       user.render_account_tier.should == "Pro"
     end
-    
-    
   end
 end

@@ -3,7 +3,7 @@ require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
 describe Design do
   before(:each) do
     @user = Factory(:user)
-    @user.make_design_editor
+    @user.setup_portfolio_and_design
     @design = @user.design
   end
   
