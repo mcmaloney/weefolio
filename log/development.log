@@ -33855,3 +33855,537 @@ New Relic Agent not running
   [4;35;1mSQL (1.8ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090811195015')[0m
   [4;36;1mSQL (1.5ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090813023933')[0m
   [4;35;1mSQL (1.7ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090818205835')[0m
+New Relic Agent not running
+** [Hoptoad] Notifier 1.2.4 ready to catch errors
+  [4;36;1mPiece Load (5.4ms)[0m   [0;1mSELECT * FROM "pieces" [0m
+  [4;35;1mPiece Load (0.7ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces"."id" = 1) [0m
+  [4;36;1mPiece Load (0.5ms)[0m   [0;1mSELECT * FROM "pieces" WHERE ("pieces"."id" = 23) [0m
+  [4;35;1mPiece Load (6.0ms)[0m   [0mSELECT * FROM "pieces" [0m
+  [4;36;1mPiece Load (1.4ms)[0m   [0;1mSELECT * FROM "pieces" WHERE ("pieces"."id" = 20) [0m
+New Relic Agent not running
+** [Hoptoad] Notifier 1.2.4 ready to catch errors
+  [4;36;1mSQL (1.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (3.3ms)[0m   [0;1mCREATE TABLE "designs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "created_at" datetime, "updated_at" datetime, "background_color" varchar(255) DEFAULT '#dedddb', "background_align" varchar(255) DEFAULT 'center', "background_tile" varchar(255) DEFAULT 'repeat', "page_bg_color" varchar(255) DEFAULT '#fff', "link_color" varchar(255) DEFAULT '#72b225', "link_hover_color" varchar(255) DEFAULT '#242420', "link_img_border_color" varchar(255) DEFAULT '#f5f4f4', "text_color" varchar(255) DEFAULT '#767574', "text_font_1" varchar(255) DEFAULT 'Arial', "text_font_2" varchar(255) DEFAULT 'Helvetica', "text_serif" boolean DEFAULT 'f', "title_color" varchar(255) DEFAULT '#242420', "title_bold" boolean DEFAULT 'f', "title_italic" boolean DEFAULT 'f', "title_font" varchar(255) DEFAULT 'Georgia', "title_serif" boolean DEFAULT 't', "tagline_color" varchar(255) DEFAULT '#242420', "tagline_bold" boolean DEFAULT 'f', "tagline_italic" boolean DEFAULT 'f', "tagline_font" varchar(255) DEFAULT 'Georgia', "tagline_serif" boolean DEFAULT 't', "border_color" varchar(255) DEFAULT '#eee', "header_image_file_name" varchar(255), "header_image_content_type" varchar(255), "header_image_file_size" integer, "header_image_updated_at" datetime, "css_text" text DEFAULT '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''body {
+ 	margin: 20px;
+ 	background-color: #dedddb; /*---Background: Color---*/
+ 	background-position: top; /*---Background: Alignment---*/
+ 	background-image: none; /*---Background: Image---*/
+ 	background-repeat: repeat; /*---Background: Tile---*/
+ 	font-family: Arial, Helvetica, sans-serif; /*---Text: Font---*/
+ 	font-size: 12px; /*---Text: Size---*/
+ 	color: #767574; /*---Text: Color---*/
+ 	line-height: 150%;
+ 	}
+
+ a:link,
+ a:visited {
+ 	color: #72b225; /*---Links: Color---*/
+ 	}
+
+ a:hover,
+ a:visited:hover {
+ 	color: #242420; /*---Text: Color---*/
+ 	}
+
+ h1 {
+ 	font-size: ; /*---Tagline: Size---*/
+ 	color: #242420; /*---Tagline: Color---*/
+ 	font-family: Georgia, serif; /*---Tagline: Font---*/
+ 	font-weight: normal; /*---Tagline: Bold---*/
+ 	font-style: normal; /*---Tagline: Italic---*/
+ 	}
+
+ h2, h3, h4, h5, h6 {
+ 	color: #242420; /*---Titles: Color---*/
+ 	font-family: Georgia, serif; /*---Titles: Font---*/
+ 	font-weight: normal; /*---Titles: Bold---*/
+ 	font-style: normal; /*---Titles: Italic---*/
+ 	}
+
+ hr {
+ 	border: 0;
+ 	height: 1px;
+ 	background: #eee; /*---Border: Color---*/
+ 	margin: 20px 0;
+ 	}
+
+ a:link img, a:visited img {
+ 	display: block;
+ 	border: 5px solid #f5f4f4; /*---Border: Color---*/
+ 	}
+
+ a:hover img, a:visited:hover img {	
+ 	border: 5px solid #72b225; /*---Link: Color---*/
+ 	}
+
+
+ /*---STRUCTURE---*/
+
+ div#page-container {
+ 	margin: 0 auto;
+ 	width: 710px;
+ 	background: #fff; /*---Page: Background Color---*/
+ 	overflow: hidden;
+ 	padding: 20px;
+ 	-webkit-border-radius: 10px;
+ 	}
+
+ div#header-container {
+ 	overflow: hidden;
+ 	margin: 0 0 20px 0;
+ 	}
+
+ div#tagline-container {
+ 	overflow: hidden;
+ 	text-align: left;
+ 	}
+
+ div#info-container {
+ 	overflow: hidden;
+ 	}
+
+ div#about-container {
+ 	width: 345px;
+ 	margin: 0 0 20px 0;
+ 	overflow: hidden;
+ 	float: left;
+ 	}
+
+ div#contact-container {
+ 	width: 345px;
+ 	margin: 0;
+ 	overflow: hidden;
+ 	float: right;
+ 	}''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''', "text_size" varchar(255) DEFAULT '12', "tagline_size" varchar(255), "layout_type" integer DEFAULT 1) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (3.6ms)[0m   [0;1mCREATE TABLE "pieces" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "description" varchar(255), "price" decimal(10,2), "for_sale" boolean, "portfolio_id" integer, "created_at" datetime, "updated_at" datetime, "image_2_file_name" varchar(255), "image_2_content_type" varchar(255), "image_2_file_size" integer, "image_2_updated_at" datetime, "image_3_file_name" varchar(255), "image_3_content_type" varchar(255), "image_3_file_size" integer, "image_3_updated_at" datetime, "image_4_file_name" varchar(255), "image_4_content_type" varchar(255), "image_4_file_size" integer, "image_4_updated_at" datetime, "image_5_file_name" varchar(255), "image_5_content_type" varchar(255), "image_5_file_size" integer, "image_5_updated_at" datetime, "image_1_file_name" varchar(255), "image_1_content_type" varchar(255), "image_1_file_size" integer, "image_1_updated_at" datetime, "position" integer) [0m
+  [4;35;1mSQL (0.7ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.2ms)[0m   [0;1mCREATE TABLE "portfolios" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.7ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (3.2ms)[0m   [0;1mCREATE TABLE "posts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "body" text, "author" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (2.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.8ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(40), "name" varchar(100) DEFAULT '', "email" varchar(100), "crypted_password" varchar(40), "salt" varchar(40), "created_at" datetime, "updated_at" datetime, "remember_token" varchar(40), "remember_token_expires_at" datetime, "activation_code" varchar(40), "activated_at" datetime, "first_name" varchar(255), "last_name" varchar(255), "about_me" text, "tag_line" varchar(500), "account_tier" integer DEFAULT 1, "photo_file_name" varchar(255), "photo_content_type" varchar(255), "photo_file_size" integer, "photo_updated_at" datetime, "design_type" integer DEFAULT 1, "has_read_terms" boolean DEFAULT 'f', "admin_user" boolean DEFAULT 'f', "address1" varchar(255), "address2" varchar(255), "city" varchar(255), "state" varchar(255), "country" varchar(255), "zip" varchar(255), "card_number" varchar(255), "card_verification" varchar(255), "card_expiration_month" varchar(255), "card_expiration_year" varchar(255), "card_type" varchar(255)) [0m
+  [4;35;1mSQL (3.1ms)[0m   [0mCREATE UNIQUE INDEX "index_users_on_login" ON "users" ("login")[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (3.5ms)[0m   [0mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;36;1mSQL (35.7ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.8ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (20.1ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090818210320')[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090718215859')[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090718220754')[0m
+  [4;36;1mSQL (3.5ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090719031854')[0m
+  [4;35;1mSQL (6.6ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090719032358')[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090719032501')[0m
+  [4;35;1mSQL (2.1ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090720145132')[0m
+  [4;36;1mSQL (11.8ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090720151551')[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090720202141')[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090720202338')[0m
+  [4;35;1mSQL (2.7ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090721033045')[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090721033319')[0m
+  [4;35;1mSQL (7.1ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090721152728')[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090721170213')[0m
+  [4;35;1mSQL (2.4ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090721170326')[0m
+  [4;36;1mSQL (2.3ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090721170409')[0m
+  [4;35;1mSQL (2.4ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090721170424')[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090721210418')[0m
+  [4;35;1mSQL (4.7ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090721210511')[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090805151853')[0m
+  [4;35;1mSQL (2.4ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090805164948')[0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090805171338')[0m
+  [4;35;1mSQL (3.1ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090805171518')[0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090805174329')[0m
+  [4;35;1mSQL (2.5ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090805191833')[0m
+  [4;36;1mSQL (8.3ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090805192350')[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090805192452')[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090811184907')[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090811195015')[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090813023933')[0m
+  [4;35;1mSQL (2.8ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090818205835')[0m
+Starting the New Relic Agent
+  [4;36;1mSQL (3.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (3.9ms)[0m   [0mSELECT version FROM schema_migrations[0m
+** [Hoptoad] Notifier 1.2.4 ready to catch errors
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-08-21 12:19:14) [GET]
+  Parameters: {"action"=>"home", "controller"=>"main_pages"}
+Rendering template within layouts/template
+Rendering main_pages/home
+Completed in 161ms (View: 161, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-08-21 12:19:17) [GET]
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering template within layouts/template
+Rendering sessions/new
+Completed in 18ms (View: 17, DB: 0) | 200 OK [http://0.0.0.0/login]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2009-08-21 12:19:24) [POST]
+  Parameters: {"commit"=>"Login", "action"=>"create", "authenticity_token"=>"mZ6/vXC9XoFcxjSnJfWOZx4Da1h4peWvnMAWIeBeSdA=", "controller"=>"sessions", "login"=>"mcmaloney", "password"=>"[FILTERED]"}
+  [4;36;1mUser Load (3.0ms)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'mcmaloney' and activated_at IS NOT NULL) LIMIT 1[0m
+[paperclip] Saving attachments.
+Redirected to http://0.0.0.0:3000/
+Completed in 82ms (DB: 3) | 302 Found [http://0.0.0.0/session]
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-08-21 12:19:24) [GET]
+  Parameters: {"action"=>"home", "controller"=>"main_pages"}
+Rendering template within layouts/template
+Rendering main_pages/home
+  [4;35;1mUser Load (1.9ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.6ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+  [4;35;1mDesign Load (1.5ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+Completed in 112ms (View: 108, DB: 4) | 200 OK [http://0.0.0.0/]
+
+
+Processing PortfoliosController#show (for 127.0.0.1 at 2009-08-21 12:19:28) [GET]
+  Parameters: {"action"=>"show", "id"=>"31", "controller"=>"portfolios", "user_id"=>"26"}
+  [4;36;1mUser Load (1.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;35;1mDesign Load (4.3ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.6ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Rendering template within layouts/weefolio
+Rendering portfolios/show
+  [4;35;1mPiece Load (0.5ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 31) [0m
+  [4;36;1mUser Load (1.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 26) [0m
+Rendered styles/_form_css (7.2ms)
+Completed in 275ms (View: 207, DB: 8) | 200 OK [http://0.0.0.0/users/26/portfolios/31]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-21 12:19:28) [GET]
+
+ActionController::RoutingError (No route matches "/header_images/header_format/missing.png" with {:method=>:get}):
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing PortfoliosController#edit (for 127.0.0.1 at 2009-08-21 12:19:34) [GET]
+  Parameters: {"action"=>"edit", "id"=>"31", "controller"=>"portfolios", "user_id"=>"26"}
+  [4;35;1mUser Load (1.9ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;36;1mDesign Load (1.9ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.7ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering portfolios/edit
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSELECT count(*) AS count_all FROM "pieces" WHERE ("pieces".portfolio_id = 31) [0m
+  [4;35;1mUser Load (1.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) [0m
+  [4;36;1mPiece Load (0.5ms)[0m   [0;1mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 31) [0m
+Completed in 345ms (View: 276, DB: 7) | 200 OK [http://0.0.0.0/users/26/portfolios/31/edit]
+
+
+Processing PiecesController#new (for 127.0.0.1 at 2009-08-21 12:19:37) [GET]
+  Parameters: {"action"=>"new", "controller"=>"pieces", "portfolio_id"=>"31"}
+  [4;35;1mUser Load (2.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.7ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering pieces/new
+  [4;35;1mUser Load (1.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) [0m
+  [4;36;1mPiece Load (0.5ms)[0m   [0;1mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 31) [0m
+Rendered pieces/_fields (12.9ms)
+Rendered pieces/_form (46.3ms)
+  [4;35;1mDesign Load (2.6ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+Completed in 173ms (View: 91, DB: 7) | 200 OK [http://0.0.0.0/portfolios/31/pieces/new]
+
+
+Processing PiecesController#create (for 127.0.0.1 at 2009-08-21 12:20:22) [POST]
+  Parameters: {"commit"=>"Create", "action"=>"create", "authenticity_token"=>"mZ6/vXC9XoFcxjSnJfWOZx4Da1h4peWvnMAWIeBeSdA=", "controller"=>"pieces", "portfolio_id"=>"31", "piece"=>{"price"=>"", "title"=>"Cowphin", "image_1"=>#<File:/var/folders/o9/o9qY2FWWF20mb+bBzRnJqU+++TI/-Tmp-/RackMultipart.15242.5>, "description"=>"This is a cow and a dolphin.", "for_sale"=>"0", "image_2"=>#<File:/var/folders/o9/o9qY2FWWF20mb+bBzRnJqU+++TI/-Tmp-/RackMultipart.15242.6>, "image_3"=>#<File:/var/folders/o9/o9qY2FWWF20mb+bBzRnJqU+++TI/-Tmp-/RackMultipart.15242.7>}}
+  [4;36;1mUser Load (2.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.7ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+  [4;36;1mPiece Create (59.3ms)[0m   [0;1mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "position", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES('2009-08-21 16:20:24', NULL, 40869, '2009-08-21 16:20:24', '2009-08-21 16:20:23', '507521912_756db48e89.jpg', 'Cowphin', NULL, 118867, '2009-08-21 16:20:22', NULL, NULL, 'image/jpeg', NULL, 'This is a cow and a dolphin.', 'f', 31, '747-400-2.jpg', 'image/jpeg', 55868, NULL, NULL, NULL, '2009-08-21 16:20:24', 'image/jpeg', NULL, NULL, 'cowphin.jpg')[0m
+[paperclip] Saving attachments.
+[paperclip] saving /Users/maloney/Desktop/weefolio/public/system/image_2s/28/small_thumb/747-400-2.jpg
+[paperclip] saving /Users/maloney/Desktop/weefolio/public/system/image_2s/28/full_size/747-400-2.jpg
+[paperclip] saving /Users/maloney/Desktop/weefolio/public/system/image_2s/28/original/747-400-2.jpg
+[paperclip] saving /Users/maloney/Desktop/weefolio/public/system/image_2s/28/large_thumb/747-400-2.jpg
+[paperclip] saving /Users/maloney/Desktop/weefolio/public/system/image_1s/28/small_thumb/cowphin.jpg
+[paperclip] saving /Users/maloney/Desktop/weefolio/public/system/image_1s/28/full_size/cowphin.jpg
+[paperclip] saving /Users/maloney/Desktop/weefolio/public/system/image_1s/28/original/cowphin.jpg
+[paperclip] saving /Users/maloney/Desktop/weefolio/public/system/image_1s/28/large_thumb/cowphin.jpg
+[paperclip] saving /Users/maloney/Desktop/weefolio/public/system/image_3s/28/small_thumb/507521912_756db48e89.jpg
+[paperclip] saving /Users/maloney/Desktop/weefolio/public/system/image_3s/28/full_size/507521912_756db48e89.jpg
+[paperclip] saving /Users/maloney/Desktop/weefolio/public/system/image_3s/28/original/507521912_756db48e89.jpg
+[paperclip] saving /Users/maloney/Desktop/weefolio/public/system/image_3s/28/large_thumb/507521912_756db48e89.jpg
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+Redirected to http://0.0.0.0:3000/users/26/portfolios/31/edit
+Completed in 2329ms (DB: 62) | 302 Found [http://0.0.0.0/portfolios/31/pieces]
+
+
+Processing PortfoliosController#edit (for 127.0.0.1 at 2009-08-21 12:20:25) [GET]
+  Parameters: {"action"=>"edit", "id"=>"31", "controller"=>"portfolios", "user_id"=>"26"}
+  [4;35;1mUser Load (1.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;36;1mDesign Load (1.6ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.7ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering portfolios/edit
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSELECT count(*) AS count_all FROM "pieces" WHERE ("pieces".portfolio_id = 31) [0m
+  [4;35;1mUser Load (2.7ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) [0m
+  [4;36;1mPiece Load (1.2ms)[0m   [0;1mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 31) [0m
+Completed in 116ms (View: 60, DB: 8) | 200 OK [http://0.0.0.0/users/26/portfolios/31/edit]
+
+
+Processing PortfoliosController#show (for 127.0.0.1 at 2009-08-21 12:20:28) [GET]
+  Parameters: {"action"=>"show", "id"=>"31", "controller"=>"portfolios", "user_id"=>"26"}
+  [4;35;1mUser Load (1.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;36;1mDesign Load (1.6ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.7ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Rendering template within layouts/weefolio
+Rendering portfolios/show
+  [4;36;1mPiece Load (1.4ms)[0m   [0;1mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 31) [0m
+  [4;35;1mUser Load (2.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) [0m
+Rendered styles/_form_css (1.6ms)
+Completed in 332ms (View: 248, DB: 7) | 200 OK [http://0.0.0.0/users/26/portfolios/31]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-21 12:20:29) [GET]
+
+ActionController::RoutingError (No route matches "/header_images/header_format/missing.png" with {:method=>:get}):
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing PiecesController#show (for 127.0.0.1 at 2009-08-21 12:20:31) [GET]
+  Parameters: {"action"=>"show", "id"=>"28", "controller"=>"pieces", "portfolio_id"=>"31"}
+  [4;36;1mPiece Load (1.4ms)[0m   [0;1mSELECT * FROM "pieces" WHERE ("pieces"."id" = 28) [0m
+  [4;35;1mUser Load (1.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;36;1mDesign Load (2.0ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.7ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Rendering template within layouts/weefolio
+Rendering pieces/show
+  [4;36;1mUser Load (1.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 26) [0m
+Rendered styles/_form_css (12.3ms)
+Completed in 162ms (View: 54, DB: 7) | 200 OK [http://0.0.0.0/portfolios/31/pieces/28]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-21 12:20:32) [GET]
+
+ActionController::RoutingError (No route matches "/header_images/header_format/missing.png" with {:method=>:get}):
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing PiecesController#show (for 127.0.0.1 at 2009-08-21 12:21:13) [GET]
+  Parameters: {"action"=>"show", "id"=>"28", "controller"=>"pieces", "portfolio_id"=>"31"}
+  [4;35;1mPiece Load (1.7ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces"."id" = 28) [0m
+  [4;36;1mUser Load (1.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;35;1mDesign Load (2.0ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.7ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Rendering template within layouts/weefolio
+Rendering pieces/show
+  [4;35;1mUser Load (2.7ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) [0m
+Rendered styles/_form_css (12.5ms)
+Completed in 173ms (View: 62, DB: 9) | 200 OK [http://0.0.0.0/portfolios/31/pieces/28]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-08-21 12:21:18) [GET]
+
+ActionController::RoutingError (No route matches "/header_images/header_format/missing.png" with {:method=>:get}):
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing PortfoliosController#show (for 127.0.0.1 at 2009-08-21 12:21:22) [GET]
+  Parameters: {"action"=>"show", "id"=>"31", "controller"=>"portfolios", "user_id"=>"26"}
+  [4;36;1mUser Load (1.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;35;1mDesign Load (2.0ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.7ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Rendering template within layouts/weefolio
+Rendering portfolios/show
+  [4;35;1mPiece Load (1.4ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 31) [0m
+  [4;36;1mUser Load (1.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 26) [0m
+Rendered styles/_form_css (1.7ms)
+Completed in 149ms (View: 70, DB: 7) | 200 OK [http://0.0.0.0/users/26/portfolios/31]
+
+
+Processing PiecesController#edit (for 127.0.0.1 at 2009-08-21 12:23:11) [GET]
+  Parameters: {"action"=>"edit", "id"=>"28", "controller"=>"pieces", "portfolio_id"=>"31"}
+  [4;35;1mUser Load (1.8ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.9ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+  [4;35;1mPiece Load (1.2ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces"."id" = 28) [0m
+Rendering template within layouts/template
+Rendering pieces/edit
+  [4;36;1mUser Load (1.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 26) [0m
+Rendered pieces/_fields (24.3ms)
+Rendered pieces/_form (26.6ms)
+  [4;35;1mDesign Load (1.6ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+Completed in 385ms (View: 57, DB: 7) | 200 OK [http://0.0.0.0/portfolios/31/pieces/28/edit]
+
+
+Processing PortfoliosController#show (for 127.0.0.1 at 2009-08-21 12:23:59) [GET]
+  Parameters: {"action"=>"show", "id"=>"31", "controller"=>"portfolios", "user_id"=>"26"}
+  [4;36;1mUser Load (1.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;35;1mDesign Load (1.8ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+  [4;36;1mPortfolio Load (1.3ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Rendering template within layouts/weefolio
+Rendering portfolios/show
+  [4;35;1mPiece Load (1.8ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 31) [0m
+  [4;36;1mUser Load (1.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 26) [0m
+Rendered styles/_form_css (2.0ms)
+Completed in 156ms (View: 79, DB: 8) | 200 OK [http://0.0.0.0/users/26/portfolios/31]
+
+
+Processing PiecesController#show (for 127.0.0.1 at 2009-08-21 12:24:01) [GET]
+  Parameters: {"action"=>"show", "id"=>"28", "controller"=>"pieces", "portfolio_id"=>"31"}
+  [4;35;1mPiece Load (1.3ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces"."id" = 28) [0m
+  [4;36;1mUser Load (1.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;35;1mDesign Load (3.1ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.7ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Rendering template within layouts/weefolio
+Rendering pieces/show
+  [4;35;1mUser Load (2.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) [0m
+Rendered styles/_form_css (11.8ms)
+Completed in 151ms (View: 42, DB: 8) | 200 OK [http://0.0.0.0/portfolios/31/pieces/28]
+
+
+Processing PortfoliosController#send_message (for 127.0.0.1 at 2009-08-21 12:24:36) [POST]
+  Parameters: {"name"=>"Elmar Donkeygumbo", "message"=>"I like your cowphin!", "commit"=>"Send Message", "from"=>"elmard@gmail.com", "action"=>"send_message", "authenticity_token"=>"mZ6/vXC9XoFcxjSnJfWOZx4Da1h4peWvnMAWIeBeSdA=", "id"=>"26", "controller"=>"portfolios"}
+  [4;36;1mUser Load (1.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 26) [0m
+Sent mail to maloney.mc@gmail.com
+
+Date: Fri, 21 Aug 2009 12:24:36 -0400
+From: elmard@gmail.com
+To: maloney.mc@gmail.com
+Subject: Elmar Donkeygumbo
+Mime-Version: 1.0
+Content-Type: text/plain; charset=iso-8859-1
+
+I like your cowphin!
+  [4;35;1mPortfolio Load (1.5ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Redirected to http://0.0.0.0:3000/users/26/portfolios/31
+Completed in 192ms (DB: 3) | 302 Found [http://0.0.0.0/portfolios/send_message/26]
+
+
+Processing PortfoliosController#show (for 127.0.0.1 at 2009-08-21 12:24:37) [GET]
+  Parameters: {"action"=>"show", "id"=>"31", "controller"=>"portfolios", "user_id"=>"26"}
+  [4;36;1mUser Load (1.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;35;1mDesign Load (1.5ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.6ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Rendering template within layouts/weefolio
+Rendering portfolios/show
+  [4;35;1mPiece Load (1.3ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 31) [0m
+  [4;36;1mUser Load (1.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 26) [0m
+Rendered styles/_form_css (1.3ms)
+Completed in 125ms (View: 59, DB: 6) | 200 OK [http://0.0.0.0/users/26/portfolios/31]
+
+
+Processing PortfoliosController#edit (for 127.0.0.1 at 2009-08-21 12:25:28) [GET]
+  Parameters: {"action"=>"edit", "id"=>"31", "controller"=>"portfolios", "user_id"=>"26"}
+  [4;35;1mUser Load (1.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;36;1mDesign Load (2.9ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.8ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering portfolios/edit
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSELECT count(*) AS count_all FROM "pieces" WHERE ("pieces".portfolio_id = 31) [0m
+  [4;35;1mUser Load (1.7ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) [0m
+  [4;36;1mPiece Load (2.0ms)[0m   [0;1mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 31) [0m
+Completed in 381ms (View: 308, DB: 10) | 200 OK [http://0.0.0.0/users/26/portfolios/31/edit]
+
+
+Processing DesignsController#edit (for 127.0.0.1 at 2009-08-21 12:25:40) [GET]
+  Parameters: {"action"=>"edit", "id"=>"14", "controller"=>"designs", "user_id"=>"26"}
+  [4;35;1mUser Load (1.8ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;36;1mDesign Load (2.2ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering designs/edit
+  [4;35;1mPortfolio Load (0.8ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Completed in 133ms (View: 79, DB: 5) | 200 OK [http://0.0.0.0/users/26/designs/14/edit]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2009-08-21 12:25:41) [GET]
+  Parameters: {"action"=>"edit", "id"=>"26", "controller"=>"users"}
+  [4;36;1mUser Load (1.7ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering users/edit
+  [4;35;1mPortfolio Load (0.8ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+  [4;36;1mDesign Load (1.9ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+Completed in 400ms (View: 333, DB: 4) | 200 OK [http://0.0.0.0/users/26/edit]
+
+
+Processing SessionsController#destroy (for 127.0.0.1 at 2009-08-21 12:25:53) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"sessions"}
+Redirected to http://0.0.0.0:3000/
+Completed in 25ms (DB: 0) | 302 Found [http://0.0.0.0/logout]
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-08-21 12:25:53) [GET]
+  Parameters: {"action"=>"home", "controller"=>"main_pages"}
+Rendering template within layouts/template
+Rendering main_pages/home
+Completed in 7ms (View: 7, DB: 0) | 200 OK [http://0.0.0.0/]

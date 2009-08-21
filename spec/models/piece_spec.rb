@@ -7,4 +7,11 @@ describe Piece do
       piece.display_price.should == "$12.75"
     end
   end
+  
+  describe "images" do
+    it "should have an array of images" do
+      piece = Factory(:piece)
+      piece.images.length.should == 5
+    end
+  end
 end

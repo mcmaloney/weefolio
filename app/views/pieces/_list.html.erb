@@ -3,17 +3,13 @@
   <div class="image-container" id=<%= piece.id %>>
     <%= image_tag piece.image_1.url(:full_size) %>
   </div>
-
+  
   <ul class="thumb-grid">
-    <li><a id=<%= piece.image_1.url(:full_size) %> onclick="switch_large_image(this, <%= piece.id %>)"><%= image_tag piece.image_1.url(:small_thumb) %></a></li>
-  <% unless @user.account_tier == 1 %>
-	  <li><a id=<%= piece.image_2.url(:full_size) %> onclick="switch_large_image(this, <%= piece.id %>)"><%= image_tag piece.image_2.url(:small_thumb) %></a></li>
-	  <li><a id=<%= piece.image_3.url(:full_size) %> onclick="switch_large_image(this, <%= piece.id %>)"><%= image_tag piece.image_3.url(:small_thumb) %></a></li>
-	<% unless @user.account_tier == 3 %>
-	  <li><a id=<%= piece.image_4.url(:full_size) %> onclick="switch_large_image(this, <%= piece.id %>)"><%= image_tag piece.image_4.url(:small_thumb) %></a></li>
-	  <li><a id=<%= piece.image_5.url(:full_size) %> onclick="switch_large_image(this, <%= piece.id %>)"><%= image_tag piece.image_5.url(:small_thumb) %></a></li>
-	<% end %>
-	<% end %>
+    <% for i in 0..4 %>
+      <% unless images[i].size.blank? %>
+        <li><a id=<%= piece.images[i].url(:full_size) %> onclick="switch_large_image(this, <%= piece.id %>)"><%= image_tag piece.images[i].url(:small_thumb) %></a></li>
+      <% end %>
+    <% end %>
   </ul>
 
   <div class="piece-info">

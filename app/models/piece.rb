@@ -14,4 +14,8 @@ class Piece < ActiveRecord::Base
   def display_price
     "$" + self.price.to_s unless !self.for_sale
   end
+  
+  def images
+    images = [self.image_1, self.image_2, self.image_3, self.image_4, self.image_5]
+  end
 end
