@@ -67,13 +67,30 @@ Given /^I have uploaded a piece called "([^\"]*)" to my portfolio$/ do |title|
   When %{I press "Create"}
 end
 
-
 ###### ADMIN ######
+
 Given /^the following pieces exist:$/ do |table|
   table.hashes.each do |hash|
     Factory(:piece, hash)
   end
 end
+
+Given /^there is a piece called "([^\"]*)"$/ do |title|
+  Factory(:piece, :title => title)
+end
+
+Then /^I should have no pieces$/ do
+  Piece.count.should == 0
+end
+
+Then /^I should see a form to edit the piece$/ do
+  Then %{I should see "title"}
+  Then %{I should see "description"}
+  Then %{I should see "for sale"}
+  Then %{I should see "image"}
+  Then %{I should see "Save"}
+end
+
 
 
 

@@ -38,12 +38,16 @@ class PiecesController < ApplicationController
   end
   
   def destroy
-    @portfolio = current_user.portfolio
     @piece = Piece.find(params[:id])
     
     @piece.destroy
-    redirect_to edit_user_portfolio_path(current_user)
-    flash[:notice] = "'#{@piece.title}' deleted."
+    if current_user.admin?
+      redirect_to pieces_admin_path
+      flash[:notice] = "'#{@piece.title}' deleted."
+    else
+      redirect_to edit_user_portfolio_path(current_user)
+      flash[:notice] = "'#{@piece.title}' deleted."
+    end
   end
 
   def show

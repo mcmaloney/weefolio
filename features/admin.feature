@@ -42,4 +42,21 @@ Feature: Admin
       | Pieces       | pieces admin page | Fred                             | Martha                   |
       | Blog Console | blog page         | Seriously, enough with the cats. |                          |
       
-  # STILL NEED A SCENARIO FOR DELETE USER
+  @admin
+  Scenario Outline: Admin user does stuff to piece
+    Given I am an admin user
+    And I login
+    And there is a piece called "Birth control montage"
+    And I am on the pieces admin page
+    When I follow "<action>"
+    Then I should <primary result>
+    And I should <secondary result>
+    
+    Examples:
+    | action | primary result | secondary result                       |
+    | Delete | have no pieces | see "'Birth control montage' deleted." |
+    
+    
+    
+    
+    

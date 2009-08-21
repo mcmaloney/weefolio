@@ -23,12 +23,15 @@ ActionController::Routing::Routes.draw do |map|
     users.resources :designs
   end
   
-  #PORTFOLIOS
+  # PORTFOLIOS
   map.resources :portfolios do |portfolios|
     portfolios.resources :pieces
   end
   
   map.resources :posts
+  
+  # SEPARATE PIECE ROUTE FOR ADMIN ACTIONS
+  map.resources :pieces
 
   map.resource :session
   

@@ -1,7 +1,11 @@
 <h1>Pieces Admin</h1>
 
+<p>
+  <%= flash[:notice] %>
+</p>
+
 <% for piece in @pieces %>
   <p>
-    <%= piece.title %>
+    <%= piece.title %> <%= link_to 'Delete', piece_path(piece), :confirm => "Are you sure?", :method => :delete %>
   </p>
 <% end %>
