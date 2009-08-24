@@ -883,3 +883,12 @@ The error occurred while evaluating nil.portfolio
 [08/21/09 12:19:15 -0400 Macintosh.local (15242)] INFO : Resolved collector.newrelic.com to 65.74.177.195
 [08/21/09 12:19:16 -0400 Macintosh.local (15242)] INFO : Connected to NewRelic Service at collector.newrelic.com:80
 [08/21/09 12:19:17 -0400 Macintosh.local (15242)] INFO : Reporting performance data every 60 seconds.
+[08/24/09 15:10:01 -0400 michael-maloneys-imac.local (408)] INFO : Web container: mongrel
+[08/24/09 15:10:01 -0400 michael-maloneys-imac.local (408)] INFO : Transaction tracing threshold is 2.0 seconds.
+[08/24/09 15:10:01 -0400 michael-maloneys-imac.local (408)] INFO : New Relic RPM Agent 2.9.4 Initialized: pid = 408
+[08/24/09 15:10:01 -0400 michael-maloneys-imac.local (408)] INFO : Agent Log found in /Users/michael/Desktop/weefolio/log/newrelic_agent.log
+[08/24/09 15:10:06 -0400 michael-maloneys-imac.local (408)] INFO : Resolved collector.newrelic.com to 65.74.177.195
+[08/24/09 15:10:06 -0400 michael-maloneys-imac.local (408)] INFO : Unable to establish connection with New Relic RPM Service at collector.newrelic.com:80
+[08/24/09 15:10:06 -0400 michael-maloneys-imac.local (408)] INFO : Will re-attempt in 1 minute
+[08/24/09 15:11:06 -0400 michael-maloneys-imac.local (408)] INFO : Unable to establish connection with New Relic RPM Service at collector.newrelic.com:80
+[08/24/09 15:11:06 -0400 michael-maloneys-imac.local (408)] INFO : Will re-attempt in 1 minute
