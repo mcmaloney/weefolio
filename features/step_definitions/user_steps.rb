@@ -6,7 +6,7 @@ When /^I sign up as "([^\"]*)"$/ do |login|
   When %{I fill in "user_login" with "#{login}"}
   When %{I fill in "Email" with "michael@maloney.com"}
   When %{I fill in "Password" with "giraffe"}
-  When %{I fill in "Password Confirmation" with "giraffe"}
+  When %{I fill in "user_password_confirmation" with "giraffe"}
   When %{I check "user_has_read_terms"}
   When %{I press "Sign Up"}
 end

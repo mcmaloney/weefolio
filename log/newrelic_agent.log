@@ -905,3 +905,24 @@ The error occurred while evaluating nil.portfolio
 [09/15/09 19:43:05 -0400 kevin-gomezs-macbook.local (64300)] INFO : Resolved collector.newrelic.com to 65.74.177.195
 [09/15/09 19:43:07 -0400 kevin-gomezs-macbook.local (64300)] INFO : Connected to NewRelic Service at collector.newrelic.com:80
 [09/15/09 19:43:08 -0400 kevin-gomezs-macbook.local (64300)] INFO : Reporting performance data every 60 seconds.
+[09/16/09 11:51:13 -0400 michael-maloneys-imac.local (5316)] INFO : Web container: mongrel
+[09/16/09 11:51:13 -0400 michael-maloneys-imac.local (5316)] INFO : Transaction tracing threshold is 2.0 seconds.
+[09/16/09 11:51:13 -0400 michael-maloneys-imac.local (5316)] INFO : New Relic RPM Agent 2.9.4 Initialized: pid = 5316
+[09/16/09 11:51:13 -0400 michael-maloneys-imac.local (5316)] INFO : Agent Log found in /Users/michael/Desktop/weefolio/log/newrelic_agent.log
+[09/16/09 11:51:18 -0400 michael-maloneys-imac.local (5316)] INFO : Resolved collector.newrelic.com to 65.74.177.195
+[09/16/09 11:51:20 -0400 michael-maloneys-imac.local (5316)] INFO : Connected to NewRelic Service at collector.newrelic.com:80
+[09/16/09 11:51:21 -0400 michael-maloneys-imac.local (5316)] INFO : Reporting performance data every 60 seconds.
+[09/16/09 12:11:28 -0400 michael-maloneys-imac.local (5531)] INFO : Web container: mongrel
+[09/16/09 12:11:28 -0400 michael-maloneys-imac.local (5531)] INFO : Transaction tracing threshold is 2.0 seconds.
+[09/16/09 12:11:28 -0400 michael-maloneys-imac.local (5531)] INFO : New Relic RPM Agent 2.9.4 Initialized: pid = 5531
+[09/16/09 12:11:28 -0400 michael-maloneys-imac.local (5531)] INFO : Agent Log found in /Users/michael/Desktop/weefolio/log/newrelic_agent.log
+[09/16/09 12:11:33 -0400 michael-maloneys-imac.local (5531)] INFO : Resolved collector.newrelic.com to 65.74.177.195
+[09/16/09 12:11:33 -0400 michael-maloneys-imac.local (5531)] INFO : Unable to establish connection with New Relic RPM Service at collector.newrelic.com:80
+[09/16/09 12:11:33 -0400 michael-maloneys-imac.local (5531)] INFO : Will re-attempt in 1 minute
+[09/16/09 12:13:04 -0400 michael-maloneys-imac.local (5594)] INFO : Web container: mongrel
+[09/16/09 12:13:04 -0400 michael-maloneys-imac.local (5594)] INFO : Transaction tracing threshold is 2.0 seconds.
+[09/16/09 12:13:04 -0400 michael-maloneys-imac.local (5594)] INFO : New Relic RPM Agent 2.9.4 Initialized: pid = 5594
+[09/16/09 12:13:04 -0400 michael-maloneys-imac.local (5594)] INFO : Agent Log found in /Users/michael/Desktop/weefolio/log/newrelic_agent.log
+[09/16/09 12:13:09 -0400 michael-maloneys-imac.local (5594)] INFO : Resolved collector.newrelic.com to 65.74.177.195
+[09/16/09 12:13:11 -0400 michael-maloneys-imac.local (5594)] INFO : Connected to NewRelic Service at collector.newrelic.com:80
+[09/16/09 12:13:11 -0400 michael-maloneys-imac.local (5594)] INFO : Reporting performance data every 60 seconds.
