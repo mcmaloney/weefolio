@@ -959,3 +959,10 @@ The error occurred while evaluating nil.portfolio
 [09/16/09 13:33:42 -0400 michael-maloneys-imac.local (6269)] INFO : Resolved collector.newrelic.com to 65.74.177.195
 [09/16/09 13:33:44 -0400 michael-maloneys-imac.local (6269)] INFO : Connected to NewRelic Service at collector.newrelic.com:80
 [09/16/09 13:33:44 -0400 michael-maloneys-imac.local (6269)] INFO : Reporting performance data every 60 seconds.
+[09/16/09 13:49:25 -0400 michael-maloneys-imac.local (6359)] INFO : Web container: mongrel
+[09/16/09 13:49:25 -0400 michael-maloneys-imac.local (6359)] INFO : Transaction tracing threshold is 2.0 seconds.
+[09/16/09 13:49:25 -0400 michael-maloneys-imac.local (6359)] INFO : New Relic RPM Agent 2.9.4 Initialized: pid = 6359
+[09/16/09 13:49:25 -0400 michael-maloneys-imac.local (6359)] INFO : Agent Log found in /Users/michael/Desktop/weefolio/log/newrelic_agent.log
+[09/16/09 13:49:30 -0400 michael-maloneys-imac.local (6359)] INFO : Resolved collector.newrelic.com to 65.74.177.195
+[09/16/09 13:49:31 -0400 michael-maloneys-imac.local (6359)] INFO : Connected to NewRelic Service at collector.newrelic.com:80
+[09/16/09 13:49:32 -0400 michael-maloneys-imac.local (6359)] INFO : Reporting performance data every 60 seconds.

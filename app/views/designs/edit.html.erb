@@ -17,6 +17,10 @@
 
     <%= flash[:notice] %>
     
+    <div id="ColourMod">
+      <%= yield :colour_mod_div %>
+    </div>
+    
 	<!--DUMP ALL OF YOUR SHIT HERE!-->
 	<% if @user.design_type == 1 %>
     <% form_for [@user, @user.design], :html => { :multipart => true } do |f| %>
@@ -63,8 +67,9 @@
       				<label for="design_page_bg_color">Page</label>
       			</dt>
       			<dd>
-      				<%= f.text_field :page_bg_color, :size => 7 %>
-      				<div class="color-preview" style="background:#ffffff;"></div>
+      				<%= f.text_field :page_bg_color, :size => 7, :id => "page_bg_color" %>
+      				<div class="color-preview" id="page_bg_color" style="background:#ffffff;"></div>
+      				<a href="javascript:;" onmousedown="pickcolor('#page_bg_color', 'backgroundColor', true, '', this)">Choose Color</a>
       			</dd>
       			
       			<dt>

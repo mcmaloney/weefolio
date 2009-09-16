@@ -37123,3 +37123,314 @@ Rendering designs/edit
 Rendered layouts/_colourmod_include (1.3ms)
   [4;36;1mPortfolio Load (0.3ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
 Completed in 108ms (View: 91, DB: 1) | 200 OK [http://0.0.0.0/users/26/designs/14/edit]
+Starting the New Relic Agent
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSELECT version FROM schema_migrations[0m
+** [Hoptoad] Notifier 1.2.4 ready to catch errors
+
+
+Processing DesignsController#edit (for 127.0.0.1 at 2009-09-16 13:49:30) [GET]
+  Parameters: {"action"=>"edit", "id"=>"14", "controller"=>"designs", "user_id"=>"26"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;35;1mDesign Load (0.5ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering designs/edit
+Rendered layouts/_colourmod_include (47.8ms)
+  [4;36;1mPortfolio Load (0.3ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Completed in 114ms (View: 83, DB: 1) | 200 OK [http://0.0.0.0/users/26/designs/14/edit]
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-09-16 13:58:54) [GET]
+  Parameters: {"action"=>"home", "controller"=>"main_pages"}
+Rendering template within layouts/template
+Rendering main_pages/home
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.2ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+  [4;35;1mDesign Load (0.6ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+Completed in 38ms (View: 37, DB: 1) | 200 OK [http://0.0.0.0/]
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-09-16 13:58:54) [GET]
+  Parameters: {"action"=>"home", "controller"=>"main_pages"}
+Rendering template within layouts/template
+Rendering main_pages/home
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.2ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+  [4;36;1mDesign Load (0.7ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+Completed in 96ms (View: 94, DB: 1) | 200 OK [http://0.0.0.0/]
+
+
+Processing DesignsController#edit (for 127.0.0.1 at 2009-09-16 13:58:57) [GET]
+  Parameters: {"action"=>"edit", "id"=>"14", "controller"=>"designs", "user_id"=>"26"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;36;1mDesign Load (0.5ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering designs/edit
+Rendered layouts/_colourmod_include (0.8ms)
+  [4;35;1mPortfolio Load (0.3ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Completed in 45ms (View: 27, DB: 1) | 200 OK [http://0.0.0.0/users/26/designs/14/edit]
+
+
+Processing DesignsController#edit (for 127.0.0.1 at 2009-09-16 13:59:31) [GET]
+  Parameters: {"action"=>"edit", "id"=>"14", "controller"=>"designs", "user_id"=>"26"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;35;1mDesign Load (0.5ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering designs/edit
+Rendered layouts/_colourmod_include (0.8ms)
+  [4;36;1mPortfolio Load (0.2ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Completed in 45ms (View: 27, DB: 1) | 200 OK [http://0.0.0.0/users/26/designs/14/edit]
+
+
+Processing DesignsController#edit (for 127.0.0.1 at 2009-09-16 14:00:19) [GET]
+  Parameters: {"action"=>"edit", "id"=>"14", "controller"=>"designs", "user_id"=>"26"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;36;1mDesign Load (0.5ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering designs/edit
+Rendered layouts/_colourmod_include (0.7ms)
+  [4;35;1mPortfolio Load (0.3ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Completed in 40ms (View: 25, DB: 1) | 200 OK [http://0.0.0.0/users/26/designs/14/edit]
+
+
+Processing DesignsController#edit (for 127.0.0.1 at 2009-09-16 14:01:42) [GET]
+  Parameters: {"action"=>"edit", "id"=>"14", "controller"=>"designs", "user_id"=>"26"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;35;1mDesign Load (0.7ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering designs/edit
+Rendered layouts/_colourmod_include (0.9ms)
+  [4;36;1mPortfolio Load (0.2ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Completed in 47ms (View: 29, DB: 1) | 200 OK [http://0.0.0.0/users/26/designs/14/edit]
+
+
+Processing DesignsController#edit (for 127.0.0.1 at 2009-09-16 14:03:38) [GET]
+  Parameters: {"action"=>"edit", "id"=>"14", "controller"=>"designs", "user_id"=>"26"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;36;1mDesign Load (0.6ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering designs/edit
+Rendered layouts/_colourmod_include (2.0ms)
+  [4;35;1mPortfolio Load (0.2ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Completed in 50ms (View: 32, DB: 1) | 200 OK [http://0.0.0.0/users/26/designs/14/edit]
+
+
+Processing DesignsController#edit (for 127.0.0.1 at 2009-09-16 14:05:39) [GET]
+  Parameters: {"action"=>"edit", "id"=>"14", "controller"=>"designs", "user_id"=>"26"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;35;1mDesign Load (0.6ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering designs/edit
+Rendered layouts/_colourmod_include (0.8ms)
+  [4;36;1mPortfolio Load (0.2ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Completed in 46ms (View: 28, DB: 1) | 200 OK [http://0.0.0.0/users/26/designs/14/edit]
+
+
+Processing DesignsController#edit (for 127.0.0.1 at 2009-09-16 14:08:11) [GET]
+  Parameters: {"action"=>"edit", "id"=>"14", "controller"=>"designs", "user_id"=>"26"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;36;1mDesign Load (0.6ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering designs/edit
+Rendered layouts/_colourmod_include (0.8ms)
+  [4;35;1mPortfolio Load (0.2ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Completed in 46ms (View: 28, DB: 1) | 200 OK [http://0.0.0.0/users/26/designs/14/edit]
+
+
+Processing DesignsController#edit (for 127.0.0.1 at 2009-09-16 14:12:17) [GET]
+  Parameters: {"action"=>"edit", "id"=>"14", "controller"=>"designs", "user_id"=>"26"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;35;1mDesign Load (0.6ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering designs/edit
+Rendered layouts/_colourmod_include (69.6ms)
+  [4;36;1mPortfolio Load (0.3ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Completed in 116ms (View: 97, DB: 1) | 200 OK [http://0.0.0.0/users/26/designs/14/edit]
+
+
+Processing DesignsController#edit (for 127.0.0.1 at 2009-09-16 14:13:17) [GET]
+  Parameters: {"action"=>"edit", "id"=>"14", "controller"=>"designs", "user_id"=>"26"}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;36;1mDesign Load (1.0ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering designs/edit
+Rendered layouts/_colourmod_include (1.0ms)
+  [4;35;1mPortfolio Load (0.2ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Completed in 39ms (View: 21, DB: 2) | 200 OK [http://0.0.0.0/users/26/designs/14/edit]
+
+
+Processing DesignsController#edit (for 127.0.0.1 at 2009-09-16 14:32:22) [GET]
+  Parameters: {"action"=>"edit", "id"=>"14", "controller"=>"designs", "user_id"=>"26"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;35;1mDesign Load (0.5ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering designs/edit
+Rendered layouts/_colourmod_include (0.7ms)
+  [4;36;1mPortfolio Load (0.2ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Completed in 40ms (View: 25, DB: 1) | 200 OK [http://0.0.0.0/users/26/designs/14/edit]
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-09-16 14:33:04) [GET]
+  Parameters: {"action"=>"home", "controller"=>"main_pages"}
+Rendering template within layouts/template
+Rendering main_pages/home
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.2ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+  [4;35;1mDesign Load (0.6ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+Completed in 33ms (View: 32, DB: 1) | 200 OK [http://0.0.0.0/]
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-09-16 14:33:05) [GET]
+  Parameters: {"action"=>"home", "controller"=>"main_pages"}
+Rendering template within layouts/template
+Rendering main_pages/home
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.2ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+  [4;36;1mDesign Load (0.5ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+Completed in 106ms (View: 105, DB: 1) | 200 OK [http://0.0.0.0/]
+
+
+Processing DesignsController#edit (for 127.0.0.1 at 2009-09-16 14:33:06) [GET]
+  Parameters: {"action"=>"edit", "id"=>"14", "controller"=>"designs", "user_id"=>"26"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;36;1mDesign Load (0.5ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering designs/edit
+Rendered layouts/_colourmod_include (0.6ms)
+  [4;35;1mPortfolio Load (0.2ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Completed in 32ms (View: 18, DB: 1) | 200 OK [http://0.0.0.0/users/26/designs/14/edit]
+
+
+Processing DesignsController#edit (for 127.0.0.1 at 2009-09-16 14:33:18) [GET]
+  Parameters: {"action"=>"edit", "id"=>"14", "controller"=>"designs", "user_id"=>"26"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;35;1mDesign Load (0.6ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering designs/edit
+Rendered layouts/_colourmod_include (0.7ms)
+  [4;36;1mPortfolio Load (0.2ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Completed in 45ms (View: 27, DB: 1) | 200 OK [http://0.0.0.0/users/26/designs/14/edit]
+
+
+Processing DesignsController#edit (for 127.0.0.1 at 2009-09-16 14:34:19) [GET]
+  Parameters: {"action"=>"edit", "id"=>"14", "controller"=>"designs", "user_id"=>"26"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;36;1mDesign Load (0.5ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering designs/edit
+Rendered layouts/_colourmod_include (0.6ms)
+  [4;35;1mPortfolio Load (0.2ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Completed in 39ms (View: 24, DB: 1) | 200 OK [http://0.0.0.0/users/26/designs/14/edit]
+
+
+Processing DesignsController#edit (for 127.0.0.1 at 2009-09-16 14:34:31) [GET]
+  Parameters: {"action"=>"edit", "id"=>"14", "controller"=>"designs", "user_id"=>"26"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;35;1mDesign Load (0.5ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering designs/edit
+Rendered layouts/_colourmod_include (0.9ms)
+  [4;36;1mPortfolio Load (0.2ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Completed in 38ms (View: 21, DB: 1) | 200 OK [http://0.0.0.0/users/26/designs/14/edit]
+
+
+Processing DesignsController#edit (for 127.0.0.1 at 2009-09-16 14:59:27) [GET]
+  Parameters: {"action"=>"edit", "id"=>"14", "controller"=>"designs", "user_id"=>"26"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;36;1mDesign Load (0.5ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering designs/edit
+Rendered layouts/_colourmod_include (1.9ms)
+  [4;35;1mPortfolio Load (0.2ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Completed in 40ms (View: 23, DB: 1) | 200 OK [http://0.0.0.0/users/26/designs/14/edit]
+
+
+Processing DesignsController#edit (for 127.0.0.1 at 2009-09-16 14:59:55) [GET]
+  Parameters: {"action"=>"edit", "id"=>"14", "controller"=>"designs", "user_id"=>"26"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;35;1mDesign Load (0.5ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering designs/edit
+Rendered layouts/_colourmod_include (0.8ms)
+  [4;36;1mPortfolio Load (0.3ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Completed in 114ms (View: 97, DB: 1) | 200 OK [http://0.0.0.0/users/26/designs/14/edit]
+
+
+Processing DesignsController#edit (for 127.0.0.1 at 2009-09-16 15:02:07) [GET]
+  Parameters: {"action"=>"edit", "id"=>"14", "controller"=>"designs", "user_id"=>"26"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;36;1mDesign Load (0.6ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering designs/edit
+Rendered layouts/_colourmod_include (0.8ms)
+  [4;35;1mPortfolio Load (0.2ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Completed in 45ms (View: 27, DB: 1) | 200 OK [http://0.0.0.0/users/26/designs/14/edit]
+
+
+Processing DesignsController#edit (for 127.0.0.1 at 2009-09-16 15:02:38) [GET]
+  Parameters: {"action"=>"edit", "id"=>"14", "controller"=>"designs", "user_id"=>"26"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;35;1mDesign Load (0.6ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering designs/edit
+Rendered layouts/_colourmod_include (0.7ms)
+  [4;36;1mPortfolio Load (0.2ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Completed in 112ms (View: 94, DB: 1) | 200 OK [http://0.0.0.0/users/26/designs/14/edit]
+
+
+Processing DesignsController#edit (for 127.0.0.1 at 2009-09-16 15:02:57) [GET]
+  Parameters: {"action"=>"edit", "id"=>"14", "controller"=>"designs", "user_id"=>"26"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;36;1mDesign Load (0.6ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering designs/edit
+Rendered layouts/_colourmod_include (0.8ms)
+  [4;35;1mPortfolio Load (0.3ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Completed in 45ms (View: 27, DB: 1) | 200 OK [http://0.0.0.0/users/26/designs/14/edit]
+
+
+Processing DesignsController#edit (for 127.0.0.1 at 2009-09-16 15:03:31) [GET]
+  Parameters: {"action"=>"edit", "id"=>"14", "controller"=>"designs", "user_id"=>"26"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;35;1mDesign Load (0.5ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering designs/edit
+Rendered layouts/_colourmod_include (71.3ms)
+  [4;36;1mPortfolio Load (0.2ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Completed in 114ms (View: 97, DB: 1) | 200 OK [http://0.0.0.0/users/26/designs/14/edit]
+
+
+Processing DesignsController#edit (for 127.0.0.1 at 2009-09-16 15:04:07) [GET]
+  Parameters: {"action"=>"edit", "id"=>"14", "controller"=>"designs", "user_id"=>"26"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;36;1mDesign Load (0.5ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering designs/edit
+Rendered layouts/_colourmod_include (0.8ms)
+  [4;35;1mPortfolio Load (0.2ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Completed in 45ms (View: 27, DB: 1) | 200 OK [http://0.0.0.0/users/26/designs/14/edit]
+
+
+Processing DesignsController#edit (for 127.0.0.1 at 2009-09-16 15:05:40) [GET]
+  Parameters: {"action"=>"edit", "id"=>"14", "controller"=>"designs", "user_id"=>"26"}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;35;1mDesign Load (0.6ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering designs/edit
+Rendered layouts/_colourmod_include (0.7ms)
+  [4;36;1mPortfolio Load (0.2ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Completed in 115ms (View: 25, DB: 1) | 200 OK [http://0.0.0.0/users/26/designs/14/edit]
+
+
+Processing DesignsController#edit (for 127.0.0.1 at 2009-09-16 15:07:28) [GET]
+  Parameters: {"action"=>"edit", "id"=>"14", "controller"=>"designs", "user_id"=>"26"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;36;1mDesign Load (0.6ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering designs/edit
+Rendered layouts/_colourmod_include (0.8ms)
+  [4;35;1mPortfolio Load (0.2ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Completed in 44ms (View: 27, DB: 1) | 200 OK [http://0.0.0.0/users/26/designs/14/edit]

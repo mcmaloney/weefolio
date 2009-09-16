@@ -1,5 +1,26 @@
 <% content_for :head do  %>
-  <%= stylesheet_link_tag '/colourmod/ColourModStyle.css'%>
-  <%= javascript_include_tag '/colourmod/StyleModScript.js' %>
-  <%= javascript_include_tag '/colourmod/ColourModScript.js' %>
+  <%= stylesheet_link_tag 'ColourModStyle.css'%>
+  <%= javascript_include_tag 'StyleModScript.js' %>
+  <%= javascript_include_tag 'ColourModScript.js' %>
+<% end %>
+
+<% content_for :colour_mod_div do %>
+  <div id="cmDefault">
+  	<div id="cmColorContainer" class="cmColorContainer"></div>
+  	<div id="cmSatValBg" class="cmSatValBg"></div>
+  	<div id="cmDefaultMiniOverlay" class="cmDefaultMiniOverlay"></div>
+  	<div id="cmSatValContainer">
+  		<div id="cmBlueDot" class="cmBlueDot"></div>
+  	</div>
+  	<div id="cmHueContainer">
+  		<div id="cmBlueArrow" class="cmBlueArrow"></div>
+  	</div>
+  	<div id="cmClose">
+  		<input type="text" name="cmHex" id="cmHex" value="FFFFFF" maxlength="6" size="9" /> <a href="http://www.colourmod.com" id="cmCloseButton" ><img src="/colourmod/images/close.gif" border="0" alt="Close ColourMod" /></a>
+  	</div>
+  	<div style="display:none">
+  		<input type="text" name="cmHue" id="cmHue" value="0" maxlength="3" />
+  	</div>
+  	<a href="http://www.colourmod.com" target="_blank" title="ColourMod - Dynamic Color Picker" class="cmLink">&copy; ColourMod.com</a>
+  </div>
 <% end %>
