@@ -1,4 +1,5 @@
 <%= render :partial => "layouts/colourmod_include" %>
+<%= render :partial => "color_preview_styles" %>
 <!--PAGE TITLE/CALL-TO-ACTION-->
 <%# YIELD %>
 <div id="page-header-container-outer">
@@ -16,11 +17,9 @@
 <div id="content-container">
 
     <%= flash[:notice] %>
-    
-    <div id="ColourMod">
-      <%= yield :colour_mod_div %>
-    </div>
-    
+
+    <%= yield :colour_mod_div %>
+
 	<!--DUMP ALL OF YOUR SHIT HERE!-->
 	<% if @user.design_type == 1 %>
     <% form_for [@user, @user.design], :html => { :multipart => true } do |f| %>
@@ -59,7 +58,7 @@
       				<label for="design_background_color">Background</label>
       			</dt>
       			<dd>
-      				<%= f.text_field :background_color, :size => 7, :id => "background_color_field", :onfocus => "pickcolor('#background', 'backgroundColor', true, 'background_color_field', this)" %>
+      				<%= f.text_field :background_color, :size => 7, :id => "background_color_field", :onfocus => "pickcolor('#background', 'backgroundColor', true, 'background_color_field', this, -575, -200)" %>
       				<div class="color-preview" id="background"></div>
       			</dd>
       			
@@ -67,7 +66,7 @@
       				<label for="design_page_bg_color">Page</label>
       			</dt>
       			<dd>
-      				<%= f.text_field :page_bg_color, :size => 7, :id => "page_bg_field", :onfocus => "pickcolor('#page_bg_color', 'backgroundColor', true, 'page_bg_field', this)" %>
+      				<%= f.text_field :page_bg_color, :size => 7, :id => "page_bg_field", :onfocus => "pickcolor('#page_bg_color', 'backgroundColor', true, 'page_bg_field', this, -575, -200)" %>
       				<div class="color-preview" id="page_bg_color"></div>
       			</dd>
       			
@@ -75,7 +74,7 @@
       				<label for="design_border_color">Border</label>
       			</dt>
       			<dd>
-      			<%= f.text_field :border_color, :size => 7, :id => "border_color_field", :onfocus => "pickcolor('#border_color', 'backgroundColor', true, 'border_color_field', this)" %>
+      			<%= f.text_field :border_color, :size => 7, :id => "border_color_field", :onfocus => "pickcolor('#border_color', 'backgroundColor', true, 'border_color_field', this, -575, -200)" %>
       			<div class="color-preview" id="border_color"></div>
       			</dd>
       			
@@ -83,7 +82,7 @@
       				<label for="design_text_color">Body Text</label>
       			</dt>
       			<dd>
-      				<%= f.text_field :text_color, :size => 7, :id => "text_color_field", :onfocus => "pickcolor('#text_color', 'backgroundColor', true, 'text_color_field', this)" %>
+      				<%= f.text_field :text_color, :size => 7, :id => "text_color_field", :onfocus => "pickcolor('#text_color', 'backgroundColor', true, 'text_color_field', this, -575, -200)" %>
       				<div class="color-preview" id="text_color"></div>
       			</dd>
       			
@@ -91,7 +90,7 @@
       				<label for="design_title_color">Titles</label>
       			</dt>
       			<dd>
-      				<%= f.text_field :title_color, :size => 7, :id => "title_color_field", :onfocus => "pickcolor('#title_color', 'backgroundColor', true, 'title_color_field', this)" %>
+      				<%= f.text_field :title_color, :size => 7, :id => "title_color_field", :onfocus => "pickcolor('#title_color', 'backgroundColor', true, 'title_color_field', this, -575, -200)" %>
       				<div class="color-preview" id="title_color"></div>
       			</dd>
       			
@@ -100,7 +99,7 @@
       				<label for="design_link_color">Links</label>
       			</dt>
       			<dd>
-      				<%= f.text_field :link_color, :size => 7, :id => "link_color_field", :onfocus => "pickcolor('#link_color', 'backgroundColor', true, 'link_color_field', this)" %>
+      				<%= f.text_field :link_color, :size => 7, :id => "link_color_field", :onfocus => "pickcolor('#link_color', 'backgroundColor', true, 'link_color_field', this, -575, -200)" %>
       				<div class="color-preview" id="link_color"></div>
       			</dd>
       			
@@ -108,7 +107,7 @@
       				<label for="design_link_hover_color">Link Rollovers</label>
       			</dt>
       			<dd>
-      				<%= f.text_field :link_hover_color, :size => 7, :id => "link_hover_color_field", :onfocus => "pickcolor('#link_hover_color', 'backgroundColor', true, 'link_hover_color_field', this)" %>
+      				<%= f.text_field :link_hover_color, :size => 7, :id => "link_hover_color_field", :onfocus => "pickcolor('#link_hover_color', 'backgroundColor', true, 'link_hover_color_field', this, -575, -200)" %>
       				<div class="color-preview" id="link_hover_color"></div>
       			</dd>
       		</dl>

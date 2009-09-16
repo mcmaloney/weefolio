@@ -1,10 +1,14 @@
 <% content_for :head do  %>
   <%= stylesheet_link_tag '/colourmod/ColourModStyle.css'%>
+<% end %>
+
+<% content_for :after_body do %>
   <%= javascript_include_tag '/colourmod/StyleModScript.js' %>
   <%= javascript_include_tag '/colourmod/ColourModScript.js' %>
 <% end %>
 
 <% content_for :colour_mod_div do %>
+<div id="ColourMod">
   <div id="cmDefault">
   	<div id="cmColorContainer" class="cmColorContainer"></div>
   	<div id="cmSatValBg" class="cmSatValBg"></div>
@@ -23,4 +27,5 @@
   	</div>
   	<a href="http://www.colourmod.com" target="_blank" title="ColourMod - Dynamic Color Picker" class="cmLink">&copy; ColourMod.com</a>
   </div>
+</div>
 <% end %>

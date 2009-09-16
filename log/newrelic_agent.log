@@ -980,3 +980,18 @@ The error occurred while evaluating nil.portfolio
 [09/16/09 18:44:02 -0400 michael-maloneys-imac.local (8041)] INFO : Resolved collector.newrelic.com to 65.74.177.195
 [09/16/09 18:44:03 -0400 michael-maloneys-imac.local (8041)] INFO : Connected to NewRelic Service at collector.newrelic.com:80
 [09/16/09 18:44:03 -0400 michael-maloneys-imac.local (8041)] INFO : Reporting performance data every 60 seconds.
+[09/16/09 19:08:14 -0400 michael-maloneys-imac.local (8224)] INFO : Web container: mongrel
+[09/16/09 19:08:14 -0400 michael-maloneys-imac.local (8224)] INFO : Transaction tracing threshold is 2.0 seconds.
+[09/16/09 19:08:14 -0400 michael-maloneys-imac.local (8224)] INFO : New Relic RPM Agent 2.9.4 Initialized: pid = 8224
+[09/16/09 19:08:14 -0400 michael-maloneys-imac.local (8224)] INFO : Agent Log found in /Users/michael/Desktop/weefolio/log/newrelic_agent.log
+[09/16/09 19:08:19 -0400 michael-maloneys-imac.local (8224)] INFO : Resolved collector.newrelic.com to 65.74.177.195
+[09/16/09 19:08:25 -0400 michael-maloneys-imac.local (8224)] INFO : Connected to NewRelic Service at collector.newrelic.com:80
+[09/16/09 19:08:29 -0400 michael-maloneys-imac.local (8224)] INFO : Reporting performance data every 60 seconds.
+[09/16/09 19:27:31 -0400 michael-maloneys-imac.local (8335)] INFO : Web container: mongrel
+[09/16/09 19:27:31 -0400 michael-maloneys-imac.local (8335)] INFO : Transaction tracing threshold is 2.0 seconds.
+[09/16/09 19:27:31 -0400 michael-maloneys-imac.local (8335)] INFO : New Relic RPM Agent 2.9.4 Initialized: pid = 8335
+[09/16/09 19:27:31 -0400 michael-maloneys-imac.local (8335)] INFO : Agent Log found in /Users/michael/Desktop/weefolio/log/newrelic_agent.log
+[09/16/09 19:27:36 -0400 michael-maloneys-imac.local (8335)] INFO : Resolved collector.newrelic.com to 65.74.177.195
+[09/16/09 19:27:37 -0400 michael-maloneys-imac.local (8335)] INFO : Connected to NewRelic Service at collector.newrelic.com:80
+[09/16/09 19:27:39 -0400 michael-maloneys-imac.local (8335)] INFO : Reporting performance data every 60 seconds.
+[09/16/09 19:37:42 -0400 michael-maloneys-imac.local (8335)] WARN : Timed out trying to post data to RPM (timeout = 120 seconds)

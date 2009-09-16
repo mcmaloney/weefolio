@@ -64,4 +64,12 @@ class Design < ActiveRecord::Base
   def font_families
     font_families = ["Arial", "Helvetica", "Times New Roman", "Courier", "Georgia", "Trebuchet MS", "Verdana"]
   end
+  
+  def render_color(color)
+    if color.include?("#")
+      "#{color}"
+    else
+      "##{color}"
+    end
+  end
 end

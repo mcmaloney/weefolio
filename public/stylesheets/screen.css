@@ -603,34 +603,6 @@ div#content-container form fieldset dl dd div.color-preview {
 	float: left;
 	}
 	
-#page_bg_color {
-	background: #FFFFFF;
-}
-
-#background {
-	background: #f5f5f3;
-}
-
-#border_color {
-	background: #eeeeee;
-}
-
-#text_color {
-	background: #767574;
-}
-
-#title_color {
-	background: #242420;
-}
-
-#link_color {
-	background: #9fcf44;
-}
-
-#link_hover_color {
-	background: #242420;
-}
-	
 /*---PORTFOLIO > INDEX---*/
 
 div#page-header-container-inner div#portfolio-add-work a:link,

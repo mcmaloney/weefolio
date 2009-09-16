@@ -64,4 +64,15 @@ describe Design do
       @design.render_font_size(@design.text_size).should == "12px"
     end
   end
+  
+  describe "render color values" do
+    it "should add a # to the value if there isn't one" do
+      @design.background_color = "FAFAFA"
+      @design.render_color(@design.background_color).should == "#FAFAFA"
+    end
+    
+    it "should display the color string as is if there is a # in it" do
+      @design.render_color(@design.background_color).should == "#dedddb"
+    end
+  end
 end

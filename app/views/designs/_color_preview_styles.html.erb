@@ -1,0 +1,31 @@
+<% content_for :head do %>
+  <style type="text/css">
+    #page_bg_color {
+    	background: <%= @design.render_color(@design.page_bg_color) %>;
+    }
+
+    #background {
+    	background: <%= @design.render_color(@design.background_color) %>;
+    }
+
+    #border_color {
+    	background: <%= @design.render_color(@design.border_color) %>;
+    }
+
+    #text_color {
+    	background: <%= @design.render_color(@design.text_color) %>;
+    }
+
+    #title_color {
+    	background: <%= @design.render_color(@design.title_color) %>;
+    }
+
+    #link_color {
+    	background: <%= @design.render_color(@design.link_color) %>;
+    }
+
+    #link_hover_color {
+    	background: <%= @design.render_color(@design.link_hover_color) %>;
+    }
+  </style>
+<% end %>
