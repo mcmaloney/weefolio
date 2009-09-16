@@ -9,22 +9,33 @@
 <!--PAGE CONTENT-->
 <%# YIELD %>
 <div id="content-container">
-  <p>
-    <%= flash[:notice] %>
+  
+  <p class="intro">
+  	Ut laoreet dolore magna aliquam erat volutpat ut! Iis qui facit eorum claritatem Investigationes demonstraverunt, lectores legere me lius quod. Eodem modo typi qui nunc nobis videntur parum clari fiant sollemnes?
   </p>
+    <%= flash[:notice] %>
 	<!--DUMP ALL OF YOUR SHIT HERE!-->
 	<%= form_tag :controller => 'main_pages', :action => 'send_us_mail', :id => @user %>
 		<fieldset>
-			<label for="subject">Subject</label>
-			<%= text_field_tag :subject %>
+			<h2>Contact Us!</h2>
+			<dl>
+				<dt>
+					<label for="subject">Subject</label>
+				</dt>
+				<dd>
+					<%= text_field_tag :subject %>
+				</dd>
+				
+				<dt>
+					<label for="message">Message</label>
+				</dt>
+				<dd>
+					<%= text_area_tag :message %>
+				</dd>
+			</dl>
 		</fieldset>
 		
-		<fieldset>
-			<label for="message">Message</label>
-			<%= text_area_tag :message %>
-		</fieldset>
-		
-		<div id="contact-submit">
+		<div class="submit">
 			<%= submit_tag 'Send Message' %>
 		</div>
 	</form>

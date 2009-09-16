@@ -892,3 +892,16 @@ The error occurred while evaluating nil.portfolio
 [08/24/09 15:10:06 -0400 michael-maloneys-imac.local (408)] INFO : Will re-attempt in 1 minute
 [08/24/09 15:11:06 -0400 michael-maloneys-imac.local (408)] INFO : Unable to establish connection with New Relic RPM Service at collector.newrelic.com:80
 [08/24/09 15:11:06 -0400 michael-maloneys-imac.local (408)] INFO : Will re-attempt in 1 minute
+[09/15/09 19:41:29 -0400 kevin-gomezs-macbook.local (64282)] INFO : Web container: mongrel
+[09/15/09 19:41:29 -0400 kevin-gomezs-macbook.local (64282)] INFO : Transaction tracing threshold is 2.0 seconds.
+[09/15/09 19:41:29 -0400 kevin-gomezs-macbook.local (64282)] INFO : New Relic RPM Agent 2.9.4 Initialized: pid = 64282
+[09/15/09 19:41:29 -0400 kevin-gomezs-macbook.local (64282)] INFO : Agent Log found in /Users/Kevin/Projects/weefolio/log/newrelic_agent.log
+[09/15/09 19:41:29 -0400 kevin-gomezs-macbook.local (64282)] ERROR : Cannot add memory sampling: Unable to run shell command sampler: ps -o rsz
+[09/15/09 19:43:00 -0400 kevin-gomezs-macbook.local (64300)] INFO : Web container: mongrel
+[09/15/09 19:43:00 -0400 kevin-gomezs-macbook.local (64300)] INFO : Transaction tracing threshold is 2.0 seconds.
+[09/15/09 19:43:00 -0400 kevin-gomezs-macbook.local (64300)] INFO : New Relic RPM Agent 2.9.4 Initialized: pid = 64300
+[09/15/09 19:43:00 -0400 kevin-gomezs-macbook.local (64300)] INFO : Agent Log found in /Users/Kevin/Projects/weefolio/log/newrelic_agent.log
+[09/15/09 19:43:00 -0400 kevin-gomezs-macbook.local (64300)] ERROR : Cannot add memory sampling: Unable to run shell command sampler: ps -o rsz
+[09/15/09 19:43:05 -0400 kevin-gomezs-macbook.local (64300)] INFO : Resolved collector.newrelic.com to 65.74.177.195
+[09/15/09 19:43:07 -0400 kevin-gomezs-macbook.local (64300)] INFO : Connected to NewRelic Service at collector.newrelic.com:80
+[09/15/09 19:43:08 -0400 kevin-gomezs-macbook.local (64300)] INFO : Reporting performance data every 60 seconds.

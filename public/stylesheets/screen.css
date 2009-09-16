@@ -481,6 +481,15 @@ div#page-header-container-inner div.welcome-container div.sign-up-button a:hover
 div#page-header-container-inner div.welcome-container div.sign-up-button a:visited:hover {
 	background-position: 0 -36px;
 	}
+	
+div#page-header-container-inner div.featured-weefolio {
+	float: right;
+	width: 400px;
+	height: 180px;
+	padding: 3px;
+	border: 5px solid #2e2e29;
+	background: #1d1d1a;
+	}
 
 
 /*---USERS > NEW (Pricing & Sign Up)---*/
