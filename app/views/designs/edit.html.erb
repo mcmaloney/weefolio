@@ -60,7 +60,8 @@
       			</dt>
       			<dd>
       				<%= f.text_field :background_color, :size => 7 %>
-      				<div class="color-preview" style="background:#f5f5f3;"></div>
+      				<div class="color-preview" id="background" style="background:#f5f5f3;"></div>
+      				<a href="javascript:;" onmousedown="pickcolor('#background', 'backgroundColor', true, '', this)">Choose Color</a>
       			</dd>
       			
       			<dt>
