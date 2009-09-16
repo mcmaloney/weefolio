@@ -3,6 +3,7 @@
 		<title><%= @page_title %></title>
 		<%= stylesheet_link_tag 'screen' %>
 		<%= javascript_include_tag ['jquery-1.3.1.min.js', 'wee.js'] %>
+		<%= yield :head %>
 	</head>
 	
 	<body>
