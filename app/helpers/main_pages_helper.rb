@@ -1,7 +1,14 @@
 module MainPagesHelper
   def show_sender_email
     unless logged_in?
-     render :partial => 'sender_email_field'
+      %{
+        <dt>
+        	<label for="sender_email">Your Email</label>
+        </dt>
+        <dd>
+        	#{text_field_tag :sender_email}
+        </dd>
+      }
 		end
 	end
 end

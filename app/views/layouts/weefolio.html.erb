@@ -22,11 +22,7 @@
 			</div>
 			
 			<div id="tagline-container">
-			  <% if @user.tag_line.blank? %>
-				  <h1>Hello! My name is <a href="#"><%= @user.login %></a> and this is my Weefolio!</h1>
-				<% else %>
-				  <h1><%= @user.tag_line %></h1>
-				<% end %>
+        <%= render_tag_line(@user)%>
 			</div>
 			
 			<hr/>
