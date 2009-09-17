@@ -41858,3 +41858,1033 @@ New Relic Agent not running
   [4;36;1mSQL (1.4ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090813023933')[0m
   [4;35;1mSQL (1.6ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090818205835')[0m
   [4;36;1mSQL (1.4ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090818210320')[0m
+Starting the New Relic Agent
+  [4;36;1mSQL (2.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+** [Hoptoad] Notifier 1.2.4 ready to catch errors
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-09-17 15:10:04) [GET]
+  Parameters: {"action"=>"home", "controller"=>"main_pages"}
+Rendering template within layouts/template
+Rendering main_pages/home
+Completed in 75ms (View: 74, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-09-17 15:10:05) [GET]
+  Parameters: {"action"=>"home", "controller"=>"main_pages"}
+Rendering template within layouts/template
+Rendering main_pages/home
+Completed in 2ms (View: 2, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-09-17 15:10:06) [GET]
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering template within layouts/template
+Rendering sessions/new
+Completed in 20ms (View: 20, DB: 0) | 200 OK [http://0.0.0.0/login]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2009-09-17 15:10:12) [POST]
+  Parameters: {"commit"=>"Login", "action"=>"create", "authenticity_token"=>"qIQrEQcXD91mXN1dNZpsvXxwN8sVUVBdTGPUElHBAkA=", "controller"=>"sessions", "login"=>"mcmaloney", "password"=>"[FILTERED]"}
+  [4;36;1mUser Load (1.2ms)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'mcmaloney' and activated_at IS NOT NULL) LIMIT 1[0m
+[paperclip] Saving attachments.
+Redirected to http://0.0.0.0:3000/
+Completed in 68ms (DB: 1) | 302 Found [http://0.0.0.0/session]
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-09-17 15:10:12) [GET]
+  Parameters: {"action"=>"home", "controller"=>"main_pages"}
+Rendering template within layouts/template
+Rendering main_pages/home
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;36;1mPortfolio Load (10.9ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+  [4;35;1mDesign Load (1.5ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+Completed in 95ms (View: 82, DB: 13) | 200 OK [http://0.0.0.0/]
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-09-17 15:10:13) [GET]
+  Parameters: {"action"=>"home", "controller"=>"main_pages"}
+Rendering template within layouts/template
+Rendering main_pages/home
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.2ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+  [4;36;1mDesign Load (50.2ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+Completed in 79ms (View: 28, DB: 51) | 200 OK [http://0.0.0.0/]
+
+
+Processing PortfoliosController#edit (for 127.0.0.1 at 2009-09-17 15:10:14) [GET]
+  Parameters: {"action"=>"edit", "id"=>"31", "controller"=>"portfolios", "user_id"=>"26"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;36;1mDesign Load (0.5ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.2ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering portfolios/edit
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "pieces" WHERE ("pieces".portfolio_id = 31) [0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) [0m
+  [4;36;1mPiece Load (0.1ms)[0m   [0;1mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 31) [0m
+Completed in 55ms (View: 36, DB: 2) | 200 OK [http://0.0.0.0/users/26/portfolios/31/edit]
+
+
+Processing PiecesController#new (for 127.0.0.1 at 2009-09-17 15:10:16) [GET]
+  Parameters: {"action"=>"new", "controller"=>"pieces", "portfolio_id"=>"31"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.2ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering pieces/new
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) [0m
+  [4;36;1mPiece Load (0.2ms)[0m   [0;1mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 31) [0m
+Rendered pieces/_fields (4.2ms)
+Rendered pieces/_form (20.2ms)
+  [4;35;1mDesign Load (0.7ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+Completed in 67ms (View: 37, DB: 2) | 200 OK [http://0.0.0.0/portfolios/31/pieces/new]
+
+
+Processing PiecesController#create (for 127.0.0.1 at 2009-09-17 15:10:34) [POST]
+  Parameters: {"commit"=>"Create", "action"=>"create", "authenticity_token"=>"qIQrEQcXD91mXN1dNZpsvXxwN8sVUVBdTGPUElHBAkA=", "controller"=>"pieces", "portfolio_id"=>"31", "piece"=>{"title"=>"New Piece", "image_1"=>#<File:/var/folders/QO/QOtKcBYTHt0GW1RvqdSOyk+++TI/-Tmp-/RackMultipart.891.1>, "description"=>"Here's a new piece for my Weefolio"}}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.2ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+  [4;36;1mPiece Create (0.6ms)[0m   [0;1mINSERT INTO "pieces" ("image_3_updated_at", "image_5_file_size", "image_1_file_size", "updated_at", "image_2_updated_at", "image_3_file_name", "title", "price", "image_3_file_size", "image_1_updated_at", "image_5_content_type", "image_5_file_name", "image_3_content_type", "image_5_updated_at", "description", "for_sale", "portfolio_id", "image_2_file_name", "image_1_content_type", "image_2_file_size", "image_4_content_type", "image_4_file_name", "position", "created_at", "image_2_content_type", "image_4_file_size", "image_4_updated_at", "image_1_file_name") VALUES(NULL, NULL, 82469, '2009-09-17 19:10:34', NULL, NULL, 'New Piece', NULL, NULL, '2009-09-17 19:10:34', NULL, NULL, NULL, NULL, 'Here''s a new piece for my Weefolio', NULL, 31, NULL, 'image/jpeg', NULL, NULL, NULL, NULL, '2009-09-17 19:10:34', NULL, NULL, NULL, '789px-Chinchillapets.jpg')[0m
+[paperclip] Saving attachments.
+[paperclip] saving /Users/michael/Desktop/weefolio/public/system/image_1s/29/large_thumb/789px-Chinchillapets.jpg
+[paperclip] saving /Users/michael/Desktop/weefolio/public/system/image_1s/29/full_size/789px-Chinchillapets.jpg
+[paperclip] saving /Users/michael/Desktop/weefolio/public/system/image_1s/29/small_thumb/789px-Chinchillapets.jpg
+[paperclip] saving /Users/michael/Desktop/weefolio/public/system/image_1s/29/original/789px-Chinchillapets.jpg
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+Redirected to http://0.0.0.0:3000/users/26/portfolios/31/edit
+Completed in 648ms (DB: 1) | 302 Found [http://0.0.0.0/portfolios/31/pieces]
+
+
+Processing PortfoliosController#edit (for 127.0.0.1 at 2009-09-17 15:10:34) [GET]
+  Parameters: {"action"=>"edit", "id"=>"31", "controller"=>"portfolios", "user_id"=>"26"}
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;36;1mDesign Load (0.7ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.2ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering portfolios/edit
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "pieces" WHERE ("pieces".portfolio_id = 31) [0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) [0m
+  [4;36;1mPiece Load (0.4ms)[0m   [0;1mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 31) [0m
+Completed in 48ms (View: 24, DB: 3) | 200 OK [http://0.0.0.0/users/26/portfolios/31/edit]
+
+
+Processing PortfoliosController#show (for 127.0.0.1 at 2009-09-17 15:10:39) [GET]
+  Parameters: {"action"=>"show", "id"=>"31", "controller"=>"portfolios", "user_id"=>"26"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;36;1mDesign Load (0.6ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.2ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Rendering template within layouts/weefolio
+Rendering portfolios/show
+  [4;36;1mPiece Load (0.5ms)[0m   [0;1mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 31) [0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) [0m
+Rendered styles/_form_css (15.9ms)
+Completed in 108ms (View: 83, DB: 2) | 200 OK [http://0.0.0.0/users/26/portfolios/31]
+
+
+Processing PortfoliosController#show to rss (for 127.0.0.1 at 2009-09-17 15:10:48) [GET]
+  Parameters: {"format"=>"rss", "action"=>"show", "id"=>"31", "controller"=>"portfolios", "user_id"=>"26"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;35;1mDesign Load (0.6ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.2ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Rendering portfolios/show
+  [4;35;1mPiece Load (0.4ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 31) [0m
+Completed in 41ms (View: 16, DB: 2) | 200 OK [http://0.0.0.0/users/26/portfolios/31.rss]
+
+
+Processing PortfoliosController#show to rss (for 127.0.0.1 at 2009-09-17 15:10:50) [GET]
+  Parameters: {"format"=>"rss", "action"=>"show", "id"=>"31", "controller"=>"portfolios", "user_id"=>"26"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;35;1mDesign Load (0.5ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.2ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Rendering portfolios/show
+  [4;35;1mPiece Load (0.4ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 31) [0m
+Completed in 35ms (View: 13, DB: 2) | 200 OK [http://0.0.0.0/users/26/portfolios/31.rss]
+
+
+Processing PortfoliosController#show to rss (for 127.0.0.1 at 2009-09-17 15:11:34) [GET]
+  Parameters: {"format"=>"rss", "action"=>"show", "id"=>"31", "controller"=>"portfolios", "user_id"=>"26"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;35;1mDesign Load (0.6ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.2ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Rendering portfolios/show
+  [4;35;1mPiece Load (0.5ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 31) [0m
+Completed in 43ms (View: 18, DB: 2) | 200 OK [http://0.0.0.0/users/26/portfolios/31.rss]
+
+
+Processing PortfoliosController#show to rss (for 127.0.0.1 at 2009-09-17 15:14:09) [GET]
+  Parameters: {"format"=>"rss", "action"=>"show", "id"=>"31", "controller"=>"portfolios", "user_id"=>"26"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;35;1mDesign Load (0.5ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.2ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Rendering portfolios/show
+  [4;35;1mPiece Load (0.5ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 31) [0m
+Completed in 114ms (View: 15, DB: 2) | 200 OK [http://0.0.0.0/users/26/portfolios/31.rss]
+
+
+Processing PortfoliosController#show to rss (for 127.0.0.1 at 2009-09-17 15:15:15) [GET]
+  Parameters: {"format"=>"rss", "action"=>"show", "id"=>"31", "controller"=>"portfolios", "user_id"=>"26"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;35;1mDesign Load (0.6ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.2ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Rendering portfolios/show
+  [4;35;1mPiece Load (0.5ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 31) [0m
+Completed in 43ms (View: 18, DB: 2) | 200 OK [http://0.0.0.0/users/26/portfolios/31.rss]
+
+
+Processing PortfoliosController#show to rss (for 127.0.0.1 at 2009-09-17 15:15:29) [GET]
+  Parameters: {"format"=>"rss", "action"=>"show", "id"=>"31", "controller"=>"portfolios", "user_id"=>"26"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;35;1mDesign Load (0.6ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.2ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Rendering portfolios/show
+  [4;35;1mPiece Load (0.4ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 31) [0m
+Completed in 113ms (View: 15, DB: 2) | 200 OK [http://0.0.0.0/users/26/portfolios/31.rss]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-09-17 15:15:43) [GET]
+  Parameters: {"1253214634"=>nil}
+
+ActionController::RoutingError (No route matches "/system/image_1s/29/small/789px-Chinchillapets.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PortfoliosController#show to rss (for 127.0.0.1 at 2009-09-17 15:16:27) [GET]
+  Parameters: {"format"=>"rss", "action"=>"show", "id"=>"31", "controller"=>"portfolios", "user_id"=>"26"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;35;1mDesign Load (0.6ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.2ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Rendering portfolios/show
+  [4;35;1mPiece Load (0.4ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 31) [0m
+Completed in 42ms (View: 16, DB: 2) | 200 OK [http://0.0.0.0/users/26/portfolios/31.rss]
+
+
+Processing PortfoliosController#show to rss (for 127.0.0.1 at 2009-09-17 15:17:02) [GET]
+  Parameters: {"format"=>"rss", "action"=>"show", "id"=>"31", "controller"=>"portfolios", "user_id"=>"26"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;35;1mDesign Load (0.6ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.3ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Rendering portfolios/show
+  [4;35;1mPiece Load (0.4ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 31) [0m
+Completed in 116ms (View: 15, DB: 2) | 200 OK [http://0.0.0.0/users/26/portfolios/31.rss]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-09-17 15:17:18) [GET]
+  Parameters: {"1253214634"=>nil}
+
+ActionController::RoutingError (No route matches "/system/image_1s/29/small/789px-Chinchillapets.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PortfoliosController#show to rss (for 127.0.0.1 at 2009-09-17 15:20:49) [GET]
+  Parameters: {"format"=>"rss", "action"=>"show", "id"=>"31", "controller"=>"portfolios", "user_id"=>"26"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;35;1mDesign Load (0.6ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.2ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Rendering portfolios/show
+  [4;35;1mPiece Load (0.5ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 31) [0m
+Completed in 43ms (View: 18, DB: 2) | 200 OK [http://0.0.0.0/users/26/portfolios/31.rss]
+
+
+Processing PortfoliosController#show to rss (for 127.0.0.1 at 2009-09-17 15:21:17) [GET]
+  Parameters: {"format"=>"rss", "action"=>"show", "id"=>"31", "controller"=>"portfolios", "user_id"=>"26"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;35;1mDesign Load (0.6ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.2ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Rendering portfolios/show
+  [4;35;1mPiece Load (0.4ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 31) [0m
+Completed in 120ms (View: 15, DB: 2) | 200 OK [http://0.0.0.0/users/26/portfolios/31.rss]
+
+
+Processing PortfoliosController#show to rss (for 127.0.0.1 at 2009-09-17 15:21:34) [GET]
+  Parameters: {"format"=>"rss", "action"=>"show", "id"=>"31", "controller"=>"portfolios", "user_id"=>"26"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;35;1mDesign Load (0.5ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.2ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Rendering portfolios/show
+  [4;35;1mPiece Load (0.5ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 31) [0m
+Completed in 42ms (View: 17, DB: 2) | 200 OK [http://0.0.0.0/users/26/portfolios/31.rss]
+
+
+Processing PortfoliosController#show to rss (for 127.0.0.1 at 2009-09-17 15:44:52) [GET]
+  Parameters: {"format"=>"rss", "action"=>"show", "id"=>"31", "controller"=>"portfolios", "user_id"=>"26"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;35;1mDesign Load (0.5ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.2ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Rendering portfolios/show
+  [4;35;1mPiece Load (0.4ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 31) [0m
+Completed in 36ms (View: 14, DB: 2) | 200 OK [http://0.0.0.0/users/26/portfolios/31.rss]
+
+
+Processing PortfoliosController#show to rss (for 127.0.0.1 at 2009-09-17 15:45:07) [GET]
+  Parameters: {"format"=>"rss", "action"=>"show", "id"=>"31", "controller"=>"portfolios", "user_id"=>"26"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;35;1mDesign Load (0.5ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.2ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Rendering portfolios/show
+ERROR: compiling _run_builder_app47views47portfolios47show46rss46builder RAISED compile error
+/Users/michael/Desktop/weefolio/app/views/portfolios/show.rss.builder:11: syntax error, unexpected '<', expecting ']'
+...    xml.description <![CDATA[<a href="http://www.google.com"...
+                              ^
+/Users/michael/Desktop/weefolio/app/views/portfolios/show.rss.builder:11: unterminated string meets end of file
+/Users/michael/Desktop/weefolio/app/views/portfolios/show.rss.builder:11: syntax error, unexpected tSTRING_END, expecting tSTRING_CONTENT or tREGEXP_END or tSTRING_DBEG or tSTRING_DVAR
+Function body:           def _run_builder_app47views47portfolios47show46rss46builder(local_assigns)
+            old_output_buffer = output_buffer;;_set_controller_content_type(Mime::XML);xml = ::Builder::XmlMarkup.new(:indent => 2);self.output_buffer = xml.target!;xml.instruct! :xml, :version => "1.0"
+xml.rss :version => "2.0" do
+  xml.channel do
+    xml.title "#{@user.login}'s WeeFeed"
+    xml.description "Everything new from #{@user.login}'s Weefolio."
+    xml.link user_portfolio_path(current_user, :rss)
+    
+    @portfolio.pieces.each do |piece|
+      xml.item do
+        xml.title piece.title
+        xml.description <![CDATA[<a href="http://www.google.com">Google</a>]]
+      end
+    end
+  end
+end
+;xml.target!;
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/michael/Desktop/weefolio/app/views/portfolios/show.rss.builder:11:in `compile!'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/renderable.rb:61:in `compile'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/renderable.rb:28:in `render_without_trace_View___path__Rendering'
+/Users/michael/Desktop/weefolio/vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:161:in `render'
+/Users/michael/Desktop/weefolio/vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:62:in `trace_method_execution_with_scope'
+/Users/michael/Desktop/weefolio/vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:160:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/template.rb:194:in `render_template'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:260:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1241:in `render_for_file'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:937:in `render_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1317:in `default_render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1323:in `perform_action_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:617:in `call_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/flash.rb:141:in `perform_action_without_newrelic_trace'
+/Users/michael/Desktop/weefolio/vendor/plugins/newrelic_rpm/lib/new_relic/agent/instrumentation/controller_instrumentation.rb:138:in `perform_action'
+/Users/michael/Desktop/weefolio/vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:62:in `trace_method_execution_with_scope'
+/Users/michael/Desktop/weefolio/vendor/plugins/newrelic_rpm/lib/new_relic/agent/instrumentation/controller_instrumentation.rb:122:in `perform_action'
+/Users/michael/Desktop/weefolio/vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:38:in `trace_method_execution_no_scope'
+/Users/michael/Desktop/weefolio/vendor/plugins/newrelic_rpm/lib/new_relic/agent/instrumentation/controller_instrumentation.rb:117:in `perform_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:523:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:523:in `process_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:606:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:391:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:386:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:433:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:88:in `dispatch'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:111:in `_call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:82:in `initialize'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:9:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:28:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/head.rb:9:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/methodoverride.rb:24:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/params_parser.rb:15:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rewindable_input.rb:25:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/session/cookie_store.rb:93:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/reloader.rb:9:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/failsafe.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:106:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.2/lib/rails/rack/static.rb:31:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:46:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `each'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.2/lib/rails/rack/log_tailer.rb:17:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/content_length.rb:13:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/chunked.rb:15:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:61:in `process'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:34:in `run'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.2/lib/commands/server.rb:111
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/Users/michael/Desktop/weefolio/app/views/portfolios/show.rss.builder:11: syntax error, unexpected '<', expecting ']'
+...    xml.description <![CDATA[<a href="http://www.google.com"...
+                              ^
+/Users/michael/Desktop/weefolio/app/views/portfolios/show.rss.builder:11: unterminated string meets end of file
+/Users/michael/Desktop/weefolio/app/views/portfolios/show.rss.builder:11: syntax error, unexpected tSTRING_END, expecting tSTRING_CONTENT or tREGEXP_END or tSTRING_DBEG or tSTRING_DVAR) on line #11 of app/views/portfolios/show.rss.builder:
+8:     @portfolio.pieces.each do |piece|
+9:       xml.item do
+10:         xml.title piece.title
+11:         xml.description <![CDATA[<a href="http://www.google.com">Google</a>]]
+12:       end
+13:     end
+14:   end
+
+    app/views/portfolios/show.rss.builder:11:in `compile!'
+
+Rendered rescues/_trace (110.1ms)
+Rendered rescues/_request_and_response (1.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PortfoliosController#show to rss (for 127.0.0.1 at 2009-09-17 15:45:23) [GET]
+  Parameters: {"format"=>"rss", "action"=>"show", "id"=>"31", "controller"=>"portfolios", "user_id"=>"26"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;36;1mDesign Load (0.6ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.2ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Rendering portfolios/show
+  [4;36;1mPiece Load (0.5ms)[0m   [0;1mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 31) [0m
+Completed in 41ms (View: 17, DB: 2) | 200 OK [http://0.0.0.0/users/26/portfolios/31.rss]
+
+
+Processing PortfoliosController#show to rss (for 127.0.0.1 at 2009-09-17 15:46:04) [GET]
+  Parameters: {"format"=>"rss", "action"=>"show", "id"=>"31", "controller"=>"portfolios", "user_id"=>"26"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;36;1mDesign Load (0.7ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.2ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Rendering portfolios/show
+  [4;36;1mPiece Load (0.4ms)[0m   [0;1mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 31) [0m
+Completed in 42ms (View: 16, DB: 2) | 200 OK [http://0.0.0.0/users/26/portfolios/31.rss]
+
+
+Processing PortfoliosController#show to rss (for 127.0.0.1 at 2009-09-17 15:46:04) [GET]
+  Parameters: {"format"=>"rss", "action"=>"show", "id"=>"31", "controller"=>"portfolios", "user_id"=>"26"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;36;1mDesign Load (0.5ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.2ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Rendering portfolios/show
+  [4;36;1mPiece Load (0.4ms)[0m   [0;1mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 31) [0m
+Completed in 34ms (View: 12, DB: 2) | 200 OK [http://0.0.0.0/users/26/portfolios/31.rss]
+
+
+Processing PortfoliosController#show to rss (for 127.0.0.1 at 2009-09-17 15:46:45) [GET]
+  Parameters: {"format"=>"rss", "action"=>"show", "id"=>"31", "controller"=>"portfolios", "user_id"=>"26"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;36;1mDesign Load (0.6ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.2ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Rendering portfolios/show
+  [4;36;1mPiece Load (0.4ms)[0m   [0;1mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 31) [0m
+Completed in 42ms (View: 18, DB: 2) | 200 OK [http://0.0.0.0/users/26/portfolios/31.rss]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-09-17 15:46:45) [GET]
+  Parameters: {"1253214634"=>nil}
+
+ActionController::RoutingError (No route matches "/system/image_1s/29/small/789px-Chinchillapets.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PortfoliosController#show to rss (for 127.0.0.1 at 2009-09-17 15:47:36) [GET]
+  Parameters: {"format"=>"rss", "action"=>"show", "id"=>"31", "controller"=>"portfolios", "user_id"=>"26"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;36;1mDesign Load (0.5ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.2ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Rendering portfolios/show
+  [4;36;1mPiece Load (0.4ms)[0m   [0;1mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 31) [0m
+Completed in 37ms (View: 15, DB: 2) | 200 OK [http://0.0.0.0/users/26/portfolios/31.rss]
+
+
+Processing PortfoliosController#show to rss (for 127.0.0.1 at 2009-09-17 15:47:52) [GET]
+  Parameters: {"format"=>"rss", "action"=>"show", "id"=>"31", "controller"=>"portfolios", "user_id"=>"26"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;36;1mDesign Load (0.6ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.2ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Rendering portfolios/show
+  [4;36;1mPiece Load (0.4ms)[0m   [0;1mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 31) [0m
+Completed in 44ms (View: 18, DB: 2) | 200 OK [http://0.0.0.0/users/26/portfolios/31.rss]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-09-17 15:47:53) [GET]
+  Parameters: {"1253214634"=>nil}
+
+ActionController::RoutingError (No route matches "/system/image_1s/29/small/789px-Chinchillapets.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PortfoliosController#show to rss (for 127.0.0.1 at 2009-09-17 15:48:11) [GET]
+  Parameters: {"format"=>"rss", "action"=>"show", "id"=>"31", "controller"=>"portfolios", "user_id"=>"26"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;36;1mDesign Load (0.5ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.2ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Rendering portfolios/show
+ERROR: compiling _run_builder_app47views47portfolios47show46rss46builder RAISED compile error
+/Users/michael/Desktop/weefolio/app/views/portfolios/show.rss.builder:11: syntax error, unexpected tIDENTIFIER, expecting kDO or '{' or '('
+        xml.description <img src="#{piece.image_1.url(:small)}" />
+                                ^
+/Users/michael/Desktop/weefolio/app/views/portfolios/show.rss.builder:11: syntax error, unexpected '>'
+/Users/michael/Desktop/weefolio/app/views/portfolios/show.rss.builder:17: syntax error, unexpected kENSURE, expecting kEND
+/Users/michael/Desktop/weefolio/app/views/portfolios/show.rss.builder:19: syntax error, unexpected $end, expecting kEND
+Function body:           def _run_builder_app47views47portfolios47show46rss46builder(local_assigns)
+            old_output_buffer = output_buffer;;_set_controller_content_type(Mime::XML);xml = ::Builder::XmlMarkup.new(:indent => 2);self.output_buffer = xml.target!;xml.instruct! :xml, :version => "1.0"
+xml.rss :version => "2.0" do
+  xml.channel do
+    xml.title "#{@user.login}'s WeeFeed"
+    xml.description "Everything new from #{@user.login}'s Weefolio."
+    xml.link user_portfolio_path(current_user, :rss)
+    
+    @portfolio.pieces.each do |piece|
+      xml.item do
+        xml.title piece.title
+        xml.description <img src="#{piece.image_1.url(:small)}" />
+      end
+    end
+  end
+end
+;xml.target!;
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/michael/Desktop/weefolio/app/views/portfolios/show.rss.builder:19:in `compile!'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/renderable.rb:61:in `compile'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/renderable.rb:28:in `render_without_trace_View___path__Rendering'
+/Users/michael/Desktop/weefolio/vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:161:in `render'
+/Users/michael/Desktop/weefolio/vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:62:in `trace_method_execution_with_scope'
+/Users/michael/Desktop/weefolio/vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:160:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/template.rb:194:in `render_template'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:260:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1241:in `render_for_file'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:937:in `render_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1317:in `default_render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1323:in `perform_action_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:617:in `call_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/flash.rb:141:in `perform_action_without_newrelic_trace'
+/Users/michael/Desktop/weefolio/vendor/plugins/newrelic_rpm/lib/new_relic/agent/instrumentation/controller_instrumentation.rb:138:in `perform_action'
+/Users/michael/Desktop/weefolio/vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:62:in `trace_method_execution_with_scope'
+/Users/michael/Desktop/weefolio/vendor/plugins/newrelic_rpm/lib/new_relic/agent/instrumentation/controller_instrumentation.rb:122:in `perform_action'
+/Users/michael/Desktop/weefolio/vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:38:in `trace_method_execution_no_scope'
+/Users/michael/Desktop/weefolio/vendor/plugins/newrelic_rpm/lib/new_relic/agent/instrumentation/controller_instrumentation.rb:117:in `perform_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:523:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:523:in `process_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:606:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:391:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:386:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:433:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:88:in `dispatch'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:111:in `_call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:82:in `initialize'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:9:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:28:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/head.rb:9:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/methodoverride.rb:24:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/params_parser.rb:15:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rewindable_input.rb:25:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/session/cookie_store.rb:93:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/reloader.rb:9:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/failsafe.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:106:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.2/lib/rails/rack/static.rb:31:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:46:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `each'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.2/lib/rails/rack/log_tailer.rb:17:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/content_length.rb:13:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/chunked.rb:15:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:61:in `process'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:34:in `run'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.2/lib/commands/server.rb:111
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/Users/michael/Desktop/weefolio/app/views/portfolios/show.rss.builder:11: syntax error, unexpected tIDENTIFIER, expecting kDO or '{' or '('
+        xml.description <img src="#{piece.image_1.url(:small)}" />
+                                ^
+/Users/michael/Desktop/weefolio/app/views/portfolios/show.rss.builder:11: syntax error, unexpected '>'
+/Users/michael/Desktop/weefolio/app/views/portfolios/show.rss.builder:17: syntax error, unexpected kENSURE, expecting kEND
+/Users/michael/Desktop/weefolio/app/views/portfolios/show.rss.builder:19: syntax error, unexpected $end, expecting kEND) on line #11 of app/views/portfolios/show.rss.builder:
+8:     @portfolio.pieces.each do |piece|
+9:       xml.item do
+10:         xml.title piece.title
+11:         xml.description <img src="#{piece.image_1.url(:small)}" />
+12:       end
+13:     end
+14:   end
+
+    app/views/portfolios/show.rss.builder:19:in `compile!'
+
+Rendered rescues/_trace (31.0ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PortfoliosController#show to rss (for 127.0.0.1 at 2009-09-17 15:48:49) [GET]
+  Parameters: {"format"=>"rss", "action"=>"show", "id"=>"31", "controller"=>"portfolios", "user_id"=>"26"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;35;1mDesign Load (0.6ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.2ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Rendering portfolios/show
+  [4;35;1mPiece Load (0.4ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 31) [0m
+Completed in 40ms (View: 16, DB: 2) | 200 OK [http://0.0.0.0/users/26/portfolios/31.rss]
+
+
+Processing PortfoliosController#show to rss (for 127.0.0.1 at 2009-09-17 15:49:31) [GET]
+  Parameters: {"format"=>"rss", "action"=>"show", "id"=>"31", "controller"=>"portfolios", "user_id"=>"26"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;35;1mDesign Load (0.6ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.2ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Rendering portfolios/show
+ERROR: compiling _run_builder_app47views47portfolios47show46rss46builder RAISED compile error
+/Users/michael/Desktop/weefolio/app/views/portfolios/show.rss.builder:11: unterminated string meets end of file
+/Users/michael/Desktop/weefolio/app/views/portfolios/show.rss.builder:11: syntax error, unexpected $end, expecting kEND
+Function body:           def _run_builder_app47views47portfolios47show46rss46builder(local_assigns)
+            old_output_buffer = output_buffer;;_set_controller_content_type(Mime::XML);xml = ::Builder::XmlMarkup.new(:indent => 2);self.output_buffer = xml.target!;xml.instruct! :xml, :version => "1.0"
+xml.rss :version => "2.0" do
+  xml.channel do
+    xml.title "#{@user.login}'s WeeFeed"
+    xml.description "Everything new from #{@user.login}'s Weefolio."
+    xml.link user_portfolio_path(current_user, :rss)
+    
+    @portfolio.pieces.each do |piece|
+      xml.item do
+        xml.title piece.title
+        xml.description '<a href="http://www.google.com">Google</a> <img src="#{piece.image_1.url} />"
+      end
+    end
+  end
+end
+;xml.target!;
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/michael/Desktop/weefolio/app/views/portfolios/show.rss.builder:11:in `compile!'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/renderable.rb:61:in `compile'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/renderable.rb:28:in `render_without_trace_View___path__Rendering'
+/Users/michael/Desktop/weefolio/vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:161:in `render'
+/Users/michael/Desktop/weefolio/vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:62:in `trace_method_execution_with_scope'
+/Users/michael/Desktop/weefolio/vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:160:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/template.rb:194:in `render_template'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:260:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1241:in `render_for_file'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:937:in `render_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1317:in `default_render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1323:in `perform_action_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:617:in `call_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/flash.rb:141:in `perform_action_without_newrelic_trace'
+/Users/michael/Desktop/weefolio/vendor/plugins/newrelic_rpm/lib/new_relic/agent/instrumentation/controller_instrumentation.rb:138:in `perform_action'
+/Users/michael/Desktop/weefolio/vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:62:in `trace_method_execution_with_scope'
+/Users/michael/Desktop/weefolio/vendor/plugins/newrelic_rpm/lib/new_relic/agent/instrumentation/controller_instrumentation.rb:122:in `perform_action'
+/Users/michael/Desktop/weefolio/vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:38:in `trace_method_execution_no_scope'
+/Users/michael/Desktop/weefolio/vendor/plugins/newrelic_rpm/lib/new_relic/agent/instrumentation/controller_instrumentation.rb:117:in `perform_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:523:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:523:in `process_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:606:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:391:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:386:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:433:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:88:in `dispatch'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:111:in `_call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:82:in `initialize'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:9:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:28:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/head.rb:9:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/methodoverride.rb:24:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/params_parser.rb:15:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rewindable_input.rb:25:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/session/cookie_store.rb:93:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/reloader.rb:9:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/failsafe.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:106:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.2/lib/rails/rack/static.rb:31:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:46:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `each'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.2/lib/rails/rack/log_tailer.rb:17:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/content_length.rb:13:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/chunked.rb:15:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:61:in `process'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:34:in `run'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.2/lib/commands/server.rb:111
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/Users/michael/Desktop/weefolio/app/views/portfolios/show.rss.builder:11: unterminated string meets end of file
+/Users/michael/Desktop/weefolio/app/views/portfolios/show.rss.builder:11: syntax error, unexpected $end, expecting kEND) on line #11 of app/views/portfolios/show.rss.builder:
+8:     @portfolio.pieces.each do |piece|
+9:       xml.item do
+10:         xml.title piece.title
+11:         xml.description '<a href="http://www.google.com">Google</a> <img src="#{piece.image_1.url} />"
+12:       end
+13:     end
+14:   end
+
+    app/views/portfolios/show.rss.builder:11:in `compile!'
+
+Rendered rescues/_trace (35.3ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PortfoliosController#show to rss (for 127.0.0.1 at 2009-09-17 15:49:46) [GET]
+  Parameters: {"format"=>"rss", "action"=>"show", "id"=>"31", "controller"=>"portfolios", "user_id"=>"26"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;36;1mDesign Load (0.5ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.2ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Rendering portfolios/show
+  [4;36;1mPiece Load (0.4ms)[0m   [0;1mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 31) [0m
+Completed in 117ms (View: 94, DB: 2) | 200 OK [http://0.0.0.0/users/26/portfolios/31.rss]
+
+
+Processing PortfoliosController#show to rss (for 127.0.0.1 at 2009-09-17 15:49:47) [GET]
+  Parameters: {"format"=>"rss", "action"=>"show", "id"=>"31", "controller"=>"portfolios", "user_id"=>"26"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;36;1mDesign Load (0.5ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.2ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Rendering portfolios/show
+  [4;36;1mPiece Load (0.4ms)[0m   [0;1mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 31) [0m
+Completed in 40ms (View: 15, DB: 2) | 200 OK [http://0.0.0.0/users/26/portfolios/31.rss]
+
+
+Processing PortfoliosController#show to rss (for 127.0.0.1 at 2009-09-17 15:50:21) [GET]
+  Parameters: {"format"=>"rss", "action"=>"show", "id"=>"31", "controller"=>"portfolios", "user_id"=>"26"}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;36;1mDesign Load (0.5ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.2ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Rendering portfolios/show
+  [4;36;1mPiece Load (0.5ms)[0m   [0;1mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 31) [0m
+
+ActionView::TemplateError (undefined method `ul' for #<Paperclip::Attachment:0x200187c>) on line #11 of app/views/portfolios/show.rss.builder:
+8:     @portfolio.pieces.each do |piece|
+9:       xml.item do
+10:         xml.title piece.title
+11:         xml.description img src="#{piece.image_1.ul}"
+12:       end
+13:     end
+14:   end
+
+    app/views/portfolios/show.rss.builder:11:in `_run_builder_app47views47portfolios47show46rss46builder'
+    builder (2.1.2) lib/builder/xmlbase.rb:134:in `call'
+    builder (2.1.2) lib/builder/xmlbase.rb:134:in `_nested_structures'
+    builder (2.1.2) lib/builder/xmlbase.rb:58:in `method_missing'
+    app/views/portfolios/show.rss.builder:9:in `_run_builder_app47views47portfolios47show46rss46builder'
+    app/views/portfolios/show.rss.builder:8:in `_run_builder_app47views47portfolios47show46rss46builder'
+    builder (2.1.2) lib/builder/xmlbase.rb:134:in `call'
+    builder (2.1.2) lib/builder/xmlbase.rb:134:in `_nested_structures'
+    builder (2.1.2) lib/builder/xmlbase.rb:58:in `method_missing'
+    app/views/portfolios/show.rss.builder:3:in `_run_builder_app47views47portfolios47show46rss46builder'
+    builder (2.1.2) lib/builder/xmlbase.rb:134:in `call'
+    builder (2.1.2) lib/builder/xmlbase.rb:134:in `_nested_structures'
+    builder (2.1.2) lib/builder/xmlbase.rb:58:in `method_missing'
+    app/views/portfolios/show.rss.builder:2:in `_run_builder_app47views47portfolios47show46rss46builder'
+
+Rendered rescues/_trace (39.5ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PortfoliosController#show to rss (for 127.0.0.1 at 2009-09-17 15:50:31) [GET]
+  Parameters: {"format"=>"rss", "action"=>"show", "id"=>"31", "controller"=>"portfolios", "user_id"=>"26"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;36;1mDesign Load (0.6ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.2ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Rendering portfolios/show
+  [4;36;1mPiece Load (0.4ms)[0m   [0;1mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 31) [0m
+
+ActionView::TemplateError (undefined method `img' for #<ActionView::Base:0x20fe6e4>) on line #11 of app/views/portfolios/show.rss.builder:
+8:     @portfolio.pieces.each do |piece|
+9:       xml.item do
+10:         xml.title piece.title
+11:         xml.description img src="#{piece.image_1.url}"
+12:       end
+13:     end
+14:   end
+
+    app/views/portfolios/show.rss.builder:11:in `_run_builder_app47views47portfolios47show46rss46builder'
+    builder (2.1.2) lib/builder/xmlbase.rb:134:in `call'
+    builder (2.1.2) lib/builder/xmlbase.rb:134:in `_nested_structures'
+    builder (2.1.2) lib/builder/xmlbase.rb:58:in `method_missing'
+    app/views/portfolios/show.rss.builder:9:in `_run_builder_app47views47portfolios47show46rss46builder'
+    app/views/portfolios/show.rss.builder:8:in `_run_builder_app47views47portfolios47show46rss46builder'
+    builder (2.1.2) lib/builder/xmlbase.rb:134:in `call'
+    builder (2.1.2) lib/builder/xmlbase.rb:134:in `_nested_structures'
+    builder (2.1.2) lib/builder/xmlbase.rb:58:in `method_missing'
+    app/views/portfolios/show.rss.builder:3:in `_run_builder_app47views47portfolios47show46rss46builder'
+    builder (2.1.2) lib/builder/xmlbase.rb:134:in `call'
+    builder (2.1.2) lib/builder/xmlbase.rb:134:in `_nested_structures'
+    builder (2.1.2) lib/builder/xmlbase.rb:58:in `method_missing'
+    app/views/portfolios/show.rss.builder:2:in `_run_builder_app47views47portfolios47show46rss46builder'
+
+Rendered rescues/_trace (40.2ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PortfoliosController#show to rss (for 127.0.0.1 at 2009-09-17 15:50:41) [GET]
+  Parameters: {"format"=>"rss", "action"=>"show", "id"=>"31", "controller"=>"portfolios", "user_id"=>"26"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;36;1mDesign Load (0.6ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.2ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Rendering portfolios/show
+  [4;36;1mPiece Load (0.5ms)[0m   [0;1mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 31) [0m
+Completed in 42ms (View: 17, DB: 2) | 200 OK [http://0.0.0.0/users/26/portfolios/31.rss]
+
+
+Processing PortfoliosController#show to rss (for 127.0.0.1 at 2009-09-17 15:51:05) [GET]
+  Parameters: {"format"=>"rss", "action"=>"show", "id"=>"31", "controller"=>"portfolios", "user_id"=>"26"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;36;1mDesign Load (0.6ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.2ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Rendering portfolios/show
+  [4;36;1mPiece Load (0.4ms)[0m   [0;1mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 31) [0m
+Completed in 128ms (View: 15, DB: 2) | 200 OK [http://0.0.0.0/users/26/portfolios/31.rss]
+
+
+Processing PortfoliosController#show to rss (for 127.0.0.1 at 2009-09-17 15:51:58) [GET]
+  Parameters: {"format"=>"rss", "action"=>"show", "id"=>"31", "controller"=>"portfolios", "user_id"=>"26"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;36;1mDesign Load (0.6ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.2ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Rendering portfolios/show
+ERROR: compiling _run_builder_app47views47portfolios47show46rss46builder RAISED compile error
+/Users/michael/Desktop/weefolio/app/views/portfolios/show.rss.builder:11: syntax error, unexpected tSTRING_BEG, expecting kEND
+...image_tag(piece.image_1.url) "<br /> #{piece.description}"
+                              ^
+Function body:           def _run_builder_app47views47portfolios47show46rss46builder(local_assigns)
+            old_output_buffer = output_buffer;;_set_controller_content_type(Mime::XML);xml = ::Builder::XmlMarkup.new(:indent => 2);self.output_buffer = xml.target!;xml.instruct! :xml, :version => "1.0"
+xml.rss :version => "2.0" do
+  xml.channel do
+    xml.title "#{@user.login}'s WeeFeed"
+    xml.description "Everything new from #{@user.login}'s Weefolio."
+    xml.link user_portfolio_path(current_user, :rss)
+    
+    @portfolio.pieces.each do |piece|
+      xml.item do
+        xml.title piece.title
+        xml.description image_tag(piece.image_1.url) "<br /> #{piece.description}"
+      end
+    end
+  end
+end
+;xml.target!;
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/michael/Desktop/weefolio/app/views/portfolios/show.rss.builder:19:in `compile!'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/renderable.rb:61:in `compile'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/renderable.rb:28:in `render_without_trace_View___path__Rendering'
+/Users/michael/Desktop/weefolio/vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:161:in `render'
+/Users/michael/Desktop/weefolio/vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:62:in `trace_method_execution_with_scope'
+/Users/michael/Desktop/weefolio/vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:160:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/template.rb:194:in `render_template'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_view/base.rb:260:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1241:in `render_for_file'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:937:in `render_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1317:in `default_render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:1323:in `perform_action_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:617:in `call_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/flash.rb:141:in `perform_action_without_newrelic_trace'
+/Users/michael/Desktop/weefolio/vendor/plugins/newrelic_rpm/lib/new_relic/agent/instrumentation/controller_instrumentation.rb:138:in `perform_action'
+/Users/michael/Desktop/weefolio/vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:62:in `trace_method_execution_with_scope'
+/Users/michael/Desktop/weefolio/vendor/plugins/newrelic_rpm/lib/new_relic/agent/instrumentation/controller_instrumentation.rb:122:in `perform_action'
+/Users/michael/Desktop/weefolio/vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:38:in `trace_method_execution_no_scope'
+/Users/michael/Desktop/weefolio/vendor/plugins/newrelic_rpm/lib/new_relic/agent/instrumentation/controller_instrumentation.rb:117:in `perform_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:523:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:523:in `process_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/filters.rb:606:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:391:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/base.rb:386:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/routing/route_set.rb:433:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:88:in `dispatch'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:111:in `_call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:82:in `initialize'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:9:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:28:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/head.rb:9:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/methodoverride.rb:24:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/params_parser.rb:15:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rewindable_input.rb:25:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/session/cookie_store.rb:93:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/reloader.rb:9:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/failsafe.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:106:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.2/lib/rails/rack/static.rb:31:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:46:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `each'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.2/lib/rails/rack/log_tailer.rb:17:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/content_length.rb:13:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/chunked.rb:15:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:61:in `process'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:34:in `run'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.2/lib/commands/server.rb:111
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/Users/michael/Desktop/weefolio/app/views/portfolios/show.rss.builder:11: syntax error, unexpected tSTRING_BEG, expecting kEND
+...image_tag(piece.image_1.url) "<br /> #{piece.description}"
+                              ^) on line #11 of app/views/portfolios/show.rss.builder:
+8:     @portfolio.pieces.each do |piece|
+9:       xml.item do
+10:         xml.title piece.title
+11:         xml.description image_tag(piece.image_1.url) "<br /> #{piece.description}"
+12:       end
+13:     end
+14:   end
+
+    app/views/portfolios/show.rss.builder:19:in `compile!'
+
+Rendered rescues/_trace (41.5ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PortfoliosController#show to rss (for 127.0.0.1 at 2009-09-17 15:52:08) [GET]
+  Parameters: {"format"=>"rss", "action"=>"show", "id"=>"31", "controller"=>"portfolios", "user_id"=>"26"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;35;1mDesign Load (0.5ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.2ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Rendering portfolios/show
+  [4;35;1mPiece Load (0.4ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 31) [0m
+Completed in 36ms (View: 14, DB: 2) | 200 OK [http://0.0.0.0/users/26/portfolios/31.rss]
+
+
+Processing PortfoliosController#show to rss (for 127.0.0.1 at 2009-09-17 15:52:40) [GET]
+  Parameters: {"format"=>"rss", "action"=>"show", "id"=>"31", "controller"=>"portfolios", "user_id"=>"26"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;35;1mDesign Load (0.6ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.2ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Rendering portfolios/show
+  [4;35;1mPiece Load (0.4ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 31) [0m
+Completed in 42ms (View: 17, DB: 2) | 200 OK [http://0.0.0.0/users/26/portfolios/31.rss]
+
+
+Processing PortfoliosController#show to rss (for 127.0.0.1 at 2009-09-17 15:52:52) [GET]
+  Parameters: {"format"=>"rss", "action"=>"show", "id"=>"31", "controller"=>"portfolios", "user_id"=>"26"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;35;1mDesign Load (0.6ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.2ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Rendering portfolios/show
+  [4;35;1mPiece Load (0.4ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 31) [0m
+Completed in 119ms (View: 15, DB: 2) | 200 OK [http://0.0.0.0/users/26/portfolios/31.rss]

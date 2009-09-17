@@ -8,7 +8,7 @@ xml.rss :version => "2.0" do
     @portfolio.pieces.each do |piece|
       xml.item do
         xml.title piece.title
-        xml.description piece.description
+        xml.description image_tag(piece.image_1.url(:full_size)) + "<br /> #{piece.description}"
       end
     end
   end
