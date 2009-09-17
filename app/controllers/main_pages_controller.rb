@@ -26,8 +26,14 @@ class MainPagesController < ApplicationController
   end
   
   def send_us_mail
-    @user = User.find(params[:id])
-    @from = @user.email
+    if logged_in?
+      @user = User.find(params[:id])
+      @from = @user.email
+    else
+      @from = params[:sender_email]
+    end
+    
+    
     @subject = params[:subject]
     @message = params[:message]
     UserMailer.deliver_contact_message(@from, @subject, @message)

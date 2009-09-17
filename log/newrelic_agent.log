@@ -995,3 +995,10 @@ The error occurred while evaluating nil.portfolio
 [09/16/09 19:27:37 -0400 michael-maloneys-imac.local (8335)] INFO : Connected to NewRelic Service at collector.newrelic.com:80
 [09/16/09 19:27:39 -0400 michael-maloneys-imac.local (8335)] INFO : Reporting performance data every 60 seconds.
 [09/16/09 19:37:42 -0400 michael-maloneys-imac.local (8335)] WARN : Timed out trying to post data to RPM (timeout = 120 seconds)
+[09/16/09 20:33:46 -0400 michael-maloneys-imac.local (8662)] INFO : Web container: mongrel
+[09/16/09 20:33:46 -0400 michael-maloneys-imac.local (8662)] INFO : Transaction tracing threshold is 2.0 seconds.
+[09/16/09 20:33:46 -0400 michael-maloneys-imac.local (8662)] INFO : New Relic RPM Agent 2.9.4 Initialized: pid = 8662
+[09/16/09 20:33:46 -0400 michael-maloneys-imac.local (8662)] INFO : Agent Log found in /Users/michael/Desktop/weefolio/log/newrelic_agent.log
+[09/16/09 20:33:56 -0400 michael-maloneys-imac.local (8662)] WARN : DNS Error caching IP address: wrong number of arguments (0 for 1)
+[09/16/09 20:33:57 -0400 michael-maloneys-imac.local (8662)] INFO : Connected to NewRelic Service at collector.newrelic.com:80
+[09/16/09 20:33:58 -0400 michael-maloneys-imac.local (8662)] INFO : Reporting performance data every 60 seconds.

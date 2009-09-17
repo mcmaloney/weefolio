@@ -39035,3 +39035,1399 @@ New Relic Agent not running
   [4;35;1mSQL (1.0ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090811195015')[0m
   [4;36;1mSQL (0.9ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090813023933')[0m
   [4;35;1mSQL (1.1ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090818205835')[0m
+New Relic Agent not running
+** [Hoptoad] Notifier 1.2.4 ready to catch errors
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mCREATE TABLE "designs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "created_at" datetime, "updated_at" datetime, "background_color" varchar(255) DEFAULT '#dedddb', "background_align" varchar(255) DEFAULT 'center', "background_tile" varchar(255) DEFAULT 'repeat', "page_bg_color" varchar(255) DEFAULT '#fff', "link_color" varchar(255) DEFAULT '#72b225', "link_hover_color" varchar(255) DEFAULT '#242420', "link_img_border_color" varchar(255) DEFAULT '#f5f4f4', "text_color" varchar(255) DEFAULT '#767574', "text_font_1" varchar(255) DEFAULT 'Arial', "text_font_2" varchar(255) DEFAULT 'Helvetica', "text_serif" boolean DEFAULT 'f', "title_color" varchar(255) DEFAULT '#242420', "title_bold" boolean DEFAULT 'f', "title_italic" boolean DEFAULT 'f', "title_font" varchar(255) DEFAULT 'Georgia', "title_serif" boolean DEFAULT 't', "tagline_color" varchar(255) DEFAULT '#242420', "tagline_bold" boolean DEFAULT 'f', "tagline_italic" boolean DEFAULT 'f', "tagline_font" varchar(255) DEFAULT 'Georgia', "tagline_serif" boolean DEFAULT 't', "border_color" varchar(255) DEFAULT '#eee', "header_image_file_name" varchar(255), "header_image_content_type" varchar(255), "header_image_file_size" integer, "header_image_updated_at" datetime, "css_text" text DEFAULT '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''body {
+ 	margin: 20px;
+ 	background-color: #dedddb; /*---Background: Color---*/
+ 	background-position: top; /*---Background: Alignment---*/
+ 	background-image: none; /*---Background: Image---*/
+ 	background-repeat: repeat; /*---Background: Tile---*/
+ 	font-family: Arial, Helvetica, sans-serif; /*---Text: Font---*/
+ 	font-size: 12px; /*---Text: Size---*/
+ 	color: #767574; /*---Text: Color---*/
+ 	line-height: 150%;
+ 	}
+
+ a:link,
+ a:visited {
+ 	color: #72b225; /*---Links: Color---*/
+ 	}
+
+ a:hover,
+ a:visited:hover {
+ 	color: #242420; /*---Text: Color---*/
+ 	}
+
+ h1 {
+ 	font-size: ; /*---Tagline: Size---*/
+ 	color: #242420; /*---Tagline: Color---*/
+ 	font-family: Georgia, serif; /*---Tagline: Font---*/
+ 	font-weight: normal; /*---Tagline: Bold---*/
+ 	font-style: normal; /*---Tagline: Italic---*/
+ 	}
+
+ h2, h3, h4, h5, h6 {
+ 	color: #242420; /*---Titles: Color---*/
+ 	font-family: Georgia, serif; /*---Titles: Font---*/
+ 	font-weight: normal; /*---Titles: Bold---*/
+ 	font-style: normal; /*---Titles: Italic---*/
+ 	}
+
+ hr {
+ 	border: 0;
+ 	height: 1px;
+ 	background: #eee; /*---Border: Color---*/
+ 	margin: 20px 0;
+ 	}
+
+ a:link img, a:visited img {
+ 	display: block;
+ 	border: 5px solid #f5f4f4; /*---Border: Color---*/
+ 	}
+
+ a:hover img, a:visited:hover img {	
+ 	border: 5px solid #72b225; /*---Link: Color---*/
+ 	}
+
+
+ /*---STRUCTURE---*/
+
+ div#page-container {
+ 	margin: 0 auto;
+ 	width: 710px;
+ 	background: #fff; /*---Page: Background Color---*/
+ 	overflow: hidden;
+ 	padding: 20px;
+ 	-webkit-border-radius: 10px;
+ 	}
+
+ div#header-container {
+ 	overflow: hidden;
+ 	margin: 0 0 20px 0;
+ 	}
+
+ div#tagline-container {
+ 	overflow: hidden;
+ 	text-align: left;
+ 	}
+
+ div#info-container {
+ 	overflow: hidden;
+ 	}
+
+ div#about-container {
+ 	width: 345px;
+ 	margin: 0 0 20px 0;
+ 	overflow: hidden;
+ 	float: left;
+ 	}
+
+ div#contact-container {
+ 	width: 345px;
+ 	margin: 0;
+ 	overflow: hidden;
+ 	float: right;
+ 	}''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''', "text_size" varchar(255) DEFAULT '12', "tagline_size" varchar(255), "layout_type" integer DEFAULT 1) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (6.8ms)[0m   [0;1mCREATE TABLE "pieces" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "description" varchar(255), "price" decimal(10,2), "for_sale" boolean, "portfolio_id" integer, "created_at" datetime, "updated_at" datetime, "image_2_file_name" varchar(255), "image_2_content_type" varchar(255), "image_2_file_size" integer, "image_2_updated_at" datetime, "image_3_file_name" varchar(255), "image_3_content_type" varchar(255), "image_3_file_size" integer, "image_3_updated_at" datetime, "image_4_file_name" varchar(255), "image_4_content_type" varchar(255), "image_4_file_size" integer, "image_4_updated_at" datetime, "image_5_file_name" varchar(255), "image_5_content_type" varchar(255), "image_5_file_size" integer, "image_5_updated_at" datetime, "image_1_file_name" varchar(255), "image_1_content_type" varchar(255), "image_1_file_size" integer, "image_1_updated_at" datetime, "position" integer) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mCREATE TABLE "portfolios" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mCREATE TABLE "posts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "body" text, "author" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (7.3ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(40), "name" varchar(100) DEFAULT '', "email" varchar(100), "crypted_password" varchar(40), "salt" varchar(40), "created_at" datetime, "updated_at" datetime, "remember_token" varchar(40), "remember_token_expires_at" datetime, "activation_code" varchar(40), "activated_at" datetime, "first_name" varchar(255), "last_name" varchar(255), "about_me" text, "tag_line" varchar(500), "account_tier" integer DEFAULT 1, "photo_file_name" varchar(255), "photo_content_type" varchar(255), "photo_file_size" integer, "photo_updated_at" datetime, "design_type" integer DEFAULT 1, "has_read_terms" boolean DEFAULT 'f', "admin_user" boolean DEFAULT 'f', "address1" varchar(255), "address2" varchar(255), "city" varchar(255), "state" varchar(255), "country" varchar(255), "zip" varchar(255), "card_number" varchar(255), "card_verification" varchar(255), "card_expiration_month" varchar(255), "card_expiration_year" varchar(255), "card_type" varchar(255)) [0m
+  [4;35;1mSQL (1.2ms)[0m   [0mCREATE UNIQUE INDEX "index_users_on_login" ON "users" ("login")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;36;1mSQL (5.1ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (6.5ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090818210320')[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090718215859')[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090718220754')[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090719031854')[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090719032358')[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090719032501')[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090720145132')[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090720151551')[0m
+  [4;35;1mSQL (8.4ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090720202141')[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090720202338')[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090721033045')[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090721033319')[0m
+  [4;35;1mSQL (4.5ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090721152728')[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090721170213')[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090721170326')[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090721170409')[0m
+  [4;35;1mSQL (4.7ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090721170424')[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090721210418')[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090721210511')[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090805151853')[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090805164948')[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090805171338')[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090805171518')[0m
+  [4;36;1mSQL (8.6ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090805174329')[0m
+  [4;35;1mSQL (8.5ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090805191833')[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090805192350')[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090805192452')[0m
+  [4;36;1mSQL (5.2ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090811184907')[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090811195015')[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20090813023933')[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20090818205835')[0m
+Starting the New Relic Agent
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSELECT version FROM schema_migrations[0m
+** [Hoptoad] Notifier 1.2.4 ready to catch errors
+
+
+Processing DesignsController#edit (for 127.0.0.1 at 2009-09-16 20:34:17) [GET]
+  Parameters: {"action"=>"edit", "id"=>"14", "controller"=>"designs", "user_id"=>"26"}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;35;1mDesign Load (0.7ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering designs/edit
+Rendered layouts/_colourmod_include (1.9ms)
+Rendered designs/_color_preview_styles (8.5ms)
+  [4;36;1mPortfolio Load (0.2ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Completed in 134ms (View: 100, DB: 1) | 200 OK [http://0.0.0.0/users/26/designs/14/edit]
+
+
+Processing UsersController#switch_design_type (for 127.0.0.1 at 2009-09-16 20:34:22) [GET]
+  Parameters: {"action"=>"switch_design_type", "id"=>"26", "controller"=>"users"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login" = 'mcmaloney' AND "users".id <> 26) LIMIT 1[0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'maloney.mc@gmail.com' AND "users".id <> 26) LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "design_type" = 2, "updated_at" = '2009-09-17 00:34:22' WHERE "id" = 26[0m
+[paperclip] Saving attachments.
+  [4;35;1mDesign Load (0.5ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+Redirected to http://0.0.0.0:3000/users/26/designs/14/edit
+Completed in 26ms (DB: 1) | 302 Found [http://0.0.0.0/users/switch_design_type/26]
+
+
+Processing DesignsController#edit (for 127.0.0.1 at 2009-09-16 20:34:22) [GET]
+  Parameters: {"action"=>"edit", "id"=>"14", "controller"=>"designs", "user_id"=>"26"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;35;1mDesign Load (0.6ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering designs/edit
+Rendered layouts/_colourmod_include (0.7ms)
+Rendered designs/_color_preview_styles (6.6ms)
+  [4;36;1mPortfolio Load (0.3ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Completed in 35ms (View: 19, DB: 1) | 200 OK [http://0.0.0.0/users/26/designs/14/edit]
+
+
+Processing DesignsController#update (for 127.0.0.1 at 2009-09-16 20:34:25) [PUT]
+  Parameters: {"design"=>{"css_text"=>"'''''''''''''''''''''''''''''''body {\r\n    \tmargin: 20px;\r\n    \tbackground-color: #dedddb; /*---Background: Color---*/\r\n    \tbackground-position: top; /*---Background: Alignment---*/\r\n    \tbackground-image: none; /*---Background: Image---*/\r\n    \tbackground-repeat: repeat; /*---Background: Tile---*/\r\n    \tfont-family: Arial, Helvetica, sans-serif; /*---Text: Font---*/\r\n    \tfont-size: 12px; /*---Text: Size---*/\r\n    \tcolor: #767574; /*---Text: Color---*/\r\n    \tline-height: 150%;\r\n    \t}\r\n\r\n    a:link,\r\n    a:visited {\r\n    \tcolor: #72b225; /*---Links: Color---*/\r\n    \t}\r\n\r\n    a:hover,\r\n    a:visited:hover {\r\n    \tcolor: #242420; /*---Text: Color---*/\r\n    \t}\r\n\r\n    h1 {\r\n    \tfont-size: ; /*---Tagline: Size---*/\r\n    \tcolor: #242420; /*---Tagline: Color---*/\r\n    \tfont-family: Georgia, serif; /*---Tagline: Font---*/\r\n    \tfont-weight: normal; /*---Tagline: Bold---*/\r\n    \tfont-style: normal; /*---Tagline: Italic---*/\r\n    \t}\r\n\r\n    h2, h3, h4, h5, h6 {\r\n    \tcolor: #242420; /*---Titles: Color---*/\r\n    \tfont-family: Georgia, serif; /*---Titles: Font---*/\r\n    \tfont-weight: normal; /*---Titles: Bold---*/\r\n    \tfont-style: normal; /*---Titles: Italic---*/\r\n    \t}\r\n\r\n    hr {\r\n    \tborder: 0;\r\n    \theight: 1px;\r\n    \tbackground: #eee; /*---Border: Color---*/\r\n    \tmargin: 20px 0;\r\n    \t}\r\n\r\n    a:link img, a:visited img {\r\n    \tdisplay: block;\r\n    \tborder: 5px solid #f5f4f4; /*---Border: Color---*/\r\n    \t}\r\n\r\n    a:hover img, a:visited:hover img {\t\r\n    \tborder: 5px solid #72b225; /*---Link: Color---*/\r\n    \t}\r\n\r\n\r\n    /*---STRUCTURE---*/\r\n\r\n    div#page-container {\r\n    \tmargin: 0 auto;\r\n    \twidth: 710px;\r\n    \tbackground: #fff; /*---Page: Background Color---*/\r\n    \toverflow: hidden;\r\n    \tpadding: 20px;\r\n    \t-webkit-border-radius: 10px;\r\n    \t}\r\n\r\n    div#header-container {\r\n    \toverflow: hidden;\r\n    \tmargin: 0 0 20px 0;\r\n    \t}\r\n\r\n    div#tagline-container {\r\n    \toverflow: hidden;\r\n    \ttext-align: left;\r\n    \t}\r\n\r\n    div#info-container {\r\n    \toverflow: hidden;\r\n    \t}\r\n\r\n    div#about-container {\r\n    \twidth: 345px;\r\n    \tmargin: 0 0 20px 0;\r\n    \toverflow: hidden;\r\n    \tfloat: left;\r\n    \t}\r\n\r\n    div#contact-container {\r\n    \twidth: 345px;\r\n    \tmargin: 0;\r\n    \toverflow: hidden;\r\n    \tfloat: right;\r\n    \t}'''''''''''''''''''''''''''''''"}, "commit"=>"Save", "action"=>"update", "_method"=>"put", "authenticity_token"=>"QW27bQ4hkddE4uZXHygndJDCimnisZ+DZXjNUD430o8=", "id"=>"14", "controller"=>"designs", "user_id"=>"26"}
+  [4;35;1mUser Load (0.8ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;36;1mDesign Load (0.6ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+  [4;35;1mDesign Update (0.4ms)[0m   [0mUPDATE "designs" SET "css_text" = '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''body {
+ 	margin: 20px;
+ 	background-color: #dedddb; /*---Background: Color---*/
+ 	background-position: top; /*---Background: Alignment---*/
+ 	background-image: none; /*---Background: Image---*/
+ 	background-repeat: repeat; /*---Background: Tile---*/
+ 	font-family: Arial, Helvetica, sans-serif; /*---Text: Font---*/
+ 	font-size: 12px; /*---Text: Size---*/
+ 	color: #767574; /*---Text: Color---*/
+ 	line-height: 150%;
+ 	}
+
+ a:link,
+ a:visited {
+ 	color: #72b225; /*---Links: Color---*/
+ 	}
+
+ a:hover,
+ a:visited:hover {
+ 	color: #242420; /*---Text: Color---*/
+ 	}
+
+ h1 {
+ 	font-size: ; /*---Tagline: Size---*/
+ 	color: #242420; /*---Tagline: Color---*/
+ 	font-family: Georgia, serif; /*---Tagline: Font---*/
+ 	font-weight: normal; /*---Tagline: Bold---*/
+ 	font-style: normal; /*---Tagline: Italic---*/
+ 	}
+
+ h2, h3, h4, h5, h6 {
+ 	color: #242420; /*---Titles: Color---*/
+ 	font-family: Georgia, serif; /*---Titles: Font---*/
+ 	font-weight: normal; /*---Titles: Bold---*/
+ 	font-style: normal; /*---Titles: Italic---*/
+ 	}
+
+ hr {
+ 	border: 0;
+ 	height: 1px;
+ 	background: #eee; /*---Border: Color---*/
+ 	margin: 20px 0;
+ 	}
+
+ a:link img, a:visited img {
+ 	display: block;
+ 	border: 5px solid #f5f4f4; /*---Border: Color---*/
+ 	}
+
+ a:hover img, a:visited:hover img {	
+ 	border: 5px solid #72b225; /*---Link: Color---*/
+ 	}
+
+
+ /*---STRUCTURE---*/
+
+ div#page-container {
+ 	margin: 0 auto;
+ 	width: 710px;
+ 	background: #fff; /*---Page: Background Color---*/
+ 	overflow: hidden;
+ 	padding: 20px;
+ 	-webkit-border-radius: 10px;
+ 	}
+
+ div#header-container {
+ 	overflow: hidden;
+ 	margin: 0 0 20px 0;
+ 	}
+
+ div#tagline-container {
+ 	overflow: hidden;
+ 	text-align: left;
+ 	}
+
+ div#info-container {
+ 	overflow: hidden;
+ 	}
+
+ div#about-container {
+ 	width: 345px;
+ 	margin: 0 0 20px 0;
+ 	overflow: hidden;
+ 	float: left;
+ 	}
+
+ div#contact-container {
+ 	width: 345px;
+ 	margin: 0;
+ 	overflow: hidden;
+ 	float: right;
+ 	}''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''', "updated_at" = '2009-09-17 00:34:25' WHERE "id" = 14[0m
+[paperclip] Saving attachments.
+Redirected to http://0.0.0.0:3000/users/26/designs/14/edit
+Completed in 82ms (DB: 2) | 302 Found [http://0.0.0.0/users/26/designs/14]
+
+
+Processing DesignsController#edit (for 127.0.0.1 at 2009-09-16 20:34:25) [GET]
+  Parameters: {"action"=>"edit", "id"=>"14", "controller"=>"designs", "user_id"=>"26"}
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;35;1mDesign Load (0.7ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering designs/edit
+Rendered layouts/_colourmod_include (0.7ms)
+Rendered designs/_color_preview_styles (7.1ms)
+  [4;36;1mPortfolio Load (0.2ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Completed in 38ms (View: 20, DB: 2) | 200 OK [http://0.0.0.0/users/26/designs/14/edit]
+
+
+Processing PortfoliosController#show (for 127.0.0.1 at 2009-09-16 20:34:29) [GET]
+  Parameters: {"action"=>"show", "id"=>"31", "controller"=>"portfolios", "user_id"=>"26"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;36;1mDesign Load (0.6ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.2ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Rendering template within layouts/weefolio
+Rendering portfolios/show
+  [4;36;1mPiece Load (0.2ms)[0m   [0;1mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 31) [0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) [0m
+
+ActionView::TemplateError (uninitialized class variable @@design in ActionView::Base::CompiledTemplates) on line #2 of app/views/styles/_text_css.html.erb:
+1: <style type="text/css">
+2:   <%= @@design.css_text %>
+3: </style >
+
+    app/views/styles/_text_css.html.erb:2
+    app/helpers/portfolios_helper.rb:7:in `render_css'
+    app/views/layouts/weefolio.html.erb:4
+
+Rendered rescues/_trace (46.1ms)
+Rendered rescues/_request_and_response (1.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PortfoliosController#show (for 127.0.0.1 at 2009-09-16 20:35:16) [GET]
+  Parameters: {"action"=>"show", "id"=>"31", "controller"=>"portfolios", "user_id"=>"26"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;35;1mDesign Load (0.5ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.2ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Rendering template within layouts/weefolio
+Rendering portfolios/show
+  [4;35;1mPiece Load (0.2ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 31) [0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 26) [0m
+Rendered styles/_text_css (0.5ms)
+Completed in 43ms (View: 19, DB: 2) | 200 OK [http://0.0.0.0/users/26/portfolios/31]
+
+
+Processing DesignsController#update (for 127.0.0.1 at 2009-09-16 20:35:47) [PUT]
+  Parameters: {"design"=>{"css_text"=>"'''''''''''''''''''''''''''''''body {\r\n    \tmargin: 20px;\r\n    \tbackground-color: #dedddb; /*---Background: Color---*/\r\n    \tbackground-position: top; /*---Background: Alignment---*/\r\n    \tbackground-image: none; /*---Background: Image---*/\r\n    \tbackground-repeat: repeat; /*---Background: Tile---*/\r\n    \tfont-family: Arial, Helvetica, sans-serif; /*---Text: Font---*/\r\n    \tfont-size: 12px; /*---Text: Size---*/\r\n    \tcolor: #AEAEAE; /*---Text: Color---*/\r\n    \tline-height: 150%;\r\n    \t}\r\n\r\n    a:link,\r\n    a:visited {\r\n    \tcolor: #72b225; /*---Links: Color---*/\r\n    \t}\r\n\r\n    a:hover,\r\n    a:visited:hover {\r\n    \tcolor: #242420; /*---Text: Color---*/\r\n    \t}\r\n\r\n    h1 {\r\n    \tfont-size: ; /*---Tagline: Size---*/\r\n    \tcolor: #242420; /*---Tagline: Color---*/\r\n    \tfont-family: Georgia, serif; /*---Tagline: Font---*/\r\n    \tfont-weight: normal; /*---Tagline: Bold---*/\r\n    \tfont-style: normal; /*---Tagline: Italic---*/\r\n    \t}\r\n\r\n    h2, h3, h4, h5, h6 {\r\n    \tcolor: #242420; /*---Titles: Color---*/\r\n    \tfont-family: Georgia, serif; /*---Titles: Font---*/\r\n    \tfont-weight: normal; /*---Titles: Bold---*/\r\n    \tfont-style: normal; /*---Titles: Italic---*/\r\n    \t}\r\n\r\n    hr {\r\n    \tborder: 0;\r\n    \theight: 1px;\r\n    \tbackground: #eee; /*---Border: Color---*/\r\n    \tmargin: 20px 0;\r\n    \t}\r\n\r\n    a:link img, a:visited img {\r\n    \tdisplay: block;\r\n    \tborder: 5px solid #f5f4f4; /*---Border: Color---*/\r\n    \t}\r\n\r\n    a:hover img, a:visited:hover img {\t\r\n    \tborder: 5px solid #72b225; /*---Link: Color---*/\r\n    \t}\r\n\r\n\r\n    /*---STRUCTURE---*/\r\n\r\n    div#page-container {\r\n    \tmargin: 0 auto;\r\n    \twidth: 710px;\r\n    \tbackground: #fff; /*---Page: Background Color---*/\r\n    \toverflow: hidden;\r\n    \tpadding: 20px;\r\n    \t-webkit-border-radius: 10px;\r\n    \t}\r\n\r\n    div#header-container {\r\n    \toverflow: hidden;\r\n    \tmargin: 0 0 20px 0;\r\n    \t}\r\n\r\n    div#tagline-container {\r\n    \toverflow: hidden;\r\n    \ttext-align: left;\r\n    \t}\r\n\r\n    div#info-container {\r\n    \toverflow: hidden;\r\n    \t}\r\n\r\n    div#about-container {\r\n    \twidth: 345px;\r\n    \tmargin: 0 0 20px 0;\r\n    \toverflow: hidden;\r\n    \tfloat: left;\r\n    \t}\r\n\r\n    div#contact-container {\r\n    \twidth: 345px;\r\n    \tmargin: 0;\r\n    \toverflow: hidden;\r\n    \tfloat: right;\r\n    \t}'''''''''''''''''''''''''''''''"}, "commit"=>"Save", "action"=>"update", "_method"=>"put", "authenticity_token"=>"QW27bQ4hkddE4uZXHygndJDCimnisZ+DZXjNUD430o8=", "id"=>"14", "controller"=>"designs", "user_id"=>"26"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;36;1mDesign Load (0.5ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+  [4;35;1mDesign Update (0.4ms)[0m   [0mUPDATE "designs" SET "css_text" = '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''body {
+ 	margin: 20px;
+ 	background-color: #dedddb; /*---Background: Color---*/
+ 	background-position: top; /*---Background: Alignment---*/
+ 	background-image: none; /*---Background: Image---*/
+ 	background-repeat: repeat; /*---Background: Tile---*/
+ 	font-family: Arial, Helvetica, sans-serif; /*---Text: Font---*/
+ 	font-size: 12px; /*---Text: Size---*/
+ 	color: #AEAEAE; /*---Text: Color---*/
+ 	line-height: 150%;
+ 	}
+
+ a:link,
+ a:visited {
+ 	color: #72b225; /*---Links: Color---*/
+ 	}
+
+ a:hover,
+ a:visited:hover {
+ 	color: #242420; /*---Text: Color---*/
+ 	}
+
+ h1 {
+ 	font-size: ; /*---Tagline: Size---*/
+ 	color: #242420; /*---Tagline: Color---*/
+ 	font-family: Georgia, serif; /*---Tagline: Font---*/
+ 	font-weight: normal; /*---Tagline: Bold---*/
+ 	font-style: normal; /*---Tagline: Italic---*/
+ 	}
+
+ h2, h3, h4, h5, h6 {
+ 	color: #242420; /*---Titles: Color---*/
+ 	font-family: Georgia, serif; /*---Titles: Font---*/
+ 	font-weight: normal; /*---Titles: Bold---*/
+ 	font-style: normal; /*---Titles: Italic---*/
+ 	}
+
+ hr {
+ 	border: 0;
+ 	height: 1px;
+ 	background: #eee; /*---Border: Color---*/
+ 	margin: 20px 0;
+ 	}
+
+ a:link img, a:visited img {
+ 	display: block;
+ 	border: 5px solid #f5f4f4; /*---Border: Color---*/
+ 	}
+
+ a:hover img, a:visited:hover img {	
+ 	border: 5px solid #72b225; /*---Link: Color---*/
+ 	}
+
+
+ /*---STRUCTURE---*/
+
+ div#page-container {
+ 	margin: 0 auto;
+ 	width: 710px;
+ 	background: #fff; /*---Page: Background Color---*/
+ 	overflow: hidden;
+ 	padding: 20px;
+ 	-webkit-border-radius: 10px;
+ 	}
+
+ div#header-container {
+ 	overflow: hidden;
+ 	margin: 0 0 20px 0;
+ 	}
+
+ div#tagline-container {
+ 	overflow: hidden;
+ 	text-align: left;
+ 	}
+
+ div#info-container {
+ 	overflow: hidden;
+ 	}
+
+ div#about-container {
+ 	width: 345px;
+ 	margin: 0 0 20px 0;
+ 	overflow: hidden;
+ 	float: left;
+ 	}
+
+ div#contact-container {
+ 	width: 345px;
+ 	margin: 0;
+ 	overflow: hidden;
+ 	float: right;
+ 	}''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''', "updated_at" = '2009-09-17 00:35:47' WHERE "id" = 14[0m
+[paperclip] Saving attachments.
+Redirected to http://0.0.0.0:3000/users/26/designs/14/edit
+Completed in 25ms (DB: 1) | 302 Found [http://0.0.0.0/users/26/designs/14]
+
+
+Processing DesignsController#edit (for 127.0.0.1 at 2009-09-16 20:35:47) [GET]
+  Parameters: {"action"=>"edit", "id"=>"14", "controller"=>"designs", "user_id"=>"26"}
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;35;1mDesign Load (0.7ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering designs/edit
+Rendered layouts/_colourmod_include (1.0ms)
+Rendered designs/_color_preview_styles (6.9ms)
+  [4;36;1mPortfolio Load (0.2ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Completed in 37ms (View: 20, DB: 2) | 200 OK [http://0.0.0.0/users/26/designs/14/edit]
+
+
+Processing PortfoliosController#show (for 127.0.0.1 at 2009-09-16 20:35:49) [GET]
+  Parameters: {"action"=>"show", "id"=>"31", "controller"=>"portfolios", "user_id"=>"26"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;36;1mDesign Load (0.5ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.2ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Rendering template within layouts/weefolio
+Rendering portfolios/show
+  [4;36;1mPiece Load (0.2ms)[0m   [0;1mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 31) [0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) [0m
+Rendered styles/_text_css (0.2ms)
+Completed in 36ms (View: 14, DB: 2) | 200 OK [http://0.0.0.0/users/26/portfolios/31]
+
+
+Processing DesignsController#update (for 127.0.0.1 at 2009-09-16 20:36:23) [PUT]
+  Parameters: {"design"=>{"css_text"=>"'''''''''''''''''''''''''''''''body {\r\n    \tmargin: 20px;\r\n    \tbackground-color: #dedddb; /*---Background: Color---*/\r\n    \tbackground-position: top; /*---Background: Alignment---*/\r\n    \tbackground-image: none; /*---Background: Image---*/\r\n    \tbackground-repeat: repeat; /*---Background: Tile---*/\r\n    \tfont-family: Arial, Helvetica, sans-serif; /*---Text: Font---*/\r\n    \tfont-size: 12px; /*---Text: Size---*/\r\n    \tcolor: #AEAEAE; /*---Text: Color---*/\r\n    \tline-height: 150%;\r\n    \t}\r\n\r\n    a:link,\r\n    a:visited {\r\n    \tcolor: #72b225; /*---Links: Color---*/\r\n    \t}\r\n\r\n    a:hover,\r\n    a:visited:hover {\r\n    \tcolor: #242420; /*---Text: Color---*/\r\n    \t}\r\n\r\n    h1 {\r\n    \tfont-size: ; /*---Tagline: Size---*/\r\n    \tcolor: #AEAEAE; /*---Tagline: Color---*/\r\n    \tfont-family: Georgia, serif; /*---Tagline: Font---*/\r\n    \tfont-weight: normal; /*---Tagline: Bold---*/\r\n    \tfont-style: normal; /*---Tagline: Italic---*/\r\n    \t}\r\n\r\n    h2, h3, h4, h5, h6 {\r\n    \tcolor: #242420; /*---Titles: Color---*/\r\n    \tfont-family: Georgia, serif; /*---Titles: Font---*/\r\n    \tfont-weight: normal; /*---Titles: Bold---*/\r\n    \tfont-style: normal; /*---Titles: Italic---*/\r\n    \t}\r\n\r\n    hr {\r\n    \tborder: 0;\r\n    \theight: 1px;\r\n    \tbackground: #eee; /*---Border: Color---*/\r\n    \tmargin: 20px 0;\r\n    \t}\r\n\r\n    a:link img, a:visited img {\r\n    \tdisplay: block;\r\n    \tborder: 5px solid #f5f4f4; /*---Border: Color---*/\r\n    \t}\r\n\r\n    a:hover img, a:visited:hover img {\t\r\n    \tborder: 5px solid #72b225; /*---Link: Color---*/\r\n    \t}\r\n\r\n\r\n    /*---STRUCTURE---*/\r\n\r\n    div#page-container {\r\n    \tmargin: 0 auto;\r\n    \twidth: 710px;\r\n    \tbackground: #fff; /*---Page: Background Color---*/\r\n    \toverflow: hidden;\r\n    \tpadding: 20px;\r\n    \t-webkit-border-radius: 10px;\r\n    \t}\r\n\r\n    div#header-container {\r\n    \toverflow: hidden;\r\n    \tmargin: 0 0 20px 0;\r\n    \t}\r\n\r\n    div#tagline-container {\r\n    \toverflow: hidden;\r\n    \ttext-align: left;\r\n    \t}\r\n\r\n    div#info-container {\r\n    \toverflow: hidden;\r\n    \t}\r\n\r\n    div#about-container {\r\n    \twidth: 345px;\r\n    \tmargin: 0 0 20px 0;\r\n    \toverflow: hidden;\r\n    \tfloat: left;\r\n    \t}\r\n\r\n    div#contact-container {\r\n    \twidth: 345px;\r\n    \tmargin: 0;\r\n    \toverflow: hidden;\r\n    \tfloat: right;\r\n    \t}'''''''''''''''''''''''''''''''"}, "commit"=>"Save", "action"=>"update", "_method"=>"put", "authenticity_token"=>"QW27bQ4hkddE4uZXHygndJDCimnisZ+DZXjNUD430o8=", "id"=>"14", "controller"=>"designs", "user_id"=>"26"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;35;1mDesign Load (0.6ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+  [4;36;1mDesign Update (0.4ms)[0m   [0;1mUPDATE "designs" SET "css_text" = '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''body {
+ 	margin: 20px;
+ 	background-color: #dedddb; /*---Background: Color---*/
+ 	background-position: top; /*---Background: Alignment---*/
+ 	background-image: none; /*---Background: Image---*/
+ 	background-repeat: repeat; /*---Background: Tile---*/
+ 	font-family: Arial, Helvetica, sans-serif; /*---Text: Font---*/
+ 	font-size: 12px; /*---Text: Size---*/
+ 	color: #AEAEAE; /*---Text: Color---*/
+ 	line-height: 150%;
+ 	}
+
+ a:link,
+ a:visited {
+ 	color: #72b225; /*---Links: Color---*/
+ 	}
+
+ a:hover,
+ a:visited:hover {
+ 	color: #242420; /*---Text: Color---*/
+ 	}
+
+ h1 {
+ 	font-size: ; /*---Tagline: Size---*/
+ 	color: #AEAEAE; /*---Tagline: Color---*/
+ 	font-family: Georgia, serif; /*---Tagline: Font---*/
+ 	font-weight: normal; /*---Tagline: Bold---*/
+ 	font-style: normal; /*---Tagline: Italic---*/
+ 	}
+
+ h2, h3, h4, h5, h6 {
+ 	color: #242420; /*---Titles: Color---*/
+ 	font-family: Georgia, serif; /*---Titles: Font---*/
+ 	font-weight: normal; /*---Titles: Bold---*/
+ 	font-style: normal; /*---Titles: Italic---*/
+ 	}
+
+ hr {
+ 	border: 0;
+ 	height: 1px;
+ 	background: #eee; /*---Border: Color---*/
+ 	margin: 20px 0;
+ 	}
+
+ a:link img, a:visited img {
+ 	display: block;
+ 	border: 5px solid #f5f4f4; /*---Border: Color---*/
+ 	}
+
+ a:hover img, a:visited:hover img {	
+ 	border: 5px solid #72b225; /*---Link: Color---*/
+ 	}
+
+
+ /*---STRUCTURE---*/
+
+ div#page-container {
+ 	margin: 0 auto;
+ 	width: 710px;
+ 	background: #fff; /*---Page: Background Color---*/
+ 	overflow: hidden;
+ 	padding: 20px;
+ 	-webkit-border-radius: 10px;
+ 	}
+
+ div#header-container {
+ 	overflow: hidden;
+ 	margin: 0 0 20px 0;
+ 	}
+
+ div#tagline-container {
+ 	overflow: hidden;
+ 	text-align: left;
+ 	}
+
+ div#info-container {
+ 	overflow: hidden;
+ 	}
+
+ div#about-container {
+ 	width: 345px;
+ 	margin: 0 0 20px 0;
+ 	overflow: hidden;
+ 	float: left;
+ 	}
+
+ div#contact-container {
+ 	width: 345px;
+ 	margin: 0;
+ 	overflow: hidden;
+ 	float: right;
+ 	}''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''', "updated_at" = '2009-09-17 00:36:24' WHERE "id" = 14[0m
+[paperclip] Saving attachments.
+Redirected to http://0.0.0.0:3000/users/26/designs/14/edit
+Completed in 27ms (DB: 1) | 302 Found [http://0.0.0.0/users/26/designs/14]
+
+
+Processing DesignsController#edit (for 127.0.0.1 at 2009-09-16 20:36:24) [GET]
+  Parameters: {"action"=>"edit", "id"=>"14", "controller"=>"designs", "user_id"=>"26"}
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;36;1mDesign Load (0.7ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering designs/edit
+Rendered layouts/_colourmod_include (0.8ms)
+Rendered designs/_color_preview_styles (7.1ms)
+  [4;35;1mPortfolio Load (0.2ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Completed in 40ms (View: 20, DB: 2) | 200 OK [http://0.0.0.0/users/26/designs/14/edit]
+
+
+Processing PortfoliosController#show (for 127.0.0.1 at 2009-09-16 20:36:26) [GET]
+  Parameters: {"action"=>"show", "id"=>"31", "controller"=>"portfolios", "user_id"=>"26"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;35;1mDesign Load (0.5ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.2ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Rendering template within layouts/weefolio
+Rendering portfolios/show
+  [4;35;1mPiece Load (0.2ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 31) [0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 26) [0m
+Rendered styles/_text_css (0.2ms)
+Completed in 38ms (View: 15, DB: 2) | 200 OK [http://0.0.0.0/users/26/portfolios/31]
+
+
+Processing UsersController#switch_design_type (for 127.0.0.1 at 2009-09-16 20:36:54) [GET]
+  Parameters: {"action"=>"switch_design_type", "id"=>"26", "controller"=>"users"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;36;1mUser Exists (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login" = 'mcmaloney' AND "users".id <> 26) LIMIT 1[0m
+  [4;35;1mUser Exists (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'maloney.mc@gmail.com' AND "users".id <> 26) LIMIT 1[0m
+  [4;36;1mUser Update (0.2ms)[0m   [0;1mUPDATE "users" SET "design_type" = 1, "updated_at" = '2009-09-17 00:36:54' WHERE "id" = 26[0m
+[paperclip] Saving attachments.
+  [4;35;1mDesign Load (0.6ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+Redirected to http://0.0.0.0:3000/users/26/designs/14/edit
+Completed in 26ms (DB: 1) | 302 Found [http://0.0.0.0/users/switch_design_type/26]
+
+
+Processing DesignsController#edit (for 127.0.0.1 at 2009-09-16 20:36:54) [GET]
+  Parameters: {"action"=>"edit", "id"=>"14", "controller"=>"designs", "user_id"=>"26"}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;35;1mDesign Load (0.7ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering designs/edit
+Rendered layouts/_colourmod_include (0.9ms)
+Rendered designs/_color_preview_styles (8.7ms)
+  [4;36;1mPortfolio Load (0.2ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Completed in 39ms (View: 23, DB: 2) | 200 OK [http://0.0.0.0/users/26/designs/14/edit]
+
+
+Processing PortfoliosController#show (for 127.0.0.1 at 2009-09-16 20:36:56) [GET]
+  Parameters: {"action"=>"show", "id"=>"31", "controller"=>"portfolios", "user_id"=>"26"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;36;1mDesign Load (0.5ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.2ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Rendering template within layouts/weefolio
+Rendering portfolios/show
+  [4;36;1mPiece Load (0.2ms)[0m   [0;1mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 31) [0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) [0m
+Rendered styles/_form_css (3.2ms)
+Completed in 47ms (View: 23, DB: 2) | 200 OK [http://0.0.0.0/users/26/portfolios/31]
+
+
+Processing PortfoliosController#show (for 127.0.0.1 at 2009-09-16 20:37:34) [GET]
+  Parameters: {"action"=>"show", "id"=>"31", "controller"=>"portfolios", "user_id"=>"26"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;35;1mDesign Load (0.6ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.2ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Rendering template within layouts/weefolio
+Rendering portfolios/show
+  [4;35;1mPiece Load (0.2ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 31) [0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 26) [0m
+Rendered styles/_form_css (0.5ms)
+Completed in 46ms (View: 21, DB: 2) | 200 OK [http://0.0.0.0/users/26/portfolios/31]
+
+
+Processing DesignsController#update (for 127.0.0.1 at 2009-09-16 20:38:05) [PUT]
+  Parameters: {"design"=>{"background_color"=>"B6DD1C", "text_size"=>"8", "link_color"=>"30F01E", "layout_type"=>"1", "title_color"=>"2233AB", "text_color"=>"AC732E", "page_bg_color"=>"70921A", "text_font_1"=>"Arial", "link_hover_color"=>"7C2727", "border_color"=>"329DB8"}, "commit"=>"Save", "action"=>"update", "_method"=>"put", "authenticity_token"=>"QW27bQ4hkddE4uZXHygndJDCimnisZ+DZXjNUD430o8=", "id"=>"14", "controller"=>"designs", "user_id"=>"26"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;36;1mDesign Load (0.6ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+  [4;35;1mDesign Update (0.3ms)[0m   [0mUPDATE "designs" SET "title_color" = '2233AB', "updated_at" = '2009-09-17 00:38:05', "text_size" = '8' WHERE "id" = 14[0m
+[paperclip] Saving attachments.
+Redirected to http://0.0.0.0:3000/users/26/designs/14/edit
+Completed in 28ms (DB: 1) | 302 Found [http://0.0.0.0/users/26/designs/14]
+
+
+Processing DesignsController#edit (for 127.0.0.1 at 2009-09-16 20:38:05) [GET]
+  Parameters: {"action"=>"edit", "id"=>"14", "controller"=>"designs", "user_id"=>"26"}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;35;1mDesign Load (0.6ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering designs/edit
+Rendered layouts/_colourmod_include (0.7ms)
+Rendered designs/_color_preview_styles (6.5ms)
+  [4;36;1mPortfolio Load (0.3ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Completed in 113ms (View: 20, DB: 1) | 200 OK [http://0.0.0.0/users/26/designs/14/edit]
+
+
+Processing PortfoliosController#show (for 127.0.0.1 at 2009-09-16 20:38:07) [GET]
+  Parameters: {"action"=>"show", "id"=>"31", "controller"=>"portfolios", "user_id"=>"26"}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;36;1mDesign Load (0.7ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.2ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Rendering template within layouts/weefolio
+Rendering portfolios/show
+  [4;36;1mPiece Load (0.2ms)[0m   [0;1mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 31) [0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) [0m
+Rendered styles/_form_css (0.6ms)
+Completed in 49ms (View: 19, DB: 2) | 200 OK [http://0.0.0.0/users/26/portfolios/31]
+
+
+Processing PortfoliosController#show (for 127.0.0.1 at 2009-09-16 20:38:18) [GET]
+  Parameters: {"action"=>"show", "id"=>"31", "controller"=>"portfolios", "user_id"=>"26"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;35;1mDesign Load (0.5ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.2ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Rendering template within layouts/weefolio
+Rendering portfolios/show
+  [4;35;1mPiece Load (0.2ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 31) [0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 26) [0m
+Rendered styles/_form_css (0.5ms)
+Completed in 42ms (View: 17, DB: 2) | 200 OK [http://0.0.0.0/users/26/portfolios/31]
+
+
+Processing DesignsController#update (for 127.0.0.1 at 2009-09-16 20:38:33) [PUT]
+  Parameters: {"design"=>{"background_color"=>"B6DD1C", "text_size"=>"12", "link_color"=>"070707", "layout_type"=>"1", "title_color"=>"2233AB", "text_color"=>"AC732E", "page_bg_color"=>"70921A", "text_font_1"=>"Arial", "link_hover_color"=>"7C2727", "border_color"=>"329DB8"}, "commit"=>"Save", "action"=>"update", "_method"=>"put", "authenticity_token"=>"QW27bQ4hkddE4uZXHygndJDCimnisZ+DZXjNUD430o8=", "id"=>"14", "controller"=>"designs", "user_id"=>"26"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;36;1mDesign Load (0.5ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+  [4;35;1mDesign Update (0.3ms)[0m   [0mUPDATE "designs" SET "link_color" = '070707', "updated_at" = '2009-09-17 00:38:33', "text_size" = '12' WHERE "id" = 14[0m
+[paperclip] Saving attachments.
+Redirected to http://0.0.0.0:3000/users/26/designs/14/edit
+Completed in 24ms (DB: 1) | 302 Found [http://0.0.0.0/users/26/designs/14]
+
+
+Processing DesignsController#edit (for 127.0.0.1 at 2009-09-16 20:38:33) [GET]
+  Parameters: {"action"=>"edit", "id"=>"14", "controller"=>"designs", "user_id"=>"26"}
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;35;1mDesign Load (0.8ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering designs/edit
+Rendered layouts/_colourmod_include (0.9ms)
+Rendered designs/_color_preview_styles (6.8ms)
+  [4;36;1mPortfolio Load (0.2ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Completed in 39ms (View: 21, DB: 2) | 200 OK [http://0.0.0.0/users/26/designs/14/edit]
+
+
+Processing PortfoliosController#show (for 127.0.0.1 at 2009-09-16 20:38:35) [GET]
+  Parameters: {"action"=>"show", "id"=>"31", "controller"=>"portfolios", "user_id"=>"26"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;36;1mDesign Load (0.5ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.2ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Rendering template within layouts/weefolio
+Rendering portfolios/show
+  [4;36;1mPiece Load (0.2ms)[0m   [0;1mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 31) [0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) [0m
+Rendered styles/_form_css (0.4ms)
+Completed in 39ms (View: 14, DB: 2) | 200 OK [http://0.0.0.0/users/26/portfolios/31]
+
+
+Processing SessionsController#destroy (for 127.0.0.1 at 2009-09-16 20:38:53) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"sessions"}
+Redirected to http://0.0.0.0:3000/
+Completed in 90ms (DB: 0) | 302 Found [http://0.0.0.0/logout]
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-09-16 20:38:54) [GET]
+  Parameters: {"action"=>"home", "controller"=>"main_pages"}
+Rendering template within layouts/template
+Rendering main_pages/home
+Completed in 8ms (View: 8, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-09-16 20:38:54) [GET]
+  Parameters: {"action"=>"home", "controller"=>"main_pages"}
+Rendering template within layouts/template
+Rendering main_pages/home
+Completed in 2ms (View: 2, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing MainPagesController#directory (for 127.0.0.1 at 2009-09-16 20:39:08) [GET]
+  Parameters: {"action"=>"directory", "controller"=>"main_pages"}
+Rendering template within layouts/template
+Rendering main_pages/directory
+Completed in 5ms (View: 5, DB: 0) | 200 OK [http://0.0.0.0/directory]
+
+
+Processing MainPagesController#help (for 127.0.0.1 at 2009-09-16 20:39:18) [GET]
+  Parameters: {"action"=>"help", "controller"=>"main_pages"}
+Rendering template within layouts/template
+Rendering main_pages/help
+Completed in 8ms (View: 8, DB: 0) | 200 OK [http://0.0.0.0/help]
+
+
+Processing MainPagesController#contact (for 127.0.0.1 at 2009-09-16 20:40:22) [GET]
+  Parameters: {"action"=>"contact", "controller"=>"main_pages"}
+Rendering template within layouts/template
+Rendering main_pages/contact
+Completed in 8ms (View: 7, DB: 0) | 200 OK [http://0.0.0.0/contact_us]
+
+
+Processing MainPagesController#send_us_mail (for 127.0.0.1 at 2009-09-16 20:41:26) [POST]
+  Parameters: {"message"=>"Here's a test message to the weefolio staff.", "commit"=>"Send Message", "action"=>"send_us_mail", "authenticity_token"=>"gcY3th64o0R+CHyOAkSrFC3BhLfJsL8dflV+Xy2UOK8=", "subject"=>"Test Message", "controller"=>"main_pages"}
+
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  app/controllers/main_pages_controller.rb:29:in `send_us_mail'
+
+Rendered rescues/_trace (36.6ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (not_found)
+/!\ FAILSAFE /!\  Wed Sep 16 20:46:09 -0400 2009
+  Status: 500 Internal Server Error
+  /Users/michael/Desktop/weefolio/app/helpers/main_pages_helper.rb:13: syntax error, unexpected $end, expecting kEND
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:380:in `load_without_new_constant_marking'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:380:in `load_file'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:379:in `load_file'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:259:in `require_or_load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:224:in `depend_on'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:136:in `require_dependency'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/helpers.rb:126:in `helper'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/helpers.rb:115:in `each'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/helpers.rb:115:in `helper'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/helpers.rb:120:in `helper'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/helpers.rb:115:in `each'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/helpers.rb:115:in `helper'
+    /Users/michael/Desktop/weefolio/app/controllers/application_controller.rb:6
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:380:in `load_without_new_constant_marking'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:380:in `load_file'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:379:in `load_file'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:259:in `require_or_load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:425:in `load_missing_constant'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:80:in `const_missing'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:92:in `const_missing'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:90:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:111:in `_call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:82:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:9:in `cache'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:28:in `call'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/head.rb:9:in `call'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/methodoverride.rb:24:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/params_parser.rb:15:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rewindable_input.rb:25:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/reloader.rb:9:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/failsafe.rb:11:in `call'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:106:in `call'
+    /Library/Ruby/Gems/1.8/gems/rails-2.3.2/lib/rails/rack/static.rb:31:in `call'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:46:in `call'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `each'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `call'
+    /Library/Ruby/Gems/1.8/gems/rails-2.3.2/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/content_length.rb:13:in `call'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/chunked.rb:15:in `call'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:61:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:34:in `run'
+    /Library/Ruby/Gems/1.8/gems/rails-2.3.2/lib/commands/server.rb:111
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+/!\ FAILSAFE /!\  Wed Sep 16 20:46:18 -0400 2009
+  Status: 500 Internal Server Error
+  /Users/michael/Desktop/weefolio/app/helpers/main_pages_helper.rb:13: syntax error, unexpected $end, expecting kEND
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:380:in `load_without_new_constant_marking'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:380:in `load_file'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:379:in `load_file'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:259:in `require_or_load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:224:in `depend_on'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:136:in `require_dependency'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/helpers.rb:126:in `helper'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/helpers.rb:115:in `each'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/helpers.rb:115:in `helper'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/helpers.rb:120:in `helper'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/helpers.rb:115:in `each'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/helpers.rb:115:in `helper'
+    /Users/michael/Desktop/weefolio/app/controllers/application_controller.rb:6
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:380:in `load_without_new_constant_marking'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:380:in `load_file'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:379:in `load_file'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:259:in `require_or_load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:425:in `load_missing_constant'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:80:in `const_missing'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:92:in `const_missing'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:90:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:111:in `_call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:82:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:9:in `cache'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:28:in `call'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/head.rb:9:in `call'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/methodoverride.rb:24:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/params_parser.rb:15:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rewindable_input.rb:25:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/reloader.rb:9:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/failsafe.rb:11:in `call'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:106:in `call'
+    /Library/Ruby/Gems/1.8/gems/rails-2.3.2/lib/rails/rack/static.rb:31:in `call'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:46:in `call'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `each'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `call'
+    /Library/Ruby/Gems/1.8/gems/rails-2.3.2/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/content_length.rb:13:in `call'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/chunked.rb:15:in `call'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:61:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:34:in `run'
+    /Library/Ruby/Gems/1.8/gems/rails-2.3.2/lib/commands/server.rb:111
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+
+Processing MainPagesController#contact (for 127.0.0.1 at 2009-09-16 20:46:39) [GET]
+  Parameters: {"action"=>"contact", "controller"=>"main_pages"}
+Rendering template within layouts/template
+Rendering main_pages/contact
+Completed in 7ms (View: 6, DB: 0) | 200 OK [http://0.0.0.0/contact_us]
+
+
+Processing MainPagesController#contact (for 127.0.0.1 at 2009-09-16 20:46:44) [GET]
+  Parameters: {"action"=>"contact", "controller"=>"main_pages"}
+Rendering template within layouts/template
+Rendering main_pages/contact
+Completed in 82ms (View: 81, DB: 0) | 200 OK [http://0.0.0.0/contact_us]
+
+
+Processing MainPagesController#contact (for 127.0.0.1 at 2009-09-16 20:47:45) [GET]
+  Parameters: {"action"=>"contact", "controller"=>"main_pages"}
+Rendering template within layouts/template
+Rendering main_pages/contact
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://0.0.0.0/contact_us]
+
+
+Processing MainPagesController#contact (for 127.0.0.1 at 2009-09-16 20:47:57) [GET]
+  Parameters: {"action"=>"contact", "controller"=>"main_pages"}
+Rendering template within layouts/template
+Rendering main_pages/contact
+Completed in 3ms (View: 3, DB: 0) | 200 OK [http://0.0.0.0/contact_us]
+
+
+Processing MainPagesController#contact (for 127.0.0.1 at 2009-09-16 20:48:37) [GET]
+  Parameters: {"action"=>"contact", "controller"=>"main_pages"}
+Rendering template within layouts/template
+Rendering main_pages/contact
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://0.0.0.0/contact_us]
+
+
+Processing MainPagesController#contact (for 127.0.0.1 at 2009-09-16 20:48:54) [GET]
+  Parameters: {"action"=>"contact", "controller"=>"main_pages"}
+Rendering template within layouts/template
+Rendering main_pages/contact
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://0.0.0.0/contact_us]
+
+
+Processing MainPagesController#contact (for 127.0.0.1 at 2009-09-16 20:48:56) [GET]
+  Parameters: {"action"=>"contact", "controller"=>"main_pages"}
+Rendering template within layouts/template
+Rendering main_pages/contact
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://0.0.0.0/contact_us]
+/!\ FAILSAFE /!\  Wed Sep 16 20:49:11 -0400 2009
+  Status: 500 Internal Server Error
+  /Users/michael/Desktop/weefolio/app/helpers/main_pages_helper.rb:10: syntax error, unexpected '<', expecting kEND
+  			  <%= text_field_tag :user_email %>
+  			   ^
+/Users/michael/Desktop/weefolio/app/helpers/main_pages_helper.rb:10: unterminated string meets end of file
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:380:in `load_without_new_constant_marking'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:380:in `load_file'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:379:in `load_file'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:259:in `require_or_load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:224:in `depend_on'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:136:in `require_dependency'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/helpers.rb:126:in `helper'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/helpers.rb:115:in `each'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/helpers.rb:115:in `helper'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/helpers.rb:120:in `helper'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/helpers.rb:115:in `each'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/helpers.rb:115:in `helper'
+    /Users/michael/Desktop/weefolio/app/controllers/application_controller.rb:6
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:380:in `load_without_new_constant_marking'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:380:in `load_file'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:379:in `load_file'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:259:in `require_or_load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:425:in `load_missing_constant'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:80:in `const_missing'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:92:in `const_missing'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:90:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:111:in `_call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:82:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:9:in `cache'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:28:in `call'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/head.rb:9:in `call'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/methodoverride.rb:24:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/params_parser.rb:15:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rewindable_input.rb:25:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/reloader.rb:9:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/failsafe.rb:11:in `call'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:106:in `call'
+    /Library/Ruby/Gems/1.8/gems/rails-2.3.2/lib/rails/rack/static.rb:31:in `call'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:46:in `call'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `each'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `call'
+    /Library/Ruby/Gems/1.8/gems/rails-2.3.2/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/content_length.rb:13:in `call'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/chunked.rb:15:in `call'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:61:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:34:in `run'
+    /Library/Ruby/Gems/1.8/gems/rails-2.3.2/lib/commands/server.rb:111
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+
+Processing MainPagesController#contact (for 127.0.0.1 at 2009-09-16 20:51:50) [GET]
+  Parameters: {"action"=>"contact", "controller"=>"main_pages"}
+Rendering template within layouts/template
+Rendering main_pages/contact
+Completed in 3ms (View: 3, DB: 0) | 200 OK [http://0.0.0.0/contact_us]
+
+
+Processing MainPagesController#contact (for 127.0.0.1 at 2009-09-16 20:51:51) [GET]
+  Parameters: {"action"=>"contact", "controller"=>"main_pages"}
+Rendering template within layouts/template
+Rendering main_pages/contact
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://0.0.0.0/contact_us]
+
+
+Processing MainPagesController#contact (for 127.0.0.1 at 2009-09-16 20:52:42) [GET]
+  Parameters: {"action"=>"contact", "controller"=>"main_pages"}
+Rendering template within layouts/template
+Rendering main_pages/contact
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://0.0.0.0/contact_us]
+
+
+Processing MainPagesController#contact (for 127.0.0.1 at 2009-09-16 20:52:55) [GET]
+  Parameters: {"action"=>"contact", "controller"=>"main_pages"}
+Rendering template within layouts/template
+Rendering main_pages/contact
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://0.0.0.0/contact_us]
+/!\ FAILSAFE /!\  Wed Sep 16 20:53:04 -0400 2009
+  Status: 500 Internal Server Error
+  /Users/michael/Desktop/weefolio/app/helpers/main_pages_helper.rb:11: syntax error, unexpected '<', expecting kEND
+  			</dd>
+  			 ^
+/Users/michael/Desktop/weefolio/app/helpers/main_pages_helper.rb:11: unterminated string meets end of file
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:380:in `load_without_new_constant_marking'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:380:in `load_file'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:379:in `load_file'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:259:in `require_or_load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:224:in `depend_on'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:136:in `require_dependency'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/helpers.rb:126:in `helper'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/helpers.rb:115:in `each'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/helpers.rb:115:in `helper'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/helpers.rb:120:in `helper'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/helpers.rb:115:in `each'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/helpers.rb:115:in `helper'
+    /Users/michael/Desktop/weefolio/app/controllers/application_controller.rb:6
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:380:in `load_without_new_constant_marking'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:380:in `load_file'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:379:in `load_file'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:259:in `require_or_load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:425:in `load_missing_constant'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:80:in `const_missing'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.3.2/lib/active_support/dependencies.rb:92:in `const_missing'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:90:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:111:in `_call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:82:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:29:in `call'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:9:in `cache'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/query_cache.rb:28:in `call'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.3.2/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/head.rb:9:in `call'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/methodoverride.rb:24:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/params_parser.rb:15:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/rewindable_input.rb:25:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/reloader.rb:9:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/failsafe.rb:11:in `call'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/lock.rb:11:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.3.2/lib/action_controller/dispatcher.rb:106:in `call'
+    /Library/Ruby/Gems/1.8/gems/rails-2.3.2/lib/rails/rack/static.rb:31:in `call'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:46:in `call'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `each'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/urlmap.rb:40:in `call'
+    /Library/Ruby/Gems/1.8/gems/rails-2.3.2/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/content_length.rb:13:in `call'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/chunked.rb:15:in `call'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:61:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /Library/Ruby/Gems/1.8/gems/rack-1.0.0/lib/rack/handler/mongrel.rb:34:in `run'
+    /Library/Ruby/Gems/1.8/gems/rails-2.3.2/lib/commands/server.rb:111
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+
+Processing MainPagesController#contact (for 127.0.0.1 at 2009-09-16 20:53:16) [GET]
+  Parameters: {"action"=>"contact", "controller"=>"main_pages"}
+Rendering template within layouts/template
+Rendering main_pages/contact
+Completed in 3ms (View: 3, DB: 0) | 200 OK [http://0.0.0.0/contact_us]
+
+
+Processing MainPagesController#contact (for 127.0.0.1 at 2009-09-16 20:53:17) [GET]
+  Parameters: {"action"=>"contact", "controller"=>"main_pages"}
+Rendering template within layouts/template
+Rendering main_pages/contact
+Completed in 3ms (View: 3, DB: 0) | 200 OK [http://0.0.0.0/contact_us]
+
+
+Processing MainPagesController#contact (for 127.0.0.1 at 2009-09-16 20:53:57) [GET]
+  Parameters: {"action"=>"contact", "controller"=>"main_pages"}
+Rendering template within layouts/template
+Rendering main_pages/contact
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://0.0.0.0/contact_us]
+
+
+Processing MainPagesController#contact (for 127.0.0.1 at 2009-09-16 20:55:45) [GET]
+  Parameters: {"action"=>"contact", "controller"=>"main_pages"}
+Rendering template within layouts/template
+Rendering main_pages/contact
+Completed in 3ms (View: 3, DB: 0) | 200 OK [http://0.0.0.0/contact_us]
+
+
+Processing MainPagesController#contact (for 127.0.0.1 at 2009-09-16 20:57:38) [GET]
+  Parameters: {"action"=>"contact", "controller"=>"main_pages"}
+Rendering template within layouts/template
+Rendering main_pages/contact
+
+ActionView::TemplateError (Missing template main_pages/_sender_email_field.erb in view path app/views) on line #22 of app/views/main_pages/contact.html.erb:
+19: 		<fieldset>
+20: 			<h2>Contact Us!</h2>
+21: 			<dl>
+22: 			  <%= show_sender_email %>
+23: 				<dt>
+24: 					<label for="subject">Subject</label>
+25: 				</dt>
+
+    app/helpers/main_pages_helper.rb:4:in `show_sender_email'
+    app/views/main_pages/contact.html.erb:22
+
+Rendered rescues/_trace (40.7ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MainPagesController#contact (for 127.0.0.1 at 2009-09-16 20:58:18) [GET]
+  Parameters: {"action"=>"contact", "controller"=>"main_pages"}
+Rendering template within layouts/template
+Rendering main_pages/contact
+Rendered main_pages/_sender_email_field (0.9ms)
+Completed in 9ms (View: 8, DB: 0) | 200 OK [http://0.0.0.0/contact_us]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-09-16 20:58:23) [GET]
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering template within layouts/template
+Rendering sessions/new
+Completed in 7ms (View: 7, DB: 0) | 200 OK [http://0.0.0.0/login]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2009-09-16 20:58:29) [POST]
+  Parameters: {"commit"=>"Login", "action"=>"create", "authenticity_token"=>"gcY3th64o0R+CHyOAkSrFC3BhLfJsL8dflV+Xy2UOK8=", "controller"=>"sessions", "login"=>"mcmaloney", "password"=>"[FILTERED]"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'mcmaloney' and activated_at IS NOT NULL) LIMIT 1[0m
+[paperclip] Saving attachments.
+Redirected to http://0.0.0.0:3000/
+Completed in 18ms (DB: 1) | 302 Found [http://0.0.0.0/session]
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-09-16 20:58:29) [GET]
+  Parameters: {"action"=>"home", "controller"=>"main_pages"}
+Rendering template within layouts/template
+Rendering main_pages/home
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.2ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+  [4;35;1mDesign Load (0.6ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+Completed in 34ms (View: 32, DB: 2) | 200 OK [http://0.0.0.0/]
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-09-16 20:58:30) [GET]
+  Parameters: {"action"=>"home", "controller"=>"main_pages"}
+Rendering template within layouts/template
+Rendering main_pages/home
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.2ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+  [4;36;1mDesign Load (0.6ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+Completed in 30ms (View: 28, DB: 1) | 200 OK [http://0.0.0.0/]
+
+
+Processing MainPagesController#contact (for 127.0.0.1 at 2009-09-16 20:58:31) [GET]
+  Parameters: {"action"=>"contact", "controller"=>"main_pages"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering main_pages/contact
+  [4;36;1mPortfolio Load (0.2ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+  [4;35;1mDesign Load (0.6ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+Completed in 29ms (View: 17, DB: 1) | 200 OK [http://0.0.0.0/contact_us]
+
+
+Processing SessionsController#destroy (for 127.0.0.1 at 2009-09-16 20:58:35) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"sessions"}
+Redirected to http://0.0.0.0:3000/
+Completed in 6ms (DB: 0) | 302 Found [http://0.0.0.0/logout]
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-09-16 20:58:35) [GET]
+  Parameters: {"action"=>"home", "controller"=>"main_pages"}
+Rendering template within layouts/template
+Rendering main_pages/home
+Completed in 2ms (View: 2, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-09-16 20:58:35) [GET]
+  Parameters: {"action"=>"home", "controller"=>"main_pages"}
+Rendering template within layouts/template
+Rendering main_pages/home
+Completed in 2ms (View: 2, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing MainPagesController#contact (for 127.0.0.1 at 2009-09-16 20:58:37) [GET]
+  Parameters: {"action"=>"contact", "controller"=>"main_pages"}
+Rendering template within layouts/template
+Rendering main_pages/contact
+Rendered main_pages/_sender_email_field (0.3ms)
+Completed in 4ms (View: 3, DB: 0) | 200 OK [http://0.0.0.0/contact_us]
+
+
+Processing MainPagesController#send_us_mail (for 127.0.0.1 at 2009-09-16 20:59:49) [POST]
+  Parameters: {"sender_email"=>"mcm@crushlovely", "message"=>"This is a test message from the weefolio contact mailer.", "commit"=>"Send Message", "action"=>"send_us_mail", "authenticity_token"=>"n1EQdBKWhAOaK/GRkikf87+FwZ6IWcp+WnFFZnPXvuc=", "subject"=>"Test Message", "controller"=>"main_pages"}
+
+NoMethodError (undefined method `email' for "mcm@crushlovely":String):
+  app/controllers/main_pages_controller.rb:35:in `send_us_mail'
+
+Rendered rescues/_trace (27.2ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MainPagesController#send_us_mail (for 127.0.0.1 at 2009-09-16 21:01:28) [POST]
+  Parameters: {"sender_email"=>"mcm@crushlovely", "message"=>"This is a test message from the weefolio contact mailer.", "commit"=>"Send Message", "action"=>"send_us_mail", "authenticity_token"=>"n1EQdBKWhAOaK/GRkikf87+FwZ6IWcp+WnFFZnPXvuc=", "subject"=>"Test Message", "controller"=>"main_pages"}
+Sent mail to maloney.mc@gmail.com
+
+From: mcm@crushlovely
+To: maloney.mc@gmail.com
+Subject: Test Message
+Mime-Version: 1.0
+Content-Type: text/plain; charset=iso-8859-1
+
+This is a test message from the weefolio contact mailer.
+Redirected to http://0.0.0.0:3000/contact_us
+Completed in 70ms (DB: 0) | 302 Found [http://0.0.0.0/main_pages/send_us_mail]
+
+
+Processing MainPagesController#contact (for 127.0.0.1 at 2009-09-16 21:01:28) [GET]
+  Parameters: {"action"=>"contact", "controller"=>"main_pages"}
+Rendering template within layouts/template
+Rendering main_pages/contact
+Rendered main_pages/_sender_email_field (0.5ms)
+Completed in 9ms (View: 8, DB: 0) | 200 OK [http://0.0.0.0/contact_us]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2009-09-16 21:02:35) [GET]
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering template within layouts/template
+Rendering sessions/new
+Completed in 5ms (View: 5, DB: 0) | 200 OK [http://0.0.0.0/login]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2009-09-16 21:02:44) [POST]
+  Parameters: {"commit"=>"Login", "action"=>"create", "authenticity_token"=>"n1EQdBKWhAOaK/GRkikf87+FwZ6IWcp+WnFFZnPXvuc=", "controller"=>"sessions", "login"=>"mcmaloney", "password"=>"[FILTERED]"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'mcmaloney' and activated_at IS NOT NULL) LIMIT 1[0m
+[paperclip] Saving attachments.
+Redirected to http://0.0.0.0:3000/
+Completed in 17ms (DB: 1) | 302 Found [http://0.0.0.0/session]
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-09-16 21:02:44) [GET]
+  Parameters: {"action"=>"home", "controller"=>"main_pages"}
+Rendering template within layouts/template
+Rendering main_pages/home
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.2ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+  [4;35;1mDesign Load (0.5ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+Completed in 28ms (View: 26, DB: 1) | 200 OK [http://0.0.0.0/]
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-09-16 21:02:44) [GET]
+  Parameters: {"action"=>"home", "controller"=>"main_pages"}
+Rendering template within layouts/template
+Rendering main_pages/home
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.2ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+  [4;36;1mDesign Load (0.5ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+Completed in 27ms (View: 26, DB: 1) | 200 OK [http://0.0.0.0/]
+
+
+Processing PortfoliosController#show (for 127.0.0.1 at 2009-09-16 21:02:49) [GET]
+  Parameters: {"action"=>"show", "id"=>"31", "controller"=>"portfolios", "user_id"=>"26"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;36;1mDesign Load (0.6ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.2ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Rendering template within layouts/weefolio
+Rendering portfolios/show
+  [4;36;1mPiece Load (0.2ms)[0m   [0;1mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 31) [0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) [0m
+Rendered styles/_form_css (0.4ms)
+Completed in 120ms (View: 95, DB: 2) | 200 OK [http://0.0.0.0/users/26/portfolios/31]
+
+
+Processing PortfoliosController#send_message (for 127.0.0.1 at 2009-09-16 21:03:08) [POST]
+  Parameters: {"name"=>"Elmar", "message"=>"This background color blinded my son.", "commit"=>"Send Message", "from"=>"emar@gmail.com", "action"=>"send_message", "authenticity_token"=>"n1EQdBKWhAOaK/GRkikf87+FwZ6IWcp+WnFFZnPXvuc=", "id"=>"26", "controller"=>"portfolios"}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 26) [0m
+Sent mail to maloney.mc@gmail.com
+
+Date: Wed, 16 Sep 2009 21:03:08 -0400
+From: emar@gmail.com
+To: maloney.mc@gmail.com
+Subject: Elmar
+Mime-Version: 1.0
+Content-Type: text/plain; charset=iso-8859-1
+
+This background color blinded my son.
+  [4;35;1mPortfolio Load (0.3ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Redirected to http://0.0.0.0:3000/users/26/portfolios/31
+Completed in 94ms (DB: 1) | 302 Found [http://0.0.0.0/portfolios/send_message/26]
+
+
+Processing PortfoliosController#show (for 127.0.0.1 at 2009-09-16 21:03:08) [GET]
+  Parameters: {"action"=>"show", "id"=>"31", "controller"=>"portfolios", "user_id"=>"26"}
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;35;1mDesign Load (0.6ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.2ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Rendering template within layouts/weefolio
+Rendering portfolios/show
+  [4;35;1mPiece Load (0.2ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 31) [0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 26) [0m
+Rendered styles/_form_css (0.5ms)
+Completed in 52ms (View: 19, DB: 2) | 200 OK [http://0.0.0.0/users/26/portfolios/31]
