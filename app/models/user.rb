@@ -24,9 +24,7 @@ class User < ActiveRecord::Base
 
   before_create :make_activation_code 
 
-  # HACK HACK HACK -- how to do attr_accessible from here?
-  # prevents a user from submitting a crafted form that bypasses activation
-  # anything else you want your user to change should be added here.
+  # Should really get rid of the account_tier from attr_accessible...
   attr_accessible :login, :email, :name, :password, :password_confirmation, :first_name, :last_name, :about_me, :tag_line, :design_type, :layout_type, :account_tier, :photo
   
   # Paperclip settings
@@ -78,15 +76,6 @@ class User < ActiveRecord::Base
     my_design_editor = Design.new
     self.design = my_design_editor
     self.design.save
-  end
-  
-  # This is dumb. It bullies the user.
-  def has_blank_info
-    if (self.tag_line.blank? || self.about_me.blank?)
-      return true
-    else
-      return false
-    end
   end
 
   # Activates the user in the database.

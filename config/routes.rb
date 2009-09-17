@@ -13,7 +13,7 @@ ActionController::Routing::Routes.draw do |map|
   map.terms_of_use '/terms_of_use', :controller => 'main_pages', :action => 'terms_of_use'
   map.forgot_password '/forgot_password', :controller => 'users', :action => 'reset_password'
   
-  # ADMIN ROUTES. SHOULD NAMESPACE THESE.
+  # ADMIN ROUTES
   map.users_admin '/users_admin', :controller => 'users', :action => 'users_admin'
   map.pieces_admin '/pieces_admin', :controller => 'pieces', :action => 'pieces_admin'
   
@@ -32,8 +32,10 @@ ActionController::Routing::Routes.draw do |map|
   
   # SEPARATE PIECE ROUTE FOR ADMIN ACTIONS
   map.resources :pieces
-
   map.resource :session
+  
+  # CAPTCHA ROUTE
+  map.simple_captcha '/simple_captcha/:action', :controller => 'simple_captcha'
   
   # ROOT
   map.root :controller => "main_pages", :action => "home"

@@ -53,14 +53,6 @@ describe User do
       user.design_type.should == 1
     end
   end
-    
-  
-  describe "being displayed" do
-    it "should prompt if some info is blank" do
-      user = Factory(:user, :tag_line => nil, :about_me => nil)
-      user.has_blank_info.should be_true
-    end
-  end
   
   describe "account tier upgrades" do
     it "should upgrade to level two" do
