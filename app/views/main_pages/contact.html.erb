@@ -15,7 +15,7 @@
   </p>
     <%= flash[:notice] %>
 	<!--DUMP ALL OF YOUR SHIT HERE!-->
-	<%= form_tag :controller => 'main_pages', :action => 'send_us_mail', :id => @user %>
+	<%= form_tag :controller => 'main_pages', :action => 'send_us_mail', :id => @user, :html => { :method => :post } %>
 		<fieldset>
 			<h2>Contact Us!</h2>
 			<dl>

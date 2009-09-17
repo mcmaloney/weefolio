@@ -47,7 +47,7 @@
 				  <%= flash[:notice] %>
 					<h2>Contact <%= @user.login %></h2>
 					
-					<%= form_tag :controller => 'portfolios', :action => 'send_message', :id => @user %>
+					<%= form_tag :controller => 'portfolios', :action => 'send_message', :id => @user, :html => { :method => :post } %>
 					  <fieldset>
 							<label for="name">Name</label>
 							<%= text_field_tag :name %>

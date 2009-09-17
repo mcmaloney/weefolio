@@ -40431,3 +40431,121 @@ Rendering portfolios/show
   [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 26) [0m
 Rendered styles/_form_css (0.5ms)
 Completed in 52ms (View: 19, DB: 2) | 200 OK [http://0.0.0.0/users/26/portfolios/31]
+Starting the New Relic Agent
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSELECT version FROM schema_migrations[0m
+** [Hoptoad] Notifier 1.2.4 ready to catch errors
+
+
+Processing PortfoliosController#show (for 127.0.0.1 at 2009-09-16 21:08:07) [GET]
+  Parameters: {"action"=>"show", "id"=>"31", "controller"=>"portfolios", "user_id"=>"26"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;35;1mDesign Load (0.5ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.2ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Rendering template within layouts/weefolio
+Rendering portfolios/show
+  [4;35;1mPiece Load (0.2ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 31) [0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 26) [0m
+Rendered styles/_form_css (2.8ms)
+Completed in 111ms (View: 74, DB: 2) | 200 OK [http://0.0.0.0/users/26/portfolios/31]
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-09-16 21:08:11) [GET]
+  Parameters: {"action"=>"home", "controller"=>"main_pages"}
+Rendering template within layouts/template
+Rendering main_pages/home
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.2ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+  [4;35;1mDesign Load (0.5ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+Completed in 37ms (View: 35, DB: 1) | 200 OK [http://0.0.0.0/]
+
+
+Processing MainPagesController#contact (for 127.0.0.1 at 2009-09-16 21:08:14) [GET]
+  Parameters: {"action"=>"contact", "controller"=>"main_pages"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering main_pages/contact
+  [4;35;1mPortfolio Load (0.2ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+  [4;36;1mDesign Load (0.5ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+Completed in 34ms (View: 21, DB: 1) | 200 OK [http://0.0.0.0/contact_us]
+
+
+Processing MainPagesController#send_us_mail (for 127.0.0.1 at 2009-09-16 21:08:22) [POST]
+  Parameters: {"html"=>{"method"=>"post"}, "message"=>"sdfadfkgnadfvadfgqr", "commit"=>"Send Message", "action"=>"send_us_mail", "authenticity_token"=>"n1EQdBKWhAOaK/GRkikf87+FwZ6IWcp+WnFFZnPXvuc=", "id"=>"26", "subject"=>"Post Test", "controller"=>"main_pages"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 26) [0m
+Sent mail to maloney.mc@gmail.com
+
+From: maloney.mc@gmail.com
+To: maloney.mc@gmail.com
+Subject: Post Test
+Mime-Version: 1.0
+Content-Type: text/plain; charset=iso-8859-1
+
+sdfadfkgnadfvadfgqr
+Redirected to http://0.0.0.0:3000/contact_us
+Completed in 146ms (DB: 1) | 302 Found [http://0.0.0.0/main_pages/send_us_mail/26?html%5Bmethod%5D=post]
+
+
+Processing MainPagesController#contact (for 127.0.0.1 at 2009-09-16 21:08:22) [GET]
+  Parameters: {"action"=>"contact", "controller"=>"main_pages"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering main_pages/contact
+  [4;36;1mPortfolio Load (0.2ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+  [4;35;1mDesign Load (0.6ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+Completed in 34ms (View: 17, DB: 1) | 200 OK [http://0.0.0.0/contact_us]
+
+
+Processing SessionsController#destroy (for 127.0.0.1 at 2009-09-16 21:08:33) [GET]
+  Parameters: {"action"=>"destroy", "controller"=>"sessions"}
+Redirected to http://0.0.0.0:3000/
+Completed in 8ms (DB: 0) | 302 Found [http://0.0.0.0/logout]
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-09-16 21:08:33) [GET]
+  Parameters: {"action"=>"home", "controller"=>"main_pages"}
+Rendering template within layouts/template
+Rendering main_pages/home
+Completed in 3ms (View: 2, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-09-16 21:08:33) [GET]
+  Parameters: {"action"=>"home", "controller"=>"main_pages"}
+Rendering template within layouts/template
+Rendering main_pages/home
+Completed in 2ms (View: 2, DB: 0) | 200 OK [http://0.0.0.0/]
+
+
+Processing MainPagesController#contact (for 127.0.0.1 at 2009-09-16 21:08:35) [GET]
+  Parameters: {"action"=>"contact", "controller"=>"main_pages"}
+Rendering template within layouts/template
+Rendering main_pages/contact
+Rendered main_pages/_sender_email_field (0.6ms)
+Completed in 5ms (View: 5, DB: 0) | 200 OK [http://0.0.0.0/contact_us]
+
+
+Processing MainPagesController#send_us_mail (for 127.0.0.1 at 2009-09-16 21:08:47) [POST]
+  Parameters: {"html"=>{"method"=>"post"}, "sender_email"=>"mcm@crushlovely", "message"=>"sdgdfgjofdnvfiguqergqefqfevqef.", "commit"=>"Send Message", "action"=>"send_us_mail", "authenticity_token"=>"In3m8fsMlN2BeynBLLf7wxoEsCvtHRvDxRAJV/K7b+E=", "subject"=>"Post Test", "controller"=>"main_pages"}
+Sent mail to maloney.mc@gmail.com
+
+From: mcm@crushlovely
+To: maloney.mc@gmail.com
+Subject: Post Test
+Mime-Version: 1.0
+Content-Type: text/plain; charset=iso-8859-1
+
+sdgdfgjofdnvfiguqergqefqfevqef.
+Redirected to http://0.0.0.0:3000/contact_us
+Completed in 71ms (DB: 0) | 302 Found [http://0.0.0.0/main_pages/send_us_mail?html%5Bmethod%5D=post]
+
+
+Processing MainPagesController#contact (for 127.0.0.1 at 2009-09-16 21:08:47) [GET]
+  Parameters: {"action"=>"contact", "controller"=>"main_pages"}
+Rendering template within layouts/template
+Rendering main_pages/contact
+Rendered main_pages/_sender_email_field (0.4ms)
+Completed in 8ms (View: 8, DB: 0) | 200 OK [http://0.0.0.0/contact_us]
