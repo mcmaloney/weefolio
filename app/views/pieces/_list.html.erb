@@ -1,21 +1,21 @@
 <% for piece in @user.portfolio.pieces %>
 <div class="piece-container">
-  <div class="image-container" id=<%= piece.id %>>
+  <div class="image-container" id=<%=h piece.id %>>
     <%= image_tag piece.image_1.url(:full_size) %>
   </div>
   
   <ul class="thumb-grid">
     <% for i in 0..4 %>
       <% unless images[i].size.blank? %>
-        <li><a id=<%= piece.images[i].url(:full_size) %> onclick="switch_large_image(this, <%= piece.id %>)"><%= image_tag piece.images[i].url(:small_thumb) %></a></li>
+        <li><a id=<%= piece.images[i].url(:full_size) %> onclick="switch_large_image(this, <%=h piece.id %>)"><%= image_tag piece.images[i].url(:small_thumb) %></a></li>
       <% end %>
     <% end %>
   </ul>
 
   <div class="piece-info">
-	  <h2><%= piece.title %><% if piece.for_sale %><span class="for-sale">piece.display_price</span><% end %></h2>
+	  <h2><%=h piece.title %><% if piece.for_sale %><span class="for-sale"><%=h piece.display_price %></span><% end %></h2>
 	  <p>
-	    <%= piece.description %>
+	    <%=h piece.description %>
 	  </p>
   </div>
 </div>

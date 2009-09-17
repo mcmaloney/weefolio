@@ -33,15 +33,15 @@
 			  
 			<div id="info-container">
 				<div id="about-container">
-					<h2>About <%= @user.login %></h2>
+					<h2>About <%=h @user.login %></h2>
 					<p>
-					  <%= @user.about_me%>
+					  <%=h @user.about_me%>
 					</p>
 				</div>
 				
 				<div id="contact-container">
 				  <%= flash[:notice] %>
-					<h2>Contact <%= @user.login %></h2>
+					<h2>Contact <%=h @user.login %></h2>
 					
 					<%= form_tag :controller => 'portfolios', :action => 'send_message', :id => @user, :html => { :method => :post } %>
 					  <fieldset>

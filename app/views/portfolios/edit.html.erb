@@ -16,7 +16,7 @@
   
     <%= flash[:notice] %>
  
-  <p class="intro">You're using <strong><%= @portfolio.pieces.count %></strong> of your <strong><%= @portfolio.max_pieces %></strong> pieces.</p>
+  <p class="intro">You're using <strong><%=h @portfolio.pieces.count %></strong> of your <strong><%=h @portfolio.max_pieces %></strong> pieces.</p>
   
   <ul class="pieces">
   	<% @portfolio.pieces.each do |piece| %>
@@ -24,8 +24,8 @@
   		<%= image_tag piece.image_1.url(:small_thumb) %>
   		
   		<div class="piece-info">	
-  			<h3><a href="#"><%= piece.title %></a></h3>
-  			<p><%= piece.description %></p>
+  			<h3><a href="#"><%=h piece.title %></a></h3>
+  			<p><%=h piece.description %></p>
   		</div>
   		
   		<ul class="piece-options">

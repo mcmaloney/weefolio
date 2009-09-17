@@ -23,13 +23,13 @@ class PiecesController < ApplicationController
 
   def edit
     @portfolio = current_user.portfolio
-    @piece = Piece.find(params[:id])
+    @piece = current_user.pieces.find(params[:id])
     @page_title = "Weefolio :: Edit '#{@piece.title}'"
   end
   
   def update
     @portfolio = current_user.portfolio
-    @piece = Piece.find(params[:id])
+    @piece = current_user.pieces.find(params[:id])
     
     if @piece.update_attributes(params[:piece])
       redirect_to edit_user_portfolio_path(current_user)
@@ -38,20 +38,21 @@ class PiecesController < ApplicationController
   end
   
   def destroy
-    @piece = Piece.find(params[:id])
-    
-    @piece.destroy
     if current_user.admin?
+      @piece = Piece.find(params[:id])
+      @piece.destroy
       redirect_to pieces_admin_path
       flash[:notice] = "'#{@piece.title}' deleted."
     else
+      @piece = current_user.pieces.find(params[:id])
+      @piece.destroy
       redirect_to edit_user_portfolio_path(current_user)
       flash[:notice] = "'#{@piece.title}' deleted."
     end
   end
 
   def show
-    @piece = Piece.find(params[:id])
+    @piece = current_user.pieces.find(params[:id])
     @user = current_user
     @page_title = "#{@user.login} :: #{@piece.title}"
     @design = @user.design

@@ -33,7 +33,6 @@ class MainPagesController < ApplicationController
       @from = params[:sender_email]
     end
     
-    
     @subject = params[:subject]
     @message = params[:message]
     UserMailer.deliver_contact_message(@from, @subject, @message)

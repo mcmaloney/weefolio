@@ -6,6 +6,6 @@
 
 <% for piece in @pieces %>
   <p>
-    <%= piece.title %> <%= link_to 'Delete', piece_path(piece), :confirm => "Are you sure?", :method => :delete %>
+    <%=h piece.title %> <%= link_to 'Delete', piece_path(piece), :confirm => "Are you sure?", :method => :delete %>
   </p>
 <% end %>
