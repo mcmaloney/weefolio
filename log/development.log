@@ -42905,3 +42905,124 @@ Processing PortfoliosController#show to rss (for 127.0.0.1 at 2009-09-17 16:02:0
 Rendering portfolios/show
   [4;35;1mPiece Load (0.4ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 31) [0m
 Completed in 120ms (View: 89, DB: 2) | 200 OK [http://0.0.0.0/users/26/portfolios/31.rss]
+Starting the New Relic Agent
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSELECT version FROM schema_migrations[0m
+** [Hoptoad] Notifier 1.2.4 ready to catch errors
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-09-17 22:25:49) [GET]
+  Parameters: {"action"=>"home", "controller"=>"main_pages"}
+Rendering template within layouts/template
+Rendering main_pages/home
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.2ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+  [4;36;1mDesign Load (0.6ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+Completed in 99ms (View: 98, DB: 1) | 200 OK [http://0.0.0.0/]
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-09-17 22:25:49) [GET]
+  Parameters: {"action"=>"home", "controller"=>"main_pages"}
+Rendering template within layouts/template
+Rendering main_pages/home
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.2ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+  [4;35;1mDesign Load (0.5ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+Completed in 28ms (View: 27, DB: 1) | 200 OK [http://0.0.0.0/]
+
+
+Processing DesignsController#edit (for 127.0.0.1 at 2009-09-17 22:25:52) [GET]
+  Parameters: {"action"=>"edit", "id"=>"14", "controller"=>"designs", "user_id"=>"26"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;35;1mDesign Load (0.5ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering designs/edit
+Rendered layouts/_colourmod_include (4.3ms)
+Rendered designs/_color_preview_styles (20.1ms)
+  [4;36;1mPortfolio Load (0.2ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Completed in 79ms (View: 62, DB: 1) | 200 OK [http://0.0.0.0/users/26/designs/14/edit]
+
+
+Processing DesignsController#update (for 127.0.0.1 at 2009-09-17 22:26:10) [PUT]
+  Parameters: {"design"=>{"background_color"=>"319167", "text_size"=>"8", "link_color"=>"070707", "layout_type"=>"1", "title_color"=>"2233AB", "text_color"=>"AC732E", "page_bg_color"=>"2C3116", "text_font_1"=>"Trebuchet MS", "link_hover_color"=>"7C2727", "border_color"=>"329DB8"}, "commit"=>"Save", "action"=>"update", "_method"=>"put", "authenticity_token"=>"qIQrEQcXD91mXN1dNZpsvXxwN8sVUVBdTGPUElHBAkA=", "id"=>"14", "controller"=>"designs", "user_id"=>"26"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;36;1mDesign Load (0.6ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+  [4;35;1mDesign Update (0.4ms)[0m   [0mUPDATE "designs" SET "page_bg_color" = '2C3116', "background_color" = '319167', "updated_at" = '2009-09-18 02:26:10', "text_size" = '8' WHERE "id" = 14[0m
+[paperclip] Saving attachments.
+Redirected to http://0.0.0.0:3000/users/26/designs/14/edit
+Completed in 111ms (DB: 1) | 302 Found [http://0.0.0.0/users/26/designs/14]
+
+
+Processing DesignsController#edit (for 127.0.0.1 at 2009-09-17 22:26:10) [GET]
+  Parameters: {"action"=>"edit", "id"=>"14", "controller"=>"designs", "user_id"=>"26"}
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;35;1mDesign Load (0.6ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering designs/edit
+Rendered layouts/_colourmod_include (0.7ms)
+Rendered designs/_color_preview_styles (7.1ms)
+  [4;36;1mPortfolio Load (0.2ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Completed in 38ms (View: 20, DB: 1) | 200 OK [http://0.0.0.0/users/26/designs/14/edit]
+
+
+Processing PortfoliosController#show (for 127.0.0.1 at 2009-09-17 22:26:13) [GET]
+  Parameters: {"action"=>"show", "id"=>"31", "controller"=>"portfolios", "user_id"=>"26"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;36;1mDesign Load (0.5ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.2ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Rendering template within layouts/weefolio
+Rendering portfolios/show
+  [4;36;1mPiece Load (0.4ms)[0m   [0;1mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 31) [0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) [0m
+Rendered styles/_form_css (2.9ms)
+Completed in 141ms (View: 119, DB: 2) | 200 OK [http://0.0.0.0/users/26/portfolios/31]
+
+
+Processing PortfoliosController#show to rss (for 127.0.0.1 at 2009-09-17 22:26:19) [GET]
+  Parameters: {"format"=>"rss", "action"=>"show", "id"=>"31", "controller"=>"portfolios", "user_id"=>"26"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;35;1mDesign Load (0.6ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.2ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Rendering portfolios/show
+  [4;35;1mPiece Load (0.4ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 31) [0m
+Completed in 37ms (View: 15, DB: 2) | 200 OK [http://0.0.0.0/users/26/portfolios/31.rss]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2009-09-18 11:30:49) [GET]
+  Parameters: {"action"=>"edit", "id"=>"26", "controller"=>"users"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering users/edit
+  [4;35;1mPortfolio Load (0.2ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+  [4;36;1mDesign Load (0.6ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+Completed in 67ms (View: 52, DB: 1) | 200 OK [http://0.0.0.0/users/26/edit]
+
+
+Processing PortfoliosController#edit (for 127.0.0.1 at 2009-09-18 11:31:10) [GET]
+  Parameters: {"action"=>"edit", "id"=>"31", "controller"=>"portfolios", "user_id"=>"26"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;36;1mDesign Load (0.5ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.2ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering portfolios/edit
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "pieces" WHERE ("pieces".portfolio_id = 31) [0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) [0m
+  [4;36;1mPiece Load (0.4ms)[0m   [0;1mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 31) [0m
+Completed in 53ms (View: 29, DB: 2) | 200 OK [http://0.0.0.0/users/26/portfolios/31/edit]
+
+
+Processing PiecesController#edit (for 127.0.0.1 at 2009-09-18 11:31:21) [GET]
+  Parameters: {"action"=>"edit", "id"=>"29", "controller"=>"pieces", "portfolio_id"=>"31"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 26) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.2ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
+  [4;35;1mPiece Load (0.4ms)[0m   [0mSELECT "pieces".* FROM "pieces" INNER JOIN "portfolios" ON "pieces".portfolio_id = "portfolios".id WHERE ("pieces"."id" = 29 AND (("portfolios".user_id = 26))) [0m
+Rendering template within layouts/template
+Rendering pieces/edit
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 26) [0m
+Rendered pieces/_fields (9.2ms)
+Rendered pieces/_form (12.2ms)
+  [4;35;1mDesign Load (0.5ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
+Completed in 71ms (View: 44, DB: 2) | 200 OK [http://0.0.0.0/portfolios/31/pieces/29/edit]

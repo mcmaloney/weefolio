@@ -1056,3 +1056,13 @@ The error occurred while evaluating nil.portfolio
 [09/17/09 16:02:05 -0400 michael-maloneys-imac.local (1251)] INFO : New Relic RPM Agent 2.9.4 Initialized: pid = 1251
 [09/17/09 16:02:05 -0400 michael-maloneys-imac.local (1251)] INFO : Agent Log found in /Users/michael/Desktop/weefolio/log/newrelic_agent.log
 [09/17/09 16:02:11 -0400 michael-maloneys-imac.local (1251)] INFO : Resolved collector.newrelic.com to 65.74.177.195
+[09/17/09 22:25:39 -0400 michael-maloneys-imac.local (2081)] INFO : Web container: mongrel
+[09/17/09 22:25:39 -0400 michael-maloneys-imac.local (2081)] INFO : Transaction tracing threshold is 2.0 seconds.
+[09/17/09 22:25:39 -0400 michael-maloneys-imac.local (2081)] INFO : New Relic RPM Agent 2.9.4 Initialized: pid = 2081
+[09/17/09 22:25:39 -0400 michael-maloneys-imac.local (2081)] INFO : Agent Log found in /Users/michael/Desktop/weefolio/log/newrelic_agent.log
+[09/17/09 22:25:45 -0400 michael-maloneys-imac.local (2081)] INFO : Resolved collector.newrelic.com to 65.74.177.195
+[09/17/09 22:25:47 -0400 michael-maloneys-imac.local (2081)] INFO : Connected to NewRelic Service at collector.newrelic.com:80
+[09/17/09 22:25:48 -0400 michael-maloneys-imac.local (2081)] INFO : Reporting performance data every 60 seconds.
+[09/17/09 23:21:01 -0400 michael-maloneys-imac.local (2081)] WARN : Timed out trying to post data to RPM (timeout = 120 seconds)
+[09/18/09 05:19:31 -0400 michael-maloneys-imac.local (2081)] WARN : Timed out trying to post data to RPM (timeout = 120 seconds)
+[09/18/09 09:40:37 -0400 michael-maloneys-imac.local (2081)] WARN : Timed out trying to post data to RPM (timeout = 120 seconds)
