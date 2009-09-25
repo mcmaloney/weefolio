@@ -1,22 +1,32 @@
-set :application, "set your application name here"
-set :repository,  "set your repository location here"
+require 'mt-capistrano'
+ 
+set :site,         "9705"
+set :application,  "weefolio_test"
+set :webpath,      "test.weefolio.com"
+set :domain,       "kevinjohngomez.com"
+set :user,         "kevinjohngomez.com"
+set :password,     "blink182"
+ 
+ssh_options[:username] = 'kevinjohngomez.com'
 
-set :scm, :subversion
-# Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
+default_run_options[:pty] = true
+ssh_options[:forward_agent] = true
 
-role :web, "your web-server here"                          # Your HTTP server, Apache/etc
-role :app, "your app-server here"                          # This may be the same as your `Web` server
-role :db,  "your primary db-server here", :primary => true # This is where Rails migrations will run
-role :db,  "your slave db-server here"
-
-# If you are using Passenger mod_rails uncomment this:
-# if you're still using the script/reapear helper you will need
-# these http://github.com/rails/irs_process_scripts
-
-# namespace :deploy do
-#   task :start {}
-#   task :stop {}
-#   task :restart, :roles => :app, :except => { :no_release => true } do
-#     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
-#   end
-# end
+set :repository, "git@github.com:mcmaloney/weefolio.git"
+set :branch, "master"
+set :scm, "git"
+set :deploy_to,  "/home/#{site}/containers/rails/#{application}"
+ 
+role :web, "#{domain}"
+role :app, "#{domain}"
+role :db,  "#{domain}", :primary => true
+ 
+task :after_update_code, :roles => :app do
+  put(File.read('config/database.yml'), "#{release_path}/config/database.yml", :mode => 0444)
+end
+ 
+task :restart, :roles => :app do
+  run "mtr generate_htaccess #{application}"
+  run "mtr create_link #{application}"
+  migrate
+end

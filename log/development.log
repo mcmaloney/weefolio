@@ -43323,3 +43323,5 @@ Rendering main_pages/help
   [4;35;1mPortfolio Load (0.2ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 26) LIMIT 1[0m
   [4;36;1mDesign Load (0.6ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 26) LIMIT 1[0m
 Completed in 35ms (View: 33, DB: 1) | 200 OK [http://0.0.0.0/help]
+New Relic Agent not running
+** [Hoptoad] Notifier 1.2.4 ready to catch errors

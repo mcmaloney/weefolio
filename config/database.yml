@@ -16,10 +16,12 @@ test: &TEST
   timeout: 5000
 
 production:
-  adapter: sqlite3
-  database: db/production.sqlite3
-  pool: 5
-  timeout: 5000
+  adapter: mysql
+  host: internal-db.s9705.gridserver.com
+  database: db9705_weefolio_production
+  encoding: utf8
+  username: db9705
+  password: blink182
 
 cucumber:
   <<: *TEST
