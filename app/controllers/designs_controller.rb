@@ -1,16 +1,22 @@
 class DesignsController < ApplicationController
   layout 'template'
+  before_filter :get_user_design
+  
   def edit
-    @user = current_user
-    @design = current_user.design
     @page_title = "Weefolio :: Layout Editor"
   end
 
   def update
-    @design = current_user.design
     if @design.update_attributes(params[:design])
-      redirect_to edit_user_design_path(current_user, @design)
+      redirect_to edit_user_design_path(@user, @design)
       flash[:notice] = "Layout saved."
     end
+  end
+  
+  protected
+  
+  def get_user_design
+    @user = current_user
+    @design = current_user.design
   end
 end
