@@ -43354,3 +43354,21 @@ Completed in 35ms (View: 33, DB: 1) | 200 OK [http://0.0.0.0/help]
 New Relic Agent not running
 ** [Hoptoad] Notifier 1.2.4 ready to catch errors
 >>>>>>> 901a25644b989bd56c9419783911dc753cba8591
+Starting the New Relic Agent
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+** [Hoptoad] Notifier 1.2.4 ready to catch errors
+
+
+Processing ActionController::Base#home (for 127.0.0.1 at 2009-10-28 20:40:25) [GET]
+
+NameError (uninitialized constant ApplicationController::SimpleCaptcha):
+  app/controllers/application_controller.rb:6
+  app/controllers/main_pages_controller.rb:1
+
+Rendered rescues/_trace (39.3ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (internal_server_error)
