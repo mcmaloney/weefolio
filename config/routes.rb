@@ -34,9 +34,6 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :pieces
   map.resource :session
   
-  # CAPTCHA ROUTE
-  map.simple_captcha '/simple_captcha/:action', :controller => 'simple_captcha'
-  
   # ROOT
   map.root :controller => "main_pages", :action => "home"
 
