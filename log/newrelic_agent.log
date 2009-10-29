@@ -1066,6 +1066,7 @@ The error occurred while evaluating nil.portfolio
 [09/17/09 23:21:01 -0400 michael-maloneys-imac.local (2081)] WARN : Timed out trying to post data to RPM (timeout = 120 seconds)
 [09/18/09 05:19:31 -0400 michael-maloneys-imac.local (2081)] WARN : Timed out trying to post data to RPM (timeout = 120 seconds)
 [09/18/09 09:40:37 -0400 michael-maloneys-imac.local (2081)] WARN : Timed out trying to post data to RPM (timeout = 120 seconds)
+<<<<<<< HEAD
 [10/28/09 20:11:02 -0400 kevin-gomezs-macbook.local (52908)] INFO : Web container: mongrel
 [10/28/09 20:11:02 -0400 kevin-gomezs-macbook.local (52908)] INFO : Transaction tracing threshold is 2.0 seconds.
 [10/28/09 20:11:02 -0400 kevin-gomezs-macbook.local (52908)] INFO : New Relic RPM Agent 2.9.4 Initialized: pid = 52908
@@ -1086,3 +1087,21 @@ The error occurred while evaluating nil.portfolio
 [10/28/09 20:31:04 -0400 kevin-gomezs-macbook.local (53122)] INFO : New Relic RPM Agent 2.9.4 Initialized: pid = 53122
 [10/28/09 20:31:04 -0400 kevin-gomezs-macbook.local (53122)] INFO : Agent Log found in /Users/Kevin/Fancy Labs/Projects/Weefolio/DEV/weefolio/log/newrelic_agent.log
 [10/28/09 20:31:04 -0400 kevin-gomezs-macbook.local (53122)] ERROR : Cannot add memory sampling: Unable to run shell command sampler: ps -o rsz
+=======
+[09/18/09 12:20:15 -0400 michael-maloneys-imac.local (8217)] INFO : Web container: mongrel
+[09/18/09 12:20:15 -0400 michael-maloneys-imac.local (8217)] INFO : Transaction tracing threshold is 2.0 seconds.
+[09/18/09 12:20:15 -0400 michael-maloneys-imac.local (8217)] INFO : New Relic RPM Agent 2.9.4 Initialized: pid = 8217
+[09/18/09 12:20:15 -0400 michael-maloneys-imac.local (8217)] INFO : Agent Log found in /Users/michael/Desktop/weefolio/log/newrelic_agent.log
+[09/18/09 12:20:20 -0400 michael-maloneys-imac.local (8217)] INFO : Resolved collector.newrelic.com to 65.74.177.195
+[09/18/09 12:20:22 -0400 michael-maloneys-imac.local (8217)] INFO : Connected to NewRelic Service at collector.newrelic.com:80
+[09/18/09 12:20:23 -0400 michael-maloneys-imac.local (8217)] INFO : Reporting performance data every 60 seconds.
+[09/18/09 14:03:23 -0400 michael-maloneys-imac.local (8217)] WARN : Timed out trying to post data to RPM (timeout = 120 seconds)
+[09/18/09 19:04:30 -0400 michael-maloneys-imac.local (8217)] WARN : Timed out trying to post data to RPM (timeout = 120 seconds)
+[09/18/09 19:11:34 -0400 michael-maloneys-imac.local (8217)] WARN : Timed out trying to post data to RPM (timeout = 120 seconds)
+[09/18/09 20:52:37 -0400 michael-maloneys-imac.local (8217)] WARN : Timed out trying to post data to RPM (timeout = 120 seconds)
+[09/19/09 00:23:41 -0400 michael-maloneys-imac.local (8217)] WARN : Timed out trying to post data to RPM (timeout = 120 seconds)
+[09/19/09 01:15:41 -0400 michael-maloneys-imac.local (8217)] WARN : Timed out trying to post data to RPM (timeout = 120 seconds)
+[09/19/09 05:58:41 -0400 michael-maloneys-imac.local (8217)] WARN : Timed out trying to post data to RPM (timeout = 120 seconds)
+[09/19/09 07:36:41 -0400 michael-maloneys-imac.local (8217)] WARN : Timed out trying to post data to RPM (timeout = 120 seconds)
+[09/19/09 07:40:41 -0400 michael-maloneys-imac.local (8217)] WARN : Timed out trying to post data to RPM (timeout = 120 seconds)
+>>>>>>> 901a25644b989bd56c9419783911dc753cba8591
