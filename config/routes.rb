@@ -19,7 +19,7 @@ ActionController::Routing::Routes.draw do |map|
   
   # USERS
   map.resources :users do |users|
-    users.resources :portfolios
+    users.resources :portfolios, :member => { :send_message => :post }
     users.resources :designs
   end
   
