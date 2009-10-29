@@ -1,19 +1,14 @@
 class PortfoliosController < ApplicationController
   layout :choose_layout
+  before_filter :get_user_design_portfolio, :except => [:send_message]
   
   # This is what the world sees. (My Weefolio)
   def show
-    @user = current_user
-    @design = current_user.design
-    @portfolio = current_user.portfolio
     @page_title = "Weefolio :: #{@user.login}"
   end
   
   # This is where you go when you want to manage the content of your Weefolio. (Portfolio)
   def edit 
-    @user = current_user
-    @design = current_user.design
-    @portfolio = current_user.portfolio
     @page_title = "Weefolio :: Manage My Work"
   end
   
@@ -28,8 +23,17 @@ class PortfoliosController < ApplicationController
     redirect_to user_portfolio_path(@user, @user.portfolio)
     flash[:notice] = "Message sent."
   end
+  
+  protected
+  
+  def get_user_design_portfolio
+    @user = current_user
+    @design = current_user.design
+    @portfolio = current_user.portfolio
+  end
 
-private
+  private
+  
   def choose_layout
     if ['show'].include? action_name
       'weefolio'
