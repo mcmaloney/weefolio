@@ -1,16 +1,15 @@
 class PiecesController < ApplicationController
   layout :choose_layout
-  before_filter :authorize, :except => [:new, :create, :show, :edit, :update, :destroy]
+  before_filter :authorize, :only => [:pieces_admin]
+  before_filter :get_portfolio, :except => [:destroy, :pieces_admin]
+  before_filter :init_piece, :only => [:new, :create]
+  before_filter :find_piece, :only => [:show, :edit, :update, :destroy]
   
   def new
     @page_title = "Weefolio :: New Piece"
-    @portfolio = current_user.portfolio
-    @piece  = @portfolio.pieces.new
   end
   
   def create
-    @portfolio = current_user.portfolio
-    @piece = @portfolio.pieces.create!(params[:piece])
     if @piece.save
       redirect_to edit_user_portfolio_path(current_user, @portfolio)
       if @piece.for_sale
@@ -22,15 +21,10 @@ class PiecesController < ApplicationController
   end
 
   def edit
-    @portfolio = current_user.portfolio
-    @piece = current_user.pieces.find(params[:id])
     @page_title = "Weefolio :: Edit '#{@piece.title}'"
   end
   
   def update
-    @portfolio = current_user.portfolio
-    @piece = current_user.pieces.find(params[:id])
-    
     if @piece.update_attributes(params[:piece])
       redirect_to edit_user_portfolio_path(current_user)
       flash[:notice] = "Piece updated."
@@ -38,32 +32,46 @@ class PiecesController < ApplicationController
   end
   
   def destroy
+    @piece.destroy
     if current_user.admin?
-      @piece = Piece.find(params[:id])
-      @piece.destroy
       redirect_to pieces_admin_path
       flash[:notice] = "'#{@piece.title}' deleted."
     else
-      @piece = current_user.pieces.find(params[:id])
-      @piece.destroy
       redirect_to edit_user_portfolio_path(current_user)
       flash[:notice] = "'#{@piece.title}' deleted."
     end
   end
 
   def show
-    @piece = current_user.pieces.find(params[:id])
     @user = current_user
     @page_title = "#{@user.login} :: #{@piece.title}"
     @design = @user.design
-    @portfolio = @user.portfolio
   end
   
   def pieces_admin
     @pieces = Piece.find(:all)
   end
   
-private
+  protected
+  
+  def get_portfolio
+    @portfolio = current_user.portfolio
+  end
+  
+  def init_piece
+    @piece = @portfolio.pieces.new(params[:piece])
+  end
+  
+  def find_piece
+    if current_user.admin?
+      @piece = Piece.find(params[:id])
+    else
+      @piece = current_user.pieces.find(params[:id])
+    end
+  end
+    
+  private
+  
   def choose_layout
     if ['show'].include? action_name
       'weefolio'
