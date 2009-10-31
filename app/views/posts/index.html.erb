@@ -1,8 +1,10 @@
 <h1>Weefolio Blog</h1>
 
-<p>
-  <%= flash[:notice] %>
-</p>
+	<% if flash[:warning] or flash[:notice] %>
+  		<div id="notice" <% if flash[:warning] %>class="warning"<% end %>>
+    <%= flash[:warning] || flash[:notice] %>
+  		</div>
+	<% end %>
 
 <% if logged_in? %>
   <% if current_user.admin? %>

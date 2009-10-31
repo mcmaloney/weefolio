@@ -13,7 +13,13 @@
   <p class="intro">
   	Ut laoreet dolore magna aliquam erat volutpat ut! Iis qui facit eorum claritatem Investigationes demonstraverunt, lectores legere me lius quod. Eodem modo typi qui nunc nobis videntur parum clari fiant sollemnes?
   </p>
-    <%= flash[:notice] %>
+    
+    <% if flash[:warning] or flash[:notice] %>
+  		<div id="notice" <% if flash[:warning] %>class="warning"<% end %>>
+    <%= flash[:warning] || flash[:notice] %>
+  		</div>
+	<% end %>
+	
 	<!--DUMP ALL OF YOUR SHIT HERE!-->
 	<%= form_tag :controller => 'main_pages', :action => 'send_us_mail', :id => @user, :html => { :method => :post } %>
 		<fieldset>

@@ -14,7 +14,11 @@
 <%# YIELD %>
 <div id="content-container">
   
-    <%= flash[:notice] %>
+    <% if flash[:warning] or flash[:notice] %>
+  		<div id="notice" <% if flash[:warning] %>class="warning"<% end %>>
+    <%= flash[:warning] || flash[:notice] %>
+  		</div>
+	<% end %>
  
   <p class="intro">You're using <strong><%=h @portfolio.pieces.count %></strong> of your <strong><%=h @portfolio.max_pieces %></strong> pieces.</p>
   

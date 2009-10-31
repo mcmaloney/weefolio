@@ -4,17 +4,17 @@ class UsersController < ApplicationController
   before_filter :authorize, :except => [:new, :edit, :update, :create, :activate, :switch_design_type, :reset_password]
   
   def new
-    @page_title = "Sign Up for Weefolio!"
+    @page_title = "Weefolio - Pricing &amp; Sign Up"
     @user = User.new
   end
   
   def edit
-    @page_title = "Weefolio :: My Account"
+    @page_title = "Weefolio - My Account"
     @user = current_user
   end
   
   def reset_password
-    @page_title = "Weefolio :: Change my Password"
+    @page_title = "Weefolio - Change my Password"
     
     if request.post?
       user = User.find_by_email(params[:user][:email])
@@ -42,7 +42,7 @@ class UsersController < ApplicationController
         flash[:notice] = "Thanks for upgrading your account! You now have access to all the #{@user.render_account_tier} features"
       else
         redirect_to edit_user_path(@user)
-        flash[:notice] = "Account info updated."
+        flash[:notice] = "Your account information has been saved."
       end
     end
   end

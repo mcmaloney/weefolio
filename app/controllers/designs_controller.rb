@@ -3,14 +3,14 @@ class DesignsController < ApplicationController
   def edit
     @user = current_user
     @design = current_user.design
-    @page_title = "Weefolio :: Layout Editor"
+    @page_title = "Weefolio - Design"
   end
 
   def update
     @design = current_user.design
     if @design.update_attributes(params[:design])
       redirect_to edit_user_design_path(current_user, @design)
-      flash[:notice] = "Layout saved."
+      flash[:notice] = "Your <strong>design</strong> has been saved."
     end
   end
 end

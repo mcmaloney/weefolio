@@ -6,7 +6,7 @@ class PortfoliosController < ApplicationController
     @user = current_user
     @design = current_user.design
     @portfolio = current_user.portfolio
-    @page_title = "Weefolio :: #{@user.login}"
+    @page_title = "The Weefolio of #{@user.login}"
   end
   
   # This is where you go when you want to manage the content of your Weefolio. (Portfolio)
@@ -14,7 +14,7 @@ class PortfoliosController < ApplicationController
     @user = current_user
     @design = current_user.design
     @portfolio = current_user.portfolio
-    @page_title = "Weefolio :: Manage My Work"
+    @page_title = "Weefolio - Portfolio"
   end
   
   # Send message action for the contact user form.
@@ -26,7 +26,7 @@ class PortfoliosController < ApplicationController
     @message = params[:message]
     UserMailer.deliver_user_message(@recip, @from, @from_name, @message)
     redirect_to user_portfolio_path(@user, @user.portfolio)
-    flash[:notice] = "Message sent."
+    flash[:notice] = "Your <strong>message</strong> has been sent."
   end
 
 private
