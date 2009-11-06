@@ -24,7 +24,7 @@ class PortfoliosController < ApplicationController
     @from_name = params[:name]
     @recip = @user.email
     @message = params[:message]
-    UserMailer.deliver_user_message(@recip, @from, @from_name, @message)
+    UserMailer.send_later :deliver_user_message, @recip, @from, @from_name, @message
     redirect_to user_portfolio_path(@user, @user.portfolio)
     flash[:notice] = "Your <strong>message</strong> has been sent."
   end

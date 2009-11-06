@@ -35,7 +35,7 @@ class MainPagesController < ApplicationController
     
     @subject = params[:subject]
     @message = params[:message]
-    UserMailer.deliver_contact_message(@from, @subject, @message)
+    UserMailer.send_later :deliver_contact_message, @from, @subject, @message
     redirect_to contact_path
     flash[:notice] = "Thanks for your <strong>message</strong>. We'll get back to you as soon as possible."
   end

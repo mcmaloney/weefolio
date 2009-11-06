@@ -399,8 +399,8 @@ div#content-container form fieldset dl {
 div#content-container form fieldset dl dt {
 	width: 145px;
 	text-align: right;
-	padding: 6px 20px 0 0;
-	margin: 0 0 20px 0;
+	padding: 9px 20px 0 0;
+	margin: 0 0 15px 0;
 	float: left;
 	font-weight: bold;
 	color: #242420;
@@ -412,18 +412,18 @@ div#content-container form fieldset dl dd {
 	width: 500px;
 	padding: 0;
 	float: left;
-	margin: 0 0 20px 0;
+	margin: 0 0 15px 0;
 	}
 	
 div#content-container form fieldset dl dd input,
 div#content-container form fieldset dl dd textarea {
-	padding: 5px;
-	font-size: 12px;
-	background: #f5f5f3 url(/images/input-background.gif) repeat-x top;
-	border-top: 1px solid #7c7c7c;
-	border-right: 1px solid #c3c3c3;
-	border-bottom: 1px solid #c3c3c3;
-	border-left: 1px solid #c3c3c3;
+	padding: 6px;
+	font-size: 14px;
+	background: #f5f5f3;
+	border-top: 2px solid #ececea;
+	border-right: 1px solid #ececea;
+	border-bottom: 1px solid #ececea;
+	border-left: 1px solid #ececea;*/
 	margin: 0 3px 0 0;
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;

@@ -19,7 +19,7 @@ ActionController::Routing::Routes.draw do |map|
   
   # USERS
   map.resources :users do |users|
-    users.resources :portfolios
+    users.resources :portfolios, :member => { :send_message => :post }
     users.resources :designs
   end
   
@@ -33,9 +33,6 @@ ActionController::Routing::Routes.draw do |map|
   # SEPARATE PIECE ROUTE FOR ADMIN ACTIONS
   map.resources :pieces
   map.resource :session
-  
-  # CAPTCHA ROUTE
-  map.simple_captcha '/simple_captcha/:action', :controller => 'simple_captcha'
   
   # ROOT
   map.root :controller => "main_pages", :action => "home"
