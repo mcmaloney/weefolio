@@ -1,0 +1,932 @@
+New Relic Agent not running
+** [Hoptoad] Notifier 1.2.4 ready to catch errors
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (94.4ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (38.2ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20090718215859)
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(40), "name" varchar(100) DEFAULT '', "email" varchar(100), "crypted_password" varchar(40), "salt" varchar(40), "created_at" datetime, "updated_at" datetime, "remember_token" varchar(40), "remember_token_expires_at" datetime, "activation_code" varchar(40), "activated_at" datetime) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE UNIQUE INDEX "index_users_on_login" ON "users" ("login")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090718215859')[0m
+Migrating to AddInfoToUsers (20090718220754)
+  [4;36;1mSQL (0.8ms)[0m   [0;1mALTER TABLE "users" ADD "first_name" varchar(255)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mALTER TABLE "users" ADD "last_name" varchar(255)[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mALTER TABLE "users" ADD "type" integer DEFAULT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "users" ADD "about_me" text[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "users" ADD "tag_line" varchar(500)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "users" ADD "design_type" integer[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090718220754')[0m
+Migrating to CreatePortfolios (20090719031854)
+  [4;35;1mSQL (0.5ms)[0m   [0mCREATE TABLE "portfolios" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090719031854')[0m
+Migrating to RemoveTypeFromUsers (20090719032358)
+  [4;35;1mSQL (0.6ms)[0m   [0mCREATE TEMPORARY TABLE "altered_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(40), "name" varchar(100) DEFAULT '', "email" varchar(100), "crypted_password" varchar(40), "salt" varchar(40), "created_at" datetime, "updated_at" datetime, "remember_token" varchar(40), "remember_token_expires_at" datetime, "activation_code" varchar(40), "activated_at" datetime, "first_name" varchar(255), "last_name" varchar(255), "type" integer DEFAULT 1, "about_me" text, "tag_line" varchar(500), "design_type" integer) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_login')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCREATE UNIQUE INDEX "temp_index_altered_users_on_login" ON "altered_users" ("login")[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mDROP TABLE "users"[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(40), "name" varchar(100) DEFAULT '', "email" varchar(100), "crypted_password" varchar(40), "salt" varchar(40), "created_at" datetime, "updated_at" datetime, "remember_token" varchar(40), "remember_token_expires_at" datetime, "activation_code" varchar(40), "activated_at" datetime, "first_name" varchar(255), "last_name" varchar(255), "about_me" text, "tag_line" varchar(500), "design_type" integer) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("altered_users")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('temp_index_altered_users_on_login')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE UNIQUE INDEX "index_users_on_login" ON "users" ("login")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mDROP TABLE "altered_users"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090719032358')[0m
+Migrating to AddAccountTierToUsers (20090719032501)
+  [4;36;1mSQL (0.8ms)[0m   [0;1mALTER TABLE "users" ADD "account_tier" integer DEFAULT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090719032501')[0m
+Migrating to CreatePieces (20090720145132)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TABLE "pieces" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "description" varchar(255), "price" decimal(10,2), "for_sale" boolean, "portfolio_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090720145132')[0m
+Migrating to AddAvatarToUsers (20090720151551)
+  [4;36;1mSQL (0.8ms)[0m   [0;1mALTER TABLE "users" ADD "photo_file_name" varchar(255)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mALTER TABLE "users" ADD "photo_content_type" varchar(255)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "users" ADD "photo_file_size" integer[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090720151551')[0m
+Migrating to RemoveAvatarFromUsers (20090720202141)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCREATE TEMPORARY TABLE "altered_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(40), "name" varchar(100) DEFAULT '', "email" varchar(100), "crypted_password" varchar(40), "salt" varchar(40), "created_at" datetime, "updated_at" datetime, "remember_token" varchar(40), "remember_token_expires_at" datetime, "activation_code" varchar(40), "activated_at" datetime, "first_name" varchar(255), "last_name" varchar(255), "about_me" text, "tag_line" varchar(500), "design_type" integer, "account_tier" integer DEFAULT 1, "photo_file_name" varchar(255), "photo_content_type" varchar(255), "photo_file_size" integer) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mPRAGMA index_info('index_users_on_login')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE UNIQUE INDEX "temp_index_altered_users_on_login" ON "altered_users" ("login")[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mDROP TABLE "users"[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(40), "name" varchar(100) DEFAULT '', "email" varchar(100), "crypted_password" varchar(40), "salt" varchar(40), "created_at" datetime, "updated_at" datetime, "remember_token" varchar(40), "remember_token_expires_at" datetime, "activation_code" varchar(40), "activated_at" datetime, "first_name" varchar(255), "last_name" varchar(255), "about_me" text, "tag_line" varchar(500), "design_type" integer, "account_tier" integer DEFAULT 1, "photo_file_name" varchar(255), "photo_content_type" varchar(255)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("altered_users")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('temp_index_altered_users_on_login')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE UNIQUE INDEX "index_users_on_login" ON "users" ("login")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mDROP TABLE "altered_users"[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TEMPORARY TABLE "altered_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(40), "name" varchar(100) DEFAULT '', "email" varchar(100), "crypted_password" varchar(40), "salt" varchar(40), "created_at" datetime, "updated_at" datetime, "remember_token" varchar(40), "remember_token_expires_at" datetime, "activation_code" varchar(40), "activated_at" datetime, "first_name" varchar(255), "last_name" varchar(255), "about_me" text, "tag_line" varchar(500), "design_type" integer, "account_tier" integer DEFAULT 1, "photo_file_name" varchar(255), "photo_content_type" varchar(255)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_users_on_login')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE UNIQUE INDEX "temp_index_altered_users_on_login" ON "altered_users" ("login")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mDROP TABLE "users"[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(40), "name" varchar(100) DEFAULT '', "email" varchar(100), "crypted_password" varchar(40), "salt" varchar(40), "created_at" datetime, "updated_at" datetime, "remember_token" varchar(40), "remember_token_expires_at" datetime, "activation_code" varchar(40), "activated_at" datetime, "first_name" varchar(255), "last_name" varchar(255), "about_me" text, "tag_line" varchar(500), "design_type" integer, "account_tier" integer DEFAULT 1, "photo_file_name" varchar(255)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("altered_users")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('temp_index_altered_users_on_login')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE UNIQUE INDEX "index_users_on_login" ON "users" ("login")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mDROP TABLE "altered_users"[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TEMPORARY TABLE "altered_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(40), "name" varchar(100) DEFAULT '', "email" varchar(100), "crypted_password" varchar(40), "salt" varchar(40), "created_at" datetime, "updated_at" datetime, "remember_token" varchar(40), "remember_token_expires_at" datetime, "activation_code" varchar(40), "activated_at" datetime, "first_name" varchar(255), "last_name" varchar(255), "about_me" text, "tag_line" varchar(500), "design_type" integer, "account_tier" integer DEFAULT 1, "photo_file_name" varchar(255)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_users_on_login')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE UNIQUE INDEX "temp_index_altered_users_on_login" ON "altered_users" ("login")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mDROP TABLE "users"[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(40), "name" varchar(100) DEFAULT '', "email" varchar(100), "crypted_password" varchar(40), "salt" varchar(40), "created_at" datetime, "updated_at" datetime, "remember_token" varchar(40), "remember_token_expires_at" datetime, "activation_code" varchar(40), "activated_at" datetime, "first_name" varchar(255), "last_name" varchar(255), "about_me" text, "tag_line" varchar(500), "design_type" integer, "account_tier" integer DEFAULT 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("altered_users")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('temp_index_altered_users_on_login')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE UNIQUE INDEX "index_users_on_login" ON "users" ("login")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mDROP TABLE "altered_users"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090720202141')[0m
+Migrating to AddAvatarToUsersForReal (20090720202338)
+  [4;35;1mSQL (1.1ms)[0m   [0mALTER TABLE "users" ADD "avatar_file_name" varchar(255)[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mALTER TABLE "users" ADD "avatar_content_type" varchar(255)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mALTER TABLE "users" ADD "avatar_file_size" integer[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090720202338')[0m
+Migrating to PleaseWorkPaperclipYouMotherfucker (20090721033045)
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE TEMPORARY TABLE "altered_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(40), "name" varchar(100) DEFAULT '', "email" varchar(100), "crypted_password" varchar(40), "salt" varchar(40), "created_at" datetime, "updated_at" datetime, "remember_token" varchar(40), "remember_token_expires_at" datetime, "activation_code" varchar(40), "activated_at" datetime, "first_name" varchar(255), "last_name" varchar(255), "about_me" text, "tag_line" varchar(500), "design_type" integer, "account_tier" integer DEFAULT 1, "avatar_file_name" varchar(255), "avatar_content_type" varchar(255), "avatar_file_size" integer) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_login')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE UNIQUE INDEX "temp_index_altered_users_on_login" ON "altered_users" ("login")[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mDROP TABLE "users"[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(40), "name" varchar(100) DEFAULT '', "email" varchar(100), "crypted_password" varchar(40), "salt" varchar(40), "created_at" datetime, "updated_at" datetime, "remember_token" varchar(40), "remember_token_expires_at" datetime, "activation_code" varchar(40), "activated_at" datetime, "first_name" varchar(255), "last_name" varchar(255), "about_me" text, "tag_line" varchar(500), "design_type" integer, "account_tier" integer DEFAULT 1, "avatar_content_type" varchar(255), "avatar_file_size" integer) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("altered_users")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('temp_index_altered_users_on_login')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE UNIQUE INDEX "index_users_on_login" ON "users" ("login")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mDROP TABLE "altered_users"[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TEMPORARY TABLE "altered_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(40), "name" varchar(100) DEFAULT '', "email" varchar(100), "crypted_password" varchar(40), "salt" varchar(40), "created_at" datetime, "updated_at" datetime, "remember_token" varchar(40), "remember_token_expires_at" datetime, "activation_code" varchar(40), "activated_at" datetime, "first_name" varchar(255), "last_name" varchar(255), "about_me" text, "tag_line" varchar(500), "design_type" integer, "account_tier" integer DEFAULT 1, "avatar_content_type" varchar(255), "avatar_file_size" integer) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_login')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE UNIQUE INDEX "temp_index_altered_users_on_login" ON "altered_users" ("login")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mDROP TABLE "users"[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(40), "name" varchar(100) DEFAULT '', "email" varchar(100), "crypted_password" varchar(40), "salt" varchar(40), "created_at" datetime, "updated_at" datetime, "remember_token" varchar(40), "remember_token_expires_at" datetime, "activation_code" varchar(40), "activated_at" datetime, "first_name" varchar(255), "last_name" varchar(255), "about_me" text, "tag_line" varchar(500), "design_type" integer, "account_tier" integer DEFAULT 1, "avatar_file_size" integer) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("altered_users")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('temp_index_altered_users_on_login')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE UNIQUE INDEX "index_users_on_login" ON "users" ("login")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mDROP TABLE "altered_users"[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TEMPORARY TABLE "altered_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(40), "name" varchar(100) DEFAULT '', "email" varchar(100), "crypted_password" varchar(40), "salt" varchar(40), "created_at" datetime, "updated_at" datetime, "remember_token" varchar(40), "remember_token_expires_at" datetime, "activation_code" varchar(40), "activated_at" datetime, "first_name" varchar(255), "last_name" varchar(255), "about_me" text, "tag_line" varchar(500), "design_type" integer, "account_tier" integer DEFAULT 1, "avatar_file_size" integer) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_login')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE UNIQUE INDEX "temp_index_altered_users_on_login" ON "altered_users" ("login")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mDROP TABLE "users"[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(40), "name" varchar(100) DEFAULT '', "email" varchar(100), "crypted_password" varchar(40), "salt" varchar(40), "created_at" datetime, "updated_at" datetime, "remember_token" varchar(40), "remember_token_expires_at" datetime, "activation_code" varchar(40), "activated_at" datetime, "first_name" varchar(255), "last_name" varchar(255), "about_me" text, "tag_line" varchar(500), "design_type" integer, "account_tier" integer DEFAULT 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("altered_users")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('temp_index_altered_users_on_login')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE UNIQUE INDEX "index_users_on_login" ON "users" ("login")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mDROP TABLE "altered_users"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090721033045')[0m
+Migrating to AddAttachmentsPhotoToUser (20090721033319)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mALTER TABLE "users" ADD "photo_file_name" varchar(255)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mALTER TABLE "users" ADD "photo_content_type" varchar(255)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "users" ADD "photo_file_size" integer[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "users" ADD "photo_updated_at" datetime[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090721033319')[0m
+Migrating to AddAttachmentsImage1ToPortfolio (20090721152728)
+  [4;35;1mSQL (0.5ms)[0m   [0mALTER TABLE "portfolios" ADD "image_1_file_name" varchar(255)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "portfolios" ADD "image_1_content_type" varchar(255)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "portfolios" ADD "image_1_file_size" integer[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "portfolios" ADD "image_1_updated_at" datetime[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090721152728')[0m
+Migrating to AddAttachmentsImage2ToPiece (20090721170213)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mALTER TABLE "pieces" ADD "image_2_file_name" varchar(255)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "pieces" ADD "image_2_content_type" varchar(255)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "pieces" ADD "image_2_file_size" integer[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mALTER TABLE "pieces" ADD "image_2_updated_at" datetime[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090721170213')[0m
+Migrating to AddAttachmentsImage3ToPiece (20090721170326)
+  [4;35;1mSQL (0.5ms)[0m   [0mALTER TABLE "pieces" ADD "image_3_file_name" varchar(255)[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mALTER TABLE "pieces" ADD "image_3_content_type" varchar(255)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "pieces" ADD "image_3_file_size" integer[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "pieces" ADD "image_3_updated_at" datetime[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090721170326')[0m
+Migrating to AddAttachmentsImage4ToPiece (20090721170409)
+  [4;36;1mSQL (0.9ms)[0m   [0;1mALTER TABLE "pieces" ADD "image_4_file_name" varchar(255)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mALTER TABLE "pieces" ADD "image_4_content_type" varchar(255)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "pieces" ADD "image_4_file_size" integer[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "pieces" ADD "image_4_updated_at" datetime[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090721170409')[0m
+Migrating to AddAttachmentsImage5ToPiece (20090721170424)
+  [4;35;1mSQL (0.8ms)[0m   [0mALTER TABLE "pieces" ADD "image_5_file_name" varchar(255)[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mALTER TABLE "pieces" ADD "image_5_content_type" varchar(255)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "pieces" ADD "image_5_file_size" integer[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mALTER TABLE "pieces" ADD "image_5_updated_at" datetime[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090721170424')[0m
+Migrating to RemoveImage1FromPortfolios (20090721210418)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TEMPORARY TABLE "altered_portfolios" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "created_at" datetime, "updated_at" datetime, "image_1_file_name" varchar(255), "image_1_content_type" varchar(255), "image_1_file_size" integer, "image_1_updated_at" datetime) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("portfolios")[0m
+  [4;36;1mSQL (1.8ms)[0m   [0;1mDROP TABLE "portfolios"[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TABLE "portfolios" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "created_at" datetime, "updated_at" datetime, "image_1_content_type" varchar(255), "image_1_file_size" integer, "image_1_updated_at" datetime) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("altered_portfolios")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mDROP TABLE "altered_portfolios"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TEMPORARY TABLE "altered_portfolios" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "created_at" datetime, "updated_at" datetime, "image_1_content_type" varchar(255), "image_1_file_size" integer, "image_1_updated_at" datetime) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("portfolios")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mDROP TABLE "portfolios"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE TABLE "portfolios" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "created_at" datetime, "updated_at" datetime, "image_1_file_size" integer, "image_1_updated_at" datetime) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("altered_portfolios")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mDROP TABLE "altered_portfolios"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TEMPORARY TABLE "altered_portfolios" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "created_at" datetime, "updated_at" datetime, "image_1_file_size" integer, "image_1_updated_at" datetime) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("portfolios")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mDROP TABLE "portfolios"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE TABLE "portfolios" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "created_at" datetime, "updated_at" datetime, "image_1_updated_at" datetime) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("altered_portfolios")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mDROP TABLE "altered_portfolios"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TEMPORARY TABLE "altered_portfolios" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "created_at" datetime, "updated_at" datetime, "image_1_updated_at" datetime) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("portfolios")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mDROP TABLE "portfolios"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE TABLE "portfolios" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("altered_portfolios")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mDROP TABLE "altered_portfolios"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090721210418')[0m
+Migrating to AddAttachmentsImage1ToPiece (20090721210511)
+  [4;35;1mSQL (0.6ms)[0m   [0mALTER TABLE "pieces" ADD "image_1_file_name" varchar(255)[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mALTER TABLE "pieces" ADD "image_1_content_type" varchar(255)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "pieces" ADD "image_1_file_size" integer[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "pieces" ADD "image_1_updated_at" datetime[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090721210511')[0m
+Migrating to CreateDesigns (20090805151853)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TABLE "designs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090805151853')[0m
+Migrating to AddCssVariablesToDesign (20090805164948)
+  [4;36;1mSQL (0.8ms)[0m   [0;1mALTER TABLE "designs" ADD "background_color" varchar(255) DEFAULT '#dedddb'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "designs" ADD "background_align" varchar(255) DEFAULT 'center'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "designs" ADD "background_tile" varchar(255) DEFAULT 'repeat'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "designs" ADD "page_bg_color" varchar(255) DEFAULT '#fff'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "designs" ADD "link_color" varchar(255) DEFAULT '#72b225'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "designs" ADD "link_hover_color" varchar(255) DEFAULT '#242420'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "designs" ADD "link_img_border_color" varchar(255) DEFAULT '#f5f4f4'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "designs" ADD "text_color" varchar(255) DEFAULT '#767574'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "designs" ADD "text_size" integer DEFAULT 12[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "designs" ADD "text_font_1" varchar(255) DEFAULT 'Arial'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "designs" ADD "text_font_2" varchar(255) DEFAULT 'Helvetica'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mALTER TABLE "designs" ADD "text_serif" boolean DEFAULT 'f'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "designs" ADD "title_color" varchar(255) DEFAULT '#242420'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "designs" ADD "title_bold" boolean DEFAULT 'f'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "designs" ADD "title_italic" boolean DEFAULT 'f'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "designs" ADD "title_font" varchar(255) DEFAULT 'Georgia'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "designs" ADD "title_serif" boolean DEFAULT 't'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "designs" ADD "tagline_size" integer[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mALTER TABLE "designs" ADD "tagline_color" varchar(255) DEFAULT '#242420'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mALTER TABLE "designs" ADD "tagline_bold" boolean DEFAULT 'f'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mALTER TABLE "designs" ADD "tagline_italic" boolean DEFAULT 'f'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mALTER TABLE "designs" ADD "tagline_font" varchar(255) DEFAULT 'Georgia'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mALTER TABLE "designs" ADD "tagline_serif" boolean DEFAULT 't'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mALTER TABLE "designs" ADD "border_color" varchar(255) DEFAULT '#eee'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090805164948')[0m
+Migrating to RemoveOldDesignTypeFromUsers (20090805171338)
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TEMPORARY TABLE "altered_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(40), "name" varchar(100) DEFAULT '', "email" varchar(100), "crypted_password" varchar(40), "salt" varchar(40), "created_at" datetime, "updated_at" datetime, "remember_token" varchar(40), "remember_token_expires_at" datetime, "activation_code" varchar(40), "activated_at" datetime, "first_name" varchar(255), "last_name" varchar(255), "about_me" text, "tag_line" varchar(500), "design_type" integer, "account_tier" integer DEFAULT 1, "photo_file_name" varchar(255), "photo_content_type" varchar(255), "photo_file_size" integer, "photo_updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_login')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE UNIQUE INDEX "temp_index_altered_users_on_login" ON "altered_users" ("login")[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mDROP TABLE "users"[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(40), "name" varchar(100) DEFAULT '', "email" varchar(100), "crypted_password" varchar(40), "salt" varchar(40), "created_at" datetime, "updated_at" datetime, "remember_token" varchar(40), "remember_token_expires_at" datetime, "activation_code" varchar(40), "activated_at" datetime, "first_name" varchar(255), "last_name" varchar(255), "about_me" text, "tag_line" varchar(500), "account_tier" integer DEFAULT 1, "photo_file_name" varchar(255), "photo_content_type" varchar(255), "photo_file_size" integer, "photo_updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("altered_users")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('temp_index_altered_users_on_login')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE UNIQUE INDEX "index_users_on_login" ON "users" ("login")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mDROP TABLE "altered_users"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090805171338')[0m
+Migrating to AddDesignTypeToUsersWithDefaultValue (20090805171518)
+  [4;36;1mSQL (0.9ms)[0m   [0;1mALTER TABLE "users" ADD "design_type" integer DEFAULT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090805171518')[0m
+Migrating to AddCssTextToDesign (20090805174329)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mALTER TABLE "designs" ADD "css_text" text[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090805174329')[0m
+Migrating to AddAttachmentsHeaderImageToUser (20090805191833)
+  [4;36;1mSQL (0.9ms)[0m   [0;1mALTER TABLE "users" ADD "header_image_file_name" varchar(255)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mALTER TABLE "users" ADD "header_image_content_type" varchar(255)[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mALTER TABLE "users" ADD "header_image_file_size" integer[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "users" ADD "header_image_updated_at" datetime[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090805191833')[0m
+Migrating to RemoveHeaderImageFromUsers (20090805192350)
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE TEMPORARY TABLE "altered_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(40), "name" varchar(100) DEFAULT '', "email" varchar(100), "crypted_password" varchar(40), "salt" varchar(40), "created_at" datetime, "updated_at" datetime, "remember_token" varchar(40), "remember_token_expires_at" datetime, "activation_code" varchar(40), "activated_at" datetime, "first_name" varchar(255), "last_name" varchar(255), "about_me" text, "tag_line" varchar(500), "account_tier" integer DEFAULT 1, "photo_file_name" varchar(255), "photo_content_type" varchar(255), "photo_file_size" integer, "photo_updated_at" datetime, "design_type" integer DEFAULT 1, "header_image_file_name" varchar(255), "header_image_content_type" varchar(255), "header_image_file_size" integer, "header_image_updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_login')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE UNIQUE INDEX "temp_index_altered_users_on_login" ON "altered_users" ("login")[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mDROP TABLE "users"[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(40), "name" varchar(100) DEFAULT '', "email" varchar(100), "crypted_password" varchar(40), "salt" varchar(40), "created_at" datetime, "updated_at" datetime, "remember_token" varchar(40), "remember_token_expires_at" datetime, "activation_code" varchar(40), "activated_at" datetime, "first_name" varchar(255), "last_name" varchar(255), "about_me" text, "tag_line" varchar(500), "account_tier" integer DEFAULT 1, "photo_file_name" varchar(255), "photo_content_type" varchar(255), "photo_file_size" integer, "photo_updated_at" datetime, "design_type" integer DEFAULT 1, "header_image_content_type" varchar(255), "header_image_file_size" integer, "header_image_updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("altered_users")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('temp_index_altered_users_on_login')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE UNIQUE INDEX "index_users_on_login" ON "users" ("login")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mDROP TABLE "altered_users"[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TEMPORARY TABLE "altered_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(40), "name" varchar(100) DEFAULT '', "email" varchar(100), "crypted_password" varchar(40), "salt" varchar(40), "created_at" datetime, "updated_at" datetime, "remember_token" varchar(40), "remember_token_expires_at" datetime, "activation_code" varchar(40), "activated_at" datetime, "first_name" varchar(255), "last_name" varchar(255), "about_me" text, "tag_line" varchar(500), "account_tier" integer DEFAULT 1, "photo_file_name" varchar(255), "photo_content_type" varchar(255), "photo_file_size" integer, "photo_updated_at" datetime, "design_type" integer DEFAULT 1, "header_image_content_type" varchar(255), "header_image_file_size" integer, "header_image_updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_login')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE UNIQUE INDEX "temp_index_altered_users_on_login" ON "altered_users" ("login")[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mDROP TABLE "users"[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(40), "name" varchar(100) DEFAULT '', "email" varchar(100), "crypted_password" varchar(40), "salt" varchar(40), "created_at" datetime, "updated_at" datetime, "remember_token" varchar(40), "remember_token_expires_at" datetime, "activation_code" varchar(40), "activated_at" datetime, "first_name" varchar(255), "last_name" varchar(255), "about_me" text, "tag_line" varchar(500), "account_tier" integer DEFAULT 1, "photo_file_name" varchar(255), "photo_content_type" varchar(255), "photo_file_size" integer, "photo_updated_at" datetime, "design_type" integer DEFAULT 1, "header_image_file_size" integer, "header_image_updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("altered_users")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('temp_index_altered_users_on_login')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE UNIQUE INDEX "index_users_on_login" ON "users" ("login")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mDROP TABLE "altered_users"[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TEMPORARY TABLE "altered_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(40), "name" varchar(100) DEFAULT '', "email" varchar(100), "crypted_password" varchar(40), "salt" varchar(40), "created_at" datetime, "updated_at" datetime, "remember_token" varchar(40), "remember_token_expires_at" datetime, "activation_code" varchar(40), "activated_at" datetime, "first_name" varchar(255), "last_name" varchar(255), "about_me" text, "tag_line" varchar(500), "account_tier" integer DEFAULT 1, "photo_file_name" varchar(255), "photo_content_type" varchar(255), "photo_file_size" integer, "photo_updated_at" datetime, "design_type" integer DEFAULT 1, "header_image_file_size" integer, "header_image_updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_login')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE UNIQUE INDEX "temp_index_altered_users_on_login" ON "altered_users" ("login")[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mDROP TABLE "users"[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(40), "name" varchar(100) DEFAULT '', "email" varchar(100), "crypted_password" varchar(40), "salt" varchar(40), "created_at" datetime, "updated_at" datetime, "remember_token" varchar(40), "remember_token_expires_at" datetime, "activation_code" varchar(40), "activated_at" datetime, "first_name" varchar(255), "last_name" varchar(255), "about_me" text, "tag_line" varchar(500), "account_tier" integer DEFAULT 1, "photo_file_name" varchar(255), "photo_content_type" varchar(255), "photo_file_size" integer, "photo_updated_at" datetime, "design_type" integer DEFAULT 1, "header_image_updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("altered_users")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('temp_index_altered_users_on_login')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE UNIQUE INDEX "index_users_on_login" ON "users" ("login")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mDROP TABLE "altered_users"[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TEMPORARY TABLE "altered_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(40), "name" varchar(100) DEFAULT '', "email" varchar(100), "crypted_password" varchar(40), "salt" varchar(40), "created_at" datetime, "updated_at" datetime, "remember_token" varchar(40), "remember_token_expires_at" datetime, "activation_code" varchar(40), "activated_at" datetime, "first_name" varchar(255), "last_name" varchar(255), "about_me" text, "tag_line" varchar(500), "account_tier" integer DEFAULT 1, "photo_file_name" varchar(255), "photo_content_type" varchar(255), "photo_file_size" integer, "photo_updated_at" datetime, "design_type" integer DEFAULT 1, "header_image_updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_login')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE UNIQUE INDEX "temp_index_altered_users_on_login" ON "altered_users" ("login")[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mDROP TABLE "users"[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(40), "name" varchar(100) DEFAULT '', "email" varchar(100), "crypted_password" varchar(40), "salt" varchar(40), "created_at" datetime, "updated_at" datetime, "remember_token" varchar(40), "remember_token_expires_at" datetime, "activation_code" varchar(40), "activated_at" datetime, "first_name" varchar(255), "last_name" varchar(255), "about_me" text, "tag_line" varchar(500), "account_tier" integer DEFAULT 1, "photo_file_name" varchar(255), "photo_content_type" varchar(255), "photo_file_size" integer, "photo_updated_at" datetime, "design_type" integer DEFAULT 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("altered_users")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('temp_index_altered_users_on_login')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE UNIQUE INDEX "index_users_on_login" ON "users" ("login")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mDROP TABLE "altered_users"[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090805192350')[0m
+Migrating to AddAttachmentsHeaderImageToDesign (20090805192452)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mALTER TABLE "designs" ADD "header_image_file_name" varchar(255)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mALTER TABLE "designs" ADD "header_image_content_type" varchar(255)[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mALTER TABLE "designs" ADD "header_image_file_size" integer[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mALTER TABLE "designs" ADD "header_image_updated_at" datetime[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090805192452')[0m
+Migrating to AddAdminToUsers (20090811184907)
+  [4;35;1mSQL (0.7ms)[0m   [0mALTER TABLE "users" ADD "admin_user" boolean DEFAULT 'f'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090811184907')[0m
+Migrating to CreatePosts (20090811195015)
+  [4;35;1mSQL (0.5ms)[0m   [0mCREATE TABLE "posts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "body" text, "author" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090811195015')[0m
+Migrating to FixLayoutType (20090813023933)
+  [4;35;1mSQL (0.6ms)[0m   [0mCREATE TEMPORARY TABLE "altered_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(40), "name" varchar(100) DEFAULT '', "email" varchar(100), "crypted_password" varchar(40), "salt" varchar(40), "created_at" datetime, "updated_at" datetime, "remember_token" varchar(40), "remember_token_expires_at" datetime, "activation_code" varchar(40), "activated_at" datetime, "first_name" varchar(255), "last_name" varchar(255), "about_me" text, "tag_line" varchar(500), "account_tier" integer DEFAULT 1, "photo_file_name" varchar(255), "photo_content_type" varchar(255), "photo_file_size" integer, "photo_updated_at" datetime, "design_type" integer DEFAULT 1, "admin_user" boolean DEFAULT 'f') [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_login')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE UNIQUE INDEX "temp_index_altered_users_on_login" ON "altered_users" ("login")[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mDROP TABLE "users"[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(40), "name" varchar(100) DEFAULT '', "email" varchar(100), "crypted_password" varchar(40), "salt" varchar(40), "created_at" datetime, "updated_at" datetime, "remember_token" varchar(40), "remember_token_expires_at" datetime, "activation_code" varchar(40), "activated_at" datetime, "first_name" varchar(255), "last_name" varchar(255), "about_me" text, "tag_line" varchar(500), "account_tier" integer DEFAULT 1, "photo_file_name" varchar(255), "photo_content_type" varchar(255), "photo_file_size" integer, "photo_updated_at" datetime, "design_type" integer DEFAULT 1, "admin_user" boolean DEFAULT 'f') [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("altered_users")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('temp_index_altered_users_on_login')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE UNIQUE INDEX "index_users_on_login" ON "users" ("login")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mDROP TABLE "altered_users"[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mALTER TABLE "designs" ADD "layout_type" integer DEFAULT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090813023933')[0m
+Migrating to AddBillingInfoToUsers (20090818205835)
+  [4;35;1mSQL (0.9ms)[0m   [0mALTER TABLE "users" ADD "address1" varchar(255)[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mALTER TABLE "users" ADD "address2" varchar(255)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mALTER TABLE "users" ADD "city" varchar(255)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "users" ADD "state" varchar(255)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mALTER TABLE "users" ADD "country" varchar(255)[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mALTER TABLE "users" ADD "zip" varchar(255)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090818205835')[0m
+Migrating to AddCardInfoToUsers (20090818210320)
+  [4;36;1mSQL (0.9ms)[0m   [0;1mALTER TABLE "users" ADD "card_number" varchar(255)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mALTER TABLE "users" ADD "card_verification" varchar(255)[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mALTER TABLE "users" ADD "card_expiration_month" varchar(255)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mALTER TABLE "users" ADD "card_expiration_year" varchar(255)[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mALTER TABLE "users" ADD "card_type" varchar(255)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090818210320')[0m
+Migrating to CreateSimpleCaptchaData (20090917042124)
+  [4;36;1mSQL (0.9ms)[0m   [0;1mCREATE TABLE "simple_captcha_data" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "key" varchar(40), "value" varchar(6), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090917042124')[0m
+Migrating to CreateDelayedJobs (20091029045433)
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE TABLE "delayed_jobs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "priority" integer DEFAULT 0, "attempts" integer DEFAULT 0, "handler" text, "last_error" text, "run_at" datetime, "locked_at" datetime, "failed_at" datetime, "locked_by" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20091029045433')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("delayed_jobs")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("designs")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("pieces")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("portfolios")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("posts")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("simple_captcha_data")[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_login')[0m
+Starting the New Relic Agent
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSELECT version FROM schema_migrations[0m
+** [Hoptoad] Notifier 1.2.4 ready to catch errors
+Starting the New Relic Agent
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSELECT version FROM schema_migrations[0m
+** [Hoptoad] Notifier 1.2.4 ready to catch errors
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-11-06 00:00:51) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/template
+Rendering users/new
+
+ActionView::TemplateError (undefined method `has_read_terms' for #<User:0x102f25f28>) on line #207 of app/views/users/new.html.erb:
+204: 	      	<dt>
+205: 	      	</dt>
+206: 	      	<dd>
+207: 	      		<%= f.check_box :has_read_terms %>
+208: 		      	<%= f.label :has_read_terms, 'I have read and agree with the <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a>.' %>
+209: 	      	</dd>
+210: 	    </dl>    
+
+    app/views/users/new.html.erb:207
+    app/views/users/new.html.erb:169
+
+Rendered rescues/_trace (121.8ms)
+Rendered rescues/_request_and_response (1.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-11-06 00:01:27) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/template
+Rendering users/new
+Completed in 25ms (View: 14, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-11-06 00:01:48) [POST]
+  Parameters: {"commit"=>"Sign Up", "action"=>"create", "authenticity_token"=>"7O5U8gV5Mbxjo7qQEdS8/eo+EGsKJyYzkbxtTBU2cFQ=", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "login"=>"mcmaloney", "email"=>"mcm@crushlovely.com"}}
+  [4;36;1mPortfolio Create (0.5ms)[0m   [0;1mINSERT INTO "portfolios" ("created_at", "updated_at", "user_id") VALUES('2009-11-06 05:01:48', '2009-11-06 05:01:48', NULL)[0m
+  [4;35;1mDesign Create (0.5ms)[0m   [0mINSERT INTO "designs" ("background_align", "background_tile", "text_font_2", "tagline_color", "tagline_bold", "css_text", "created_at", "link_color", "title_bold", "tagline_serif", "text_serif", "header_image_content_type", "updated_at", "title_font", "tagline_font", "header_image_file_name", "header_image_updated_at", "title_italic", "tagline_italic", "header_image_file_size", "user_id", "text_color", "title_color", "layout_type", "tagline_size", "border_color", "link_img_border_color", "background_color", "page_bg_color", "link_hover_color", "title_serif", "text_size", "text_font_1") VALUES('center', 'repeat', 'Helvetica', '#242420', 'f', NULL, '2009-11-06 05:01:48', '#72b225', 'f', 't', 'f', NULL, '2009-11-06 05:01:48', 'Georgia', 'Georgia', NULL, NULL, 'f', 'f', NULL, NULL, '#767574', '#242420', 1, NULL, '#eee', '#f5f4f4', '#dedddb', '#fff', '#242420', 't', 12, 'Arial')[0m
+[paperclip] Saving attachments.
+  [4;36;1mUser Create (0.5ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "address1", "city", "card_expiration_month", "created_at", "activated_at", "about_me", "photo_file_size", "address2", "zip", "card_verification", "crypted_password", "remember_token_expires_at", "account_tier", "country", "card_type", "updated_at", "photo_file_name", "activation_code", "photo_content_type", "card_number", "admin_user", "photo_updated_at", "remember_token", "last_name", "tag_line", "login", "design_type", "email", "first_name", "state", "card_expiration_year") VALUES('', '5dae4eab43a0cef9cb3559e30d29a15c3bdc4d5e', NULL, NULL, NULL, '2009-11-06 05:01:48', '2009-11-06 05:01:48', NULL, NULL, NULL, NULL, NULL, '74ccd29e4041899cdc9094b70fb4b6707c97f6f3', NULL, 1, NULL, NULL, '2009-11-06 05:01:48', NULL, '7cdeac34a2c9f8ad9d49f971e3e5a9e8fad0ec1a', NULL, NULL, 'f', NULL, NULL, NULL, NULL, 'mcmaloney', 1, 'mcm@crushlovely.com', NULL, NULL, NULL)[0m
+  [4;35;1mPortfolio Update (0.2ms)[0m   [0mUPDATE "portfolios" SET "updated_at" = '2009-11-06 05:01:48', "user_id" = 1 WHERE "id" = 1[0m
+  [4;36;1mDesign Update (0.1ms)[0m   [0;1mUPDATE "designs" SET "updated_at" = '2009-11-06 05:01:48', "user_id" = 1 WHERE "id" = 1[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+
+NoMethodError (undefined method `has_read_terms' for #<User:0x1035a0ab0>):
+  app/controllers/users_controller.rb:57:in `create'
+
+Rendered rescues/_trace (116.8ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-11-06 00:02:24) [POST]
+  Parameters: {"commit"=>"Sign Up", "action"=>"create", "authenticity_token"=>"7O5U8gV5Mbxjo7qQEdS8/eo+EGsKJyYzkbxtTBU2cFQ=", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "login"=>"mcmaloney", "email"=>"mcm@crushlovely.com"}}
+  [4;35;1mPortfolio Create (0.4ms)[0m   [0mINSERT INTO "portfolios" ("created_at", "updated_at", "user_id") VALUES('2009-11-06 05:02:24', '2009-11-06 05:02:24', NULL)[0m
+  [4;36;1mDesign Create (0.5ms)[0m   [0;1mINSERT INTO "designs" ("background_align", "background_tile", "text_font_2", "tagline_color", "tagline_bold", "css_text", "created_at", "link_color", "title_bold", "tagline_serif", "text_serif", "header_image_content_type", "updated_at", "title_font", "tagline_font", "header_image_file_name", "header_image_updated_at", "title_italic", "tagline_italic", "header_image_file_size", "user_id", "text_color", "title_color", "layout_type", "tagline_size", "border_color", "link_img_border_color", "background_color", "page_bg_color", "link_hover_color", "title_serif", "text_size", "text_font_1") VALUES('center', 'repeat', 'Helvetica', '#242420', 'f', NULL, '2009-11-06 05:02:24', '#72b225', 'f', 't', 'f', NULL, '2009-11-06 05:02:24', 'Georgia', 'Georgia', NULL, NULL, 'f', 'f', NULL, NULL, '#767574', '#242420', 1, NULL, '#eee', '#f5f4f4', '#dedddb', '#fff', '#242420', 't', 12, 'Arial')[0m
+[paperclip] Saving attachments.
+  [4;35;1mUser Create (0.0ms)[0m   [0mSQLite3::SQLException: column login is not unique: INSERT INTO "users" ("name", "salt", "address1", "city", "card_expiration_month", "created_at", "activated_at", "about_me", "photo_file_size", "address2", "zip", "card_verification", "crypted_password", "remember_token_expires_at", "account_tier", "country", "card_type", "updated_at", "photo_file_name", "activation_code", "photo_content_type", "card_number", "admin_user", "photo_updated_at", "remember_token", "last_name", "tag_line", "login", "design_type", "email", "first_name", "state", "card_expiration_year") VALUES('', '94b6c8f82dfd6f9756386391130dc9730da6009e', NULL, NULL, NULL, '2009-11-06 05:02:24', '2009-11-06 05:02:24', NULL, NULL, NULL, NULL, NULL, '7c6909f0db310b56a8ff6fa9e77b3caf01c86185', NULL, 1, NULL, NULL, '2009-11-06 05:02:24', NULL, 'e008a9082aa3344436c77b07c6a23edeaa080138', NULL, NULL, 'f', NULL, NULL, NULL, NULL, 'mcmaloney', 1, 'mcm@crushlovely.com', NULL, NULL, NULL)[0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: column login is not unique: INSERT INTO "users" ("name", "salt", "address1", "city", "card_expiration_month", "created_at", "activated_at", "about_me", "photo_file_size", "address2", "zip", "card_verification", "crypted_password", "remember_token_expires_at", "account_tier", "country", "card_type", "updated_at", "photo_file_name", "activation_code", "photo_content_type", "card_number", "admin_user", "photo_updated_at", "remember_token", "last_name", "tag_line", "login", "design_type", "email", "first_name", "state", "card_expiration_year") VALUES('', '94b6c8f82dfd6f9756386391130dc9730da6009e', NULL, NULL, NULL, '2009-11-06 05:02:24', '2009-11-06 05:02:24', NULL, NULL, NULL, NULL, NULL, '7c6909f0db310b56a8ff6fa9e77b3caf01c86185', NULL, 1, NULL, NULL, '2009-11-06 05:02:24', NULL, 'e008a9082aa3344436c77b07c6a23edeaa080138', NULL, NULL, 'f', NULL, NULL, NULL, NULL, 'mcmaloney', 1, 'mcm@crushlovely.com', NULL, NULL, NULL)):
+  app/models/user.rb:85:in `activate!'
+  app/controllers/users_controller.rb:56:in `create'
+
+Rendered rescues/_trace (129.9ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+New Relic Agent not running
+** [Hoptoad] Notifier 1.2.4 ready to catch errors
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" [0m
+  [4;35;1mUser Delete all (2.3ms)[0m   [0mDELETE FROM "users" WHERE 1=1[0m
+New Relic Agent not running
+** [Hoptoad] Notifier 1.2.4 ready to catch errors
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSQLite3::SQLException: no such table: users: SELECT * FROM "users" [0m
+New Relic Agent not running
+** [Hoptoad] Notifier 1.2.4 ready to catch errors
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (1.2ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20090718215859)
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(40), "name" varchar(100) DEFAULT '', "email" varchar(100), "crypted_password" varchar(40), "salt" varchar(40), "created_at" datetime, "updated_at" datetime, "remember_token" varchar(40), "remember_token_expires_at" datetime, "activation_code" varchar(40), "activated_at" datetime) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE UNIQUE INDEX "index_users_on_login" ON "users" ("login")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090718215859')[0m
+Migrating to AddInfoToUsers (20090718220754)
+  [4;36;1mSQL (0.8ms)[0m   [0;1mALTER TABLE "users" ADD "first_name" varchar(255)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "users" ADD "last_name" varchar(255)[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mALTER TABLE "users" ADD "type" integer DEFAULT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "users" ADD "about_me" text[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "users" ADD "tag_line" varchar(500)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "users" ADD "design_type" integer[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090718220754')[0m
+Migrating to CreatePortfolios (20090719031854)
+  [4;35;1mSQL (0.5ms)[0m   [0mCREATE TABLE "portfolios" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090719031854')[0m
+Migrating to RemoveTypeFromUsers (20090719032358)
+  [4;35;1mSQL (0.7ms)[0m   [0mCREATE TEMPORARY TABLE "altered_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(40), "name" varchar(100) DEFAULT '', "email" varchar(100), "crypted_password" varchar(40), "salt" varchar(40), "created_at" datetime, "updated_at" datetime, "remember_token" varchar(40), "remember_token_expires_at" datetime, "activation_code" varchar(40), "activated_at" datetime, "first_name" varchar(255), "last_name" varchar(255), "type" integer DEFAULT 1, "about_me" text, "tag_line" varchar(500), "design_type" integer) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_login')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCREATE UNIQUE INDEX "temp_index_altered_users_on_login" ON "altered_users" ("login")[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mDROP TABLE "users"[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(40), "name" varchar(100) DEFAULT '', "email" varchar(100), "crypted_password" varchar(40), "salt" varchar(40), "created_at" datetime, "updated_at" datetime, "remember_token" varchar(40), "remember_token_expires_at" datetime, "activation_code" varchar(40), "activated_at" datetime, "first_name" varchar(255), "last_name" varchar(255), "about_me" text, "tag_line" varchar(500), "design_type" integer) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("altered_users")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('temp_index_altered_users_on_login')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE UNIQUE INDEX "index_users_on_login" ON "users" ("login")[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mDROP TABLE "altered_users"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090719032358')[0m
+Migrating to AddAccountTierToUsers (20090719032501)
+  [4;36;1mSQL (0.8ms)[0m   [0;1mALTER TABLE "users" ADD "account_tier" integer DEFAULT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090719032501')[0m
+Migrating to CreatePieces (20090720145132)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TABLE "pieces" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "description" varchar(255), "price" decimal(10,2), "for_sale" boolean, "portfolio_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090720145132')[0m
+Migrating to AddAvatarToUsers (20090720151551)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mALTER TABLE "users" ADD "photo_file_name" varchar(255)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mALTER TABLE "users" ADD "photo_content_type" varchar(255)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "users" ADD "photo_file_size" integer[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090720151551')[0m
+Migrating to RemoveAvatarFromUsers (20090720202141)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCREATE TEMPORARY TABLE "altered_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(40), "name" varchar(100) DEFAULT '', "email" varchar(100), "crypted_password" varchar(40), "salt" varchar(40), "created_at" datetime, "updated_at" datetime, "remember_token" varchar(40), "remember_token_expires_at" datetime, "activation_code" varchar(40), "activated_at" datetime, "first_name" varchar(255), "last_name" varchar(255), "about_me" text, "tag_line" varchar(500), "design_type" integer, "account_tier" integer DEFAULT 1, "photo_file_name" varchar(255), "photo_content_type" varchar(255), "photo_file_size" integer) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_users_on_login')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCREATE UNIQUE INDEX "temp_index_altered_users_on_login" ON "altered_users" ("login")[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mDROP TABLE "users"[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(40), "name" varchar(100) DEFAULT '', "email" varchar(100), "crypted_password" varchar(40), "salt" varchar(40), "created_at" datetime, "updated_at" datetime, "remember_token" varchar(40), "remember_token_expires_at" datetime, "activation_code" varchar(40), "activated_at" datetime, "first_name" varchar(255), "last_name" varchar(255), "about_me" text, "tag_line" varchar(500), "design_type" integer, "account_tier" integer DEFAULT 1, "photo_file_name" varchar(255), "photo_content_type" varchar(255)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("altered_users")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('temp_index_altered_users_on_login')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE UNIQUE INDEX "index_users_on_login" ON "users" ("login")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mDROP TABLE "altered_users"[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TEMPORARY TABLE "altered_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(40), "name" varchar(100) DEFAULT '', "email" varchar(100), "crypted_password" varchar(40), "salt" varchar(40), "created_at" datetime, "updated_at" datetime, "remember_token" varchar(40), "remember_token_expires_at" datetime, "activation_code" varchar(40), "activated_at" datetime, "first_name" varchar(255), "last_name" varchar(255), "about_me" text, "tag_line" varchar(500), "design_type" integer, "account_tier" integer DEFAULT 1, "photo_file_name" varchar(255), "photo_content_type" varchar(255)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_users_on_login')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE UNIQUE INDEX "temp_index_altered_users_on_login" ON "altered_users" ("login")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mDROP TABLE "users"[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(40), "name" varchar(100) DEFAULT '', "email" varchar(100), "crypted_password" varchar(40), "salt" varchar(40), "created_at" datetime, "updated_at" datetime, "remember_token" varchar(40), "remember_token_expires_at" datetime, "activation_code" varchar(40), "activated_at" datetime, "first_name" varchar(255), "last_name" varchar(255), "about_me" text, "tag_line" varchar(500), "design_type" integer, "account_tier" integer DEFAULT 1, "photo_file_name" varchar(255)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("altered_users")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('temp_index_altered_users_on_login')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE UNIQUE INDEX "index_users_on_login" ON "users" ("login")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mDROP TABLE "altered_users"[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TEMPORARY TABLE "altered_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(40), "name" varchar(100) DEFAULT '', "email" varchar(100), "crypted_password" varchar(40), "salt" varchar(40), "created_at" datetime, "updated_at" datetime, "remember_token" varchar(40), "remember_token_expires_at" datetime, "activation_code" varchar(40), "activated_at" datetime, "first_name" varchar(255), "last_name" varchar(255), "about_me" text, "tag_line" varchar(500), "design_type" integer, "account_tier" integer DEFAULT 1, "photo_file_name" varchar(255)) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_users_on_login')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE UNIQUE INDEX "temp_index_altered_users_on_login" ON "altered_users" ("login")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mDROP TABLE "users"[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(40), "name" varchar(100) DEFAULT '', "email" varchar(100), "crypted_password" varchar(40), "salt" varchar(40), "created_at" datetime, "updated_at" datetime, "remember_token" varchar(40), "remember_token_expires_at" datetime, "activation_code" varchar(40), "activated_at" datetime, "first_name" varchar(255), "last_name" varchar(255), "about_me" text, "tag_line" varchar(500), "design_type" integer, "account_tier" integer DEFAULT 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("altered_users")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('temp_index_altered_users_on_login')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE UNIQUE INDEX "index_users_on_login" ON "users" ("login")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mDROP TABLE "altered_users"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090720202141')[0m
+Migrating to AddAvatarToUsersForReal (20090720202338)
+  [4;35;1mSQL (1.5ms)[0m   [0mALTER TABLE "users" ADD "avatar_file_name" varchar(255)[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mALTER TABLE "users" ADD "avatar_content_type" varchar(255)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "users" ADD "avatar_file_size" integer[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090720202338')[0m
+Migrating to PleaseWorkPaperclipYouMotherfucker (20090721033045)
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TEMPORARY TABLE "altered_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(40), "name" varchar(100) DEFAULT '', "email" varchar(100), "crypted_password" varchar(40), "salt" varchar(40), "created_at" datetime, "updated_at" datetime, "remember_token" varchar(40), "remember_token_expires_at" datetime, "activation_code" varchar(40), "activated_at" datetime, "first_name" varchar(255), "last_name" varchar(255), "about_me" text, "tag_line" varchar(500), "design_type" integer, "account_tier" integer DEFAULT 1, "avatar_file_name" varchar(255), "avatar_content_type" varchar(255), "avatar_file_size" integer) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_login')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE UNIQUE INDEX "temp_index_altered_users_on_login" ON "altered_users" ("login")[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mDROP TABLE "users"[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(40), "name" varchar(100) DEFAULT '', "email" varchar(100), "crypted_password" varchar(40), "salt" varchar(40), "created_at" datetime, "updated_at" datetime, "remember_token" varchar(40), "remember_token_expires_at" datetime, "activation_code" varchar(40), "activated_at" datetime, "first_name" varchar(255), "last_name" varchar(255), "about_me" text, "tag_line" varchar(500), "design_type" integer, "account_tier" integer DEFAULT 1, "avatar_content_type" varchar(255), "avatar_file_size" integer) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("altered_users")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('temp_index_altered_users_on_login')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE UNIQUE INDEX "index_users_on_login" ON "users" ("login")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mDROP TABLE "altered_users"[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TEMPORARY TABLE "altered_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(40), "name" varchar(100) DEFAULT '', "email" varchar(100), "crypted_password" varchar(40), "salt" varchar(40), "created_at" datetime, "updated_at" datetime, "remember_token" varchar(40), "remember_token_expires_at" datetime, "activation_code" varchar(40), "activated_at" datetime, "first_name" varchar(255), "last_name" varchar(255), "about_me" text, "tag_line" varchar(500), "design_type" integer, "account_tier" integer DEFAULT 1, "avatar_content_type" varchar(255), "avatar_file_size" integer) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_login')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE UNIQUE INDEX "temp_index_altered_users_on_login" ON "altered_users" ("login")[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mDROP TABLE "users"[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(40), "name" varchar(100) DEFAULT '', "email" varchar(100), "crypted_password" varchar(40), "salt" varchar(40), "created_at" datetime, "updated_at" datetime, "remember_token" varchar(40), "remember_token_expires_at" datetime, "activation_code" varchar(40), "activated_at" datetime, "first_name" varchar(255), "last_name" varchar(255), "about_me" text, "tag_line" varchar(500), "design_type" integer, "account_tier" integer DEFAULT 1, "avatar_file_size" integer) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("altered_users")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('temp_index_altered_users_on_login')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE UNIQUE INDEX "index_users_on_login" ON "users" ("login")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mDROP TABLE "altered_users"[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TEMPORARY TABLE "altered_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(40), "name" varchar(100) DEFAULT '', "email" varchar(100), "crypted_password" varchar(40), "salt" varchar(40), "created_at" datetime, "updated_at" datetime, "remember_token" varchar(40), "remember_token_expires_at" datetime, "activation_code" varchar(40), "activated_at" datetime, "first_name" varchar(255), "last_name" varchar(255), "about_me" text, "tag_line" varchar(500), "design_type" integer, "account_tier" integer DEFAULT 1, "avatar_file_size" integer) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_login')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE UNIQUE INDEX "temp_index_altered_users_on_login" ON "altered_users" ("login")[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mDROP TABLE "users"[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(40), "name" varchar(100) DEFAULT '', "email" varchar(100), "crypted_password" varchar(40), "salt" varchar(40), "created_at" datetime, "updated_at" datetime, "remember_token" varchar(40), "remember_token_expires_at" datetime, "activation_code" varchar(40), "activated_at" datetime, "first_name" varchar(255), "last_name" varchar(255), "about_me" text, "tag_line" varchar(500), "design_type" integer, "account_tier" integer DEFAULT 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("altered_users")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('temp_index_altered_users_on_login')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE UNIQUE INDEX "index_users_on_login" ON "users" ("login")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mDROP TABLE "altered_users"[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090721033045')[0m
+Migrating to AddAttachmentsPhotoToUser (20090721033319)
+  [4;36;1mSQL (0.8ms)[0m   [0;1mALTER TABLE "users" ADD "photo_file_name" varchar(255)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mALTER TABLE "users" ADD "photo_content_type" varchar(255)[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mALTER TABLE "users" ADD "photo_file_size" integer[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mALTER TABLE "users" ADD "photo_updated_at" datetime[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090721033319')[0m
+Migrating to AddAttachmentsImage1ToPortfolio (20090721152728)
+  [4;35;1mSQL (0.5ms)[0m   [0mALTER TABLE "portfolios" ADD "image_1_file_name" varchar(255)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "portfolios" ADD "image_1_content_type" varchar(255)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "portfolios" ADD "image_1_file_size" integer[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "portfolios" ADD "image_1_updated_at" datetime[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090721152728')[0m
+Migrating to AddAttachmentsImage2ToPiece (20090721170213)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mALTER TABLE "pieces" ADD "image_2_file_name" varchar(255)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "pieces" ADD "image_2_content_type" varchar(255)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "pieces" ADD "image_2_file_size" integer[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mALTER TABLE "pieces" ADD "image_2_updated_at" datetime[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090721170213')[0m
+Migrating to AddAttachmentsImage3ToPiece (20090721170326)
+  [4;35;1mSQL (0.8ms)[0m   [0mALTER TABLE "pieces" ADD "image_3_file_name" varchar(255)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "pieces" ADD "image_3_content_type" varchar(255)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "pieces" ADD "image_3_file_size" integer[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "pieces" ADD "image_3_updated_at" datetime[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090721170326')[0m
+Migrating to AddAttachmentsImage4ToPiece (20090721170409)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mALTER TABLE "pieces" ADD "image_4_file_name" varchar(255)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mALTER TABLE "pieces" ADD "image_4_content_type" varchar(255)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "pieces" ADD "image_4_file_size" integer[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "pieces" ADD "image_4_updated_at" datetime[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090721170409')[0m
+Migrating to AddAttachmentsImage5ToPiece (20090721170424)
+  [4;35;1mSQL (1.3ms)[0m   [0mALTER TABLE "pieces" ADD "image_5_file_name" varchar(255)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "pieces" ADD "image_5_content_type" varchar(255)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "pieces" ADD "image_5_file_size" integer[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "pieces" ADD "image_5_updated_at" datetime[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090721170424')[0m
+Migrating to RemoveImage1FromPortfolios (20090721210418)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TEMPORARY TABLE "altered_portfolios" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "created_at" datetime, "updated_at" datetime, "image_1_file_name" varchar(255), "image_1_content_type" varchar(255), "image_1_file_size" integer, "image_1_updated_at" datetime) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("portfolios")[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mDROP TABLE "portfolios"[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TABLE "portfolios" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "created_at" datetime, "updated_at" datetime, "image_1_content_type" varchar(255), "image_1_file_size" integer, "image_1_updated_at" datetime) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("altered_portfolios")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mDROP TABLE "altered_portfolios"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TEMPORARY TABLE "altered_portfolios" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "created_at" datetime, "updated_at" datetime, "image_1_content_type" varchar(255), "image_1_file_size" integer, "image_1_updated_at" datetime) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("portfolios")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mDROP TABLE "portfolios"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE TABLE "portfolios" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "created_at" datetime, "updated_at" datetime, "image_1_file_size" integer, "image_1_updated_at" datetime) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("altered_portfolios")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mDROP TABLE "altered_portfolios"[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TEMPORARY TABLE "altered_portfolios" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "created_at" datetime, "updated_at" datetime, "image_1_file_size" integer, "image_1_updated_at" datetime) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("portfolios")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mDROP TABLE "portfolios"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE TABLE "portfolios" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "created_at" datetime, "updated_at" datetime, "image_1_updated_at" datetime) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("altered_portfolios")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mDROP TABLE "altered_portfolios"[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mCREATE TEMPORARY TABLE "altered_portfolios" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "created_at" datetime, "updated_at" datetime, "image_1_updated_at" datetime) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("portfolios")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mDROP TABLE "portfolios"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mCREATE TABLE "portfolios" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("altered_portfolios")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mDROP TABLE "altered_portfolios"[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090721210418')[0m
+Migrating to AddAttachmentsImage1ToPiece (20090721210511)
+  [4;35;1mSQL (4.6ms)[0m   [0mALTER TABLE "pieces" ADD "image_1_file_name" varchar(255)[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mALTER TABLE "pieces" ADD "image_1_content_type" varchar(255)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mALTER TABLE "pieces" ADD "image_1_file_size" integer[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mALTER TABLE "pieces" ADD "image_1_updated_at" datetime[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090721210511')[0m
+Migrating to CreateDesigns (20090805151853)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TABLE "designs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090805151853')[0m
+Migrating to AddCssVariablesToDesign (20090805164948)
+  [4;36;1mSQL (0.8ms)[0m   [0;1mALTER TABLE "designs" ADD "background_color" varchar(255) DEFAULT '#dedddb'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "designs" ADD "background_align" varchar(255) DEFAULT 'center'[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mALTER TABLE "designs" ADD "background_tile" varchar(255) DEFAULT 'repeat'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "designs" ADD "page_bg_color" varchar(255) DEFAULT '#fff'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "designs" ADD "link_color" varchar(255) DEFAULT '#72b225'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "designs" ADD "link_hover_color" varchar(255) DEFAULT '#242420'[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mALTER TABLE "designs" ADD "link_img_border_color" varchar(255) DEFAULT '#f5f4f4'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mALTER TABLE "designs" ADD "text_color" varchar(255) DEFAULT '#767574'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "designs" ADD "text_size" integer DEFAULT 12[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "designs" ADD "text_font_1" varchar(255) DEFAULT 'Arial'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "designs" ADD "text_font_2" varchar(255) DEFAULT 'Helvetica'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "designs" ADD "text_serif" boolean DEFAULT 'f'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "designs" ADD "title_color" varchar(255) DEFAULT '#242420'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "designs" ADD "title_bold" boolean DEFAULT 'f'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "designs" ADD "title_italic" boolean DEFAULT 'f'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "designs" ADD "title_font" varchar(255) DEFAULT 'Georgia'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "designs" ADD "title_serif" boolean DEFAULT 't'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "designs" ADD "tagline_size" integer[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "designs" ADD "tagline_color" varchar(255) DEFAULT '#242420'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mALTER TABLE "designs" ADD "tagline_bold" boolean DEFAULT 'f'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "designs" ADD "tagline_italic" boolean DEFAULT 'f'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mALTER TABLE "designs" ADD "tagline_font" varchar(255) DEFAULT 'Georgia'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mALTER TABLE "designs" ADD "tagline_serif" boolean DEFAULT 't'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mALTER TABLE "designs" ADD "border_color" varchar(255) DEFAULT '#eee'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090805164948')[0m
+Migrating to RemoveOldDesignTypeFromUsers (20090805171338)
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TEMPORARY TABLE "altered_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(40), "name" varchar(100) DEFAULT '', "email" varchar(100), "crypted_password" varchar(40), "salt" varchar(40), "created_at" datetime, "updated_at" datetime, "remember_token" varchar(40), "remember_token_expires_at" datetime, "activation_code" varchar(40), "activated_at" datetime, "first_name" varchar(255), "last_name" varchar(255), "about_me" text, "tag_line" varchar(500), "design_type" integer, "account_tier" integer DEFAULT 1, "photo_file_name" varchar(255), "photo_content_type" varchar(255), "photo_file_size" integer, "photo_updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_login')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE UNIQUE INDEX "temp_index_altered_users_on_login" ON "altered_users" ("login")[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mDROP TABLE "users"[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(40), "name" varchar(100) DEFAULT '', "email" varchar(100), "crypted_password" varchar(40), "salt" varchar(40), "created_at" datetime, "updated_at" datetime, "remember_token" varchar(40), "remember_token_expires_at" datetime, "activation_code" varchar(40), "activated_at" datetime, "first_name" varchar(255), "last_name" varchar(255), "about_me" text, "tag_line" varchar(500), "account_tier" integer DEFAULT 1, "photo_file_name" varchar(255), "photo_content_type" varchar(255), "photo_file_size" integer, "photo_updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("altered_users")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('temp_index_altered_users_on_login')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE UNIQUE INDEX "index_users_on_login" ON "users" ("login")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mDROP TABLE "altered_users"[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090805171338')[0m
+Migrating to AddDesignTypeToUsersWithDefaultValue (20090805171518)
+  [4;36;1mSQL (1.1ms)[0m   [0;1mALTER TABLE "users" ADD "design_type" integer DEFAULT 1[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090805171518')[0m
+Migrating to AddCssTextToDesign (20090805174329)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mALTER TABLE "designs" ADD "css_text" text[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090805174329')[0m
+Migrating to AddAttachmentsHeaderImageToUser (20090805191833)
+  [4;36;1mSQL (0.8ms)[0m   [0;1mALTER TABLE "users" ADD "header_image_file_name" varchar(255)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mALTER TABLE "users" ADD "header_image_content_type" varchar(255)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "users" ADD "header_image_file_size" integer[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "users" ADD "header_image_updated_at" datetime[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090805191833')[0m
+Migrating to RemoveHeaderImageFromUsers (20090805192350)
+  [4;35;1mSQL (0.5ms)[0m   [0mCREATE TEMPORARY TABLE "altered_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(40), "name" varchar(100) DEFAULT '', "email" varchar(100), "crypted_password" varchar(40), "salt" varchar(40), "created_at" datetime, "updated_at" datetime, "remember_token" varchar(40), "remember_token_expires_at" datetime, "activation_code" varchar(40), "activated_at" datetime, "first_name" varchar(255), "last_name" varchar(255), "about_me" text, "tag_line" varchar(500), "account_tier" integer DEFAULT 1, "photo_file_name" varchar(255), "photo_content_type" varchar(255), "photo_file_size" integer, "photo_updated_at" datetime, "design_type" integer DEFAULT 1, "header_image_file_name" varchar(255), "header_image_content_type" varchar(255), "header_image_file_size" integer, "header_image_updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_login')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE UNIQUE INDEX "temp_index_altered_users_on_login" ON "altered_users" ("login")[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mDROP TABLE "users"[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(40), "name" varchar(100) DEFAULT '', "email" varchar(100), "crypted_password" varchar(40), "salt" varchar(40), "created_at" datetime, "updated_at" datetime, "remember_token" varchar(40), "remember_token_expires_at" datetime, "activation_code" varchar(40), "activated_at" datetime, "first_name" varchar(255), "last_name" varchar(255), "about_me" text, "tag_line" varchar(500), "account_tier" integer DEFAULT 1, "photo_file_name" varchar(255), "photo_content_type" varchar(255), "photo_file_size" integer, "photo_updated_at" datetime, "design_type" integer DEFAULT 1, "header_image_content_type" varchar(255), "header_image_file_size" integer, "header_image_updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("altered_users")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('temp_index_altered_users_on_login')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE UNIQUE INDEX "index_users_on_login" ON "users" ("login")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mDROP TABLE "altered_users"[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TEMPORARY TABLE "altered_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(40), "name" varchar(100) DEFAULT '', "email" varchar(100), "crypted_password" varchar(40), "salt" varchar(40), "created_at" datetime, "updated_at" datetime, "remember_token" varchar(40), "remember_token_expires_at" datetime, "activation_code" varchar(40), "activated_at" datetime, "first_name" varchar(255), "last_name" varchar(255), "about_me" text, "tag_line" varchar(500), "account_tier" integer DEFAULT 1, "photo_file_name" varchar(255), "photo_content_type" varchar(255), "photo_file_size" integer, "photo_updated_at" datetime, "design_type" integer DEFAULT 1, "header_image_content_type" varchar(255), "header_image_file_size" integer, "header_image_updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_login')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE UNIQUE INDEX "temp_index_altered_users_on_login" ON "altered_users" ("login")[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mDROP TABLE "users"[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(40), "name" varchar(100) DEFAULT '', "email" varchar(100), "crypted_password" varchar(40), "salt" varchar(40), "created_at" datetime, "updated_at" datetime, "remember_token" varchar(40), "remember_token_expires_at" datetime, "activation_code" varchar(40), "activated_at" datetime, "first_name" varchar(255), "last_name" varchar(255), "about_me" text, "tag_line" varchar(500), "account_tier" integer DEFAULT 1, "photo_file_name" varchar(255), "photo_content_type" varchar(255), "photo_file_size" integer, "photo_updated_at" datetime, "design_type" integer DEFAULT 1, "header_image_file_size" integer, "header_image_updated_at" datetime) [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mPRAGMA index_list("altered_users")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_info('temp_index_altered_users_on_login')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE UNIQUE INDEX "index_users_on_login" ON "users" ("login")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mDROP TABLE "altered_users"[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TEMPORARY TABLE "altered_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(40), "name" varchar(100) DEFAULT '', "email" varchar(100), "crypted_password" varchar(40), "salt" varchar(40), "created_at" datetime, "updated_at" datetime, "remember_token" varchar(40), "remember_token_expires_at" datetime, "activation_code" varchar(40), "activated_at" datetime, "first_name" varchar(255), "last_name" varchar(255), "about_me" text, "tag_line" varchar(500), "account_tier" integer DEFAULT 1, "photo_file_name" varchar(255), "photo_content_type" varchar(255), "photo_file_size" integer, "photo_updated_at" datetime, "design_type" integer DEFAULT 1, "header_image_file_size" integer, "header_image_updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_login')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE UNIQUE INDEX "temp_index_altered_users_on_login" ON "altered_users" ("login")[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mDROP TABLE "users"[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(40), "name" varchar(100) DEFAULT '', "email" varchar(100), "crypted_password" varchar(40), "salt" varchar(40), "created_at" datetime, "updated_at" datetime, "remember_token" varchar(40), "remember_token_expires_at" datetime, "activation_code" varchar(40), "activated_at" datetime, "first_name" varchar(255), "last_name" varchar(255), "about_me" text, "tag_line" varchar(500), "account_tier" integer DEFAULT 1, "photo_file_name" varchar(255), "photo_content_type" varchar(255), "photo_file_size" integer, "photo_updated_at" datetime, "design_type" integer DEFAULT 1, "header_image_updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("altered_users")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('temp_index_altered_users_on_login')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE UNIQUE INDEX "index_users_on_login" ON "users" ("login")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mDROP TABLE "altered_users"[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TEMPORARY TABLE "altered_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(40), "name" varchar(100) DEFAULT '', "email" varchar(100), "crypted_password" varchar(40), "salt" varchar(40), "created_at" datetime, "updated_at" datetime, "remember_token" varchar(40), "remember_token_expires_at" datetime, "activation_code" varchar(40), "activated_at" datetime, "first_name" varchar(255), "last_name" varchar(255), "about_me" text, "tag_line" varchar(500), "account_tier" integer DEFAULT 1, "photo_file_name" varchar(255), "photo_content_type" varchar(255), "photo_file_size" integer, "photo_updated_at" datetime, "design_type" integer DEFAULT 1, "header_image_updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_login')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE UNIQUE INDEX "temp_index_altered_users_on_login" ON "altered_users" ("login")[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mDROP TABLE "users"[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(40), "name" varchar(100) DEFAULT '', "email" varchar(100), "crypted_password" varchar(40), "salt" varchar(40), "created_at" datetime, "updated_at" datetime, "remember_token" varchar(40), "remember_token_expires_at" datetime, "activation_code" varchar(40), "activated_at" datetime, "first_name" varchar(255), "last_name" varchar(255), "about_me" text, "tag_line" varchar(500), "account_tier" integer DEFAULT 1, "photo_file_name" varchar(255), "photo_content_type" varchar(255), "photo_file_size" integer, "photo_updated_at" datetime, "design_type" integer DEFAULT 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("altered_users")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('temp_index_altered_users_on_login')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE UNIQUE INDEX "index_users_on_login" ON "users" ("login")[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mDROP TABLE "altered_users"[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090805192350')[0m
+Migrating to AddAttachmentsHeaderImageToDesign (20090805192452)
+  [4;36;1mSQL (1.5ms)[0m   [0;1mALTER TABLE "designs" ADD "header_image_file_name" varchar(255)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mALTER TABLE "designs" ADD "header_image_content_type" varchar(255)[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mALTER TABLE "designs" ADD "header_image_file_size" integer[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mALTER TABLE "designs" ADD "header_image_updated_at" datetime[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090805192452')[0m
+Migrating to AddAdminToUsers (20090811184907)
+  [4;35;1mSQL (0.9ms)[0m   [0mALTER TABLE "users" ADD "admin_user" boolean DEFAULT 'f'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090811184907')[0m
+Migrating to CreatePosts (20090811195015)
+  [4;35;1mSQL (0.6ms)[0m   [0mCREATE TABLE "posts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "body" text, "author" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090811195015')[0m
+Migrating to FixLayoutType (20090813023933)
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE TEMPORARY TABLE "altered_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(40), "name" varchar(100) DEFAULT '', "email" varchar(100), "crypted_password" varchar(40), "salt" varchar(40), "created_at" datetime, "updated_at" datetime, "remember_token" varchar(40), "remember_token_expires_at" datetime, "activation_code" varchar(40), "activated_at" datetime, "first_name" varchar(255), "last_name" varchar(255), "about_me" text, "tag_line" varchar(500), "account_tier" integer DEFAULT 1, "photo_file_name" varchar(255), "photo_content_type" varchar(255), "photo_file_size" integer, "photo_updated_at" datetime, "design_type" integer DEFAULT 1, "admin_user" boolean DEFAULT 'f') [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_login')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCREATE UNIQUE INDEX "temp_index_altered_users_on_login" ON "altered_users" ("login")[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mDROP TABLE "users"[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(40), "name" varchar(100) DEFAULT '', "email" varchar(100), "crypted_password" varchar(40), "salt" varchar(40), "created_at" datetime, "updated_at" datetime, "remember_token" varchar(40), "remember_token_expires_at" datetime, "activation_code" varchar(40), "activated_at" datetime, "first_name" varchar(255), "last_name" varchar(255), "about_me" text, "tag_line" varchar(500), "account_tier" integer DEFAULT 1, "photo_file_name" varchar(255), "photo_content_type" varchar(255), "photo_file_size" integer, "photo_updated_at" datetime, "design_type" integer DEFAULT 1, "admin_user" boolean DEFAULT 'f') [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("altered_users")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('temp_index_altered_users_on_login')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE UNIQUE INDEX "index_users_on_login" ON "users" ("login")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mDROP TABLE "altered_users"[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mALTER TABLE "designs" ADD "layout_type" integer DEFAULT 1[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20090813023933')[0m
+Migrating to AddBillingInfoToUsers (20090818205835)
+  [4;35;1mSQL (0.6ms)[0m   [0mALTER TABLE "users" ADD "address1" varchar(255)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "users" ADD "address2" varchar(255)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mALTER TABLE "users" ADD "city" varchar(255)[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mALTER TABLE "users" ADD "state" varchar(255)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mALTER TABLE "users" ADD "country" varchar(255)[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mALTER TABLE "users" ADD "zip" varchar(255)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090818205835')[0m
+Migrating to AddCardInfoToUsers (20090818210320)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mALTER TABLE "users" ADD "card_number" varchar(255)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mALTER TABLE "users" ADD "card_verification" varchar(255)[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mALTER TABLE "users" ADD "card_expiration_month" varchar(255)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mALTER TABLE "users" ADD "card_expiration_year" varchar(255)[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mALTER TABLE "users" ADD "card_type" varchar(255)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090818210320')[0m
+Migrating to CreateSimpleCaptchaData (20090917042124)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCREATE TABLE "simple_captcha_data" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "key" varchar(40), "value" varchar(6), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090917042124')[0m
+Migrating to CreateDelayedJobs (20091029045433)
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE TABLE "delayed_jobs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "priority" integer DEFAULT 0, "attempts" integer DEFAULT 0, "handler" text, "last_error" text, "run_at" datetime, "locked_at" datetime, "failed_at" datetime, "locked_by" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20091029045433')[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("delayed_jobs")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("designs")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("pieces")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("portfolios")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("posts")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("simple_captcha_data")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_info('index_users_on_login')[0m
+Starting the New Relic Agent
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSELECT version FROM schema_migrations[0m
+** [Hoptoad] Notifier 1.2.4 ready to catch errors
+
+
+Processing UsersController#new (for 127.0.0.1 at 2009-11-06 00:04:01) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/template
+Rendering users/new
+Completed in 40ms (View: 19, DB: 0) | 200 OK [http://localhost/signup]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2009-11-06 00:04:11) [POST]
+  Parameters: {"commit"=>"Sign Up", "action"=>"create", "authenticity_token"=>"7O5U8gV5Mbxjo7qQEdS8/eo+EGsKJyYzkbxtTBU2cFQ=", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "login"=>"mcmaloney", "email"=>"mcm@crushlovely.com"}}
+  [4;36;1mPortfolio Create (0.5ms)[0m   [0;1mINSERT INTO "portfolios" ("created_at", "updated_at", "user_id") VALUES('2009-11-06 05:04:11', '2009-11-06 05:04:11', NULL)[0m
+  [4;35;1mDesign Create (0.5ms)[0m   [0mINSERT INTO "designs" ("background_align", "background_tile", "text_font_2", "tagline_color", "tagline_bold", "css_text", "created_at", "link_color", "title_bold", "tagline_serif", "text_serif", "header_image_content_type", "updated_at", "title_font", "tagline_font", "header_image_file_name", "header_image_updated_at", "title_italic", "tagline_italic", "header_image_file_size", "user_id", "text_color", "title_color", "layout_type", "tagline_size", "border_color", "link_img_border_color", "background_color", "page_bg_color", "link_hover_color", "title_serif", "text_size", "text_font_1") VALUES('center', 'repeat', 'Helvetica', '#242420', 'f', NULL, '2009-11-06 05:04:11', '#72b225', 'f', 't', 'f', NULL, '2009-11-06 05:04:11', 'Georgia', 'Georgia', NULL, NULL, 'f', 'f', NULL, NULL, '#767574', '#242420', 1, NULL, '#eee', '#f5f4f4', '#dedddb', '#fff', '#242420', 't', 12, 'Arial')[0m
+[paperclip] Saving attachments.
+  [4;36;1mUser Create (0.5ms)[0m   [0;1mINSERT INTO "users" ("name", "salt", "address1", "city", "card_expiration_month", "created_at", "activated_at", "about_me", "photo_file_size", "address2", "zip", "card_verification", "crypted_password", "remember_token_expires_at", "account_tier", "country", "card_type", "updated_at", "photo_file_name", "activation_code", "photo_content_type", "card_number", "admin_user", "photo_updated_at", "remember_token", "last_name", "tag_line", "login", "design_type", "email", "first_name", "state", "card_expiration_year") VALUES('', '8edda1c592cbd2f53c9c0996abfdbe2f555921ed', NULL, NULL, NULL, '2009-11-06 05:04:11', '2009-11-06 05:04:11', NULL, NULL, NULL, NULL, NULL, '49fc73443365317b34597392a866a5308eb43bf0', NULL, 1, NULL, NULL, '2009-11-06 05:04:11', NULL, '1e7035e3c30d27ab360221ff86ebe413c331d0b4', NULL, NULL, 'f', NULL, NULL, NULL, NULL, 'mcmaloney', 1, 'mcm@crushlovely.com', NULL, NULL, NULL)[0m
+  [4;35;1mPortfolio Update (0.2ms)[0m   [0mUPDATE "portfolios" SET "updated_at" = '2009-11-06 05:04:11', "user_id" = 1 WHERE "id" = 1[0m
+  [4;36;1mDesign Update (0.1ms)[0m   [0;1mUPDATE "designs" SET "updated_at" = '2009-11-06 05:04:11', "user_id" = 1 WHERE "id" = 1[0m
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+  [4;35;1mUser Exists (0.2ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."login" = 'mcmaloney' AND "users".id <> 1) LIMIT 1[0m
+  [4;36;1mUser Exists (0.2ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."email" = 'mcm@crushlovely.com' AND "users".id <> 1) LIMIT 1[0m
+[paperclip] Saving attachments.
+Redirected to http://localhost:3000/
+Completed in 177ms (DB: 2) | 302 Found [http://localhost/users]
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-11-06 00:04:11) [GET]
+  Parameters: {"action"=>"home", "controller"=>"main_pages"}
+Rendering template within layouts/template
+Rendering main_pages/home
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.3ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 1) LIMIT 1[0m
+  [4;35;1mDesign Load (0.6ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 1) LIMIT 1[0m
+Completed in 110ms (View: 108, DB: 2) | 200 OK [http://localhost/]
+
+
+Processing PortfoliosController#edit (for 127.0.0.1 at 2009-11-06 00:04:26) [GET]
+  Parameters: {"action"=>"edit", "id"=>"1", "user_id"=>"1", "controller"=>"portfolios"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mDesign Load (0.6ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 1) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.3ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 1) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering portfolios/edit
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "pieces" WHERE ("pieces".portfolio_id = 1) [0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mPiece Load (0.2ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 1) [0m
+Completed in 119ms (View: 95, DB: 2) | 200 OK [http://localhost/users/1/portfolios/1/edit]
+
+
+Processing DesignsController#edit (for 127.0.0.1 at 2009-11-06 00:04:28) [GET]
+  Parameters: {"action"=>"edit", "id"=>"1", "user_id"=>"1", "controller"=>"designs"}
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mDesign Load (0.6ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 1) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering designs/edit
+Rendered layouts/_colourmod_include (1.8ms)
+Rendered designs/_color_preview_styles (8.6ms)
+  [4;36;1mPortfolio Load (0.3ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 1) LIMIT 1[0m
+Completed in 58ms (View: 38, DB: 1) | 200 OK [http://localhost/users/1/designs/1/edit]
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2009-11-06 00:04:31) [GET]
+  Parameters: {"action"=>"edit", "id"=>"1", "controller"=>"users"}
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering users/edit
+  [4;36;1mPortfolio Load (0.3ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 1) LIMIT 1[0m
+  [4;35;1mDesign Load (0.6ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 1) LIMIT 1[0m
+Completed in 118ms (View: 29, DB: 2) | 200 OK [http://localhost/users/1/edit]
+
+
+Processing DesignsController#edit (for 127.0.0.1 at 2009-11-06 00:04:53) [GET]
+  Parameters: {"action"=>"edit", "id"=>"1", "user_id"=>"1", "controller"=>"designs"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mDesign Load (0.6ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 1) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering designs/edit
+Rendered layouts/_colourmod_include (1.2ms)
+Rendered designs/_color_preview_styles (7.2ms)
+  [4;36;1mPortfolio Load (0.3ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 1) LIMIT 1[0m
+Completed in 42ms (View: 24, DB: 1) | 200 OK [http://localhost/users/1/designs/1/edit]
+
+
+Processing PortfoliosController#edit (for 127.0.0.1 at 2009-11-06 00:05:08) [GET]
+  Parameters: {"action"=>"edit", "id"=>"1", "user_id"=>"1", "controller"=>"portfolios"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mDesign Load (0.6ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 1) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.3ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 1) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering portfolios/edit
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "pieces" WHERE ("pieces".portfolio_id = 1) [0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mPiece Load (0.2ms)[0m   [0;1mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 1) [0m
+Completed in 48ms (View: 23, DB: 2) | 200 OK [http://localhost/users/1/portfolios/1/edit]
+
+
+Processing PortfoliosController#show (for 127.0.0.1 at 2009-11-06 00:05:12) [GET]
+  Parameters: {"action"=>"show", "id"=>"1", "user_id"=>"1", "controller"=>"portfolios"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mDesign Load (0.6ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 1) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.3ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 1) LIMIT 1[0m
+Rendering template within layouts/weefolio
+Rendering portfolios/show
+  [4;36;1mPiece Load (0.2ms)[0m   [0;1mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 1) [0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendered styles/_form_css (2.4ms)
+Completed in 126ms (View: 33, DB: 2) | 200 OK [http://localhost/users/1/portfolios/1]
+
+
+Processing PortfoliosController#edit (for 127.0.0.1 at 2009-11-06 00:05:14) [GET]
+  Parameters: {"action"=>"edit", "id"=>"1", "user_id"=>"1", "controller"=>"portfolios"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mDesign Load (0.6ms)[0m   [0mSELECT * FROM "designs" WHERE ("designs".user_id = 1) LIMIT 1[0m
+  [4;36;1mPortfolio Load (0.3ms)[0m   [0;1mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 1) LIMIT 1[0m
+Rendering template within layouts/template
+Rendering portfolios/edit
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "pieces" WHERE ("pieces".portfolio_id = 1) [0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mPiece Load (0.2ms)[0m   [0mSELECT * FROM "pieces" WHERE ("pieces".portfolio_id = 1) [0m
+Completed in 45ms (View: 22, DB: 2) | 200 OK [http://localhost/users/1/portfolios/1/edit]
+
+
+Processing MainPagesController#home (for 127.0.0.1 at 2009-11-06 00:05:24) [GET]
+  Parameters: {"action"=>"home", "controller"=>"main_pages"}
+Rendering template within layouts/template
+Rendering main_pages/home
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mPortfolio Load (0.3ms)[0m   [0mSELECT * FROM "portfolios" WHERE ("portfolios".user_id = 1) LIMIT 1[0m
+  [4;36;1mDesign Load (0.6ms)[0m   [0;1mSELECT * FROM "designs" WHERE ("designs".user_id = 1) LIMIT 1[0m
+Completed in 37ms (View: 35, DB: 1) | 200 OK [http://localhost/]
