@@ -16,8 +16,12 @@
 <%# YIELD %>
 <div id="content-container">
 
-    <%= flash[:notice] %>
-
+    <% if flash[:warning] or flash[:notice] %>
+  		<div id="notice" <% if flash[:warning] %>class="warning"<% end %>>
+    <%= flash[:warning] || flash[:notice] %>
+  		</div>
+	<% end %>
+	
 	<!--DUMP ALL OF YOUR SHIT HERE!-->
 	<%= form_content(@portfolio, @piece) %>
 </div>

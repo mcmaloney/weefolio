@@ -8,8 +8,8 @@ class DesignsController < ApplicationController
 
   def update
     if @design.update_attributes(params[:design])
-      redirect_to edit_user_design_path(@user, @design)
-      flash[:notice] = "Layout saved."
+      redirect_to edit_user_design_path(current_user, @design)
+      flash[:notice] = "Your <strong>design</strong> has been saved."
     end
   end
   

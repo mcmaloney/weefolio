@@ -14,11 +14,11 @@
 			<ul id="global-nav">
 				<li><%= link_to 'Home', root_path %></li>
 				<li><%= link_to 'Directory', directory_path %></li>
+				<li><%= link_to 'Pricing', signup_path %></li>
 				<li><%= link_to 'Help', help_path %></li>
 				<!--<li><%= link_to 'Blog', posts_path %></li>-->
-				<li><%= link_to 'Contact', contact_path %></li>
 				<% if logged_in? %>
-				  <li class="welcome">Logged in as <%=h current_user.login %> | <%= link_to 'Logout', logout_path %></li>	
+				  <li class="welcome">Hello, <span class="username"><%= link_to current_user.login, edit_user_path(current_user) %>!</span> | <%= link_to 'Logout', logout_path %></li>	
 				<% end %>			
 			</ul>
 			

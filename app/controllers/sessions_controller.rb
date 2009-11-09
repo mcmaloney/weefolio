@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
   layout 'template'
   
   def new
-    @page_title = "Weefolio :: Login"
+    @page_title = "Weefolio - Login"
   end
 
   def create
@@ -18,7 +18,7 @@ class SessionsController < ApplicationController
       new_cookie_flag = (params[:remember_me] == "1")
       handle_remember_cookie! new_cookie_flag
       redirect_back_or_default('/')
-      flash[:notice] = "Logged in as #{current_user.login}"
+      flash[:notice] = "Hello, <strong>#{current_user.login}</strong>!"
     else
       note_failed_signin
       @login       = params[:login]
@@ -29,7 +29,7 @@ class SessionsController < ApplicationController
 
   def destroy
     logout_killing_session!
-    flash[:notice] = "You have been logged out."
+    flash[:notice] = "You have been <strong>logged out</strong>."
     redirect_back_or_default('/')
   end
 

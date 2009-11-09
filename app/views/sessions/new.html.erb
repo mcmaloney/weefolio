@@ -9,7 +9,13 @@
 <!--PAGE CONTENT-->
 <%# YIELD %>
 <div id="content-container">
-    <%= flash[:notice] %>
+    
+    <% if flash[:warning] or flash[:notice] %>
+  		<div id="notice" <% if flash[:warning] %>class="warning"<% end %>>
+    <%= flash[:warning] || flash[:notice] %>
+  		</div>
+	<% end %>
+	
 	<!--DUMP ALL OF YOUR SHIT HERE!-->
 	<% form_tag session_path do %>
 		<fieldset>
@@ -30,7 +36,7 @@
 			    </dd>
 			    
 			    <dt>&nbsp;</dt>
-			    <dd><%= link_to 'Forgot your password?', forgot_password_path %></dd>
+			    <dd><%= link_to 'Forgot your password?', forgot_password_path, :class => "question" %></dd>
     		</dl>
     	</fieldset>
     	

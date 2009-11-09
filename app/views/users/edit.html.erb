@@ -5,7 +5,7 @@
 		<h1>Account <small>Manage your account settings</small></h1>
 		
 		<div class="call-to-action">
-			<a href="#">Close my Account</a>
+			<a href="#" class="account-close">Close Account</a>
 		</div>
 	</div>
 </div>
@@ -13,7 +13,13 @@
 <!--PAGE CONTENT-->
 <%# YIELD %>
 <div id="content-container">
-    <%= flash[:notice] %>
+    
+    <% if flash[:warning] or flash[:notice] %>
+  		<div id="notice" <% if flash[:warning] %>class="warning"<% end %>>
+    <%= flash[:warning] || flash[:notice] %>
+  		</div>
+	<% end %>
+	
 	<!--DUMP ALL OF YOUR SHIT HERE!-->
 	<% form_for @user, :html => {:multipart => true}  do |f| %>
 		<fieldset>

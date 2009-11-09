@@ -2,7 +2,7 @@
 
 body {
 	background: #f5f5f3;
-	margin: 0 0 80px 0;
+	margin: 0 0 100px 0;
 	font-family: "Lucida Grande", Arial, sans-serif;
 	font-size: 11px;
 	line-height: 15px;
@@ -17,6 +17,16 @@ a:visited {
 a:hover,
 a:visited:hover {
 	color: #242420;
+	}
+	
+a.question {
+	background: url(/images/question-icon.gif) no-repeat left center;
+	padding: 0 0 1px 15px;
+	}
+	
+a.download {
+	background: url(/images/download-icon.gif) no-repeat left center;
+	padding: 0 0 1px 15px;
 	}
 	
 
@@ -41,7 +51,7 @@ div#page-header-container-outer {
 	
 div#page-header-container-inner {
 	background: url(../images/page_header_container_inner_background.gif) no-repeat bottom center;
-	padding: 25px 40px;
+	padding: 20px 40px;
 	overflow: hidden;
 	}
 	
@@ -49,10 +59,11 @@ div#content-container {
 	background: #fff;
 	padding: 20px;
 	overflow: hidden;
+	border-bottom: 1px solid #ececea;
 	}
 	
 div#footer-container {
-	margin: 20px 0 0 0;
+	margin: 25px 0 0 0;
 	padding: 0 20px;
 	}
 	
@@ -72,10 +83,13 @@ ul#global-nav li {
 	
 ul#global-nav li.welcome {
 	background: #fff;
-	padding: 5px 8px;
+	padding: 7px 8px;
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
-	border: 1px solid #ddd;
+	border: 1px solid #ececea;
+	}
+	
+ul#global-nav li.welcome span.username {
 	}
 	
 ul#global-nav li.welcome a:link,
@@ -124,7 +138,15 @@ ul#global-nav li:first-child a:visited:hover {
 
 /*--GLOBAL NOTIFICATIONS--*/
 
-div.errorExplanation {
+div#notice,
+div#warning {
+	background: #ffffcc;
+	border: #f1e29c 1px solid;
+	padding: 13px;
+	margin: 0 0 20px 0;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	color: #242420;
 	}
 
 
@@ -133,12 +155,12 @@ div.errorExplanation {
 div#header-container a#header-logo {
 	float: left;
 	display: block;
-	width: 64px;
-	height: 21px;
+	width: 66px;
+	height: 22px;
 	overflow: hidden;
 	text-indent: -1000px;
-	background: url(../images/header-logo.gif) 0 0 no-repeat;
-	margin: 17px 0;
+	background: url(../images/header-logo.png) 0 0 no-repeat;
+	margin: 18px 0 0 0;
 	}
 	
 
@@ -302,15 +324,14 @@ div#content-container div.col-right ul.content-nav li a {
 div#footer-container a#footer-logo {
 	display: block;
 	float: left;
-	width: 84px;
-	height: 18px;
+	width: 57px;
+	height: 33px;
 	overflow: hidden;
 	text-indent: -1000px;
 	background: url(../images/footer-logo.gif) 0 0 no-repeat;
-	margin: 0 10px 0 0;
+	margin: 0 7px 0 0;
 	position: relative;
-	top: -1px;
-	display: none;
+	top: -8px;
 	}
 	
 div#footer-container div#legal {
@@ -378,8 +399,8 @@ div#content-container form fieldset dl {
 div#content-container form fieldset dl dt {
 	width: 145px;
 	text-align: right;
-	padding: 7px 20px 0 0;
-	margin: 0 0 20px 0;
+	padding: 9px 20px 0 0;
+	margin: 0 0 15px 0;
 	float: left;
 	font-weight: bold;
 	color: #242420;
@@ -391,18 +412,26 @@ div#content-container form fieldset dl dd {
 	width: 500px;
 	padding: 0;
 	float: left;
-	margin: 0 0 20px 0;
+	margin: 0 0 15px 0;
 	}
 	
 div#content-container form fieldset dl dd input,
 div#content-container form fieldset dl dd textarea {
 	padding: 6px;
-	font-size: 12px;
+	font-size: 14px;
 	background: #f5f5f3;
+	border-top: 2px solid #ececea;
+	border-right: 1px solid #ececea;
+	border-bottom: 1px solid #ececea;
+	border-left: 1px solid #ececea;*/
+	margin: 0 3px 0 0;
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
-	border: 1px solid #ddd;
-	margin: 0;
+	}
+	
+div#content-container form fieldset dl dd textarea.code {
+	font-family: Courier;
+	font-size: 12px;
 	}
 	
 div#content-container form fieldset dl dd select {
@@ -430,11 +459,11 @@ div#content-container form div.submit {
 
 div#content-container form div.submit input {
 	background: #9fcf44;
-	padding: 7px 15px;
+	padding: 6px 20px;
 	border: 0;
 	color: #fff;
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
+	-moz-border-radius: 16px;
+	-webkit-border-radius: 20px;
 	text-transform: uppercase;
 	font-family: "Lucida Grande", Arial, sans-serif;
 	font-weight: bold;
@@ -490,6 +519,45 @@ div#page-header-container-inner div.featured-weefolio {
 	border: 5px solid #2e2e29;
 	background: #1d1d1a;
 	}
+	
+div#content-container ul.features {
+	margin: 0;
+	padding: 10px 0 20px 2px;
+	width: 725px;
+	display: block;
+	overflow: hidden;
+	}
+	
+div#content-container ul.features li {
+	float: left;
+	width: 215px;
+	padding: 0;
+	margin: 0 10px;
+	}
+	
+div#content-container ul.features li img {
+	border: 5px solid #eee;
+	padding: 3px;
+	}
+
+div#content-container ul.features div.description {
+	padding: 0 10px;
+	}
+		
+div#content-container ul.features li h2 {
+	font-size: 12px;
+	margin: 15px 0 10px 0;
+	color: #242420;
+	}
+	
+div#content-container ul.features li p {
+	margin: 0 0 10px 0;
+	}
+	
+div#content-container ul.features li p a {
+	background: url(/images/feature-arrow.gif) no-repeat left center;
+	padding: 0 0 1px 15px;
+	}
 
 
 /*---USERS > NEW (Pricing & Sign Up)---*/
@@ -523,7 +591,6 @@ div#page-header-container-inner div.pricing table.chart tr td {
 	text-align: center;
 	border-top: 1px solid #2e2e29;
 	width: 20%;
-	
 	}
 	
 div#page-header-container-inner div.pricing table.chart tr td.dark {
@@ -594,13 +661,19 @@ div#content-container form fieldset#design-color dl dd input {
 	}
 		
 div#content-container form fieldset dl dd div.color-preview {
-	height: 17px;
+	height: 15px;
 	width: 300px;
-	margin: 0 0 0 20px;
+	margin: 0 0 0 17px;
 	padding: 6px;
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
 	float: left;
+	}
+	
+div#content-container form fieldset dl dd input#design_header_image {
+	padding-left: 0;
+	background: #fff;
+	border: none;
 	}
 	
 /*---PORTFOLIO > INDEX---*/
@@ -716,8 +789,21 @@ div#content-container ul.pieces li.piece ul.piece-options li#view a {
 	
 /*--ACCOUNT > EDIT--*/
 	
+div#page-header-container-inner a.account-close {
+	background: url(/images/close-account.gif) left center no-repeat;
+	padding: 2px 0 2px 20px;
+	display: block;
+	margin: 7px 0 0 0;
+	}
+	
 div#billing_info {
 	display: none;
+	}
+	
+div#content-container form fieldset dl dd input#user_photo {
+	padding-left: 0;
+	background: #fff;
+	border: none;
 	}
 	
 /*--MAIN > HELP--*/

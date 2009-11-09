@@ -10,7 +10,11 @@
 <%# YIELD %>
 <div id="content-container" class="main-help">
   
-    <%= flash[:notice] %>
+    <% if flash[:warning] or flash[:notice] %>
+  		<div id="notice" <% if flash[:warning] %>class="warning"<% end %>>
+    <%= flash[:warning] || flash[:notice] %>
+  		</div>
+	<% end %>
     
     <p class="intro">Here you'll find the answers to a few commonly asked questions that might help you better understand and use Weefolio. If you ever have anymore questions, you can always feel free to <a href="">contact us</a>!</p>
   

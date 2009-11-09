@@ -14,14 +14,9 @@ class PortfoliosController < ApplicationController
   
   # Send message action for the contact user form.
   def send_message
-    @user = User.find(params[:id])
-    @from = params[:from]
-    @from_name = params[:name]
-    @recip = @user.email
-    @message = params[:message]
-    UserMailer.send_later :deliver_user_message, @recip, @from, @from_name, @message
+    UserMailer.send_later :deliver_user_message, User.find(params[:id]).email, params[:from], params[:from_name], params[:message]
     redirect_to user_portfolio_path(@user, @user.portfolio)
-    flash[:notice] = "Message sent."
+    flash[:notice] = "Your <strong>message</strong> has been sent."
   end
   
   protected

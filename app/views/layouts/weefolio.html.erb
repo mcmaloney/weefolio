@@ -14,15 +14,14 @@
 	
 	<body class="">
 		<div id="page-container">
-			<div id="header-container">
-				<!--<img src="#" width="710" height="100" alt="header-image">-->
-				<% unless @design.header_image.size.blank? %>
+			<% unless @design.header_image.size.blank? %>
+				<div id="header-container">		
 				  <%= image_tag @design.header_image.url(:header_format) %>
-				<% end %>
-			</div>
+				</div>
+			<% end %>
 			
 			<div id="tagline-container">
-        <%= render_tag_line(@user)%>
+        		<%= render_tag_line(@user)%>
 			</div>
 			
 			<hr/>
@@ -30,6 +29,8 @@
 			<div id="portfolio-container">
 			  
 			  <%= yield %>
+			  
+			</div>
 			  
 			<div id="info-container">
 				<div id="about-container">
@@ -56,7 +57,7 @@
 						
 						<fieldset>
 							<label for="message">Message</label>
-							<%= text_area_tag :message %>
+							<textarea id="message" name="message" rows="7"></textarea>
 						</fieldset>
 						
 						<div id="contact-submit">
@@ -66,7 +67,7 @@
 				</div>
 			</div>
 			
-			<% if @user.account_tier == 1 %>
+			<% if @user.account_tier == 2 %>
 			  <div id="footer-container">
 				  <a id="weefolio-logo" href="#">Weefolio</a>
 			  </div>
