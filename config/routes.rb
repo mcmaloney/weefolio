@@ -28,6 +28,7 @@ ActionController::Routing::Routes.draw do |map|
     portfolios.resources :pieces
   end
   
+  # BLOG
   map.resources :posts
   
   # SEPARATE PIECE ROUTE FOR ADMIN ACTIONS

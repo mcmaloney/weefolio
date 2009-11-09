@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   layout 'template'
   
-  before_filter :authorize, :except => [:new, :edit, :update, :create, :activate, :switch_design_type, :reset_password]
+  before_filter :authorize, :only => [:users_admin]
   
   def new
     @page_title = "Weefolio - Pricing &amp; Sign Up"
