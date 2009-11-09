@@ -4,12 +4,12 @@ class PortfoliosController < ApplicationController
   
   # This is what the world sees. (My Weefolio)
   def show
-    @page_title = "Weefolio :: #{@user.login}"
+    @page_title = "Weefolio - #{@user.login}"
   end
   
   # This is where you go when you want to manage the content of your Weefolio. (Portfolio)
   def edit 
-    @page_title = "Weefolio :: Manage My Work"
+    @page_title = "Weefolio - Manage My Work"
   end
   
   # Send message action for the contact user form.

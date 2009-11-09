@@ -3,7 +3,7 @@ class DesignsController < ApplicationController
   before_filter :get_user_design
   
   def edit
-    @page_title = "Weefolio :: Layout Editor"
+    @page_title = "Weefolio - Layout Editor"
   end
 
   def update

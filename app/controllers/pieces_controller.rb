@@ -6,7 +6,7 @@ class PiecesController < ApplicationController
   before_filter :find_piece, :only => [:show, :edit, :update, :destroy]
   
   def new
-    @page_title = "Weefolio :: Add New Work"
+    @page_title = "Weefolio - Add New Work"
   end
   
   def create
@@ -21,7 +21,7 @@ class PiecesController < ApplicationController
   end
 
   def edit
-    @page_title = "Weefolio :: Edit '#{@piece.title}'"
+    @page_title = "Weefolio - Edit '#{@piece.title}'"
   end
   
   def update
@@ -44,7 +44,7 @@ class PiecesController < ApplicationController
 
   def show
     @user = current_user
-    @page_title = "#{@user.login} :: #{@piece.title}"
+    @page_title = "#{@user.login} - #{@piece.title}"
     @design = @user.design
   end
   
