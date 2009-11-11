@@ -119,7 +119,7 @@
 				
 				<tr class="watermark">
 					<td class="feature">
-						Watermark
+						Weefolio Badge
 					</td>
 					<td class="dark">
 						<span class="yes">Yes</span>
@@ -177,7 +177,7 @@
 	    	<dd>
 	      		<%= f.text_field :login %>
 	      		<p>This is how we and others in the Weefolio community will address you.</p>
-	      	</dt>
+	      	</dd>
 	      
 	      	<dt>
 	      		<label for="user_email">Email</label>
@@ -185,28 +185,25 @@
 	    	<dd>
 	      		<%= f.text_field :email %>
 	      		<p>This is where we'll send information regarding you account.</p>
-	      	</dt>
+	      	</dd>
 	      
 	      	<dt>
 	      		<%= f.label :password, "Password" %>
 	      	</dt>
 	    	<dd>
 	      		<%= f.password_field :password %>
-	      	</dt>
+	      	</dd>
 	      
 	      	<dt>
 	      		<%= f.label :password_confirmation, "Confirm Password" %>
 	      	</dt>
 	    	<dd>
 	      		<%= f.password_field :password_confirmation %>
-	      	</dt>
-	      	
-	      	<dt>
-	      	</dt>
+	      	</dd>
 	    </dl>    
     </fieldset>
     
-    <div class="submit">
+    <div class="submit" id="sign-up">
       <%= f.submit 'Sign Up' %>
     </div>
   <% end %>
