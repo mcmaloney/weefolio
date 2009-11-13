@@ -30,3 +30,4 @@
 [11/06/09 00:07:53 -0500 kevin-gomezs-macbook.local (23769)] INFO : Resolved collector0.newrelic.com to 65.74.177.207
 [11/06/09 00:07:54 -0500 kevin-gomezs-macbook.local (23769)] INFO : Connected to NewRelic Service at collector0.newrelic.com:80
 [11/06/09 00:07:55 -0500 kevin-gomezs-macbook.local (23769)] INFO : Reporting performance data every 60 seconds.
+[11/12/09 09:09:47 -0500 kevin-gomezs-macbook.local (23769)] WARN : Timed out trying to post data to RPM (timeout = 120 seconds)
