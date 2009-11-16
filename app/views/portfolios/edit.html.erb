@@ -28,7 +28,7 @@
   		<%= image_tag piece.image_1.url(:small_thumb) %>
   		
   		<div class="piece-info">	
-  			<h3><a href="#"><%=h piece.title %></a></h3>
+  			<h3><%= link_to piece.title, edit_portfolio_piece_path(@portfolio, piece)%></h3>
   			<p><%=h piece.description %></p>
   		</div>
   		

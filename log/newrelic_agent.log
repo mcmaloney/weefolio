@@ -31,3 +31,12 @@
 [11/06/09 00:07:54 -0500 kevin-gomezs-macbook.local (23769)] INFO : Connected to NewRelic Service at collector0.newrelic.com:80
 [11/06/09 00:07:55 -0500 kevin-gomezs-macbook.local (23769)] INFO : Reporting performance data every 60 seconds.
 [11/12/09 09:09:47 -0500 kevin-gomezs-macbook.local (23769)] WARN : Timed out trying to post data to RPM (timeout = 120 seconds)
+[11/13/09 16:10:44 -0500 kevin-gomezs-macbook.local (402)] INFO : Web container: mongrel
+[11/13/09 16:10:44 -0500 kevin-gomezs-macbook.local (402)] INFO : Transaction tracing threshold is 2.0 seconds.
+[11/13/09 16:10:44 -0500 kevin-gomezs-macbook.local (402)] INFO : New Relic RPM Agent 2.9.4 Initialized: pid = 402
+[11/13/09 16:10:44 -0500 kevin-gomezs-macbook.local (402)] INFO : Agent Log found in /Users/Kevin/Fancy Labs/Projects/Weefolio/DEV/weefolio/log/newrelic_agent.log
+[11/13/09 16:10:44 -0500 kevin-gomezs-macbook.local (402)] ERROR : Cannot add memory sampling: Unable to run shell command sampler: ps -o rsz
+[11/13/09 16:10:51 -0500 kevin-gomezs-macbook.local (402)] INFO : Resolved collector.newrelic.com to 65.74.177.195
+[11/13/09 16:11:05 -0500 kevin-gomezs-macbook.local (402)] INFO : Resolved collector0.newrelic.com to 65.74.177.207
+[11/13/09 16:11:11 -0500 kevin-gomezs-macbook.local (402)] INFO : Connected to NewRelic Service at collector0.newrelic.com:80
+[11/13/09 16:11:22 -0500 kevin-gomezs-macbook.local (402)] INFO : Reporting performance data every 60 seconds.

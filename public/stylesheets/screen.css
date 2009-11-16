@@ -768,30 +768,28 @@ div#content-container p.count {
 	}
 		
 div#content-container ul.pieces {
-	margin: 0;
+	margin: -20px 0 0 0;
 	padding: 0;
 	list-style: none;
-	}
-	
-div#content-container ul.pieces li:first-child {
-	border-top: none;
-	margin: 0 10px 15px 10px;
 	}
 	
 div#content-container ul.pieces li.piece {
 	overflow: hidden;
 	padding: 15px 10px;
-	border-top: 1px dashed #ddd;
+	border-bottom: 1px solid #ececea;
 	}
 	
 div#content-container ul.pieces li.piece img {
 	display: block;
 	float: left;
-	padding: 4px;
+	padding: 5px;
 	background: #f5f5f3;
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
-	border: 1px solid #ddd;
+	border-top: 1px solid #ececea;
+	border-right: 1px solid #ececea;
+	border-bottom: 2px solid #ececea;
+	border-left: 1px solid #ececea;
 	margin: 0 20px 0 0;
 	}
 
