@@ -27,7 +27,7 @@ class User < ActiveRecord::Base
   attr_accessible :login, :email, :name, :password, :password_confirmation, :first_name, :last_name, :about_me, :tag_line, :design_type, :layout_type, :account_tier, :photo
   
   # Paperclip settings
-  has_attached_file :photo
+  has_attached_file :photo, :styles => { :thumbnail => "70x70#" }
   
   # Is this user an admin?
   def admin?

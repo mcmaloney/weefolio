@@ -7,4 +7,10 @@ module ApplicationHelper
 	    content_tag(:h1, @user.tag_line)
 		end
 	end
+	
+	def image_preview_for(image)
+	  unless image.size.blank?
+	    image_tag image.url(:thumbnail)
+	  end
+	end
 end
