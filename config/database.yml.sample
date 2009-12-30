@@ -1,0 +1,18 @@
+local: &local
+  adapter: mysql
+  host: localhost
+  encoding: utf8
+  username: root
+  password: 
+
+development:
+  database: weefolio_development
+  <<: *local
+
+test:
+  database: weefolio_test
+  <<: *local
+
+production:
+  database: weefolio_production
+  <<: *local
