@@ -1,9 +1,9 @@
 module DesignsHelper
   def css_link(user)
     if user.design_type == 1
-      link_to 'Edit Custom CSS', :controller => 'users', :action => 'switch_design_type', :id => @user.id
+      %{<a href="/users/switch_design_type/#{@user.id}" id="custom_css_link">Edit Custom CSS</a>}
     else
-      link_to 'Edit Form CSS', :controller => 'users', :action => 'switch_design_type', :id => @user.id
+      %{<a href=/users/switch_design_type/#{@user.id}" id="form_css_link">Edit Form CSS</a>}
     end
   end
 end
