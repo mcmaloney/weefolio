@@ -13,13 +13,19 @@
 	</head>
 	
 	<body class="">
-		<% unless @design.header_image.size.blank? %>
+		<% if @design.header_image.size.blank? %>
 			<div id="header-wrap">
 				<div id="header-container">		
-					<%= image_tag @design.header_image.url(:header_format) %>
+					<img src="no-header.png" alt="No Header Image" />
 				</div>
 			</div>
-		<% end %>
+		<% else %>
+		  <div id="header-wrap">
+  			<div id="header-container">		
+  				<%= image_tag @design.header_image.url(:header_format) %>
+  			</div>
+  		</div>
+  	<% end %>
 		
 		<div id="tagline-wrap">
 			<div id="tagline-container">
@@ -37,9 +43,15 @@
 			<div id="info-container">
 				<div id="about-container">
 					<h2>About <!--<%=h @user.login %>--></h2>
-					<p>
-					  <%=h @user.about_me%>
-					</p>
+					<% if @user.about_me.blank? %>
+					  <p>
+  					  <%= @user.login %> hasn't added any information to their portfolio.
+  					</p>
+					<% else %>
+					  <p>
+  					  <%=h @user.about_me%>
+  					</p>
+				  <% end %>
 				</div>
 				
 				<div id="contact-container">

@@ -3,7 +3,7 @@
   <div class="image-container" id=<%=h piece.id %>>
     <%= image_tag piece.image_1.url(:full_size) %>
   </div>
-  
+
   <ul class="thumb-grid">
     <% for i in 0..4 %>
       <% unless images[i].size.blank? %>
@@ -20,4 +20,5 @@
   </div>
 </div>
 <% end %>
+
 

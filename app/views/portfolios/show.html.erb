@@ -1,12 +1,17 @@
-<% if @design.layout_type == 1 %>
-  <ul id="portfolio-grid">
-    <% for piece in @portfolio.pieces %>
-      <li><%= link_to image_tag(piece.image_1.url(:large_thumb)), portfolio_piece_path(@portfolio, piece), :title => piece.title %></li>
-	  <% end %>
-  </ul>
+<% if @portfolio.pieces.blank? %>
+  <%= current_user.login %> hasn't added any work to their portfolio.
 <% else %>
-    <%= render :partial => 'pieces/list' %>
-    <hr/>
+
+  <% if @design.layout_type == 1 %>
+    <ul id="portfolio-grid">
+      <% for piece in @portfolio.pieces %>
+        <li><%= link_to image_tag(piece.image_1.url(:large_thumb)), portfolio_piece_path(@portfolio, piece), :title => piece.title %></li>
+  	  <% end %>
+    </ul>
+  <% else %>
+      <%= render :partial => 'pieces/list' %>
+      <hr/>
+  <% end %>
 <% end %>
 
 
