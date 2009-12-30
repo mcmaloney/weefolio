@@ -1,4 +1,6 @@
 class UserMailer < ActionMailer::Base  
+  REGARDING = [["Report a Bug", "Bug Report"], ["Technical Help", "Technical Help"], ["General Inquiry", "General Inquiry"]]
+  
   # Message between users. (i.e. contact form on Weefolio page, etc.)
   def user_message(recip, from, from_name, message)
     recipients recip
@@ -9,10 +11,10 @@ class UserMailer < ActionMailer::Base
   end
   
   # Message for when someone contacts us from the contact page. Static recipient list.
-  def contact_message(from, subject, message)
+  def contact_message(from, sender_name, subject, message)
     recipients "maloney.mc@gmail.com" # Change to weefolio address in production mode- using this for test.
     from from
-    subject subject
-    body message
+    subject "Message From Weefolio Contact Form - #{subject}"
+    body :message => message, :sender_name => sender_name, :reply_email => from
   end
 end

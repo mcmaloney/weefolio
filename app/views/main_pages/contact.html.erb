@@ -26,12 +26,12 @@
 			<h2>Contact Us!</h2>
 			<dl>
 			  <%= show_sender_email %>
-			  
+			  <%= show_name_field %>
 				<dt>
 					<label for="subject">Subject</label>
 				</dt>
 				<dd>
-					<%= text_field_tag :subject %>
+					<%= select "subject", :subject, UserMailer::REGARDING.collect { |c| [c[0], c[1]] } %>
 				</dd>
 				
 				<dt>

@@ -29,13 +29,15 @@ class MainPagesController < ApplicationController
     if logged_in?
       @user = User.find(params[:id])
       @from = @user.email
+      @name = @user.login
     else
       @from = params[:sender_email]
+      @name = params[:sender_name]
     end
-    
-    @subject = params[:subject]
+
+    @subject = params[:subject][:subject]
     @message = params[:message]
-    UserMailer.send_later :deliver_contact_message, @from, @subject, @message
+    UserMailer.deliver_contact_message(@from, @name, @subject, @message)
     redirect_to contact_path
     flash[:notice] = "Thanks for your <strong>message</strong>. We'll get back to you as soon as possible."
   end

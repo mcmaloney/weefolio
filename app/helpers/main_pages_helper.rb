@@ -11,4 +11,17 @@ module MainPagesHelper
       }
 		end
 	end
+	
+	def show_name_field
+	  unless logged_in?
+	    %{
+	      <dt>
+	        <label for="sender_name">Your Name</label>
+	      </dt>
+	      <dd>
+	        #{text_field_tag :sender_name}
+	      </dd>
+	    }
+	  end
+	end
 end
