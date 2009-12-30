@@ -155,12 +155,18 @@ div#warning {
 div#header-container a#header-logo {
 	float: left;
 	display: block;
-	width: 66px;
-	height: 22px;
+	width: 93px;
+	height: 55px;
 	overflow: hidden;
 	text-indent: -1000px;
-	background: url(../images/header-logo.png) 0 0 no-repeat;
-	margin: 18px 0 0 0;
+	background-image: url(../images/header-logo.gif);
+	background-position: 0 0;
+	background-repeat: no-repeat;
+	margin: 0;
+	}
+	
+div#header-container a#header-logo:hover {
+	background-position: 0 -55px;
 	}
 	
 
@@ -180,7 +186,7 @@ ul#user-nav li {
 	}
 	
 ul#user-nav li#or {
-	background: url(../images/user-nav-background.gif) -383px 0;
+	background: url(../images/user-nav-background.gif) -344px 0;
 	height: 55px;
 	width: 13px;
 	overflow: hidden;
@@ -194,7 +200,7 @@ ul#user-nav li a {
 	height: 55px;
 	background-image: url(../images/user-nav-background.gif);
 	background-repeat: no-repeat;
-	margin: 0 0 0 20px;
+	margin: 0 0 0 25px;
 	text-indent: -5000px;
 	overflow: hidden;
 	}
@@ -205,45 +211,45 @@ ul#user-nav li.selected a {
 
 ul#user-nav li#portfolio a {
 	background-position-x: 0;
-	width: 71px;
+	width: 82px;
 	}
 	
 ul#user-nav li#design a {
-	background-position: -71px 0;
-	width: 55px;
+	background-position: -82px 0;
+	width: 54px;
 	}
 
 ul#user-nav li#account a {
-	background-position: -126px 0;
-	width: 68px;
+	background-position: -136px 0;
+	width: 70px;
 	}
 	
 ul#user-nav li#my-weefolio a:link,
 ul#user-nav li#my-weefolio a:visited {
-	background-position: -194px 0;
-	width: 120px;
+	background-position: -357px 0;
+	width: 128px;
 	}
 	
 ul#user-nav li#my-weefolio a:hover,
 ul#user-nav li#my-weefolio a:visited:hover {
-	background-position: -194px -55px;
+	background-position: -357px -55px;
 	}
 	
 ul#user-nav li#sign-up a {
-	background-position: -314px 0;
-	width: 69px;
+	background-position: -206px 0;
+	width: 66px;
 	}
 	
 ul#user-nav li#login a:link,
 ul#user-nav li#login a:visited {
-	background-position: -396px 0;
-	width: 70px;
+	background-position: -272px 0;
+	width: 71px;
 	margin: 0 0 0 10px;
 	}
 	
 ul#user-nav li#login a:hover,
 ul#user-nav li#login a:visited:hover {
-	background-position: -396px -55px;
+	background-position: -272px -55px;
 	}
 
 
@@ -258,6 +264,7 @@ div#page-header-container-inner h1 {
 	float: left;
 	line-height: 25px;
 	display: block;
+	text-shadow: 0 1px 2px #000;
 	}
 	
 div#page-header-container-inner h1 small {
@@ -285,6 +292,10 @@ div#content-container p.intro {
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
 	margin: 0 0 20px 0;	
+	border-top: 2px solid #ececea;
+	border-right: 1px solid #ececea;
+	border-bottom: 1px solid #ececea;
+	border-left: 1px solid #ececea;
 	}
 	
 div#content-container div.col-left {
@@ -307,14 +318,14 @@ div#content-container div.col-right ul.content-nav {
 	
 div#content-container div.col-right ul.content-nav h2 {
 	font-size: 11px;
-	margin: -3px 0 0 0;
+	margin: 0 0 0 0;
 	padding: 0 0 8px 0;
-	border-bottom: 1px dashed #ddd;
+	border-bottom: 1px solid #ececea;
 	}
 	
 div#content-container div.col-right ul.content-nav li a {
 	padding: 7px 0 8px 15px;
-	border-bottom: 1px dashed #ddd;
+	border-bottom: 1px solid #ececea;
 	display: block;
 	background: url(/images/content-nav-arrow.gif) left center no-repeat;
 	}
@@ -376,11 +387,11 @@ div#content-container form fieldset {
 	border: 0;
 	overflow: hidden;
 	margin: 0 0 20px 0;
-	border-bottom: 1px dashed #ddd;
+	border-bottom: 1px solid #ececea;
 	}
 	
 div#content-container form h2 {
-	margin: 0 0 20px 125px;
+	margin: 0 0 20px 110px;
 	padding: 4px 0 2px 40px;
 	color: #242420;
 	font-weight: normal;
@@ -391,15 +402,16 @@ div#content-container form h2 {
 	
 div#content-container form fieldset dl {
 	padding: 0;
-	margin: 0;
+	margin: 0 0 10px 0;
 	list-style: none;
+	overflow: hidden;
 	}
 
 	
 div#content-container form fieldset dl dt {
-	width: 145px;
+	width: 130px;
 	text-align: right;
-	padding: 9px 20px 0 0;
+	padding: 8px 20px 0 0;
 	margin: 0 0 15px 0;
 	float: left;
 	font-weight: bold;
@@ -409,7 +421,7 @@ div#content-container form fieldset dl dt {
 	}
 
 div#content-container form fieldset dl dd {
-	width: 500px;
+	width: 485px;
 	padding: 0;
 	float: left;
 	margin: 0 0 15px 0;
@@ -423,11 +435,16 @@ div#content-container form fieldset dl dd textarea {
 	border-top: 2px solid #ececea;
 	border-right: 1px solid #ececea;
 	border-bottom: 1px solid #ececea;
-	border-left: 1px solid #ececea;*/
+	border-left: 1px solid #ececea;
 	margin: 0 3px 0 0;
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
 	}
+	
+div#content-container form fieldset dl dd input:focus,
+div#content-container form fieldset dl dd textarea:focus {
+	outline: none;
+	} 
 	
 div#content-container form fieldset dl dd textarea.code {
 	font-family: Courier;
@@ -435,7 +452,7 @@ div#content-container form fieldset dl dd textarea.code {
 	}
 	
 div#content-container form fieldset dl dd select {
-	margin: 5px 0;
+	margin: 6px 0;
 	}
 	
 div#content-container form fieldset dl dd p {
@@ -453,26 +470,39 @@ div#content-container form fieldset dl dd ul li {
 	}
 	
 div#content-container form div.submit {
-	margin: 0 0 0 172px;
+	margin: 0 0 0 155px;
 	overflow: hidden;
 	}
 
 div#content-container form div.submit input {
-	background: #9fcf44;
-	padding: 6px 20px;
+	background: transparent;
+	height: 35px;
+	width: 100%;
 	border: 0;
 	color: #fff;
-	-moz-border-radius: 16px;
-	-webkit-border-radius: 20px;
-	text-transform: uppercase;
-	font-family: "Lucida Grande", Arial, sans-serif;
-	font-weight: bold;
-	font-size: 12px;
-	margin: 0;
+	text-indent: -500px;
+	cursor: pointer;
+	background-position: 0 0;
+	overflow: hidden;
 	}
 	
-div#content-container form div.submit input:hover {
-	background: #242420;
+div#content-container form div.submit:hover {
+	background-position: 0 -35px;
+	}
+	
+div#content-container form div#save {
+	width: 103px;
+	background-image: url(/images/global-save-button.gif);
+	}
+	
+div#content-container form div#sign-up {
+	width: 133px;
+	background-image: url(/images/sign-up-button.gif);
+	}
+
+div#content-container form div#login {
+	width: 111px;
+	background-image: url(/images/login-button.gif);
 	}
 
 
@@ -490,13 +520,14 @@ div#page-header-container-inner div.welcome-container h1 {
 	
 div#page-header-container-inner div.welcome-container p {
 	margin: 15px 0;
+	text-shadow: 0 1px 0px #000;
 	}
 	
 div#page-header-container-inner div.welcome-container div.sign-up-button a:link,
 div#page-header-container-inner div.welcome-container div.sign-up-button a:visited {
 	display: block;
-	height: 36px;
-	width: 144px;
+	height: 35px;
+	width: 149px;
 	background-image: url(/images/home-sign-up-button.gif);
 	background-position: 0 0;
 	background-repeat: no-repeat;
@@ -508,7 +539,7 @@ div#page-header-container-inner div.welcome-container div.sign-up-button a:visit
 	
 div#page-header-container-inner div.welcome-container div.sign-up-button a:hover,
 div#page-header-container-inner div.welcome-container div.sign-up-button a:visited:hover {
-	background-position: 0 -36px;
+	background-position: 0 -35px;
 	}
 	
 div#page-header-container-inner div.featured-weefolio {
@@ -526,6 +557,7 @@ div#content-container ul.features {
 	width: 725px;
 	display: block;
 	overflow: hidden;
+	list-style: none;
 	}
 	
 div#content-container ul.features li {
@@ -536,8 +568,14 @@ div#content-container ul.features li {
 	}
 	
 div#content-container ul.features li img {
-	border: 5px solid #eee;
-	padding: 3px;
+	padding: 7px;
+	background: #f5f5f3;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-bottom: 2px solid #ececea;
+	border-right: 1px solid #ececea;
+	border-top: 1px solid #ececea;
+	border-left: 1px solid #ececea;
 	}
 
 div#content-container ul.features div.description {
@@ -559,6 +597,26 @@ div#content-container ul.features li p a {
 	padding: 0 0 1px 15px;
 	}
 
+/*---DIRECTORY---*/
+
+div#page-header-container-inner form#directory-search {
+	margin: 2px 0 0 0;
+	float: right;
+	}
+
+div#page-header-container-inner form#directory-search input#search {
+	background: transparent url(/images/directory-search-input.gif) 0 0 no-repeat;
+	border: none;
+	height: 32px;
+	width: 196px;
+	padding: 8px 0 0 35px;
+	color: #fff;
+	font-size: 13px;
+	}
+	
+div#page-header-container-inner form#directory-search input#search:focus {
+	outline: none;
+	}
 
 /*---USERS > NEW (Pricing & Sign Up)---*/
 
@@ -634,6 +692,10 @@ div#content-container form div.layout-selection-container {
 	-webkit-border-radius: 3px;
 	margin: 0 0 20px 0;
 	overflow: hidden;
+	border-top: 2px solid #ececea;
+	border-right: 1px solid #ececea;
+	border-bottom: 1px solid #ececea;
+	border-left: 1px solid #ececea;
 	}
 	
 div#content-container form div.layout-selection-container ul {
@@ -661,10 +723,9 @@ div#content-container form fieldset#design-color dl dd input {
 	}
 		
 div#content-container form fieldset dl dd div.color-preview {
-	height: 15px;
+	height: 32px;
 	width: 300px;
 	margin: 0 0 0 17px;
-	padding: 6px;
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
 	float: left;
@@ -681,8 +742,8 @@ div#content-container form fieldset dl dd input#design_header_image {
 div#page-header-container-inner div#portfolio-add-work a:link,
 div#page-header-container-inner div#portfolio-add-work a:visited {
 	display: block;
-	height: 36px;
-	width: 132px;
+	height: 35px;
+	width: 149px;
 	background-image: url(/images/portfolio-add-work-button.gif);
 	background-position: 0 0;
 	background-repeat: no-repeat;
@@ -694,7 +755,7 @@ div#page-header-container-inner div#portfolio-add-work a:visited {
 	
 div#page-header-container-inner div#portfolio-add-work a:hover,
 div#page-header-container-inner div#portfolio-add-work a:visited:hover {
-	background-position: 0 -36px;
+	background-position: 0 -35px;
 	}
 
 div#content-container p.count {
@@ -707,30 +768,28 @@ div#content-container p.count {
 	}
 		
 div#content-container ul.pieces {
-	margin: 0;
+	margin: -20px 0 0 0;
 	padding: 0;
 	list-style: none;
-	}
-	
-div#content-container ul.pieces li:first-child {
-	border-top: none;
-	margin: 0 10px 15px 10px;
 	}
 	
 div#content-container ul.pieces li.piece {
 	overflow: hidden;
 	padding: 15px 10px;
-	border-top: 1px dashed #ddd;
+	border-bottom: 1px solid #ececea;
 	}
 	
 div#content-container ul.pieces li.piece img {
 	display: block;
 	float: left;
-	padding: 4px;
+	padding: 5px;
 	background: #f5f5f3;
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
-	border: 1px solid #ddd;
+	border-top: 1px solid #ececea;
+	border-right: 1px solid #ececea;
+	border-bottom: 2px solid #ececea;
+	border-left: 1px solid #ececea;
 	margin: 0 20px 0 0;
 	}
 
@@ -820,24 +879,25 @@ div.main-help div.col-left ul.topics li {
 		
 div.main-help div.col-left ul.topics li h2 {
 	font-size: 11px;
-	margin: 0 0 15px 15px;
+	margin: 0 0 15px 0;
+	padding: 0 0 8px 0;
+	border-bottom: 1px solid #ececea;
 	}
 	
 div.main-help div.col-left ul.topics li dl dt {
-	margin: 0 0 0 15px;
+	margin: 0 0 0 0px;
 	padding: 4px 0 4px 30px;
 	color: #242420;
 	font-weight: normal;
 	font-family: Georgia, "Times New Roman", serif;
 	font-size: 18px;
-	background: url(../images/help-questions-icon.gif) left center no-repeat;	
+	background: url(../images/help-questions-icon.gif) 0 4px no-repeat;	
 	line-height: 20px;
 	}
 	
 div.main-help div.col-left ul.topics li dl dd {
 	margin: 0 0 15px 0;
-	padding: 5px 15px 20px 45px;
-	border-bottom: 1px dashed #ddd;
+	padding: 5px 15px 0 30px;
 	}
 	
 	

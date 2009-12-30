@@ -13,28 +13,30 @@
 	</head>
 	
 	<body class="">
-		<div id="page-container">
-			<% unless @design.header_image.size.blank? %>
+		<% unless @design.header_image.size.blank? %>
+			<div id="header-wrap">
 				<div id="header-container">		
-				  <%= image_tag @design.header_image.url(:header_format) %>
+					<%= image_tag @design.header_image.url(:header_format) %>
 				</div>
-			<% end %>
-			
+			</div>
+		<% end %>
+		
+		<div id="tagline-wrap">
 			<div id="tagline-container">
-        		<%= render_tag_line(@user)%>
+    			<%= render_tag_line(@user)%>
 			</div>
-			
-			<hr/>
-			
+		</div>
+		
+		<div id="portfolio-wrap">
 			<div id="portfolio-container">
-			  
-			  <%= yield %>
-			  
+				<%= yield %>
 			</div>
-			  
+		</div>
+		  
+		<div id="info-wrap">  
 			<div id="info-container">
 				<div id="about-container">
-					<h2>About <%=h @user.login %></h2>
+					<h2>About <!--<%=h @user.login %>--></h2>
 					<p>
 					  <%=h @user.about_me%>
 					</p>
@@ -42,7 +44,7 @@
 				
 				<div id="contact-container">
 				  <%= flash[:notice] %>
-					<h2>Contact <%=h @user.login %></h2>
+					<h2>Contact <!--<%=h @user.login %>--></h2>
 					
 					<%= form_tag :controller => 'portfolios', :action => 'send_message', :id => @user, :html => { :method => :post } %>
 					  <fieldset>
@@ -66,12 +68,10 @@
 					</form>
 				</div>
 			</div>
-			
-			<% if @user.account_tier == 2 %>
-			  <div id="footer-container">
-				  <a id="weefolio-logo" href="#">Weefolio</a>
-			  </div>
-			<% end %>
 		</div>
+		
+		<% if @user.account_tier == 1 %>
+			<a id="weefolio-badge" href="#">Weefolio</a>
+		<% end %>
 	</body>
 </html>

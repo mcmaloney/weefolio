@@ -1,14 +1,14 @@
 <style type="text/css">
   body {
-  	margin: 20px;
+  	margin: 0;
   	background-color: <%=h @design.background_color %>; /*---Background: Color---*/
   	background-position: <%=h @design.background_align %>; /*---Background: Alignment---*/
   	background-image: none; /*---Background: Image---*/
   	/*background-repeat: <%=h @design.background_tile %>; /*---Background: Tile---*/
-  	font-family: <%=h @design.text_font_1 %>; /*---Text: Font---*/
-  	font-size: <%=h @design.render_font_size(@design.text_size) %>; /*---Text: Size---*/
+  	font-family: "Lucida Grande";/*--<%=h @design.text_font_1 %> ---Text: Font---*/
+  	font-size: 11px;
+  	line-height: 15px;
   	color: <%=h @design.text_color %>; /*---Text: Color---*/
-  	line-height: 150%;
   }
   
   a:link,
@@ -23,17 +23,21 @@
   
   h1 {
   	/*font-size: <%=h @design.tagline_size %>; ---Tagline: Size---*/
-  	/*color: <%=h @design.tagline_color %>; ---Tagline: Color---*/
-  	font-family: <%=h @design.text_font_1 %>; /*---Tagline: Font---*/
-  	/*font-weight: <%=h @design.render_bold(@design.tagline_bold) %>; ---Tagline: Bold---*/
+  	font-size: 18px;
+  	color: <%=h @design.title_color %>;
+  	font-family: "Lucida Grande";/*--<%=h @design.text_font_1 %> ---Text: Font---*/
+  	font-weight: normal;
   	/*font-style: <%=h @design.render_italic(@design.tagline_italic) %>; ---Tagline: Italic---*/
   }
   
   h2, h3, h4, h5, h6 {
   	color: <%=h @design.title_color %>; /*---Titles: Color---*/
-  	font-family: <%=h @design.text_font_1 %> ; /*---Titles: Font---*/
-  	/*font-weight: <%=h @design.render_bold(@design.title_bold) %>; /*---Titles: Bold---*/
+  	font-family: "Lucida Grande";/*--<%=h @design.text_font_1 %> ---Text: Font---*/
+  	font-weight: bold;
   	/*font-style: <%=h @design.render_italic(@design.title_italic) %>; /*---Titles: Italic---*/
+  	font-size: 12px;
+  	margin: 0 0 10px 0;
+  	
   }
   
   hr {
@@ -58,6 +62,5 @@
   	background: <%=h @design.page_bg_color %>; /*---Page: Background Color---*/
   	overflow: hidden;
   	padding: 20px;
-  	-webkit-border-radius: 10px;
   }
 </style>

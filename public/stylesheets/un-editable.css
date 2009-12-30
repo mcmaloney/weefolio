@@ -87,18 +87,22 @@ div#footer-container {
 	overflow: hidden;
 	}
 	
-div#footer-container a:link,
-div#footer-container a:visited {
-	width: 63px;
-	height: 27px;
+a#weefolio-badge:link,
+a#weefolio-badge:visited {
+	width: 86px;
+	height: 35px;
 	display: block;
-	background: url(../images/wee-mark.png) 0 0 no-repeat;
+	background-image: url(../images/wee-mark.png);
+	background-position: 0 0;
+	background-repeat: no-repeat;
 	overflow: hidden;
 	text-indent: -500px;
-	opacity: .4;
+	position: absolute;
+	bottom: 15px;
+	right: 15px;
 	}
 	
-div#footer-container a:hover,
-div#footer-container a:visited:hover {
-	opacity: 1;
+a#weefolio-badge:hover,
+a#weefolio-badge:visited:hover {
+	background-position: 0 -35px;
 	}
