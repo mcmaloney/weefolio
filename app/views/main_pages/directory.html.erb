@@ -20,6 +20,11 @@
   		</div>
 	<% end %>
   
+  <% for user in @users %>
+    <% unless user.photo.size.blank? %>
+      <%= link_to (image_tag user.photo.url(:large_thumb)), user_portfolio_path(user, user.portfolio) %>
+    <% end %>
+  <% end %>
 </div>
 
 

@@ -6,6 +6,7 @@ class MainPagesController < ApplicationController
   
   def directory
     @page_title = "Weefolio - Directory"
+    @users = User.all
   end
   
   def help
