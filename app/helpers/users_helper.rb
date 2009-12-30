@@ -89,5 +89,14 @@ module UsersHelper
       link_to_login_with_IP content_text, options
     end
   end
+  
+  # Display a default tagline if the user hasn't entered one yet.
+  def show_tagline(user, f)
+    if user.tag_line.blank?
+      f.text_field :tag_line, :value => "Hello! My name is #{@user.login} and this is my Weefolio!"
+    else
+      f.text_field :tag_line
+    end
+  end
 
 end

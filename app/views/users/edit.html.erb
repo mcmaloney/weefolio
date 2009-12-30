@@ -73,7 +73,7 @@
 			     	<%= f.label :tag_line, 'Tagline' %>
 			    </dt>
       			<dd>
-			      <%= f.text_field :tag_line %>
+      			<%= show_tagline(@user, f) %>
 			      <p>This is whatever you want it to be. It can be a welcome message, a catch phrase, or just something you always say. If you don't want your tagline to appear in your portfolio simply leave the field blank.</p>
 			    </dd>
 			    
