@@ -57,7 +57,6 @@ ActiveRecord::Schema.define(:version => 20091029045433) do
     t.string   "header_image_content_type"
     t.integer  "header_image_file_size"
     t.datetime "header_image_updated_at"
-    t.integer  "layout_type",               :default => 1
   end
 
   create_table "pieces", :force => true do |t|
