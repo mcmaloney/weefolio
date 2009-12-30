@@ -1,7 +1,5 @@
-log/cucumber.log
-log/development.log
-log/newrelic_agent.log
-db/development.sqlite3
-db/development.test.sqlite3
-config/database.yml
-
+.DS_Store
+database.yml
+log/*
+tmp/*
+public/system/*
