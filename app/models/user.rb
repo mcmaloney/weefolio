@@ -29,6 +29,15 @@ class User < ActiveRecord::Base
   # Paperclip settings
   has_attached_file :photo, :styles => { :thumbnail => "70x70#", :large_thumb => "116x116#" }
   
+  # Simple search for the directory page
+  def self.search(search)
+    if search
+      find(:all, :conditions => ['login LIKE ?', "%#{search}%"])
+    else
+      find(:all)
+    end
+  end
+  
   # Is this user an admin?
   def admin?
     self.admin_user

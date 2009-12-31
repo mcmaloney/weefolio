@@ -4,9 +4,9 @@
 	<div id="page-header-container-inner">
 		<h1>Directory <small>Explore other artist's weefolios or <a href="#">create your own</a>!</small></h1>
 		
-		<form id="directory-search">
-			<input type="text" id="search"/>
-		</form>
+		<% form_tag users_path, :method => 'get', :id => "directory-search" do %>
+		  <%= text_field_tag :search, params[:search], :html_options => {:id => "search"} %>
+		<% end %>
 	</div>
 </div>
 

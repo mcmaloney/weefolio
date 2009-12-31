@@ -3,6 +3,10 @@ class UsersController < ApplicationController
   
   before_filter :authorize, :only => [:users_admin]
   
+  def index
+    @users = User.search(params[:search])
+  end
+  
   def new
     @page_title = "Weefolio - Pricing &amp; Sign Up"
     @user = User.new

@@ -4,11 +4,6 @@ class MainPagesController < ApplicationController
     @page_title = "Weefolio - Lil' portfolios for the rest of us!"
   end
   
-  def directory
-    @page_title = "Weefolio - Directory"
-    @users = User.all
-  end
-  
   def help
     @page_title = "Weedolio - Help"
   end

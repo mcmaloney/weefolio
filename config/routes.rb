@@ -7,7 +7,7 @@ ActionController::Routing::Routes.draw do |map|
   
   # GLOBAL NAV ROUTES
   map.contact '/contact_us', :controller => 'main_pages', :action => 'contact'
-  map.directory '/directory', :controller => 'main_pages', :action => 'directory'
+  map.directory '/directory', :controller => 'users', :action => 'index'
   map.help '/help', :controller => 'main_pages', :action => 'help'
   map.privacy_policy '/privacy_policy', :controller => 'main_pages', :action => 'privacy_policy'
   map.terms_of_use '/terms_of_use', :controller => 'main_pages', :action => 'terms_of_use'
