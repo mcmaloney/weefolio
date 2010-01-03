@@ -2,7 +2,13 @@ class Portfolio < ActiveRecord::Base
   belongs_to :user
   has_many :pieces
   
+  has_permalink :login
+  
   attr_protected :user_id
+  
+  def to_param
+    permalink
+  end
      
   # Virtual attribute for account tier.
   def account_tier

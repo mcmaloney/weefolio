@@ -48,6 +48,14 @@ class PiecesController < ApplicationController
     @design = @user.design
   end
   
+  def sort
+    params[:pieces].each_with_index do |id, index|
+      Piece.update_all(['position=?', index+1], ['id=?', id])
+    end
+    render :nothing => true
+  end
+  
+  
   def pieces_admin
     @pieces = Piece.find(:all)
   end
