@@ -64,7 +64,7 @@ class UsersController < ApplicationController
       redirect_to root_path
       flash[:notice] = "Welcome to Weefolio, #{@user.login}!"
     else
-      flash[:error]  = "We couldn't set up that account, sorry.  Please try again, or contact an admin (link is above)."
+      flash[:error]  = "We couldn't set up that account, sorry.  Please try again, or #{link_to 'contact us', contact_path}."
       render :action => 'new'
     end
   end
