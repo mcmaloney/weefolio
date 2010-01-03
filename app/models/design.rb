@@ -3,7 +3,7 @@ class Design < ActiveRecord::Base
   
   attr_protected :user_id
   
-  has_attached_file :header_image, :styles => { :header_format => "710x110#", :thumbnail => "70x70#" }
+  has_attached_file :header_image, :styles => { :header_format => "710x710>", :thumbnail => "70x70#" }
   
   # Virtual attribute from user.design_type
   def design_type
