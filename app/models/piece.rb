@@ -1,4 +1,6 @@
 class Piece < ActiveRecord::Base
+  acts_as_list
+  
   belongs_to :user
   belongs_to :portfolio
   
@@ -7,11 +9,13 @@ class Piece < ActiveRecord::Base
   
   attr_accessible :title, :description, :image_1, :image_2, :image_3, :image_4, :image_5, :price, :for_sale
   
-  has_attached_file :image_1, :styles => { :small_thumb => "70x70#", :large_thumb => "116x116#", :full_size => "710x300#" }
-  has_attached_file :image_2, :styles => { :small_thumb => "70x70#", :large_thumb => "116x116#", :full_size => "710x300#" }
-  has_attached_file :image_3, :styles => { :small_thumb => "70x70#", :large_thumb => "116x116#", :full_size => "710x300#" }
-  has_attached_file :image_4, :styles => { :small_thumb => "70x70#", :large_thumb => "116x116#", :full_size => "710x300#" }
-  has_attached_file :image_5, :styles => { :small_thumb => "70x70#", :large_thumb => "116x116#", :full_size => "710x300#" }
+  default_scope :order => :position
+  
+  has_attached_file :image_1, :styles => { :small_thumb => "70x70#", :large_thumb => "116x116#", :full_size => "710x710>" }
+  has_attached_file :image_2, :styles => { :small_thumb => "70x70#", :large_thumb => "116x116#", :full_size => "710x710>" }
+  has_attached_file :image_3, :styles => { :small_thumb => "70x70#", :large_thumb => "116x116#", :full_size => "710x710>" }
+  has_attached_file :image_4, :styles => { :small_thumb => "70x70#", :large_thumb => "116x116#", :full_size => "710x710>" }
+  has_attached_file :image_5, :styles => { :small_thumb => "70x70#", :large_thumb => "116x116#", :full_size => "710x710>" }
   
   def display_price
     "$" + self.price.to_s unless !self.for_sale

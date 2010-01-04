@@ -22,9 +22,9 @@
  
   <p class="intro">You're using <strong><%=h @portfolio.pieces.count %></strong> of your <strong><%=h @portfolio.max_pieces %></strong> pieces.</p>
   
-  <ul class="pieces">
+  <ul class="pieces" id="pieces">
   	<% @portfolio.pieces.each do |piece| %>
-  	<li class="piece">
+  	<% content_tag_for :li, piece do %>
   		<%= image_tag piece.image_1.url(:small_thumb) %>
   		
   		<div class="piece-info">	
@@ -40,7 +40,9 @@
   				<%= link_to 'Delete', portfolio_piece_path(@portfolio, piece), :confirm => "Are you sure?", :method => :delete %>
   			</li>
   		</ul>
-  	</li>
+  	<% end %>
   	<% end %>
   </ul>
 </div>
+
+<%= sortable_element('pieces', :url => sort_pieces_path, :handle => 'piece') %>

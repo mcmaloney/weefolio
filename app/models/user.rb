@@ -79,6 +79,7 @@ class User < ActiveRecord::Base
   def setup_portfolio_and_design
     my_portfolio = Portfolio.new
     self.portfolio = my_portfolio
+    self.portfolio.login = self.login
     self.portfolio.save
     
     my_design_editor = Design.new
