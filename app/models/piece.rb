@@ -24,4 +24,14 @@ class Piece < ActiveRecord::Base
   def images
     images = [self.image_1, self.image_2, self.image_3, self.image_4, self.image_5]
   end
+  
+  def number_of_images
+  	n = 0
+  	self.images.each do |image|
+  		if !image.size.blank?
+  			n += 1
+  		end
+  	end
+  	n
+  end
 end

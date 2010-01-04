@@ -4,7 +4,9 @@
   </div>
 
   <ul class="thumb-grid">
-    <li><a id=<%= @piece.image_1.url(:full_size) %> onclick="switch_large_image(this, <%=h @piece.id %>)"><%= image_tag @piece.image_1.url(:small_thumb) %></a></li>
+  	<% if @piece.number_of_images > 1 %>
+    	<li><a id=<%= @piece.image_1.url(:full_size) %> onclick="switch_large_image(this, <%=h @piece.id %>)"><%= image_tag @piece.image_1.url(:small_thumb) %></a></li>
+    <% end %>
   <% unless @user.account_tier == 1 %>
 	  <li><a id=<%= @piece.image_2.url(:full_size) %> onclick="switch_large_image(this, <%=h @piece.id %>)"><%= image_tag @piece.image_2.url(:small_thumb) %></a></li>
 	  <li><a id=<%= @piece.image_3.url(:full_size) %> onclick="switch_large_image(this, <%=h @piece.id %>)"><%= image_tag @piece.image_3.url(:small_thumb) %></a></li>
