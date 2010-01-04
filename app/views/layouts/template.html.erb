@@ -30,15 +30,15 @@
 				<% if logged_in? %>
 				  <!--USER NAV (LOGGED IN) -->
   				<ul id="user-nav">
-  					<li id="portfolio"><%= link_to 'Portfolio', edit_user_portfolio_path(current_user, current_user.portfolio) %></li>
-  					<li id="design"><%= link_to 'Design', edit_user_design_path(current_user, current_user.design) %></li>
-  					<li id="account"><%= link_to 'Account', edit_user_path(current_user) %></li>
+  					<li id="portfolio" class="<%= is_active?("edit", "portfolios") %>"><%= link_to 'Portfolio', edit_user_portfolio_path(current_user, current_user.portfolio) %></li>
+  					<li id="design" class="<%= is_active?("edit", "designs")%>"><%= link_to 'Design', edit_user_design_path(current_user, current_user.design) %></li>
+  					<li id="account" class="<%= is_active?("edit", "users")%>"><%= link_to 'Account', edit_user_path(current_user) %></li>
   					<li id="my-weefolio"><%= link_to 'My Weefolio', user_portfolio_path(current_user, current_user.portfolio) %></li>
   				</ul>
   			<% else %>
 				  <!--USER NAV (LOGGED OUT)-->
 				  <ul id="user-nav">
-					  <li id="sign-up"><%= link_to 'Sign Up!', signup_path %></li>
+					  <li id="sign-up" class="<%= is_active?("new", "users")%>"<%= link_to 'Sign Up!', signup_path %></li>
 					  <li id="or">or</li>
 					  <li id="login"><%= link_to 'Login', login_path %></li>
 				  </ul>

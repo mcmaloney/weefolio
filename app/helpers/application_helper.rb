@@ -13,4 +13,8 @@ module ApplicationHelper
 	    image_tag image.url(:thumbnail)
 	  end
 	end
+	
+	def is_active?(action, controller)
+		"selected" if params[:action] == action && params[:controller] == controller
+	end
 end
