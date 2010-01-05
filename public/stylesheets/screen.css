@@ -215,12 +215,12 @@ ul#user-nav li#portfolio a {
 	}
 	
 ul#user-nav li#design a {
-	background-position: -82px 0;
+	background-position-x: -82px;
 	width: 54px;
 	}
 
 ul#user-nav li#account a {
-	background-position: -136px 0;
+	background-position-x: -136px;
 	width: 70px;
 	}
 	
@@ -236,7 +236,7 @@ ul#user-nav li#my-weefolio a:visited:hover {
 	}
 	
 ul#user-nav li#sign-up a {
-	background-position: -206px 0;
+	background-position-x: -206px;
 	width: 66px;
 	}
 	
