@@ -726,6 +726,44 @@ div#page-header-container-inner div.pricing table.chart tr td span.yes {
 
 /*---DESIGNS > EDIT ---*/
 
+div#page-header-container-inner div.call-to-action a#form_css_link:link,
+div#page-header-container-inner div.call-to-action a#form_css_link:visited {
+	display: block;
+	height: 35px;
+	width: 166px;
+	background-image: url(/images/design-editor-button.gif);
+	background-position: 0 0;
+	background-repeat: no-repeat;
+	overflow: hidden;
+	text-indent: -5000px;
+	position: relative;
+	right: -5px;
+	}
+	
+div#page-header-container-inner div.call-to-action a#form_css_link:hover,
+div#page-header-container-inner div.call-to-action a#form_css_link:visited:hover {
+	background-position: 0 -35px;
+	}
+	
+div#page-header-container-inner div.call-to-action a#custom_css_link:link,
+div#page-header-container-inner div.call-to-action a#custom_css_link:visited {
+	display: block;
+	height: 35px;
+	width: 149px;
+	background-image: url(/images/css-editor-button.gif);
+	background-position: 0 0;
+	background-repeat: no-repeat;
+	overflow: hidden;
+	text-indent: -5000px;
+	position: relative;
+	right: -5px;
+	}
+	
+div#page-header-container-inner div.call-to-action a#custom_css_link:hover,
+div#page-header-container-inner div.call-to-action a#custom_css_link:visited:hover {
+	background-position: 0 -35px;
+	}
+
 div#content-container form div.layout-selection-container {
 	padding: 20px;
 	background: #f5f5f3;
