@@ -20,11 +20,31 @@
   		</div>
 	<% end %>
   
+  <ul id="user-list">
   <% for user in @users %>
     <% unless user.photo.size.blank? %>
-    	<a href="<%= user_portfolio_path(user, user.portfolio) %>"<%= image_tag user.photo.url(:large_thumb) %><span class="username"><%= user.login %></span></a>
+    	<li>
+    		<a href="<%= user_portfolio_path(user, user.portfolio) %>"<%= image_tag user.photo.url(:large_thumb) %><span class="username"><%= user.login %></span></a>
+    	</li>
     <% end %>
   <% end %>
+  
+  <li>
+    		<a href="/users/4/portfolios/kevinjohngomez"<img alt="N171500057_2108" src="/system/photos/4/large_thumb/n171500057_2108.jpg?1262659900" /><span class="username">kevinjohngomez</span></a>
+    	</li>
+    	<li>
+    		<a href="/users/4/portfolios/kevinjohngomez"<img alt="N171500057_2108" src="/system/photos/4/large_thumb/n171500057_2108.jpg?1262659900" /><span class="username">kevinjohngomez</span></a>
+    	</li>
+    	<li>
+    		<a href="/users/4/portfolios/kevinjohngomez"<img alt="N171500057_2108" src="/system/photos/4/large_thumb/n171500057_2108.jpg?1262659900" /><span class="username">kevinjohngomez</span></a>
+    	</li>
+    	<li>
+    		<a href="/users/4/portfolios/kevinjohngomez"<img alt="N171500057_2108" src="/system/photos/4/large_thumb/n171500057_2108.jpg?1262659900" /><span class="username">kevinjohngomez</span></a>
+    	</li>
+    	<li>
+    		<a href="/users/4/portfolios/kevinjohngomez"<img alt="N171500057_2108" src="/system/photos/4/large_thumb/n171500057_2108.jpg?1262659900" /><span class="username">kevinjohngomez</span></a>
+    	</li>
+  </ul>
 </div>
 
 

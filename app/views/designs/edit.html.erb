@@ -50,9 +50,8 @@
     				<label for="design_header_image">Header Image</label>
     			</dt>
     			<dd>
-    				<%= f.file_field :header_image %>
+    				<%= image_preview_for(@user.design.header_image) %> <%= f.file_field :header_image %>
     			</dd>
-    			<%= image_preview_for(@user.design.header_image) %>
     		</dl>
       	</fieldset>
       	
