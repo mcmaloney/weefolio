@@ -118,7 +118,7 @@ class User < ActiveRecord::Base
   end
 
   def login=(value)
-    write_attribute :login, (value ? value.downcase : nil)
+    write_attribute :login, (value ? value : nil)
   end
 
   def email=(value)
