@@ -16,7 +16,9 @@
 		<% if @design.header_image.size.blank? %>
 			<div id="header-wrap">
 				<div id="header-container">		
-					<img src="no-header.png" alt="No Header Image" />
+					<div id="no-header">
+						<p><strong><%= @user.login %></strong> hasn't added a header image yet.</p>
+					</div>
 				</div>
 			</div>
 		<% else %>
@@ -45,7 +47,7 @@
 					<h2>About <!--<%=h @user.login %>--></h2>
 					<% if @user.about_me.blank? %>
 					  <p>
-  					  <%= @user.login %> hasn't added any information to their portfolio.
+  					  <strong><%= @user.login %></strong> hasn't added any information yet.
   					</p>
 					<% else %>
 					  <p>

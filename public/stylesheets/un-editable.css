@@ -1,3 +1,30 @@
+/*---DEFAULTS---*/
+
+div#no-header {
+	height: 100px;
+	width: 710px;
+	background: url(../images/no-header.png) 0 0 no-repeat;
+	text-align: center;
+	overflow: hidden;
+	}
+	
+div#no-portfolio {
+	height: 178px;
+	width: 710px;
+	background: url(../images/no-portfolio.png) 0 0 no-repeat;
+	margin: 0 0 15px 0;
+	text-align: center;
+	overflow: hidden;
+	}
+	
+div#no-header p {
+	margin: 40px auto;
+	}
+	
+div#no-portfolio p {
+	margin: 80px auto;
+	}
+
 /*---PORTFOLIO GRID---*/
 
 div#portfolio-container ul#portfolio-grid {
@@ -30,6 +57,7 @@ div#portfolio-container div.piece-container ul.thumb-grid {
 div#portfolio-container div.piece-container ul.thumb-grid li {
 	float: left;
 	margin: 0 10px 0 0;
+	list-style: none
 	}
 
 div#portfolio-container div.piece-container div.piece-info span.for-sale {
