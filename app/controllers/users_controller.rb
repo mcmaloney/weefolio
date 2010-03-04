@@ -16,31 +16,22 @@ class UsersController < ApplicationController
     @page_title = "Weefolio - My Account"
     @user = current_user
     @plan = current_user.plan
-    @us_states = US_STATES.collect{|s| [s[1], s[1]]}
-  end
-  
-  def reset_password
-    @page_title = "Weefolio - Change my Password"
-    
-    if request.post?
-      user = User.find_by_email(params[:user][:email])
-      if user && user.login == params[:user][:login]
-        if user.update_attributes(:password => params[:user][:new_password], :password_confirmation => params[:user][:new_password_confirm])
-          redirect_to login_path
-          flash[:notice] = "Password changed. You can now login with your new password."
-        else
-          redirect_to forgot_password_path
-          flash[:notice] = "Something went wrong. Please try again."
-        end
-      else
-        flash[:notice] = "Bad login/email. Please try again."
-      end
-    end
+    @us_states = US_STATES.collect{|s| [s[0], s[1]]}
   end
   
   def update
-    redirect_to edit_user_path(current_user)
-    flash[:notice] = "Account settings saved."
+    if params[:plan][:plan_option] == "BASIC"
+      redirect_to edit_user_path(current_user)
+      flash[:notice] = "Account settings saved."
+    else
+      if current_user.plan.update_attributes(params[:plan])
+        redirect_to edit_user_path(current_user)
+        flash[:notice] = "Plan saved"
+      else
+        redirect_to edit_user_path(current_user)
+        flash[:notice] = "Something's gone wrong! Try again, please."
+      end
+    end
   end
  
   def create
@@ -75,6 +66,25 @@ class UsersController < ApplicationController
     else 
       flash[:error]  = "We couldn't find a user with that activation code -- check your email? Or maybe you've already activated -- try signing in."
       redirect_back_or_default('/')
+    end
+  end
+  
+  def reset_password
+    @page_title = "Weefolio - Change my Password"
+    
+    if request.post?
+      user = User.find_by_email(params[:user][:email])
+      if user && user.login == params[:user][:login]
+        if user.update_attributes(:password => params[:user][:new_password], :password_confirmation => params[:user][:new_password_confirm])
+          redirect_to login_path
+          flash[:notice] = "Password changed. You can now login with your new password."
+        else
+          redirect_to forgot_password_path
+          flash[:notice] = "Something went wrong. Please try again."
+        end
+      else
+        flash[:notice] = "Bad login/email. Please try again."
+      end
     end
   end
   

@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100304191904) do
+ActiveRecord::Schema.define(:version => 20100304201211) do
 
   create_table "delayed_jobs", :force => true do |t|
     t.integer  "priority",   :default => 0
@@ -108,6 +108,10 @@ ActiveRecord::Schema.define(:version => 20100304191904) do
     t.string   "billing_city"
     t.string   "billing_state"
     t.string   "billing_postal_code"
+    t.string   "card_last_four"
+    t.string   "gateway_response"
+    t.string   "payment_status"
+    t.integer  "amount_in_cents"
   end
 
   create_table "portfolios", :force => true do |t|

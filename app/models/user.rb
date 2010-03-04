@@ -71,6 +71,16 @@ class User < ActiveRecord::Base
     end
   end
   
+  def plan_option
+    if self.plan.level == 1
+      "Basic"
+    elsif self.plan.level == 2
+      "Plus ($2.99/Month)"
+    elsif self.plan.level == 3
+      "Pro ($4.99/Month)"
+    end
+  end
+  
   # Change design type.
   def set_design_type(number)
     self.design_type -= self.design_type
