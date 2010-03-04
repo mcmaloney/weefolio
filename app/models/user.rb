@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   
   has_one                   :portfolio
   has_one                   :design
+  has_one                   :plan
   has_many                  :pieces, :through => :portfolio
   validates_presence_of     :login
   validates_length_of       :login,    :within => 3..40

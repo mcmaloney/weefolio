@@ -23,6 +23,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :users, :member => { :remove_account => :post } do |users|
     users.resources :portfolios, :member => { :send_message => :post }
     users.resources :designs
+    users.resources :plans
   end
   
   # PORTFOLIOS
