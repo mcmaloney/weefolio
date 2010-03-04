@@ -1,4 +1,8 @@
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
 	<head>
 		<title><%= @page_title %></title>
 		<%= stylesheet_link_tag 'screen' %>
@@ -7,8 +11,8 @@
 		<%= yield :head %>
 	</head>
 	
-	<body>
-		<div id="page-container">
+	<body class="<%= controller_name -%> <%= action_name -%>">
+		<div class="page-container">
 			
 			<!--GLOBAL NAVIGATION-->
 			
@@ -24,7 +28,7 @@
 			</ul>
 			
 			<!--HEADER-->
-			<div id="header-container">
+			<div class="header-container">
 				<%= link_to 'Home', root_path, :id => "header-logo" %>
 				
 				<% if logged_in? %>
@@ -48,7 +52,7 @@
 			<%= yield %>
 			
 			<!--FOOTER-->
-			<div id="footer-container">
+			<div class="footer-container">
 				<a id="footer-logo" href="#">Fancy Labs</a>
 				
 				<div id="legal">

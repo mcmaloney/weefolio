@@ -1,7 +1,7 @@
 <!--PAGE TITLE/CALL-TO-ACTION-->
 <%# YIELD %>
-<div id="page-header-container-outer">
-	<div id="page-header-container-inner">
+<div class="page-header-container-outer">
+	<div class="page-header-container-inner">
 		<h1>Directory <small>Explore other artist's weefolios or <a href="#">create your own</a>!</small></h1>
 		
 		<% form_tag users_path, :method => 'get', :id => "directory-search" do %>
@@ -12,23 +12,27 @@
 
 <!--PAGE CONTENT-->
 <%# YIELD %>
-<div id="content-container">
-  
-    <% if flash[:warning] or flash[:notice] %>
-  		<div id="notice" <% if flash[:warning] %>class="warning"<% end %>>
-    <%= flash[:warning] || flash[:notice] %>
-  		</div>
-	<% end %>
-  
-  <ul id="user-list">
-  <% for user in @users %>
-    <% unless user.photo.size.blank? %>
-    	<li>
-    		<a href="<%= user_portfolio_path(user, user.portfolio) %>"<%= image_tag user.photo.url(:large_thumb) %><span class="username"><%= user.login %></span></a>
-    	</li>
-    <% end %>
-  <% end %>
-  </ul>
+<div class="content-container">
+	<div class="column">  
+		<% if flash[:warning] or flash[:notice] %>
+				<div id="notice" <% if flash[:warning] %>class="warning"<% end %>>
+		<%= flash[:warning] || flash[:notice] %>
+				</div>
+		<% end %>
+		
+		<ul id="user-list">
+		<% for user in @users %>
+		<% unless user.photo.size.blank? %>
+			<li>
+				<a href="<%= user_portfolio_path(user, user.portfolio) %>">
+					<%= image_tag user.photo.url(:large_thumb) %>
+					<span class="username"><%= user.login %></span>
+				</a>
+			</li>
+		<% end %>
+		<% end %>
+		</ul>
+	</div>
 </div>
 
 

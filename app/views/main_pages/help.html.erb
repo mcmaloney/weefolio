@@ -1,95 +1,91 @@
 <!--PAGE TITLE/CALL-TO-ACTION-->
 <%# YIELD %>
-<div id="page-header-container-outer">
-	<div id="page-header-container-inner">
+<div class="page-header-container-outer">
+	<div class="page-header-container-inner">
 		<h1>Help <small>A few commonly asked questions</small></h1>
 	</div>
 </div>
 
 <!--PAGE CONTENT-->
 <%# YIELD %>
-<div id="content-container" class="main-help">
-  
-    <% if flash[:warning] or flash[:notice] %>
-  		<div id="notice" <% if flash[:warning] %>class="warning"<% end %>>
-    <%= flash[:warning] || flash[:notice] %>
-  		</div>
-	<% end %>
-    
-    <p class="intro">Here you'll find the answers to a few commonly asked questions that might help you better understand and use Weefolio. If you ever have anymore questions, you can always feel free to <a href="">contact us</a>!</p>
-  
-  	<div class="col-left">
-  		<ul class="topics">
-  			<li>
-		  		<h2 id="general">General</h2>
-		  		
-		  		<dl>
-		  			<dt>What is a Weefolio?</dt>
-		  			<dd>Weefolios are simple, little online portfolios for all kinds of creative professionals. Graphic designers, studio artists, photographers...the list goes on. No matter your focus, Weefolio is a great place to showcase your work in the online community.</dd>
-		  		</dl>
-  			</li>
-  			
-  			<li>
-		  		<h2 id="billing">Billing</h2>
-		  		
-		  		<dl>
-		  			<dt>How much does Weefolio cost?</dt>
-		  			<dd>Weefolio is a free service with optional paid plans. <a href="#">Sign up</a> for <strong>free</strong> and upgrade anytime!</dd>
-		  		</dl>
-		  		
-		  		<dl>
-		  			<dt>Can I upgrade, downgrade, or cancel my account at any time?</dt>
-		  			<dd>Of course! You're free to change your account type at anytime. Simply go to <strong>Account > Billing</strong> to manage your account plan and billing information.</dd>
-		  		</dl>
-  			</li>
-  			
-  			<li>
-		  		<h2 id="portfolio">Portfolio</h2>
-		  		
-		  		<dl>
-		  			<dt>How do I add a new piece to my portfolio?</dt>
-		  			<dd>To add a new piece to your portfolio simply go to <strong>Portfolio</strong> and click the <strong>"Add Work"</strong> button. Here you may give your piece a title, description, image/images*, and price*.<br/><br/>* <small>= Feature requires a <strong>Plus</strong> or <strong>Pro</strong> account.</small></dd>
-		  		</dl>
-		  		
-		  		<dl>
-		  			<dt>How do I delete a piece from my portfolio?</dt>
-		  			<dd>To delete a piece from your portfolio simply go to <strong>Portfolio</strong> and click the <strong>"x"</strong> next to the piece you wish to delete.</dd>
-		  		</dl>
-		  		
-		  		<dl>
-		  			<dt>Can I re-order the pieces in my portfolio?</dt>
-		  			<dd>Yes! To re-order the work in your portfolio simply drag a piece up or down the list of work.</dd>
-		  		</dl>
-  			</li>
-  			
-  			<li>
-		  		<h2 id="design">Design</h2>
-		  		
-		  		<dl>
-		  			<dt>How do I customize the design of my Weefolio?</dt>
-		  			<dd>To customize the design of your Weefolio simply go to <strong>Design</strong>. Here you can select your layout, upload a custom page header image, manage colors and fonts, as well as edit custom CSS*.<br/><br/>* <small>= Feature requires a <strong>Plus</strong> or <strong>Pro</strong> account.</small></dd>
-		  		</dl>
-  			</li>
-  			
-  			<li>
-		  		<h2 id="account">Account</h2>
-		  		
-		  		<dl>
-		  			<dt>How do I close my account?</dt>
-		  			<dd>To close your account simply go to <strong>Account</strong> and click the <strong>"Close my account"</strong> button.</dd>
-  			</li>
-  		</ul>
-  	</div>
-  	
-  	<div class="col-right">
-  		<ul class="content-nav">
-			<h2>Topics</h2>
-			
-			<li><a href="#general">General</a></li>
-			<li><a href="#billing">Billing</a></li>
-			<li><a href="#portfolio">Portfolio</a></li>
-			<li><a href="#design">Design</a></li>
-			<li><a href="#account">Account</a></li>  			
-  		</ul>
-  	</div>
+<div class="content-container main-help">
+		<% if flash[:warning] or flash[:notice] %>
+	  		<div id="notice" <% if flash[:warning] %>class="warning"<% end %>>
+	    <%= flash[:warning] || flash[:notice] %>
+	  		</div>
+		<% end %>
+	    
+	    <p class="intro">Here you'll find the answers to a few commonly asked questions that might help you better understand and use Weefolio. If you ever have anymore questions, you can always feel free to <%= link_to 'contact us', contact_path %>!</p>
+	  
+	  	<div class="column primary">
+	  		<ul class="topics">
+	  			<li>
+			  		<h2 id="general">General</h2>
+			  		
+			  		<dl>
+			  			<dt>What is a Weefolio?</dt>
+			  			<dd>Weefolios are simple, little online portfolios for all kinds of creative professionals. Graphic designers, studio artists, photographers...the list goes on. No matter your focus, Weefolio is a great place to showcase your work in the online community.</dd>
+			  			
+			  			<dt>Why do some things act funny?</dt>
+			  			<dd>Weefolios is currently in public beta, so there are bound to be some bumps in the road. We're just glad you're here to help us smooth them out. If you ever find a bug, please <%= link_to 'let us know', contact_path %>.</dd>
+			  		</dl>
+	  			</li>
+	  			
+	  			<li>
+			  		<h2 id="billing">Billing</h2>
+			  		
+			  		<dl>
+			  			<dt>How much does Weefolio cost?</dt>
+			  			<dd>Weefolio is a free service with optional paid plans. <a href="#">Sign up</a> for <strong>free</strong> and upgrade anytime!</dd>
+			 
+			  			<dt>Can I upgrade, downgrade, or cancel my account at any time?</dt>
+			  			<dd>Of course! You're free to change your account type at anytime. Simply go to <strong>Account > Billing</strong> to manage your account plan and billing information.</dd>
+			  		</dl>
+	  			</li>
+	  			
+	  			<li>
+			  		<h2 id="portfolio">Portfolio</h2>
+			  		
+			  		<dl>
+			  			<dt>How do I add a new piece to my portfolio?</dt>
+			  			<dd>To add a new piece to your portfolio simply go to <strong>Portfolio</strong> and click the <strong>"Add Work"</strong> button. Here you may give your piece a title, description, image/images*, and price*.<br/><br/>* <small>= Feature requires a <strong>Plus</strong> or <strong>Pro</strong> account.</small></dd>
+	
+			  			<dt>How do I delete a piece from my portfolio?</dt>
+			  			<dd>To delete a piece from your portfolio simply go to <strong>Portfolio</strong> and click the <strong>"x"</strong> next to the piece you wish to delete.</dd>
+			  			
+			  			<dt>Can I re-order the pieces in my portfolio?</dt>
+			  			<dd>Yes! To re-order the work in your portfolio simply drag a piece up or down the list of work.</dd>
+			  		</dl>
+	  			</li>
+	  			
+	  			<li>
+			  		<h2 id="design">Design</h2>
+			  		
+			  		<dl>
+			  			<dt>How do I customize the design of my Weefolio?</dt>
+			  			<dd>To customize the design of your Weefolio simply go to <strong>Design</strong>. Here you can select your layout, upload a custom page header image, manage colors and fonts, as well as edit custom CSS*.<br/><br/>* <small>= Feature requires a <strong>Plus</strong> or <strong>Pro</strong> account.</small></dd>
+			  		</dl>
+	  			</li>
+	  			
+	  			<li>
+			  		<h2 id="account">Account</h2>
+			  		
+			  		<dl>
+			  			<dt>How do I close my account?</dt>
+			  			<dd>To close your account simply go to <strong>Account</strong> and click the <strong>"Close my account"</strong> button.</dd>
+	  			</li>
+	  		</ul>
+	  	</div>
+	  	
+	  	<div class="column secondary">
+	  		<ul class="content-nav">
+				<h2>Topics</h2>
+				
+				<li><a href="#general">General</a></li>
+				<li><a href="#billing">Billing</a></li>
+				<li><a href="#portfolio">Portfolio</a></li>
+				<li><a href="#design">Design</a></li>
+				<li><a href="#account">Account</a></li>  			
+	  		</ul>
+	  	</div>
 </div>

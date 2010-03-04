@@ -1,49 +1,49 @@
 <!--PAGE TITLE/CALL-TO-ACTION-->
 <%# YIELD %>
-<div id="page-header-container-outer">
-	<div id="page-header-container-inner">
+<div class="page-header-container-outer">
+	<div class="page-header-container-inner">
 	  <h1>Login<small></small></h1>
 	</div>
 </div>
 
 <!--PAGE CONTENT-->
 <%# YIELD %>
-<div id="content-container">
-    
-    <% if flash[:warning] or flash[:notice] %>
-  		<div id="notice" <% if flash[:warning] %>class="warning"<% end %>>
-    <%= flash[:warning] || flash[:notice] %>
-  		</div>
-	<% end %>
-	
-	<!--DUMP ALL OF YOUR SHIT HERE!-->
-	<% form_tag session_path do %>
-		<fieldset>
-			<h2>Login</h2>
-			<dl>
-			    <dt>
-			      <label for="login">Username</label>
-			    </dt>
-			    <dd>
-			      <%= text_field_tag 'login', @login, :size => 30 %>
-			    </dd>
-			
-			    <dt>
-			      <label for="password">Password</label>
-			    </dt>
-			    <dd>
-			      <%= password_field_tag 'password', nil, :size => 30 %>
-			    </dd>
-			    
-			    <dt>&nbsp;</dt>
-			    <dd><%= link_to 'Forgot your password?', forgot_password_path, :class => "question" %></dd>
-    		</dl>
-    	</fieldset>
-    	
-    	<div class="submit" id="login">
-    	  <%= submit_tag 'Login' %>
-    	</div>
-  <% end %>
+<div class="content-container">
+	<div class="column">  
+	    <% if flash[:warning] or flash[:notice] %>
+	  		<div id="notice" <% if flash[:warning] %>class="warning"<% end %>>
+	    <%= flash[:warning] || flash[:notice] %>
+	  		</div>
+		<% end %>
+
+		<% form_tag session_path do %>
+			<fieldset>
+				<h2>Login</h2>
+				<dl>
+				    <dt>
+				      <label for="login">Username</label>
+				    </dt>
+				    <dd>
+				      <%= text_field_tag 'login', @login, :size => 30 %>
+				    </dd>
+				
+				    <dt>
+				      <label for="password">Password</label>
+				    </dt>
+				    <dd>
+				      <%= password_field_tag 'password', nil, :size => 30 %>
+				    </dd>
+				    
+				    <dt>&nbsp;</dt>
+				    <dd><%= link_to 'Forgot your password?', forgot_password_path, :class => "question" %></dd>
+	    		</dl>
+	    	</fieldset>
+	    	
+	    	<div class="submit" id="login">
+	    	  <%= submit_tag 'Login' %>
+	    	</div>
+		<% end %>
+	</div>
 </div>
 	
 

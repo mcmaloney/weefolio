@@ -1,12 +1,12 @@
 <!--PAGE TITLE/CALL-TO-ACTION-->
 <%# YIELD %>
-<div id="page-header-container-outer">
-	<div id="page-header-container-inner">
+<div class="page-header-container-outer">
+	<div class="page-header-container-inner">
 		<div class="welcome-container">
 			<h1>Lil' portfolios for<br/> the rest of us!</h1>
 			
 			<p>
-				Weefolios are simple, little online portfolios for all kinds of creative professionals. Weefolio is a great place to show off your work online.
+				Weefolios makes it simple to show of your work &amp; customize your portfolio, from colors to custom themes.
 			</p>
 			
 			<div class="sign-up-button">
@@ -15,14 +15,18 @@
 		</div>
 		
 		<div class="featured-weefolio">
-			<img class="featured" width="400" height="180" src="/images/featured/christian_schimke.jpg"/>
+			<img class="banner" src="/images/featured-banner.gif"/>
+			
+			<a href="#">
+				<img class="featured" width="400" height="150" src="/images/featured/kevin_john_gomez.jpg"/>
+			</a>
 		</div>
 	</div>
 </div>
 
 <!--PAGE CONTENT-->
 <%# YIELD %>
-<div id="content-container">
+<div class="content-container">
     
     <% if flash[:warning] or flash[:notice] %>
   		<div id="notice" <% if flash[:warning] %>class="warning"<% end %>>
@@ -30,53 +34,87 @@
   		</div>
 	<% end %>
 	
-	<!--DUMP ALL OF YOUR SHIT HERE!-->
-	
 	<ul class="features">
 		<li>
-			<img width="199" height="140" src="/images/feature-setup.jpg"/>
-			
 			<div class="description">
 				<h2>Quick setup</h2>
 
 				<p>
-					Sign up and you'll have your own portfolio site up and running in seconds! All for free!
+					Sign up and you'll have your own portfolio up and running in seconds!
 				</p>
 				
 				<p>
-					<a href="#">Sign Up Today!</a>
+					<%= link_to 'Sign Up Today!', signup_path %>
 				</p>
 			</div>
 		</li>
 		
 		<li>
-			<img width="199" height="140" src="/images/feature-work.jpg"/>
-			
 			<div class="description">
 				<h2>Show off your work</h2>
 
 				<p>
-					Easily manage, sell, and show off your work with Weefolio's simple porfolio manager.
+					Easily manage, sell, and show off your work.
 				</p>
 				
 				<p>
-					<a href="#">Learn More</a>
+					<%= link_to 'Artist Directory', directory_path %>
 				</p>
 			</div>
 		</li>
 		
 		<li>
-			<img width="199" height="140" src="/images/feature-style.jpg"/>
-			
 			<div class="description">
 				<h2>Style simply</h2>
 
 				<p>
-					Customize you portfolio with Weefolio's easy-to-use design or CSS editor.
+					Customize your design with just a few clicks.
 				</p>
 				
 				<p>
-					<a href="#">Learn More</a>
+					<%= link_to 'Learn More', help_path %>
+				</p>
+			</div>
+		</li>
+		
+		<li>
+			<div class="description">
+				<h2>Custom themes</h2>
+
+				<p>
+					Customize anything with your own HTML theme.
+				</p>
+				
+				<p>
+					<%= link_to 'Learn More', signup_path %>
+				</p>
+			</div>
+		</li>
+		
+		<li>
+			<div class="description">
+				<h2>Cha ching!</h2>
+
+				<p>
+					Post any portfolio piece with a price and link to your online shop.
+				</p>
+				
+				<p>
+					<%= link_to 'Artist Directory', directory_path %>
+				</p>
+			</div>
+		</li>
+		
+		<li>
+			<div class="description">
+				<h2>Share with RSS</h2>
+
+				<p>
+					Keep visitors up-to-date with your portfolio's RSS feed.
+				</p>
+				
+				<p>
+					<%= link_to 'Learn More', help_path %>
 				</p>
 			</div>
 		</li>

@@ -1,7 +1,7 @@
 <!--PAGE TITLE/CALL-TO-ACTION-->
 <%# YIELD %>
-<div id="page-header-container-outer">
-	<div id="page-header-container-inner">
+<div class="page-header-container-outer">
+	<div class="page-header-container-inner">
 		<h1>Account <small>Manage your account settings</small></h1>
 		
 		<div class="call-to-action">
@@ -12,129 +12,150 @@
 
 <!--PAGE CONTENT-->
 <%# YIELD %>
-<div id="content-container">
-    
-    <% if flash[:warning] or flash[:notice] %>
-  		<div id="notice" <% if flash[:warning] %>class="warning"<% end %>>
-    <%= flash[:warning] || flash[:notice] %>
-  		</div>
-	<% end %>
-	
-	<!--DUMP ALL OF YOUR SHIT HERE!-->
-	<% form_for @user, :html => {:multipart => true}  do |f| %>
-		<fieldset>
-			<h2>Personal</h2>
-			
-    		<dl>
-    			<dt>
-     				 <label for="user_first_name">First Name</label>
-      			</dt>
-      			<dd>
-      				<%= f.text_field :first_name %>
-    			</dd>
-    			
-			    <dt>
-			      <label for="user_last_name">Last Name</label>
-			    </dt>
-      			<dd>
-			      <%= f.text_field :last_name %>
-			    </dd>
-			    
-			    <dt>
-			      <label for="user_login">Username</label>
-			    </dt>
-      			<dd>
-			      <%= f.text_field :login %>
-			      <p>This is how we and others in the Weefolio community will address you.</p>
-			    </dd>
-			
-			    <dt>
-			      <label for="user_email">Email</label>
-			    </dt>
-      			<dd>
-			      <%= f.text_field :email %>
-			      <p>This is where we'll send information regarding you account.</p>
-			    </dd>
-			    
-			    <dt>
-			    	<label>Avatar</label>
-			    </dt>
-			    <dd>
-			      <%= image_preview_for(@user.photo) %> <%= f.file_field :photo %>
-			    </dd>
-			 </dl>
-		</fieldset>
-			 
-		<fieldset>
-			<h2>Portfolio</h2>
-			
-			 <dl>
-			    <dt>
-			     	<%= f.label :tag_line, 'Tagline' %>
-			    </dt>
-      			<dd>
-      			<%= show_tagline(@user, f) %>
-			      <p>This is whatever you want it to be. It can be a welcome message, a catch phrase, or just something you always say. If you don't want your tagline to appear in your portfolio simply leave the field blank.</p>
-			    </dd>
-			    
-			  	<dt>
-			      <label for="user_about_me">About Me</label>
-			    </dt>
-      			<dd>
-			      <%= f.text_area :about_me, :rows => 8 %>
-			    </dd>
-    		</dl>
-    	</fieldset>
-    	
-    	<fieldset>
-			<h2>Billing</h2>
-			
-			<dl>
-				<dt>
-					Plan
-				</dt>
-				<dd>
-					<ul>
-					  <li><%= f.radio_button :account_tier, 1, :onclick => "hide_billing()" %> <label>Basic (Free)</label></li>
-					  <li><%= f.radio_button :account_tier, 2, :onclick => "show_billing()" %> <label>Plus ($2.99/month)</label></li>
-            <li><%= f.radio_button :account_tier, 3, :onclick => "show_billing()" %> <label>Pro ($4.99/month)</label></li>
-					</ul>
-				</dd>
-			<div id="billing_info">
-				<dt>
-					<label>Card Type</label>
-				</dt>
-				<dd>
-				  <%= f.select :card_type, @user.card_types %>
-				</dd>
+<div class="content-container">
+	<div class="column">
+	    <% if flash[:warning] or flash[:notice] %>
+	  		<div id="notice" <% if flash[:warning] %>class="warning"<% end %>>
+	    <%= flash[:warning] || flash[:notice] %>
+	  		</div>
+		<% end %>
+
+		<% form_for @user, :html => {:multipart => true}  do |f| %>
+			<fieldset>
+				<h2>Personal</h2>
 				
-				<dt>
-					<label>Card Number</label>
-				</dt>
-				<dd>
-				  <%= f.text_field :card_number, :size => 16 %>
-				</dd>
+	    		<dl>
+	    			<!--<dt>
+	     				 <label for="user_first_name">First Name</label>
+	      			</dt>
+	      			<dd>
+	      				<%= f.text_field :first_name %>
+	    			</dd>
+	    			
+				    <dt>
+				      <label for="user_last_name">Last Name</label>
+				    </dt>
+	      			<dd>
+				      <%= f.text_field :last_name %>
+				    </dd>-->
+				    
+				    <dt>
+				      <label for="user_login">Username</label>
+				    </dt>
+	      			<dd>
+				      <%= f.text_field :login %>
+				      <p>This is how we and others in the Weefolio community will address you.</p>
+				    </dd>
 				
-				<dt>
-					<label>Card Verification</label>
-				</dt>
-				<dd>
-				  <%= f.text_field :card_verification, :size => 3 %>
-				</dd>
+				    <dt>
+				      <label for="user_email">Email</label>
+				    </dt>
+	      			<dd>
+				      <%= f.text_field :email %>
+				      <p>This is where we'll send information regarding you account.</p>
+				    </dd>
+				    
+				    <dt>
+				    	<label>Avatar</label>
+				    </dt>
+				    <dd>
+				      <%= image_preview_for(@user.photo) %> <%= f.file_field :photo %>
+				    </dd>
+				 </dl>
+			</fieldset>
+				 
+			<fieldset>
+				<h2>Portfolio</h2>
 				
-				<dt>
-					<label>Card Expiration</label>
-				</dt>
-				<dd>
-					<%= f.date_select(:card_expiration_month, :order => [:month], :use_month_numbers => true) %>
-					<%= f.date_select(:card_expiration_year, :order => [:year], :end_year => @user.end_year) %>
-				</dd>
-			</div>
-			</dl>
-		</fieldset>
-    	
-    	<div class="submit" id="save">
-			      <%= f.submit 'Save' %>
-    	</div>
-  <% end %>
+				 <dl>
+				    <dt>
+				     	<%= f.label :tag_line, 'Tagline' %>
+				    </dt>
+	      			<dd>
+	      			<%= show_tagline(@user, f) %>
+				      <p>This is whatever you want it to be. It can be a welcome message, a catch phrase, or just something you always say. If you don't want your tagline to appear in your portfolio simply leave the field blank.</p>
+				    </dd>
+				    
+				  	<dt>
+				      <label for="user_about_me">About Me</label>
+				    </dt>
+	      			<dd>
+				      <%= f.text_area :about_me, :rows => 8 %>
+				    </dd>
+	    		</dl>
+	    	</fieldset>
+	    	
+	    	<fieldset>
+				<h2>Billing</h2>
+				
+				<dl>
+					<dt>
+						Plan
+					</dt>
+					<dd>
+						<ul>
+						  <li><%= f.radio_button :account_tier, 1, :onclick => "hide_billing()" %> <label>Basic (Free)</label></li>
+						  <li><%= f.radio_button :account_tier, 2, :onclick => "show_billing()" %> <label>Plus ($2.99/month)</label></li>
+	            <li><%= f.radio_button :account_tier, 3, :onclick => "show_billing()" %> <label>Pro ($4.99/month)</label></li>
+						</ul>
+					</dd>
+				<div id="billing_info">
+					<dt>
+						<label>Card Type</label>
+					</dt>
+					<dd>
+					  <%= f.select :card_type, @user.card_types %>
+					</dd>
+					
+					<dt>
+						<label>Card Number</label>
+					</dt>
+					<dd>
+					  <%= f.text_field :card_number, :size => 16 %>
+					</dd>
+					
+					<dt>
+						<label>Card Verification</label>
+					</dt>
+					<dd>
+					  <%= f.text_field :card_verification, :size => 3 %>
+					</dd>
+					
+					<dt>
+						<label>Card Expiration</label>
+					</dt>
+					<dd>
+						<%= f.date_select(:card_expiration_month, :order => [:month], :use_month_numbers => true) %>
+						<%= f.date_select(:card_expiration_year, :order => [:year], :end_year => @user.end_year) %>
+					</dd>
+				</div>
+				</dl>
+			</fieldset>
+			
+			<fieldset>
+				<h2>Password</h2>
+				
+				<dl>
+					<dt>
+		      		<%= f.label :password, "Password" %>
+			      	</dt>
+			    	<dd>
+			      		<%= f.password_field :password %>
+			      		<p>Leave field blank to keep password the same.</p>
+			      	</dd>
+			      
+			      	<dt>
+			      		<%= f.label :password_confirmation, "Confirm Password" %>
+			      	</dt>
+			    	<dd>
+			      		<%= f.password_field :password_confirmation %>
+			      	</dd>
+				</dl>
+			</fieldset>
+	    	
+	    	<div class="submit" id="save">
+				      <%= f.submit 'Save' %>
+	    	</div>
+		<% end %>
+	</div>
 </div>

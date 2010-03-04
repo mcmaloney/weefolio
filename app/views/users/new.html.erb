@@ -1,7 +1,7 @@
 <!--PAGE TITLE/CALL-TO-ACTION-->
 <%# YIELD %>
-<div id="page-header-container-outer">
-	<div id="page-header-container-inner">
+<div class="page-header-container-outer">
+	<div class="page-header-container-inner">
 		<h1>Pricing &amp; Sign Up <small>Sign up for <strong>free</strong> &amp; upgrade anytime!</small></h1>
 		
 		<div class="call-to-action">
@@ -153,60 +153,60 @@
 
 <!--PAGE CONTENT-->
 <%# YIELD %>
-<div id="content-container">
-   
-    <% if flash[:warning] or flash[:notice] %>
-  		<div id="notice" <% if flash[:warning] %>class="warning"<% end %>>
-    <%= flash[:warning] || flash[:notice] %>
-  		</div>
-	<% end %>
-	
-	<!--DUMP ALL OF YOUR SHIT HERE!-->
-	<% @user.password = @user.password_confirmation = nil %>
-
-  <%= error_messages_for :user %>
-  
-  <% form_for(User.new) do |f| %>
-  	
-    <fieldset>
-    	<h2>Sign up for <strong><em>free</em></strong> &amp; upgrade anytime!</h2>
-	    <dl>
-	    	<dt>
-	    		<%= f.label :login, 'Username' %>
-	    	</dt>
-	    	<dd>
-	      		<%= f.text_field :login %>
-	      		<p>This is how we and others in the Weefolio community will address you.</p>
-	      	</dd>
-	      
-	      	<dt>
-	      		<label for="user_email">Email</label>
-	      	</dt>
-	    	<dd>
-	      		<%= f.text_field :email %>
-	      		<p>This is where we'll send information regarding you account.</p>
-	      	</dd>
-	      
-	      	<dt>
-	      		<%= f.label :password, "Password" %>
-	      	</dt>
-	    	<dd>
-	      		<%= f.password_field :password %>
-	      	</dd>
-	      
-	      	<dt>
-	      		<%= f.label :password_confirmation, "Confirm Password" %>
-	      	</dt>
-	    	<dd>
-	      		<%= f.password_field :password_confirmation %>
-	      </dd>
-	    </dl>    
-    </fieldset>
-    
-    <div class="submit" id="sign-up">
-      <%= f.submit 'Sign Up' %>
-    </div>
-  <% end %>
+<div class="content-container">
+	<div class="column">
+		<% if flash[:warning] or flash[:notice] %>
+				<div id="notice" <% if flash[:warning] %>class="warning"<% end %>>
+		<%= flash[:warning] || flash[:notice] %>
+				</div>
+		<% end %>
+		
+		<% @user.password = @user.password_confirmation = nil %>
+		
+		<%= error_messages_for :user %>
+		
+		<% form_for(User.new) do |f| %>
+			
+		<fieldset>
+			<h2>Sign up for <strong><em>free</em></strong> &amp; upgrade anytime!</h2>
+		    <dl>
+		    	<dt>
+		    		<%= f.label :login, 'Username' %>
+		    	</dt>
+		    	<dd>
+		      		<%= f.text_field :login %>
+		      		<p>This is how we and others in the Weefolio community will address you.</p>
+		      	</dd>
+		      
+		      	<dt>
+		      		<label for="user_email">Email</label>
+		      	</dt>
+		    	<dd>
+		      		<%= f.text_field :email %>
+		      		<p>This is where we'll send information regarding you account.</p>
+		      	</dd>
+		      
+		      	<dt>
+		      		<%= f.label :password, "Password" %>
+		      	</dt>
+		    	<dd>
+		      		<%= f.password_field :password %>
+		      	</dd>
+		      
+		      	<dt>
+		      		<%= f.label :password_confirmation, "Confirm Password" %>
+		      	</dt>
+		    	<dd>
+		      		<%= f.password_field :password_confirmation %>
+		      </dd>
+		    </dl>    
+		</fieldset>
+		
+		<div class="submit" id="sign-up">
+		  <%= f.submit 'Sign Up' %>
+		</div>
+		<% end %>
+	</div>
 </div>
 
 
