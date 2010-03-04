@@ -103,8 +103,8 @@ class UsersController < ApplicationController
   
   def remove_account
     UserMailer.deliver_delete_account_message(current_user)
+    current_user.delete
     redirect_to logout_path
-    flash[:notice] = "A request has been sent to delete your account."
   end
   
   def users_admin
