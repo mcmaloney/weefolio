@@ -98,6 +98,15 @@ class UsersController < ApplicationController
     redirect_to edit_user_design_path(@user, @user.design)
   end
   
+  def close_account_confirm
+  end
+  
+  def remove_account
+    UserMailer.deliver_delete_account_message(current_user)
+    redirect_to logout_path
+    flash[:notice] = "A request has been sent to delete your account."
+  end
+  
   def users_admin
     @users = User.find(:all)
   end

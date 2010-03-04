@@ -13,13 +13,14 @@ ActionController::Routing::Routes.draw do |map|
   map.privacy_policy '/privacy_policy', :controller => 'main_pages', :action => 'privacy_policy'
   map.terms_of_use '/terms_of_use', :controller => 'main_pages', :action => 'terms_of_use'
   map.forgot_password '/forgot_password', :controller => 'users', :action => 'reset_password'
+  map.close_account '/close_account', :controller => 'users', :action => 'close_account_confirm'
   
   # ADMIN ROUTES
   map.users_admin '/users_admin', :controller => 'users', :action => 'users_admin'
   map.pieces_admin '/pieces_admin', :controller => 'pieces', :action => 'pieces_admin'
   
   # USERS
-  map.resources :users do |users|
+  map.resources :users, :member => { :remove_account => :post } do |users|
     users.resources :portfolios, :member => { :send_message => :post }
     users.resources :designs
   end
