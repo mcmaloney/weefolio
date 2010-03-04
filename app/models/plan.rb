@@ -99,13 +99,16 @@ class Plan < ActiveRecord::Base
     end
   end
   
-  def set_level
+  def set_level_for(user)
     if self.plan_option == "BASIC"
       self.level = 1
+      user.account_tier = 1
     elsif self.plan_option == "PLUS"
       self.level = 2
+      user.account_tier = 2
     elsif self.plan_option == "PRO"
       self.level = 3
+      user.account_tier = 3
     end
   end
   

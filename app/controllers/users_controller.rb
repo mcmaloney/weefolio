@@ -21,12 +21,15 @@ class UsersController < ApplicationController
   
   def update
     if params[:plan][:plan_option] == "BASIC"
-      redirect_to edit_user_path(current_user)
-      flash[:notice] = "Account settings saved."
+      if current_user.update_attributes(params[:user])
+        redirect_to edit_user_path(current_user)
+        flash[:notice] = "Account settings saved."
+      end
     else
       if current_user.plan.update_attributes(params[:plan]) && current_user.plan.process_transaction
-        current_user.plan.set_level
+        current_user.plan.set_level_for(current_user)
         current_user.plan.save
+        current_user.save
         redirect_to edit_user_path(current_user)
         flash[:notice] = "Plan upgraded to #{current_user.plan.render_plan_option}"
       else
