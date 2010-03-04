@@ -1,0 +1,1 @@
+US_STATES = YAML.load_file("#{RAILS_ROOT}/config/us_states.yml")

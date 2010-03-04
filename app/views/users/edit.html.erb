@@ -92,42 +92,93 @@
 					<dt>
 						Plan
 					</dt>
+					<% fields_for @plan do |p| %>
 					<dd>
 						<ul>
-						  <li><%= f.radio_button :account_tier, 1, :onclick => "hide_billing()" %> <label>Basic (Free)</label></li>
-						  <li><%= f.radio_button :account_tier, 2, :onclick => "show_billing()" %> <label>Plus ($2.99/month)</label></li>
-	            <li><%= f.radio_button :account_tier, 3, :onclick => "show_billing()" %> <label>Pro ($4.99/month)</label></li>
+						  <li><%= p.radio_button :plan_option, "BASIC", :onclick => "hide_billing()" %> <label>Basic (Free)</label></li>
+						  <li><%= p.radio_button :plan_option, "PLUS",  :onclick => "show_billing()" %> <label>Plus ($2.99/month)</label></li>
+	            <li><%= p.radio_button :plan_option, "PRO",   :onclick => "show_billing()" %> <label>Pro ($4.99/month)</label></li>
 						</ul>
 					</dd>
 				<div id="billing_info">
+				  <dt>
+				    <label>First Name</label>
+				  </dt>
+				  <dd>
+				    <%= p.text_field :billing_first_name %>
+				  </dd>
+				  
+				  <dt>
+				    <label>Last Name</label>
+				  </dt>
+				  <dd>
+				    <%= p.text_field :billing_last_name %>
+				  </dd>
+				  
+				  <dt>
+				    <label>Billing Address</label>
+				  </dt>
+				  <dd>
+				    <%= p.text_field :billing_address %>
+				  </dd>
+				  
+				  <dt>
+				    <label>Billing Address 2</label>
+				  </dt>
+				  <dd>
+				    <%= p.text_field :billing_address_2 %>
+				  </dd>
+				  
+				  <dt>
+				    <label>City</label>
+				  </dt>
+				  <dd>
+				    <%= p.text_field :billing_city %>
+				  </dd>
+				  
+				  <dt>
+				    <label>State</label>
+				  </dt>
+				  <dd>
+				    <%= p.select :billing_state, @us_states %>
+				  </dd>
+				  
+				  <dt>
+				    <label>Zip</label>
+				  </dt>
+				  <dd>
+				    <%= p.text_field :billing_postal_code %>
+				  </dd>
+				  
 					<dt>
 						<label>Card Type</label>
 					</dt>
 					<dd>
-					  <%= f.select :card_type, @user.card_types %>
+					  <%= p.select :card_type, @user.card_types %>
 					</dd>
 					
 					<dt>
 						<label>Card Number</label>
 					</dt>
 					<dd>
-					  <%= f.text_field :card_number, :size => 16 %>
+					  <%= p.text_field :card_number, :size => 16 %>
 					</dd>
 					
 					<dt>
 						<label>Card Verification</label>
 					</dt>
 					<dd>
-					  <%= f.text_field :card_verification, :size => 3 %>
+					  <%= p.text_field :card_verification, :size => 3 %>
 					</dd>
 					
 					<dt>
 						<label>Card Expiration</label>
 					</dt>
 					<dd>
-						<%= f.date_select(:card_expiration_month, :order => [:month], :use_month_numbers => true) %>
-						<%= f.date_select(:card_expiration_year, :order => [:year], :end_year => @user.end_year) %>
+						<%= p.date_select(:card_expiration_month, :order => [:month], :use_month_numbers => true) %>
+						<%= p.date_select(:card_expiration_year, :order => [:year], :end_year => @user.end_year) %>
 					</dd>
+					<% end %>
 				</div>
 				</dl>
 			</fieldset>

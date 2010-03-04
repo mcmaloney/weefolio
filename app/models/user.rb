@@ -71,12 +71,13 @@ class User < ActiveRecord::Base
     end
   end
   
-  # Change design type
+  # Change design type.
   def set_design_type(number)
     self.design_type -= self.design_type
     self.design_type += number
   end
   
+  # Build portfolio and design objects for user on sign up.
   def setup_portfolio_and_design
     my_portfolio = Portfolio.new
     self.portfolio = my_portfolio
@@ -86,6 +87,13 @@ class User < ActiveRecord::Base
     my_design_editor = Design.new
     self.design = my_design_editor
     self.design.save
+  end
+  
+  # Sets up the user's plan when he signs up.
+  def setup_plan
+    plan = Plan.new(:level => 1)
+    self.plan = plan
+    self.plan.save
   end
 
   # Activates the user in the database.

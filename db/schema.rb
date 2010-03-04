@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100304182724) do
+ActiveRecord::Schema.define(:version => 20100304191904) do
 
   create_table "delayed_jobs", :force => true do |t|
     t.integer  "priority",   :default => 0
@@ -96,6 +96,18 @@ ActiveRecord::Schema.define(:version => 20100304182724) do
     t.integer  "level"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "card_number"
+    t.string   "card_verification"
+    t.string   "card_expiration_month"
+    t.string   "card_expiration_year"
+    t.string   "card_type"
+    t.string   "billing_first_name"
+    t.string   "billing_last_name"
+    t.string   "billing_address"
+    t.string   "billing_address_2"
+    t.string   "billing_city"
+    t.string   "billing_state"
+    t.string   "billing_postal_code"
   end
 
   create_table "portfolios", :force => true do |t|
@@ -150,11 +162,6 @@ ActiveRecord::Schema.define(:version => 20100304182724) do
     t.string   "state"
     t.string   "country"
     t.string   "zip"
-    t.string   "card_number"
-    t.string   "card_verification"
-    t.string   "card_expiration_month"
-    t.string   "card_expiration_year"
-    t.string   "card_type"
   end
 
   add_index "users", ["login"], :name => "index_users_on_login", :unique => true

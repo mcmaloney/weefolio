@@ -15,6 +15,8 @@ class UsersController < ApplicationController
   def edit
     @page_title = "Weefolio - My Account"
     @user = current_user
+    @plan = current_user.plan
+    @us_states = US_STATES.collect{|s| [s[1], s[1]]}
   end
   
   def reset_password
@@ -36,19 +38,9 @@ class UsersController < ApplicationController
     end
   end
   
-  # THIS IS CHEAP AND CRAPPY FOR NOW. WILL BE BETTER WHEN WE CAN AUTHORIZE PAYMENTS.
   def update
-    @user = current_user
-    if @user.update_attributes(params[:user])
-      if @user.account_tier != 1
-        @user.change_tier(@user.account_tier)
-        redirect_to edit_user_path(@user)
-        flash[:notice] = "Thanks for upgrading your account! You now have access to all the #{@user.render_account_tier} features"
-      else
-        redirect_to edit_user_path(@user)
-        flash[:notice] = "Your account information has been saved."
-      end
-    end
+    redirect_to edit_user_path(current_user)
+    flash[:notice] = "Account settings saved."
   end
  
   def create
@@ -56,7 +48,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     
     @user.setup_portfolio_and_design
-    
+    @user.setup_plan
     @user.activate!
     success = @user && @user.save && @user.portfolio
     if success && @user.errors.empty?
