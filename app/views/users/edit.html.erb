@@ -89,7 +89,7 @@
 				<h2>Billing</h2>
 				
 				<div>
-				  Current Plan: <%= @user.plan_option %>
+				  Current Plan: <%= @user.plan.render_plan_option %>
 				</div>
 				
 				<dl>
@@ -186,7 +186,6 @@
 					<dd>
 					  <%= p.text_field :card_expiration_year, :size => 4 %> (Ex. 2011)
 					</dd>
-					
 				
 					<% end %>
 				</div>

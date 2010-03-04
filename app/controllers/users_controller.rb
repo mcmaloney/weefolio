@@ -24,9 +24,11 @@ class UsersController < ApplicationController
       redirect_to edit_user_path(current_user)
       flash[:notice] = "Account settings saved."
     else
-      if current_user.plan.update_attributes(params[:plan])
+      if current_user.plan.update_attributes(params[:plan]) && current_user.plan.process_transaction
+        current_user.plan.set_level
+        current_user.plan.save
         redirect_to edit_user_path(current_user)
-        flash[:notice] = "Plan saved"
+        flash[:notice] = "Plan upgraded to #{current_user.plan.render_plan_option}"
       else
         redirect_to edit_user_path(current_user)
         flash[:notice] = "Something's gone wrong! Try again, please."

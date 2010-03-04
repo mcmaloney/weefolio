@@ -15,9 +15,10 @@ class Plan < ActiveRecord::Base
   
   attr_accessor :plan_option, :plan_amount_option, :authnet_credit_card
   
-  before_save :populate_amount_in_cents
+  validate :has_valid_credit_card
   
   def process_transaction
+    return false unless self.valid?
     card = authnet_credit_card
     gateway = ActiveMerchant::Billing::AuthorizeNetGateway.new(AUTHORIZE_NET_CREDENTIALS)
     response = gateway.authorize(self.amount_in_cents, card)
@@ -47,7 +48,16 @@ class Plan < ActiveRecord::Base
     })
   end
   
-  def populate_amount_in_cents
+  def has_valid_credit_card
+    card = authnet_credit_card
+    if card.valid?
+      true
+    else
+      errors.add_to_base("Credit card invalid – please verify that your billing information matches your credit card statement and verify your credit card account number and security code.")
+    end
+  end
+  
+  def amount_in_cents
     option = self.class.const_get(self.plan_option)
     self.amount_in_cents = option
   end
@@ -78,4 +88,26 @@ class Plan < ActiveRecord::Base
       errors.add_to_base("Credit card invalid – please verify that your billing information matches your credit card statement and verify your credit card account number and security code.")
     end
   end
+  
+  def render_plan_option
+    if self.level == 1
+      "Basic"
+    elsif self.level == 2
+      "Plus ($2.99/Month)"
+    elsif self.level == 3
+      "Pro ($4.99/Month)"
+    end
+  end
+  
+  def set_level
+    if self.plan_option == "BASIC"
+      self.level = 1
+    elsif self.plan_option == "PLUS"
+      self.level = 2
+    elsif self.plan_option == "PRO"
+      self.level = 3
+    end
+  end
+  
+  
 end
