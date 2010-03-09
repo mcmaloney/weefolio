@@ -89,7 +89,7 @@
 				<h2>Billing</h2>
 				
 				<div>
-				  Current Plan: <%= @user.plan.render_plan_option %>
+				  Current Plan: <%= @user.render_account_tier %>
 				</div>
 				
 				<dl>
@@ -99,7 +99,9 @@
 					<% fields_for @user.plan do |p| %>
 					<dd>
 						<ul>
-						  <%= show_plan_options_for(@user, p) %>
+						  <li><%= p.radio_button :level, 1, :onclick => "hide_billing()" %><label>Basic (Free)</label></li>
+						  <li><%= p.radio_button :level, 2, :onclick => "show_billing()" %><label>Plus ($2.99/month)</label></li>
+			        <li><%= p.radio_button :level, 3, :onclick => "show_billing()" %><label>Pro ($4.99/month)</label></li>
 						</ul>
 					</dd>
 				<div id="billing_info">

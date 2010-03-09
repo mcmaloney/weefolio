@@ -1,19 +1,9 @@
 class Plan < ActiveRecord::Base
   belongs_to :user
   
-  BASIC = 0 * 100
-  PLUS  = 2.99 * 100
-  PRO   = 4.99 * 100
-  
-  PLAN_OPTIONS = {
-    "BASIC" => "Free",
-    "PLUS"  => "$2.99",
-    "PRO"   => "$4.99"
-  }
-  
   STATUS_OPTIONS = [:none, :pending, :authorized, :charged, :failed]
   
-  attr_accessor :plan_option, :plan_amount_option, :authnet_credit_card
+  attr_accessor :authnet_credit_card
   
   validate :has_valid_credit_card
   
@@ -58,8 +48,13 @@ class Plan < ActiveRecord::Base
   end
   
   def amount_in_cents
-    option = self.class.const_get(self.plan_option)
-    self.amount_in_cents = option
+    if self.level == 1
+      0
+    elsif self.level == 2
+      299
+    elsif self.level == 3
+      499
+    end
   end
   
   def populate_card_last_four
@@ -88,29 +83,4 @@ class Plan < ActiveRecord::Base
       errors.add_to_base("Credit card invalid – please verify that your billing information matches your credit card statement and verify your credit card account number and security code.")
     end
   end
-  
-  def render_plan_option
-    if self.level == 1
-      "Basic"
-    elsif self.level == 2
-      "Plus ($2.99/Month)"
-    elsif self.level == 3
-      "Pro ($4.99/Month)"
-    end
-  end
-  
-  def set_level_for(user)
-    if self.plan_option == "BASIC"
-      self.level = 1
-      user.account_tier = 1
-    elsif self.plan_option == "PLUS"
-      self.level = 2
-      user.account_tier = 2
-    elsif self.plan_option == "PRO"
-      self.level = 3
-      user.account_tier = 3
-    end
-  end
-  
-  
 end

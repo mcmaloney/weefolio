@@ -99,26 +99,4 @@ module UsersHelper
     end
   end
   
-  # Kinda dumb. We should probably just replace :plan option with :level so it can be accessed directly from the DB...
-  def show_plan_options_for(user, local)
-    if user.plan.level == 1
-      %{
-        <li>#{local.radio_button :plan_option, "BASIC", :onclick => "hide_billing()", :checked => true} <label>Basic (Free)</label></li>
-			  <li>#{local.radio_button :plan_option, "PLUS",  :onclick => "show_billing()"} <label>Plus ($2.99/month)</label></li>
-        <li>#{local.radio_button :plan_option, "PRO",   :onclick => "show_billing()"} <label>Pro ($4.99/month)</label></li>
-      }
-    elsif user.plan.level == 2
-      %{
-        <li>#{local.radio_button :plan_option, "BASIC", :onclick => "hide_billing()"} <label>Basic (Free)</label></li>
-			  <li>#{local.radio_button :plan_option, "PLUS",  :onclick => "show_billing()", :checked => true} <label>Plus ($2.99/month)</label></li>
-        <li>#{local.radio_button :plan_option, "PRO",   :onclick => "show_billing()"} <label>Pro ($4.99/month)</label></li>
-      }
-    elsif user.plan.level == 3
-      %{
-        <li>#{local.radio_button :plan_option, "BASIC", :onclick => "hide_billing()"} <label>Basic (Free)</label></li>
-			  <li>#{local.radio_button :plan_option, "PLUS",  :onclick => "show_billing()"} <label>Plus ($2.99/month)</label></li>
-        <li>#{local.radio_button :plan_option, "PRO",   :onclick => "show_billing()", :checked => true} <label>Pro ($4.99/month)</label></li>
-      }
-    end
-  end
 end

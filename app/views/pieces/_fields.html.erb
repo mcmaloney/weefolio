@@ -22,7 +22,7 @@
 				<dd>
 			    <%= f.file_field :image_1 %>
 			  </dd>
-			  <% unless @portfolio.account_tier == 1 %>
+			  <% unless current_user.plan.level == 1 %>
 			    
 			   <dt>
 			      <label for="piece_image_2">Image #2</label>
@@ -56,7 +56,7 @@
 			  <dt>
 			    &nbsp;
 			     </dt>
-			  <% unless @portfolio.account_tier == 1 %>
+			  <% unless current_user.plan.level == 1 %>
 				  <dd>
 			      <%= f.check_box :for_sale, :onclick => 'toggle_price_field()' %> <label for="piece_for_sale">For Sale?</label>
 			    </dd>

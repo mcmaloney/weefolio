@@ -2,6 +2,8 @@ class UsersController < ApplicationController
   layout 'template'
   
   before_filter :authorize, :only => [:users_admin]
+  before_filter :init_user, :only => [:new, :create]
+  before_filter :get_current_user, :except => [:new, :create, :reset_password]
   
   def index
     @users = User.search(params[:search])
@@ -9,31 +11,26 @@ class UsersController < ApplicationController
   
   def new
     @page_title = "Weefolio - Pricing &amp; Sign Up"
-    @user = User.new
   end
   
   def edit
     @page_title = "Weefolio - My Account"
-    @user = current_user
-    @plan = current_user.plan
     @us_states = US_STATES.collect{|s| [s[0], s[1]]}
   end
   
   def update
-    if params[:plan][:plan_option] == "BASIC"
-      if current_user.update_attributes(params[:user])
-        redirect_to edit_user_path(current_user)
+    if params[:plan][:level] == 1
+      if @user.update_attributes(params[:user])
+        redirect_to edit_user_path(@user)
         flash[:notice] = "Account settings saved."
       end
     else
-      if current_user.plan.update_attributes(params[:plan]) && current_user.plan.process_transaction
-        current_user.plan.set_level_for(current_user)
-        current_user.plan.save
-        current_user.save
-        redirect_to edit_user_path(current_user)
-        flash[:notice] = "Plan upgraded to #{current_user.plan.render_plan_option}"
+      if @user.plan.update_attributes(params[:plan]) && @user.plan.process_transaction
+        @user.update_account_tier(params[:plan][:level])
+        redirect_to edit_user_path(@user)
+        flash[:notice] = "Plan upgraded to #{@user.render_account_tier}"
       else
-        redirect_to edit_user_path(current_user)
+        redirect_to edit_user_path(@user)
         flash[:notice] = "Something's gone wrong! Try again, please."
       end
     end
@@ -41,12 +38,10 @@ class UsersController < ApplicationController
  
   def create
     logout_keeping_session!
-    @user = User.new(params[:user])
     
-    @user.setup_portfolio_and_design
-    @user.setup_plan
+    @user.setup
     @user.activate!
-    success = @user && @user.save && @user.portfolio
+    success = @user && @user.save && @user.has_associated
     if success && @user.errors.empty?
       self.current_user = @user
       redirect_to root_path
@@ -54,23 +49,6 @@ class UsersController < ApplicationController
     else
       flash[:error]  = "We couldn't set up that account, sorry.  Please try again."
       render :action => 'new'
-    end
-  end
-
-  def activate
-    logout_keeping_session!
-    user = User.find_by_activation_code(params[:activation_code]) unless params[:activation_code].blank?
-    case
-    when (!params[:activation_code].blank?) && user && !user.active?
-      user.activate!
-      flash[:notice] = "Signup complete! Please sign in to continue."
-      redirect_to '/login'
-    when params[:activation_code].blank?
-      flash[:error] = "The activation code was missing.  Please follow the URL from your email."
-      redirect_back_or_default('/')
-    else 
-      flash[:error]  = "We couldn't find a user with that activation code -- check your email? Or maybe you've already activated -- try signing in."
-      redirect_back_or_default('/')
     end
   end
   
@@ -95,7 +73,6 @@ class UsersController < ApplicationController
   
   # This would be less expensive as an AJAX action. 
   def switch_design_type
-    @user = current_user
     if @user.design_type == 1
       @user.set_design_type(2)
     else
@@ -109,12 +86,22 @@ class UsersController < ApplicationController
   end
   
   def remove_account
-    UserMailer.deliver_delete_account_message(current_user)
-    current_user.delete
+    UserMailer.deliver_delete_account_message(@user)
+    @user.delete
     redirect_to logout_path
   end
   
   def users_admin
     @users = User.find(:all)
+  end
+  
+  protected
+  
+  def init_user
+    @user = User.new(params[:user])
+  end
+  
+  def get_current_user
+    @user = current_user
   end
 end
