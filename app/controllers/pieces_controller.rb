@@ -1,6 +1,7 @@
 class PiecesController < ApplicationController
   layout :choose_layout
   before_filter :authorize, :only => [:pieces_admin]
+  before_filter :get_current_user
   before_filter :get_portfolio, :except => [:destroy, :pieces_admin]
   before_filter :init_piece, :only => [:new, :create]
   before_filter :find_piece, :only => [:show, :edit, :update, :destroy]
@@ -11,14 +12,14 @@ class PiecesController < ApplicationController
   
   def create
     if @piece.save
-      redirect_to edit_user_portfolio_path(current_user, @portfolio)
+      redirect_to edit_user_portfolio_path(@user, @portfolio)
       if @piece.for_sale
         flash[:notice] = "<strong>'#{@piece.title}'</strong> has been added to your Weefolio (for sale at #{@piece.display_price})"
       else
         flash[:notice] = "<strong>'#{@piece.title}'</strong> has been added to your Weefolio"
       end
     else
-      redirect_to edit_user_portfolio_path(current_user, @portfolio)
+      redirect_to edit_user_portfolio_path(@user, @portfolio)
       flash[:notice] = "Couldn't upload that piece. Please ty again!"
     end
   end
@@ -29,24 +30,23 @@ class PiecesController < ApplicationController
   
   def update
     if @piece.update_attributes(params[:piece])
-      redirect_to edit_user_portfolio_path(current_user)
+      redirect_to edit_user_portfolio_path(@user)
       flash[:notice] = "Piece updated."
     end
   end
   
   def destroy
     @piece.destroy
-    if current_user.admin?
+    if @user.admin?
       redirect_to pieces_admin_path
       flash[:notice] = "'#{@piece.title}' has been <strong>deleted</strong>."
     else
-      redirect_to edit_user_portfolio_path(current_user)
+      redirect_to edit_user_portfolio_path(@user)
       flash[:notice] = "'#{@piece.title}' has been <strong>deleted</strong>."
     end
   end
 
   def show
-    @user = current_user
     @page_title = "#{@user.login} - #{@piece.title}"
     @design = @user.design
   end
@@ -66,7 +66,7 @@ class PiecesController < ApplicationController
   protected
   
   def get_portfolio
-    @portfolio = current_user.portfolio
+    @portfolio = @user.portfolio
   end
   
   def init_piece
@@ -74,11 +74,15 @@ class PiecesController < ApplicationController
   end
   
   def find_piece
-    if current_user.admin?
+    if @user.admin?
       @piece = Piece.find(params[:id])
     else
-      @piece = current_user.pieces.find(params[:id])
+      @piece = @user.pieces.find(params[:id], :include => [:image_1, :image_2, :image_3, :image_4, :image_5])
     end
+  end
+  
+  def get_current_user
+    @user = User.find_by_login(current_user.login, :include => [:design, :portfolio, :plan, :pieces])
   end
     
   private

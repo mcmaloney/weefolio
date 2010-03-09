@@ -19,7 +19,7 @@ class UsersController < ApplicationController
   end
   
   def update
-    if params[:plan][:level] == 1
+    if params[:plan][:level] == @user.plan.level.to_s
       if @user.update_attributes(params[:user])
         redirect_to edit_user_path(@user)
         flash[:notice] = "Account settings saved."
@@ -28,7 +28,7 @@ class UsersController < ApplicationController
       if @user.update_self_and_plan(params[:user], params[:plan])
         @user.update_account_tier(params[:plan][:level])
         redirect_to edit_user_path(@user)
-        flash[:notice] = "Plan upgraded to #{@user.render_account_tier}"
+        flash[:notice] = "Plan changed to #{@user.render_account_tier}"
       else
         redirect_to edit_user_path(@user)
         flash[:notice] = "Something's gone wrong! Try again, please."
@@ -101,6 +101,6 @@ class UsersController < ApplicationController
   end
   
   def get_current_user
-    @user = current_user
+    @user = User.find_by_login(current_user.login, :include => [:plan, :portfolio, :design])
   end
 end
