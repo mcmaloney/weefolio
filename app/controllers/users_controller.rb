@@ -25,7 +25,7 @@ class UsersController < ApplicationController
         flash[:notice] = "Account settings saved."
       end
     else
-      if @user.plan.update_attributes(params[:plan]) && @user.plan.process_transaction
+      if @user.update_self_and_plan(params[:user], params[:plan])
         @user.update_account_tier(params[:plan][:level])
         redirect_to edit_user_path(@user)
         flash[:notice] = "Plan upgraded to #{@user.render_account_tier}"
@@ -40,7 +40,6 @@ class UsersController < ApplicationController
     logout_keeping_session!
     
     @user.setup
-    @user.activate!
     success = @user && @user.save && @user.has_associated
     if success && @user.errors.empty?
       self.current_user = @user

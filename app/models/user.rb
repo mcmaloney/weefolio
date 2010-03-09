@@ -42,6 +42,9 @@ class User < ActiveRecord::Base
     self.plan = Plan.new(:level => 1)
     self.plan.save
     
+    # Activate
+    self.activate!
+    
     # Save the user at the end.
     self.save
   end
@@ -49,6 +52,11 @@ class User < ActiveRecord::Base
   # Checking for associated objects.
   def has_associated
     self.portfolio && self.design && self.plan
+  end
+  
+  # Check if the plan and user attributes updated as well as the transaction processed.
+  def update_self_and_plan(user, plan)
+    self.plan.update_attributes(plan) && self.update_attributes(user) && self.plan.process_transaction
   end
   
   # Simple search for the directory page

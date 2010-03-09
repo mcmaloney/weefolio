@@ -17,6 +17,9 @@ class PiecesController < ApplicationController
       else
         flash[:notice] = "<strong>'#{@piece.title}'</strong> has been added to your Weefolio"
       end
+    else
+      redirect_to edit_user_portfolio_path(current_user, @portfolio)
+      flash[:notice] = "Couldn't upload that piece. Please ty again!"
     end
   end
 

@@ -7,6 +7,8 @@ class Plan < ActiveRecord::Base
   
   validate :has_valid_credit_card
   
+  before_save :populate_amount_in_cents, :populate_card_last_four
+  
   def process_transaction
     return false unless self.valid?
     card = authnet_credit_card
@@ -47,18 +49,18 @@ class Plan < ActiveRecord::Base
     end
   end
   
-  def amount_in_cents
+  def populate_amount_in_cents
     if self.level == 1
-      0
+      self.amount_in_cents = 0
     elsif self.level == 2
-      299
+      self.amount_in_cents = 299
     elsif self.level == 3
-      499
+      self.amount_in_cents = 499
     end
   end
   
   def populate_card_last_four
-    self.card_last_four = self.card_number.last(4)
+    self.card_last_four = self.card_number.last(4) unless self.card_number.blank?
   end
   
   # Check with authnet to see if the card is valid.
