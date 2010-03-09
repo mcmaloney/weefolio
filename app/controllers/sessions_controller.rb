@@ -1,5 +1,4 @@
-# This controller handles the login/logout function of the site.  
-class SessionsController < ApplicationController
+ class SessionsController < ApplicationController
   layout 'template'
   
   def new
@@ -15,14 +14,11 @@ class SessionsController < ApplicationController
       # button. Uncomment if you understand the tradeoffs.
       # reset_session
       self.current_user = user
-      new_cookie_flag = (params[:remember_me] == "1")
-      handle_remember_cookie! new_cookie_flag
       redirect_to edit_user_portfolio_path(current_user, current_user.portfolio)
       flash[:notice] = "Hello, <strong>#{current_user.login}</strong>!"
     else
       note_failed_signin
       @login       = params[:login]
-      @remember_me = params[:remember_me]
       render :action => 'new'
     end
   end
