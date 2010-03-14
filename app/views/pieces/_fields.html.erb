@@ -54,6 +54,18 @@
 			  <% end %>
 			  <% end %>
 			  <dt>
+			    <label for="piece_client_name">Client</label>
+			  </dt>
+			  <dd>
+			    <%= f.text_field :client_name %>
+			  </dd>
+			  <dt>
+			    <label for="piece_service_type">Service Type</label>
+			  </dt>
+			  <dd>
+			    <%= f.select :service_type, @service_types %>
+			  </dd>
+			  <dt>
 			    &nbsp;
 			     </dt>
 			  <% unless current_user.plan.level == 1 %>
@@ -68,6 +80,12 @@
 				    <dd>
 			        <%= f.text_field :price, :size => 8 %>
 			      </dd>
+			      <dt>
+			        <label for="piece_sale_url">Where ya'll sellin it at?
+			      </dt>
+			      <dd>
+		          <%= f.text_field :sale_url %>
+		        </dd>
 			    </div>
 			  <% end %>
   		</dl>

@@ -8,6 +8,7 @@ class PiecesController < ApplicationController
   
   def new
     @page_title = "Weefolio - Add New Work"
+    @service_types = Piece::SERVICE_TYPES
   end
   
   def create
