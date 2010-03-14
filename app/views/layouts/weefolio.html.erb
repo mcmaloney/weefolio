@@ -84,6 +84,10 @@
 			</div>
 		</div>
 		
+		<p>
+		  <%= show_rss_for(current_user) %>
+		</p>
+		
 		<% if @user.account_tier == 1 %>
 			<a id="weefolio-badge" href="#">Weefolio</a>
 		<% end %>
