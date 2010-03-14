@@ -1,0 +1,94 @@
+<html>
+	<head>	
+		<style type="text/css">
+			body {
+				background: [background-color];
+				color: [text-color];
+				font-family: [font];
+				font-size: [font-size];
+					
+			}
+			
+			a:link,
+			a:visited {
+				color: [link-color];
+			}
+			
+			a:visited,
+			a:visited:hover {
+				color: [link-hover]; 
+			}
+			
+			h1, h2, h3, h4, h5, h6 {
+				color: [title-color];
+			}
+			
+			div.header-container {
+				background: [header-background];	
+			}
+		</style>
+	</head>
+	
+	<body>
+		<div class="header-wrapper">
+			<div class="header-container">
+				[header-image] <!--Outputs: '<img src="url" alt="header-image"/>' -->
+			</div>
+		</div>
+		
+		<div class="content-wrapper">
+			<div class="content-container">
+				<div class="tagline-container">
+					<h1>[tagline]</h1> <!--Outputs: 'Blah, blah, blah...whatever my tagline is...' -->	
+				</div>
+				
+				<div class="portfolio-container">
+					[if:portfolio-pieces] <!--If I have one or more portfolio piece output the following for each...--> 
+						<div class="portfolio-item">
+							<div class="main-image">
+								[piece-image] <!--Outputs: '<img src="url" alt="piece-image"/>' -->
+							</div>
+							
+							<div class="piece-gallery">
+								[piece-gallery] <!--Outputs: '<ul><li><a href="url"><img src="url" alt="img-#"/></a></li></ul>' -->
+							</div>
+							
+							<div class="about">
+								<p>[piece-about]</p> <!--Outputs: 'Blah, blah, blah...about the piece.' -->
+							</div>
+							
+							<div class="meta">
+								<dl>
+									<dt>Client:</dt>
+									<dd>[piece-client]</dd> <!--Outputs: 'Client Name' -->
+									
+									<dt>Service:</dt>
+									<dd>[piece-service]</dd> <!--Outputs: 'Piece service' -->
+									
+									[if:piece-for-sale] <!--If the given peice is for sale...-->
+										<dt>For Sale:</dt>
+										<dd><a href="[sale-url]" target="_blank">[piece-price]</a></dd> <!--Outputs: 'Piece price' -->
+									[/if:piece-for-sale]
+								</dl>
+							</div>
+						</div>
+					[/if:portfolio-pieces]
+				</div>
+				
+				<div class="about-container">
+					<h2>About</h2>
+					
+					<p>[about-me]</p> <!--Outputs: 'Blah, blah, blah...about me.' -->
+					
+					<p>Subscribe to my <a href="[rss-url]" target="_blank">RSS</a> feed!</p> <!--Outputs: 'User's RSS url.' -->
+				</div>
+				
+				<div class="contact-container">
+					<h2>Contact</h2>
+					
+					[contact-form] <!--Outputs: 'Basic email form.' -->
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
