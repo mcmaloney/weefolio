@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100304201211) do
+ActiveRecord::Schema.define(:version => 20100314205105) do
 
   create_table "delayed_jobs", :force => true do |t|
     t.integer  "priority",   :default => 0
@@ -149,8 +149,6 @@ ActiveRecord::Schema.define(:version => 20100304201211) do
     t.datetime "remember_token_expires_at"
     t.string   "activation_code",           :limit => 40
     t.datetime "activated_at"
-    t.string   "first_name"
-    t.string   "last_name"
     t.text     "about_me"
     t.string   "tag_line",                  :limit => 500
     t.integer  "account_tier",                             :default => 1
