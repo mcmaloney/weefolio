@@ -34,6 +34,9 @@ ActionController::Routing::Routes.draw do |map|
   # BLOG
   map.resources :posts
   
+  # DOCS
+  map.themes '/docs/themes', :controller => "docs", :action => "themes"
+  
   # SEPARATE PIECE ROUTE FOR EASY SORTING
   map.resources :pieces, :collection => { :sort => :post}
   
