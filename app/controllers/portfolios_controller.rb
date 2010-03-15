@@ -22,9 +22,9 @@ class PortfoliosController < ApplicationController
   protected
   
   def get_user_design_portfolio
-    @user = current_user
-    @design = current_user.design
-    @portfolio = current_user.portfolio
+    @user = User.find(params[:user_id])
+    @design = @user.design
+    @portfolio = @user.portfolio
   end
 
   private
