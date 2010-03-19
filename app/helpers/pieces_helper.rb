@@ -33,6 +33,5 @@ module PiecesHelper
         #{image_tag image.url(:small_thumb)}
       }
     end
-  end
-    
+  end 
 end
