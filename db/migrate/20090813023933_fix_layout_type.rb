@@ -1,6 +1,6 @@
 class FixLayoutType < ActiveRecord::Migration
   def self.up
-    #remove_column :users, :layout_type
+    remove_column :users, :layout_type
     add_column :designs, :layout_type, :integer, :default => 1
   end
 
