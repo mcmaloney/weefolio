@@ -31,7 +31,7 @@ class User < ActiveRecord::Base
   # Sets up all objects associated with the user on creation of account.
   def setup
     # Build the portfolio
-    self.portfolio = Portfolio.new
+    self.portfolio = Portfolio.new(:login => self.login)
     self.portfolio.save
     
     # Build the design editor
