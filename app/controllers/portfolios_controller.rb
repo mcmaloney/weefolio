@@ -1,6 +1,6 @@
 class PortfoliosController < ApplicationController
   layout :choose_layout
-  before_filter :get_user_design_portfolio, :except => [:send_message]
+  before_filter :get_user_design_portfolio
   
   # This is what the world sees. (My Weefolio)
   def show
@@ -22,9 +22,9 @@ class PortfoliosController < ApplicationController
   protected
   
   def get_user_design_portfolio
-    @user = current_user
-    @design = current_user.design
-    @portfolio = current_user.portfolio
+    @user = User.find(params[:user_id])
+    @design = @user.design
+    @portfolio = @user.portfolio
   end
 
   private
