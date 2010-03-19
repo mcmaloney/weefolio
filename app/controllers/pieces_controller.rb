@@ -1,7 +1,6 @@
 class PiecesController < ApplicationController
   layout :choose_layout
   before_filter :authorize, :only => [:pieces_admin]
-  before_filter :get_current_user
   before_filter :get_portfolio, :except => [:destroy, :pieces_admin]
   before_filter :init_piece, :only => [:new, :create]
   before_filter :find_piece, :only => [:show, :edit, :update, :destroy]
@@ -27,6 +26,7 @@ class PiecesController < ApplicationController
 
   def edit
     @page_title = "Weefolio - Edit '#{@piece.title}'"
+    @service_types = Piece::SERVICE_TYPES
   end
   
   def update
@@ -67,6 +67,7 @@ class PiecesController < ApplicationController
   protected
   
   def get_portfolio
+    @user = User.find_by_login(params[:portfolio_id])
     @portfolio = @user.portfolio
   end
   
@@ -75,15 +76,8 @@ class PiecesController < ApplicationController
   end
   
   def find_piece
-    if @user.admin?
-      @piece = Piece.find(params[:id])
-    else
-      @piece = @user.pieces.find(params[:id], :include => [:image_1, :image_2, :image_3, :image_4, :image_5])
-    end
-  end
-  
-  def get_current_user
-    @user = User.find_by_login(current_user.login, :include => [:design, :portfolio, :plan, :pieces])
+    @user = User.find_by_login(params[:portfolio_id])
+    @piece = @user.pieces.find(params[:id])
   end
     
   private

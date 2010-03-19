@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   
   before_filter :authorize, :only => [:users_admin]
   before_filter :init_user, :only => [:new, :create]
-  before_filter :get_current_user, :except => [:new, :create, :reset_password]
+  before_filter :get_current_user, :except => [:new, :index, :create, :reset_password]
   
   def index
     @users = User.search(params[:search])
