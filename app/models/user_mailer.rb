@@ -6,7 +6,7 @@ class UserMailer < ActionMailer::Base
   def user_message(recip, from, from_name, message)
     recipients recip
     from from
-    subject from_name
+    subject "Message from Weefolio User #{from_name}"
     sent_on Time.now
     body message
   end

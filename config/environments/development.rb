@@ -16,12 +16,11 @@ config.action_controller.perform_caching             = false
 # Don't care if the mailer can't send
 config.action_mailer.raise_delivery_errors = false
 
-# Need to change this to our own PayPal API info once we have it.
-config.after_initialize do
-  ActiveMerchant::Billing::Base.mode = :test
-  ::GATEWAY = ActiveMerchant::Billing::PaypalGateway.new(
-    :login => "seller_1229899173_biz_api1.railscasts.com",
-    :password => "FXWU58S7KXFC6HBE",
-    :signature => "AGjv6SW.mTiKxtkm6L9DcSUCUgePAUDQ3L-kTdszkPG8mRfjaRZDYtSu"
-  )
-end
+ActionMailer::Base.smtp_settings = {
+  :domain => "carlsonshepherd.com",
+  :address => "mail.carlsonshepherd.com",
+  :port => 26,
+  :user_name => "m.maloney@carlsonshepherd.com",
+  :password => "fitzgoogoo",
+  :authentication => :login
+}

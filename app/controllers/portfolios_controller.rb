@@ -1,6 +1,6 @@
 class PortfoliosController < ApplicationController
   layout :choose_layout
-  before_filter :get_user_design_portfolio, :except => [:send_message]
+  before_filter :get_user_design_portfolio
   
   # This is what the world sees. (My Weefolio)
   def show
@@ -14,9 +14,14 @@ class PortfoliosController < ApplicationController
   
   # Send message action for the contact user form.
   def send_message
-    UserMailer.send_later :deliver_user_message, User.find(params[:id]).email, params[:from], params[:from_name], params[:message]
-    redirect_to user_portfolio_path(@user, @user.portfolio)
-    flash[:notice] = "Your <strong>message</strong> has been sent."
+    if !params[:from].blank? && !params[:name].blank? && !params[:message].blank?
+      UserMailer.send_later :deliver_user_message, @user.email, params[:from], params[:name], params[:message]
+      redirect_to user_portfolio_path(@user, @user.portfolio)
+      flash[:notice] = "Your <strong>message</strong> has been sent."
+    else
+      redirect_to user_portfolio_path(@user, @user.portfolio)
+      flash[:notice] = "YOU MUST FILL IN NAME, EMAIL AND MESSAGE."
+    end
   end
   
   protected
