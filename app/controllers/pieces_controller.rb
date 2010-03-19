@@ -4,10 +4,10 @@ class PiecesController < ApplicationController
   before_filter :get_portfolio, :except => [:destroy, :pieces_admin]
   before_filter :init_piece, :only => [:new, :create]
   before_filter :find_piece, :only => [:show, :edit, :update, :destroy]
+  before_filter :get_service_types, :only => [:new, :edit]
   
   def new
     @page_title = "Weefolio - Add New Work"
-    @service_types = Piece::SERVICE_TYPES
   end
   
   def create
@@ -26,7 +26,6 @@ class PiecesController < ApplicationController
 
   def edit
     @page_title = "Weefolio - Edit '#{@piece.title}'"
-    @service_types = Piece::SERVICE_TYPES
   end
   
   def update
@@ -59,7 +58,6 @@ class PiecesController < ApplicationController
     render :nothing => true
   end
   
-  
   def pieces_admin
     @pieces = Piece.find(:all)
   end
@@ -67,7 +65,7 @@ class PiecesController < ApplicationController
   protected
   
   def get_portfolio
-    @user = User.find_by_login(params[:portfolio_id])
+    @user = User.find_by_login(params[:portfolio_id], :include => [:portfolio])
     @portfolio = @user.portfolio
   end
   
@@ -76,8 +74,12 @@ class PiecesController < ApplicationController
   end
   
   def find_piece
-    @user = User.find_by_login(params[:portfolio_id])
+    @user = User.find_by_login(params[:portfolio_id], :include => [:pieces])
     @piece = @user.pieces.find(params[:id])
+  end
+  
+  def get_service_types
+    @service_types = Piece::SERVICE_TYPES
   end
     
   private
