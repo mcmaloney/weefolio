@@ -32,7 +32,7 @@
 				
 				<div class="piece-info">	
 					<h3><%= link_to piece.title, edit_portfolio_piece_path(@portfolio, piece)%></h3>
-					<p><%=h piece.description %></p>
+					<p><%=h truncate(piece.description, :length => 200) %></p>
 				</div>
 				
 				<ul class="piece-options">
