@@ -27,7 +27,7 @@ class PortfoliosController < ApplicationController
   protected
   
   def get_user_design_portfolio
-    @user = User.find(params[:user_id])
+    @user = User.find(params[:user_id], :include => [:design, :portfolio])
     @design = @user.design
     @portfolio = @user.portfolio
   end

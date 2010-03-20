@@ -11,7 +11,6 @@ class MainPagesController < ApplicationController
   end
   
   def contact
-    @user = current_user
     @page_title = "Weefolio - Contact Us"
   end
   
