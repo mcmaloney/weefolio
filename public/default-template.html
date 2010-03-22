@@ -2,77 +2,231 @@
 	<head>	
 		<style type="text/css">
 			body {
-				background: [background-color];
-				color: [text-color];
-				font-family: [font];
-				font-size: [font-size];
-					
+				margin: 0;
+				background: #fff;
+				color: #222;
+				font-family: Arial;
+				font-size: 14px;
 			}
 			
 			a:link,
 			a:visited {
-				color: [link-color];
+				color: #92c62a;
 			}
 			
-			a:visited,
+			a:hover,
 			a:visited:hover {
-				color: [link-hover]; 
+				color: #222; 
 			}
 			
-			h1, h2, h3, h4, h5, h6 {
-				color: [title-color];
+			h2, h3, h4, h5, h6 {
+				color: #000;
 			}
 			
-			div.header-container {
-				background: [header-background];	
+			
+			/*---ACTIONS---*/
+			
+			a.action {
+				font-size: 11px;
+				padding: 2px 20px 2px 0;
+				background-position: right center;	
+				background-repeat: no-repeat;
 			}
+			
+			a.action.more { background-image: url(images/themes/default/plus-icon.png); float: right; }
+			a.action.launch { background-image: url(images/themes/default/launch-icon.png); }
+			
+			/*---STRUCTURE---*/
+			
+			div.header-wrapper {
+				background: #000;	
+				margin: 0 auto;
+				padding: 20px 0;
+				overflow: hidden;
+			}
+				
+			div.header-wrapper div.header-container {
+				margin: 0 auto;
+				width: 750px;
+				overflow: hidden;
+				color: #fff;
+			}
+				
+			div.content-wrapper {
+				background: #fff;
+			}
+				
+			div.content-wrapper div.content-container {
+				margin: 0 auto;
+				width: 750px;
+				overflow: hidden;
+			}
+			
+			div.content-wrapper div.content-container div.tagline-container {
+				padding: 20px 0 0 0;
+				overflow: hidden;
+				}
+				
+			div.content-wrapper div.content-container div.tagline-container h2 {
+				margin-bottom: 5px;
+				}
+			
+			div.content-wrapper div.content-container div.portfolio-container div.portfolio-item {
+				padding: 20px 0;
+				border-bottom: 1px solid #ddd;
+				overflow: hidden;
+				}
+				
+			
+			/*---PORTFOLIO ITEM---*/
+			
+			div.portfolio-container div.portfolio-item div.piece-gallery ul {
+				list-style: none;
+				margin: 0
+				padding: 0;	
+				width: 710px;
+				overflow: hidden;
+			}
+			
+			div.portfolio-container div.portfolio-item div.piece-gallery ul li {
+				float: left;	
+				margin: 10px 10px 0 0
+			}
+			
+			div.portfolio-container div.portfolio-item div.about {
+				width: 420px;
+				margin: 20px 0 0 0;
+				float: left;
+				}
+				
+			div.portfolio-container div.portfolio-item div.about h2 {
+				margin-top: 0;
+				}
+				
+			div.portfolio-container div.portfolio-item div.meta {
+				width: 260px;
+				background: rgba(0, 0, 0, .05);
+				float: right;
+				font-size: 11px;
+				padding: 10px 20px;
+				margin: 20px 0 0 0;
+				}
+				
+			div.portfolio-container div.portfolio-item div.meta dl {
+				margin: 0;
+				padding: 0;
+				}
+				
+			div.portfolio-container div.portfolio-item div.meta dl dt {
+				width: 60px;
+				float: left;	
+				margin: 0 ;
+				text-align: right;
+				clear: both;
+				padding: 10px 20px 10px 0;
+				border-top: 1px solid #ddd;
+			}
+			
+			div.portfolio-container div.portfolio-item div.meta dl dd {
+				float: left;	
+				margin: 0;
+				height: 13px;
+				width: 179px;
+				padding: 10px 0 ;
+				border-top: 1px solid #ddd;
+			}
+			
+			div.portfolio-container div.portfolio-item div.meta dl dt span {
+				background-position: right 0;
+				height: 13px;
+				width: 60px;
+				overflow: hidden;
+				text-indent: 1000px;
+				background-repeat: no-repeat;
+				display: block;
+				}
+				
+			div.portfolio-container div.portfolio-item div.meta dl dt span.client {
+				background-image: url(images/themes/default/client-icon.png);
+				}
+			div.portfolio-container div.portfolio-item div.meta dl dt span.skills {
+				background-image: url(images/themes/default/skills-icon.png);
+				}
+			div.portfolio-container div.portfolio-item div.meta dl dt span.for-sale {
+				background-image: url(images/themes/default/buy-icon.png);
+				}
+				
+			div.portfolio-container div.portfolio-item div.meta dl dt.first,
+			div.portfolio-container div.portfolio-item div.meta dl dd.first {
+				border-top: none;
+				padding-top: none;
+				}
 		</style>
 	</head>
 	
 	<body>
 		<div class="header-wrapper">
 			<div class="header-container">
-				[header-image] <!--Outputs: '<img src="url" alt="header-image"/>' -->
+				<h1>Kevin John Gomez</h1> <!--<img src="#" width="710" height="100"/>--> <!--Outputs: '<img src="url" alt="header-image"/>' -->
 			</div>
 		</div>
 		
 		<div class="content-wrapper">
 			<div class="content-container">
 				<div class="tagline-container">
-					<h1>[tagline]</h1> <!--Outputs: 'Blah, blah, blah...whatever my tagline is...' -->	
+					<h2>Hello, my name is Kevin John Gomez. I'm a web designer &amp; developer from Brooklyn, NY. I make the internet pretty!</h2>
+					<a class="action more" href="#">More</a> <!--Outputs: 'Blah, blah, blah...whatever my tagline is...' -->	
 				</div>
 				
 				<div class="portfolio-container">
-					[if:portfolio-pieces] <!--If I have one or more portfolio piece output the following for each...--> 
+					<!--[if:portfolio-pieces]--> <!--If I have one or more portfolio piece output the following for each...--> 
 						<div class="portfolio-item">
 							<div class="main-image">
-								[piece-image] <!--Outputs: '<img src="url" alt="piece-image"/>' -->
+								<img src="#" width="750" height="250"/> <!--Outputs: '<img src="url" alt="piece-image"/>' -->
 							</div>
 							
-							<div class="piece-gallery">
-								[piece-gallery] <!--Outputs: '<ul><li><a href="url"><img src="url" alt="img-#"/></a></li></ul>' -->
-							</div>
+							<!--<div class="piece-gallery">
+								<ul>
+									<li>
+										<a href="#"><img src="#" width="50" height="50"/></a>
+									</li>	
+									
+									<li>
+										<a href="#"><img src="#" width="50" height="50"/></a>
+									</li>	
+									
+									<li>
+										<a href="#"><img src="#" width="50" height="50"/></a>
+									</li>	
+								</ul>
+								
+								Outputs: '<ul><li><a href="url"><img src="url" alt="img-#"/></a></li></ul>'
+							</div>-->
 							
 							<div class="about">
-								<p>[piece-about]</p> <!--Outputs: 'Blah, blah, blah...about the piece.' -->
+								<h2>Arms &amp; Legs</h2>
+								<p>Four color, hand screen printed on 100% cotton, sweatshop-free American Apparel tee in a limited edition of 50.</p>
+
+<p>Also available at Thread.</p> <p><a class="action launch" href="#">Launch</a></p> <!--Outputs: 'Blah, blah, blah...about the piece.' -->
 							</div>
 							
 							<div class="meta">
 								<dl>
-									<dt>Client:</dt>
-									<dd>[piece-client]</dd> <!--Outputs: 'Client Name' -->
+									<dt class="first"><span class="client">Client:</span></dt>
+									<dd class="first">Kevin John Gomez</dd> <!--Outputs: 'Client Name' -->
 									
-									<dt>Service:</dt>
-									<dd>[piece-service]</dd> <!--Outputs: 'Piece service' -->
+									<dt><span class="skills">Skills:</span></dt>
+									<dd>Print Design</dd> <!--Outputs: 'Piece service' -->
 									
-									[if:piece-for-sale] <!--If the given peice is for sale...-->
-										<dt>For Sale:</dt>
-										<dd><a href="[sale-url]" target="_blank">[piece-price]</a></dd> <!--Outputs: 'Piece price' -->
-									[/if:piece-for-sale]
+									 <!--If the given peice is for sale...-->
+										<dt><span class="for-sale">For Sale:</span></dt>
+										<dd><a href="[sale-url]" target="_blank">$20.00</a></dd> <!--Outputs: 'Piece price' -->
 								</dl>
 							</div>
 						</div>
-					[/if:portfolio-pieces]
+						
+						
+					<!--[/if:portfolio-pieces]-->
 				</div>
 				
 				<div class="about-container">
