@@ -622,11 +622,16 @@ body.home div.content-container ul.features {
 	display: block;
 	overflow: hidden;
 	list-style: none;
+	width: 735px;
 	}
 	
 body.home div.content-container ul.features li {
 	padding: 0;
-	margin: 0 0;
+	margin: 0 25px 0 0;
+	width: 220px;
+	height: 270px;
+	overflow: hidden;
+	float: left;
 	}
 	
 body.home div.content-container ul.features li p a {
