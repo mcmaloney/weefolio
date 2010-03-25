@@ -1,33 +1,44 @@
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+	<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	
 	<head>	
+		<title>The Weefolio of Kevin John Gomez</title>
+		
 		<style type="text/css">
+			/*---GLOBAL---*/
+			
 			body {
 				margin: 0;
-				background: #fff;
-				color: #222;
+				text-align: center;
 				font-family: Arial;
-				font-size: 14px;
+				font-size: 11px;
+				color: #767574;
 			}
 			
 			a:link,
 			a:visited {
-				color: #92c62a;
+				color: #9fcf44;
 			}
 			
 			a:hover,
 			a:visited:hover {
-				color: #222; 
+				color: #242420; 
 			}
 			
-			h2, h3, h4, h5, h6 {
-				color: #000;
+			h1, h2, h3, h4, h5, h6 {
+				color: #242420;
+			}
+			
+			p {
+				line-height: 150%;
 			}
 			
 			
 			/*---ACTIONS---*/
 			
 			a.action {
-				font-size: 11px;
 				padding: 2px 20px 2px 0;
 				background-position: right center;	
 				background-repeat: no-repeat;
@@ -36,107 +47,198 @@
 			a.action.more { background-image: url(images/themes/default/plus-icon.png); float: right; }
 			a.action.launch { background-image: url(images/themes/default/launch-icon.png); }
 			
+			
 			/*---STRUCTURE---*/
 			
-			div.header-wrapper {
-				background: #000;	
+			div#header-wrapper {
+				background: #242420;	
 				margin: 0 auto;
 				padding: 20px 0;
 				overflow: hidden;
 			}
 				
-			div.header-wrapper div.header-container {
+			div#header-container {
 				margin: 0 auto;
 				width: 750px;
 				overflow: hidden;
 				color: #fff;
+				text-align: left;
 			}
 				
-			div.content-wrapper {
+			div#content-wrapper {
 				background: #fff;
+				overflow: hidden;
+				padding: 0 0 50px 0;
 			}
 				
-			div.content-wrapper div.content-container {
+			div#content-container {
 				margin: 0 auto;
 				width: 750px;
 				overflow: hidden;
+				text-align: left;
 			}
 			
-			div.content-wrapper div.content-container div.tagline-container {
-				padding: 20px 0 0 0;
-				overflow: hidden;
-				}
-				
-			div.content-wrapper div.content-container div.tagline-container h2 {
-				margin-bottom: 5px;
-				}
-			
-			div.content-wrapper div.content-container div.portfolio-container div.portfolio-item {
-				padding: 20px 0;
-				border-bottom: 1px solid #ddd;
-				overflow: hidden;
-				}
-				
-			
-			/*---PORTFOLIO ITEM---*/
-			
-			div.portfolio-container div.portfolio-item div.piece-gallery ul {
-				list-style: none;
-				margin: 0
-				padding: 0;	
-				width: 710px;
+			div#tagline-container {
+				padding: 35px 0 20px 0;
 				overflow: hidden;
 			}
 			
-			div.portfolio-container div.portfolio-item div.piece-gallery ul li {
-				float: left;	
-				margin: 10px 10px 0 0
+			div#portfolio-container {	
+				border-bottom: 1px solid #dcdcda;
+				margin: 0;
 			}
 			
-			div.portfolio-container div.portfolio-item div.about {
-				width: 420px;
-				margin: 20px 0 0 0;
+			div#info-container {
+				overflow: hidden;
+				border-bottom: 1px solid #dcdcda;
+				padding: 0 0 40px 0;
+				margin: 40px 0 0 0;
+			}
+			
+			div#about-container {
+				width: 355px;
+				overflow: hidden;
 				float: left;
-				}
-				
-			div.portfolio-container div.portfolio-item div.about h2 {
-				margin-top: 0;
-				}
-				
-			div.portfolio-container div.portfolio-item div.meta {
-				width: 260px;
-				background: rgba(0, 0, 0, .05);
+			}
+			
+			div#contact-container {
+				width: 355px;
+				overflow: hidden;
 				float: right;
-				font-size: 11px;
-				padding: 10px 20px;
-				margin: 20px 0 0 0;
-				}
+			}
+			
+			div#footer-container {
+				overflow: hidden;
+				padding: 15px 0 0 0;
+				margin: 0 0 40px 0;
+			}
+			
+			
+			/*---HEADER---*/
+			
+			div#header-container p.no-header {
+				text-align: center;
+				padding: 30px;
+				color: #767574;
+				background: rgba(0, 0, 0, .3);
+				margin: 0;
+				border-width: 3px;
+				border-color: rgba(255, 255, 255, .1);
+				border-style: dashed;
+				border-radius: 5px;
+					-webkit-border-radius: 5px;
+					-moz-border-radius: 5px;
+			}
+			
+			
+			/*---TAGLINE---*/
 				
-			div.portfolio-container div.portfolio-item div.meta dl {
+			div#tagline-container h1 {
+				margin: 5px 0;
+			}
+				
+			
+			/*---PORTFOLIO---*/
+			
+			p.no-work {
+				text-align: center;
+				padding: 90px;
+				color: #767574;
+				background: rgba(0, 0, 0, .05);
+				margin: 0 0 40px 0;
+				border-width: 3px;
+				border-color: rgba(0, 0, 0, .1);
+				border-style: dashed;
+				border-radius: 5px;
+					-webkit-border-radius: 5px;
+					-moz-border-radius: 5px;
+			}
+			
+			div#portfolio-container div.portfolio-item {
+				padding: 0 0 40px 0;
+				overflow: hidden;
+			}
+			
+			div#portfolio-container div.portfolio-item div.images {
+				background: rgba(0, 0, 0, .05);
+				overflow: hidden;
+				padding: 5px;
+				margin: 0 0 40px 0;
+				text-align: center;
+				border-radius: 5px;
+					-webkit-border-radius: 5px;
+					-moz-border-radius: 5px;
+			}
+			
+			div#portfolio-container div.portfolio-item div.images div.gallery {
+				overflow: hidden;
+			}
+			
+			div#portfolio-container div.portfolio-item div.images div.gallery ul {
 				margin: 0;
 				padding: 0;
-				}
+				list-style: none;
+				float: left;
+				clear: both;
+			}
+			
+			div#portfolio-container div.portfolio-item div.images div.gallery ul li {
+				float: left;
+				margin: 5px 5px 0 0;
+				padding: 0;
+			}
+			
+			div#portfolio-container div.portfolio-item div.images div.gallery ul li img {
+				display: block;
+			}
+			
+			div#portfolio-container div.portfolio-item div.about {
+				width: 355px;
+				margin: 0;
+				float: left;
+				overflow: hidden;
+			}
 				
-			div.portfolio-container div.portfolio-item div.meta dl dt {
+			div#portfolio-container div.portfolio-item div.about h2 {
+				margin-top: 0;
+			}
+				
+			div#portfolio-container div.portfolio-item div.meta {
+				width: 315px;
+				background: rgba(0, 0, 0, .05);
+				float: right;
+				padding: 10px 20px;
+				margin: 0;
+				border-radius: 5px;
+					-webkit-border-radius: 5px;
+					-moz-border-radius: 5px;
+			}
+				
+			div#portfolio-container div.portfolio-item div.meta dl {
+				margin: 0;
+				padding: 0;
+			}
+				
+			div#portfolio-container div.portfolio-item div.meta dl dt {
 				width: 60px;
 				float: left;	
 				margin: 0 ;
 				text-align: right;
 				clear: both;
 				padding: 10px 20px 10px 0;
-				border-top: 1px solid #ddd;
+				border-top: 1px solid #dcdcda;
 			}
 			
-			div.portfolio-container div.portfolio-item div.meta dl dd {
+			div#portfolio-container div.portfolio-item div.meta dl dd {
 				float: left;	
 				margin: 0;
 				height: 13px;
-				width: 179px;
+				width: 234px;
 				padding: 10px 0 ;
-				border-top: 1px solid #ddd;
+				border-top: 1px solid #dcdcda;
 			}
 			
-			div.portfolio-container div.portfolio-item div.meta dl dt span {
+			div#portfolio-container div.portfolio-item div.meta dl dt span {
 				background-position: right 0;
 				height: 13px;
 				width: 60px;
@@ -144,48 +246,115 @@
 				text-indent: 1000px;
 				background-repeat: no-repeat;
 				display: block;
-				}
+			}
 				
-			div.portfolio-container div.portfolio-item div.meta dl dt span.client {
+			div#portfolio-container div.portfolio-item div.meta dl dt span.client {
 				background-image: url(images/themes/default/client-icon.png);
-				}
-			div.portfolio-container div.portfolio-item div.meta dl dt span.skills {
+			}
+			
+			div#portfolio-container div.portfolio-item div.meta dl dt span.skills {
 				background-image: url(images/themes/default/skills-icon.png);
-				}
-			div.portfolio-container div.portfolio-item div.meta dl dt span.for-sale {
+			}
+			
+			div#portfolio-container div.portfolio-item div.meta dl dt span.for-sale {
 				background-image: url(images/themes/default/buy-icon.png);
-				}
+			}
 				
-			div.portfolio-container div.portfolio-item div.meta dl dt.first,
-			div.portfolio-container div.portfolio-item div.meta dl dd.first {
+			div#portfolio-container div.portfolio-item div.meta dl dt.first,
+			div#portfolio-container div.portfolio-item div.meta dl dd.first {
 				border-top: none;
 				padding-top: none;
-				}
+			}
+				
+			
+			/*---INFO---*/
+				
+			div#info-container h2 {
+				margin-top: 0;
+			}
+				
+				
+			/*---CONTACT---*/
+				
+			div#contact-container form {	
+				margin: 0;
+				padding: 0;
+			}
+				
+			div#contact-container form fieldset {	
+				margin: 0 0 5px 0;
+				padding: 0;
+				border: 0;
+			}
+				
+			div#contact-container form fieldset label {
+				display: block;
+				float: left;
+				width: 70px;
+				line-height: 150%;
+			}
+				
+			div#contact-container form fieldset input:focus,
+			div#contact-container form fieldset textarea:focus {
+				outline: none;
+			}
+			
+			div#contact-container form div#contact-submit {
+				overflow: hidden;
+			}
+					
+			div#contact-container form div#contact-submit input {	
+				float: right;
+				margin-top: 10px;
+			}
+				
+				
+			/*---FOOTER---*/
+				
+			div#footer-container a.rss {
+				padding: 2px 0 2px 30px;
+				background: url(images/themes/default/rss-icon.png) left center no-repeat;
+				float: left;
+			}
+				
+			div#footer-container a.badge {
+				width: 56px;
+				height: 26px;
+				overflow: hidden;
+				text-indent: -1000px;
+				display: block;
+				background: url(images/themes/default/wee-badge.png) 0 0 no-repeat;
+				float: right;
+				margin: -5px 0 0 0;
+			}
 		</style>
 	</head>
 	
 	<body>
-		<div class="header-wrapper">
-			<div class="header-container">
-				<h1>Kevin John Gomez</h1> <!--<img src="#" width="710" height="100"/>--> <!--Outputs: '<img src="url" alt="header-image"/>' -->
+		<div id="header-wrapper">
+			<div id="header-container">
+				<p class="no-header"><strong>Username</strong> hasn't added a header image yet.</p>
+				<!--<img src="#" alt="header-image" width="750" height="100"/>-->
 			</div>
 		</div>
 		
-		<div class="content-wrapper">
-			<div class="content-container">
-				<div class="tagline-container">
-					<h2>Hello, my name is Kevin John Gomez. I'm a web designer &amp; developer from Brooklyn, NY. I make the internet pretty!</h2>
-					<a class="action more" href="#">More</a> <!--Outputs: 'Blah, blah, blah...whatever my tagline is...' -->	
+		<div id="content-wrapper">
+			<div id="content-container">
+				<div id="tagline-container">
+					<h1>Hello, my name is Username and this is my Weefolio!</h1>
+					<a class="action more" href="#">More</a>	
 				</div>
 				
-				<div class="portfolio-container">
-					<!--[if:portfolio-pieces]--> <!--If I have one or more portfolio piece output the following for each...--> 
-						<div class="portfolio-item">
+				<!--<p class="no-work"><strong>Username</strong> hasn't added any work yet.</p>-->
+				
+				<div id="portfolio-container"> 
+					<div class="portfolio-item">
+						<div class="images">
 							<div class="main-image">
-								<img src="#" width="750" height="250"/> <!--Outputs: '<img src="url" alt="piece-image"/>' -->
+								<img src="#" width="740" height="250"/>
 							</div>
 							
-							<!--<div class="piece-gallery">
+							<div class="gallery">
 								<ul>
 									<li>
 										<a href="#"><img src="#" width="50" height="50"/></a>
@@ -197,50 +366,80 @@
 									
 									<li>
 										<a href="#"><img src="#" width="50" height="50"/></a>
+									</li>
+									
+									<li>
+										<a href="#"><img src="#" width="50" height="50"/></a>
+									</li>
+									
+									<li>
+										<a href="#"><img src="#" width="50" height="50"/></a>
 									</li>	
 								</ul>
-								
-								Outputs: '<ul><li><a href="url"><img src="url" alt="img-#"/></a></li></ul>'
-							</div>-->
-							
-							<div class="about">
-								<h2>Arms &amp; Legs</h2>
-								<p>Four color, hand screen printed on 100% cotton, sweatshop-free American Apparel tee in a limited edition of 50.</p>
-
-<p>Also available at Thread.</p> <p><a class="action launch" href="#">Launch</a></p> <!--Outputs: 'Blah, blah, blah...about the piece.' -->
-							</div>
-							
-							<div class="meta">
-								<dl>
-									<dt class="first"><span class="client">Client:</span></dt>
-									<dd class="first">Kevin John Gomez</dd> <!--Outputs: 'Client Name' -->
-									
-									<dt><span class="skills">Skills:</span></dt>
-									<dd>Print Design</dd> <!--Outputs: 'Piece service' -->
-									
-									 <!--If the given peice is for sale...-->
-										<dt><span class="for-sale">For Sale:</span></dt>
-										<dd><a href="[sale-url]" target="_blank">$20.00</a></dd> <!--Outputs: 'Piece price' -->
-								</dl>
 							</div>
 						</div>
 						
+						<div class="about">
+							<h2>Title</h2>
+							<p>Delenit augue duis dolore te feugait nulla facilisi? Et quinta decima eodem modo typi qui nunc nobis videntur parum clari! Humanitatis per seacula quarta decima fiant sollemnes in!</p>
+							
+							<p><a class="action launch" href="#">Launch</a></p>
+						</div>
 						
-					<!--[/if:portfolio-pieces]-->
+						<div class="meta">
+							<dl>
+								<dt class="first"><span class="client">Client:</span></dt>
+								<dd class="first">Client Name</dd>
+								
+								<dt><span class="skills">Skills:</span></dt>
+								<dd>Skill</dd>
+								 
+								<dt><span class="for-sale">For Sale:</span></dt>
+								<dd><a href="[sale-url]" target="_blank">$20.00</a></dd>
+							</dl>
+						</div>
+					</div>
 				</div>
 				
-				<div class="about-container">
-					<h2>About</h2>
+				
+				<div id="info-container">
+					<div id="about-container">
+						<h2>About</h2>
+						
+						<p><strong>Username</strong> hasn't added any information yet.</p>
+
+					</div>
 					
-					<p>[about-me]</p> <!--Outputs: 'Blah, blah, blah...about me.' -->
-					
-					<p>Subscribe to my <a href="[rss-url]" target="_blank">RSS</a> feed!</p> <!--Outputs: 'User's RSS url.' -->
+					<div id="contact-container">
+						<h2>Contact</h2>
+						
+						<form action="#" method="post">
+						 	<fieldset>
+								<label for="name">Name</label>
+								<input id="name" name="name" type="text" size="25" />
+							</fieldset>
+							
+							<fieldset>
+								<label for="email">Email</label>
+								<input id="from" name="from" type="text" size="25" />
+							</fieldset>
+							
+							<fieldset>
+								<label for="message">Message</label>
+								<textarea id="message" name="message" rows="7" cols="37"></textarea>
+							</fieldset>
+							
+							<div id="contact-submit">
+								<input name="commit" type="submit" value="Send Message" />
+							</div>
+						</form>
+					</div>
 				</div>
 				
-				<div class="contact-container">
-					<h2>Contact</h2>
+				<div id="footer-container">
+					<a class="rss" href="#">Subscribe to RSS</a>
 					
-					[contact-form] <!--Outputs: 'Basic email form.' -->
+					<a class="badge" href="#">Weefolio</a>
 				</div>
 			</div>
 		</div>
