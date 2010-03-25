@@ -629,9 +629,13 @@ body.home div.content-container ul.features li {
 	padding: 0;
 	margin: 0 25px 0 0;
 	width: 220px;
-	height: 270px;
+	height: 230px;
 	overflow: hidden;
 	float: left;
+	}
+	
+body.home div.content-container ul.features li img {
+	border: 5px solid #ececea;
 	}
 	
 body.home div.content-container ul.features li p a {
