@@ -223,7 +223,8 @@ div.header-container ul#user-nav li#or {
 	margin: 0 0 0 10px;
 	}
 	
-div.header-container ul#user-nav li a {
+div.header-container ul#user-nav li a:link,
+div.header-container ul#user-nav li a:visited {
 	display: block;
 	float: left;
 	height: 55px;
@@ -233,17 +234,15 @@ div.header-container ul#user-nav li a {
 	text-indent: -5000px;
 	overflow: hidden;
 	}
-	
-div.header-container ul#user-nav li.selected a {
-	background-position-y: -55px; 
-	}
 
-div.header-container ul#user-nav li#portfolio a {
+div.header-container ul#user-nav li#portfolio a:link,
+div.header-container ul#user-nav li#portfolio a:visited {
 	background-position: 0 0;
 	width: 82px;
 	}
 	
-div.header-container ul#user-nav li#portfolio.selected a {
+div.header-container ul#user-nav li#portfolio.selected a:link,
+div.header-container ul#user-nav li#portfolio.selected a:visited {
 	background-position: 0 -55px;
 	width: 82px;
 	}
@@ -279,12 +278,14 @@ div.header-container ul#user-nav li#my-weefolio a:visited:hover {
 	background-position: -357px -55px;
 	}
 	
-div.header-container ul#user-nav li#sign-up a {
+div.header-container ul#user-nav li#sign-up a:link,
+div.header-container ul#user-nav li#sign-up a:visited {
 	background-position: -206px 0;
 	width: 66px;
 	}
 
-div.header-container ul#user-nav li#sign-up.selected a {
+div.header-container ul#user-nav li#sign-up.selected a:link,
+div.header-container ul#user-nav li#sign-up.selected a:visited {
 	background-position: -206px -55px;
 	width: 66px;
 	}
@@ -314,6 +315,7 @@ div.page-header-container-inner h1 {
 	line-height: 25px;
 	display: block;
 	text-shadow: 0 1px 2px #000;
+	overflow: hidden;
 	}
 	
 div.page-header-container-inner h1 small {
@@ -325,6 +327,7 @@ div.page-header-container-inner h1 small {
 	
 div.page-header-container-inner div.call-to-action {
 	float: right;
+	overflow: hidden;
 	}
 	
 div.page-header-container-inner a:hover,
@@ -703,19 +706,23 @@ body.users.index ul#user-list li a span.username {
 
 /*---USERS > NEW (Pricing & Sign Up)---*/
 
+body.users.new div.page-header-container-inner h1 {
+	margin: 0 0 15px 0;
+	}
+	
 body.users.new div.page-header-container-inner div.pricing {
-	padding:0;
 	clear: both;
 	overflow: hidden;
+	padding: 10px 20px;
+	background: #1d1d1a;
+	border: 5px solid #2e2e29;
+	margin: 0;
 	}
 	
 body.users.new div.page-header-container-inner div.pricing table.chart {
 	font-size: 11px;
 	width: 100%;
-	padding: 10px 20px;
-	background: #1d1d1a;
-	border: 5px solid #2e2e29;
-	margin: 15px 0 0 0;
+	margin: 0;
 	}
 
 body.users.new div.page-header-container-inner div.pricing table.chart tr th {

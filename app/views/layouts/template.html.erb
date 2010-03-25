@@ -5,6 +5,9 @@
 
 	<head>
 		<title><%= @page_title %></title>
+		<!--[if IE 7]>
+			<%= stylesheet_link_tag 'ie7' %>
+		<![endif]-->
 		<%= stylesheet_link_tag 'screen' %>
 		<%= javascript_include_tag ['jquery-1.3.1.min.js', 'wee.js'] %>
 		<%= javascript_include_tag :defaults %>
@@ -42,7 +45,7 @@
   			<% else %>
 				  <!--USER NAV (LOGGED OUT)-->
 				  <ul id="user-nav">
-					  <li id="sign-up" class="<%= is_active?("new", "users")%>"<%= link_to 'Sign Up!', signup_path %></li>
+					  <li id="sign-up" class="<%= is_active?("new", "users")%>"><%= link_to 'Sign Up!', signup_path %></li>
 					  <li id="or">or</li>
 					  <li id="login"><%= link_to 'Login', login_path %></li>
 				  </ul>
