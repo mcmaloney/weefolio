@@ -39,9 +39,7 @@ Rails::Initializer.run do |config|
   # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
   # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}')]
   # config.i18n.default_locale = :de
+  config.action_mailer.delivery_method = :smtp
+  
+  config.action_controller.perform_caching = true
 end
-ActionMailer::Base.delivery_method = :sendmail 
-ActionMailer::Base.sendmail_settings = {  :location => '/usr/sbin/sendmail',  :arguments => '-i -t' } 
-ActionMailer::Base.perform_deliveries = true 
-ActionMailer::Base.raise_delivery_errors = true 
-ActionMailer::Base.default_charset = "iso-8859-1"

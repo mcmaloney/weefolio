@@ -1036,7 +1036,7 @@ body.help div.main-help div.column.primary ul.topics li dl dd {
 	
 /*--PIECE > NEW/EDIT--*/
 
-body.pieces.edit div#piece_price {
+div#piece_price {
 	display: none;
 	}
 

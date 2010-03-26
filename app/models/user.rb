@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   
   has_one                   :portfolio
   has_one                   :design
+  has_one                   :plan
   has_many                  :pieces, :through => :portfolio
   validates_presence_of     :login
   validates_length_of       :login,    :within => 3..40
@@ -21,13 +22,42 @@ class User < ActiveRecord::Base
   validates_uniqueness_of   :email
   validates_format_of       :email,    :with => Authentication.email_regex, :message => Authentication.bad_email_message
 
-  before_create :make_activation_code 
-
   # Should really get rid of the account_tier from attr_accessible...
   attr_accessible :login, :email, :name, :password, :password_confirmation, :first_name, :last_name, :about_me, :tag_line, :design_type, :layout_type, :account_tier, :photo
   
   # Paperclip settings
   has_attached_file :photo, :styles => { :thumbnail => "70x70#", :large_thumb => "116x116>" }
+  
+  # Sets up all objects associated with the user on creation of account.
+  def setup
+    # Build the portfolio
+    self.portfolio = Portfolio.new(:login => self.login)
+    self.portfolio.save
+    
+    # Build the design editor
+    self.design = Design.new
+    self.design.save
+    
+    # Set the plan at level 1
+    self.plan = Plan.new(:level => 1)
+    self.plan.save
+    
+    # Activate
+    self.activate!
+    
+    # Save the user at the end.
+    self.save
+  end
+  
+  # Checking for associated objects.
+  def has_associated
+    self.portfolio && self.design && self.plan
+  end
+  
+  # Check if the plan and user attributes updated as well as the transaction processed.
+  def update_self_and_plan(user, plan)
+    self.plan.update_attributes(plan) && self.update_attributes(user) && self.plan.process_transaction
+  end
   
   # Simple search for the directory page
   def self.search(search)
@@ -48,11 +78,6 @@ class User < ActiveRecord::Base
     card_types = ["Visa", "Mastercard", "Discover", "American Express"]
   end
   
-  # The ending year for credit card expiration year.
-  def end_year
-    Time.now.year + 20
-  end
-  
   # Upgrade account 
   def change_tier(tier)
     self.account_tier -= self.account_tier
@@ -61,30 +86,25 @@ class User < ActiveRecord::Base
   
   # Shows the text equivalent of the account tier for display to the user.
   def render_account_tier
-    if self.account_tier == 1
+    if self.plan.level == 1
       "Basic"
-    elsif self.account_tier == 2
-      "Plus"
-    elsif self.account_tier == 3
-      "Pro"
+    elsif self.plan.level == 2
+      "Plus ($2.99/Month)"
+    elsif self.plan.level == 3
+      "Pro ($4.99/Month)"
     end
   end
   
-  # Change design type
+  # Account tier has to update with plan level, you know- to keep things really complicated...
+  def update_account_tier(plan_level)
+    self.account_tier = plan_level
+    self.save
+  end
+  
+  # Change design type.
   def set_design_type(number)
     self.design_type -= self.design_type
     self.design_type += number
-  end
-  
-  def setup_portfolio_and_design
-    my_portfolio = Portfolio.new
-    self.portfolio = my_portfolio
-    self.portfolio.login = self.login
-    self.portfolio.save
-    
-    my_design_editor = Design.new
-    self.design = my_design_editor
-    self.design.save
   end
 
   # Activates the user in the database.
@@ -127,9 +147,7 @@ class User < ActiveRecord::Base
 
   protected
     
-    def make_activation_code
-        self.activation_code = self.class.make_token
-    end
-
-
+  def make_activation_code
+    self.activation_code = self.class.make_token
+  end
 end
