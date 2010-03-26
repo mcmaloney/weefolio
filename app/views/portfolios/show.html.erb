@@ -1,6 +1,6 @@
 <% if @portfolio.pieces.blank? %>
   <div id="no-portfolio">
-  	<p><strong><%= current_user.login %></strong> hasn't added any work yet.</p>
+  	<p><strong><%= @user.login %></strong> hasn't added any work yet.</p>
   </div>
 <% else %>
 

@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100103214637) do
+ActiveRecord::Schema.define(:version => 20100314205436) do
 
   create_table "delayed_jobs", :force => true do |t|
     t.integer  "priority",   :default => 0
@@ -89,6 +89,32 @@ ActiveRecord::Schema.define(:version => 20100103214637) do
     t.integer  "image_1_file_size"
     t.datetime "image_1_updated_at"
     t.integer  "position"
+    t.string   "sale_url"
+    t.string   "client_name"
+    t.string   "service_type"
+  end
+
+  create_table "plans", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "level"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "card_number"
+    t.string   "card_verification"
+    t.string   "card_expiration_month"
+    t.string   "card_expiration_year"
+    t.string   "card_type"
+    t.string   "billing_first_name"
+    t.string   "billing_last_name"
+    t.string   "billing_address"
+    t.string   "billing_address_2"
+    t.string   "billing_city"
+    t.string   "billing_state"
+    t.string   "billing_postal_code"
+    t.string   "card_last_four"
+    t.string   "gateway_response"
+    t.string   "payment_status"
+    t.integer  "amount_in_cents"
   end
 
   create_table "portfolios", :force => true do |t|
@@ -126,8 +152,6 @@ ActiveRecord::Schema.define(:version => 20100103214637) do
     t.datetime "remember_token_expires_at"
     t.string   "activation_code",           :limit => 40
     t.datetime "activated_at"
-    t.string   "first_name"
-    t.string   "last_name"
     t.text     "about_me"
     t.string   "tag_line",                  :limit => 500
     t.integer  "account_tier",                             :default => 1
@@ -143,11 +167,6 @@ ActiveRecord::Schema.define(:version => 20100103214637) do
     t.string   "state"
     t.string   "country"
     t.string   "zip"
-    t.string   "card_number"
-    t.string   "card_verification"
-    t.string   "card_expiration_month"
-    t.string   "card_expiration_year"
-    t.string   "card_type"
   end
 
   add_index "users", ["login"], :name => "index_users_on_login", :unique => true

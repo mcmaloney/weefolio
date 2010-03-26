@@ -26,4 +26,12 @@ module PiecesHelper
       end
     end
   end
+  
+  def show_image_unless_new_record(piece, image)
+    unless piece.new_record?
+      %{
+        #{image_tag image.url(:small_thumb)}
+      }
+    end
+  end 
 end

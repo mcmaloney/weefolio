@@ -98,4 +98,5 @@ module UsersHelper
       f.text_field :tag_line
     end
   end
+  
 end
