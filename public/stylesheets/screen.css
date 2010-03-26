@@ -316,7 +316,6 @@ div.page-header-container-inner h1 {
 	line-height: 25px;
 	display: block;
 	text-shadow: 0 1px 2px #000;
-	overflow: hidden;
 	}
 	
 div.page-header-container-inner h1 small {
@@ -328,7 +327,6 @@ div.page-header-container-inner h1 small {
 	
 div.page-header-container-inner div.call-to-action {
 	float: right;
-	overflow: hidden;
 	}
 	
 div.page-header-container-inner a:hover,
@@ -802,8 +800,8 @@ body.designs.edit div.page-header-container-inner div.call-to-action a#custom_cs
 body.designs.edit div.page-header-container-inner div.call-to-action a#custom_css_link:visited {
 	display: block;
 	height: 35px;
-	width: 149px;
-	background-image: url(/images/css-editor-button.gif);
+	width: 171px;
+	background-image: url(/images/custom-html-button.gif);
 	background-position: 0 0;
 	background-repeat: no-repeat;
 	overflow: hidden;

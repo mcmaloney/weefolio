@@ -67,23 +67,7 @@
 	      			</dd>
 	      			
 	      			<dt>
-	      				<label for="design_page_bg_color">Page</label>
-	      			</dt>
-	      			<dd>
-	      				<%= f.text_field :page_bg_color, :size => 7, :id => "page_bg_field", :onfocus => "pickcolor('#page_bg_color', 'backgroundColor', true, 'page_bg_field', this, -575, -200)" %>
-	      				<div class="color-preview" id="page_bg_color"></div>
-	      			</dd>
-	      			
-	      			<dt>
-	      				<label for="design_border_color">Border</label>
-	      			</dt>
-	      			<dd>
-	      			<%= f.text_field :border_color, :size => 7, :id => "border_color_field", :onfocus => "pickcolor('#border_color', 'backgroundColor', true, 'border_color_field', this, -575, -200)" %>
-	      			<div class="color-preview" id="border_color"></div>
-	      			</dd>
-	      			
-	      			<dt>
-	      				<label for="design_text_color">Body Text</label>
+	      				<label for="design_text_color">Text</label>
 	      			</dt>
 	      			<dd>
 	      				<%= f.text_field :text_color, :size => 7, :id => "text_color_field", :onfocus => "pickcolor('#text_color', 'backgroundColor', true, 'text_color_field', this, -575, -200)" %>
@@ -114,6 +98,14 @@
 	      				<%= f.text_field :link_hover_color, :size => 7, :id => "link_hover_color_field", :onfocus => "pickcolor('#link_hover_color', 'backgroundColor', true, 'link_hover_color_field', this, -575, -200)" %>
 	      				<div class="color-preview" id="link_hover_color"></div>
 	      			</dd>
+	      			
+	      			<dt>
+	      				<label for="design_border_color">Border</label>
+	      			</dt>
+	      			<dd>
+	      			<%= f.text_field :border_color, :size => 7, :id => "border_color_field", :onfocus => "pickcolor('#border_color', 'backgroundColor', true, 'border_color_field', this, -575, -200)" %>
+	      			<div class="color-preview" id="border_color"></div>
+	      			</dd>
 	      		</dl>
 	      	</fieldset>
 	      	
@@ -142,7 +134,7 @@
 	    <% end %>
 		<% else %>
 		  <% form_for [@user, @user.design], :html => { :multipart => true } do |f| %>
-		  	<fieldset>
+		  	<!--<fieldset>
 		    	<h2>Header</h2>
 		    	
 		    	<dl>
@@ -153,21 +145,21 @@
 		     			 <%= f.file_field :header_image %>
 		      		</dd>
 			    </dl>
-		  	</fieldset>
+		  	</fieldset>-->
 		  	
 		  	<fieldset>
-		    	<h2>Styles</h2>
+		    	<h2>Theme</h2>
 		    	
 		    	<dl>
 		      		<dt>
-			         <label for="design_css_text">CSS</label>
+			         <label for="design_css_text">Custom HTML</label>
 			        </dt>
 			        <dd>
-			          <%= f.text_area :css_text, :rows => 20, :cols => 55, :class => "code" %>
+			          <%= f.text_area :css_text, :rows => 25, :cols => 55, :class => "code" %>
 			        </dd>
 			        
 			        <dt></dt>
-			        <dd><a class="download" href="#">Download CSS Template</a></dd>
+			        <dd><a class="question" href="/docs/themes">How do I build a custom theme?</a></dd>
 			    </dl>
 		  	</fieldset>
 		  	
