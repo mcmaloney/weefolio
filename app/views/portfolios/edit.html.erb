@@ -1,7 +1,7 @@
 <!--PAGE TITLE/CALL-TO-ACTION-->
 <%# YIELD %>
-<div id="page-header-container-outer">
-	<div id="page-header-container-inner">
+<div class="page-header-container-outer">
+	<div class="page-header-container-inner">
 		<h1>Portfolio<small> Manage your work</small></h1>
 		
 		<div class="call-to-action" id="portfolio-add-work">
@@ -12,37 +12,38 @@
 
 <!--PAGE CONTENT-->
 <%# YIELD %>
-<div id="content-container">
-  
-    <% if flash[:warning] or flash[:notice] %>
-  		<div id="notice" <% if flash[:warning] %>class="warning"<% end %>>
-    <%= flash[:warning] || flash[:notice] %>
-  		</div>
-	<% end %>
- 
-  <p class="intro">You're using <strong><%=h @portfolio.pieces.count %></strong> of your <strong><%=h @portfolio.max_pieces %></strong> pieces.</p>
-  
-  <ul class="pieces" id="pieces">
-  	<% @portfolio.pieces.each do |piece| %>
-  	<% content_tag_for :li, piece do %>
-  		<%= image_tag piece.image_1.url(:small_thumb) %>
-  		
-  		<div class="piece-info">	
-  			<h3><%= link_to piece.title, edit_portfolio_piece_path(@portfolio, piece)%></h3>
-  			<p><%=h piece.description %></p>
-  		</div>
-  		
-  		<ul class="piece-options">
-  			<li class="option" id="edit">
-  				<%= link_to 'Edit', edit_portfolio_piece_path(@portfolio, piece)%>
-  			</li>
-  			<li class="option" id="delete">
-  				<%= link_to 'Delete', portfolio_piece_path(@portfolio, piece), :confirm => "Are you sure?", :method => :delete %>
-  			</li>
-  		</ul>
-  	<% end %>
-  	<% end %>
-  </ul>
+<div class="content-container">
+	<div class="column">
+	    <% if flash[:warning] or flash[:notice] %>
+	  		<div id="notice" <% if flash[:warning] %>class="warning"<% end %>>
+	    <%= flash[:warning] || flash[:notice] %>
+	  		</div>
+		<% end %>
+	 
+		<p class="intro">You're using <strong><%=h @portfolio.pieces.count %></strong> of your <strong><%=h @portfolio.max_pieces %></strong> pieces.</p>
+		
+		<ul class="pieces" id="pieces">
+			<% @portfolio.pieces.each do |piece| %>
+			<% content_tag_for :li, piece do %>
+				<%= image_tag piece.image_1.url(:small_thumb) %>
+				
+				<div class="piece-info">	
+					<h3><%= link_to piece.title, edit_portfolio_piece_path(@portfolio, piece)%></h3>
+					<p><%=h piece.description %></p>
+				</div>
+				
+				<ul class="piece-options">
+					<li class="option" id="edit">
+						<%= link_to 'Edit', edit_portfolio_piece_path(@portfolio, piece)%>
+					</li>
+					<li class="option" id="delete">
+						<%= link_to 'Delete', portfolio_piece_path(@portfolio, piece), :confirm => "Are you sure?", :method => :delete %>
+					</li>
+				</ul>
+			<% end %>
+			<% end %>
+		</ul>
+	</div>
 </div>
 
 <%= sortable_element('pieces', :url => sort_pieces_path, :handle => 'piece') %>

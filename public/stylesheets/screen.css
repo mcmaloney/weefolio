@@ -29,40 +29,68 @@ a.download {
 	padding: 0 0 1px 15px;
 	}
 	
+/*---GLOBAL HEADERS---*/
+
+h2, h3, h4, h5, h6 { color: #242420;}
+	
+h2 { font-size: 14px; }
+h3 { font-size: 11px; }
+h4, h5, h6 { font-weight: normal; }	
+	
+/*---GLOBAL LISTS---*/
+
+ol.abc {
+	list-style: lower-alpha;
+	}
+	
 
 /*---GLOBAL STRUCTURES---*/
 
-div#page-container {
+div.page-container {
 	width: 750px;
 	margin: 0 auto;
 	}
 	
-div#header-container {
+div.header-container {
 	background: #ff4715 url(../images/header-container-background.gif) repeat-x top;
 	overflow: hidden;	padding: 0 20px;
 	clear: both;
 	height: 55px;
 	}
 	
-div#page-header-container-outer {
+div.page-header-container-outer {
 	background: url(../images/page_header_container_outer_background.gif) no-repeat 0 0;
 	overflow: hidden;
 	}
 	
-div#page-header-container-inner {
+div.page-header-container-inner {
 	background: url(../images/page_header_container_inner_background.gif) no-repeat bottom center;
 	padding: 20px 40px;
 	overflow: hidden;
 	}
 	
-div#content-container {
+div.content-container {
 	background: #fff;
 	padding: 20px;
 	overflow: hidden;
-	border-bottom: 1px solid #ececea;
+	border-bottom: 2px solid #ececea;
 	}
 	
-div#footer-container {
+div.column {
+	overflow: hidden;
+	}
+	
+div.content-container div.column.primary {
+	width: 475px;
+	float: left;
+	}
+	
+div.content-container div.column.secondary {
+	width: 235px;
+	float: left;
+	}
+	
+div.footer-container {
 	margin: 25px 0 0 0;
 	padding: 0 20px;
 	}
@@ -87,6 +115,7 @@ ul#global-nav li.welcome {
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
 	border: 1px solid #ececea;
+	border-bottom: 2px solid #ececea
 	}
 	
 ul#global-nav li.welcome span.username {
@@ -139,7 +168,8 @@ ul#global-nav li:first-child a:visited:hover {
 /*--GLOBAL NOTIFICATIONS--*/
 
 div#notice,
-div#warning {
+div#warning,
+div#errorExplanation {
 	background: #ffffcc;
 	border: #f1e29c 1px solid;
 	padding: 13px;
@@ -152,27 +182,27 @@ div#warning {
 
 /*--HEADER--*/
 
-div#header-container a#header-logo {
+div.header-container a#header-logo {
 	float: left;
 	display: block;
-	width: 93px;
-	height: 55px;
+	width: 120px;
+	height: 35px;
 	overflow: hidden;
 	text-indent: -1000px;
-	background-image: url(../images/header-logo.gif);
+	background-image: url(../images/header-logo.png);
 	background-position: 0 0;
 	background-repeat: no-repeat;
-	margin: 0;
+	margin: 11px 0 0 0;
 	}
 	
-div#header-container a#header-logo:hover {
-	background-position: 0 -55px;
+div.header-container a#header-logo:hover {
+	background-position: 0 -35px;
 	}
 	
 
 /*--USER NAV--*/
 
-ul#user-nav {
+div.header-container ul#user-nav {
 	float: right;
 	list-style: none;
 	margin: 0;
@@ -180,12 +210,12 @@ ul#user-nav {
 	right: -5px;
 	}
 	
-ul#user-nav li {
+div.header-container ul#user-nav li {
 	float: left;
 	padding: 0;
 	}
 	
-ul#user-nav li#or {
+div.header-container ul#user-nav li#or {
 	background: url(../images/user-nav-background.gif) -344px 0;
 	height: 55px;
 	width: 13px;
@@ -194,7 +224,8 @@ ul#user-nav li#or {
 	margin: 0 0 0 10px;
 	}
 	
-ul#user-nav li a {
+div.header-container ul#user-nav li a:link,
+div.header-container ul#user-nav li a:visited {
 	display: block;
 	float: left;
 	height: 55px;
@@ -204,58 +235,78 @@ ul#user-nav li a {
 	text-indent: -5000px;
 	overflow: hidden;
 	}
-	
-ul#user-nav li.selected a {
-	background-position-y: -55px; 
-	}
 
-ul#user-nav li#portfolio a {
-	background-position-x: 0;
+div.header-container ul#user-nav li#portfolio a:link,
+div.header-container ul#user-nav li#portfolio a:visited {
+	background-position: 0 0;
 	width: 82px;
 	}
 	
-ul#user-nav li#design a {
-	background-position-x: -82px;
+div.header-container ul#user-nav li#portfolio.selected a:link,
+div.header-container ul#user-nav li#portfolio.selected a:visited {
+	background-position: 0 -55px;
+	width: 82px;
+	}
+	
+div.header-container ul#user-nav li#design a {
+	background-position: -82px 0;
+	width: 54px;
+	}
+	
+div.header-container ul#user-nav li#design.selected a {
+	background-position: -82px -55px;
 	width: 54px;
 	}
 
-ul#user-nav li#account a {
-	background-position-x: -136px;
+div.header-container ul#user-nav li#account a {
+	background-position: -136px 0;
 	width: 70px;
 	}
 	
-ul#user-nav li#my-weefolio a:link,
-ul#user-nav li#my-weefolio a:visited {
+div.header-container ul#user-nav li#account.selected a {
+	background-position: -136px -55px;
+	width: 70px;
+	}
+	
+div.header-container ul#user-nav li#my-weefolio a:link,
+div.header-container ul#user-nav li#my-weefolio a:visited {
 	background-position: -357px 0;
 	width: 128px;
 	}
 	
-ul#user-nav li#my-weefolio a:hover,
-ul#user-nav li#my-weefolio a:visited:hover {
+div.header-container ul#user-nav li#my-weefolio a:hover,
+div.header-container ul#user-nav li#my-weefolio a:visited:hover {
 	background-position: -357px -55px;
 	}
 	
-ul#user-nav li#sign-up a {
-	background-position-x: -206px;
+div.header-container ul#user-nav li#sign-up a:link,
+div.header-container ul#user-nav li#sign-up a:visited {
+	background-position: -206px 0;
+	width: 66px;
+	}
+
+div.header-container ul#user-nav li#sign-up.selected a:link,
+div.header-container ul#user-nav li#sign-up.selected a:visited {
+	background-position: -206px -55px;
 	width: 66px;
 	}
 	
-ul#user-nav li#login a:link,
-ul#user-nav li#login a:visited {
+div.header-container ul#user-nav li#login a:link,
+div.header-container ul#user-nav li#login a:visited {
 	background-position: -272px 0;
 	width: 71px;
 	margin: 0 0 0 10px;
 	}
 	
-ul#user-nav li#login a:hover,
-ul#user-nav li#login a:visited:hover {
+div.header-container ul#user-nav li#login a:hover,
+div.header-container ul#user-nav li#login a:visited:hover {
 	background-position: -272px -55px;
 	}
 
 
 /*--PAGE HEADER--*/
 
-div#page-header-container-inner h1 {
+div.page-header-container-inner h1 {
 	font-family: Georgia, "Times New Roman", serif;
 	font-size: 26px;
 	color: #fff;
@@ -265,28 +316,30 @@ div#page-header-container-inner h1 {
 	line-height: 25px;
 	display: block;
 	text-shadow: 0 1px 2px #000;
+	overflow: hidden;
 	}
 	
-div#page-header-container-inner h1 small {
+div.page-header-container-inner h1 small {
 	font-size: 13px;
 	color: #9e9d9b;
 	font-style: italic;
 	margin: 0;
 	}
 	
-div#page-header-container-inner div.call-to-action {
+div.page-header-container-inner div.call-to-action {
 	float: right;
+	overflow: hidden;
 	}
 	
-div#page-header-container-inner a:hover,
-div#page-header-container-inner a:visited:hover {
+div.page-header-container-inner a:hover,
+div.page-header-container-inner a:visited:hover {
 	color: #fff;
 	}
 	
 	
 /*--CONTENT--*/
-
-div#content-container p.intro {
+	
+div.content-container p.intro {
 	padding: 15px;
 	background: #f5f5f3;
 	-moz-border-radius: 3px;
@@ -298,17 +351,12 @@ div#content-container p.intro {
 	border-left: 1px solid #ececea;
 	}
 	
-div#content-container div.col-left {
-	width: 475px;
-	float: left;
-	}
-	
-div#content-container div.col-right {
+div.content-container div.column.secondary {
 	width: 215px;
 	float: right;
 	}
 	
-div#content-container div.col-right ul.content-nav {
+div.content-container div.column.secondary ul.content-nav {
 	padding: 0;
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
@@ -316,14 +364,14 @@ div#content-container div.col-right ul.content-nav {
 	list-style: none;
 	}
 	
-div#content-container div.col-right ul.content-nav h2 {
+div.content-container div.column.secondary ul.content-nav h2 {
 	font-size: 11px;
 	margin: 0 0 0 0;
 	padding: 0 0 8px 0;
 	border-bottom: 1px solid #ececea;
 	}
 	
-div#content-container div.col-right ul.content-nav li a {
+div.content-container div.column.secondary ul.content-nav li a, div#content-container div.column-secondary ul.content-nav li ul li a {
 	padding: 7px 0 8px 15px;
 	border-bottom: 1px solid #ececea;
 	display: block;
@@ -332,7 +380,7 @@ div#content-container div.col-right ul.content-nav li a {
 	
 /*--FOOTER--*/
 
-div#footer-container a#footer-logo {
+div.footer-container a#footer-logo {
 	display: block;
 	float: left;
 	width: 57px;
@@ -345,52 +393,53 @@ div#footer-container a#footer-logo {
 	top: -8px;
 	}
 	
-div#footer-container div#legal {
+div.footer-container div#legal {
 	float: left;
 	text-shadow: 0 1px 0 #fff;
 	}
 	
-div#footer-container ul#footer-nav {
+div.footer-container ul#footer-nav {
 	float: right;
 	margin: 0;
 	padding: 0;
 	list-style: none;
 	}
 	
-div#footer-container ul#footer-nav li {
+div.footer-container ul#footer-nav li {
 	display: inline;
 	margin: 0 0 0 15px;
 	}
 	
-div#footer-container a:link,
-div#footer-container a:visited {
+div.footer-container a:link,
+div.footer-container a:visited {
 	color: #767574;
 	text-shadow: 0 1px 0 #fff;
 	text-decoration: none;
 	}
 	
-div#footer-container a:hover,
-div#footer-container a:visited:hover {
+div.footer-container a:hover,
+div.footer-container a:visited:hover {
 	color: #242420;
 	}
 	
 
 /*-- GLOBAL FORMS --*/
 
-div#content-container form {
+div.content-container form {
 	overflow: hidden;
 	margin: 0;
 	padding:  0;
 	}
 	
-div#content-container form fieldset {
+div.content-container form fieldset {
 	border: 0;
 	overflow: hidden;
 	margin: 0 0 20px 0;
 	border-bottom: 1px solid #ececea;
+	padding: 0;
 	}
 	
-div#content-container form h2 {
+div.content-container form h2 {
 	margin: 0 0 20px 110px;
 	padding: 4px 0 2px 40px;
 	color: #242420;
@@ -400,7 +449,7 @@ div#content-container form h2 {
 	background: url(../images/form-h2-arrow.gif) left center no-repeat;
 	}
 	
-div#content-container form fieldset dl {
+div.content-container form fieldset dl {
 	padding: 0;
 	margin: 0 0 10px 0;
 	list-style: none;
@@ -408,7 +457,7 @@ div#content-container form fieldset dl {
 	}
 
 	
-div#content-container form fieldset dl dt {
+div.content-container form fieldset dl dt {
 	width: 130px;
 	text-align: right;
 	padding: 8px 20px 0 0;
@@ -420,15 +469,15 @@ div#content-container form fieldset dl dt {
 	clear: both;
 	}
 
-div#content-container form fieldset dl dd {
-	width: 485px;
+div.content-container form fieldset dl dd {
+	width: 410px;
 	padding: 0;
 	float: left;
 	margin: 0 0 15px 0;
 	}
 	
-div#content-container form fieldset dl dd input,
-div#content-container form fieldset dl dd textarea {
+div.content-container form fieldset dl dd input,
+div.content-container form fieldset dl dd textarea {
 	padding: 6px;
 	font-size: 14px;
 	background: #f5f5f3;
@@ -441,35 +490,35 @@ div#content-container form fieldset dl dd textarea {
 	-webkit-border-radius: 3px;
 	}
 	
-div#content-container form fieldset dl dd input:focus,
-div#content-container form fieldset dl dd textarea:focus {
+div.content-container form fieldset dl dd input:focus,
+div.content-container form fieldset dl dd textarea:focus {
 	outline: none;
 	} 
 	
-div#content-container form fieldset dl dd textarea.code {
+div.content-container form fieldset dl dd textarea.code {
 	font-family: Courier;
 	font-size: 12px;
 	}
 	
-div#content-container form fieldset dl dd select {
+div.content-container form fieldset dl dd select {
 	margin: 6px 0;
 	}
 	
-div#content-container form fieldset dl dd p {
+div.content-container form fieldset dl dd p {
 	margin: 5px 0 5px 0;
 	}
 	
-div#content-container form fieldset dl dd ul {
+div.content-container form fieldset dl dd ul {
 	padding: 0;
 	margin: 0;
 	list-style: none;
 	}
 	
-div#content-container form fieldset dl dd ul li {
+div.content-container form fieldset dl dd ul li {
 	margin: 7px 0;
 	}
 	
-div#content-container form fieldset dl dd img {
+div.content-container form fieldset dl dd img {
 	vertical-align: middle;
 	padding: 5px;
 	background: #f5f5f3;
@@ -482,12 +531,12 @@ div#content-container form fieldset dl dd img {
 	margin: 0 15px 0 0;
 	}
 	
-div#content-container form div.submit {
-	margin: 0 0 0 155px;
+div.content-container form div.submit {
+	margin: 0 0 0 145px;
 	overflow: hidden;
 	}
 
-div#content-container form div.submit input {
+div.content-container form div.submit input {
 	background: transparent;
 	height: 35px;
 	width: 100%;
@@ -499,21 +548,21 @@ div#content-container form div.submit input {
 	overflow: hidden;
 	}
 	
-div#content-container form div.submit:hover {
+div.content-container form div.submit:hover {
 	background-position: 0 -35px;
 	}
 	
-div#content-container form div#save {
+div.content-container form div#save {
 	width: 103px;
 	background-image: url(/images/global-save-button.gif);
 	}
 	
-div#content-container form div#sign-up {
+div.content-container form div#sign-up {
 	width: 133px;
 	background-image: url(/images/sign-up-button.gif);
 	}
 
-div#content-container form div#login {
+div.content-container form div#login {
 	width: 111px;
 	background-image: url(/images/login-button.gif);
 	}
@@ -521,23 +570,23 @@ div#content-container form div#login {
 
 /*---HOME---*/
 
-div#page-header-container-inner div.welcome-container {
+body.home div.page-header-container-inner div.welcome-container {
 	width: 240px;
 	float: left;
 	}
 	
-div#page-header-container-inner div.welcome-container h1 {
+body.home div.page-header-container-inner div.welcome-container h1 {
 	line-height: 25px;
 	float: none;
 	}
 	
-div#page-header-container-inner div.welcome-container p {
+body.home div.page-header-container-inner div.welcome-container p {
 	margin: 15px 0;
 	text-shadow: 0 1px 0px #000;
 	}
 	
-div#page-header-container-inner div.welcome-container div.sign-up-button a:link,
-div#page-header-container-inner div.welcome-container div.sign-up-button a:visited {
+body.home div.page-header-container-inner div.welcome-container div.sign-up-button a:link,
+body.home div.page-header-container-inner div.welcome-container div.sign-up-button a:visited {
 	display: block;
 	height: 35px;
 	width: 149px;
@@ -550,74 +599,66 @@ div#page-header-container-inner div.welcome-container div.sign-up-button a:visit
 	left: -5px;
 	}
 	
-div#page-header-container-inner div.welcome-container div.sign-up-button a:hover,
-div#page-header-container-inner div.welcome-container div.sign-up-button a:visited:hover {
+body.home div.page-header-container-inner div.welcome-container div.sign-up-button a:hover,
+body.home div.page-header-container-inner div.welcome-container div.sign-up-button a:visited:hover {
 	background-position: 0 -35px;
 	}
 	
-div#page-header-container-inner div.featured-weefolio {
+body.home div.page-header-container-inner div.featured-weefolio {
 	float: right;
-	width: 400px;
-	height: 180px;
+	width: 416px;
+	}
+
+body.home div.page-header-container-inner div.featured-weefolio a img.featured {
 	padding: 3px;
 	border: 5px solid #2e2e29;
 	background: #1d1d1a;
 	}
+		
+body.home div.page-header-container-inner div.featured-weefolio img.banner {	
+	position: absolute;
+	margin: -3px 0 0 325px;
+	}
 	
-div#content-container ul.features {
+body.home div.content-container ul.features {
 	margin: 0;
-	padding: 10px 0 20px 2px;
-	width: 725px;
+	padding: 0;
 	display: block;
 	overflow: hidden;
 	list-style: none;
+	width: 750px;
 	}
 	
-div#content-container ul.features li {
-	float: left;
-	width: 215px;
+body.home div.content-container ul.features div.row {
+	overflow: hidden;
+	}
+	
+body.home div.content-container ul.features li {
 	padding: 0;
-	margin: 0 10px;
+	margin: 0 40px 30px 0;
+	width: 210px;
+	overflow: hidden;
+	float: left;
 	}
 	
-div#content-container ul.features li img {
-	padding: 7px;
-	background: #f5f5f3;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-	border-bottom: 2px solid #ececea;
-	border-right: 1px solid #ececea;
-	border-top: 1px solid #ececea;
-	border-left: 1px solid #ececea;
-	}
-
-div#content-container ul.features div.description {
-	padding: 0 10px;
-	}
-		
-div#content-container ul.features li h2 {
-	font-size: 12px;
-	margin: 15px 0 10px 0;
-	color: #242420;
+body.home div.content-container ul.features li img {
+	border: 5px solid #ececea;
 	}
 	
-div#content-container ul.features li p {
-	margin: 0 0 10px 0;
-	}
-	
-div#content-container ul.features li p a {
+body.home div.content-container ul.features li p a {
 	background: url(/images/feature-arrow.gif) no-repeat left center;
 	padding: 0 0 1px 15px;
 	}
+	
 
 /*---DIRECTORY---*/
 
-div#page-header-container-inner form#directory-search {
+body.users.index div.page-header-container-inner form#directory-search {
 	margin: 2px 0 0 0;
 	float: right;
 	}
 
-div#page-header-container-inner form#directory-search input#search {
+body.users.index div.page-header-container-inner form#directory-search input#search {
 	background: transparent url(/images/directory-search-input.gif) 0 0 no-repeat;
 	border: none;
 	height: 32px;
@@ -627,26 +668,30 @@ div#page-header-container-inner form#directory-search input#search {
 	font-size: 13px;
 	}
 	
-div#page-header-container-inner form#directory-search input#search:focus {
+body.users.index div.page-header-container-inner form#directory-search input#search:focus {
 	outline: none;
 	}
 	
-ul#user-list {
+body.users.index ul#user-list {
 	margin: 0;
 	padding: 0;
 	list-style: none;
 	width: 730px;
 	}
 	
-ul#user-list li {
+body.users.index ul#user-list li {
 	float: left;
 	width: 128px;
 	overflow: hidden;
 	margin: 0 18px 20px 0;
 	text-align: center;
 	}
+
+body.users.index ul#user-list li a {
+	text-decoration: none;
+	}	
 	
-ul#user-list li img {
+body.users.index ul#user-list li a img {
 	padding: 5px;
 	background: #f5f5f3;
 	-moz-border-radius: 3px;
@@ -658,25 +703,33 @@ ul#user-list li img {
 	margin: 0 0 5px 0;
 	}
 	
+body.users.index ul#user-list li a span.username {
+	text-decoration: underline;
+	}
+	
 
 /*---USERS > NEW (Pricing & Sign Up)---*/
 
-div#page-header-container-inner div.pricing {
-	padding:0;
-	clear: both;
-	overflow: hidden;
+body.users.new div.page-header-container-inner h1 {
+	margin: 0 0 15px 0;
 	}
 	
-div#page-header-container-inner div.pricing table.chart {
-	font-size: 11px;
-	width: 100%;
+body.users.new div.page-header-container-inner div.pricing {
+	clear: both;
+	overflow: hidden;
 	padding: 10px 20px;
 	background: #1d1d1a;
 	border: 5px solid #2e2e29;
-	margin: 15px 0 0 0;
+	margin: 0;
+	}
+	
+body.users.new div.page-header-container-inner div.pricing table.chart {
+	font-size: 11px;
+	width: 100%;
+	margin: 0;
 	}
 
-div#page-header-container-inner div.pricing table.chart tr th {
+body.users.new div.page-header-container-inner div.pricing table.chart tr th {
 	padding: 0 0 5px 0;
 	text-align: center;
 	font-family: Georgia, "Times New Roman", Serif;
@@ -685,24 +738,24 @@ div#page-header-container-inner div.pricing table.chart tr th {
 	color: #fff;
 	}
 	
-div#page-header-container-inner div.pricing table.chart tr td {
+body.users.new div.page-header-container-inner div.pricing table.chart tr td {
 	padding: 5px;
 	text-align: center;
 	border-top: 1px solid #2e2e29;
 	width: 20%;
 	}
 	
-div#page-header-container-inner div.pricing table.chart tr td.dark {
+body.users.new div.page-header-container-inner div.pricing table.chart tr td.dark {
 	background: #181815;
 	}
 		
-div#page-header-container-inner div.pricing table.chart tr td.feature {
+body.users.new div.page-header-container-inner div.pricing table.chart tr td.feature {
 	text-align: left;
 	color: #fff;
 	width: 40%;
 	}
 
-div#page-header-container-inner div.pricing table.chart tr.pricing span.price {
+body.users.new div.page-header-container-inner div.pricing table.chart tr.pricing span.price {
 	font-family: Georgia, "Times New Roman", Serif;
 	font-size: 14px;
 	font-style: italic;
@@ -710,11 +763,11 @@ div#page-header-container-inner div.pricing table.chart tr.pricing span.price {
 	font-weight: bold;
 	}
 	
-div#page-header-container-inner div.pricing table.chart tr.pricing td {
+body.users.new div.page-header-container-inner div.pricing table.chart tr.pricing td {
 	padding: 5px 0 0 0;
 	}
 	
-div#page-header-container-inner div.pricing table.chart tr td span.yes {
+body.users.new div.page-header-container-inner div.pricing table.chart tr td span.yes {
 	width: 10px;
 	height: 10px;
 	overflow: hidden;
@@ -726,8 +779,8 @@ div#page-header-container-inner div.pricing table.chart tr td span.yes {
 
 /*---DESIGNS > EDIT ---*/
 
-div#page-header-container-inner div.call-to-action a#form_css_link:link,
-div#page-header-container-inner div.call-to-action a#form_css_link:visited {
+body.designs.edit div.page-header-container-inner div.call-to-action a#form_css_link:link,
+body.designs.edit div.page-header-container-inner div.call-to-action a#form_css_link:visited {
 	display: block;
 	height: 35px;
 	width: 166px;
@@ -740,13 +793,13 @@ div#page-header-container-inner div.call-to-action a#form_css_link:visited {
 	right: -5px;
 	}
 	
-div#page-header-container-inner div.call-to-action a#form_css_link:hover,
-div#page-header-container-inner div.call-to-action a#form_css_link:visited:hover {
+body.designs.edit div.page-header-container-inner div.call-to-action a#form_css_link:hover,
+body.designs.edit div.page-header-container-inner div.call-to-action a#form_css_link:visited:hover {
 	background-position: 0 -35px;
 	}
 	
-div#page-header-container-inner div.call-to-action a#custom_css_link:link,
-div#page-header-container-inner div.call-to-action a#custom_css_link:visited {
+body.designs.edit div.page-header-container-inner div.call-to-action a#custom_css_link:link,
+body.designs.edit div.page-header-container-inner div.call-to-action a#custom_css_link:visited {
 	display: block;
 	height: 35px;
 	width: 149px;
@@ -759,12 +812,12 @@ div#page-header-container-inner div.call-to-action a#custom_css_link:visited {
 	right: -5px;
 	}
 	
-div#page-header-container-inner div.call-to-action a#custom_css_link:hover,
-div#page-header-container-inner div.call-to-action a#custom_css_link:visited:hover {
+body.designs.edit div.page-header-container-inner div.call-to-action a#custom_css_link:hover,
+body.designs.edit div.page-header-container-inner div.call-to-action a#custom_css_link:visited:hover {
 	background-position: 0 -35px;
 	}
 
-div#content-container form div.layout-selection-container {
+body.designs.edit div.content-container form div.layout-selection-container {
 	padding: 20px;
 	background: #f5f5f3;
 	-moz-border-radius: 3px;
@@ -777,31 +830,31 @@ div#content-container form div.layout-selection-container {
 	border-left: 1px solid #ececea;
 	}
 	
-div#content-container form div.layout-selection-container ul {
+body.designs.edit div.content-container form div.layout-selection-container ul {
 	width: 386px;
 	list-style: none;
 	margin: 0 auto;
 	padding: 0;
 	}
 	
-div#content-container form div.layout-selection-container ul li.option {
+body.designs.edit div.content-container form div.layout-selection-container ul li.option {
 	width: 113px;
 	float: left;
 	margin: 0 40px;
 	text-align: center;
 	}
 
-div#content-container form div.layout-selection-container ul li.option img {
+body.designs.edit div.content-container form div.layout-selection-container ul li.option img {
 	margin: 0 0 10px 0;
 	}
 	
 
-div#content-container form fieldset#design-color dl dd input {
+body.designs.edit div.content-container form fieldset#design-color dl dd input {
 	float: left;
 	display: block;
 	}
 		
-div#content-container form fieldset dl dd div.color-preview {
+body.designs.edit div.content-container form fieldset dl dd div.color-preview {
 	height: 32px;
 	width: 300px;
 	margin: 0 0 0 17px;
@@ -810,7 +863,7 @@ div#content-container form fieldset dl dd div.color-preview {
 	float: left;
 	}
 	
-div#content-container form fieldset dl dd input#design_header_image {
+body.designs.edit div.content-container form fieldset dl dd input#design_header_image {
 	padding-left: 0;
 	background: #fff;
 	border: none;
@@ -818,8 +871,8 @@ div#content-container form fieldset dl dd input#design_header_image {
 	
 /*---PORTFOLIO > INDEX---*/
 
-div#page-header-container-inner div#portfolio-add-work a:link,
-div#page-header-container-inner div#portfolio-add-work a:visited {
+body.portfolios.edit div.page-header-container-inner div#portfolio-add-work a:link,
+body.portfolios.edit div.page-header-container-inner div#portfolio-add-work a:visited {
 	display: block;
 	height: 35px;
 	width: 149px;
@@ -832,12 +885,12 @@ div#page-header-container-inner div#portfolio-add-work a:visited {
 	right: -5px;
 	}
 	
-div#page-header-container-inner div#portfolio-add-work a:hover,
-div#page-header-container-inner div#portfolio-add-work a:visited:hover {
+body.portfolios.edit div.page-header-container-inner div#portfolio-add-work a:hover,
+body.portfolios.edit div.page-header-container-inner div#portfolio-add-work a:visited:hover {
 	background-position: 0 -35px;
 	}
 
-div#content-container p.count {
+body.portfolios.edit div.content-container p.count {
 	padding: 15px;
 	background: #f5f5f3;
 	-moz-border-radius: 3px;
@@ -846,19 +899,19 @@ div#content-container p.count {
 	margin: 0 0 20px 0;
 	}
 		
-div#content-container ul.pieces {
+body.portfolios.edit div.content-container ul.pieces {
 	margin: -20px 0 0 0;
 	padding: 0;
 	list-style: none;
 	}
 	
-div#content-container ul.pieces li.piece {
+body.portfolios.edit div.content-container ul.pieces li.piece {
 	overflow: hidden;
 	padding: 15px 10px;
 	border-bottom: 1px solid #ececea;
 	}
 	
-div#content-container ul.pieces li.piece img {
+body.portfolios.edit div.content-container ul.pieces li.piece img {
 	display: block;
 	float: left;
 	padding: 5px;
@@ -872,33 +925,33 @@ div#content-container ul.pieces li.piece img {
 	margin: 0 20px 0 0;
 	}
 
-div#content-container ul.pieces li.piece div.piece-info {
+body.portfolios.edit div.content-container ul.pieces li.piece div.piece-info {
 	float: left;
 	width: 500px;
 	}
 		
-div#content-container ul.pieces li.piece div.piece-info h3 {
+body.portfolios.edit div.content-container ul.pieces li.piece div.piece-info h3 {
 	margin: 8px 0 0 0;
 	}
 	
-div#content-container ul.pieces li.piece div.piece-info p {
+body.portfolios.edit div#content-container ul.pieces li.piece div.piece-info p {
 	margin: 5px 0 8px 0;
 	}
 	
-div#content-container ul.pieces li.piece ul.piece-options {
+body.portfolios.edit div.content-container ul.pieces li.piece ul.piece-options {
 	float: right;
 	margin: 0;
 	padding: 0;
 	}
 
-div#content-container ul.pieces li.piece ul.piece-options li.option {
+body.portfolios.edit div.content-container ul.pieces li.piece ul.piece-options li.option {
 	margin:  0 0 0 10px;
 	overflow: hidden;
 	float: left;
 	}
 	
-div#content-container ul.pieces li.piece ul.piece-options li.option a:link,
-div#content-container ul.pieces li.piece ul.piece-options li.option a:visited {
+body.portfolios.edit div.content-container ul.pieces li.piece ul.piece-options li.option a:link,
+body.portfolios.edit div.content-container ul.pieces li.piece ul.piece-options li.option a:visited {
 	display: block;
 	overflow: hidden;
 	text-indent: -500px;
@@ -907,38 +960,39 @@ div#content-container ul.pieces li.piece ul.piece-options li.option a:visited {
 	background-position: 0 0;
 	}
 	
-div#content-container ul.pieces li.piece ul.piece-options li.option a:hover,
-div#content-container ul.pieces li.piece ul.piece-options li.option a:visited:hover {
+body.portfolios.edit div.content-container ul.pieces li.piece ul.piece-options li.option a:hover,
+body.portfolios.edit div.content-container ul.pieces li.piece ul.piece-options li.option a:visited:hover {
 	background-position: 0 -16px;
 	}
 	
-div#content-container ul.pieces li.piece ul.piece-options li#delete a {
+body.portfolios.edit div.content-container ul.pieces li.piece ul.piece-options li#delete a {
 	background-image: url(/images/portfolio-delete-icon.gif);
 	}
 	
-div#content-container ul.pieces li.piece ul.piece-options li#edit a {
+body.portfolios.edit div.content-container ul.pieces li.piece ul.piece-options li#edit a {
 	background-image: url(/images/portfolio-edit-icon.gif);
 	}
 	
-div#content-container ul.pieces li.piece ul.piece-options li#view a {
+body.portfolios.edit div.content-container ul.pieces li.piece ul.piece-options li#view a {
 	background-image: url(/images/portfolio-view-icon.gif);
 	display: none;
 	}
 	
+	
 /*--ACCOUNT > EDIT--*/
 	
-div#page-header-container-inner a.account-close {
+body.users.edit div.page-header-container-inner a.account-close {
 	background: url(/images/close-account.gif) left center no-repeat;
 	padding: 2px 0 2px 20px;
 	display: block;
 	margin: 7px 0 0 0;
 	}
 	
-div#billing_info {
+body.users.edit div.content-container div#billing_info {
 	display: none;
 	}
 	
-div#content-container form fieldset dl dd input#user_photo {
+body.users.edit div.content-container form fieldset dl dd input#user_photo {
 	padding-left: 0;
 	background: #fff;
 	border: none;
@@ -946,24 +1000,24 @@ div#content-container form fieldset dl dd input#user_photo {
 	
 /*--MAIN > HELP--*/
 
-div.main-help div.col-left ul.topics {
+body.help div.main-help div.column.primary ul.topics {
 	margin: 0;
 	padding: 0;
 	list-style: none;
 	}
 
-div.main-help div.col-left ul.topics li {
+body.help div.main-help div.column.primary ul.topics li {
 	margin: 0 0 30px 0;
 	}
 		
-div.main-help div.col-left ul.topics li h2 {
+body.help div.main-help div.column.primary ul.topics li h2 {
 	font-size: 11px;
 	margin: 0 0 15px 0;
 	padding: 0 0 8px 0;
 	border-bottom: 1px solid #ececea;
 	}
 	
-div.main-help div.col-left ul.topics li dl dt {
+body.help div.main-help div.column.primary ul.topics li dl dt {
 	margin: 0 0 0 0px;
 	padding: 4px 0 4px 30px;
 	color: #242420;
@@ -974,7 +1028,7 @@ div.main-help div.col-left ul.topics li dl dt {
 	line-height: 20px;
 	}
 	
-div.main-help div.col-left ul.topics li dl dd {
+body.help div.main-help div.column.primary ul.topics li dl dd {
 	margin: 0 0 15px 0;
 	padding: 5px 15px 0 30px;
 	}
@@ -982,7 +1036,7 @@ div.main-help div.col-left ul.topics li dl dd {
 	
 /*--PIECE > NEW/EDIT--*/
 
-div#piece_price {
+body.pieces.edit div#piece_price {
 	display: none;
 	}
 

@@ -2,8 +2,8 @@
 <%= render :partial => "color_preview_styles" %>
 <!--PAGE TITLE/CALL-TO-ACTION-->
 <%# YIELD %>
-<div id="page-header-container-outer">
-	<div id="page-header-container-inner">
+<div class="page-header-container-outer">
+	<div class="page-header-container-inner">
 		<h1>Design <small>Customize your weefolio</small></h1>
 		
 		<div class="call-to-action">
@@ -14,7 +14,7 @@
 
 <!--PAGE CONTENT-->
 <%# YIELD %>
-<div id="content-container">
+<div class="content-container">
 
     <% if flash[:warning] or flash[:notice] %>
   		<div id="notice" <% if flash[:warning] %>class="warning"<% end %>>
@@ -24,160 +24,160 @@
 
     <%= yield :colour_mod_div %>
 
-	<!--DUMP ALL OF YOUR SHIT HERE!-->
-	<% if @user.design_type == 1 %>
-    <% form_for [@user, @user.design], :html => { :multipart => true } do |f| %>
-    	<div class="layout-selection-container">
-    		<ul>
-	    		<li class="option">
-	    			<img src="/images/layout-grid-icon.gif" width="111" height="130"/>
-	    			<%= f.radio_button :layout_type, 1 %>
-	    			<label>Grid</label>
-	    		</li>
-	    		
-	    		<li class="option">
-	    			<img src="/images/layout-list-icon.gif" width="111" height="130"/>
-	    			<%= f.radio_button :layout_type, 2 %>
-	    			<label>List</label>
-	    		</li>
-    		</ul>
-    	</div>
-    	
-    	<fieldset>
-    		<h2>Header</h2>
-    		<dl>
-    			<dt>
-    				<label for="design_header_image">Header Image</label>
-    			</dt>
-    			<dd>
-    				<%= image_preview_for(@user.design.header_image) %> <%= f.file_field :header_image %>
-    			</dd>
-    		</dl>
-      	</fieldset>
-      	
-      	<fieldset id="design-color">
-      		<h2>Colors</h2>	
-      		<dl>
-      			<dt>
-      				<label for="design_background_color">Background</label>
-      			</dt>
-      			<dd>
-      				<%= f.text_field :background_color, :size => 7, :id => "background_color_field", :onfocus => "pickcolor('#background', 'backgroundColor', true, 'background_color_field', this, -575, -200)" %>
-      				<div class="color-preview" id="background"></div>
-      			</dd>
-      			
-      			<dt>
-      				<label for="design_page_bg_color">Page</label>
-      			</dt>
-      			<dd>
-      				<%= f.text_field :page_bg_color, :size => 7, :id => "page_bg_field", :onfocus => "pickcolor('#page_bg_color', 'backgroundColor', true, 'page_bg_field', this, -575, -200)" %>
-      				<div class="color-preview" id="page_bg_color"></div>
-      			</dd>
-      			
-      			<dt>
-      				<label for="design_border_color">Border</label>
-      			</dt>
-      			<dd>
-      			<%= f.text_field :border_color, :size => 7, :id => "border_color_field", :onfocus => "pickcolor('#border_color', 'backgroundColor', true, 'border_color_field', this, -575, -200)" %>
-      			<div class="color-preview" id="border_color"></div>
-      			</dd>
-      			
-      			<dt>
-      				<label for="design_text_color">Body Text</label>
-      			</dt>
-      			<dd>
-      				<%= f.text_field :text_color, :size => 7, :id => "text_color_field", :onfocus => "pickcolor('#text_color', 'backgroundColor', true, 'text_color_field', this, -575, -200)" %>
-      				<div class="color-preview" id="text_color"></div>
-      			</dd>
-      			
-      			<dt>
-      				<label for="design_title_color">Titles</label>
-      			</dt>
-      			<dd>
-      				<%= f.text_field :title_color, :size => 7, :id => "title_color_field", :onfocus => "pickcolor('#title_color', 'backgroundColor', true, 'title_color_field', this, -575, -200)" %>
-      				<div class="color-preview" id="title_color"></div>
-      			</dd>
-      			
-      			
-      			<dt>
-      				<label for="design_link_color">Links</label>
-      			</dt>
-      			<dd>
-      				<%= f.text_field :link_color, :size => 7, :id => "link_color_field", :onfocus => "pickcolor('#link_color', 'backgroundColor', true, 'link_color_field', this, -575, -200)" %>
-      				<div class="color-preview" id="link_color"></div>
-      			</dd>
-      			
-      			<dt>
-      				<label for="design_link_hover_color">Link Rollovers</label>
-      			</dt>
-      			<dd>
-      				<%= f.text_field :link_hover_color, :size => 7, :id => "link_hover_color_field", :onfocus => "pickcolor('#link_hover_color', 'backgroundColor', true, 'link_hover_color_field', this, -575, -200)" %>
-      				<div class="color-preview" id="link_hover_color"></div>
-      			</dd>
-      		</dl>
-      	</fieldset>
-      	
-      	<fieldset>
-      		<h2>Text</h2>
-      		<dl>
-      			<dt>
-      				<label for="design_text_font_1">Font</label>
-      			</dt>
-      			<dd>
-      				<%= f.select :text_font_1, @design.font_families %>
-      			</dd>
-      			
-      			<dt>
-      				<label for="design_text_size">Size</label>
-      			</dt>
-      			<dd>
-      				<%= f.select :text_size, @design.font_sizes %>
-      			</dd>
-      		</dl>
-      	</fieldset>
-      
-      	<div class="submit" id="save">
-        	<%= f.submit 'Save' %>
-      	</div>
-    <% end %>
-  <% else %>
-      <% form_for [@user, @user.design], :html => { :multipart => true } do |f| %>
-      	<fieldset>
-        	<h2>Header</h2>
-        	
-        	<dl>
-        		<dt>
-          			<label for="design_header_image">Header Image</label>
-          		</dt>
-          		<dd>
-         			 <%= f.file_field :header_image %>
-          		</dd>
-		    </dl>
-      	</fieldset>
-      	
-      	<fieldset>
-        	<h2>Styles</h2>
-        	
-        	<dl>
-          		<dt>
-		         <label for="design_css_text">CSS</label>
-		        </dt>
-		        <dd>
-		          <%= f.text_area :css_text, :rows => 20, :cols => 55, :class => "code" %>
-		        </dd>
-		        
-		        <dt></dt>
-		        <dd><a class="download" href="#">Download CSS Template</a></dd>
-		    </dl>
-      	</fieldset>
-      	
-      	<div class="submit" id="save">
-          <%= f.submit 'Save' %>
-        </div>
-      <% end %>
-  <% end %>
-</div>
-
+	<div class="column">
+		<% if @user.design_type == 1 %>
+	    <% form_for [@user, @user.design], :html => { :multipart => true } do |f| %>
+	    	<!--<div class="layout-selection-container">
+	    		<ul>
+		    		<li class="option">
+		    			<img src="/images/layout-grid-icon.gif" width="111" height="130"/>
+		    			<%= f.radio_button :layout_type, 1 %>
+		    			<label>Grid</label>
+		    		</li>
+		    		
+		    		<li class="option">
+		    			<img src="/images/layout-list-icon.gif" width="111" height="130"/>
+		    			<%= f.radio_button :layout_type, 2 %>
+		    			<label>List</label>
+		    		</li>
+	    		</ul>
+	    	</div>-->
+	    	
+	    	<fieldset>
+	    		<h2>Header</h2>
+	    		<dl>
+	    			<dt>
+	    				<label for="design_header_image">Header Image</label>
+	    			</dt>
+	    			<dd>
+	    				<%= image_preview_for(@user.design.header_image) %> <%= f.file_field :header_image %>
+	    			</dd>
+	    		</dl>
+	      	</fieldset>
+	      	
+	      	<fieldset id="design-color">
+	      		<h2>Colors</h2>	
+	      		<dl>
+	      			<dt>
+	      				<label for="design_background_color">Background</label>
+	      			</dt>
+	      			<dd>
+	      				<%= f.text_field :background_color, :size => 7, :id => "background_color_field", :onfocus => "pickcolor('#background', 'backgroundColor', true, 'background_color_field', this, -575, -200)" %>
+	      				<div class="color-preview" id="background"></div>
+	      			</dd>
+	      			
+	      			<dt>
+	      				<label for="design_page_bg_color">Page</label>
+	      			</dt>
+	      			<dd>
+	      				<%= f.text_field :page_bg_color, :size => 7, :id => "page_bg_field", :onfocus => "pickcolor('#page_bg_color', 'backgroundColor', true, 'page_bg_field', this, -575, -200)" %>
+	      				<div class="color-preview" id="page_bg_color"></div>
+	      			</dd>
+	      			
+	      			<dt>
+	      				<label for="design_border_color">Border</label>
+	      			</dt>
+	      			<dd>
+	      			<%= f.text_field :border_color, :size => 7, :id => "border_color_field", :onfocus => "pickcolor('#border_color', 'backgroundColor', true, 'border_color_field', this, -575, -200)" %>
+	      			<div class="color-preview" id="border_color"></div>
+	      			</dd>
+	      			
+	      			<dt>
+	      				<label for="design_text_color">Body Text</label>
+	      			</dt>
+	      			<dd>
+	      				<%= f.text_field :text_color, :size => 7, :id => "text_color_field", :onfocus => "pickcolor('#text_color', 'backgroundColor', true, 'text_color_field', this, -575, -200)" %>
+	      				<div class="color-preview" id="text_color"></div>
+	      			</dd>
+	      			
+	      			<dt>
+	      				<label for="design_title_color">Titles</label>
+	      			</dt>
+	      			<dd>
+	      				<%= f.text_field :title_color, :size => 7, :id => "title_color_field", :onfocus => "pickcolor('#title_color', 'backgroundColor', true, 'title_color_field', this, -575, -200)" %>
+	      				<div class="color-preview" id="title_color"></div>
+	      			</dd>
+	      			
+	      			
+	      			<dt>
+	      				<label for="design_link_color">Links</label>
+	      			</dt>
+	      			<dd>
+	      				<%= f.text_field :link_color, :size => 7, :id => "link_color_field", :onfocus => "pickcolor('#link_color', 'backgroundColor', true, 'link_color_field', this, -575, -200)" %>
+	      				<div class="color-preview" id="link_color"></div>
+	      			</dd>
+	      			
+	      			<dt>
+	      				<label for="design_link_hover_color">Link Rollovers</label>
+	      			</dt>
+	      			<dd>
+	      				<%= f.text_field :link_hover_color, :size => 7, :id => "link_hover_color_field", :onfocus => "pickcolor('#link_hover_color', 'backgroundColor', true, 'link_hover_color_field', this, -575, -200)" %>
+	      				<div class="color-preview" id="link_hover_color"></div>
+	      			</dd>
+	      		</dl>
+	      	</fieldset>
+	      	
+	      	<fieldset>
+	      		<h2>Text</h2>
+	      		<dl>
+	      			<dt>
+	      				<label for="design_text_font_1">Font</label>
+	      			</dt>
+	      			<dd>
+	      				<%= f.select :text_font_1, @design.font_families %>
+	      			</dd>
+	      			
+	      			<dt>
+	      				<label for="design_text_size">Size</label>
+	      			</dt>
+	      			<dd>
+	      				<%= f.select :text_size, @design.font_sizes %>
+	      			</dd>
+	      		</dl>
+	      	</fieldset>
+	      
+	      	<div class="submit" id="save">
+	        	<%= f.submit 'Save' %>
+	      	</div>
+	    <% end %>
+		<% else %>
+		  <% form_for [@user, @user.design], :html => { :multipart => true } do |f| %>
+		  	<fieldset>
+		    	<h2>Header</h2>
+		    	
+		    	<dl>
+		    		<dt>
+		      			<label for="design_header_image">Header Image</label>
+		      		</dt>
+		      		<dd>
+		     			 <%= f.file_field :header_image %>
+		      		</dd>
+			    </dl>
+		  	</fieldset>
+		  	
+		  	<fieldset>
+		    	<h2>Styles</h2>
+		    	
+		    	<dl>
+		      		<dt>
+			         <label for="design_css_text">CSS</label>
+			        </dt>
+			        <dd>
+			          <%= f.text_area :css_text, :rows => 20, :cols => 55, :class => "code" %>
+			        </dd>
+			        
+			        <dt></dt>
+			        <dd><a class="download" href="#">Download CSS Template</a></dd>
+			    </dl>
+		  	</fieldset>
+		  	
+		  	<div class="submit" id="save">
+		      <%= f.submit 'Save' %>
+		    </div>
+		  <% end %>
+		<% end %>
+		</div>
+	</div>
 
 
 

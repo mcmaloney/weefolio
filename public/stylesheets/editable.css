@@ -42,7 +42,7 @@
 
 div#header-wrap {
 	overflow: hidden;
-	padding: 20px 0;
+	padding: 25px 0;
 	background: #242420;
 	}
 		
@@ -88,7 +88,7 @@ div#portfolio-container {
 	
 div#info-wrap {
 	overflow: hidden;
-	padding: 20px 0;
+	padding: 25px 0;
 	}
 	
 div#info-container {
@@ -99,14 +99,14 @@ div#info-container {
 	}
 	
 div#about-container {
-	width: 345px;
+	width: 340px;
 	margin: 0 0 20px 0;
 	overflow: hidden;
 	float: left;
 	}
 	
 div#contact-container {
-	width: 345px;
+	width: 340px;
 	margin: 0;
 	overflow: hidden;
 	float: right;

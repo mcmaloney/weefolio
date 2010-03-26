@@ -1,27 +1,22 @@
 <!--PAGE TITLE/CALL-TO-ACTION-->
 <%# YIELD %>
-<div id="page-header-container-outer">
-	<div id="page-header-container-inner">
-		<h1><%= form_title(@piece, "Add New Work") %><small></small></h1>
-		
-		<div class="call-to-action">
-			<!--THIS IS WHERE YOU CAN PUT 'ADD NEW WORK' LINKS ETC.
-			<a href="#">Call to action!</a>
-			-->
-		</div>
+<div class="page-header-container-outer">
+	<div class="page-header-container-inner">
+		<%= form_title(@piece, "Portfolio <small>Add new work</small>") %>
 	</div>
 </div>
 
 <!--PAGE CONTENT-->
 <%# YIELD %>
-<div id="content-container">
-
-    <% if flash[:warning] or flash[:notice] %>
-  		<div id="notice" <% if flash[:warning] %>class="warning"<% end %>>
-    <%= flash[:warning] || flash[:notice] %>
-  		</div>
-	<% end %>
-	
-	<!--DUMP ALL OF YOUR SHIT HERE!-->
-	<%= form_content(@portfolio, @piece) %>
+<div class="content-container">
+	<div class="column">
+	    <% if flash[:warning] or flash[:notice] %>
+	  		<div id="notice" <% if flash[:warning] %>class="warning"<% end %>>
+	    <%= flash[:warning] || flash[:notice] %>
+	  		</div>
+		<% end %>
+		
+		<!--DUMP ALL OF YOUR SHIT HERE!-->
+		<%= form_content(@portfolio, @piece) %>
+	</div>
 </div>

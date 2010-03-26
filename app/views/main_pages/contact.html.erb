@@ -1,52 +1,42 @@
 <!--PAGE TITLE/CALL-TO-ACTION-->
 <%# YIELD %>
-<div id="page-header-container-outer">
-	<div id="page-header-container-inner">
+<div class="page-header-container-outer">
+	<div class="page-header-container-inner">
 		<h1>Contact <small>Feel free to say hello!</small></h1>
 	</div>
 </div>
 
 <!--PAGE CONTENT-->
 <%# YIELD %>
-<div id="content-container">
-  
-  <p class="intro">
-  	Ut laoreet dolore magna aliquam erat volutpat ut! Iis qui facit eorum claritatem Investigationes demonstraverunt, lectores legere me lius quod. Eodem modo typi qui nunc nobis videntur parum clari fiant sollemnes?
-  </p>
-    
-    <% if flash[:warning] or flash[:notice] %>
-  		<div id="notice" <% if flash[:warning] %>class="warning"<% end %>>
-    <%= flash[:warning] || flash[:notice] %>
-  		</div>
-	<% end %>
-	
-	<!--DUMP ALL OF YOUR SHIT HERE!-->
-	<%= form_tag :controller => 'main_pages', :action => 'send_us_mail', :id => @user, :html => { :method => :post } %>
-		<fieldset>
-			<h2>Contact Us!</h2>
-			<dl>
-			  <%= show_sender_email %>
-			  <%= show_name_field %>
-				<dt>
-					<label for="subject">Regarding</label>
-				</dt>
-				<dd>
-					<%= select "subject", :subject, UserMailer::REGARDING.collect { |c| [c[0], c[1]] } %>
-				</dd>
-				
-				<dt>
-					<label for="message">Message</label>
-				</dt>
-				<dd>
-					<%= text_area_tag :message %>
-				</dd>
-			</dl>
-		</fieldset>
+<div class="content-container">
+ 	<div class="column">
+		<p class="intro">
+			Feel free to contact us any time with any ideas, questions, problems, or praise you might have.
+		</p>
 		
-		<div class="submit">
-			<%= submit_tag 'Send Message' %>
-		</div>
-	</form>
+		<% if flash[:warning] or flash[:notice] %>
+				<div id="notice" <% if flash[:warning] %>class="warning"<% end %>>
+		<%= flash[:warning] || flash[:notice] %>
+				</div>
+		<% end %>
+		
+		<script type="text/javascript" charset="utf-8">
+		var is_ssl = ("https:" == document.location.protocol);
+		var asset_host = is_ssl ? "https://s3.amazonaws.com/getsatisfaction.com/" : "http://s3.amazonaws.com/getsatisfaction.com/";
+		document.write(unescape("%3Cscript src='" + asset_host + "javascripts/feedback-v2.js' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+		
+		<script type="text/javascript" charset="utf-8">
+		var feedback_widget_options = {};
+		
+		feedback_widget_options.display = "inline";  
+		feedback_widget_options.company = "fancy_labs";
+		
+		feedback_widget_options.style = "question";
+		
+		var feedback_widget = new GSFN.feedback_widget(feedback_widget_options);
+		</script>
+	</div>
 </div>
 
 

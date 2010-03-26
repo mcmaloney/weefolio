@@ -1,5 +1,7 @@
 <% if @portfolio.pieces.blank? %>
-  <%= current_user.login %> hasn't added any work to their portfolio.
+  <div id="no-portfolio">
+  	<p><strong><%= current_user.login %></strong> hasn't added any work yet.</p>
+  </div>
 <% else %>
 
   <% if @design.layout_type == 1 %>
