@@ -2,22 +2,18 @@
 <%# YIELD %>
 <div class="page-header-container-outer">
 	<div class="page-header-container-inner">
-		<h1>Close Your Account <small>Are you sure you want to close your account?</small></h1>
-		
-		<div class="call-to-action">
-		  <%= link_to 'Back', edit_user_path(current_user) %>
-		</div>
+		<h1>Close Account <small>Are you sure?</small></h1>
 	</div>
 </div>
 
 <!--PAGE CONTENT-->
 <%# YIELD %>
 <div class="content-container">
-  <p>
-    If you really want to close your account, click on the link below. Note that this decision is irreversible and all of your stuff will be deleted forever and ever.
+  <p class="intro">
+    Are you sure you want to close your account? This action cannot be undone.
   </p>
   <p>
     <%# Got to fix this :remove_account bullshit. Terrible hack! %>
-    <%= link_to 'Close For Real', remove_account_user_path(:remove_account) %>
+    <%= link_to 'Close my account', remove_account_user_path(:remove_account) %> or <%= link_to 'Cancel', edit_user_path(current_user) %>
   </p>
 </div>
