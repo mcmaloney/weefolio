@@ -1,2 +1,67 @@
-<h1>Docs#themes</h1>
-<p>Find me in app/views/docs/themes.html.erb</p>
+<div class="page-header-container-outer">
+	<div class="page-header-container-inner">
+		<h1>Creating a Custom Theme<small>&nbsp;</small></h1>
+	</div>
+</div>
+
+<!--PAGE CONTENT-->
+<%# YIELD %>
+<div class="content-container" class="main-help">
+	<p class="intro">Weefolio allows users to fully customize their portfolios though the use of HTML themes. <strong>NOTE: This is for those who are already familiar/comfortable with writing HTML.</strong></p>
+
+	<h2>Getting Started</h2>
+	
+	<p>To begin, click the <strong>"Custom HTML"</strong> button in the <strong>"Design"</strong> section. Here you'll see a text editor with your Weefolio's current theme. This is where you may edit or replace code to customize your design.</p>
+	
+	<p>Here's an example of the complete markup for a theme:</p>
+	
+	<pre>&lt;html&gt;
+	&lt;head&gt;
+		&lt;title&gt;The Weefolio of [user-name]&lt;/title&gt;
+		
+		&lt;style type="text/css"&gt;
+			body {
+				background: [background-color];
+				color: [text-color];
+				font-family: [font];
+				font-size: [font-size];
+					
+			}
+			
+			a:link,
+			a:visited {
+				color: [link-color];
+			}
+			
+			a:visited,
+			a:visited:hover {
+				color: [link-hover]; 
+			}
+			
+			h1, h2, h3, h4, h5, h6 {
+				color: [title-color];
+			}
+			
+			div#header-container {
+				background: [header-background];	
+			}
+		&lt;/style&gt;
+	&lt;/head&gt;
+	
+	&lt;body&gt;
+		&lt;div id="header-container"&gt;
+			[header-image]
+		&lt;/div&gt;
+		
+		&lt;h1&gt;[tagline]&lt;/h1&gt;
+		
+		&lt;ol id="pieces"&gt;
+			&lt;li class="piece"&gt;
+				&lt;h2&gt;[piece-title]&lt;/h2&gt;
+				
+				&lt;p&gt;[piece-about]&lt;/p&gt;
+			&lt;/li&gt;
+		&lt;/ol&gt;
+	&lt;/body&gt;
+&lt;/html&gt;</pre>
+</div>
