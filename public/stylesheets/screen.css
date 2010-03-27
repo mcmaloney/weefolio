@@ -601,12 +601,12 @@ body.home div.page-header-container-inner div.welcome-container {
 	}
 	
 body.home div.page-header-container-inner div.welcome-container h1 {
-	line-height: 25px;
+	line-height: 30px;
 	float: none;
 	}
 	
 body.home div.page-header-container-inner div.welcome-container p {
-	margin: 15px 0;
+	margin: 15px 0 20px 0;
 	text-shadow: 0 1px 0px #000;
 	}
 	
