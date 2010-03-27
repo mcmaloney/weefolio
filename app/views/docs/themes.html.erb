@@ -8,60 +8,259 @@
 <%# YIELD %>
 <div class="content-container" class="main-help">
 	<p class="intro">Weefolio allows users to fully customize their portfolios though the use of HTML themes. <strong>NOTE: This is for those who are already familiar/comfortable with writing HTML.</strong></p>
-
-	<h2>Getting Started</h2>
-	
-	<p>To begin, click the <strong>"Custom HTML"</strong> button in the <strong>"Design"</strong> section. Here you'll see a text editor with your Weefolio's current theme. This is where you may edit or replace code to customize your design.</p>
-	
-	<p>Here's an example of the complete markup for a theme:</p>
-	
-	<pre>&lt;html&gt;
-	&lt;head&gt;
-		&lt;title&gt;The Weefolio of [user-name]&lt;/title&gt;
+	<div class="column primary">
+		<h2>Getting Started</h2>
 		
-		&lt;style type="text/css"&gt;
-			body {
-				background: [background-color];
-				color: [text-color];
-				font-family: [font];
-				font-size: [font-size];
-					
-			}
+		<p>To begin, click the <strong>"Custom HTML"</strong> button in the <strong>"Design"</strong> section. Here you'll see a text editor with your Weefolio's current theme. This is where you may edit or replace code to customize your design.</p>
+		
+		<h2>Content Tags</h2>
+		
+		<p>Weefolio themes use custom tags to output your portfolio's content.</p>
+		
+		<p>There are two kinds of content tags. The first is a basic tag, like <code>[username]</code>, <code>[about]</code>, or <code>[font]</code>. These tags output simple pieces of data. For example, if your username was John, you'd call the <code>[username]</code> content tag to output <strong>"John"</strong> in your theme.</p>
+		
+		<p>The second kind of content tag is a conditional. Conditionals are used to wrap code that should only output under a certain condition. These are tags like <code>[if:portfolio-pieces]</code> or <code>[if:piece-for-sale]</code>. For example, with the <code>[if:portfolio-pieces]</code> conditional, you would wrap code that should display only if there are pieces in your portfolio.</p> 
+		
+		<p>Here is an example:</p>
+		
+		<pre class="block">[if:portfolio-pieces]
+  &lt;h2&gt;[piece-title]&lt;/h2&gt;
+[/if:portfolio-pieces]</pre>
+		
+		<h2>The Markup</h2>
+		
+		<p>Here is an example of an entire theme's markup using Weefolio's content tags:</p>
+		
+		<pre class="block">&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;The Weefolio of [user-name]&lt;/title&gt;
+		
+    &lt;style type="text/css"&gt;
+      body {
+        background: [background-color];
+        color: [text-color];
+        font-family: [font];
+        font-size: [font-size];		
+      }
 			
-			a:link,
-			a:visited {
-				color: [link-color];
-			}
+      a:link,
+      a:visited {
+        color: [link-color];
+      }
 			
-			a:visited,
-			a:visited:hover {
-				color: [link-hover]; 
-			}
+      a:visited,
+      a:visited:hover {
+        color: [link-hover]; 
+      }
 			
-			h1, h2, h3, h4, h5, h6 {
-				color: [title-color];
-			}
+      h1, h2, h3, h4, h5, h6 {
+        color: [title-color];
+      }
 			
-			div#header-container {
-				background: [header-background];	
-			}
-		&lt;/style&gt;
-	&lt;/head&gt;
+      div#header-container {
+        background: [header-background];	
+      }
+    &lt;/style&gt;
+  &lt;/head&gt;
 	
-	&lt;body&gt;
-		&lt;div id="header-container"&gt;
-			[header-image]
-		&lt;/div&gt;
+  &lt;body&gt;
+    &lt;div id="header-container"&gt;
+      [header-image]
+    &lt;/div&gt;
 		
-		&lt;h1&gt;[tagline]&lt;/h1&gt;
+    &lt;h1&gt;[tagline]&lt;/h1&gt;
 		
-		&lt;ol id="pieces"&gt;
-			&lt;li class="piece"&gt;
-				&lt;h2&gt;[piece-title]&lt;/h2&gt;
+    &lt;ol id="pieces"&gt;
+      [if:portfolio-pieces]
+        &lt;li class="piece"&gt;
+          &lt;h2&gt;[piece-title]&lt;/h2&gt;
 				
-				&lt;p&gt;[piece-about]&lt;/p&gt;
-			&lt;/li&gt;
-		&lt;/ol&gt;
-	&lt;/body&gt;
+          &lt;div class="images"&gt;
+            [piece-image]
+					
+            [piece-gallery]
+          &lt;/div&gt;
+				
+          &lt;p&gt;[piece-about]&lt;/p&gt;
+				
+          &lt;div class="meta"&gt;
+            &lt;dl&gt;
+              &lt;dt&gt;Client:&lt;/dt&gt;
+              &lt;dd&gt;[piece-client]&lt;/dd&gt;
+						
+              &lt;dt&gt;Service:&lt;/dt&gt;
+              &lt;dd&gt;[piece-service]&lt;/dd&gt;
+						
+              [if:piece-for-sale]
+                &lt;dt&gt;For Sale:&lt;/dt&gt;
+                &lt;dd&gt;&lt;a href="[sale-url]"&gt;[piece-price]&lt;/a&gt;&lt;/dd&gt; 
+              [/if:piece-for-sale]
+            &lt;/dl&gt;
+          &lt;/div&gt;
+        &lt;/li&gt;
+      [/if:portfolio-pieces]
+    &lt;/ol&gt;
+		
+    &lt;div id="about"&gt;
+      &lt;h2&gt;About&lt;/h2&gt;
+		
+      &lt;p&gt;[about-me]&lt;/p&gt;
+			
+      &lt;p&gt;Subscribe to my &lt;a href="[rss-url]"&gt;RSS&lt;/a&gt; feed!&lt;/p&gt;
+    &lt;/div&gt;
+		
+    &lt;div id="contact"&gt;
+      &lt;h2&gt;Contact&lt;/h2&gt;
+		
+      &lt;p&gt;[contact-form]&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/body&gt;
 &lt;/html&gt;</pre>
+	
+		<h2>User Data</h2>
+		
+		<table class="tags" cellpadding="0" cellspacing="0">
+			<tr>
+				<td class="tag">[user-name]</td>
+				<td class="description">Your username.</td>
+			</tr>
+				
+			<tr>
+				<td class="tag">[tagline]</td>
+				<td class="description">Your user "tagline".</td>
+			</tr>
+				
+			<tr>
+				<td class="tag">[about]</td>
+				<td class="description">Your "about" information.</td>
+			</tr>
+				
+			<tr>
+				<td class="tag">[avatar-url]</td>
+				<td class="description">The URL of your user avatar.</td>
+			</tr>
+				
+			<tr>
+				<td class="tag">[contact-form]</td>
+				<td class="description">A simple form for contacting the user.</td>
+			</tr>
+				
+			<tr>
+				<td class="tag">[rss-url]</td>
+				<td class="description">The URL of your Weefolio's RSS feed.</td>
+			</tr>
+		</table>
+		
+		<h2>Portfolio Content</h2>
+		
+		<table class="tags" cellpadding="0" cellspacing="0">
+			<tr>
+				<td class="tag">[if:portfolio-pieces]<br/>...<br/>[/if:portfolio-pieces]</td>
+				<td class="description">If you have one or more portfolio pieces, output the following...</dd>
+			</tr>
+			
+			<tr>
+				<td class="tag">[piece-title]</td>
+				<td class="description">The piece title.</td>
+			</tr>
+				
+			<tr>
+				<td class="tag">[piece-image]</td>
+				<td class="description">The piece's first and/or only image.</td>
+			</tr>
+			
+			<tr>
+				<td class="tag">[piece-gallery]</td>
+				<td class="description">Outputs a simple list of image thumbnails if the piece has more than one image.</td>
+			</tr>
+				
+			<tr>
+				<td class="tag">[piece-about]</td>
+				<td class="description">The piece description.</td>
+			</tr>
+			
+			<tr>
+				<td class="tag">[piece-client]</td>
+				<td class="description">The piece's client name.</td>
+			</tr>
+				
+			<tr>
+				<td class="tag">[piece-service]</td>
+				<td class="description">The piece's service type.</td>
+			</tr>
+				
+			<tr>
+				<td class="tag">[if:piece-for-sale]<br/>...<br/>[/if:piece-for-sale]</dt>
+				<td class="description">If the piece is for sale output the following...</td>
+			</tr>
+				
+			<tr>
+				<td class="tag">[piece-price]</td>
+				<td class="description">The piece's price.</td>
+			</tr>
+				
+			<tr>
+				<td class="tag">[sale-url]</td>
+				<td class="description">The URL of where the piece may be purchased.</td>
+			</tr>
+		</table>
+		
+		<h2>Design Prefrences</h2>
+		
+		<table class="tags" cellpadding="0" cellspacing="0">
+			<tr>
+				<td class="tag">[background-color]</td>
+				<td class="description">The page's background color.</td>
+			</tr>
+				
+			<tr>
+				<td class="tag">text-color</td>
+				<td class="description">The default text color.</td>
+			</tr>
+				
+			<tr>
+				<td class="tag">[title-color]</td>
+				<td class="description">The header/primary text color.</td>
+			</tr>
+				
+			<tr>
+				<td class="tag">[link-color]</td>
+				<td class="description">The hyperlink text color.</td>
+			</tr>
+				
+			<tr>
+				<td class="tag">[link-hover]</td>
+				<td class="description">The hyperlink text color upon rollover with a mouse.</td>
+			</tr>
+				
+			<tr>
+				<td class="tag">[header-color]</td>
+				<td class="description">The header container's background color.</td>
+			</tr>
+				
+			<tr>
+				<td class="tag">[font]</td>
+				<td class="description">The user's font preference.</td>
+			</tr>
+				
+			<tr>
+				<td class="tag">[font-size]</td>
+				<td class="description">The user's font size preference.</td>
+			</tr>
+		</table>
+	</div>
+	
+	<div class="column secondary">
+  		<ul class="content-nav">
+			<h2>Index</h2>
+			
+			<li><a href="#general">Getting Started</a></li>
+			<li><a href="#billing">Content Tags</a></li>
+			<li><a href="#portfolio">The Markup</a></li>
+			<li><a href="#design">User Data</a></li>
+			<li><a href="#account">Portfolio Content</a></li> 	
+			<li><a href="#account">Design Preferences</a></li> 
+  		</ul>
+  	</div>
+
 </div>

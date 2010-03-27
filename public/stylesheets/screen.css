@@ -30,6 +30,10 @@ a.download {
 	}
 	
 pre, code {
+	color: #242420;
+	}
+	
+pre.block, code.block {
 	padding: 15px;
 	background: #f5f5f3;
 	-moz-border-radius: 3px;
@@ -38,7 +42,6 @@ pre, code {
 	border-right: 1px solid #ececea;
 	border-bottom: 1px solid #ececea;
 	border-left: 1px solid #ececea;
-	color: #242420;
 	}
 	
 /*---GLOBAL HEADERS---*/
@@ -376,7 +379,7 @@ div.content-container div.column.secondary ul.content-nav {
 	
 div.content-container div.column.secondary ul.content-nav h2 {
 	font-size: 11px;
-	margin: 0 0 0 0;
+	margin-bottom: 0;
 	padding: 0 0 8px 0;
 	border-bottom: 1px solid #ececea;
 	}
@@ -1022,7 +1025,6 @@ body.help div.main-help div.column.primary ul.topics li {
 		
 body.help div.main-help div.column.primary ul.topics li h2 {
 	font-size: 11px;
-	margin: 0 0 15px 0;
 	padding: 0 0 8px 0;
 	border-bottom: 1px solid #ececea;
 	}
@@ -1049,4 +1051,54 @@ body.help div.main-help div.column.primary ul.topics li dl dd {
 div#piece_price {
 	display: none;
 	}
+	
+	
+/*--DOCS > THEMES--*/
 
+body.themes dl.tag-list {
+	overflow: hidden;
+	}
+	
+body.themes dl.tag-list dt {
+	width: 180px;
+	float: left;
+	clear: both;
+	padding: 10px;
+	background: #ececea;
+	border-bottom: 1px solid #fff;
+	color: #242420;
+	font-weight: bold;
+	}
+	
+body.themes dl.tag-list dd {
+	width: 488px;
+	float: left;
+	margin: 0;
+	padding: 10px;
+	background: #f5f5f3;
+	border-left: 1px solid #fff;
+	border-bottom: 1px solid #fff;
+	}
+		
+body.themes table {	
+	width: 100%;
+	}
+	
+body.themes table.tags td {
+	padding: 10px;
+	}
+	
+body.themes table.tags tr td.tag {
+	background: #ececea;
+	border-bottom: 1px solid #fff;
+	border-right: 1px solid #fff;
+	width: 180px;
+	text-align: center;
+	font-family: Courier;
+	color: #242420;
+	}
+	
+body.themes table.tags tr td.description {
+	background: #f5f5f3;
+	border-bottom: 1px solid #fff;
+	}
