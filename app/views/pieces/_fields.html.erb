@@ -20,10 +20,7 @@
 			    <%= f.label :image_1, 'Image' %>
 			  </dt>
 				<dd>
-			    <%= f.file_field :image_1 %>
-			  </dd>
-			  <dd>
-			    <%= show_image_unless_new_record(@piece, @piece.image_1) %>
+			    <%= show_image_unless_new_record(@piece, @piece.image_1) %> <%= f.file_field :image_1 %>
 			  </dd>
 			  <% unless current_user.plan.level == 1 %>
 			    
@@ -31,40 +28,28 @@
 			      <label for="piece_image_2">Image #2</label>
 			       </dt>
 				<dd>
-			      <%= f.file_field :image_2 %>
-			    </dd>
-			    <dd>
-  			    <%= show_image_unless_new_record(@piece, @piece.image_2) %>
+  			    <%= show_image_unless_new_record(@piece, @piece.image_2) %> <%= f.file_field :image_2 %>
   			  </dd>
 			    
 			    <dt>
 			      <label for="piece_image_3">Image #3</label>
 			       </dt>
 				<dd>
-			      <%= f.file_field :image_3 %>
-			    </dd>
-			    <dd>
-  			    <%= show_image_unless_new_record(@piece, @piece.image_3) %>
+  			    <%= show_image_unless_new_record(@piece, @piece.image_3) %> <%= f.file_field :image_3 %>
   			  </dd>
 			  <% if @portfolio.account_tier == 3 %>
 			    <dt>
 			      <label for="piece_image_4">Image #4</label>
 			       </dt>
 				<dd>
-			      <%= f.file_field :image_4 %>
-			    </dd>
-			    <dd>
-  			    <%= show_image_unless_new_record(@piece, @piece.image_4) %>
+  			    <%= show_image_unless_new_record(@piece, @piece.image_4) %> <%= f.file_field :image_4 %>
   			  </dd>
 			    
 			    <dt>
 			      <%= f.label :image_5 %>
 			       </dt>
 				<dd>
-			      <%= f.file_field :image_5 %>
-			    </dd>
-			    <dd>
-  			    <%= show_image_unless_new_record(@piece, @piece.image_5) %>
+  			    <%= show_image_unless_new_record(@piece, @piece.image_5) %> <%= f.file_field :image_5 %>
   			  </dd>
 			  <% end %>
 			  <% end %>

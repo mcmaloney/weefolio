@@ -582,11 +582,11 @@ div.content-container form div#login {
 	
 
 body.designs.edit div.content-container form fieldset dl dd input#design_header_image,
-body.pieces.new div.content-container form fieldset dl dd input#piece_image_1,
-body.pieces.new div.content-container form fieldset dl dd input#piece_image_2,
-body.pieces.new div.content-container form fieldset dl dd input#piece_image_3,
-body.pieces.new div.content-container form fieldset dl dd input#piece_image_4,
-body.pieces.new div.content-container form fieldset dl dd input#piece_image_5 {
+body.pieces div.content-container form fieldset dl dd input#piece_image_1,
+body.pieces div.content-container form fieldset dl dd input#piece_image_2,
+body.pieces div.content-container form fieldset dl dd input#piece_image_3,
+body.pieces div.content-container form fieldset dl dd input#piece_image_4,
+body.pieces div.content-container form fieldset dl dd input#piece_image_5 {
 	padding-left: 0;
 	background: #fff;
 	border: none;
