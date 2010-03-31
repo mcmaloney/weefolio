@@ -1,0 +1,14 @@
+/*--GLOBAL NAV--*/
+
+ul#global-nav li:first-child a:link,
+ul#global-nav li:first-child a:visited {
+	display: block;
+	width: 9px;
+	height: 10px;
+	overflow: hidden;
+	text-indent: -1000px;
+	background-image: url(../images/global-home-icon.gif);
+	background-position: 0 0;
+	float: left;
+	margin: 2px 0 0 0;
+	}

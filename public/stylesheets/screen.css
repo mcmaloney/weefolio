@@ -29,6 +29,18 @@ a.download {
 	padding: 0 0 1px 15px;
 	}
 	
+pre, code {
+	padding: 15px;
+	background: #f5f5f3;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-top: 2px solid #ececea;
+	border-right: 1px solid #ececea;
+	border-bottom: 1px solid #ececea;
+	border-left: 1px solid #ececea;
+	color: #242420;
+	}
+	
 /*---GLOBAL HEADERS---*/
 
 h2, h3, h4, h5, h6 { color: #242420;}
@@ -168,7 +180,8 @@ ul#global-nav li:first-child a:visited:hover {
 /*--GLOBAL NOTIFICATIONS--*/
 
 div#notice,
-div#warning {
+div#warning,
+div#errorExplanation {
 	background: #ffffcc;
 	border: #f1e29c 1px solid;
 	padding: 13px;
@@ -223,7 +236,8 @@ div.header-container ul#user-nav li#or {
 	margin: 0 0 0 10px;
 	}
 	
-div.header-container ul#user-nav li a {
+div.header-container ul#user-nav li a:link,
+div.header-container ul#user-nav li a:visited {
 	display: block;
 	float: left;
 	height: 55px;
@@ -233,17 +247,15 @@ div.header-container ul#user-nav li a {
 	text-indent: -5000px;
 	overflow: hidden;
 	}
-	
-div.header-container ul#user-nav li.selected a {
-	background-position-y: -55px; 
-	}
 
-div.header-container ul#user-nav li#portfolio a {
+div.header-container ul#user-nav li#portfolio a:link,
+div.header-container ul#user-nav li#portfolio a:visited {
 	background-position: 0 0;
 	width: 82px;
 	}
 	
-div.header-container ul#user-nav li#portfolio.selected a {
+div.header-container ul#user-nav li#portfolio.selected a:link,
+div.header-container ul#user-nav li#portfolio.selected a:visited {
 	background-position: 0 -55px;
 	width: 82px;
 	}
@@ -279,12 +291,14 @@ div.header-container ul#user-nav li#my-weefolio a:visited:hover {
 	background-position: -357px -55px;
 	}
 	
-div.header-container ul#user-nav li#sign-up a {
+div.header-container ul#user-nav li#sign-up a:link,
+div.header-container ul#user-nav li#sign-up a:visited {
 	background-position: -206px 0;
 	width: 66px;
 	}
 
-div.header-container ul#user-nav li#sign-up.selected a {
+div.header-container ul#user-nav li#sign-up.selected a:link,
+div.header-container ul#user-nav li#sign-up.selected a:visited {
 	background-position: -206px -55px;
 	width: 66px;
 	}
@@ -622,11 +636,23 @@ body.home div.content-container ul.features {
 	display: block;
 	overflow: hidden;
 	list-style: none;
+	width: 750px;
+	}
+	
+body.home div.content-container ul.features div.row {
+	overflow: hidden;
 	}
 	
 body.home div.content-container ul.features li {
 	padding: 0;
-	margin: 0 0;
+	margin: 0 40px 30px 0;
+	width: 210px;
+	overflow: hidden;
+	float: left;
+	}
+	
+body.home div.content-container ul.features li img {
+	border: 5px solid #ececea;
 	}
 	
 body.home div.content-container ul.features li p a {
@@ -694,19 +720,23 @@ body.users.index ul#user-list li a span.username {
 
 /*---USERS > NEW (Pricing & Sign Up)---*/
 
+body.users.new div.page-header-container-inner h1 {
+	margin: 0 0 15px 0;
+	}
+	
 body.users.new div.page-header-container-inner div.pricing {
-	padding:0;
 	clear: both;
 	overflow: hidden;
+	padding: 10px 20px;
+	background: #1d1d1a;
+	border: 5px solid #2e2e29;
+	margin: 0;
 	}
 	
 body.users.new div.page-header-container-inner div.pricing table.chart {
 	font-size: 11px;
 	width: 100%;
-	padding: 10px 20px;
-	background: #1d1d1a;
-	border: 5px solid #2e2e29;
-	margin: 15px 0 0 0;
+	margin: 0;
 	}
 
 body.users.new div.page-header-container-inner div.pricing table.chart tr th {
@@ -782,8 +812,8 @@ body.designs.edit div.page-header-container-inner div.call-to-action a#custom_cs
 body.designs.edit div.page-header-container-inner div.call-to-action a#custom_css_link:visited {
 	display: block;
 	height: 35px;
-	width: 149px;
-	background-image: url(/images/css-editor-button.gif);
+	width: 171px;
+	background-image: url(/images/custom-html-button.gif);
 	background-position: 0 0;
 	background-repeat: no-repeat;
 	overflow: hidden;

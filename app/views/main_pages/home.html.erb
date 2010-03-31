@@ -6,7 +6,7 @@
 			<h1>Lil' portfolios for<br/> the rest of us!</h1>
 			
 			<p>
-				Weefolios makes it simple to show of your work &amp; customize your portfolio, from colors to custom themes.
+				Weefolio makes it simple to show of your work &amp; customize your portfolio, from colors to custom themes.
 			</p>
 			
 			<div class="sign-up-button">
@@ -18,7 +18,7 @@
 			<img class="banner" src="/images/featured-banner.gif"/>
 			
 			<a href="#">
-				<img class="featured" width="400" height="150" src="/images/featured/kevin_john_gomez.jpg"/>
+				<img class="featured" width="400" height="180" src="/images/featured/kevin_john_gomez.jpg"/>
 			</a>
 		</div>
 	</div>
@@ -35,12 +35,15 @@
 	<% end %>
 	
 	<ul class="features">
+	<div class="row">
 		<li>
 			<div class="description">
-				<h2>Quick setup</h2>
+				<img src="images/feature-setup.gif" width="200" height="100"/>
+				
+				<h2>Quick Setup</h2>
 
 				<p>
-					Sign up and you'll have your own portfolio up and running in seconds!
+					Sign up and have your own portfolio up and running in seconds!
 				</p>
 				
 				<p>
@@ -51,7 +54,9 @@
 		
 		<li>
 			<div class="description">
-				<h2>Show off your work</h2>
+				<img src="images/feature-work.gif" width="200" height="100"/>
+				
+				<h2>Show Off Your Work</h2>
 
 				<p>
 					Easily manage, sell, and show off your work.
@@ -65,7 +70,9 @@
 		
 		<li>
 			<div class="description">
-				<h2>Style simply</h2>
+				<img src="images/feature-style.gif" width="200" height="100"/>
+				
+				<h2>Style Simply</h2>
 
 				<p>
 					Customize your design with just a few clicks.
@@ -76,41 +83,33 @@
 				</p>
 			</div>
 		</li>
-		
+	</div>
+	
+	<div class="row">
 		<li>
 			<div class="description">
-				<h2>Custom themes</h2>
+				<img src="images/feature-html.gif" width="200" height="100"/>
+				
+				<h2>Custom Themes</h2>
 
 				<p>
 					Customize anything with your own HTML theme.
 				</p>
 				
 				<p>
-					<%= link_to 'Learn More', signup_path %>
+					<a href="docs/themes">Learn How</a>
 				</p>
 			</div>
 		</li>
 		
 		<li>
 			<div class="description">
-				<h2>Cha ching!</h2>
-
-				<p>
-					Post any portfolio piece with a price and link to your online shop.
-				</p>
+				<img src="images/feature-sale.gif" width="200" height="100"/>
 				
-				<p>
-					<%= link_to 'Artist Directory', directory_path %>
-				</p>
-			</div>
-		</li>
-		
-		<li>
-			<div class="description">
-				<h2>Share with RSS</h2>
+				<h2>Cha Ching!</h2>
 
 				<p>
-					Keep visitors up-to-date with your portfolio's RSS feed.
+					Link any portfolio piece to your online shop.
 				</p>
 				
 				<p>
@@ -118,6 +117,23 @@
 				</p>
 			</div>
 		</li>
+		
+		<li>
+			<div class="description">
+				<img src="images/feature-rss.gif" width="200" height="100"/>
+				
+				<h2>Share With RSS</h2>
+
+				<p>
+					Keep visitors up-to-date with your portfolio's own RSS feed.
+				</p>
+				
+				<p>
+					<%= link_to 'Learn More', help_path %>
+				</p>
+			</div>
+		</li>
+	</div>
 	</ul>
 	
 	<% if logged_in? %>
