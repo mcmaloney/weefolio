@@ -12,9 +12,10 @@
 			body {
 				margin: 0;
 				text-align: center;
-				font-family: Arial;
+				font-family: "Lucida Grande";
 				font-size: 11px;
 				color: #767574;
+				background: #f5f5f3;
 			}
 			
 			a:link,
@@ -36,18 +37,6 @@
 			}
 			
 			
-			/*---ACTIONS---*/
-			
-			a.action {
-				padding: 2px 20px 2px 0;
-				background-position: right center;	
-				background-repeat: no-repeat;
-			}
-			
-			a.action.more { background-image: url(images/themes/default/plus-icon.png); float: right; }
-			a.action.launch { background-image: url(images/themes/default/launch-icon.png); }
-			
-			
 			/*---STRUCTURE---*/
 			
 			div#header-wrapper {
@@ -59,27 +48,26 @@
 				
 			div#header-container {
 				margin: 0 auto;
-				width: 750px;
+				width: 710px;
 				overflow: hidden;
 				color: #fff;
 				text-align: left;
 			}
 				
 			div#content-wrapper {
-				background: #fff;
 				overflow: hidden;
 				padding: 0 0 50px 0;
 			}
 				
 			div#content-container {
 				margin: 0 auto;
-				width: 750px;
+				width: 710px;
 				overflow: hidden;
 				text-align: left;
 			}
 			
 			div#tagline-container {
-				padding: 35px 0 20px 0;
+				padding: 35px 0 35px 0;
 				overflow: hidden;
 			}
 			
@@ -89,19 +77,19 @@
 			
 			div#info-container {
 				overflow: hidden;
-				border-top: 1px solid #dcdcda;
+				border-top: 5px solid #dcdcda;
 				padding: 40px 0 0 0;
 				margin: 0 0 40px 0;
 			}
 			
 			div#about-container {
-				width: 355px;
+				width: 335px;
 				overflow: hidden;
 				float: left;
 			}
 			
 			div#contact-container {
-				width: 355px;
+				width: 335px;
 				overflow: hidden;
 				float: right;
 			}
@@ -110,7 +98,7 @@
 				overflow: hidden;
 				padding: 15px 0 0 0;
 				margin: 0 0 40px 0;
-				border-top: 1px solid #dcdcda;
+				border-top: 5px solid #dcdcda;
 			}
 			
 			
@@ -125,9 +113,9 @@
 				border-width: 3px;
 				border-color: rgba(255, 255, 255, .1);
 				border-style: dashed;
-				border-radius: 5px;
-					-webkit-border-radius: 5px;
-					-moz-border-radius: 5px;
+				border-radius: 3px;
+					-webkit-border-radius: 3px;
+					-moz-border-radius: 3px;
 			}
 			
 			
@@ -160,14 +148,13 @@
 			}
 			
 			div#portfolio-container div.portfolio-item div.images {
-				background: rgba(0, 0, 0, .05);
+				background: #dcdcda;
 				overflow: hidden;
-				padding: 5px;
 				margin: 0 0 40px 0;
 				text-align: center;
-				border-radius: 5px;
-					-webkit-border-radius: 5px;
-					-moz-border-radius: 5px;
+				border-radius: 3px;
+					-webkit-border-radius: 3px;
+					-moz-border-radius: 3px;
 			}
 			
 			div#portfolio-container div.portfolio-item div.images div.gallery {
@@ -176,15 +163,22 @@
 			
 			div#portfolio-container div.portfolio-item div.images div.gallery ul {
 				margin: 0;
-				padding: 0;
+				padding: 10px;
 				list-style: none;
-				float: left;
 				clear: both;
+				background: #fff;
+				overflow: hidden;
+				border-left: 1px solid #dcdcda;
+				border-right: 1px solid #dcdcda;
+				border-bottom: 2px solid #dcdcda;
+				border-radius: 3px;
+					-webkit-border-radius: 3px;
+					-moz-border-radius: 3px;
 			}
 			
 			div#portfolio-container div.portfolio-item div.images div.gallery ul li {
 				float: left;
-				margin: 5px 5px 0 0;
+				margin: 0 10px 0 0;
 				padding: 0;
 			}
 			
@@ -193,7 +187,7 @@
 			}
 			
 			div#portfolio-container div.portfolio-item div.about {
-				width: 355px;
+				width: 335px;
 				margin: 0;
 				float: left;
 				overflow: hidden;
@@ -204,68 +198,34 @@
 			}
 				
 			div#portfolio-container div.portfolio-item div.meta {
-				width: 315px;
-				background: rgba(0, 0, 0, .05);
+				width: 295px;
+				background: #fff;
 				float: right;
 				padding: 10px 20px;
 				margin: 0;
-				border-radius: 5px;
-					-webkit-border-radius: 5px;
-					-moz-border-radius: 5px;
-			}
-				
-			div#portfolio-container div.portfolio-item div.meta dl {
-				margin: 0;
-				padding: 0;
-			}
-				
-			div#portfolio-container div.portfolio-item div.meta dl dt {
-				width: 60px;
-				float: left;	
-				margin: 0 ;
-				text-align: right;
-				clear: both;
-				padding: 10px 20px 10px 0;
-				border-top: 1px solid #dcdcda;
+				border-radius: 3px;
+					-webkit-border-radius: 3px;
+					-moz-border-radius: 3px;
+				border: 1px solid #dcdcda;
+				border-bottom: 2px solid #dcdcda;
 			}
 			
-			div#portfolio-container div.portfolio-item div.meta dl dd {
-				float: left;	
-				margin: 0;
-				height: 13px;
-				width: 234px;
-				padding: 10px 0 ;
-				border-top: 1px solid #dcdcda;
-			}
+			div#portfolio-container div.portfolio-item div.meta ul {
+		    margin: 0;
+		    padding: 0;
+		  }
 			
-			div#portfolio-container div.portfolio-item div.meta dl dt span {
-				background-position: right 0;
-				height: 13px;
-				width: 60px;
-				overflow: hidden;
-				text-indent: 1000px;
-				background-repeat: no-repeat;
-				display: block;
-			}
-				
-			div#portfolio-container div.portfolio-item div.meta dl dt span.client {
-				background-image: url(images/themes/default/client-icon.png);
-			}
-			
-			div#portfolio-container div.portfolio-item div.meta dl dt span.skills {
-				background-image: url(images/themes/default/skills-icon.png);
-			}
-			
-			div#portfolio-container div.portfolio-item div.meta dl dt span.for-sale {
-				background-image: url(images/themes/default/buy-icon.png);
-			}
-				
-			div#portfolio-container div.portfolio-item div.meta dl dt.first,
-			div#portfolio-container div.portfolio-item div.meta dl dd.first {
-				border-top: none;
-				padding-top: none;
-			}
-				
+			div#portfolio-container div.portfolio-item div.meta ul li {
+        overflow: hidden;
+        display: block;
+        padding: 5px 0 5px 30px;
+        margin: 0 15px 0 0;
+      }	
+      
+      div#portfolio-container div.portfolio-item div.meta ul li.client { background: url(images/themes/default/client-icon.gif) left center no-repeat; }
+      div#portfolio-container div.portfolio-item div.meta ul li.service { background: url(images/themes/default/service-icon.gif) left center no-repeat; }
+      div#portfolio-container div.portfolio-item div.meta ul li.url { background: url(images/themes/default/launch-icon.gif) left center no-repeat; }
+      div#portfolio-container div.portfolio-item div.meta ul li.buy { background: url(images/themes/default/buy-icon.gif) left center no-repeat; }		
 			
 			/*---INFO---*/
 				
@@ -293,6 +253,17 @@
 				width: 70px;
 				line-height: 150%;
 			}
+			
+			div#contact-container form fieldset input,
+			div#contact-container form fieldset textarea {
+				border: 1px solid #dcdcda;
+				border-top: 2px solid #dcdcda;
+				background: #fff;
+				padding: 5px;
+				border-radius: 3px;
+					-webkit-border-radius: 3px;
+					-moz-border-radius: 3px;
+			}
 				
 			div#contact-container form fieldset input:focus,
 			div#contact-container form fieldset textarea:focus {
@@ -312,14 +283,14 @@
 			/*---FOOTER---*/
 				
 			div#footer-container a.rss {
-				padding: 2px 0 2px 30px;
+				padding: 2px 0 2px 17px;
 				background: url(images/themes/default/rss-icon.png) left center no-repeat;
 				float: left;
 			}
 				
 			div#footer-container a.badge {
-				width: 56px;
-				height: 26px;
+				width: 50px;
+				height: 24px;
 				overflow: hidden;
 				text-indent: -1000px;
 				display: block;
@@ -333,25 +304,22 @@
 	<body>
 		<div id="header-wrapper">
 			<div id="header-container">
-				<p class="no-header"><strong>Username</strong> hasn't added a header image yet.</p>
-				<!--<img src="#" alt="header-image" width="750" height="100"/>-->
+				<p class="no-header"><strong>Kevin</strong> hasn't added a header image yet.</p>
+				<!--<img src="#" alt="header-image" width="710" height="100"/>-->
 			</div>
 		</div>
 		
 		<div id="content-wrapper">
 			<div id="content-container">
 				<div id="tagline-container">
-					<h1>Hello, my name is Kevin and this is my Weefolio!</h1>
-					<a class="action more" href="#">More</a>	
+					<h1>Hello, my name is Kevin & this is my Weefolio!</h1>
 				</div>
 				
-				<!--<p class="no-work"><strong>Username</strong> hasn't added any work yet.</p>-->
-				
-				<!--<div id="portfolio-container"> 
+				<div id="portfolio-container"> 
 					<div class="portfolio-item">
 						<div class="images">
 							<div class="main-image">
-								<img src="#" width="740" height="250"/>
+								<img src="http://localhost:3000/images/featured/kevin_john_gomez.jpg" width="710" height=""/>
 							</div>
 							
 							<div class="gallery">
@@ -380,33 +348,34 @@
 						</div>
 						
 						<div class="about">
-							<h2>Title</h2>
-							<p>Delenit augue duis dolore te feugait nulla facilisi? Et quinta decima eodem modo typi qui nunc nobis videntur parum clari! Humanitatis per seacula quarta decima fiant sollemnes in!</p>
-							
-							<p><a class="action launch" href="#">Launch</a></p>
+							<h2>Arms &amp; Legs</h2>
+							<p>Four color, hand screen printed on 100% cotton, sweatshop-free American Apparel tee in a limited edition of 50.</p>
+
+              <p>Also available at Thread.</p>
 						</div>
 						
 						<div class="meta">
-							<dl>
-								<dt class="first"><span class="client">Client:</span></dt>
-								<dd class="first">Client Name</dd>
+							<ul>
+								<li class="client">Kevin John Gomez</li>
 								
-								<dt><span class="skills">Skills:</span></dt>
-								<dd>Skill</dd>
+								<li class="service">Design</li>
+								
+								<li class="url"><a href="[sale-url]" target="_blank">http://kevinjohngomez.bigcartel.com</a></li>
 								 
-								<dt><span class="for-sale">For Sale:</span></dt>
-								<dd><a href="[sale-url]" target="_blank">$20.00</a></dd>
-							</dl>
+								<li class="buy"><a href="[sale-url]" target="_blank">$20.00</a></li>
+							</ul>
 						</div>
 					</div>
-				</div>-->
+				</div>
 				
 				
 				<div id="info-container">
 					<div id="about-container">
 						<h2>About</h2>
 						
-						<p><strong>Kevin</strong> hasn't added any information yet.</p>
+						<!--<p><strong>Kevin</strong> hasn't added any information yet.</p>-->
+						
+						<p>Hello! My name is Kevin John Gomez. I'm a web designer & developer from Brooklyn, NY. I make the internet pretty.</p>
 
 					</div>
 					
@@ -426,7 +395,7 @@
 							
 							<fieldset>
 								<label for="message">Message</label>
-								<textarea id="message" name="message" rows="7" cols="37"></textarea>
+								<textarea id="message" name="message" rows="7" cols="32"></textarea>
 							</fieldset>
 							
 							<div id="contact-submit">

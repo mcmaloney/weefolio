@@ -30,6 +30,10 @@ a.download {
 	}
 	
 pre, code {
+	color: #242420;
+	}
+	
+pre.block, code.block {
 	padding: 15px;
 	background: #f5f5f3;
 	-moz-border-radius: 3px;
@@ -38,7 +42,6 @@ pre, code {
 	border-right: 1px solid #ececea;
 	border-bottom: 1px solid #ececea;
 	border-left: 1px solid #ececea;
-	color: #242420;
 	}
 	
 /*---GLOBAL HEADERS---*/
@@ -376,7 +379,7 @@ div.content-container div.column.secondary ul.content-nav {
 	
 div.content-container div.column.secondary ul.content-nav h2 {
 	font-size: 11px;
-	margin: 0 0 0 0;
+	margin-bottom: 0;
 	padding: 0 0 8px 0;
 	border-bottom: 1px solid #ececea;
 	}
@@ -576,6 +579,18 @@ div.content-container form div#login {
 	width: 111px;
 	background-image: url(/images/login-button.gif);
 	}
+	
+
+body.designs.edit div.content-container form fieldset dl dd input#design_header_image,
+body.pieces div.content-container form fieldset dl dd input#piece_image_1,
+body.pieces div.content-container form fieldset dl dd input#piece_image_2,
+body.pieces div.content-container form fieldset dl dd input#piece_image_3,
+body.pieces div.content-container form fieldset dl dd input#piece_image_4,
+body.pieces div.content-container form fieldset dl dd input#piece_image_5 {
+	padding-left: 0;
+	background: #fff;
+	border: none;
+	}
 
 
 /*---HOME---*/
@@ -586,12 +601,12 @@ body.home div.page-header-container-inner div.welcome-container {
 	}
 	
 body.home div.page-header-container-inner div.welcome-container h1 {
-	line-height: 25px;
+	line-height: 30px;
 	float: none;
 	}
 	
 body.home div.page-header-container-inner div.welcome-container p {
-	margin: 15px 0;
+	margin: 15px 0 20px 0;
 	text-shadow: 0 1px 0px #000;
 	}
 	
@@ -873,11 +888,6 @@ body.designs.edit div.content-container form fieldset dl dd div.color-preview {
 	float: left;
 	}
 	
-body.designs.edit div.content-container form fieldset dl dd input#design_header_image {
-	padding-left: 0;
-	background: #fff;
-	border: none;
-	}
 	
 /*---PORTFOLIO > INDEX---*/
 
@@ -1022,7 +1032,6 @@ body.help div.main-help div.column.primary ul.topics li {
 		
 body.help div.main-help div.column.primary ul.topics li h2 {
 	font-size: 11px;
-	margin: 0 0 15px 0;
 	padding: 0 0 8px 0;
 	border-bottom: 1px solid #ececea;
 	}
@@ -1049,4 +1058,54 @@ body.help div.main-help div.column.primary ul.topics li dl dd {
 div#piece_price {
 	display: none;
 	}
+	
+	
+/*--DOCS > THEMES--*/
 
+body.themes dl.tag-list {
+	overflow: hidden;
+	}
+	
+body.themes dl.tag-list dt {
+	width: 180px;
+	float: left;
+	clear: both;
+	padding: 10px;
+	background: #ececea;
+	border-bottom: 1px solid #fff;
+	color: #242420;
+	font-weight: bold;
+	}
+	
+body.themes dl.tag-list dd {
+	width: 488px;
+	float: left;
+	margin: 0;
+	padding: 10px;
+	background: #f5f5f3;
+	border-left: 1px solid #fff;
+	border-bottom: 1px solid #fff;
+	}
+		
+body.themes table {	
+	width: 100%;
+	}
+	
+body.themes table.tags td {
+	padding: 10px;
+	}
+	
+body.themes table.tags tr td.tag {
+	background: #ececea;
+	border-bottom: 1px solid #fff;
+	border-right: 1px solid #fff;
+	width: 180px;
+	text-align: center;
+	font-family: Courier;
+	color: #242420;
+	}
+	
+body.themes table.tags tr td.description {
+	background: #f5f5f3;
+	border-bottom: 1px solid #fff;
+	}
