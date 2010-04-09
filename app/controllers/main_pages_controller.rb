@@ -1,6 +1,5 @@
 class MainPagesController < ApplicationController
   layout "template"
-  caches_page :home, :terms_of_use, :privacy_policy
   
   def home
     @page_title = "Weefolio - Lil' portfolios for the rest of us!"
