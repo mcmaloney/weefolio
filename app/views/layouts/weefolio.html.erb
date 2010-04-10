@@ -13,21 +13,7 @@
 	</head>
 	
 	<body class="">
-		<% if @design.header_image.size.blank? %>
-			<div id="header-wrap">
-				<div id="header-container">		
-					<div id="no-header">
-						<p><strong><%= @user.login %></strong> hasn't added a header image yet.</p>
-					</div>
-				</div>
-			</div>
-		<% else %>
-		  <div id="header-wrap">
-  			<div id="header-container">		
-  				<%= image_tag @design.header_image.url(:header_format) %>
-  			</div>
-  		</div>
-  	<% end %>
+	  <%= render :partial => 'shared/header_image' %>
 		
 		<div id="tagline-wrap">
 			<div id="tagline-container">
@@ -43,50 +29,15 @@
 		  
 		<div id="info-wrap">  
 			<div id="info-container">
-				<div id="about-container">
-					<h2>About <!--<%=h @user.login %>--></h2>
-					<% if @user.about_me.blank? %>
-					  <p>
-  					  <strong><%= @user.login %></strong> hasn't added any information yet.
-  					</p>
-					<% else %>
-					  <p>
-  					  <%=h @user.about_me%>
-  					</p>
-				  <% end %>
-				</div>
+			  <%= show_about_me_for(@user) %>
 				
-				<div id="contact-container">
-				  <%= flash[:notice] %>
-					<h2>Contact <!--<%=h @user.login %>--></h2>
-					
-					<%= form_tag :controller => 'portfolios', :action => 'send_message', :id => @user, :html => { :method => :post } %>
-					  <fieldset>
-							<label for="name">Name</label>
-							<%= text_field_tag :name %>
-						</fieldset>
-						
-						<fieldset>
-							<label for="email">Email</label>
-							<%= text_field_tag :from %>
-						</fieldset>
-						
-						<fieldset>
-							<label for="message">Message</label>
-							<textarea id="message" name="message" rows="7"></textarea>
-						</fieldset>
-						
-						<div id="contact-submit">
-							<%= submit_tag 'Send Message' %>
-						</div>
-					</form>
-				</div>
+				<%= show_contact_form_for(@user) %>
 			</div>
 		</div>
 		
 		<p>
 		  <%= show_rss_for(@user) %>
-		</p>s
+		</p>
 		
 		<% if @user.account_tier == 1 %>
 			<a id="weefolio-badge" href="#">Weefolio</a>

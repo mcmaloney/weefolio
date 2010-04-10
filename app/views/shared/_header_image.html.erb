@@ -1,0 +1,15 @@
+<% if @design.header_image.size.blank? %>
+	<div id="header-wrap">
+		<div id="header-container">		
+			<div id="no-header">
+				<p><strong><%= @user.login %></strong> hasn't added a header image yet.</p>
+			</div>
+		</div>
+	</div>
+<% else %>
+  <div id="header-wrap">
+		<div id="header-container">		
+			<%= image_tag @design.header_image.url(:header_format) %>
+		</div>
+	</div>
+<% end %>

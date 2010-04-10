@@ -17,4 +17,51 @@ module ApplicationHelper
 	def is_active?(action, controller)
 		"selected" if params[:action] == action && params[:controller] == controller
 	end
+	
+	def show_contact_form_for(user)
+	  %{
+	    <div id="contact-container">
+			  #{flash[:notice]}
+				<h2>Contact <!--#{h @user.login}--></h2>
+				
+				#{form_tag :controller => 'portfolios', :action => 'send_message', :id => user, :html => { :method => :post }}
+				  <fieldset>
+						<label for="name">Name</label>
+						#{text_field_tag :name}
+					</fieldset>
+					
+					<fieldset>
+						<label for="email">Email</label>
+						#{text_field_tag :from}
+					</fieldset>
+					
+					<fieldset>
+						<label for="message">Message</label>
+						<textarea id="message" name="message" rows="7"></textarea>
+					</fieldset>
+					
+					<div id="contact-submit">
+						#{submit_tag 'Send Message'}
+					</div>
+				</form>
+			</div>
+	  }
+	end
+	def show_about_me_for(user)
+	  if user.about_me.blank?
+	    %{
+        <p>
+    		  <strong>#{@user.login}</strong> hasn't added any information yet.
+    		</p>
+    	}
+		else
+		  %{
+	      <div id="about-container">
+					<p>
+					  #{h @user.about_me}
+					</p>
+				</div>
+			}
+		end
+	end
 end
