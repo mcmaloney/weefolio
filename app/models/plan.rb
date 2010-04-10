@@ -10,17 +10,21 @@ class Plan < ActiveRecord::Base
   before_save :populate_amount_in_cents, :populate_card_last_four
   
   def process_transaction
-    return false unless self.valid?
-    card = authnet_credit_card
-    gateway = ActiveMerchant::Billing::AuthorizeNetGateway.new(AUTHORIZE_NET_CREDENTIALS)
-    response = gateway.authorize(self.amount_in_cents, card)
-    self.gateway_response = response.message
-    if response.success?
-      self.status = :authorized
-      # Capture!
-      gateway.capture(self.amount_in_cents, response.authorization)
-      self.status = :charged
-      return true
+    if self.valid?
+      card = authnet_credit_card
+      gateway = ActiveMerchant::Billing::AuthorizeNetGateway.new(AUTHORIZE_NET_CREDENTIALS)
+      response = gateway.authorize(self.amount_in_cents, card)
+      self.gateway_response = response.message
+      if response.success?
+        self.status = :authorized
+        # Capture!
+        gateway.capture(self.amount_in_cents, response.authorization)
+        self.status = :charged
+        return true
+      else
+        self.status = :failed
+        return false
+      end
     else
       self.status = :failed
       return false

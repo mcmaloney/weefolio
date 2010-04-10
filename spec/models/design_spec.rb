@@ -5,8 +5,8 @@ describe Design do
     User.delete_all
     Design.delete_all
     @user = Factory(:user)
-    @design = Factory(:design)
-    @user.design = @design
+    @user.setup
+    @design = @user.design
   end
   
   describe "setting up the design for a user" do  
