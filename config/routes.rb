@@ -20,7 +20,7 @@ ActionController::Routing::Routes.draw do |map|
   map.pieces_admin '/pieces_admin', :controller => 'pieces', :action => 'pieces_admin'
   
   # USERS
-  map.resources :users, :member => { :remove_account => :post } do |users|
+  map.resources :users, :as => '/:id', :member => { :remove_account => :post } do |users|
     users.resources :portfolios, :member => { :send_message => :post }
     users.resources :designs
     users.resources :plans
