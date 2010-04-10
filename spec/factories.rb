@@ -4,3 +4,7 @@ Factory.define :user do |u|
   u.password "giraffe"
   u.password_confirmation { |c| c.password }
 end
+
+Factory.define :design do |d|
+  d.user_id 1
+end

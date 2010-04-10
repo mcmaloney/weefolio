@@ -25,38 +25,6 @@ class Design < ActiveRecord::Base
     end
   end
   
-  # Set serif mode on a given element
-  def render_serif(element)
-    if element
-      "serif"
-    else
-      "sans-serif"
-    end
-  end
-  
-  # Set italic mode on a given element
-  def render_italic(element)
-    if element
-      "italic"
-    else
-      "normal"
-    end
-  end
-  
-  # Set bold on a given element
-  def render_bold(element)
-    if element
-      "bold"
-    else
-      "normal"
-    end
-  end
-  
-  # Render the font size for use in dynamic CSS
-  def render_font_size(font)
-    "#{font.to_s}px"
-  end
-  
   # List of available font sizes for dropdowns
   def font_sizes
     font_sizes = [8, 10, 12, 14, 16, 18, 20, 22, 24]
