@@ -3,6 +3,7 @@ Factory.define :user do |u|
   u.sequence(:email) { |e| "you#{e}@yours.com" }
   u.password "giraffe"
   u.password_confirmation { |c| c.password }
+  u.design_type 1
 end
 
 Factory.define :design do |d|

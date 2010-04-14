@@ -37,13 +37,8 @@ class PiecesController < ApplicationController
   
   def destroy
     @piece.destroy
-    if @user.admin?
-      redirect_to pieces_admin_path
-      flash[:notice] = "'#{@piece.title}' has been <strong>deleted</strong>."
-    else
-      redirect_to edit_user_portfolio_path(@user)
-      flash[:notice] = "'#{@piece.title}' has been <strong>deleted</strong>."
-    end
+    redirect_to edit_user_portfolio_path(@user)
+    flash[:notice] = "'#{@piece.title}' has been <strong>deleted</strong>."
   end
 
   def show
@@ -56,10 +51,6 @@ class PiecesController < ApplicationController
       Piece.update_all(['position=?', index+1], ['id=?', id])
     end
     render :nothing => true
-  end
-  
-  def pieces_admin
-    @pieces = Piece.find(:all)
   end
   
   protected

@@ -66,5 +66,31 @@ describe PiecesController do
       assigns['page_title'].should include("#{assigns['user'].login} - #{assigns['piece'].title}")
       assigns['design'].should_not be_nil
     end
-  end  
+  end 
+  
+  describe "DELETE destroy" do
+    it "should let me destroy a piece" do
+      @user.pieces.delete_all
+      @piece = Factory(:piece, :portfolio_id => @user.portfolio.id)
+      delete :destroy, :portfolio_id => @user.login, :id => @piece.id
+      @user.pieces.count.should == 0
+      response.should redirect_to(edit_user_portfolio_path(assigns['user']))
+      flash[:notice].should include("'#{assigns['piece'].title}' has been <strong>deleted</strong>.")
+    end
+  end
+  
+  describe "POST sort" do
+    it "should sort the pieces in my portfolio" do
+      pieces = []
+      @user.pieces.delete_all
+      3.times do
+        @piece = Factory(:piece, :portfolio_id => @user.portfolio.id)
+        pieces << @piece
+      end
+      post :sort, :portfolio_id => @user.login, :pieces => pieces
+      response.should be_success
+    end
+  end
+      
+       
 end
