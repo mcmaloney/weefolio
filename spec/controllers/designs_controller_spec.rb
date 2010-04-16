@@ -1,7 +1,5 @@
 require 'spec_helper'
 
-include AuthenticatedTestHelper
-
 describe DesignsController do
   before(:each) do
     User.delete_all

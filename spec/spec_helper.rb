@@ -6,6 +6,7 @@ require 'spec/autorun'
 require 'spec/rails'
 require 'email_spec'
 
+include AuthenticatedTestHelper
 
 # Uncomment the next line to use webrat's matchers
 #require 'webrat/integrations/rspec-rails'

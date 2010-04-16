@@ -1,7 +1,5 @@
 require 'spec_helper'
 
-include AuthenticatedTestHelper
-
 describe Admin::DashboardController do
   describe "GET index" do
     it "should not allow me access if I'm not an admin" do

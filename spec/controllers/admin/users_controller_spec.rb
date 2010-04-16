@@ -1,7 +1,5 @@
 require 'spec_helper'
 
-include AuthenticatedTestHelper
-
 describe Admin::UsersController do
 
   describe "GET index" do
