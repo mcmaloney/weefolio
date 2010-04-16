@@ -11,11 +11,9 @@ class ApplicationController < ActionController::Base
   protected
   
   def admin_only
-    if logged_in?
-      unless current_user.admin?
-        redirect_to root_path
-        false
-      end
+    unless current_user && current_user.admin?
+      redirect_to root_path
+      return false
     end
   end
 end
