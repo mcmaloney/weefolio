@@ -3,3 +3,4 @@ database.yml
 log/*
 tmp/*
 public/system/*
+coverage/*
