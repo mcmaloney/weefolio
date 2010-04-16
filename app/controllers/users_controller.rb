@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
   layout 'template'
   
-  before_filter :authorize, :only => [:users_admin]
   before_filter :init_user, :only => [:new, :create]
   before_filter :get_current_user, :except => [:new, :index, :create, :reset_password]
   
@@ -73,12 +72,14 @@ class UsersController < ApplicationController
   # This would be less expensive as an AJAX action. 
   def switch_design_type
     if @user.design_type == 1
-      @user.set_design_type(2)
-    else
-      @user.set_design_type(1)
+      if @user.update_attribute(:design_type, 2)
+        redirect_to edit_user_design_path(@user, @user.design)
+      end
+    elsif @user.design_type == 2
+      if @user.update_attribute(:design_type, 1)
+        redirect_to edit_user_design_path(@user, @user.design)
+      end
     end
-    @user.save
-    redirect_to edit_user_design_path(@user, @user.design)
   end
   
   def close_account_confirm
@@ -88,10 +89,6 @@ class UsersController < ApplicationController
     UserMailer.deliver_delete_account_message(@user)
     @user.delete
     redirect_to logout_path
-  end
-  
-  def users_admin
-    @users = User.find(:all)
   end
   
   protected

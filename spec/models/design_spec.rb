@@ -1,78 +1,49 @@
-require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
+require 'spec_helper'
 
 describe Design do
   before(:each) do
+    User.delete_all
+    Design.delete_all
     @user = Factory(:user)
-    @user.setup_portfolio_and_design
+    @user.setup
     @design = @user.design
   end
   
-  describe "being created" do
-    it "should read design type from the user" do
-      @design.design_type.should == 1
+  describe "setting up the design for a user" do  
+    it "should have a design type" do
+      @design.design_type.should == @user.design_type
     end
     
-    it "should have a layout type of 1" do
-      @design.layout_type.should == 1
+    it "should set the layout type" do
+      @user.design.set_layout_type(2)
+      @user.design.layout_type.should == 2
     end
   end
   
-  describe "layout types" do
-    it "should have a grid layout" do
+  describe "rendering CSS stuff from the model" do
+    it "should render the layout type as grid" do
       @user.design.render_layout_type.should == "grid"
     end
     
-    it "should have a list layout" do
-      @design.set_layout_type(2)
-      @design.render_layout_type.should == "list"
-    end
-  end
-  
-  describe "change layout type" do
-    it "should change layout type from 1 to 2" do
-      @design.set_layout_type(2)
-      @design.layout_type.should == 2
+    it "should render the layout type as list" do
+      @user.design.set_layout_type(2)
+      @user.design.render_layout_type.should == "list"
     end
     
-    it "should change layout from 2 to 1" do
-      @design.set_layout_type(2)
-      @design.set_layout_type(1)
-      @design.layout_type.should == 1
-    end
-  end
-  
-  describe "render boolean values to strings" do
-    it "should display the sans-serif state as a string" do
-      @design.render_serif(@design.text_serif).should == "sans-serif"
+    it "should have font sizes" do
+      @user.design.font_sizes.should include(8, 10, 12, 14, 16, 18, 20, 22, 24)
     end
     
-    it "should display the serif state as a string" do
-      @design.render_serif(@design.title_serif).should == "serif"
+    it "should have font families" do
+      @user.design.font_families.should include("Arial", "Helvetica", "Times New Roman", "Courier", "Georgia", "Trebuchet MS", "Verdana")
     end
     
-    it "should display the italic state as a string" do
-      @design.render_italic(@design.tagline_italic).should == "normal"
+    it "should render a color as is if there's a # sign in it already" do
+      @user.design.render_color("#FFF").should == "#FFF"
     end
     
-    it "should display the bold state as a string" do
-      @design.render_bold(@design.tagline_bold).should == "normal"
-    end
-  end
-  
-  describe "render integer values to strings" do
-    it "should render a font size to a string" do
-      @design.render_font_size(@design.text_size).should == "12px"
-    end
-  end
-  
-  describe "render color values" do
-    it "should add a # to the value if there isn't one" do
-      @design.background_color = "FAFAFA"
-      @design.render_color(@design.background_color).should == "#FAFAFA"
-    end
-    
-    it "should display the color string as is if there is a # in it" do
-      @design.render_color(@design.background_color).should == "#dedddb"
+    it "should add a a # to the color if there isn't one" do
+      @user.design.render_color("FFF").should == "#FFF"
     end
   end
 end

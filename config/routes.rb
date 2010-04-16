@@ -16,8 +16,10 @@ ActionController::Routing::Routes.draw do |map|
   map.close_account '/close_account', :controller => 'users', :action => 'close_account_confirm'
   
   # ADMIN ROUTES
-  map.users_admin '/users_admin', :controller => 'users', :action => 'users_admin'
-  map.pieces_admin '/pieces_admin', :controller => 'pieces', :action => 'pieces_admin'
+  map.namespace(:admin) do |admin|
+    admin.root :controller => 'dashboard'
+    admin.resources :users
+  end
   
   # USERS
   map.resources :users, :as => '/:id', :member => { :remove_account => :post } do |users|

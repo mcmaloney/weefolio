@@ -31,9 +31,8 @@ end
 # This is necessary if your schema can't be completely dumped by the schema dumper,
 # like if you have constraints or database-specific column types
 # config.active_record.schema_format = :sql
-config.gem 'rspec', :lib => false, :version => '= 1.2.6'
-config.gem 'rspec-rails', :lib => false, :version => '= 1.2.6'
-config.gem 'cucumber', :lib => false, :version => '= 0.3.3'
-config.gem 'thoughtbot-factory_girl', :lib => 'factory_girl', :source => 'http://gems.github.com', :version => '1.2.1'
-config.gem 'webrat', :lib => false, :version => '= 0.4.4'
-config.gem 'nokogiri', :lib => false, :version => '1.3.3'
+config.gem 'rspec', :lib => false
+config.gem 'rspec-rails', :lib => false
+config.gem 'factory_girl'
+config.gem 'faker'
+config.gem 'email_spec', :lib => 'email_spec'

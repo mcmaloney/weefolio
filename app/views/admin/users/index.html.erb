@@ -1,0 +1,7 @@
+<%= will_paginate @users %>
+
+<% @users.each do |user| %>
+  <p>
+    <%= user.login %>
+  </p>
+<% end %>

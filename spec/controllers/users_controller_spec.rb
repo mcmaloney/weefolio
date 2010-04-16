@@ -1,191 +1,173 @@
-require File.dirname(__FILE__) + '/../spec_helper'
-  
-# Be sure to include AuthenticatedTestHelper in spec/spec_helper.rb instead
-# Then, you can remove it from this and the units test.
+require 'spec_helper'
+
 include AuthenticatedTestHelper
 
 describe UsersController do
-  fixtures :users
-
-  it 'allows signup' do
-    lambda do
-      create_user
-      response.should be_redirect
-    end.should change(User, :count).by(1)
-  end
-
   
-
-  it 'signs up user with activation code' do
-    create_user
-    assigns(:user).reload
-    assigns(:user).activation_code.should_not be_nil
-  end
-  it 'requires login on signup' do
-    lambda do
-      create_user(:login => nil)
-      assigns[:user].errors.on(:login).should_not be_nil
-      response.should be_success
-    end.should_not change(User, :count)
-  end
-  
-  it 'requires password on signup' do
-    lambda do
-      create_user(:password => nil)
-      assigns[:user].errors.on(:password).should_not be_nil
-      response.should be_success
-    end.should_not change(User, :count)
-  end
-  
-  it 'requires password confirmation on signup' do
-    lambda do
-      create_user(:password_confirmation => nil)
-      assigns[:user].errors.on(:password_confirmation).should_not be_nil
-      response.should be_success
-    end.should_not change(User, :count)
-  end
-
-  it 'requires email on signup' do
-    lambda do
-      create_user(:email => nil)
-      assigns[:user].errors.on(:email).should_not be_nil
-      response.should be_success
-    end.should_not change(User, :count)
-  end
-  
-  
-  it 'activates user' do
-    User.authenticate('aaron', 'monkey').should be_nil
-    get :activate, :activation_code => users(:aaron).activation_code
-    response.should redirect_to('/login')
-    flash[:notice].should_not be_nil
-    flash[:error ].should     be_nil
-    User.authenticate('aaron', 'monkey').should == users(:aaron)
-  end
-  
-  it 'does not activate user without key' do
-    get :activate
-    flash[:notice].should     be_nil
-    flash[:error ].should_not be_nil
-  end
-  
-  it 'does not activate user with blank key' do
-    get :activate, :activation_code => ''
-    flash[:notice].should     be_nil
-    flash[:error ].should_not be_nil
-  end
-  
-  it 'does not activate user with bogus key' do
-    get :activate, :activation_code => 'i_haxxor_joo'
-    flash[:notice].should     be_nil
-    flash[:error ].should_not be_nil
-  end
-  
-  def create_user(options = {})
-    post :create, :user => { :login => 'quire', :email => 'quire@example.com',
-      :password => 'quire69', :password_confirmation => 'quire69' }.merge(options)
-  end
-end
-
-describe UsersController do
-  describe "route generation" do
-    it "should route users's 'index' action correctly" do
-      route_for(:controller => 'users', :action => 'index').should == "/users"
-    end
-    
-    it "should route users's 'new' action correctly" do
-      route_for(:controller => 'users', :action => 'new').should == "/signup"
-    end
-    
-    it "should route {:controller => 'users', :action => 'create'} correctly" do
-      route_for(:controller => 'users', :action => 'create').should == "/register"
-    end
-    
-    it "should route users's 'show' action correctly" do
-      route_for(:controller => 'users', :action => 'show', :id => '1').should == "/users/1"
-    end
-    
-    it "should route users's 'edit' action correctly" do
-      route_for(:controller => 'users', :action => 'edit', :id => '1').should == "/users/1/edit"
-    end
-    
-    it "should route users's 'update' action correctly" do
-      route_for(:controller => 'users', :action => 'update', :id => '1').should == "/users/1"
-    end
-    
-    it "should route users's 'destroy' action correctly" do
-      route_for(:controller => 'users', :action => 'destroy', :id => '1').should == "/users/1"
-    end
-  end
-  
-  describe "route recognition" do
-    it "should generate params for users's index action from GET /users" do
-      params_from(:get, '/users').should == {:controller => 'users', :action => 'index'}
-      params_from(:get, '/users.xml').should == {:controller => 'users', :action => 'index', :format => 'xml'}
-      params_from(:get, '/users.json').should == {:controller => 'users', :action => 'index', :format => 'json'}
-    end
-    
-    it "should generate params for users's new action from GET /users" do
-      params_from(:get, '/users/new').should == {:controller => 'users', :action => 'new'}
-      params_from(:get, '/users/new.xml').should == {:controller => 'users', :action => 'new', :format => 'xml'}
-      params_from(:get, '/users/new.json').should == {:controller => 'users', :action => 'new', :format => 'json'}
-    end
-    
-    it "should generate params for users's create action from POST /users" do
-      params_from(:post, '/users').should == {:controller => 'users', :action => 'create'}
-      params_from(:post, '/users.xml').should == {:controller => 'users', :action => 'create', :format => 'xml'}
-      params_from(:post, '/users.json').should == {:controller => 'users', :action => 'create', :format => 'json'}
-    end
-    
-    it "should generate params for users's show action from GET /users/1" do
-      params_from(:get , '/users/1').should == {:controller => 'users', :action => 'show', :id => '1'}
-      params_from(:get , '/users/1.xml').should == {:controller => 'users', :action => 'show', :id => '1', :format => 'xml'}
-      params_from(:get , '/users/1.json').should == {:controller => 'users', :action => 'show', :id => '1', :format => 'json'}
-    end
-    
-    it "should generate params for users's edit action from GET /users/1/edit" do
-      params_from(:get , '/users/1/edit').should == {:controller => 'users', :action => 'edit', :id => '1'}
-    end
-    
-    it "should generate params {:controller => 'users', :action => update', :id => '1'} from PUT /users/1" do
-      params_from(:put , '/users/1').should == {:controller => 'users', :action => 'update', :id => '1'}
-      params_from(:put , '/users/1.xml').should == {:controller => 'users', :action => 'update', :id => '1', :format => 'xml'}
-      params_from(:put , '/users/1.json').should == {:controller => 'users', :action => 'update', :id => '1', :format => 'json'}
-    end
-    
-    it "should generate params for users's destroy action from DELETE /users/1" do
-      params_from(:delete, '/users/1').should == {:controller => 'users', :action => 'destroy', :id => '1'}
-      params_from(:delete, '/users/1.xml').should == {:controller => 'users', :action => 'destroy', :id => '1', :format => 'xml'}
-      params_from(:delete, '/users/1.json').should == {:controller => 'users', :action => 'destroy', :id => '1', :format => 'json'}
-    end
-  end
-  
-  describe "named routing" do
+  # This is the directory view.
+  describe "GET index" do
     before(:each) do
-      get :new
+      User.delete_all
+      @user_1 = Factory(:user)
+      @user_1.setup
+      @user_2 = Factory(:user)
+      @user_2.setup
+    end
+      
+    it "should show only users I searched for" do
+      get :index, :search => @user_1.login
+      assigns['users'].should include(@user_1)
+      assigns['users'].should_not include(@user_2)
     end
     
-    it "should route users_path() to /users" do
-      users_path().should == "/users"
-      formatted_users_path(:format => 'xml').should == "/users.xml"
-      formatted_users_path(:format => 'json').should == "/users.json"
-    end
-    
-    it "should route new_user_path() to /users/new" do
-      new_user_path().should == "/users/new"
-      formatted_new_user_path(:format => 'xml').should == "/users/new.xml"
-      formatted_new_user_path(:format => 'json').should == "/users/new.json"
-    end
-    
-    it "should route user_(:id => '1') to /users/1" do
-      user_path(:id => '1').should == "/users/1"
-      formatted_user_path(:id => '1', :format => 'xml').should == "/users/1.xml"
-      formatted_user_path(:id => '1', :format => 'json').should == "/users/1.json"
-    end
-    
-    it "should route edit_user_path(:id => '1') to /users/1/edit" do
-      edit_user_path(:id => '1').should == "/users/1/edit"
+    it "should show me all the users if I don't enter any search params" do
+      get :index, :search => ""
+      assigns['users'].should include(@user_1)
+      assigns['users'].should include(@user_2)
     end
   end
   
+  describe "GET new" do
+    it "should let me set up my account" do
+      get :new
+      assigns['page_title'].should == "Weefolio - Pricing &amp; Sign Up"
+    end
+  end
+  
+  describe "GET edit" do
+    it "should let me edit my account if I'm logged in" do
+      User.delete_all
+      @user = Factory(:user)
+      @user.setup
+      login_as(@user)
+      get :edit
+      assigns['user'].should_not be_nil
+      assigns['page_title'].should == "Weefolio - My Account"
+      assigns['us_states'].should_not be_nil
+    end
+  end
+  
+  describe "PUT update" do
+    before(:each) do
+      User.delete_all
+      @user = Factory(:user)
+      @user.setup
+      login_as(@user)
+    end
+    
+    it "should only update my personal settings if I don't change my plan level" do
+      put :update, :plan => {:level => "1"}, :user => {:tagline => Faker::Lorem.sentence }
+      response.should redirect_to(edit_user_path(assigns['user']))
+      flash[:notice].should == "Account settings saved."
+    end
+    
+    it "should update my personal settings and my plan settings if I change both" do
+      @plan = Factory(:plan, :level => 2)
+      @user.plan = @plan
+      put :update, :plan => @user.plan.attributes, :user => { :tagline => Faker::Lorem.sentence }
+      assigns['user'].plan.level.should == 2
+      response.should redirect_to(edit_user_path(assigns['user']))
+      flash[:notice].should == "Plan changed to #{assigns['user'].render_account_tier}"
+    end
+    
+    it "should not update my plan and stuff if I put in bogus info for the plan" do
+      @plan = @user.plan
+      put :update, :plan => @user.plan.attributes, :user => { :tagline => Faker::Lorem.sentence }
+      response.should redirect_to(edit_user_path(assigns['user']))
+      flash[:notice].should == "Something's gone wrong! Try again, please."
+    end
+  end
+  
+  describe "POST create" do
+    it "should let me create a new user" do
+      User.delete_all
+      post :create, :user => {:login => Faker::Internet.user_name, :email => Faker::Internet::email, :password => "giraffe", :password_confirmation => "giraffe" }
+      response.should redirect_to(root_path)
+      flash[:notice].should == "Welcome to Weefolio, #{assigns['user'].login}!"
+    end
+    
+    it "should not let me create a user if I give bogus info" do
+      User.delete_all
+      post :create, :user => {:login => Faker::Internet.user_name, :email => Faker::Internet::user_name, :password => "giraffe", :password_confirmation => "giraffe" }
+      response.should render_template('new')
+      flash[:error].should == "We couldn't set up that account, sorry.  Please try again."
+    end
+  end
+  
+  describe "POST reset password" do
+    before(:each) do
+      User.delete_all
+      @user = Factory(:user)
+      @user.setup
+      login_as(@user)
+    end
+    
+    it "should allow me to change my password" do
+      post :reset_password, :user => {:login => @user.login, :email => @user.email, :new_password => "giraffe7", :new_password_confirm => "giraffe7" }
+      response.should redirect_to(login_path)
+      flash[:notice].should == "Password changed. You can now login with your new password."
+    end
+    
+    it "should not allow me to change my password if I give it the wrong email" do
+      post :reset_password, :user => {:login => @user.login, :email => Faker::Internet.email, :new_password => "giraffe7", :new_password_confirm => "giraffe7" }
+      response.should render_template('reset_password')
+      flash[:notice].should == "Bad login/email. Please try again."
+    end
+    
+    it "should not allow me to change my password if I give it the wrong login" do
+      post :reset_password, :user => {:login => Faker::Internet.user_name, :email => @user.email, :new_password => "giraffe7", :new_password_confirm => "giraffe7" }
+      response.should render_template('reset_password')
+      flash[:notice].should == "Bad login/email. Please try again."
+    end
+    
+    it "should not allow me to change my password if it's too short or some shit" do
+      post :reset_password, :user => {:login => @user.login, :email => @user.email, :new_password => "g", :new_password_confirm => "g" }
+      response.should redirect_to(forgot_password_path)
+      flash[:notice].should == "Something went wrong. Please try again."
+    end
+  end
+  
+  describe "PUT change design type" do
+    before(:each) do
+      User.delete_all
+      @user = Factory(:user)
+      @user.setup
+      login_as(@user)
+    end
+    
+    it "should should switch my design type to 2 if it's 1" do
+      @user.design_type = 1
+      put :switch_design_type, :id => @user.id
+      assigns['user'].design_type.should == 2
+      response.should redirect_to(edit_user_design_path(assigns['user'], assigns['user'].design))
+    end
+    
+    it "should should switch my design type to 1 if it's 2" do
+      User.delete_all
+      @user2 = Factory(:user, :design_type => 2)
+      @user2.setup
+      login_as(@user2)
+      put :switch_design_type, :id => @user2.id
+      assigns['user'].design_type.should == 1
+      response.should redirect_to(edit_user_design_path(assigns['user'], assigns['user'].design))
+    end
+  end
+  
+  describe "POST remove account" do
+    before(:each) do
+      User.delete_all
+      @user = Factory(:user)
+      @user.setup
+      login_as(@user)
+    end
+    
+    it "should allow me to remove my account" do
+      post :remove_account
+      response.should redirect_to(logout_path)
+      User.count.should == 0
+    end
+  end
+      
+      
+      
 end

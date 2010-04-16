@@ -8,12 +8,11 @@ class ApplicationController < ActionController::Base
   # Scrub sensitive parameters from your log
   filter_parameter_logging :password, :card_number, :card_verification
   
-protected
+  protected
   
-  def authorize
+  def admin_only
     if logged_in?
       unless current_user.admin?
-        flash[:error] = "Nosiree!"
         redirect_to root_path
         false
       end

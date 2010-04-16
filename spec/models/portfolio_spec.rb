@@ -1,84 +1,45 @@
-require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')
+require 'spec_helper'
 
-describe Portfolio do 
-  describe "being created" do
-    before(:each) do
-      @user = Factory(:user)
-      @user.setup_portfolio_and_design
-    end
-     
-    it "should have no pieces in it" do
-      @user.portfolio.pieces.length.should == 0
-    end
-  end
-
-  describe "account tier 1" do
-    before(:each) do
-      @user = Factory(:user)
-      @user.setup_portfolio_and_design
-    end
-    
-    it "should read the tier from the user" do
-      @user.portfolio.account_tier.should == 1
-    end
-    
-    it "should allow up to 5 pieces to be created" do
-      @user.portfolio.max_pieces.should == 5
-    end
-    
-    it "should prohibit the user from adding more then 5 pieces" do
-      5.times do
-        piece = Factory(:piece)
-        @user.portfolio.pieces << piece
-      end
-      @user.portfolio.can_add_more?.should be_false
-    end
+describe Portfolio do
+  before(:each) do
+    User.delete_all
+    @user = Factory(:user)
+    @user.setup
+    @portfolio = @user.portfolio
   end
   
-  describe "account tier 2" do
-    before(:each) do
-      @user = Factory(:user, :account_tier => 2)
-      @user.setup_portfolio_and_design
-    end
-    
-    it "should read the tier from the user" do
-      @user.portfolio.account_tier.should == 2
-    end
-    
-    it "should allow up to 15 pieces to be created" do
-      @user.portfolio.max_pieces.should == 15
-    end
-    
-    it "should prohibit the user from adding more then 15 pieces" do
-      15.times do
-        piece = Factory(:piece)
-        @user.portfolio.pieces << piece
-      end
-      @user.portfolio.can_add_more?.should be_false
-    end
+  it "should have a permalink" do
+    @portfolio.to_param.should == @portfolio.permalink
   end
   
-  describe "account tier 3" do
-    before(:each) do
-      @user = Factory(:user, :account_tier => 3)
-      @user.setup_portfolio_and_design
-    end
-    
-    it "should read the tier from the user" do
-      @user.portfolio.account_tier.should == 3
-    end
-    
-    it "should allow up to 25 pieces to be created" do
-      @user.portfolio.max_pieces.should == 25
-    end
-    
-    it "should prohibit the user from adding more then 25 pieces" do
-      25.times do
-        piece = Factory(:piece)
-        @user.portfolio.pieces << piece
-      end
-      @user.portfolio.can_add_more?.should be_false
-    end
+  it "should have an account tier from its user" do
+    @portfolio.account_tier.should == @user.account_tier
   end
-      
+  
+  it "should allow me only 5 pieces if I have a level 1 account" do
+    @portfolio.max_pieces.should == 5
+  end
+  
+  it "should allow me 15 pieces if I have a level 2 account" do
+    @user.plan.level = 2
+    @user.update_account_tier(@user.plan.level)
+    @portfolio.max_pieces.should == 15
+  end
+  
+  it "should allow me 25 pieces if I have a level 2 account" do
+    @user.plan.level = 3
+    @user.update_account_tier(@user.plan.level)
+    @portfolio.max_pieces.should == 25
+  end
+  
+  it "should allow me to add more pieces if I have not exceed the max for my account tier" do
+    @portfolio.can_add_more?.should be_true
+  end
+  
+  it "should not allow me to add more pieces if I have exceed the max for my account tier" do
+    5.times do
+      @portfolio.pieces << Factory(:piece)
+    end
+    @portfolio.can_add_more?.should be_false
+  end
 end
