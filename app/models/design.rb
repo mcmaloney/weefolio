@@ -1,4 +1,6 @@
 class Design < ActiveRecord::Base
+  include WeeParser
+  
   belongs_to :user
   
   attr_protected :user_id
