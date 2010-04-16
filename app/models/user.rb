@@ -5,6 +5,9 @@ class User < ActiveRecord::Base
   include Authentication::ByPassword
   include Authentication::ByCookieToken
   
+  cattr_reader :per_page
+  @@per_page = 10
+  
   has_one                   :portfolio
   has_one                   :design
   has_one                   :plan
