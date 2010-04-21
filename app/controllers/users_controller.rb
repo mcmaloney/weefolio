@@ -38,9 +38,8 @@ class UsersController < ApplicationController
   def create
     logout_keeping_session!
     
-    @user.setup
-    success = @user && @user.save && @user.has_associated
-    if success && @user.errors.empty?
+    if @user.save
+      @user.setup
       self.current_user = @user
       redirect_to root_path
       flash[:notice] = "Welcome to Weefolio, #{@user.login}!"
@@ -48,6 +47,18 @@ class UsersController < ApplicationController
       flash[:error]  = "We couldn't set up that account, sorry.  Please try again."
       render :action => 'new'
     end
+      
+    
+    # success = @user && @user.save
+    #     if success && @user.errors.empty?
+    #       @user.setup
+    #       self.current_user = @user
+    #       redirect_to root_path
+    #       flash[:notice] = "Welcome to Weefolio, #{@user.login}!"
+    #     else
+    #       flash[:error]  = "We couldn't set up that account, sorry.  Please try again."
+    #       render :action => 'new'
+    #     end
   end
   
   def reset_password
