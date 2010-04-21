@@ -15,7 +15,7 @@ class PortfoliosController < ApplicationController
   # Send message action for the contact user form.
   def send_message
     if !params[:from].blank? && !params[:name].blank? && !params[:message].blank?
-      UserMailer.send_later :deliver_user_message, @user.email, params[:from], params[:name], params[:message]
+      UserMailer.deliver_user_message(@user.email, params[:from], params[:name], params[:message])
       redirect_to user_portfolio_path(@user, @user.portfolio)
       flash[:notice] = "Your <strong>message</strong> has been sent."
     else
