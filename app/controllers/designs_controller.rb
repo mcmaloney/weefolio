@@ -1,5 +1,6 @@
 class DesignsController < ApplicationController
   layout 'template'
+  before_filter :login_required
   before_filter :get_user_design
   
   def edit
