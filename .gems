@@ -1,2 +1,2 @@
 activemerchant
-mislav-will_paginate --source http://gems.github.com
+mislav-will_paginate --version '~>2.2.3' --source http://gems.github.com
