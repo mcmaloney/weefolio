@@ -11,7 +11,9 @@ describe PiecesController do
 
     describe "GET new" do
       it "should let me setup a new piece" do
-        get :new
+        get :new, :piece => {}
+        assigns['portfolio'].should_not be_nil
+        assigns['user'].should_not be_nil
         assigns['service_types'].should_not be_nil
         assigns['page_title'].should_not be_nil
       end

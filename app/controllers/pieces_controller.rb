@@ -1,7 +1,7 @@
 class PiecesController < ApplicationController
   layout :choose_layout
   before_filter :login_required, :except => [:show]
-  before_filter :set_user
+  before_filter :set_user_and_portfolio
   before_filter :get_service_types, :only => [:new, :edit]
   
   def new
@@ -59,8 +59,9 @@ class PiecesController < ApplicationController
   
   protected
   
-  def set_user
+  def set_user_and_portfolio
     @user = current_user
+    @portfolio = @user.portfolio
   end
   
   def get_service_types
