@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   layout 'template'
   
+  before_filter :login_required, :except => [:index, :new, :create]
   before_filter :init_user, :only => [:new, :create]
   before_filter :get_current_user, :except => [:new, :index, :create, :reset_password]
   

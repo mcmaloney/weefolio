@@ -12,6 +12,8 @@ module NavigationHelpers
       '/'
     when /the sign up page/
       new_user_path
+    when /path "(.+)"/
+      $1
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #

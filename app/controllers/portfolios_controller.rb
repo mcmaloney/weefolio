@@ -1,5 +1,6 @@
 class PortfoliosController < ApplicationController
   layout :choose_layout
+  before_filter :login_required, :only => [:edit]
   before_filter :get_user_design_portfolio
   
   # This is what the world sees. (My Weefolio)
@@ -27,7 +28,7 @@ class PortfoliosController < ApplicationController
   protected
   
   def get_user_design_portfolio
-    @user = User.find_by_login(params[:id], :include => [:design, :portfolio])
+    @user = User.find(params[:id], :include => [:design, :portfolio])
     @design = @user.design
     @portfolio = @user.portfolio
   end

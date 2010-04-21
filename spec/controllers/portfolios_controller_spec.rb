@@ -10,7 +10,7 @@ describe PortfoliosController do
   
   describe "GET show" do
     it "should show my portfolio" do
-      get :show, :id => @user.login
+      get :show, :id => @user.id
       assigns['user'].login.should == @user.login
       assigns['design'].should_not be_nil
       assigns['portfolio'].should_not be_nil
@@ -20,7 +20,7 @@ describe PortfoliosController do
   
   describe "GET edit" do
     it "should allow me to edit my portfolio" do
-      get :edit, :id => @user.login
+      get :edit, :id => @user.id
       assigns['user'].login.should == @user.login
       assigns['design'].should_not be_nil
       assigns['portfolio'].should_not be_nil
@@ -30,13 +30,13 @@ describe PortfoliosController do
   
   describe "POST send_message" do
     it "should allow me to send the user a message if I fill out all the fields" do
-      post :send_message, :id => @user.login, :from => Faker::Internet.email, :name => Faker::Name.first_name, :message => Faker::Lorem.paragraph
+      post :send_message, :id => @user.id, :from => Faker::Internet.email, :name => Faker::Name.first_name, :message => Faker::Lorem.paragraph
       response.should redirect_to(user_portfolio_path(@user, @user.portfolio))
       flash[:notice].should == "Your <strong>message</strong> has been sent."
     end
     
     it "should not allow me to send a message if I haven't filled out the fields" do
-      post :send_message, :id => @user.login, :from => Faker::Internet.email, :name => nil, :message => nil
+      post :send_message, :id => @user.id, :from => Faker::Internet.email, :name => nil, :message => nil
       response.should redirect_to(user_portfolio_path(@user, @user.portfolio))
       flash[:notice].should == "YOU MUST FILL IN NAME, EMAIL AND MESSAGE."
     end
