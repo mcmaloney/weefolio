@@ -4,8 +4,11 @@ describe Plan do
   
   before(:each) do
     @plan_level_1 = Factory(:plan, :level => 1)
+                             
     @plan_level_2 = Factory(:plan, :level => 2)
+                             
     @plan_level_3 = Factory(:plan, :level => 3)
+                    
     @plan_bad_card_num = Plan.new(:card_number => "12345", 
                                   :card_verification => "123", 
                                   :card_expiration_month => "4", 
@@ -17,6 +20,7 @@ describe Plan do
                                   :billing_city => Faker::Address.city,
                                   :billing_state => Faker::Address.us_state,
                                   :billing_postal_code => Faker::Address.zip_code)
+                                  
     @plan_bad_exp_year =  Plan.new(:card_number => "4007000000027", 
                                    :card_verification => "123", 
                                    :card_expiration_month => "4", 

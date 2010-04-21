@@ -3,7 +3,7 @@ class Plan < ActiveRecord::Base
   
   STATUS_OPTIONS = [:none, :pending, :authorized, :charged, :failed]
   
-  attr_accessor :authnet_credit_card
+  attr_accessor :authnet_credit_card, :card_number, :card_verification
   
   validate :has_valid_credit_card
   

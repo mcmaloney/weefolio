@@ -14,6 +14,7 @@ Factory.define :piece do |p|
   p.title Faker::Lorem.sentence
 end
 
+# Using card number/CVV here but NEITHER OF THEM IS BEING STORED IN THE DATABASE FOR PCI COMPLIANCE.
 Factory.define :plan do |p|
   p.card_number "4007000000027"
   p.card_verification "123"
