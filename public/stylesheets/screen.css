@@ -357,7 +357,7 @@ div.content-container p.intro {
 	background: #f5f5f3;
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
-	margin: 0 0 20px 0;	
+	margin: 0 0 10px 0;	
 	border-top: 2px solid #ececea;
 	border-right: 1px solid #ececea;
 	border-bottom: 1px solid #ececea;
@@ -920,7 +920,7 @@ body.portfolios.edit div.content-container p.count {
 	}
 		
 body.portfolios.edit div.content-container ul.pieces {
-	margin: -20px 0 0 0;
+	margin: -10px 0 0 0;
 	padding: 0;
 	list-style: none;
 	}
