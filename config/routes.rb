@@ -21,11 +21,12 @@ ActionController::Routing::Routes.draw do |map|
     admin.resources :users
   end
   
+  # PRETTY ROUTE FOR WEEFOLIO PATH
   map.user_portfolio 'portfolios/:login.:format', :controller => 'portfolios', :action => 'show', :conditions => {:method => :get}
   
   # USERS
   map.resources :users, :member => { :remove_account => :post } do |users|
-    users.resources :portfolios, :member => { :send_message => :post }
+    users.resources :portfolios, :except => [:show], :member => { :send_message => :post }
     users.resources :designs
     users.resources :plans
   end
