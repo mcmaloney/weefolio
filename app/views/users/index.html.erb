@@ -24,7 +24,7 @@
 		<% for user in @users %>
 		<% unless user.photo.size.blank? %>
 			<li>
-				<a href="<%= user_portfolio_path(user, user.portfolio) %>">
+				<a href="<%= user_portfolio_path(user.login) %>">
 					<%= image_tag user.photo.url(:large_thumb) %>
 					<span class="username"><%= user.login %></span>
 				</a>

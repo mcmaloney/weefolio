@@ -21,6 +21,8 @@ ActionController::Routing::Routes.draw do |map|
     admin.resources :users
   end
   
+  map.user_portfolio 'portfolios/:login.:format', :controller => 'portfolios', :action => 'show', :conditions => {:method => :get}
+  
   # USERS
   map.resources :users, :member => { :remove_account => :post } do |users|
     users.resources :portfolios, :member => { :send_message => :post }
@@ -37,7 +39,7 @@ ActionController::Routing::Routes.draw do |map|
   map.themes '/docs/themes', :controller => "docs", :action => "themes"
   
   # SEPARATE PIECE ROUTE FOR EASY SORTING
-  map.resources :pieces, :collection => { :sort => :post}
+  map.resources :pieces, :collection => { :sort => :post }
   
   # ROOT
   map.root :controller => "main_pages", :action => "home"
