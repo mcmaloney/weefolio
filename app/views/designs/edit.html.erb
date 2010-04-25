@@ -6,11 +6,11 @@
 	<div class="page-header-container-inner">
 		<h1>Design <small>Customize your weefolio</small></h1>
 		
-		<% unless current_user.plan.level == 1 %>
+		<%# unless current_user.plan.level == 1 %>
 		<div class="call-to-action">
 		  <%= css_link(@user) %>
 		</div>
-		<% end %>
+		<%# end %>
 	</div>
 </div>
 
@@ -157,7 +157,7 @@
 			         <label for="design_css_text">Custom HTML</label>
 			        </dt>
 			        <dd>
-			          <%= f.text_area :css_text, :rows => 25, :cols => 55, :class => "code" %>
+			          <%= f.text_area :user_html, :rows => 25, :cols => 55, :class => "code" %>
 			        </dd>
 			        
 			        <dt></dt>

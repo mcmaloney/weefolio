@@ -15,15 +15,14 @@ class Design < ActiveRecord::Base
   
   def parse_browser_html
     unless RAILS_ENV == "test"
-      if File.exists?("#{RAILS_ROOT}/public/templates/#{User.find(self.user_id).login}.html.erb")
-        file = File.open("#{RAILS_ROOT}/public/templates/#{User.find(self.user_id).login}.html.erb", "w")
-        file.puts(WeeParser.build_erb_copy_for(WeeParser.parse(self.user_html), self.user_html))
-        file.close
-      else
-        file = File.new("#{RAILS_ROOT}/public/templates/#{User.find(self.user_id).login}.html.erb", "w")
-        file.puts(WeeParser.build_erb_copy_for(WeeParser.parse(self.user_html), self.user_html))
-        file.close
-      end
+    if File.exists?("#{RAILS_ROOT}/public/templates/#{User.find(self.user_id).login}.html.erb")
+      file = File.open("#{RAILS_ROOT}/public/templates/#{User.find(self.user_id).login}.html.erb", "w")
+      file.puts(WeeParser.build_erb_copy_for(WeeParser.parse(self.user_html), self.user_html))
+      file.close
+    else
+      file = File.new("#{RAILS_ROOT}/public/templates/#{User.find(self.user_id).login}.html.erb", "w")
+      file.puts(WeeParser.build_erb_copy_for(WeeParser.parse(self.user_html), self.user_html))
+      file.close
     end
   end
   
