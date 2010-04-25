@@ -1,8 +1,8 @@
 module WeeParser
   CSS_DICT = ["color", "background", "font", "size", "text", "hover", "link", "title", "border", "header", "family"]
   USER_DICT = ["header", "image", "contact", "form", "about", "me", "tagline", "rss", "url", "username"]
-  PIECE_DICT = ["piece", "pieces", "meta", "portfolio", "image", "gallery", "about", "client", "service", "for", "sale", "url", "if", "title"]
-  GLOBAL_DICT = ["end"]
+  PIECE_DICT = ["piece", "each", "pieces", "meta", "portfolio", "image", "gallery", "about", "client", "service", "for", "sale", "url", "if", "title"]
+  GLOBAL_DICT = ["end", "javascript", "jquery"]
   THRESH = 0.75
   
   # Right now, this generates an array of all the tags in the HTML. Needs to process each sub to .erb, stick it back in at the same index.
@@ -218,8 +218,9 @@ class PieceObject
     when "[piece-meta]"
       "<%= show_meta_for(piece) %>"
     when "[if:portfolio-pieces]"
-      "<% unless @portfolio.pieces.blank? %>
-        <% @portfolio.pieces.each do |piece|%>"
+      "<% unless @portfolio.pieces.blank? %>"
+    when "[for-each-piece]"
+      "<% @portfolio.pieces.each do |piece|%>"
     end
   end
 end
@@ -230,6 +231,8 @@ class GlobalObject
     case input_string
     when "[end]"
       "<% end %>"
+    when "[javascript jquery]"
+      "<%= javascript_include_tag 'jquery-1.3.1.min.js' %>"
     end
   end
 end
