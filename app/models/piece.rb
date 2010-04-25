@@ -8,7 +8,7 @@ class Piece < ActiveRecord::Base
   validates_presence_of :title
   validates_presence_of :price, :if => :for_sale?
   
-  attr_accessible :title, :description, :image_1, :image_2, :image_3, :image_4, :image_5, :price, :for_sale
+  attr_accessible :title, :description, :image_1, :image_2, :image_3, :image_4, :image_5, :price, :for_sale, :client_name, :service_type, :sale_url
   
   default_scope :order => :position
   

@@ -6,17 +6,21 @@ module PortfoliosHelper
   end
   
   def show_meta_for(piece)
-    %{<ul>}
+    html = "<ul>"
     unless piece.client_name.blank?
-      %{<li class="client">#{piece.client_name}</li>}
+      html << "<li class='client'>#{piece.client_name}</li>"
     end
     unless piece.service_type.blank?
-      %{<li class="service">#{piece.service_type}</li>}
+      html << "<li class='service'>#{piece.service_type}</li>"
     end
-    unless piece.sale_url.blank?
-		  %{<li class="url"><a href="#{piece.sale_url}" target="_blank">http://kevinjohngomez.bigcartel.com</a></li>}
-		  %{<li class="buy"><a href="#{piece.sale_url}" target="_blank">$20.00</a></li>}
-		end
-		%{</ul>}
+    if piece.for_sale?
+      unless piece.sale_url.blank?
+        html << "<li class='url'>#{link_to piece.sale_url, piece.sale_url}</li>"
+      end
+      unless piece.sale_url.blank? && piece.price.blank?
+        html << "<li class='buy'>#{link_to number_to_currency(piece.price), piece.sale_url}</li>"
+      end
+    end
+    html
   end
 end
