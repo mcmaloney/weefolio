@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100421055722) do
+ActiveRecord::Schema.define(:version => 20100425014456) do
 
   create_table "delayed_jobs", :force => true do |t|
     t.integer  "priority",   :default => 0
@@ -42,6 +42,8 @@ ActiveRecord::Schema.define(:version => 20100421055722) do
     t.string   "border_color",              :default => "dcdcda"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "browser_html"
+    t.text     "user_html"
   end
 
   create_table "pieces", :force => true do |t|
