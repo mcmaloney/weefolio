@@ -24,7 +24,7 @@
 				<li><%= link_to 'Directory', directory_path %></li>
 				<li><%= link_to 'Pricing', signup_path %></li>
 				<li><%= link_to 'Help', help_path %></li>
-				<li><a href="http://blog.weefolio.com">Blog</a></li>
+				<!--<li><a href="http://blog.weefolio.com">Blog</a></li>-->
 				<% if logged_in? %>
 				  <li class="welcome">Hello, <span class="username"><%= link_to current_user.login, edit_user_path(current_user) %>!</span> | <%= link_to 'Logout', logout_path %></li>	
 				<% end %>			
