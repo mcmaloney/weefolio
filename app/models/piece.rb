@@ -12,11 +12,33 @@ class Piece < ActiveRecord::Base
   
   default_scope :order => :position
   
-  has_attached_file :image_1, :styles => { :small_thumb => "70x70#", :large_thumb => "116x116#", :full_size => "710x710>" }
-  has_attached_file :image_2, :styles => { :small_thumb => "70x70#", :large_thumb => "116x116#", :full_size => "710x710>" }
-  has_attached_file :image_3, :styles => { :small_thumb => "70x70#", :large_thumb => "116x116#", :full_size => "710x710>" }
-  has_attached_file :image_4, :styles => { :small_thumb => "70x70#", :large_thumb => "116x116#", :full_size => "710x710>" }
-  has_attached_file :image_5, :styles => { :small_thumb => "70x70#", :large_thumb => "116x116#", :full_size => "710x710>" }
+  # I know, I know. We should really put the paperclip stuff in an initializer or something. We'll get there...
+  
+  has_attached_file :image_1, :styles => { :small_thumb => "70x70#", :large_thumb => "116x116#", :full_size => "710x710>" },
+                                            :storage => :s3, 
+                                            :s3_credentials => "#{RAILS_ROOT}/config/s3.yml",
+                                            :path => ':attachment/:id/:style/:basename.:extension',
+                                            :bucket => 'weefolio'
+  has_attached_file :image_2, :styles => { :small_thumb => "70x70#", :large_thumb => "116x116#", :full_size => "710x710>" },
+                                            :storage => :s3, 
+                                            :s3_credentials => "#{RAILS_ROOT}/config/s3.yml",
+                                            :path => ':attachment/:id/:style/:basename.:extension',
+                                            :bucket => 'weefolio'
+  has_attached_file :image_3, :styles => { :small_thumb => "70x70#", :large_thumb => "116x116#", :full_size => "710x710>" },
+                                            :storage => :s3, 
+                                            :s3_credentials => "#{RAILS_ROOT}/config/s3.yml",
+                                            :path => ':attachment/:id/:style/:basename.:extension',
+                                            :bucket => 'weefolio'
+  has_attached_file :image_4, :styles => { :small_thumb => "70x70#", :large_thumb => "116x116#", :full_size => "710x710>" },
+                                            :storage => :s3, 
+                                            :s3_credentials => "#{RAILS_ROOT}/config/s3.yml",
+                                            :path => ':attachment/:id/:style/:basename.:extension',
+                                            :bucket => 'weefolio'
+  has_attached_file :image_5, :styles => { :small_thumb => "70x70#", :large_thumb => "116x116#", :full_size => "710x710>" },
+                                            :storage => :s3, 
+                                            :s3_credentials => "#{RAILS_ROOT}/config/s3.yml",
+                                            :path => ':attachment/:id/:style/:basename.:extension',
+                                            :bucket => 'weefolio'
   
   def display_price
     "$" + self.price.to_s unless !self.for_sale
