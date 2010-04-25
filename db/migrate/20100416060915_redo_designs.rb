@@ -9,12 +9,14 @@ class RedoDesigns < ActiveRecord::Migration
       t.datetime :header_image_updated_at
       t.string :background_color, :default => "f5f5f3"
       t.string :text_color, :default => "767574"
-      t.string :title_color, :default => "xxxxxx"
-      t.string :link_color, :default => "xxxxxx"
+      t.string :title_color, :default => "242420"
+      t.string :link_color, :default => "9fcf44"
       t.string :link_hover_color, :default => "242420"
       t.string :header_color, :default => "xxxxxx"
-      t.string :font, :default => "Lucida Grande"
+      t.string :font_family, :default => "Lucida Grande"
       t.integer :font_size, :default => 11
+      t.string :header_color, :default => "242420"
+      t.string :border_color, :default => "dcdcda"
       
       t.timestamps
     end
