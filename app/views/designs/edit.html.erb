@@ -29,21 +29,6 @@
 	<div class="column">
 		<% if @user.design_type == 1 %>
 	    <% form_for [@user, @user.design], :html => { :multipart => true } do |f| %>
-	    	<!--<div class="layout-selection-container">
-	    		<ul>
-		    		<li class="option">
-		    			<img src="/images/layout-grid-icon.gif" width="111" height="130"/>
-		    			<%= f.radio_button :layout_type, 1 %>
-		    			<label>Grid</label>
-		    		</li>
-		    		
-		    		<li class="option">
-		    			<img src="/images/layout-list-icon.gif" width="111" height="130"/>
-		    			<%= f.radio_button :layout_type, 2 %>
-		    			<label>List</label>
-		    		</li>
-	    		</ul>
-	    	</div>-->
 	    	
 	    	<fieldset>
 	    		<h2>Header</h2>
