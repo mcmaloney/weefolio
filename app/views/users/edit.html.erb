@@ -79,6 +79,8 @@
 						Plan
 					</dt>
 					<% fields_for @user.plan do |p| %>
+					<% @user.plan.card_number = nil %>
+					<% @user.plan.card_verification = nil %>
 					<dd>
 						<ul>
 						  <li><%= p.radio_button :level, 1, :onclick => "hide_billing()" %><label>Basic (Free)</label></li>
@@ -149,14 +151,14 @@
 						<label>Card Number</label>
 					</dt>
 					<dd>
-					  <%= p.text_field :card_number, :size => 16 %>
+					  <%= p.text_field :card_number, :size => 16, :autocomplete => 'off' %>
 					</dd>
 					
 					<dt>
 						<label>CVN</label>
 					</dt>
 					<dd>
-					  <%= p.text_field :card_verification, :size => 3 %>
+					  <%= p.text_field :card_verification, :size => 3, :autocomplete => 'off' %>
 					  <p>Your CVN (Card Verification Number) is a 3 digit code and can be found on the back of your credit card.</p>
 					</dd>
 					

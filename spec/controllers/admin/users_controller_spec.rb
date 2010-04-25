@@ -2,9 +2,25 @@ require 'spec_helper'
 
 describe Admin::UsersController do
 
-  #Delete this example and add some real ones
-  it "should use Admin::UsersController" do
-    controller.should be_an_instance_of(Admin::UsersController)
+  describe "GET index" do
+    it "should not allow me access if I'm not an admin" do
+      User.delete_all
+      @user = Factory(:user)
+      @user.setup
+      login_as(@user)
+      get :index
+      response.should redirect_to(root_path)
+    end
+    
+    it "should allow me access if I am an admin" do
+      User.delete_all
+      @user = Factory(:user, :admin_user => true)
+      @user.setup
+      login_as(@user)
+      get :index
+      assigns['users'].should_not be_nil
+      response.should be_success
+    end
   end
 
 end

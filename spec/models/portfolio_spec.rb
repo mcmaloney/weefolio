@@ -8,10 +8,6 @@ describe Portfolio do
     @portfolio = @user.portfolio
   end
   
-  it "should have a permalink" do
-    @portfolio.to_param.should == @portfolio.permalink
-  end
-  
   it "should have an account tier from its user" do
     @portfolio.account_tier.should == @user.account_tier
   end

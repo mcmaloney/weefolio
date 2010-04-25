@@ -40,7 +40,7 @@
   					<li id="portfolio" class="<%= is_active?("edit", "portfolios") %>"><%= link_to 'Portfolio', edit_user_portfolio_path(current_user, current_user.portfolio) %></li>
   					<li id="design" class="<%= is_active?("edit", "designs")%>"><%= link_to 'Design', edit_user_design_path(current_user, current_user.design) %></li>
   					<li id="account" class="<%= is_active?("edit", "users")%>"><%= link_to 'Account', edit_user_path(current_user) %></li>
-  					<li id="my-weefolio"><%= link_to 'My Weefolio', user_portfolio_path(current_user, current_user.portfolio) %></li>
+  					<li id="my-weefolio"><%= link_to 'My Weefolio', user_portfolio_path(current_user.login) %></li>
   				</ul>
   			<% else %>
 				  <!--USER NAV (LOGGED OUT)-->

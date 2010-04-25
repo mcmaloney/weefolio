@@ -21,9 +21,12 @@ ActionController::Routing::Routes.draw do |map|
     admin.resources :users
   end
   
+  # PRETTY ROUTE FOR WEEFOLIO PATH
+  map.user_portfolio 'portfolios/:login.:format', :controller => 'portfolios', :action => 'show', :conditions => {:method => :get}
+  
   # USERS
   map.resources :users, :member => { :remove_account => :post } do |users|
-    users.resources :portfolios, :member => { :send_message => :post }
+    users.resources :portfolios, :except => [:show], :member => { :send_message => :post }
     users.resources :designs
     users.resources :plans
   end
@@ -33,14 +36,11 @@ ActionController::Routing::Routes.draw do |map|
     portfolios.resources :pieces
   end
   
-  # BLOG
-  map.resources :posts
-  
   # DOCS
   map.themes '/docs/themes', :controller => "docs", :action => "themes"
   
   # SEPARATE PIECE ROUTE FOR EASY SORTING
-  map.resources :pieces, :collection => { :sort => :post}
+  map.resources :pieces, :collection => { :sort => :post }
   
   # ROOT
   map.root :controller => "main_pages", :action => "home"
