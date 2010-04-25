@@ -46,6 +46,7 @@ module ApplicationHelper
 			</div>
 	  }
 	end
+
 	def show_about_me_for(user)
 	  if user.about_me.blank?
 	    %{
