@@ -1,7 +1,7 @@
 module WeeParser
   CSS_DICT = ["color", "background", "font", "size", "text", "hover", "link", "title", "border", "header", "family"]
   USER_DICT = ["header", "image", "contact", "form", "about", "me", "tagline", "rss", "url", "username"]
-  PIECE_DICT = ["piece", "pieces", "portfolio", "image", "gallery", "about", "client", "service", "for", "sale", "url", "if", "title"]
+  PIECE_DICT = ["piece", "pieces", "meta", "portfolio", "image", "gallery", "about", "client", "service", "for", "sale", "url", "if", "title"]
   GLOBAL_DICT = ["end"]
   THRESH = 0.75
   
@@ -202,9 +202,9 @@ class PieceObject
     when "[piece-title]"
       "<%=h piece.title %>"
     when "[piece-image]"
-      "<%= link_to image_tag(piece.image_1.url(:large_thumb)), portfolio_piece_path(@portfolio, piece), :title => piece.title %>"
+      "<%= image_tag piece.image_1.url, :title => piece.title %>"
     when "[piece-gallery]"
-      "WHATEVER"
+      "<%= render :partial => 'pieces/piece', :object => piece %>"
     when "[piece-about]"
       "<%=h piece.description %>"
     when "[piece-client]"
@@ -215,6 +215,8 @@ class PieceObject
       "<%=h piece.display_price %>"
     when "[sale-url]"
       "<%=h piece.sale_url %>"
+    when "[piece-meta]"
+      "<%= show_meta_for(piece) %>"
     when "[if:portfolio-pieces]"
       "<% unless @portfolio.pieces.blank? %>
         <% @portfolio.pieces.each do |piece|%>"

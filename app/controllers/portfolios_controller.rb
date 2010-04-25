@@ -1,4 +1,5 @@
 class PortfoliosController < ApplicationController
+  layout 'template'
   before_filter :login_required, :only => [:edit]
   before_filter :get_user_design_portfolio, :except => :show
   
@@ -7,6 +8,7 @@ class PortfoliosController < ApplicationController
     @user = User.find_by_login(params[:login])
     @design = @user.design
     @portfolio = @user.portfolio
+    render :layout => false
   end
   
   # This is where you go when you want to manage the content of your Weefolio. (Portfolio)
