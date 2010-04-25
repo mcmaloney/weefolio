@@ -1,19 +1,6 @@
-<% if @portfolio.pieces.blank? %>
-  <div id="no-portfolio">
-  	<p><strong><%= @user.login %></strong> hasn't added any work yet.</p>
-  </div>
-<% else %>
+<%= render :inline => @design.browser_html %>
 
-  <% if @design.layout_type == 1 %>
-    <ul id="portfolio-grid">
-      <% for piece in @portfolio.pieces %>
-        <li><%= link_to image_tag(piece.image_1.url(:large_thumb)), portfolio_piece_path(@portfolio, piece), :title => piece.title %></li>
-  	  <% end %>
-    </ul>
-  <% else %>
-      <%= render :partial => 'pieces/list' %>
-      <hr/>
-  <% end %>
-<% end %>
+
+
 
 

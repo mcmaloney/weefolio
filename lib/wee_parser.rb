@@ -1,6 +1,6 @@
 module WeeParser
   CSS_DICT = ["color", "background", "font", "size", "text", "hover", "link", "title", "border", "header", "family"]
-  USER_DICT = ["header", "image", "contact", "form", "about", "me", "tagline", "rss", "url"]
+  USER_DICT = ["header", "image", "contact", "form", "about", "me", "tagline", "rss", "url", "username"]
   PIECE_DICT = ["piece", "pieces", "portfolio", "image", "gallery", "about", "client", "service", "for", "sale", "url", "if", "title"]
   GLOBAL_DICT = ["end"]
   THRESH = 0.75

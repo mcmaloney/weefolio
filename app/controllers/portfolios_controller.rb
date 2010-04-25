@@ -1,5 +1,4 @@
 class PortfoliosController < ApplicationController
-  layout :choose_layout
   before_filter :login_required, :only => [:edit]
   before_filter :get_user_design_portfolio, :except => :show
   
@@ -8,8 +7,6 @@ class PortfoliosController < ApplicationController
     @user = User.find_by_login(params[:login])
     @design = @user.design
     @portfolio = @user.portfolio
-    @page_title = "Weefolio - #{@user.login}"
-    render :file => "#{RAILS_ROOT}/public/templates/#{@user.login}.html.erb"
   end
   
   # This is where you go when you want to manage the content of your Weefolio. (Portfolio)
@@ -37,13 +34,4 @@ class PortfoliosController < ApplicationController
     @portfolio = @user.portfolio
   end
 
-  private
-  
-  def choose_layout
-    if ['show'].include? action_name
-      'weefolio'
-    else
-      'template'
-    end
-  end
 end
