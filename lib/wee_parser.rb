@@ -186,7 +186,7 @@ class UserObject
     when "[avatar-url]"
       "<%= image_tag @user.photo.url(:large_thumb) %>"
     when "[rss-url]"
-      "<%= show_rss_for(@user) %>"
+      "<%= user_portfolio_path(@user.login) %>.rss"
     when "[tagline]"
       "<%= render_tag_line(@user) %>"
     when "[contact-form]"
