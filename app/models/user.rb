@@ -32,7 +32,7 @@ class User < ActiveRecord::Base
   has_attached_file :photo, :styles => { :thumbnail => "70x70#", :large_thumb => "116x116>" }, 
                             :storage => :s3, 
                             :s3_credentials => "#{RAILS_ROOT}/config/s3.yml",
-                            :path => '/:attachment/:id/:style/:basename.:extension',
+                            :path => ':attachment/:id/:style/:basename.:extension',
                             :bucket => 'weefolio'
   
   # Sets up all objects associated with the user on creation of account.
