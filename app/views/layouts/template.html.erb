@@ -12,6 +12,8 @@
 		<%= javascript_include_tag ['jquery-1.3.1.min.js', 'wee.js'] %>
 		<%#= javascript_include_tag :defaults %>
 		<%= yield :head %>
+		<script type="text/javascript" src="http://use.typekit.com/xln1iqu.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 	</head>
 	
 	<body class="<%= controller_name -%> <%= action_name -%>">
