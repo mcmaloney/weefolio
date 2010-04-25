@@ -1,5 +1,5 @@
 class PiecesController < ApplicationController
-  layout :choose_layout
+  layout 'template'
   before_filter :login_required, :except => [:show]
   before_filter :set_user_and_portfolio
   before_filter :get_service_types, :only => [:new, :edit]
@@ -43,12 +43,6 @@ class PiecesController < ApplicationController
     redirect_to edit_user_portfolio_path(current_user, current_user.portfolio)
     flash[:notice] = "'#{@piece.title}' has been <strong>deleted</strong>."
   end
-
-  def show
-    @piece = Piece.find(params[:id])
-    @page_title = "#{current_user.login} - #{@piece.title}"
-    @design = current_user.design
-  end
   
   def sort
     params[:pieces].each_with_index do |id, index|
@@ -67,14 +61,5 @@ class PiecesController < ApplicationController
   def get_service_types
     @service_types = Piece::SERVICE_TYPES
   end
-    
-  private
   
-  def choose_layout
-    if ['show'].include? action_name
-      'weefolio'
-    else
-      'template'
-    end
-  end
 end

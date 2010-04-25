@@ -8,15 +8,15 @@ describe PortfoliosController do
     login_as(@user)
   end
   
-  describe "GET show" do
-    it "should show my portfolio" do
-      get :show, :login => @user.login
-      assigns['user'].login.should == @user.login
-      assigns['design'].should_not be_nil
-      assigns['portfolio'].should_not be_nil
-      assigns['page_title'].should == "Weefolio - #{assigns['user'].login}"
-    end
-  end
+ describe "GET show" do
+   it "should show my portfolio" do
+     get :show, :login => @user.login
+     assigns['user'].login.should == @user.login
+     assigns['design'].user_id.should == @user.id
+     assigns['portfolio'].user_id.should == @user.id
+     response.should_not render_template('template')
+   end
+ end
   
   describe "GET edit" do
     it "should allow me to edit my portfolio" do

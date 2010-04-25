@@ -45,7 +45,7 @@ class Design < ActiveRecord::Base
   
   # List of  available font families for dropdowns
   def font_families
-    font_families = ["Arial", "Helvetica", "Times New Roman", "Courier", "Georgia", "Trebuchet MS", "Verdana"]
+    font_families = ["Lucida Grande", "Arial", "Helvetica", "Times New Roman", "Courier", "Georgia", "Trebuchet MS", "Verdana"]
   end
   
   def render_color(color)
@@ -63,7 +63,20 @@ class Design < ActiveRecord::Base
       "'Lucida Grande', Arial, sans-serif"
     when "Arial"
       "Arial, sans-serif"
+    when "Helvetica"
+      "Helvetica, Arial, sans-serif"
+    when "Times New Roman"
+      "Times, 'Times New Roman', serif"
+    when "Courier"
+      "'Courier New', Courier, monospace"
+    when "Georgia"
+      "Georgia, 'Times New Roman', serif"
+    when "Verdana"
+      "Verdana, 'Verdana Ref', sans-serif"
+    when "Trebuchet MS"
+      "'Trebuchet MS', Verdana, 'Verdana Ref', sans-serif"
     end
+      
   end
   
 end
