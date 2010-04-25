@@ -8,9 +8,9 @@ class User < ActiveRecord::Base
   cattr_reader :per_page
   @@per_page = 15
   
-  has_one                   :portfolio
-  has_one                   :design
-  has_one                   :plan
+  has_one                   :portfolio, :dependent => :destroy
+  has_one                   :design, :dependent => :destroy
+  has_one                   :plan, :dependent => :destroy
   has_many                  :pieces, :through => :portfolio
   validates_presence_of     :login
   validates_length_of       :login,    :within => 3..40

@@ -1,6 +1,6 @@
 class Portfolio < ActiveRecord::Base
   belongs_to :user
-  has_many :pieces
+  has_many :pieces, :dependent => :destroy
   
   attr_protected :user_id
      

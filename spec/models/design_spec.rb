@@ -18,6 +18,14 @@ describe Design do
       @user.design.set_layout_type(2)
       @user.design.layout_type.should == 2
     end
+    
+    it "should have user_html" do
+      @design.user_html.should_not be_nil
+    end
+    
+    it "should not have erb in the un-parsed html" do
+      @design.user_html.should_not include("<%=")
+    end
   end
   
   describe "rendering CSS stuff from the model" do
@@ -31,7 +39,7 @@ describe Design do
     end
     
     it "should have font sizes" do
-      @user.design.font_sizes.should include(8, 10, 12, 14, 16, 18, 20, 22, 24)
+      @user.design.font_sizes.should include(8, 10, 11, 12, 14, 16, 18, 20, 22, 24)
     end
     
     it "should have font families" do

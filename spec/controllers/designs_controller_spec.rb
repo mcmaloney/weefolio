@@ -21,8 +21,13 @@ describe DesignsController do
 
     describe "PUT update" do
       it "should let me update my design" do
-        put :update, :background_color => "#ffffff"
+        put :update, :design => {:background_color => "#ffffff"}
         response.should redirect_to(edit_user_design_path(@user, assigns['design']))
+      end
+      
+      #TODO: Get this working with save to file.
+      it "should parse the user html into browser html" do
+        put :update, :design => {:user_html => "<p>Hello, world!</p>"}
       end
     end 
   end

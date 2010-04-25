@@ -4,3 +4,4 @@ log/*
 tmp/*
 public/system/*
 coverage/*
+public/templates/*

@@ -22,7 +22,6 @@ module ApplicationHelper
 	  %{
 	    <div id="contact-container">
 			  #{flash[:notice]}
-				<h2>Contact <!--#{h @user.login}--></h2>
 				
 				#{form_tag :controller => 'portfolios', :action => 'send_message', :id => user, :html => { :method => :post }}
 				  <fieldset>

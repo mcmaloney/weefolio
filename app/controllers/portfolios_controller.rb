@@ -9,6 +9,7 @@ class PortfoliosController < ApplicationController
     @design = @user.design
     @portfolio = @user.portfolio
     @page_title = "Weefolio - #{@user.login}"
+    render :file => "#{RAILS_ROOT}/public/templates/#{@user.login}.html.erb"
   end
   
   # This is where you go when you want to manage the content of your Weefolio. (Portfolio)
