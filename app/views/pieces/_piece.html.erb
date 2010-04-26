@@ -2,13 +2,15 @@
   <%= image_tag piece.image_1.url(:full_size) %>
 </div>
 
-<div class="gallery">
-  <ul>
-    <% for i in 0..4 %>
-      <% unless piece.images[i].size.blank? %>
-        <li><a href="javascript:void(0)" id="<%= piece.images[i].url(:full_size) %>" onclick="switch_large_image(this, <%=h piece.id %>)"><%= image_tag piece.images[i].url(:small_thumb) %></a></li>
+<% if piece.number_of_images >= 2 %>
+  <div class="gallery">
+    <ul>
+      <% for i in 0..4 %>
+        <% unless piece.images[i].size.blank? %>
+          <li><a href="javascript:void(0)" id="<%= piece.images[i].url(:full_size) %>" onclick="switch_large_image(this, <%=h piece.id %>)"><%= image_tag piece.images[i].url(:small_thumb) %></a></li>
+        <% end %>
       <% end %>
-    <% end %>
-  </ul>
-</div>
+    </ul>
+  </div>
+<% end %>
 
