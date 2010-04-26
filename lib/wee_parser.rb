@@ -2,7 +2,7 @@ module WeeParser
   CSS_DICT = ["color", "background", "font", "size", "text", "hover", "link", "title", "border", "header", "family"]
   USER_DICT = ["header", "image", "contact", "form", "about", "me", "tagline", "rss", "url", "username"]
   PIECE_DICT = ["piece", "each", "pieces", "meta", "portfolio", "image", "gallery", "about", "client", "service", "for", "sale", "url", "if", "title"]
-  GLOBAL_DICT = ["end", "javascript", "jquery"]
+  GLOBAL_DICT = ["end", "javascript", "jquery", "wee", "script"]
   THRESH = 0.75
   
   # Right now, this generates an array of all the tags in the HTML. Needs to process each sub to .erb, stick it back in at the same index.
@@ -233,6 +233,8 @@ class GlobalObject
       "<% end %>"
     when "[javascript jquery]"
       "<%= javascript_include_tag 'jquery-1.3.1.min.js' %>"
+    when "[javascript wee]"
+      "<%= render_wee_scripts %>"
     end
   end
 end

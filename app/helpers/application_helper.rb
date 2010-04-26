@@ -64,4 +64,18 @@ module ApplicationHelper
 			}
 		end
 	end
+	
+	def render_wee_scripts
+	  "<script type=\"text/javascript\">
+    	  /** Switches the thumb into the full size view in the gallery. */
+        function switch_large_image(image_path, piece) {
+        	var source = image_path.id;
+        	var full_size = '#' + piece
+        	$(full_size).empty();
+        	$('<img src=' + source + '>').appendTo(full_size);
+        	$(full_size).fadeIn();
+        }
+      </script>"
+	end
+	
 end
