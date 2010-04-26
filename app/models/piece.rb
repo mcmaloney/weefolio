@@ -1,5 +1,5 @@
 class Piece < ActiveRecord::Base
-  SERVICE_TYPES = ["Fine Art", "Interactive Design", "Photography", "Print Design"]
+  SERVICE_TYPES = ["Design", "Photography", "Studio"]
   acts_as_list
   
   belongs_to :user
