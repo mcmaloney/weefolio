@@ -88,7 +88,13 @@ describe User do
     
     # This only returns true with a transaction present. For now, we'll say it has to be false without that. Still means it's working...
     it "should check if the user, plan and transaction have all been updated successfully" do
+      @user.plan.update_attribute(:level, 2)
       @user.update_self_and_plan({:login => @user.login}, {:level => @user.plan.level}).should be_false
+    end
+    
+    # If we're changing back to level 1, we have to skip te validations.
+    it "should not checl for a transaction being process for level 1" do
+      @user.update_self_and_plan({:login => @user.login}, {:level => @user.plan.level}).should be_true
     end
   end
   

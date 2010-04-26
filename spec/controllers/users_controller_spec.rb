@@ -78,7 +78,18 @@ describe UsersController do
     end
     
     it "should not update my plan and stuff if I put in bogus info for the plan" do
-      put :update, :plan => @user.plan.attributes, :user => { :tagline => Faker::Lorem.sentence }
+      put :update, :plan =>{ :level => 2, 
+                              :card_number => "4007", 
+                              :card_verification => "123", 
+                              :card_expiration_month => "4", 
+                              :card_expiration_year => "2012", 
+                              :card_type => "Visa", 
+                              :billing_first_name => Faker::Name.first_name,
+                              :billing_last_name => Faker::Name.last_name,
+                              :billing_address => Faker::Address.street_address,
+                              :billing_city => Faker::Address.city,
+                              :billing_state => Faker::Address.us_state,
+                              :billing_postal_code => Faker::Address.zip_code }, :user => { :tagline => Faker::Lorem.sentence }
       response.should redirect_to(edit_user_path(assigns['user']))
       flash[:notice].should == "Something's gone wrong! Try again, please."
     end

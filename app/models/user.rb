@@ -63,7 +63,13 @@ class User < ActiveRecord::Base
   
   # Check if the plan and user attributes updated as well as the transaction processed.
   def update_self_and_plan(user, plan)
-    self.plan.update_attributes(plan) && self.update_attributes(user) && self.plan.process_transaction
+    if plan[:level].to_i == 1
+      self.plan.attributes = plan
+      self.plan.save(false)
+      self.update_attributes(user)
+    else
+      self.plan.update_attributes(plan) && self.update_attributes(user) && self.plan.process_transaction
+    end
   end
   
   # Simple search for the directory page

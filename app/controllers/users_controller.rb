@@ -25,10 +25,10 @@ class UsersController < ApplicationController
         redirect_to edit_user_path(@user)
         flash[:notice] = "Account settings saved."
       end
-    elsif params[:plan][:level] < @user.plan.level
-      if @user.plan.can_downgrade_to(params[:plan][:level])
+    elsif params[:plan][:level].to_i < @user.plan.level.to_i
+      if @user.plan.can_downgrade_to(params[:plan][:level].to_i)
         if @user.update_self_and_plan(params[:user], params[:plan]) 
-          @user.update_account_tier(params[:plan][:level])
+          @user.update_account_tier(params[:plan][:level].to_i)
           redirect_to edit_user_path(@user)
           flash[:notice] = "Plan changed to #{@user.render_account_tier}"
         else
@@ -37,7 +37,7 @@ class UsersController < ApplicationController
         end
       else
         redirect_to edit_user_path(@user)
-        flash[:notice] = "Wait a minute! Before you downgrade, you've got to delete #{@user.plan.delete_pieces_for(params[:plan][:level])} pieces."
+        flash[:notice] = "Wait a minute! Before you downgrade, you've got to visit your <a href=#{edit_user_portfolio_path(@user, @user.portfolio)}>portfolio editor</a> and delete #{@user.plan.delete_pieces_for(params[:plan][:level].to_i)} pieces."
       end
     else
       if @user.update_self_and_plan(params[:user], params[:plan]) 
