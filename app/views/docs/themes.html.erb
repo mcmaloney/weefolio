@@ -24,9 +24,9 @@
 		<p>Here is an example:</p>
 		
 		<pre class="block">[if:portfolio-pieces]
- [if:piece]
-  &lt;h2&gt;[piece-title]&lt;/h2&gt;
- [end]
+  [if:piece]
+    &lt;h2&gt;[piece-title]&lt;/h2&gt;
+  [end]
 [end]</pre>
 		
 		<h2 id="topic-the-markup">The Markup</h2>
@@ -78,7 +78,7 @@
 		
     &lt;ol id="pieces"&gt;
       [if:portfolio-pieces]
-        [for-each-piece]
+        [if:piece]
           &lt;li class="piece"&gt;
             &lt;h2&gt;[piece-title]&lt;/h2&gt;
   				
@@ -165,7 +165,7 @@
 			</tr>
 			
 			<tr>
-				<td class="tag">[for-each-piece]<br/>...<br/>[end]</td>
+				<td class="tag">[if:piece]<br/>...<br/>[end]</td>
 				<td class="description">For each piece in my portfolio, output the following...</dd>
 			</tr>
 			
