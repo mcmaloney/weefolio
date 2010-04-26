@@ -10,7 +10,7 @@ class Design < ActiveRecord::Base
   after_create :set_html, :parse_browser_html
   
   def set_html
-    self.update_attribute(:user_html, IO.readlines("#{RAILS_ROOT}/public/default-template.html").to_s)
+    self.update_attribute(:user_html, IO.readlines("#{RAILS_ROOT}/public/themes/default-template.html").to_s)
   end
   
   def parse_browser_html
