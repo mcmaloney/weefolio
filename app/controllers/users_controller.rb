@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   before_filter :get_current_user, :except => [:new, :index, :create, :reset_password]
   
   def index
-    @users = User.search(params[:search])
+    @users = User.search(params[:search], params[:page])
   end
   
   def new

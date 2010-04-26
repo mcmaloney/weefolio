@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   include Authentication::ByCookieToken
   
   cattr_reader :per_page
-  @@per_page = 15
+  @@per_page = 25
   
   has_one                   :portfolio, :dependent => :destroy
   has_one                   :design, :dependent => :destroy
@@ -73,11 +73,11 @@ class User < ActiveRecord::Base
   end
   
   # Simple search for the directory page
-  def self.search(search)
+  def self.search(search, page)
     if search
-      find(:all, :conditions => ['login LIKE ?', "%#{search}%"])
+      paginate :page => page, :order => "created_at DESC", :conditions => ['login LIKE ?', "%#{search}%"]
     else
-      find(:all)
+      paginate :page => page, :order => "created_at DESC"
     end
   end
   
