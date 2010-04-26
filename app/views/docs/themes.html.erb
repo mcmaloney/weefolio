@@ -17,24 +17,30 @@
 		
 		<p>Weefolio themes use custom tags to output your portfolio's content.</p>
 		
-		<p>There are two kinds of content tags. The first is a basic tag, like <code>[username]</code>, <code>[about]</code>, or <code>[font]</code>. These tags output simple pieces of data. For example, if your username was John, you'd call the <code>[username]</code> content tag to output <strong>"John"</strong> in your theme.</p>
+		<p>There are two kinds of content tags. The first is a basic tag, like <code>[username]</code>, <code>[about]</code>, or <code>[font-family]</code>. These tags output simple pieces of data. For example, if your username was John, you'd call the <code>[username]</code> content tag to output <strong>"John"</strong> in your theme.</p>
 		
-		<p>The second kind of content tag is a conditional. Conditionals are used to wrap code that should only output under a certain condition. These are tags like <code>[if:portfolio-pieces]</code> or <code>[if:piece-for-sale]</code>. For example, with the <code>[if:portfolio-pieces]</code> conditional, you would wrap code that should display only if there are pieces in your portfolio.</p> 
+		<p>The second kind of content tag is a conditional. Conditionals are used to wrap code that should only output under a certain condition. These are tags like <code>[if:portfolio-pieces]</code> or <code>[if:piece]</code>. For example, with the <code>[if:portfolio-pieces]</code> conditional, you would wrap code that should display only if there are pieces in your portfolio.</p> 
 		
 		<p>Here is an example:</p>
 		
 		<pre class="block">[if:portfolio-pieces]
+ [if:piece]
   &lt;h2&gt;[piece-title]&lt;/h2&gt;
-[/if:portfolio-pieces]</pre>
+ [end]
+[end]</pre>
 		
 		<h2 id="topic-the-markup">The Markup</h2>
+		
+		<p>Every Weefolio theme requires the <code>[wee-script]</code> tag in the page's <code>&lt;head&gt;</pre></code>. This feeds in scripts essential to creating a functional theme.</p>
 		
 		<p>Here is an example of an entire theme's markup using Weefolio's content tags:</p>
 		
 		<pre class="block">&lt;html&gt;
   &lt;head&gt;
     &lt;title&gt;The Weefolio of [user-name]&lt;/title&gt;
-		
+    
+    [wee-script]
+    
     &lt;style type="text/css"&gt;
       body {
         background: [background-color];
@@ -72,33 +78,22 @@
 		
     &lt;ol id="pieces"&gt;
       [if:portfolio-pieces]
-        &lt;li class="piece"&gt;
-          &lt;h2&gt;[piece-title]&lt;/h2&gt;
-				
-          &lt;div class="images"&gt;
-            [piece-image]
-					
-            [piece-gallery]
-          &lt;/div&gt;
-				
-          &lt;p&gt;[piece-about]&lt;/p&gt;
-				
-          &lt;div class="meta"&gt;
-            &lt;dl&gt;
-              &lt;dt&gt;Client:&lt;/dt&gt;
-              &lt;dd&gt;[piece-client]&lt;/dd&gt;
-						
-              &lt;dt&gt;Service:&lt;/dt&gt;
-              &lt;dd&gt;[piece-service]&lt;/dd&gt;
-						
-              [if:piece-for-sale]
-                &lt;dt&gt;For Sale:&lt;/dt&gt;
-                &lt;dd&gt;&lt;a href="[sale-url]"&gt;[piece-price]&lt;/a&gt;&lt;/dd&gt; 
-              [/if:piece-for-sale]
-            &lt;/dl&gt;
-          &lt;/div&gt;
-        &lt;/li&gt;
-      [/if:portfolio-pieces]
+        [for-each-piece]
+          &lt;li class="piece"&gt;
+            &lt;h2&gt;[piece-title]&lt;/h2&gt;
+  				
+            &lt;div class="images"&gt;					
+              [piece-gallery]
+            &lt;/div&gt;
+  				
+            &lt;p&gt;[piece-about]&lt;/p&gt;
+  				
+            &lt;div class="meta"&gt;
+              [piece-meta]
+            &lt;/div&gt;
+          &lt;/li&gt;
+        [end]
+      [end]
     &lt;/ol&gt;
 		
     &lt;div id="about"&gt;
@@ -149,29 +144,39 @@
 				<td class="tag">[rss-url]</td>
 				<td class="description">The URL of your Weefolio's RSS feed.</td>
 			</tr>
+			
+			<tr>
+				<td class="tag">[wee-script]</td>
+				<td class="description">Required tag for every Weefolio theme.</td>
+			</tr>
 		</table>
 		
 		<h2 id="topic-portfolio-content-tags">Portfolio Content Tags</h2>
 		
 		<table class="tags" cellpadding="0" cellspacing="0">
+		 <tr>
+				<td class="tag">[header]</td>
+				<td class="description">Your Weefolio's "header" image.</td>
+			</tr>
+			
 			<tr>
-				<td class="tag">[if:portfolio-pieces]<br/>...<br/>[/if:portfolio-pieces]</td>
+				<td class="tag">[if:portfolio-pieces]<br/>...<br/>[end]</td>
 				<td class="description">If you have one or more portfolio pieces, output the following...</dd>
+			</tr>
+			
+			<tr>
+				<td class="tag">[for-each-piece]<br/>...<br/>[end]</td>
+				<td class="description">For each piece in my portfolio, output the following...</dd>
 			</tr>
 			
 			<tr>
 				<td class="tag">[piece-title]</td>
 				<td class="description">The piece title.</td>
 			</tr>
-				
-			<tr>
-				<td class="tag">[piece-image]</td>
-				<td class="description">The piece's first and/or only image.</td>
-			</tr>
 			
 			<tr>
 				<td class="tag">[piece-gallery]</td>
-				<td class="description">Outputs a simple list of image thumbnails if the piece has more than one image.</td>
+				<td class="description">Outputs the piece image along with a simple list of image thumbnails. Thumbnails only display if the piece has more than one image.</td>
 			</tr>
 				
 			<tr>
@@ -180,28 +185,8 @@
 			</tr>
 			
 			<tr>
-				<td class="tag">[piece-client]</td>
-				<td class="description">The piece's client name.</td>
-			</tr>
-				
-			<tr>
-				<td class="tag">[piece-service]</td>
-				<td class="description">The piece's service type.</td>
-			</tr>
-				
-			<tr>
-				<td class="tag">[if:piece-for-sale]<br/>...<br/>[/if:piece-for-sale]</dt>
-				<td class="description">If the piece is for sale output the following...</td>
-			</tr>
-				
-			<tr>
-				<td class="tag">[piece-price]</td>
-				<td class="description">The piece's price.</td>
-			</tr>
-				
-			<tr>
-				<td class="tag">[sale-url]</td>
-				<td class="description">The URL of where the piece may be purchased.</td>
+				<td class="tag">[piece-meta]</td>
+				<td class="description">The piece's meta information, including: client name, service type, price and sale URL.</td>
 			</tr>
 		</table>
 		
@@ -214,7 +199,7 @@
 			</tr>
 				
 			<tr>
-				<td class="tag">text-color</td>
+				<td class="tag">[text-color]</td>
 				<td class="description">The default text color.</td>
 			</tr>
 				
@@ -237,9 +222,14 @@
 				<td class="tag">[header-color]</td>
 				<td class="description">The header container's background color.</td>
 			</tr>
+			
+			<tr>
+				<td class="tag">[border-color]</td>
+				<td class="description">The color for borders throughout the theme.</td>
+			</tr>
 				
 			<tr>
-				<td class="tag">[font]</td>
+				<td class="tag">[font-family]</td>
 				<td class="description">The user's font preference.</td>
 			</tr>
 				
