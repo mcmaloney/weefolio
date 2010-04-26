@@ -56,7 +56,7 @@ describe User do
   
   describe "searching for users based on login" do
     it "should return a number of users based on a search parameter" do
-      User.search(@user.login).should_not be_nil
+      User.search(@user.login, "1").should_not be_nil
     end
   end
   
