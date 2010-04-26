@@ -20,6 +20,18 @@ class Portfolio < ActiveRecord::Base
     end
   end
   
+  # Redundant, maybe?
+  def self.max_pieces_for(account_tier)
+    case account_tier
+    when 1
+      5
+    when 2
+      15
+    when 3
+      25
+    end
+  end
+  
   # Caps the number of pieces that can be added.
   def can_add_more?
     if self.max_pieces == self.pieces.length

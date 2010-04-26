@@ -18,14 +18,29 @@ class UsersController < ApplicationController
     @us_states = US_STATES.collect{|s| [s[0], s[1]]}
   end
   
+  # This is a big motherfucker. Going to try to downsize soon...
   def update
     if params[:plan][:level] == @user.plan.level.to_s
       if @user.update_attributes(params[:user])
         redirect_to edit_user_path(@user)
         flash[:notice] = "Account settings saved."
       end
+    elsif params[:plan][:level] < @user.plan.level
+      if @user.plan.can_downgrade_to(params[:plan][:level])
+        if @user.update_self_and_plan(params[:user], params[:plan]) 
+          @user.update_account_tier(params[:plan][:level])
+          redirect_to edit_user_path(@user)
+          flash[:notice] = "Plan changed to #{@user.render_account_tier}"
+        else
+          redirect_to edit_user_path(@user)
+          flash[:notice] = "Something's gone wrong! Try again, please."
+        end
+      else
+        redirect_to edit_user_path(@user)
+        flash[:notice] = "Wait a minute! Before you downgrade, you've got to delete #{@user.plan.delete_pieces_for(params[:plan][:level])} pieces."
+      end
     else
-      if @user.update_self_and_plan(params[:user], params[:plan])
+      if @user.update_self_and_plan(params[:user], params[:plan]) 
         @user.update_account_tier(params[:plan][:level])
         redirect_to edit_user_path(@user)
         flash[:notice] = "Plan changed to #{@user.render_account_tier}"

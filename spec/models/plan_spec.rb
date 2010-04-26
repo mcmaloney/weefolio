@@ -94,4 +94,37 @@ describe Plan do
     @plan_bad_card_num.process_transaction
     @plan_bad_card_num.status.should == :failed
   end
+  
+  it "should prevent me from downgrading if I have too many pieces" do
+    User.delete_all
+    @user = Factory(:user)
+    @user.setup
+    @user.plan.update_attribute(:level, 2)
+    6.times do
+      @user.portfolio.pieces << Factory(:piece)
+    end
+    @user.plan.can_downgrade_to(1).should be_false
+  end
+  
+  it "should let me downgrade if I don't have more pieces than I'm allowed" do
+    User.delete_all
+    @user = Factory(:user)
+    @user.setup
+    @user.plan.update_attribute(:level, 2)
+    3.times do
+      @user.portfolio.pieces << Factory(:piece)
+    end
+    @user.plan.can_downgrade_to(1).should be_true
+  end
+  
+  it "should tell me how many pieces I have to delete to downgrade" do
+    User.delete_all
+    @user = Factory(:user)
+    @user.setup
+    @user.plan.update_attribute(:level, 2)
+    8.times do
+      @user.portfolio.pieces << Factory(:piece)
+    end
+    @user.plan.delete_pieces_for(1).should == 3
+  end
 end

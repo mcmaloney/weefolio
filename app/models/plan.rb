@@ -89,4 +89,20 @@ class Plan < ActiveRecord::Base
       errors.add_to_base("Credit card invalid – please verify that your billing information matches your credit card statement and verify your credit card account number and security code.")
     end
   end
+  
+  # If I have 6 pieces, I can't downgrade from level 2 to level 1...
+  def can_downgrade_to(requested_level)
+    if User.find(self.user_id).portfolio.pieces.length > Portfolio.max_pieces_for(requested_level)
+      return false
+    else
+      return true
+    end
+  end
+  
+  # How many pieces do I have to delete to downgrade to the requested level?
+  def delete_pieces_for(requested_level)
+    User.find(self.user_id).portfolio.pieces.length - Portfolio.max_pieces_for(requested_level)
+  end
+  
+  
 end

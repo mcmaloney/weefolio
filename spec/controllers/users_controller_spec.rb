@@ -78,9 +78,49 @@ describe UsersController do
     end
     
     it "should not update my plan and stuff if I put in bogus info for the plan" do
-      @plan = @user.plan
       put :update, :plan => @user.plan.attributes, :user => { :tagline => Faker::Lorem.sentence }
       response.should redirect_to(edit_user_path(assigns['user']))
+      flash[:notice].should == "Something's gone wrong! Try again, please."
+    end
+    
+    it "should prompt me to delete pieces if I try to downgrade" do
+      @user.plan.update_attribute(:level, 2)
+      15.times do 
+        @user.portfolio.pieces << Factory(:piece)
+      end
+      put :update, :plan => { :level => 1 }
+      flash[:notice].should include("Wait a minute!")
+      response.should redirect_to(edit_user_path(assigns['user']))
+    end
+    
+    it "should let me downgrade if everything is cool" do
+      @user.plan.update_attribute(:level, 2)
+      4.times do
+        @user.portfolio.pieces << Factory(:piece)
+      end
+      put :update, :plan => { :level => 1 }
+      "Plan changed to #{assigns['user'].render_account_tier}"
+      assigns['user'].plan.level.should == 1
+      response.should redirect_to(edit_user_path(assigns['user']))
+    end
+    
+    it "should not let me downgrade if I give it bogus info" do
+      @user.plan.update_attribute(:level, 3)
+      4.times do
+        @user.portfolio.pieces << Factory(:piece)
+      end
+      put :update, :plan => { :level => 2, 
+                              :card_number => "4007", 
+                              :card_verification => "123", 
+                              :card_expiration_month => "4", 
+                              :card_expiration_year => "2012", 
+                              :card_type => "Visa", 
+                              :billing_first_name => Faker::Name.first_name,
+                              :billing_last_name => Faker::Name.last_name,
+                              :billing_address => Faker::Address.street_address,
+                              :billing_city => Faker::Address.city,
+                              :billing_state => Faker::Address.us_state,
+                              :billing_postal_code => Faker::Address.zip_code }
       flash[:notice].should == "Something's gone wrong! Try again, please."
     end
   end
@@ -174,7 +214,5 @@ describe UsersController do
       User.count.should == 0
     end
   end
-      
-      
-      
+   
 end

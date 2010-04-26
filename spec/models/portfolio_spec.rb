@@ -38,4 +38,10 @@ describe Portfolio do
     end
     @portfolio.can_add_more?.should be_false
   end
+  
+  it "should tell me the max number of pieces if asked" do
+    Portfolio.max_pieces_for(1).should == 5
+    Portfolio.max_pieces_for(2).should == 15
+    Portfolio.max_pieces_for(3).should == 25
+  end
 end
