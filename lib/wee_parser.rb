@@ -233,7 +233,7 @@ class GlobalObject
       "<% end %>"
     when "[javascript jquery]"
       "<%= javascript_include_tag 'jquery-1.3.1.min.js' %>"
-    when "[javascript wee]"
+    when "[wee-script]"
       "<%= render_wee_scripts %>"
     end
   end

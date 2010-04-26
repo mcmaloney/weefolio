@@ -66,7 +66,8 @@ module ApplicationHelper
 	end
 	
 	def render_wee_scripts
-	  "<script type=\"text/javascript\">
+	  "#{javascript_include_tag 'jquery-1.3.1.min.js'}
+	  <script type=\"text/javascript\">
     	  /** Switches the thumb into the full size view in the gallery. */
         function switch_large_image(image_path, piece) {
         	var source = image_path.id;
