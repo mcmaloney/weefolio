@@ -54,6 +54,14 @@
 	      			</dd>
 	      			
 	      			<dt>
+	      				<label for="design_background_color">Header</label>
+	      			</dt>
+	      			<dd>
+	      				<%= f.text_field :header_color, :size => 7, :id => "header_color_field", :onfocus => "pickcolor('#header_color', 'backgroundColor', true, 'header_color_field', this, -575, -200)" %>
+	      				<div class="color-preview" id="header_color"></div>
+	      			</dd>
+	      			
+	      			<dt>
 	      				<label for="design_text_color">Text</label>
 	      			</dt>
 	      			<dd>
