@@ -29,7 +29,7 @@ class User < ActiveRecord::Base
   attr_accessible :login, :email, :name, :password, :password_confirmation, :first_name, :last_name, :about_me, :tag_line, :design_type, :layout_type, :account_tier, :photo
   
   # Paperclip settings
-  has_attached_file :photo, :styles => { :thumbnail => "70x70#", :large_thumb => "116x116>" }, 
+  has_attached_file :photo, :styles => { :thumbnail => "70x70#", :large_thumb => "116x116#" }, 
                             :storage => :s3, 
                             :s3_credentials => "#{RAILS_ROOT}/config/s3.yml",
                             :path => ':attachment/:id/:style/:basename.:extension',
