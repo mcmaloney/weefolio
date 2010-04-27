@@ -130,7 +130,7 @@
 				    <label>State</label>
 				  </dt>
 				  <dd>
-				    <%= p.select :billing_state, @us_states %>
+				    <%= p.select :billing_state, @us_states, :include_blank => "Select State" %>
 				  </dd>
 				  
 				  <dt>
@@ -144,7 +144,7 @@
 						<label>Card Type</label>
 					</dt>
 					<dd>
-					  <%= p.select :card_type, @user.card_types %>
+					  <%= p.select :card_type, @user.card_types, :include_blank => "Select Card Type" %>
 					</dd>
 					
 					<dt>
@@ -166,14 +166,14 @@
 					  <label>Expiration Month</label>
 					</dt>
 					<dd>
-					  <%= p.text_field :card_expiration_month, :size => 3 %> (Ex. 01, 02 etc..)
+					  <%= p.select :card_expiration_month, 1..12, :include_blank => "Select Month" %>
 					</dd>
 					
 					<dt>
 					  <label>Expiration Year</label>
 					</dt>
 					<dd>
-					  <%= p.text_field :card_expiration_year, :size => 4 %> (Ex. 2011)
+					  <%= p.select :card_expiration_year, (Date.today.year)..(Date.today.year+10), :include_blank => "Select Year" %>
 					</dd>
 				
 					<% end %>
