@@ -41,7 +41,6 @@ describe UsersController do
       get :edit
       assigns['user'].should_not be_nil
       assigns['page_title'].should == "Weefolio - My Account"
-      assigns['us_states'].should_not be_nil
     end
   end
   
