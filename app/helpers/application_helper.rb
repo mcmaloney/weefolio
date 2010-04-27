@@ -58,7 +58,7 @@ module ApplicationHelper
 		  %{
 	      <div id="about-container">
 					<p>
-					  #{h @user.about_me}
+					  #{@user.about_me}
 					</p>
 				</div>
 			}

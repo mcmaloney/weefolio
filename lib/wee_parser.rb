@@ -200,13 +200,13 @@ class PieceObject
   def self.determine_output_for(input_string)
     case input_string
     when "[piece-title]"
-      "<%=h piece.title %>"
+      "<%= piece.title %>"
     when "[piece-image]"
       "<%= image_tag piece.image_1.url, :title => piece.title %>"
     when "[piece-gallery]"
       "<%= render :partial => 'pieces/piece', :object => piece %>"
     when "[piece-about]"
-      "<%=h piece.description %>"
+      "<%= piece.description %>"
     when "[piece-client]"
       "<%=h piece.client_name %>"
     when "[piece-service]"
