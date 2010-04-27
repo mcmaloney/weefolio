@@ -219,7 +219,7 @@ class PieceObject
       "<%= show_meta_for(piece) %>"
     when "[if:portfolio-pieces]"
       "<% unless @portfolio.pieces.blank? %>"
-    when "[for-each-piece]"
+    when "[if:piece]"
       "<% @portfolio.pieces.each do |piece|%>"
     end
   end
