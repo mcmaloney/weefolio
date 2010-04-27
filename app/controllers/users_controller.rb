@@ -15,7 +15,6 @@ class UsersController < ApplicationController
   
   def edit
     @page_title = "Weefolio - My Account"
-    @us_states = US_STATES.collect{|s| [s[0], s[1]]}
   end
   
   # This is a big motherfucker. Going to try to downsize soon...
