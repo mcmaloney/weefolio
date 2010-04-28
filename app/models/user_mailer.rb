@@ -1,6 +1,6 @@
 class UserMailer < ActionMailer::Base  
   REGARDING = [["Report a Bug", "Bug Report"], ["Technical Help", "Technical Help"], ["General Inquiry", "General Inquiry"]]
-  WEEFOLIO_ADMINS = "mcm@crushlovely.com"
+  WEEFOLIO_ADMINS = "michael@fancylabs.com"
   WEEFOLIO_SYSTEM = "user_destroyer@weefolio.com"
   
   # Message between users. (i.e. contact form on Weefolio page, etc.)
