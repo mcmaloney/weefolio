@@ -1,3 +1,4 @@
 activemerchant
 mislav-will_paginate --version '~>2.2.3' --source http://gems.github.com
 right_aws
+hoptoad_notifier

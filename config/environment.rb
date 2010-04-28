@@ -22,6 +22,7 @@ Rails::Initializer.run do |config|
   config.gem "activemerchant", :lib => "active_merchant"
   config.gem 'mislav-will_paginate', :lib => 'will_paginate', :source => 'http://gems.github.com', :version => '~> 2.2.3'
   config.gem 'right_aws'
+  config.gem 'hoptoad_notifier'
   
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named
