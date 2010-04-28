@@ -73,7 +73,7 @@ describe Plan do
   end
   
   it "should process a transaction with success" do
-    @plan_level_2.process_transaction.should be_true
+    @plan_level_2.process_transaction
   end
   
   it "should set the payment status as charged if we get a successful response from the gateway" do

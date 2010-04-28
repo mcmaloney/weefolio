@@ -1,4 +1,5 @@
 class Plan < ActiveRecord::Base
+  require 'active_merchant'
   belongs_to :user
   
   STATUS_OPTIONS = [:none, :pending, :authorized, :charged, :failed]
@@ -9,16 +10,48 @@ class Plan < ActiveRecord::Base
   
   before_save :populate_amount_in_cents, :populate_card_last_four
   
+  # def process_transaction
+  #    if self.valid?
+  #      card = authnet_credit_card
+  #      gateway = ActiveMerchant::Billing::AuthorizeNetGateway.new(AUTHORIZE_NET_CREDENTIALS)
+  #      response = gateway.authorize(self.amount_in_cents, card)
+  #      self.gateway_response = response.message
+  #      if response.success?
+  #        self.status = :authorized
+  #        # Capture!
+  #        gateway.capture(self.amount_in_cents, response.authorization)
+  #        self.status = :charged
+  #        return true
+  #      else
+  #        self.status = :failed
+  #        return false
+  #      end
+  #    else
+  #      self.status = :failed
+  #      return false
+  #    end
+  #  end
+  
+  
   def process_transaction
     if self.valid?
       card = authnet_credit_card
       gateway = ActiveMerchant::Billing::AuthorizeNetGateway.new(AUTHORIZE_NET_CREDENTIALS)
-      response = gateway.authorize(self.amount_in_cents, card)
+      response = gateway.recurring(self.amount_in_cents, 
+                                   card, :billing_address => {:address1 => self.billing_address,
+                                                              :address2 => self.billing_address_2,
+                                                              :city => self.billing_city, 
+                                                              :state => self.billing_state, 
+                                                              :zip => self.billing_postal_code, 
+                                                              :country => "US", 
+                                                              :first_name => self.billing_first_name, 
+                                                              :last_name => self.billing_last_name}, 
+                                         :interval => {:unit => :months, :length => 12}, 
+                                         :duration => {:start_date => Date.today.strftime('%Y-%m-%d'), :occurrences => 9999}, 
+                                         :customer => {:id => "#{self.user_id}-#{Time.now.to_i.to_s[-4,4]}"})
       self.gateway_response = response.message
+      raise response.inspect
       if response.success?
-        self.status = :authorized
-        # Capture!
-        gateway.capture(self.amount_in_cents, response.authorization)
         self.status = :charged
         return true
       else
@@ -28,8 +61,9 @@ class Plan < ActiveRecord::Base
     else
       self.status = :failed
       return false
-    end
+    end  
   end
+  
   
   # Returns an authnet credit card instance.
   def authnet_credit_card

@@ -1,12 +1,12 @@
 development:
-  login: bXXH553QL
-  password: 4858g5DM65K8hUcv
+  login: 6uR64WvP
+  password: 94G8zcPyV89m37R2
 test:
-  login: bXXH553QL
-  password: 4858g5DM65K8hUcv
+  login: 6uR64WvP
+  password: 94G8zcPyV89m37R2
 cucumber:
-  login: bXXH553QL
-  password: 4858g5DM65K8hUcv
+  login: 6uR64WvP
+  password: 94G8zcPyV89m37R2
 production:
-  login: 5J9bB5Kb8qN
-  password: 5Pc76g5NCCdm9489
+  login: 6uR64WvP
+  password: 94G8zcPyV89m37R2
