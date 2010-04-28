@@ -50,7 +50,6 @@ class Plan < ActiveRecord::Base
                                          :duration => {:start_date => Date.today.strftime('%Y-%m-%d'), :occurrences => 9999}, 
                                          :customer => {:id => "#{self.user_id}-#{Time.now.to_i.to_s[-4,4]}"})
       self.gateway_response = response.message
-      raise response.inspect
       if response.success?
         self.status = :charged
         return true
