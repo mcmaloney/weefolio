@@ -5,7 +5,11 @@ class Design < ActiveRecord::Base
   
   attr_protected :user_id
   
-  has_attached_file :header_image, :styles => { :header_format => "710x710>", :thumbnail => "70x70#" }
+  has_attached_file :header_image, :styles => { :header_format => "710x710>", :thumbnail => "70x70#" }, 
+                                   :storage => :s3, 
+                                   :s3_credentials => "#{RAILS_ROOT}/config/s3.yml",
+                                   :path => ':attachment/:id/:style/:basename.:extension',
+                                   :bucket => 'weefolio'
   
   after_create :set_html, :parse_browser_html
   
