@@ -1,7 +1,7 @@
 class PortfoliosController < ApplicationController
   layout 'template'
   before_filter :login_required, :only => [:edit]
-  before_filter :get_user_design_portfolio, :except => :show
+  before_filter :get_user_design_portfolio, :except => [:show, :edit]
   
   # This is what the world sees. (My Weefolio)
   def show
@@ -14,6 +14,9 @@ class PortfoliosController < ApplicationController
   # This is where you go when you want to manage the content of your Weefolio. (Portfolio)
   def edit 
     @page_title = "Weefolio - Manage My Work"
+    @user = current_user
+    @portfolio = @user.portfolio
+    @design = @user.design
   end
   
   # Send message action for the contact user form.
