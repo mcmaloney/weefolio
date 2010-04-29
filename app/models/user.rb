@@ -74,7 +74,7 @@ class User < ActiveRecord::Base
     if search
       paginate :page => page, :per_page => 25, :order => "created_at DESC", :conditions => ['login LIKE ?', "%#{search}%"]
     else
-      paginate :page => page, :per_page => 25, :order => "created_at DESC"
+      paginate :page => page, :per_page => 25, :order => "created_at DESC", :conditions => ['photo_file_size > ?', 0]
     end
   end
   
