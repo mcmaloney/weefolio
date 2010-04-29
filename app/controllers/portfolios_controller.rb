@@ -5,13 +5,10 @@ class PortfoliosController < ApplicationController
   
   # This is what the world sees. (My Weefolio)
   def show
-    if @user = User.find_by_login(params[:login])
-      @design = @user.design
-      @portfolio = @user.portfolio
-      render :layout => false
-    else
-      return not_found
-    end
+    @user = User.find_by_login(params[:login])
+    @design = @user.design
+    @portfolio = @user.portfolio
+    render :layout => false
   end
   
   # This is where you go when you want to manage the content of your Weefolio. (Portfolio)
