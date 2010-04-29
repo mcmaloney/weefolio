@@ -16,4 +16,10 @@ class ApplicationController < ActionController::Base
       return false
     end
   end
+  
+  def not_found(options = {})
+    options = {:status => 404}
+    render options
+    false
+  end
 end
