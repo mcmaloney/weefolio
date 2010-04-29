@@ -72,9 +72,9 @@ class User < ActiveRecord::Base
   # Simple search for the directory page
   def self.search(search, page)
     if search
-      paginate :page => page, :order => "created_at DESC", :conditions => ['login LIKE ?', "%#{search}%"], :per_page => 25
+      paginate :page => page, :per_page => 25, :order => "created_at DESC", :conditions => ['login LIKE ?', "%#{search}%"]
     else
-      paginate :page => page, :order => "created_at DESC", :per_page => 25
+      paginate :page => page, :per_page => 25, :order => "created_at DESC"
     end
   end
   
