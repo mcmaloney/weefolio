@@ -16,9 +16,9 @@ end
 
 # Using card number/CVV here but NEITHER OF THEM IS BEING STORED IN THE DATABASE FOR PCI COMPLIANCE.
 Factory.define :plan do |p|
-  p.card_number "4007000000027"
-  p.card_verification "123"
-  p.card_expiration_month "4"
+  p.card_number "4012888818888"
+  p.card_verification "321"
+  p.card_expiration_month "6"
   p.card_expiration_year "2012"
   p.card_type "Visa"
   p.billing_first_name Faker::Name.first_name

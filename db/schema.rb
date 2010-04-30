@@ -85,8 +85,6 @@ ActiveRecord::Schema.define(:version => 20100428145532) do
     t.integer  "level"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "card_expiration_month"
-    t.string   "card_expiration_year"
     t.string   "card_type"
     t.string   "billing_first_name"
     t.string   "billing_last_name"
@@ -99,6 +97,8 @@ ActiveRecord::Schema.define(:version => 20100428145532) do
     t.string   "gateway_response"
     t.string   "payment_status"
     t.integer  "amount_in_cents"
+    t.string   "card_expiration_month"
+    t.string   "card_expiration_year"
   end
 
   create_table "portfolios", :force => true do |t|
