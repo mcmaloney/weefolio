@@ -40,7 +40,7 @@ class UsersController < ApplicationController
       end
     else
       if @user.update_self_and_plan(params[:user], params[:plan]) 
-        @user.update_account_tier(params[:plan][:level])
+        @user.update_account_tier(params[:plan][:level].to_i)
         redirect_to edit_user_path(@user)
         flash[:notice] = "Plan changed to #{@user.render_account_tier}"
       else
