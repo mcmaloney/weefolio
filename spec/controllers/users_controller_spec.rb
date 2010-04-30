@@ -138,9 +138,30 @@ describe UsersController do
   describe "POST create" do
     it "should let me create a new user" do
       User.delete_all
-      post :create, :user => {:login => Faker::Internet.user_name, :email => Faker::Internet::email, :password => "giraffe", :password_confirmation => "giraffe" }
+      post :create, :user => {:login => "mike_maloney", :email => Faker::Internet.email, :password => "giraffe", :password_confirmation => "giraffe" }
       response.should redirect_to(root_path)
       flash[:notice].should == "Welcome to Weefolio, #{assigns['user'].login}!"
+    end
+    
+    it "should let me create a new user with upper and lowercase letters" do
+       User.delete_all
+       post :create, :user => {:login => "mikeMaloney", :email => Faker::Internet.email, :password => "giraffe", :password_confirmation => "giraffe" }
+       response.should redirect_to(root_path)
+       flash[:notice].should == "Welcome to Weefolio, #{assigns['user'].login}!"
+    end
+    
+    it "should not let me create a user if I put a shitty symbol in the login" do
+       User.delete_all
+       post :create, :user => {:login => "mike.maloney", :email => Faker::Internet.user_name, :password => "giraffe", :password_confirmation => "giraffe" }
+       response.should render_template('new')
+       User.count.should == 0
+    end
+    
+    it "should not let me create a user if I put a shitty symbol in the login" do
+       User.delete_all
+       post :create, :user => {:login => "mike@maloney", :email => Faker::Internet.user_name, :password => "giraffe", :password_confirmation => "giraffe" }
+       response.should render_template('new')
+       User.count.should == 0
     end
     
     it "should not let me create a user if I give bogus info" do
