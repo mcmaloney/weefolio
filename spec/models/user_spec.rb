@@ -61,10 +61,6 @@ describe User do
   end
   
   describe "changing tier and stuff" do 
-    it "should change the account tier" do
-      @user.change_tier(2)
-      @user.account_tier.should == 2
-    end
     
     it "should show the account tier in a readable way" do
       @user.render_account_tier.should == "Basic"
@@ -78,12 +74,6 @@ describe User do
     it "should show the account tier in a readable way if I change the tier... again" do
       @user.plan.level = 3
       @user.render_account_tier.should == "Pro ($4.99/Month)"
-    end
-    
-    it "should update the account tier based on the plan level" do
-      @user.plan.level = 2
-      @user.update_account_tier(@user.plan.level)
-      @user.account_tier.should == 2
     end
     
     # This only returns true with a transaction present. For now, we'll say it has to be false without that. Still means it's working...

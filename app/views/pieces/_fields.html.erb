@@ -37,7 +37,7 @@
 				<dd>
   			    <%= show_image_unless_new_record(@piece, @piece.image_3) %> <%= f.file_field :image_3 %>
   			  </dd>
-			  <% if @portfolio.account_tier == 3 %>
+			  <% if current_user.plan.level == 3 %>
 			    <dt>
 			      <label for="piece_image_4">Image #4</label>
 			       </dt>

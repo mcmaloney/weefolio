@@ -9,7 +9,7 @@ describe Portfolio do
   end
   
   it "should have an account tier from its user" do
-    @portfolio.account_tier.should == @user.account_tier
+    @portfolio.account_tier.should == @user.plan.level
   end
   
   it "should allow me only 5 pieces if I have a level 1 account" do
@@ -17,14 +17,12 @@ describe Portfolio do
   end
   
   it "should allow me 15 pieces if I have a level 2 account" do
-    @user.plan.level = 2
-    @user.update_account_tier(@user.plan.level)
+    @user.plan.update_attribute(:level, 2)
     @portfolio.max_pieces.should == 15
   end
   
   it "should allow me 25 pieces if I have a level 2 account" do
-    @user.plan.level = 3
-    @user.update_account_tier(@user.plan.level)
+    @user.plan.update_attribute(:level, 3)
     @portfolio.max_pieces.should == 25
   end
   

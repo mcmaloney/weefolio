@@ -86,10 +86,6 @@ describe Plan do
     @plan_bad_exp_year.process_transaction.should be_false
   end
   
-  it "should set the payment status to failed if we get a bad response from the gateway" do
-    # Gotta figure out a way to get the gateway to give a failure response to get this to pass.
-  end
-  
   it "should set the payment status as failed if we have invalid info" do
     @plan_bad_card_num.process_transaction
     @plan_bad_card_num.status.should == :failed
@@ -126,5 +122,42 @@ describe Plan do
       @user.portfolio.pieces << Factory(:piece)
     end
     @user.plan.delete_pieces_for(1).should == 3
+  end
+  
+  describe "validating the credit card" do
+    before(:each) do
+      User.delete_all
+      @user = Factory(:user)
+      @user.setup
+      @user.plan.update_attributes(:billing_first_name => "Greg",
+                                   :billing_last_name => "House",
+                                   :billing_address => "414 Macon St.",
+                                   :billing_address_2 => "Fl 3",
+                                   :billing_city => "Brooklyn",
+                                   :billing_state => "NY",
+                                   :billing_postal_code => "11233",
+                                   :card_expiration_month => "6",
+                                   :card_expiration_year => "2012")
+    end
+    
+    it "should validate the credit card" do
+      @user.plan.card_number = "4007000000027"
+      @user.plan.card_verification = "321"
+      @user.plan.has_valid_credit_card.should be_true
+    end
+
+    it "should not validate the credit card if it's bogus" do
+      @user.plan.card_number = "4007000"
+      @user.plan.card_verification = "321"
+      @user.plan.errors[:base].should include("Credit card invalid – please verify that your billing information")
+    end
+    
+    it "should set the payment status to failed if we get a bad response from the gateway" do
+      @user.plan.card_number = "4007000000027"
+      @user.plan.card_verification = "321"
+      @user.plan.update_attribute(:card_expiration_year, "2009")
+      @user.plan.process_transaction
+      @user.plan.status.should == :failed
+    end
   end
 end

@@ -27,7 +27,6 @@ class UsersController < ApplicationController
     elsif params[:plan][:level].to_i < @user.plan.level.to_i
       if @user.plan.can_downgrade_to(params[:plan][:level].to_i)
         if @user.update_self_and_plan(params[:user], params[:plan]) 
-          @user.update_account_tier(params[:plan][:level].to_i)
           redirect_to edit_user_path(@user)
           flash[:notice] = "Plan changed to #{@user.render_account_tier}"
         else
@@ -40,7 +39,6 @@ class UsersController < ApplicationController
       end
     else
       if @user.update_self_and_plan(params[:user], params[:plan]) 
-        @user.update_account_tier(params[:plan][:level].to_i)
         redirect_to edit_user_path(@user)
         flash[:notice] = "Plan changed to #{@user.render_account_tier}"
       else
@@ -62,18 +60,6 @@ class UsersController < ApplicationController
       flash[:error]  = "We couldn't set up that account, sorry.  Please try again."
       render :action => 'new'
     end
-      
-    
-    # success = @user && @user.save
-    #     if success && @user.errors.empty?
-    #       @user.setup
-    #       self.current_user = @user
-    #       redirect_to root_path
-    #       flash[:notice] = "Welcome to Weefolio, #{@user.login}!"
-    #     else
-    #       flash[:error]  = "We couldn't set up that account, sorry.  Please try again."
-    #       render :action => 'new'
-    #     end
   end
   
   def reset_password

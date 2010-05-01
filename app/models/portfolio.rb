@@ -6,7 +6,7 @@ class Portfolio < ActiveRecord::Base
      
   # Virtual attribute for account tier.
   def account_tier
-    self.user.account_tier
+    self.user.plan.level.to_i
   end
   
   # Max number of pieces allowed for each account type.

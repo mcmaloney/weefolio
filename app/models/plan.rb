@@ -1,5 +1,6 @@
 class Plan < ActiveRecord::Base
   require 'active_merchant'
+  
   belongs_to :user
   
   STATUS_OPTIONS = [:none, :pending, :authorized, :charged, :failed]
@@ -9,29 +10,6 @@ class Plan < ActiveRecord::Base
   validate :has_valid_credit_card
   
   before_save :populate_amount_in_cents, :populate_card_last_four
-  
-  # def process_transaction
-  #    if self.valid?
-  #      card = authnet_credit_card
-  #      gateway = ActiveMerchant::Billing::AuthorizeNetGateway.new(AUTHORIZE_NET_CREDENTIALS)
-  #      response = gateway.authorize(self.amount_in_cents, card)
-  #      self.gateway_response = response.message
-  #      if response.success?
-  #        self.status = :authorized
-  #        # Capture!
-  #        gateway.capture(self.amount_in_cents, response.authorization)
-  #        self.status = :charged
-  #        return true
-  #      else
-  #        self.status = :failed
-  #        return false
-  #      end
-  #    else
-  #      self.status = :failed
-  #      return false
-  #    end
-  #  end
-  
   
   def process_transaction
     if self.valid?
@@ -75,15 +53,6 @@ class Plan < ActiveRecord::Base
       :last_name => self.billing_last_name,
       :verification_value => self.card_verification
     })
-  end
-  
-  def has_valid_credit_card
-    card = authnet_credit_card
-    if card.valid?
-      true
-    else
-      errors.add_to_base("Credit card invalid – please verify that your billing information matches your credit card statement and verify your credit card account number and security code.")
-    end
   end
   
   def populate_amount_in_cents
@@ -136,6 +105,5 @@ class Plan < ActiveRecord::Base
   def delete_pieces_for(requested_level)
     User.find(self.user_id).portfolio.pieces.length - Portfolio.max_pieces_for(requested_level)
   end
-  
-  
+
 end
