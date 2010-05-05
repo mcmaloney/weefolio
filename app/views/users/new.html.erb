@@ -150,7 +150,6 @@
 <!--PAGE CONTENT-->
 <%# YIELD %>
 <div class="content-container">
-	<div class="column">
 		<% if flash[:warning] or flash[:notice] %>
 				<div id="notice" <% if flash[:warning] %>class="warning"<% end %>>
 		<%= flash[:warning] || flash[:notice] %>
@@ -161,10 +160,11 @@
 		
 		<%= error_messages_for :user %>
 		
+	<div class="column primary">
 		<% form_for(User.new) do |f| %>
 			
 		<fieldset>
-			<h2>Sign up for <strong><em>free</em></strong> &amp; upgrade anytime!</h2>
+			<legend>Sign up for free &amp; upgrade anytime!</legend>
 		    <dl>
 		    	<dt>
 		    		<%= f.label :login, 'Username' %>
@@ -190,7 +190,7 @@
 		      	</dd>
 		      
 		      	<dt>
-		      		<%= f.label :password_confirmation, "Confirm Password" %>
+		      		<%= f.label :password_confirmation, "Confirm" %>
 		      	</dt>
 		    	<dd>
 		      		<%= f.password_field :password_confirmation %>

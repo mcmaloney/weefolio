@@ -9,16 +9,16 @@
 <!--PAGE CONTENT-->
 <%# YIELD %>
 <div class="content-container">
-	<div class="column">  
-	    <% if flash[:warning] or flash[:notice] %>
+	  <% if flash[:warning] or flash[:notice] %>
 	  		<div id="notice" <% if flash[:warning] %>class="warning"<% end %>>
 	    <%= flash[:warning] || flash[:notice] %>
 	  		</div>
 		<% end %>
 
+	<div class="column primary">  
 		<% form_tag session_path do %>
 			<fieldset>
-				<h2>Login</h2>
+				<legend>Login</legend>
 				<dl>
 				    <dt>
 				      <label for="login">Username</label>
@@ -43,6 +43,18 @@
 	    	  <%= submit_tag 'Login' %>
 	    	</div>
 		<% end %>
+	</div>
+	
+	<div class="column secondary">
+	 <ul class="widgets">
+	  	<li class="sign-up">
+	  	 <h2>No Account?</h2>
+	  	 
+	  	 <p>
+ 	    <a href="#">Sign up</a> for <strong><em>free</em></strong> &amp; upgrade anytime!
+ 	   </p>
+	   </li>
+	 </ul>
 	</div>
 </div>
 	

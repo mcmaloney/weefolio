@@ -5,7 +5,7 @@
 		<h1>Account <small>Manage your account settings</small></h1>
 		
 		<div class="call-to-action">
-		  <%= link_to 'Close Account', close_account_path, :class => "account-close" %>
+		  <!--<%= link_to 'Close Account', close_account_path, :class => "account-close" %>-->
 		</div>
 	</div>
 </div>
@@ -21,188 +21,200 @@
 		<% end %>
 
 		<% form_for @user, :html => {:multipart => true}  do |f| %>
-			<fieldset>
-				<h2>Personal</h2>
-				
-	    		<dl>
-				    <dt>
-				      <label for="user_login">Username</label>
-				    </dt>
-	      			<dd>
-				      <%= f.text_field :login %>
-				      <p>This is how we and others in the Weefolio community will address you.</p>
-				    </dd>
-				
-				    <dt>
-				      <label for="user_email">Email</label>
-				    </dt>
-	      			<dd>
-				      <%= f.text_field :email %>
-				      <p>This is where we'll send information regarding you account.</p>
-				    </dd>
-				    
-				    <dt>
-				    	<label>Avatar</label>
-				    </dt>
-				    <dd>
-				      <%= image_preview_for(@user.photo) %> <%= f.file_field :photo %>
-				    </dd>
-				 </dl>
-			</fieldset>
-				 
-			<fieldset>
-				<h2>Portfolio</h2>
-				
-				 <dl>
-				    <dt>
-				     	<%= f.label :tag_line, 'Tagline' %>
-				    </dt>
-	      			<dd>
-	      			<%= show_tagline(@user, f) %>
-				      <p>This is whatever you want it to be. It can be a welcome message, a catch phrase, or just something you always say. If you don't want your tagline to appear in your portfolio simply leave the field blank.</p>
-				    </dd>
-				    
-				  	<dt>
-				      <label for="user_about_me">About Me</label>
-				    </dt>
-	      			<dd>
-				      <%= f.text_area :about_me, :rows => 8 %>
-				    </dd>
-	    		</dl>
-	    	</fieldset>
-	    	
-	    	<fieldset>
-				<h2>Billing</h2>
-				
-				<dl>
-					<dt>
-						Plan
-					</dt>
-					<% fields_for @user.plan do |p| %>
-					<dd>
-						<ul>
-						  <li><%= p.radio_button :level, 1, :onclick => "hide_billing()" %><label>Basic (Free)</label></li>
-						  <li><%= p.radio_button :level, 2, :onclick => "show_billing()" %><label>Plus ($2.99/month)</label></li>
-			        <li><%= p.radio_button :level, 3, :onclick => "show_billing()" %><label>Pro ($4.99/month)</label></li>
-						</ul>
-						
-						<!--<p> Current Plan: <%= @user.render_account_tier %></p>-->
-					</dd>
-				<div id="billing_info">
-				  <dt>
-				    <label>First Name</label>
-				  </dt>
-				  <dd>
-				    <%= p.text_field :billing_first_name %>
-				  </dd>
-				  
-				  <dt>
-				    <label>Last Name</label>
-				  </dt>
-				  <dd>
-				    <%= p.text_field :billing_last_name %>
-				  </dd>
-				  
-				  <dt>
-				    <label>Billing Address</label>
-				  </dt>
-				  <dd>
-				    <%= p.text_field :billing_address %>
-				  </dd>
-				  
-				  <dt>
-				    <label>Billing Address 2</label>
-				  </dt>
-				  <dd>
-				    <%= p.text_field :billing_address_2 %>
-				  </dd>
-				  
-				  <dt>
-				    <label>City</label>
-				  </dt>
-				  <dd>
-				    <%= p.text_field :billing_city %>
-				  </dd>
-				  
-				  <dt>
-				    <label>State</label>
-				  </dt>
-				  <dd>
-				    <%= p.select :billing_state, @us_states %>
-				  </dd>
-				  
-				  <dt>
-				    <label>Zip</label>
-				  </dt>
-				  <dd>
-				    <%= p.text_field :billing_postal_code %>
-				  </dd>
-				  
-					<dt>
-						<label>Card Type</label>
-					</dt>
-					<dd>
-					  <%= p.select :card_type, @user.card_types %>
-					</dd>
-					
-					<dt>
-						<label>Card Number</label>
-					</dt>
-					<dd>
-					  <%= p.text_field :card_number, :size => 16 %>
-					</dd>
-					
-					<dt>
-						<label>CVN</label>
-					</dt>
-					<dd>
-					  <%= p.text_field :card_verification, :size => 3 %>
-					  <p>Your CVN (Card Verification Number) is a 3 digit code and can be found on the back of your credit card.</p>
-					</dd>
-					
-					<dt>
-					  <label>Expiration Month</label>
-					</dt>
-					<dd>
-					  <%= p.text_field :card_expiration_month, :size => 3 %> (Ex. 01, 02 etc..)
-					</dd>
-					
-					<dt>
-					  <label>Expiration Year</label>
-					</dt>
-					<dd>
-					  <%= p.text_field :card_expiration_year, :size => 4 %> (Ex. 2011)
-					</dd>
-				
-					<% end %>
-				</div>
-				</dl>
-			</fieldset>
-			
-			<fieldset>
-				<h2>Password</h2>
-				
-				<dl>
-					<dt>
-		      		<%= f.label :password, "Password" %>
-			      	</dt>
-			    	<dd>
-			      		<%= f.password_field :password %>
-			      		<p>Leave field blank to keep password the same.</p>
-			      	</dd>
-			      
-			      	<dt>
-			      		<%= f.label :password_confirmation, "Confirm Password" %>
-			      	</dt>
-			    	<dd>
-			      		<%= f.password_field :password_confirmation %>
-			      	</dd>
-				</dl>
-			</fieldset>
-	    	
-	    	<div class="submit" id="save">
+		 <div class="column primary">
+ 			<fieldset>
+ 		  <legend>Personal</legend> 				
+ 	    		<dl>
+ 				    <dt>
+ 				      <label for="user_login">Username</label>
+ 				    </dt>
+ 	      			<dd>
+ 				      <%= f.text_field :login %>
+ 				      <p>This is how we and others in the Weefolio community will address you.</p>
+ 				    </dd>
+ 				
+ 				    <dt>
+ 				      <label for="user_email">Email</label>
+ 				    </dt>
+ 	      			<dd>
+ 				      <%= f.text_field :email %>
+ 				      <p>This is where we'll send information regarding you account.</p>
+ 				    </dd>
+ 				    
+ 				    <dt>
+ 				    	<label>Avatar</label>
+ 				    </dt>
+ 				    <dd>
+ 				      <%= image_preview_for(@user.photo) %> <%= f.file_field :photo %>
+ 				    </dd>
+ 				 </dl>
+ 			</fieldset>
+ 				 
+ 			<fieldset>
+ 				<legend>Portfolio</legend> 
+ 				
+ 				 <dl>
+ 				    <dt>
+ 				     	<%= f.label :tag_line, 'Tagline' %>
+ 				    </dt>
+ 	      			<dd>
+ 	      			<%= show_tagline(@user, f) %>
+ 				      <p>This is whatever you want it to be. It can be a welcome message, a catch phrase, or just something you always say. If you don't want your tagline to appear in your portfolio simply leave the field blank.</p>
+ 				    </dd>
+ 				    
+ 				  	<dt>
+ 				      <label for="user_about_me">About Me</label>
+ 				    </dt>
+ 	      			<dd>
+ 				      <%= f.text_area :about_me, :rows => 8, :cols => 36 %>
+ 				    </dd>
+ 	    		</dl>
+ 	    	</fieldset>
+ 	    	
+ 	    	<fieldset>
+ 				<legend>Billing</legend> 
+ 				
+ 				<dl>
+ 					<dt>
+ 						Plan
+ 					</dt>
+ 					<% fields_for @user.plan do |p| %>
+ 					<dd>
+ 						<ul>
+ 						  <li><%= p.radio_button :level, 1, :onclick => "hide_billing()" %><label>Basic (Free)</label></li>
+ 						  <li><%= p.radio_button :level, 2, :onclick => "show_billing()" %><label>Plus ($2.99/month)</label></li>
+ 			        <li><%= p.radio_button :level, 3, :onclick => "show_billing()" %><label>Pro ($4.99/month)</label></li>
+ 						</ul>
+ 						
+ 						<!--<p> Current Plan: <%= @user.render_account_tier %></p>-->
+ 					</dd>
+ 				<div id="billing_info">
+ 				  <dt>
+ 				    <label>First Name</label>
+ 				  </dt>
+ 				  <dd>
+ 				    <%= p.text_field :billing_first_name %>
+ 				  </dd>
+ 				  
+ 				  <dt>
+ 				    <label>Last Name</label>
+ 				  </dt>
+ 				  <dd>
+ 				    <%= p.text_field :billing_last_name %>
+ 				  </dd>
+ 				  
+ 				  <dt>
+ 				    <label>Billing Address</label>
+ 				  </dt>
+ 				  <dd>
+ 				    <%= p.text_field :billing_address %>
+ 				  </dd>
+ 				  
+ 				  <dt>
+ 				    <label>Billing Address 2</label>
+ 				  </dt>
+ 				  <dd>
+ 				    <%= p.text_field :billing_address_2 %>
+ 				  </dd>
+ 				  
+ 				  <dt>
+ 				    <label>City</label>
+ 				  </dt>
+ 				  <dd>
+ 				    <%= p.text_field :billing_city %>
+ 				  </dd>
+ 				  
+ 				  <dt>
+ 				    <label>State</label>
+ 				  </dt>
+ 				  <dd>
+ 				    <%= p.select :billing_state, @us_states %>
+ 				  </dd>
+ 				  
+ 				  <dt>
+ 				    <label>Zip</label>
+ 				  </dt>
+ 				  <dd>
+ 				    <%= p.text_field :billing_postal_code %>
+ 				  </dd>
+ 				  
+ 					<dt>
+ 						<label>Card Type</label>
+ 					</dt>
+ 					<dd>
+ 					  <%= p.select :card_type, @user.card_types %>
+ 					</dd>
+ 					
+ 					<dt>
+ 						<label>Card Number</label>
+ 					</dt>
+ 					<dd>
+ 					  <%= p.text_field :card_number, :size => 16 %>
+ 					</dd>
+ 					
+ 					<dt>
+ 						<label>CVN</label>
+ 					</dt>
+ 					<dd>
+ 					  <%= p.text_field :card_verification, :size => 3 %>
+ 					  <p>Your CVN (Card Verification Number) is a 3 digit code and can be found on the back of your credit card.</p>
+ 					</dd>
+ 					
+ 					<dt>
+ 					  <label>Expiration Month</label>
+ 					</dt>
+ 					<dd>
+ 					  <%= p.text_field :card_expiration_month, :size => 3 %> (Ex. 01, 02 etc..)
+ 					</dd>
+ 					
+ 					<dt>
+ 					  <label>Expiration Year</label>
+ 					</dt>
+ 					<dd>
+ 					  <%= p.text_field :card_expiration_year, :size => 4 %> (Ex. 2011)
+ 					</dd>
+ 				
+ 					<% end %>
+ 				</div>
+ 				</dl>
+ 			</fieldset>
+ 			
+ 			<fieldset>
+ 				<legend>Password</legend> 
+ 				
+ 				<dl>
+ 					<dt>
+ 		      		<%= f.label :password, "Password" %>
+ 			      	</dt>
+ 			    	<dd>
+ 			      		<%= f.password_field :password %>
+ 			      		<p>Leave field blank to keep password the same.</p>
+ 			      	</dd>
+ 			      
+ 			      	<dt>
+ 			      		<%= f.label :password_confirmation, "Confirm" %>
+ 			      	</dt>
+ 			    	<dd>
+ 			      		<%= f.password_field :password_confirmation %>
+ 			      	</dd>
+ 				</dl>
+ 			</fieldset>
+ 			
+ 		 	    	<div class="submit" id="save">
 				      <%= f.submit 'Save' %>
 	    	</div>
 		<% end %>
+	  </div>
+	  
+	  <div class="column secondary">
+	   <ul class="widgets">
+	  	<li class="close-account">
+	  	 
+	  	 <p>
+ 	    <%= link_to 'Close Account', close_account_path, :class => "account-close" %>
+ 	   </p>
+	   </li>
+	 </ul>
+	  </div>
 	</div>
 </div>

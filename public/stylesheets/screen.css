@@ -362,6 +362,7 @@ div.content-container p.intro {
 	border-right: 1px solid #ececea;
 	border-bottom: 1px solid #ececea;
 	border-left: 1px solid #ececea;
+	color: #758489;
 	}
 	
 div.content-container div.column.secondary {
@@ -391,6 +392,51 @@ div.content-container div.column.secondary ul.content-nav li a, div#content-cont
 	background: url(/images/content-nav-arrow.gif) left center no-repeat;
 	}
 	
+
+/*--WIDGETS--*/
+
+div.content-container div.column.secondary ul.widgets {
+ padding: 0;
+ margin: 0;
+ list-style: none;
+ }
+
+div.content-container div.column.secondary ul.widgets li {
+ background-color: #ecf5f3;
+ padding: 0 15px;
+ border-radius: 3px;
+  -moz-border-radius: 3px;
+	 -webkit-border-radius: 3px;
+	margin: 0 0 10px 0;
+	display: block;
+	font-size: 11px;
+	border-top: 1px solid #ddebe8;
+	border-right: 1px solid #ddebe8;
+	border-bottom: 2px solid #ddebe8;
+	border-left: 1px solid #ddebe8;
+	color: #758489;
+	}
+	
+div.content-container div.column.secondary ul.widgets li h2 { 
+ font-size: 11px;
+ }
+ 
+
+/*--WIDGETS > SIGN UP--*/
+
+div.content-container div.column.secondary ul.widgets li.sign-up h2 {
+ background: url(../images/widgets/sign-up-icon.gif) left center no-repeat;
+ padding: 0 0 0 17px;
+ }
+ 
+ 
+/*--WIDGETS > CLOSE ACCOUNT--*/
+
+div.content-container div.column.secondary ul.widgets li.close-account p {
+ background: url(../images/widgets/x-icon.gif) left center no-repeat;
+ padding: 0 0 0 15px;
+ }
+		
 /*--FOOTER--*/
 
 div.footer-container a#footer-logo {
@@ -435,32 +481,30 @@ div.footer-container a:visited:hover {
 	color: #242420;
 	}
 	
-
+	 
 /*-- GLOBAL FORMS --*/
 
-div.content-container form {
+div.content-container div.column form {
 	overflow: hidden;
 	margin: 0;
 	padding:  0;
 	}
 	
-div.content-container form fieldset {
+div.content-container div.column form fieldset {
 	border: 0;
 	overflow: hidden;
-	margin: 0 0 20px 0;
-	border-bottom: 1px solid #ececea;
-	padding: 0;
+	margin: 0;
+	padding: 15px 0 0 0;
 	}
 	
-div.content-container form h2 {
-	margin: 0 0 20px 110px;
-	padding: 4px 0 2px 40px;
-	color: #242420;
-	font-weight: normal;
-	font-family: Georgia, "Times New Roman", serif;
-	font-size: 18px;
-	background: url(../images/form-h2-arrow.gif) left center no-repeat;
-	}
+div.content-container form fieldset legend {
+ border-bottom: 1px solid #ececea;
+ width: 100%;
+ font-weight: bold;
+ color: #242420;
+ padding: 0 0 8px 22px;
+ background: url(../images/legend-icon.gif) no-repeat 0 0;
+ }
 	
 div.content-container form fieldset dl {
 	padding: 0;
@@ -471,19 +515,19 @@ div.content-container form fieldset dl {
 
 	
 div.content-container form fieldset dl dt {
-	width: 130px;
+	width: 100px;
 	text-align: right;
 	padding: 8px 20px 0 0;
 	margin: 0 0 15px 0;
 	float: left;
 	font-weight: bold;
 	color: #242420;
-	font-size: 12px;
+	font-size: 11px;
 	clear: both;
 	}
 
 div.content-container form fieldset dl dd {
-	width: 410px;
+	width: 355px;
 	padding: 0;
 	float: left;
 	margin: 0 0 15px 0;
@@ -508,15 +552,25 @@ div.content-container form fieldset dl dd textarea:focus {
 	outline: none;
 	} 
 	
-div.content-container form fieldset dl dd textarea.code {
-	font-family: Courier;
-	font-size: 12px;
-	}
-	
 div.content-container form fieldset dl dd select {
 	margin: 6px 0;
 	}
 	
+div.content-container form fieldset dl dd input.file {
+ background: #ecf5f3 url(../images/file-upload-icon.gif) no-repeat 13px center;
+ padding: 10px 10px 11px 30px;
+ border-radius: 3px;
+  -moz-border-radius: 3px;
+	 -webkit-border-radius: 3px;
+	margin: 0 0 10px 0;
+	display: block;
+	font-size: 11px;
+	border-top: 1px solid #ddebe8;
+	border-right: 1px solid #ddebe8;
+	border-bottom: 2px solid #ddebe8;
+	border-left: 1px solid #ddebe8;
+ }
+ 
 div.content-container form fieldset dl dd p {
 	margin: 5px 0 5px 0;
 	}
@@ -543,10 +597,12 @@ div.content-container form fieldset dl dd img {
 	border-left: 1px solid #ececea;
 	margin: 0 15px 0 0;
 	}
-	
+ 
 div.content-container form div.submit {
-	margin: 0 0 0 145px;
+	margin: 0 0 0 120px;
 	overflow: hidden;
+	
+	clear: both;
 	}
 
 div.content-container form div.submit input {
@@ -578,18 +634,6 @@ div.content-container form div#sign-up {
 div.content-container form div#login {
 	width: 111px;
 	background-image: url(/images/login-button.gif);
-	}
-	
-
-body.designs.edit div.content-container form fieldset dl dd input#design_header_image,
-body.pieces div.content-container form fieldset dl dd input#piece_image_1,
-body.pieces div.content-container form fieldset dl dd input#piece_image_2,
-body.pieces div.content-container form fieldset dl dd input#piece_image_3,
-body.pieces div.content-container form fieldset dl dd input#piece_image_4,
-body.pieces div.content-container form fieldset dl dd input#piece_image_5 {
-	padding-left: 0;
-	background: #fff;
-	border: none;
 	}
 
 
@@ -667,7 +711,15 @@ body.home div.content-container ul.features li {
 	}
 	
 body.home div.content-container ul.features li img {
-	border: 5px solid #ececea;
+	border: 1px solid #ececea;
+	padding: 4px;
+		background: #f5f5f3;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-top: 1px solid #ececea;
+	border-right: 1px solid #ececea;
+	border-bottom: 2px solid #ececea;
+	border-left: 1px solid #ececea;
 	}
 	
 body.home div.content-container ul.features li p a {
@@ -881,12 +933,39 @@ body.designs.edit div.content-container form fieldset#design-color dl dd input {
 		
 body.designs.edit div.content-container form fieldset dl dd div.color-preview {
 	height: 32px;
-	width: 300px;
+	width: 240px;
 	margin: 0 0 0 17px;
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
 	float: left;
 	}
+
+body.designs.edit div.content-container div.column.custom-html form fieldset {
+ border: none;
+ margin: 0;
+ padding: 15px 0 0 0;
+ }
+ 
+body.designs.edit div.content-container div.column.custom-html form fieldset textarea.code {
+ 	padding: 6px;
+	background: #f5f5f3;
+	border-top: 2px solid #ececea;
+	border-right: 1px solid #ececea;
+	border-bottom: 1px solid #ececea;
+	border-left: 1px solid #ececea;
+	margin: 0 0 15px 0;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	width: 696px;
+		font-family: Courier;
+	font-size: 12px;
+ }	
+ 
+body.designs.edit div.content-container div.column.custom-html div.submit {
+ margin: 0;
+ padding: 0;
+ float: right;
+ }
 	
 	
 /*---PORTFOLIO > INDEX---*/
