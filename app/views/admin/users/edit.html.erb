@@ -1,0 +1,20 @@
+<h1>Editing <%= @user.login %></h2>
+  
+  <p>
+    <%= link_to 'Back', admin_users_path %>
+  </p>
+  
+<% form_for @user, :url => admin_user_path(@user), :html => { :method => :put } do |f| %>
+  <p>
+    <%= f.label :login %><br />
+    <%= f.text_field :login %>
+  </p>
+  <p>
+    <%= f.label :account_tier %><br />
+    <%= f.text_field :account_tier %>
+  </p>
+  <p>
+    <%= f.submit 'Save' %>
+  </p>
+<% end %>
+  

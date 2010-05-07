@@ -1,0 +1,15 @@
+class CreateThemes < ActiveRecord::Migration
+  def self.up
+    create_table :themes do |t|
+      t.string :root_folder_name
+      t.string :author_login
+      t.text   :description
+      
+      t.timestamps
+    end
+  end
+
+  def self.down
+    drop_table :themes
+  end
+end
