@@ -80,9 +80,20 @@
 			  <% end %>
   		</dl>
 	</fieldset>
-	</div>
 	
 	<div class="submit" id="save">
 		 <%= form_button(@piece, f)%>	
 	</div>
+
 <% end %>
+		</div>
+<div class="column secondary">
+ <ul class="widgets">
+  <li class="piece-count upgrade">
+   <h2>Upgrade!</h2>
+   <p>You're using <strong><%=h @portfolio.pieces.count %></strong> of your <strong><%=h @portfolio.max_pieces %></strong> pieces.</p>
+   
+   <p>For additional pieces, images, &amp; other features, <a href="#">upgrade</a> to a <strong>Plus</strong> or <strong>Pro</strong> account.</p>
+  </li>
+ </ul>
+</div>
