@@ -1,4 +1,9 @@
 <% form_for [@piece, @image_upload], :html => { :multipart => true } do |f| %>
+  <% unless @image_upload.new_record? %>
+    <p>  
+      <%= image_tag @image_upload.image.url(:large_thumb) %>
+    </p>
+  <% end %>
   <p>
     <%= f.label :image, "Image" %><br />
     <%= f.file_field :image %>
