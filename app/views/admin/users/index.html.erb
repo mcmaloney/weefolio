@@ -1,7 +1,33 @@
 <%= will_paginate @users %>
 
-<% @users.each do |user| %>
-  <p>
-    <%= user.login %>
-  </p>
-<% end %>
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th>Login</th>
+      <th>Email</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% if @users.blank? %>
+      <tr>
+        <td colspan="4">No users : [</td>
+      </tr>
+    <% else %>
+      <% @users.each do |user| %>
+        <tr>
+          <td>
+            <%= link_to image_tag(user.photo.url(:thumbnail)), admin_user_path(user) %>
+          </td>
+          <td>
+            <%= link_to h(user.login), admin_user_path(user) %>
+          </td>
+          <td>
+            <%= user.email %>
+          </td>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
+

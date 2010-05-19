@@ -1,0 +1,48 @@
+<h1><%= @user.login %></h1>
+
+<p>
+  <strong>BASICS:</strong>
+</p>
+
+<p>
+  Login: <%= @user.login %>
+</p>
+<p>
+  Email: <%= @user.email %>
+</p>
+<p>
+  Signed Up: <%= @user.created_at.strftime("%m/%d/%Y at %I:%M%p") %>
+</p>
+
+<p>
+  <strong>PLAN:</strong>
+</p>
+
+<p>
+  Plan Level: <%= @user.plan.level %>
+</p>
+<% if @user.plan.level > 1 %>
+  <p>
+    Payment Status: <%= @user.plan.payment_status %>
+  </p>
+  <p>
+    Gateway Response: <%= @user.plan.gateway_response %>
+  </p>
+<% end %>
+
+
+<% unless @user.pieces.blank? %>
+  <p>
+    <strong>PIECES:</strong>
+  </p>
+  
+  <p>
+    Number of Pieces: <%= @user.portfolio.pieces.length %>
+  </p>
+<% end %>
+
+<%= link_to "Back", admin_users_path %>
+
+
+
+
