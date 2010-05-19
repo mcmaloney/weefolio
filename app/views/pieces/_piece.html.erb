@@ -1,14 +1,12 @@
 <div class="main-image" id="<%=h piece.id %>">
-  <%= image_tag piece.image_1.url(:full_size) %>
+  <%= image_tag piece.image_uploads.first.image.url(:full_size) %>
 </div>
 
-<% if piece.number_of_images >= 2 %>
+<% if piece.image_uploads.count > 1 %>
   <div class="gallery">
     <ul>
-      <% for i in 0..4 %>
-        <% unless piece.images[i].size.blank? %>
-          <li><a href="javascript:void(0)" id="<%= piece.images[i].url(:full_size) %>" onclick="switch_large_image(this, <%=h piece.id %>)"><%= image_tag piece.images[i].url(:small_thumb) %></a></li>
-        <% end %>
+      <% piece.image_uploads.each do |upload| %>
+        <li><a href="javascript:void(0)" id="<%= upload.image.url(:full_size) %>" onclick="switch_large_image(this, <%=h piece.id %>)"><%= image_tag upload.image.url(:small_thumb) %></a></li>
       <% end %>
     </ul>
   </div>

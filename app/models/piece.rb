@@ -4,12 +4,12 @@ class Piece < ActiveRecord::Base
   
   belongs_to :user
   belongs_to :portfolio
-  has_many :image_uploads
+  has_many   :image_uploads
   
   validates_presence_of :title
   validates_presence_of :price, :if => :for_sale?
   
-  attr_accessible :title, :description, :image_1, :image_2, :image_3, :image_4, :image_5, :price, :for_sale, :client_name, :service_type, :sale_url
+  attr_accessible :title, :description, :price, :for_sale, :client_name, :service_type, :sale_url
   
   default_scope :order => :position
   
@@ -17,17 +17,24 @@ class Piece < ActiveRecord::Base
     "$" + self.price.to_s unless !self.for_sale
   end
   
-  def images
-    images = [self.image_1, self.image_2, self.image_3, self.image_4, self.image_5]
+  def can_add_more_images?
+    if self.max_images == self.image_uploads.count
+      false
+    else
+      true
+    end
   end
   
-  def number_of_images
-  	n = 0
-  	self.images.each do |image|
-  		if !image.size.blank?
-  			n += 1
-  		end
-  	end
-  	n
+  def max_images
+    level = Portfolio.find(self.portfolio).account_tier
+    case level
+    when 1
+      1
+    when 2
+      3
+    when 3
+      5
+    end
   end
+  
 end

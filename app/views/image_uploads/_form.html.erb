@@ -1,0 +1,9 @@
+<% form_for [@piece, @image_upload], :html => { :multipart => true } do |f| %>
+  <p>
+    <%= f.label :image, "Image" %><br />
+    <%= f.file_field :image %>
+  </p>
+  <p>
+    <%= f.submit "Upload" %>
+  </p>
+<% end %>

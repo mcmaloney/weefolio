@@ -5,4 +5,7 @@ class ImageUpload < ActiveRecord::Base
                                             :s3_credentials => "#{RAILS_ROOT}/config/s3.yml",
                                             :path => ':attachment/:id/:style/:basename.:extension',
                                             :bucket => 'weefolio'
+                                            
+                                            
+  validates_presence_of :image
 end

@@ -56,9 +56,16 @@
 			    </div>
 			  <% end %>
   		</dl>
+  		
+  		<% unless @piece.new_record? %>
+  		  <p>
+    		  <%= link_to "Images &raquo;", piece_image_uploads_path(@piece) %>
+    		</p>
+  		<% end %>
+  		  
 	</fieldset>
 	
 	<div class="submit" id="save">
-		 <%= form_button(@piece, f)%>	
+		 <%= f.submit "Next: Add Images" %>
 	</div>
 <% end %>

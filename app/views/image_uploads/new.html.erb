@@ -1,0 +1,21 @@
+<div class="page-header-container-outer">
+	<div class="page-header-container-inner">
+		<h1><%= @piece.title %> <small>New Image</small></h1>
+	</div>
+</div>
+
+<div class="content-container">
+  <% if @piece.can_add_more_images? %>
+    <%= render :partial => 'form' %>
+  <% else %>
+    <p>
+      You've added all the images to this piece allowed by your current plan type.
+    </p>
+    <p>
+      <%= link_to "Upgrade here", edit_user_path(current_user) %> to add more!
+    </p>
+  <% end %>
+  <p>
+    <%= link_to "Back to Meta", edit_portfolio_piece_path(current_user.portfolio, @piece) %>
+  </p>
+</div>

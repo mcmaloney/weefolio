@@ -36,6 +36,11 @@ ActionController::Routing::Routes.draw do |map|
     portfolios.resources :pieces
   end
   
+  # PIECES
+  map.resources :pieces do |pieces|
+    pieces.resources :image_uploads
+  end
+  
   # DOCS
   map.themes '/docs/themes', :controller => "docs", :action => "themes"
   

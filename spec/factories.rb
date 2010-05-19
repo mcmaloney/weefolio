@@ -14,6 +14,12 @@ Factory.define :piece do |p|
   p.title Faker::Lorem.sentence
 end
 
+Factory.define :image_upload do |u|
+  u.image_file_name "chinchilla_pets.jpg"
+  u.image_content_type "image/jpg"
+  u.image_file_size 1450
+end
+
 # Using card number/CVV here but NEITHER OF THEM IS BEING STORED IN THE DATABASE FOR PCI COMPLIANCE.
 Factory.define :plan do |p|
   p.card_number "4012888818888"

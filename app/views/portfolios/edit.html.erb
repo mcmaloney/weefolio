@@ -28,7 +28,9 @@
 		<ul class="pieces" id="pieces">
 			<% @portfolio.pieces.each do |piece| %>
 			<% content_tag_for :li, piece do %>
-				<%= image_tag piece.image_1.url(:small_thumb) %>
+			  <% unless piece.image_uploads.blank? %>
+				  <%= image_tag piece.image_uploads.first.image.url(:small_thumb) %>
+				<% end %>
 				
 				<div class="piece-info">	
 					<h3><%= link_to piece.title, edit_portfolio_piece_path(@portfolio, piece)%></h3>

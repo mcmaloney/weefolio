@@ -20,15 +20,15 @@ describe PiecesController do
     end
 
     describe "POST create" do
-      it "should allow me to create a piece with a price" do
+      it "should allow me to create a piece with a price and send me to the image upload path" do
         post :create, :piece => { :title => Faker::Lorem.words(2).to_s, :for_sale => true, :price => 25.55 }
-        response.should redirect_to(edit_user_portfolio_path(@user, @user.portfolio))
+        response.should redirect_to(new_piece_image_upload_path(assigns['piece']))
         flash[:notice].should include("<strong>'#{assigns['piece'].title}'</strong> has been added to your Weefolio (for sale at #{assigns['piece'].display_price})")
       end
 
-      it "should allow me to create a piece without a price" do
+      it "should allow me to create a piece without a price and send me to the image upload path" do
         post :create, :piece => { :title => Faker::Lorem.words(2).to_s }
-        response.should redirect_to(edit_user_portfolio_path(@user, @user.portfolio))
+        response.should redirect_to(new_piece_image_upload_path(assigns['piece']))
         flash[:notice].should include("<strong>'#{assigns['piece'].title}'</strong> has been added to your Weefolio")
       end
 

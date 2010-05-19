@@ -1,0 +1,13 @@
+<div class="page-header-container-outer">
+	<div class="page-header-container-inner">
+		<h1><%= @piece.title %> <small>Edit Image</small></h1>
+	</div>
+</div>
+
+<div class="content-container">
+  <%= render :partial => 'form' %>
+  
+  <p>
+    <%= link_to "Back to Images", piece_image_uploads_path(@piece) %>
+  </p>
+</div>
