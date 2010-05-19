@@ -4,7 +4,6 @@ class Piece < ActiveRecord::Base
   
   belongs_to :user
   belongs_to :portfolio
-  
   has_many :image_uploads
   
   validates_presence_of :title
