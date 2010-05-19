@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100430234849) do
+ActiveRecord::Schema.define(:version => 20100519163927) do
 
   create_table "delayed_jobs", :force => true do |t|
     t.integer  "priority",   :default => 0
@@ -46,34 +46,24 @@ ActiveRecord::Schema.define(:version => 20100430234849) do
     t.text     "user_html"
   end
 
+  create_table "image_uploads", :force => true do |t|
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.integer  "piece_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "pieces", :force => true do |t|
     t.string   "title"
     t.text     "description"
-    t.decimal  "price",                :precision => 10, :scale => 2
+    t.decimal  "price",        :precision => 10, :scale => 2
     t.boolean  "for_sale"
     t.integer  "portfolio_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "image_2_file_name"
-    t.string   "image_2_content_type"
-    t.integer  "image_2_file_size"
-    t.datetime "image_2_updated_at"
-    t.string   "image_3_file_name"
-    t.string   "image_3_content_type"
-    t.integer  "image_3_file_size"
-    t.datetime "image_3_updated_at"
-    t.string   "image_4_file_name"
-    t.string   "image_4_content_type"
-    t.integer  "image_4_file_size"
-    t.datetime "image_4_updated_at"
-    t.string   "image_5_file_name"
-    t.string   "image_5_content_type"
-    t.integer  "image_5_file_size"
-    t.datetime "image_5_updated_at"
-    t.string   "image_1_file_name"
-    t.string   "image_1_content_type"
-    t.integer  "image_1_file_size"
-    t.datetime "image_1_updated_at"
     t.integer  "position"
     t.string   "sale_url"
     t.string   "client_name"
@@ -85,6 +75,8 @@ ActiveRecord::Schema.define(:version => 20100430234849) do
     t.integer  "level"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "card_expiration_month"
+    t.string   "card_expiration_year"
     t.string   "card_type"
     t.string   "billing_first_name"
     t.string   "billing_last_name"
@@ -97,8 +89,6 @@ ActiveRecord::Schema.define(:version => 20100430234849) do
     t.string   "gateway_response"
     t.string   "payment_status"
     t.integer  "amount_in_cents"
-    t.string   "card_expiration_month"
-    t.string   "card_expiration_year"
   end
 
   create_table "portfolios", :force => true do |t|
@@ -120,6 +110,14 @@ ActiveRecord::Schema.define(:version => 20100430234849) do
   create_table "simple_captcha_data", :force => true do |t|
     t.string   "key",        :limit => 40
     t.string   "value",      :limit => 6
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "themes", :force => true do |t|
+    t.string   "root_folder_name"
+    t.string   "author_login"
+    t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
