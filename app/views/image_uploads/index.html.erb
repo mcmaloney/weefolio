@@ -11,6 +11,12 @@
 <div class="content-container">
   
   <div class="column" >
+    <% if flash[:warning] or flash[:notice] %>
+  		<div id="notice" <% if flash[:warning] %>class="warning"<% end %>>
+    <%= flash[:warning] || flash[:notice] %>
+  		</div>
+	  <% end %>
+	
     <% if @piece.image_uploads.blank? %>
       <p>
         You don't have any images for this piece yet. Why don't you <%= link_to "add some", new_piece_image_upload_path(@piece) %>?
