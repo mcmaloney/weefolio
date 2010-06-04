@@ -1,7 +1,7 @@
 /*---GLOBAL---*/
 
 body {
-	background: #f5f5f3 url(../images/body_background.gif) repeat-x top center;
+	background: #f5f5f3 url(../-images/body_background.gif) repeat-x top center;
 	margin: 0 0 100px 0;
 	font-family: "Lucida Grande", Arial, sans-serif;
 	font-size: 11px;
@@ -362,7 +362,6 @@ div.content-container p.intro {
 	border-right: 1px solid #ececea;
 	border-bottom: 1px solid #ececea;
 	border-left: 1px solid #ececea;
-	color: #758489;
 	}
 	
 
@@ -399,7 +398,7 @@ div.content-container div.column.secondary ul.widgets {
  }
 
 div.content-container div.column.secondary ul.widgets li {
- background: #ecf5f3 url(../images/widget-background.gif) repeat-x 0 0;
+ background: #f5f5f3;
  padding: 0 15px;
  border-radius: 3px;
   -moz-border-radius: 3px;
@@ -407,11 +406,8 @@ div.content-container div.column.secondary ul.widgets li {
 	margin: 0 0 10px 0;
 	display: block;
 	font-size: 11px;
-	border-top: 1px solid #ddebe8;
-	border-right: 1px solid #ddebe8;
-	border-bottom: 2px solid #ddebe8;
-	border-left: 1px solid #ddebe8;
-	color: #758489;
+	border: 1px solid #ececea;
+	border-top-width: 2px;
 	}
 	
 div.content-container div.column.secondary ul.widgets li h2 { 
@@ -561,18 +557,17 @@ div.content-container form fieldset dl dd select {
 	}
 	
 div.content-container form fieldset dl dd input.file {
- background: #ecf5f3 url(../images/file-upload-icon.gif) no-repeat 13px center;
+ background: #f5f5f3 url(../images/file-upload-icon.gif) no-repeat 13px center;
  padding: 10px 10px 11px 30px;
  border-radius: 3px;
   -moz-border-radius: 3px;
 	 -webkit-border-radius: 3px;
+	border-radius: 3px;
 	margin: 0 0 10px 0;
 	display: block;
 	font-size: 11px;
-	border-top: 1px solid #ddebe8;
-	border-right: 1px solid #ddebe8;
-	border-bottom: 2px solid #ddebe8;
-	border-left: 1px solid #ddebe8;
+	border: 1px solid #ececea;
+	border-top-width: 2px;
  }
  
 div.content-container form fieldset dl dd p {
@@ -647,12 +642,25 @@ body.home div.page-header-container-inner {
  height: 240px;
 }
 body.home div.page-header-container-inner div.illustration {
- width: 922px;
+ width: 924px;
  height: 302px;
  background: url(../images/home-illustration.png) no-repeat 0 0;
  position: absolute;
- margin: -20px 0 0 -77px;
+ margin: -20px 0 0 -78px;
  padding: 0;
+ }
+ 
+body.home div.page-header-container-inner div.illustration div.featured {
+ height: 117px;
+ width: 172px;
+ float: right;
+ margin: 102px 115px 0 0;
+ }
+ 
+body.home div.page-header-container-inner div.illustration div.featured img.featured-banner {
+ float: right;
+ position: relative;
+ margin: -151px -16px 0 0;
  }
 
 body.home div.page-header-container-inner div.welcome-container {
@@ -809,24 +817,16 @@ body.users.index ul#user-list li a span.username {
 
 body.users.new div.page-header-container-inner h1 {
 	margin: 0 0 15px 0;
-	position: absolute;
-	z-index: 2;
 	}
 
-body.users.new div.page-header-container-inner {
- height: 380px;
-}
 	
 body.users.new div.page-header-container-inner div.pricing {
-	clear: both;
+ clear: both;
 	overflow: hidden;
-	padding: 115px 75px 0 75px;
-	background: transparent url(../images/pricing-illustration.png) 0 -8px no-repeat;
-	margin: -20px 0 0 -2px;
-	position: absolute;
-	width: 626px;
-	height: 305px;
-	z-index: 1;
+	padding: 10px 20px;
+	background: #1d1d1a;
+	border: 5px solid #2e2e29;
+	margin: 0;
 	}
 	
 body.users.new div.page-header-container-inner div.pricing table.chart {
