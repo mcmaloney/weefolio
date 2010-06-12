@@ -12,6 +12,8 @@
 		<%= javascript_include_tag ['jquery-1.3.1.min.js', 'wee.js'] %>
 		<%#= javascript_include_tag :defaults %>
 		<%= yield :head %>
+		<script type="text/javascript" src="http://use.typekit.com/xln1iqu.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 	</head>
 	
 	<body class="<%= controller_name -%> <%= action_name -%>">
@@ -23,6 +25,7 @@
 				<li><%= link_to 'Home', root_path %></li>
 				<li><%= link_to 'Directory', directory_path %></li>
 				<li><%= link_to 'Pricing', signup_path %></li>
+				<li><a href="#">Themes</a></li>
 				<li><%= link_to 'Help', help_path %></li>
 				<!--<li><a href="http://blog.weefolio.com">Blog</a></li>-->
 				<% if logged_in? %>
@@ -56,7 +59,7 @@
 			
 			<!--FOOTER-->
 			<div class="footer-container">
-				<a id="footer-logo" href="#">Fancy Labs</a>
+				<a id="footer-logo" href="http://fancylabs.com" target="_blank">Fancy Labs</a>
 				
 				<div id="legal">
 					Brought to you by <strong><a href="http://fancylabs.com" target="_blank">Fancy Labs, LLC</a></strong> &copy; 2009

@@ -5,7 +5,7 @@
 		<h1>Account <small>Manage your account settings</small></h1>
 		
 		<div class="call-to-action">
-		  <%= link_to 'Close Account', close_account_path, :class => "account-close" %>
+		  <!--<%= link_to 'Close Account', close_account_path, :class => "account-close" %>-->
 		</div>
 	</div>
 </div>
@@ -206,5 +206,17 @@
 				      <%= f.submit 'Save' %>
 	    	</div>
 		<% end %>
+	  </div>
+	  
+	  <div class="column secondary">
+	   <ul class="widgets">
+	  	<li class="close-account">
+	  	 
+	  	 <p>
+ 	    <%= link_to 'Close Account', close_account_path, :class => "account-close" %>
+ 	   </p>
+	   </li>
+	 </ul>
+	  </div>
 	</div>
 </div>

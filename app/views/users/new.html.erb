@@ -2,7 +2,7 @@
 <%# YIELD %>
 <div class="page-header-container-outer">
 	<div class="page-header-container-inner">
-		<h1>Pricing &amp; Sign Up <small>Sign up for <strong>free</strong> &amp; upgrade anytime!</small></h1>
+		<h1>Pricing <em>&amp;</em> Sign Up <small>Sign up for <strong>free</strong> &amp; upgrade anytime!</small></h1>
 		
 		<div class="pricing">
 			<table class="chart" cellpadding="0" cellspacing="0">
@@ -29,10 +29,10 @@
 						5
 					</td>
 					<td>
-						15
+						20
 					</td>
 					<td class="dark">
-						25
+						Unlimited
 					</td>
 				</tr>
 				
@@ -44,7 +44,7 @@
 						1
 					</td>
 					<td>
-						3
+						5
 					</td>
 					<td class="dark">
 						5
@@ -73,7 +73,7 @@
 
 					</td>
 					<td class="dark">
-						&nbsp;
+						<img src="images/feature-dot.png" alt="yes"/>
 					</td>
 					<td>
 						<img src="images/feature-dot.png" alt="yes"/>
@@ -113,7 +113,7 @@
 					</td>
 				</tr>
 				
-				<tr class="watermark">
+				<!--<tr class="watermark">
 					<td class="feature">
 						Weefolio Badge
 					</td>
@@ -126,7 +126,7 @@
 					<td class="dark">
 						Optional
 					</td>
-				</tr>
+				</tr>-->
 				
 				<tr class="pricing">
 					<td class="feature">
@@ -136,10 +136,10 @@
 						<span class="price">free</span>
 					</td>
 					<td>
-						<span class="price">$2.99</span> /month
+						<span class="price">$4.99</span> /month
 					</td>
 					<td>
-						<span class="price">$4.99</span> /month
+						<span class="price">$9.99</span> /month
 					</td>
 				</tr>
 			</table>
@@ -150,7 +150,6 @@
 <!--PAGE CONTENT-->
 <%# YIELD %>
 <div class="content-container">
-	<div class="column">
 		<% if flash[:warning] or flash[:notice] %>
 				<div id="notice" <% if flash[:warning] %>class="warning"<% end %>>
 		<%= flash[:warning] || flash[:notice] %>
@@ -161,10 +160,11 @@
 		
 		<%= error_messages_for :user %>
 		
+	<div class="column primary">
 		<% form_for(User.new) do |f| %>
 			
 		<fieldset>
-			<h2>Sign up for <strong><em>free</em></strong> &amp; upgrade anytime!</h2>
+			<legend>Sign Up</legend>
 		    <dl>
 		    	<dt>
 		    		<%= f.label :login, 'Username' %>
@@ -190,7 +190,7 @@
 		      	</dd>
 		      
 		      	<dt>
-		      		<%= f.label :password_confirmation, "Confirm Password" %>
+		      		<%= f.label :password_confirmation, "Confirm" %>
 		      	</dt>
 		    	<dd>
 		      		<%= f.password_field :password_confirmation %>
@@ -202,6 +202,16 @@
 		  <%= f.submit 'Sign Up' %>
 		</div>
 		<% end %>
+	</div>
+	
+	<div class="column secondary">
+	 <ul class="widgets">
+	  <li class="sign-up">
+	   <h2>Already have an account?</h2>
+	   
+	   <p><a href="#">Login</a> and get started!</p>
+	  </li>
+	 </ul>
 	</div>
 </div>
 

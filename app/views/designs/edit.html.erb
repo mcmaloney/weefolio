@@ -26,24 +26,24 @@
 
     <%= yield :colour_mod_div %>
 
-	<div class="column">
 		<% if @user.design_type == 1 %>
+		 <div class="column primary">
 	    <% form_for [@user, @user.design], :html => { :multipart => true } do |f| %>
 	    	
 	    	<fieldset>
-	    		<h2>Header</h2>
+	    		<legend>Header</legend>
 	    		<dl>
 	    			<dt>
 	    				<label for="design_header_image">Header Image</label>
 	    			</dt>
 	    			<dd>
-	    				<%= image_preview_for(@user.design.header_image) %> <%= f.file_field :header_image %>
+	    				<%= image_preview_for(@user.design.header_image) %> <%= f.file_field :header_image, :class => 'file' %>
 	    			</dd>
 	    		</dl>
 	      	</fieldset>
 	      	
 	      	<fieldset id="design-color">
-	      		<h2>Colors</h2>	
+	      		<legend>Colors</legend>	
 	      		<dl>
 	      			<dt>
 	      				<label for="design_background_color">Background</label>
@@ -105,7 +105,7 @@
 	      	</fieldset>
 	      	
 	      	<fieldset>
-	      		<h2>Text</h2>
+	      		<legend>Text</legend>
 	      		<dl>
 	      			<dt>
 	      				<label for="design_text_font_1">Font</label>
@@ -128,36 +128,15 @@
 	      	</div>
 	    <% end %>
 		<% else %>
+		 <div class="column custom-html">
 		  <% form_for [@user, @user.design], :html => { :multipart => true } do |f| %>
-		  	<!--<fieldset>
-		    	<h2>Header</h2>
-		    	
-		    	<dl>
-		    		<dt>
-		      			<label for="design_header_image">Header Image</label>
-		      		</dt>
-		      		<dd>
-		     			 <%= f.file_field :header_image %>
-		      		</dd>
-			    </dl>
-		  	</fieldset>-->
 		  	
 		  	<fieldset>
-		    	<h2>Theme</h2>
-		    	
-		    	<dl>
-		      		<dt>
-			         <label for="design_css_text">Custom HTML</label>
-			        </dt>
-			        <dd>
-			          <%= f.text_area :user_html, :rows => 25, :cols => 55, :class => "code" %>
-			        </dd>
-			        
-			        <dt></dt>
-			        <dd><a class="question" href="/docs/themes">How do I create a custom theme?</a></dd>
-
-			    </dl>
+		    	<legend>Theme</legend>
+            <%= f.text_area :user_html, :rows => 20, :class => "code" %>
 		  	</fieldset>
+		  	
+		  	<a class="question" href="/docs/themes">How do I create a custom theme?</a>
 		  	
 		  	<div class="submit" id="save">
 		      <%= f.submit 'Save' %>
