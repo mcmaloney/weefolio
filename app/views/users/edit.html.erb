@@ -45,7 +45,7 @@
  				    	<label>Avatar</label>
  				    </dt>
  				    <dd>
- 				      <%= image_preview_for(@user.photo) %> <%= f.file_field :photo %>
+ 				      <%= image_preview_for(@user.photo) %> <%= f.file_field :photo, :class => 'file' %>
  				    </dd>
  				 </dl>
  			</fieldset>
