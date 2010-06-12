@@ -40,7 +40,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :themes
   
   # DOCS
-  map.themes '/docs/themes', :controller => "docs", :action => "themes"
+  map.docs_themes '/docs/themes', :controller => "docs", :action => "themes"
   
   # SEPARATE PIECE ROUTE FOR EASY SORTING
   map.resources :pieces, :collection => { :sort => :post }
