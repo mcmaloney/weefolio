@@ -9,11 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-<<<<<<< HEAD:db/schema.rb
-ActiveRecord::Schema.define(:version => 20100430234849) do
-=======
 ActiveRecord::Schema.define(:version => 20100428145532) do
->>>>>>> design:db/schema.rb
 
   create_table "delayed_jobs", :force => true do |t|
     t.integer  "priority",   :default => 0
