@@ -13,7 +13,7 @@
 <!--PAGE CONTENT-->
 <%# YIELD %>
 <div class="content-container">
-	<div class="column">
+	<div class="column primary">
 	    <% if flash[:warning] or flash[:notice] %>
 	  		<div id="notice" <% if flash[:warning] %>class="warning"<% end %>>
 	    <%= flash[:warning] || flash[:notice] %>
@@ -22,7 +22,7 @@
 
 		<% form_for @user, :html => {:multipart => true}  do |f| %>
 			<fieldset>
-				<h2>Personal</h2>
+				<legend>Personal</legend>
 				
 	    		<dl>
 				    <dt>
@@ -51,7 +51,7 @@
 			</fieldset>
 				 
 			<fieldset>
-				<h2>Portfolio</h2>
+				<legend>Portfolio</legend>
 				
 				 <dl>
 				    <dt>
@@ -66,13 +66,13 @@
 				      <label for="user_about_me">About Me</label>
 				    </dt>
 	      			<dd>
-				      <%= f.text_area :about_me, :rows => 8 %>
+				      <%= f.text_area :about_me, :rows => 8, :cols => 35 %>
 				    </dd>
 	    		</dl>
 	    	</fieldset>
 	    	
 	    	<fieldset>
-				<h2>Billing</h2>
+				<legend>Billing</legend>
 				
 				<dl>
 					<dt>
@@ -182,7 +182,7 @@
 			</fieldset>
 			
 			<fieldset>
-				<h2>Password</h2>
+				<legend>Password</legend>
 				
 				<dl>
 					<dt>
