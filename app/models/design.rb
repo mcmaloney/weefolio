@@ -11,7 +11,7 @@ class Design < ActiveRecord::Base
                                    :path => ':attachment/:id/:style/:basename.:extension',
                                    :bucket => 'weefolio'
                                    
-  has_one :theme
+  belongs_to :theme
   
   after_create :set_html, :parse_browser_html
   

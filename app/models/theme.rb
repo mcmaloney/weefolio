@@ -1,5 +1,5 @@
 class Theme < ActiveRecord::Base
-  belongs_to :design
+  has_many :designs
   
   has_attached_file :photo, :styles => { :thumbnail => "230x150#", :small => "50x50#" }, 
                             :storage => :s3, 

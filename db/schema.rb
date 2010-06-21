@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100621175515) do
+ActiveRecord::Schema.define(:version => 20100621192154) do
 
   create_table "delayed_jobs", :force => true do |t|
     t.integer  "priority",   :default => 0
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(:version => 20100621175515) do
     t.datetime "updated_at"
     t.text     "browser_html"
     t.text     "user_html"
+    t.integer  "theme_id"
   end
 
   create_table "pieces", :force => true do |t|
@@ -127,7 +128,6 @@ ActiveRecord::Schema.define(:version => 20100621175515) do
   create_table "themes", :force => true do |t|
     t.string   "directory_name"
     t.string   "template_filename"
-    t.integer  "design_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "photo_file_name"
