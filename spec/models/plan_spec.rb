@@ -65,11 +65,11 @@ describe Plan do
   end
   
   it "should populate the amount in cents for level 2" do
-    @plan_level_2.populate_amount_in_cents.should == 299
+    @plan_level_2.populate_amount_in_cents.should == 499
   end
   
   it "should populate the amount in cents for level 3" do
-    @plan_level_3.populate_amount_in_cents.should == 499
+    @plan_level_3.populate_amount_in_cents.should == 999
   end
   
   it "should process a transaction with success" do

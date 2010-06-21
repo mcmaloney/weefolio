@@ -24,7 +24,7 @@ class Plan < ActiveRecord::Base
                                                               :country => "US", 
                                                               :first_name => self.billing_first_name, 
                                                               :last_name => self.billing_last_name}, 
-                                         :interval => {:unit => :months, :length => 12}, 
+                                         :interval => {:unit => :months, :length => 1}, 
                                          :duration => {:start_date => Date.today.strftime('%Y-%m-%d'), :occurrences => 9999}, 
                                          :customer => {:id => "#{self.user_id}-#{Time.now.to_i.to_s[-4,4]}"})
       self.gateway_response = response.message
