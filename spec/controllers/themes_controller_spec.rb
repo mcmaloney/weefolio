@@ -12,6 +12,7 @@ describe ThemesController do
     end
   end
   
+  # Need to test this better. 
   describe "PUT install" do
     it "should install the theme I have chosen if I am logged in" do
       User.delete_all

@@ -13,6 +13,10 @@ class ThemesController < ApplicationController
     @theme = Theme.find(params[:id])
     if current_user
       if current_user.design.update_attribute(:theme, @theme)
+        # TO-DO: Make these following two methods an after_update in design.rb
+        current_user.design.set_html
+        current_user.design.parse_browser_html
+        # 
         redirect_to themes_path
         flash[:notice] = "Installed the #{@theme.name} theme."
       else
