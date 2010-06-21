@@ -39,6 +39,7 @@ ActionController::Routing::Routes.draw do |map|
   
   # THEMES
   map.resources :themes
+  map.install_theme '/themes/install/:id', :controller => "themes", :action => "install", :conditions => { :method => :put }
   
   # DOCS
   map.docs_themes '/docs/themes', :controller => "docs", :action => "themes"

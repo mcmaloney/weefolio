@@ -17,15 +17,15 @@
     		  <div class="image">
     		    <%= image_tag theme.photo.url(:thumbnail), :class => "thumbnail", :width => "230", :height => "150" %>
     		    <div class="options">
-    		      <a class="button preview" href="#">Preview</a>
-    		      <a class="button install" href="#">Install</a>
+    		      <%= link_to "Preview", theme_path(theme), :class => "button preview" %>
+    		      <%= link_to "Install", install_theme_path(theme), :class => "button install" %>
     		   </div>
     		  </div>
 		  
     		  <div class="info">
     		   <h2><%= theme.name %></h2>
     		   <% unless theme.author_name.blank? %>
-    		      <p>by <a href="#">Username</a></p>
+    		      <p>by <%= link_to theme.author_name, user_portfolio_path(theme.author_name) %></p>
     		   <% end %>
     		  </div>
     		 </li>
