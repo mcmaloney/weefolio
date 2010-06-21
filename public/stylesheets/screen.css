@@ -812,6 +812,39 @@ body.users.index ul#user-list li a span.username {
 	text-decoration: underline;
 	}
 	
+	
+/*---THEMES---*/
+
+body.themes.index div.content-container ul.themes {
+ list-style: none;
+ margin: 0;
+ padding: 0;
+}	
+
+body.themes.index div.content-container ul.themes li.theme {
+ float: left;
+ overflow: hidden;
+ margin: 10px;
+}
+
+body.themes.index div.content-container ul.themes li.theme div.image {
+ padding: 9px;
+		background: #f5f5f3;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-top: 1px solid #ececea;
+	border-right: 1px solid #ececea;
+	border-bottom: 2px solid #ececea;
+	border-left: 1px solid #ececea;
+}
+
+body.themes.index div.content-container ul.themes li.theme div.info h2 {
+ margin-bottom: 5px;
+}
+
+body.themes.index div.content-container ul.themes li.theme div.info p {
+ margin-top: 0;
+}
 
 /*---USERS > NEW (Pricing & Sign Up)---*/
 
@@ -985,7 +1018,7 @@ body.designs.edit div.content-container div.column.custom-html form fieldset tex
 	margin: 0 0 15px 0;
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
-	width: 696px;
+	width: 796px;
 		font-family: Courier;
 	font-size: 12px;
  }	
