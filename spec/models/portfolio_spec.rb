@@ -16,14 +16,14 @@ describe Portfolio do
     @portfolio.max_pieces.should == 5
   end
   
-  it "should allow me 15 pieces if I have a level 2 account" do
+  it "should allow me 20 pieces if I have a level 2 account" do
     @user.plan.update_attribute(:level, 2)
-    @portfolio.max_pieces.should == 15
+    @portfolio.max_pieces.should == 20
   end
   
-  it "should allow me 25 pieces if I have a level 2 account" do
+  it "should allow me unlimited pieces if I have a level 3 account" do
     @user.plan.update_attribute(:level, 3)
-    @portfolio.max_pieces.should == 25
+    @portfolio.max_pieces.should be_nil
   end
   
   it "should allow me to add more pieces if I have not exceed the max for my account tier" do
@@ -37,9 +37,17 @@ describe Portfolio do
     @portfolio.can_add_more?.should be_false
   end
   
+  it "should allow me to add unlimited pieces if I have a level 3 account" do
+    @user.plan.update_attribute(:level, 3)
+    50.times do
+      @portfolio.pieces << Factory(:piece)
+    end
+    @portfolio.can_add_more?.should be_true
+  end
+  
   it "should tell me the max number of pieces if asked" do
     Portfolio.max_pieces_for(1).should == 5
-    Portfolio.max_pieces_for(2).should == 15
-    Portfolio.max_pieces_for(3).should == 25
+    Portfolio.max_pieces_for(2).should == 20
+    Portfolio.max_pieces_for(3).should == nil
   end
 end

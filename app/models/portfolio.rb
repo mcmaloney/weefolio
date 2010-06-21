@@ -14,9 +14,7 @@ class Portfolio < ActiveRecord::Base
     if self.account_tier == 1
       5
     elsif self.account_tier == 2
-      15
-    elsif self.account_tier == 3
-      25
+      20
     end
   end
   
@@ -26,9 +24,7 @@ class Portfolio < ActiveRecord::Base
     when 1
       5
     when 2
-      15
-    when 3
-      25
+      20
     end
   end
   
