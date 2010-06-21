@@ -11,69 +11,26 @@
 <div class="content-container">
 	<div class="column">  
 		<ul class="themes">
-		 <li class="theme">
-		  <div class="image">
-		   <img class="thumbnail" width="230" height="150"/>
-		   
-		   <div class="options">
-		    <a class="button preview" href="#">Preview</a>
-		    <a class="button install" href="#">Install</a>
-		   </div>
-		  </div>
+		  <% @themes.each do |theme| %>
+		   <% if theme.connected? %>
+		     <li class="theme">
+    		  <div class="image">
+    		    <%= image_tag theme.photo.url(:thumbnail), :class => "thumbnail", :width => "230", :height => "150" %>
+    		    <div class="options">
+    		      <a class="button preview" href="#">Preview</a>
+    		      <a class="button install" href="#">Install</a>
+    		   </div>
+    		  </div>
 		  
-		  <div class="info">
-		   <h2>Theme Name</h2>
-		   <p>by <a href="#">Username</a></p>
-		  </div>
-		 </li>
-		 
-		 <li class="theme">
-		  <div class="image">
-		   <img class="thumbnail" width="230" height="150"/>
-		   
-		   <div class="options">
-		    <a class="button preview" href="#">Preview</a>
-		    <a class="button install" href="#">Install</a>
-		   </div>
-		  </div>
-		  
-		  <div class="info">
-		   <h2>Theme Name</h2>
-		   <p>by <a href="#">Username</a></p>
-		  </div>
-		 </li>
-		 
-		 <li class="theme">
-		  <div class="image">
-		   <img class="thumbnail" width="230" height="150"/>
-		   
-		   <div class="options">
-		    <a class="button preview" href="#">Preview</a>
-		    <a class="button install" href="#">Install</a>
-		   </div>
-		  </div>
-		  
-		  <div class="info">
-		   <h2>Theme Name</h2>
-		   <p>by <a href="#">Username</a></p>
-		  </div>
-		 </li>
-		 
-		 <li class="theme">
-		  <div class="image">
-		   <img class="thumbnail" width="230" height="150"/>
-		   
-		   <div class="options">
-		    <a class="button preview" href="#">Preview</a>
-		    <a class="button install" href="#">Install</a>
-		   </div>
-		  </div>
-		  
-		  <div class="info">
-		   <h2>Theme Name</h2>
-		   <p>by <a href="#">Username</a></p>
-		  </div>
-		 </li>
+    		  <div class="info">
+    		   <h2><%= theme.name %></h2>
+    		   <% unless theme.author_name.blank? %>
+    		      <p>by <a href="#">Username</a></p>
+    		   <% end %>
+    		  </div>
+    		 </li>
+    	<% end %>
+  	<% end %>
 		</ul>
 	</div>
 </div>
