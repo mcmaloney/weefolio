@@ -24,4 +24,16 @@ describe ThemesController do
       response.should redirect_to(themes_path)
     end
   end
+  
+  describe "PUT uninstall" do
+    it "should let me uninstall a theme if I have one installed" do
+      User.delete_all
+      @user = Factory(:user)
+      @user.setup
+      login_as(@user)
+      put :uninstall, :id => @theme.id
+      flash[:notice].should include("Uninstalled the #{@theme.name} theme.")
+      @user.design.theme.should be_nil
+    end
+  end
 end
