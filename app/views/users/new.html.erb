@@ -161,7 +161,7 @@
 		<%= error_messages_for :user %>
 		
 	<div class="column primary">
-		<% form_for(User.new) do |f| %>
+		<% form_for @user do |f| %>
 			
 		<fieldset>
 			<legend>Sign Up</legend>
@@ -195,6 +195,7 @@
 		    	<dd>
 		      		<%= f.password_field :password_confirmation %>
 		      </dd>
+		          <%= less_reverse_captcha_field :user %>
 		    </dl>    
 		</fieldset>
 		
