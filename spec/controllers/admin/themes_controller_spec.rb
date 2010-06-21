@@ -1,31 +1,33 @@
 require 'spec_helper'
 
 describe Admin::ThemesController do
-
-  #Delete these examples and add some real ones
-  it "should use Admin::ThemesController" do
-    controller.should be_an_instance_of(Admin::ThemesController)
+  before(:each) do
+    @user = Factory(:user, :admin_user => true)
+    @user.setup
+    login_as(@user)
+    5.times do
+      Factory(:theme)
+    end
   end
 
-
   describe "GET 'index'" do
-    it "should be successful" do
-      get 'index'
-      response.should be_success
+    it "should show all the themes" do
+      get :index
+      assigns['themes'].should_not be_nil
     end
   end
 
   describe "GET 'new'" do
     it "should be successful" do
-      get 'new'
-      response.should be_success
+      get :new
+      assigns['theme'].should_not be_nil
     end
   end
 
   describe "GET 'edit'" do
     it "should be successful" do
-      get 'edit'
-      response.should be_success
+      get :edit, :id => Theme.first.id
+      assigns['theme'].id.should == Theme.first.id
     end
   end
 end
