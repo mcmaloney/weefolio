@@ -59,9 +59,9 @@ class Plan < ActiveRecord::Base
     if self.level == 1
       self.amount_in_cents = 0
     elsif self.level == 2
-      self.amount_in_cents = 299
-    elsif self.level == 3
       self.amount_in_cents = 499
+    elsif self.level == 3
+      self.amount_in_cents = 999
     end
   end
   
