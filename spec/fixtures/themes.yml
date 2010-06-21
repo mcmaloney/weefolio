@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  directory_name: MyString
+  template_filename: MyString
+  design_id: 1
+
+two:
+  directory_name: MyString
+  template_filename: MyString
+  design_id: 1

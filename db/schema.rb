@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100430234849) do
+ActiveRecord::Schema.define(:version => 20100621165547) do
 
   create_table "delayed_jobs", :force => true do |t|
     t.integer  "priority",   :default => 0
@@ -120,6 +120,14 @@ ActiveRecord::Schema.define(:version => 20100430234849) do
   create_table "simple_captcha_data", :force => true do |t|
     t.string   "key",        :limit => 40
     t.string   "value",      :limit => 6
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "themes", :force => true do |t|
+    t.string   "directory_name"
+    t.string   "template_filename"
+    t.integer  "design_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

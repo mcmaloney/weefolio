@@ -10,17 +10,22 @@ class Design < ActiveRecord::Base
                                    :s3_credentials => "#{RAILS_ROOT}/config/s3.yml",
                                    :path => ':attachment/:id/:style/:basename.:extension',
                                    :bucket => 'weefolio'
+                                   
+  has_one :theme
   
   after_create :set_html, :parse_browser_html
   
   def set_html
-    self.update_attribute(:user_html, IO.readlines("#{RAILS_ROOT}/public/themes/default-template.html").to_s)
+    if self.theme.blank?
+      self.update_attribute(:user_html, IO.readlines("#{RAILS_ROOT}/public/themes/default-template.html").to_s)
+    else
+      self.update_attribute(:user_html, IO.readlines("#{RAILS_ROOT}/public/themes/#{self.theme.directory_name}/#{self.theme.template_filename}").to_s)
+    end
   end
   
   def parse_browser_html
     self.update_attribute(:browser_html, WeeParser.build_erb_copy_for(WeeParser.parse(self.user_html), self.user_html))
   end
-  
   
   # Virtual attribute from user.design_type
   def design_type
