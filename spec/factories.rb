@@ -28,3 +28,11 @@ Factory.define :plan do |p|
   p.billing_state Faker::Address.us_state
   p.billing_postal_code Faker::Address.zip_code
 end
+
+Factory.define :theme do |t|
+  t.name "New Theme"
+  t.author_name Faker::Internet.user_name
+  t.directory_name "test"
+  t.template_filename "test-theme.html"
+  t.description Faker::Lorem.paragraph
+end

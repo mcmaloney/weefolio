@@ -1,15 +1,18 @@
 require 'spec_helper'
 
 describe Theme do
-  before(:each) do
-    @valid_attributes = {
-      :directory_name => "value for directory_name",
-      :template_filename => "value for template_filename",
-      :design_id => 1
-    }
+  it "should show the pathname" do
+    theme = Factory(:theme)
+    theme.pathname.should == "public/themes/#{theme.directory_name}/#{theme.template_filename}"
   end
-
-  it "should create a new instance given valid attributes" do
-    Theme.create!(@valid_attributes)
+  
+  it "should show if we have connected the attributes of the model with the file names in the filesystem" do
+    theme = Factory(:theme)
+    theme.connected?.should be_true
+  end
+  
+  it "should show if we have not connected to the filesystem correctly" do
+    bogus_theme = Factory(:theme, :directory_name => "dne", :template_filename => "dne-template.html")
+    bogus_theme.connected?.should be_false
   end
 end

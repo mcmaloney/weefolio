@@ -1,2 +1,5 @@
-<h1>Admin::Themes#edit</h1>
-<p>Find me in app/views/admin/themes/edit.html.erb</p>
+<h1>Edit <%= @theme.name %></h1>
+
+<% form_for @theme, :url => admin_theme_path, :html => { :multipart => true,  :method => :put } do |f| %>
+  <%= render :partial => "form", :locals => {:f => f} %>
+<% end %>
