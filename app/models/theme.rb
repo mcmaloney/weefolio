@@ -1,4 +1,6 @@
 class Theme < ActiveRecord::Base
+  include WeeParser
+  
   has_many :designs
   
   has_attached_file :photo, :styles => { :thumbnail => "230x150#", :small => "50x50#" }, 
