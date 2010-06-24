@@ -6,7 +6,11 @@ class ThemesController < ApplicationController
   end
   
   def show
-    
+    @user = current_user
+    @design = @user.design
+    @portfolio = @user.portfolio
+    @theme = Theme.find(params[:id])
+    render :layout => false
   end
   
   def install

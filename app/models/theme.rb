@@ -17,4 +17,9 @@ class Theme < ActiveRecord::Base
     File.exist?("#{RAILS_ROOT}/public/themes/#{self.directory_name}/#{self.template_filename}")
   end
   
+  def render_preview
+    html = IO.readlines("#{RAILS_ROOT}/public/themes/#{self.directory_name}/#{self.template_filename}").to_s
+    WeeParser.build_erb_copy_for(WeeParser.parse(html), html)
+  end
+  
 end
