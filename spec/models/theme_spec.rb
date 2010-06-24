@@ -15,4 +15,9 @@ describe Theme do
     bogus_theme = Factory(:theme, :directory_name => "dne", :template_filename => "dne-template.html")
     bogus_theme.connected?.should be_false
   end
+  
+  it "should render a preview of itself" do
+    theme = Factory(:theme)
+    theme.render_preview.should include("<%=")
+  end
 end
