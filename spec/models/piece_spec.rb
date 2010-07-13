@@ -19,19 +19,44 @@ describe Piece do
     @piece.display_price.should be_nil
   end
   
-  it "should have up to 5 images" do
-    @piece = Factory(:piece)
-    @piece.images.should include(@piece.image_1, @piece.image_2, @piece.image_3, @piece.image_4, @piece.image_5)
+  it "should show the max number of images for plan level 1" do
+    @user.portfolio.pieces << Factory(:piece)
+    @user.portfolio.pieces.first.max_images.should == 1
   end
   
-  it "should show the number of images being zero on create" do
-    @piece = Factory(:piece)
-    @piece.number_of_images.should == 0
+  it "should show the max number of images for plan level 2" do
+    @user.plan.update_attribute(:level, 2)
+    @user.portfolio.pieces << Factory(:piece)
+    @user.portfolio.pieces.first.max_images.should == 3
   end
   
-  it "should show one image if the size of the file is greater than zero" do
-    @piece = Factory(:piece)
-    @piece.image_1_file_size = 23.5
-    @piece.number_of_images.should == 1
+  it "should show the max number of images for plan level 3" do
+    @user.plan.update_attribute(:level, 3)
+    @user.portfolio.pieces << Factory(:piece)
+    @user.portfolio.pieces.first.max_images.should == 5
+  end
+  
+  it "should allow me to add only 1 upload if my plan level is 1" do
+    @user.portfolio.pieces << Factory(:piece)
+    @user.portfolio.pieces.first.image_uploads << Factory(:image_upload)
+    @user.portfolio.pieces.first.can_add_more_images?.should be_false
+  end
+  
+  it "should allow me to add 3 uploads if my plan level is 2" do
+    @user.plan.update_attribute(:level, 2)
+    @user.portfolio.pieces << Factory(:piece)
+    3.times do
+      @user.portfolio.pieces.first.image_uploads << Factory(:image_upload)
+    end
+    @user.portfolio.pieces.first.can_add_more_images?.should be_false 
+  end
+  
+  it "should allow me to add 5 uploads if my plan level is 3" do
+    @user.plan.update_attribute(:level, 3)
+    @user.portfolio.pieces << Factory(:piece)
+    5.times do
+      @user.portfolio.pieces.first.image_uploads << Factory(:image_upload)
+    end
+    @user.portfolio.pieces.first.can_add_more_images?.should be_false
   end
 end

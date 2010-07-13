@@ -16,28 +16,7 @@
 				<dd>
 			    <%= f.text_area :description, :rows => 8, :cols => 36 %>
 			  </dd>
-			  
-			  <dt>
-			    <%= f.label :image_1, 'Images' %>
-			  </dt>
-			  <dd>
-			    <%= show_image_unless_new_record(@piece, @piece.image_1) %> <%= f.file_field :image_1, :class => 'file' %>
-
-			    <% unless current_user.plan.level == 1 %>
-
-  			    <%= show_image_unless_new_record(@piece, @piece.image_2) %> <%= f.file_field :image_2, :class => 'file' %>
-
-  			    <%= show_image_unless_new_record(@piece, @piece.image_3) %> <%= f.file_field :image_3, :class => 'file' %>
-
-			      <% if @portfolio.account_tier == 3 %>
-
-  			      <%= show_image_unless_new_record(@piece, @piece.image_4) %> <%= f.file_field :image_4, :class => 'file' %>
-
-    			    <%= show_image_unless_new_record(@piece, @piece.image_5) %> <%= f.file_field :image_5, :class => 'file' %>
-  			  </dd>
-			      <% end %>
-			    <% end %>
-			  </dl>
+			</dl>
 		</fieldset>
 
 		<fieldset>
@@ -79,10 +58,17 @@
 			    </div>
 			  <% end %>
   		</dl>
+  		
+  		<% unless @piece.new_record? %>
+  		  <p>
+    		  <%= link_to "Images &raquo;", piece_image_uploads_path(@piece) %>
+    		</p>
+  		<% end %>
+  		  
 	</fieldset>
 	
 	<div class="submit" id="save">
-		 <%= form_button(@piece, f)%>	
+		 <%= f.submit "Next: Add Images" %>
 	</div>
 
 <% end %>

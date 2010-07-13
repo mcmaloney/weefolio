@@ -12,7 +12,7 @@ class PiecesController < ApplicationController
   def create
     @piece = current_user.portfolio.pieces.new(params[:piece])
     if @piece.save
-      redirect_to edit_user_portfolio_path(current_user, current_user.portfolio)
+      redirect_to new_piece_image_upload_path(@piece)
       if @piece.for_sale
         flash[:notice] = "<strong>'#{@piece.title}'</strong> has been added to your Weefolio (for sale at #{@piece.display_price})"
       else

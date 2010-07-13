@@ -9,7 +9,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20100621192154) do
+=======
+ActiveRecord::Schema.define(:version => 20100519163927) do
+>>>>>>> images
 
   create_table "delayed_jobs", :force => true do |t|
     t.integer  "priority",   :default => 0
@@ -47,34 +51,24 @@ ActiveRecord::Schema.define(:version => 20100621192154) do
     t.integer  "theme_id"
   end
 
+  create_table "image_uploads", :force => true do |t|
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.integer  "piece_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "pieces", :force => true do |t|
     t.string   "title"
     t.text     "description"
-    t.decimal  "price",                :precision => 10, :scale => 2
+    t.decimal  "price",        :precision => 10, :scale => 2
     t.boolean  "for_sale"
     t.integer  "portfolio_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "image_2_file_name"
-    t.string   "image_2_content_type"
-    t.integer  "image_2_file_size"
-    t.datetime "image_2_updated_at"
-    t.string   "image_3_file_name"
-    t.string   "image_3_content_type"
-    t.integer  "image_3_file_size"
-    t.datetime "image_3_updated_at"
-    t.string   "image_4_file_name"
-    t.string   "image_4_content_type"
-    t.integer  "image_4_file_size"
-    t.datetime "image_4_updated_at"
-    t.string   "image_5_file_name"
-    t.string   "image_5_content_type"
-    t.integer  "image_5_file_size"
-    t.datetime "image_5_updated_at"
-    t.string   "image_1_file_name"
-    t.string   "image_1_content_type"
-    t.integer  "image_1_file_size"
-    t.datetime "image_1_updated_at"
     t.integer  "position"
     t.string   "sale_url"
     t.string   "client_name"
@@ -126,6 +120,7 @@ ActiveRecord::Schema.define(:version => 20100621192154) do
   end
 
   create_table "themes", :force => true do |t|
+<<<<<<< HEAD
     t.string   "directory_name"
     t.string   "template_filename"
     t.datetime "created_at"
@@ -137,6 +132,13 @@ ActiveRecord::Schema.define(:version => 20100621192154) do
     t.string   "name"
     t.text     "description"
     t.string   "author_name"
+=======
+    t.string   "root_folder_name"
+    t.string   "author_login"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+>>>>>>> images
   end
 
   create_table "user_mailers", :force => true do |t|
