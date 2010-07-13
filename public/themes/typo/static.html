@@ -1,0 +1,465 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+  <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  
+  <head>
+    <title>The Weefolio of [username]</title>
+    
+    <script type="text/javascript" src="js/jquery.js"></script>
+    
+    <script type="text/javascript">
+      $(document).ready(function() {
+      $('.scrollPage').click(function() {
+         var elementClicked = $(this).attr("href");
+         var destination = $(elementClicked).offset().top;
+         $("html:not(:animated),body:not(:animated)").animate({ scrollTop: destination-20}, 500 );
+         return false;
+      });
+      });
+    </script>
+    
+    <style type="text/css">
+    
+    /*---GLOBAL---*/
+    
+    body {
+      margin: 0;
+      background: #000;
+      font-size: 12px;
+      font-family: Helvetica, Arial, "san-serif";
+      color: #fff;
+      line-height: 1.5;
+    }
+    
+    a:link, a:visited {
+      color: #9fcf44;
+      text-decoration: none;
+    }
+    
+    a:hover, a:visited:hover {
+      text-decoration: underline;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+      font-family: Didot, Georgia, serif;
+      font-weight: normal;
+    }
+    
+    h1 {
+      margin: 40px 0;
+      font-size: 30px;
+    }
+    
+    h2 {
+      font-size: 20px;
+    }
+    
+    
+    /*---STRUCTURE---*/
+    
+    div.header-wrapper {
+      padding: 5px 50px;
+      background: #9fcf44;
+      overflow: hidden;
+    }
+    
+    div.header-wrapper div.header-container {
+      width: 950px;
+      overflow: hidden;
+    }
+    
+    div.content-wrapper {
+      padding: 0 50px;
+      background: #fff;  
+      overflow: hidden;
+      color: #000;
+    }
+    
+    div.content-wrapper div.content-container {
+      width: 950px;
+      overflow: hidden;
+    }
+    
+    div.info-wrapper {
+      padding: 50px;
+      overflow: hidden;
+    }
+    
+    div.info-wrapper div.info-container {
+      width: 950px;
+      overflow: hidden;
+    }
+    
+    div.footer-wrapper {
+      padding: 0 50px 60px 50px;
+      overflow: hidden;
+    }
+    
+    div.footer-wrapper div.footer-container {
+      width: 950px;
+      overflow: hidden;
+    }
+    
+    
+    /*---HEADER---*/
+    
+    div.header-wrapper div.header-container div#no-header {
+      display: none;
+    }
+    
+    
+    /*---INTRO---*/
+    
+    div.intro-container {
+      overflow: hidden;
+    }
+    
+    div.intro-container div.tagline {
+      width: 710px;
+      float: left;
+      line-height: 35px;
+    }
+    
+    div.intro-container div.nav {
+      width: 200px;
+      padding: 40px 0;
+      float: right;
+    }
+    
+    div.intro-container div.nav ul {
+      padding: 0;
+      list-style: none;
+    }
+    
+    div.intro-container div.nav ul li {
+      float: left;
+      margin: 0 15px 0 0;
+    }
+    
+    div.intro-container div.nav ul li a:link,
+    div.intro-container div.nav ul li a:visited {
+      float: left;
+      display: block;
+      height: 36px;
+      width: 36px;
+      overflow: hidden;
+      text-indent: -1000px;
+      background-position: 0 0;
+      background-repeat: no-repeat;
+      background-color: #ddd;
+    }
+    
+    div.intro-container div.nav ul li a:hover,
+    div.intro-container div.nav ul lia:visited:hover {
+      background-color: #9fcf44;
+    }
+    
+    div.intro-container div.nav ul li a.about { background-image: url(images/about-icon.png); }
+    div.intro-container div.nav ul li a.contact { background-image: url(images/contact-icon.png); }
+    div.intro-container div.nav ul li a.rss { background-image: url(images/rss-icon.png); }
+    
+    
+    /*---PORTFOLIO---*/
+    
+    div.portfolio-container div.portfolio-piece {
+    overflow: hidden;
+    margin: 0 0 50px 0;
+    }
+    
+    div.portfolio-container div.portfolio-piece div.images {
+      width: 710px;
+      float: left;
+    }
+    
+    div.portfolio-container div.portfolio-piece div.images div.main-image {
+      overflow: hidden;
+      background: #fcfcfc;
+      text-align: center;
+    }
+    
+    div.portfolio-container div.portfolio-piece div.images div.gallery ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    
+    div.portfolio-container div.portfolio-piece div.images div.gallery ul li {
+      float: left;
+      margin: 10px 10px 0 0;
+    }
+    
+    div.portfolio-container div.portfolio-piece div.info {
+    width: 200px;
+    float: right;
+    }
+    
+    div.portfolio-container div.portfolio-piece div.info h2 {
+      margin-top: 0
+    }
+    
+    div.portfolio-container div.portfolio-piece div.info div.meta ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-family: Didot, Georgia, serif;
+      text-transform: uppercase;
+      font-size: 11px;
+      letter-spacing: 1px;
+      color: #999;
+    }
+    
+    
+    /*---INFO---*/
+    
+    div.info-container h2 {
+      margin-top: 0;
+    }
+    
+    
+    /*---ABOUT---*/
+    
+    div.about-container {
+      width: 710px;
+      float: left;
+    }
+    
+    div.about-container img.avatar {
+      float: left;
+      margin: 0 20px 20px 0;
+      border: #333 solid 5px;
+    }
+    
+    
+    /*---CONTACT---*/
+    
+    div.contact-container {
+      width: 200px;
+      float: right;
+    }
+    
+    div.contact-container form {
+      margin: 0;
+      padding: 0;
+    }
+    
+    div.contact-container form fieldset {
+      margin: 0 0 10px 0;
+      padding: 0;
+      border: none;
+    }
+    
+    div.contact-container form fieldset label {
+      display: block;
+    }
+    
+    div.contact-container form fieldset input,
+    div.contact-container form fieldset textarea {
+      background: #333;
+      color: #fff;
+      border: none;
+      padding: 10px;
+      font-family: Helvetica, Arial, "san-serif";
+      font-size: 12px;
+      width: 180px;
+      margin: 0;
+    }
+    
+    div.contact-container form input:focus,
+    div.contact-container form textarea:focus {
+      outline: none;
+    }
+    
+    div.contact-container form div#contact-submit input {
+      background: #9fcf44;
+      font-family: Didot, Georgia, serif;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #fff;
+      border: none;
+      padding: 10px;
+      margin: 0;
+    }
+    
+    /*---FOOTER---*/
+    
+    div.footer-container ul {
+      margin: 0;
+      padding: 0;
+      list-style: none; 
+      font-family: Didot, Georgia, serif;
+      text-transform: uppercase;
+      font-size: 11px; 
+      letter-spacing: 1px;
+    }
+    
+    div.footer-container ul li {
+      float: left;
+      margin: 0 30px 0 0;
+    }
+    
+    div.footer-container ul li em {
+      text-transform: lowercase;
+      color: #999;
+    }
+    </style>
+       
+    <!--[wee-script]-->
+  </head>
+  
+  <body>
+    <div class="header-wrapper">
+      <div class="header-container">
+        <!--<img class="header-image" src="#" height="100" width="750"/>-->
+      </div>
+    </div>
+    
+    <div class="content-wrapper">
+      <div class="content-container">
+        <div class="intro-container">
+          <div class="tagline">
+            <h1>Hello! My name is Kevin John Gomez. I'm a web designer & developer from Brooklyn, NY. I make the internet pretty.</h1>
+          </div>
+          
+          <div class="nav">
+            <ul>
+              <li><a href="#about" class="scrollPage about">About</a></li>
+              <li><a href="#contact" class="scrollPage contact">Contact</a></li>
+              <li><a href="[rss-url]" class="rss">Subscribe to RSS</a></li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="portfolio-container">
+          <div class="portfolio-piece">
+            <div class="images">
+              <div class="main-image">
+                <img src="#" width="600" height="300"/>
+              </div>
+              
+              <div class="gallery">
+                <ul>        
+                  <li><a href="javascript:void(0)" id="http://s3.amazonaws.com/weefolio/image_1s/16/full_size/zzz-1.jpg?1272465362" onclick="switch_large_image(this, 16)"><img alt="Zzz-1" src="http://s3.amazonaws.com/weefolio/image_1s/16/small_thumb/zzz-1.jpg?1272465362" /></a></li>
+                  <li><a href="javascript:void(0)" id="http://s3.amazonaws.com/weefolio/image_2s/16/full_size/zzz-2.jpg?1272731849" onclick="switch_large_image(this, 16)"><img alt="Zzz-2" src="http://s3.amazonaws.com/weefolio/image_2s/16/small_thumb/zzz-2.jpg?1272731849" /></a></li>
+                  <li><a href="javascript:void(0)" id="http://s3.amazonaws.com/weefolio/image_3s/16/full_size/zzz-3.jpg?1272731849" onclick="switch_large_image(this, 16)"><img alt="Zzz-3" src="http://s3.amazonaws.com/weefolio/image_3s/16/small_thumb/zzz-3.jpg?1272731849" /></a></li>
+                  <li><a href="javascript:void(0)" id="http://s3.amazonaws.com/weefolio/image_4s/16/full_size/zzz-4.jpg?1272756073" onclick="switch_large_image(this, 16)"><img alt="Zzz-4" src="http://s3.amazonaws.com/weefolio/image_4s/16/small_thumb/zzz-4.jpg?1272756073" /></a></li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="info">
+              <h2>Piece Title</h2>
+              
+              <p>Molestie consequat vel illum dolore eu feugiat nulla facilisis at vero. Legentis in iis; qui facit eorum claritatem Investigationes demonstraverunt lectores legere me lius quod ii.</p>
+              
+              <div class="meta">
+									<ul><li class='client'>Kevin John Gomez</li><li class='service'>Design</li><li class='buy'><a href="http://kevinjohngomez.bigcartel.com/product/arms-legs">$20.00</a></li>
+							 </div>
+            </div>
+          </div>
+          
+          <div class="portfolio-piece">
+            <div class="images">
+              <div class="main-image">
+                <img src="#" width="600" height="300"/>
+              </div>
+              
+              <div class="gallery">
+                <ul>        
+                  <li><a href="javascript:void(0)" id="http://s3.amazonaws.com/weefolio/image_1s/16/full_size/zzz-1.jpg?1272465362" onclick="switch_large_image(this, 16)"><img alt="Zzz-1" src="http://s3.amazonaws.com/weefolio/image_1s/16/small_thumb/zzz-1.jpg?1272465362" /></a></li>
+                  <li><a href="javascript:void(0)" id="http://s3.amazonaws.com/weefolio/image_2s/16/full_size/zzz-2.jpg?1272731849" onclick="switch_large_image(this, 16)"><img alt="Zzz-2" src="http://s3.amazonaws.com/weefolio/image_2s/16/small_thumb/zzz-2.jpg?1272731849" /></a></li>
+                  <li><a href="javascript:void(0)" id="http://s3.amazonaws.com/weefolio/image_3s/16/full_size/zzz-3.jpg?1272731849" onclick="switch_large_image(this, 16)"><img alt="Zzz-3" src="http://s3.amazonaws.com/weefolio/image_3s/16/small_thumb/zzz-3.jpg?1272731849" /></a></li>
+                  <li><a href="javascript:void(0)" id="http://s3.amazonaws.com/weefolio/image_4s/16/full_size/zzz-4.jpg?1272756073" onclick="switch_large_image(this, 16)"><img alt="Zzz-4" src="http://s3.amazonaws.com/weefolio/image_4s/16/small_thumb/zzz-4.jpg?1272756073" /></a></li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="info">
+              <h2>Piece Title</h2>
+              
+              <p>Molestie consequat vel illum dolore eu feugiat nulla facilisis at vero. Legentis in iis; qui facit eorum claritatem Investigationes demonstraverunt lectores legere me lius quod ii.</p>
+              
+              <div class="meta">
+									<ul><li class='client'>Kevin John Gomez</li><li class='service'>Design</li><li class='buy'><a href="http://kevinjohngomez.bigcartel.com/product/arms-legs">$20.00</a></li>
+							 </div>
+            </div>
+          </div>
+          
+          <div class="portfolio-piece">
+            <div class="images">
+              <div class="main-image">
+                <img src="#" width="600" height="300"/>
+              </div>
+              
+              <div class="gallery">
+                <ul>        
+                  <li><a href="javascript:void(0)" id="http://s3.amazonaws.com/weefolio/image_1s/16/full_size/zzz-1.jpg?1272465362" onclick="switch_large_image(this, 16)"><img alt="Zzz-1" src="http://s3.amazonaws.com/weefolio/image_1s/16/small_thumb/zzz-1.jpg?1272465362" /></a></li>
+                  <li><a href="javascript:void(0)" id="http://s3.amazonaws.com/weefolio/image_2s/16/full_size/zzz-2.jpg?1272731849" onclick="switch_large_image(this, 16)"><img alt="Zzz-2" src="http://s3.amazonaws.com/weefolio/image_2s/16/small_thumb/zzz-2.jpg?1272731849" /></a></li>
+                  <li><a href="javascript:void(0)" id="http://s3.amazonaws.com/weefolio/image_3s/16/full_size/zzz-3.jpg?1272731849" onclick="switch_large_image(this, 16)"><img alt="Zzz-3" src="http://s3.amazonaws.com/weefolio/image_3s/16/small_thumb/zzz-3.jpg?1272731849" /></a></li>
+                  <li><a href="javascript:void(0)" id="http://s3.amazonaws.com/weefolio/image_4s/16/full_size/zzz-4.jpg?1272756073" onclick="switch_large_image(this, 16)"><img alt="Zzz-4" src="http://s3.amazonaws.com/weefolio/image_4s/16/small_thumb/zzz-4.jpg?1272756073" /></a></li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="info">
+              <h2>Piece Title</h2>
+              
+              <p>Molestie consequat vel illum dolore eu feugiat nulla facilisis at vero. Legentis in iis; qui facit eorum claritatem Investigationes demonstraverunt lectores legere me lius quod ii.</p>
+              
+              <div class="meta">
+									<ul><li class='client'>Kevin John Gomez</li><li class='service'>Design</li><li class='buy'><a href="http://kevinjohngomez.bigcartel.com/product/arms-legs">$20.00</a></li>
+							 </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="info-wrapper">
+      <div class="info-container">
+        <div id="about" class="about-container">
+          <h2>About</h2>
+          
+          <img class="avatar" src="#" width="70" height="70"/>
+          
+          <p>Non habent claritatem insitam est usus legentis in. Iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Formas humanitatis per seacula quarta decima et quinta decima eodem modo typi qui nunc nobis! Facer possim assum typi iis qui facit eorum claritatem: Investigationes demonstraverunt lectores legere me lius quod.</p>
+        </div>
+        
+        <div id="contact" class="contact-container">
+          <h2>Contact</h2>
+          
+          <form action="/portfolios/send_message/1?html%5Bmethod%5D=post" method="post"><div style="margin:0;padding:0"><input name="authenticity_token" type="hidden" value="Cq0StI71wboKVbcCNQrzjiapArrY4XH6HomoBv+8QGA=" /></div>
+				  <fieldset>
+						<label for="name">Name</label>
+						<input id="name" name="name" type="text" />
+					</fieldset>
+					
+					<fieldset>
+						<label for="email">Email</label>
+						<input id="from" name="from" type="text" />
+					</fieldset>
+					
+					<fieldset>
+						<label for="message">Message</label>
+						<textarea id="message" name="message" rows="7"></textarea>
+					</fieldset>
+					
+					<div id="contact-submit">
+						<input name="commit" type="submit" value="Send Message" />
+					</div>
+				</form>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-wrapper">
+      <div class="footer-container">
+        <ul>
+          <li>Typo Theme <em>by</em> <a href="http://kevinjohngomez.com" target="_blank">Kevin John Gomez</a></li>
+          <li>Powered <em>by</em> <a href="http://weefolio.com" target="_blank">Weefolio</a></li>
+          <li>Subscribe <em>to</em> <a href="[rss-url]">RSS</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

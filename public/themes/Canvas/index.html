@@ -1,0 +1,350 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <title>The Weefolio of [username]</title>
+    
+    <style type="text/css">
+      
+      /*---GLOBAL---*/
+      
+      body {
+        background: #fff url(images/body-background.gif) center top;
+        font-size: 14px;
+        color: #53504c;
+        font-family: Arial, Helvetica, "san-serif";
+        margin: 0;
+        line-height: 1.5;
+      }
+      
+      h1 {
+        margin: 0;
+        font-size: 22px;
+        line-height: 30px;
+        font-family: Georgia, serif;
+        font-weight: normal;
+        color: #1a1a1a;
+      }
+      
+      h2 {
+        font-size: 12px;
+        color: #9b958e;
+        text-transform: uppercase;
+        text-shadow: 0 1px 0 #fff;
+        letter-spacing: 2px;
+      }
+      
+      
+      /*---STRUCTURE---*/
+      
+      div.header-wrapper {
+        background: #1a1a1a url(images/header-wrapper-background.gif) top center;
+        overflow: hidden;
+      }
+      
+      div.header-wrapper div.header-container {
+        width: 990px;
+        margin: 0 auto;
+        padding: 25px 0 75px 0;
+      }
+      
+      div.navigation-wrapper {
+        background: url(images/navigation-wrapper-background.gif) repeat-x top center;
+        overflow: hidden;
+        height: 75px;
+      }
+      
+      div.navigation-wrapper div.navigation-container {
+        width: 990px;
+        margin: 0 auto;  
+      }
+      
+      div.content-wrapper {
+        overflow: hidden;
+      }
+      
+      div.content-wrapper div.content-container {
+        width: 990px;
+        margin: 0 auto;
+      }
+      
+      div.content-wrapper div.content-container div.column.primary {
+        width: 710px;
+        float: left;
+        margin: -125px 0 0 0;
+        position: absolute;
+        z-index: 2;
+      }
+      
+      div.content-wrapper div.content-container div.column.secondary {
+        width: 250px;
+        float: right;
+      }
+      
+      
+      /*---HEADER---*/
+      
+      /*---NAVIGATION---*/
+      
+      div.navigation-container ul {
+        width: 250px;
+        float: right;
+        list-style: none;
+        margin: 17px 0 0 0;
+        padding: 0;
+      }
+      
+      div.navigation-container ul li {
+        float: left;
+        margin: 0 10px 0 0;
+      }
+      
+      div.navigation-container ul li a:link,
+      div.navigation-container ul li a:visited {
+        float: left;
+        display: block;
+        height: 39px;
+        width: 39px;
+        overflow: hidden;
+        text-indent: -1000px;
+        background-position: 0 0;
+        background-repeat: no-repeat;
+      }
+      
+      div.navigation-container ul li a.about { background-image: url(images/about-icon.png); }
+      div.navigation-container ul li a.contact { background-image: url(images/contact-icon.png); }
+      div.navigation-container ul li a.rss { background-image: url(images/rss-icon.png); }
+      
+      /*---PORTFOLIO---*/
+      
+      div.column.primary ul.portfolio-pieces {
+        background: #fff url(images/portfolio-background.gif);
+        border: 1px solid #eceedf;
+        -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        padding: 0;
+        margin: 0;
+        list-style: none;
+      }
+      
+      div.column.primary ul.portfolio-pieces li.piece {
+        padding: 20px;
+        background: url(images/portfolio-piece-background.gif) 0 0 repeat-x;
+        border-top: 1px solid #eceedf;
+      }
+      
+      div.column.primary ul.portfolio-pieces li.piece:first-child {
+        border: none;
+        background: url(images/first-piece-background.gif) 0 0 no-repeat;
+      }
+      
+      div.column.primary ul.portfolio-pieces li.piece div.images {
+        padding: 10px;
+        background: #fff;
+        width: 710px;
+        margin: 0 0 0 -60px;
+        -webkit-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.05);
+        border: 1px solid #eceedf;
+      }
+      
+      div.column.primary ul.portfolio-pieces li.piece div.images div.gallery ul {
+        margin: 10px 0 0 0;
+        padding: 0;
+        list-style: none;
+        height: 70px;
+      }
+      
+      div.column.primary ul.portfolio-pieces li.piece div.images div.gallery ul li {
+        display: inline;
+        margin: 0;
+        height: 70px;
+        width: 70px;
+      }
+      
+      div.column.primary ul.portfolio-pieces li.piece div.images div.gallery ul li a {
+        margin: 0;
+        padding:0;
+        height: 70px;
+        width: 70px;
+      }
+      
+      div.column.primary ul.portfolio-pieces li.piece div.info {
+        padding: 20px;
+      }
+      
+      /*---WIDGETS---*/
+      
+      div.column.secondary ul.widgets {
+        margin: 30px 0 0 0;
+        padding: 0;
+        list-style: none;
+      }
+      
+      div.column.secondary ul.widgets li.widget {
+        margin: 0 0 30px 0;
+        padding: 0;
+      }
+      
+      div.column.secondary ul.widgets li.widget h2 {
+        margin-top: 0;
+      }
+      
+      
+      /*---WIDGETS > CONTACT---*/
+      
+      div.column.secondary ul.widgets li.widget.contact form {
+        margin: 0;
+        padding: 0;
+      }
+      
+      div.column.secondary ul.widgets li.widget.contact form fieldset {
+        margin: 0 0 15px 0;
+        padding: 0;
+        border: none;
+      }
+      
+      div.column.secondary ul.widgets li.widget.contact form fieldset label {
+        display: block;
+        margin: 0 0 5px 0;
+      }
+      
+      div.column.secondary ul.widgets li.widget.contact form fieldset input,
+      div.column.secondary ul.widgets li.widget.contact form fieldset textarea {
+        background: #dadcd6 url(images/input-background.gif);
+        border: none;
+        padding: 10px;
+        font-family: Arial, "san-serif";
+        font-size: 12px;
+        width: 230px;
+        margin: 0;
+        border-bottom: 1px solid #fff;
+      }
+      
+      div.column.secondary ul.widgets li.widget.contact form input:focus,
+      div.column.secondary ul.widgets li.widget.contact form textarea:focus {
+        outline: none;
+        border-bottom: 5px solid [link-color];
+      }
+      
+      div.column.secondary ul.widgets li.widget.contact form div#contact-submit input {
+        background: url(images/submit-background.gif) no-repeat 0 0;
+        font-family: Arial, Helvetica, "san-serif";
+        font-weight: bold;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: #fff;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, .25);
+        border: none;
+        border-bottom: 1px solid #fff;
+        padding: 10px;
+        margin: 0;
+      }
+      
+      /*---FOOTER---*/
+      
+    </style>
+  </head>
+  
+  <body>
+    <div class="header-wrapper">
+      <div class="header-container">
+        <!--<img class="header-image" src="#" height="100" width="750"/>-->
+      </div>
+    </div>
+      
+    <div class="navigation-wrapper">
+      <div class="navigation-container">
+        <ul>
+          <li><a href="#about" class="scrollPage about">About</a></li>
+          <li><a href="#contact" class="scrollPage contact">Contact</a></li>
+          <li><a href="[rss-url]" class="rss">Subscribe to RSS</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="content-wrapper">
+      <div class="content-container">
+        <div class="column primary">
+          <ul class="portfolio-pieces">
+            <li class="piece">
+              <div class="images">
+                <div class="main-image">
+                  <img src="#" width="710" height="300"/>
+                </div>
+                
+                <div class="gallery">
+                  <ul>        
+                    <li><a href="javascript:void(0)" id="http://s3.amazonaws.com/weefolio/image_1s/16/full_size/zzz-1.jpg?1272465362" onclick="switch_large_image(this, 16)"><img alt="Zzz-1" src="http://s3.amazonaws.com/weefolio/image_1s/16/small_thumb/zzz-1.jpg?1272465362" /></a></li>
+                    <li><a href="javascript:void(0)" id="http://s3.amazonaws.com/weefolio/image_2s/16/full_size/zzz-2.jpg?1272731849" onclick="switch_large_image(this, 16)"><img alt="Zzz-2" src="http://s3.amazonaws.com/weefolio/image_2s/16/small_thumb/zzz-2.jpg?1272731849" /></a></li>
+                    <li><a href="javascript:void(0)" id="http://s3.amazonaws.com/weefolio/image_3s/16/full_size/zzz-3.jpg?1272731849" onclick="switch_large_image(this, 16)"><img alt="Zzz-3" src="http://s3.amazonaws.com/weefolio/image_3s/16/small_thumb/zzz-3.jpg?1272731849" /></a></li>
+                    <li><a href="javascript:void(0)" id="http://s3.amazonaws.com/weefolio/image_4s/16/full_size/zzz-4.jpg?1272756073" onclick="switch_large_image(this, 16)"><img alt="Zzz-4" src="http://s3.amazonaws.com/weefolio/image_4s/16/small_thumb/zzz-4.jpg?1272756073" /></a></li>
+                  </ul>
+                </div>
+              </div>
+              
+              <div class="info">
+                <h2>Piece Title</h2>
+                
+                <p>Qui nunc nobis videntur; parum clari fiant sollemnes in. Wisi enim ad minim veniam quis nostrud exerci, tation ullamcorper suscipit lobortis nisl ut aliquip ex. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius claritas est etiam processus dynamicus. Euismod tincidunt ut laoreet, dolore magna aliquam erat volutpat.</p>
+              </div>
+              
+              <div class="meta">
+              </div>
+            </li>
+            
+            <li class="piece">
+              <div class="info">
+                <h2>Piece Title</h2>
+                
+                <p>Qui nunc nobis videntur; parum clari fiant sollemnes in. Wisi enim ad minim veniam quis nostrud exerci, tation ullamcorper suscipit lobortis nisl ut aliquip ex. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius claritas est etiam processus dynamicus. Euismod tincidunt ut laoreet, dolore magna aliquam erat volutpat.</p>
+              </div>
+              
+              <div class="meta">
+              </div>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="column secondary">
+          <ul class="widgets">
+            <li class="widget tagline">
+              <h1>Hello. My name is Kevin John Gomez. I make the internet pretty.</h1>
+            </li>
+            
+            <li class="widget about">
+              <h2>About</h2>
+              
+              <p>Qui nunc nobis videntur; parum clari fiant sollemnes in. Wisi enim ad minim veniam quis nostrud exerci, tation ullamcorper suscipit lobortis nisl ut aliquip ex. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius claritas est etiam processus dynamicus. Euismod tincidunt ut laoreet, dolore magna aliquam erat volutpat.</p>
+            </li>
+            
+            <li class="widget contact">
+              <h2>Contact</h2>
+              
+              <form action="/portfolios/send_message/1?html%5Bmethod%5D=post" method="post"><div style="margin:0;padding:0"><input name="authenticity_token" type="hidden" value="Cq0StI71wboKVbcCNQrzjiapArrY4XH6HomoBv+8QGA=" /></div>
+      				  <fieldset>
+      						<label for="name">Name</label>
+      						<input id="name" name="name" type="text" />
+      					</fieldset>
+      					
+      					<fieldset>
+      						<label for="email">Email</label>
+      						<input id="from" name="from" type="text" />
+      					</fieldset>
+      					
+      					<fieldset>
+      						<label for="message">Message</label>
+      						<textarea id="message" name="message" rows="7"></textarea>
+      					</fieldset>
+      					
+      					<div id="contact-submit">
+      						<input name="commit" type="submit" value="Send Message" />
+      					</div>
+      				</form>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

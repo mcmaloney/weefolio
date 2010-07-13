@@ -600,40 +600,44 @@ div.content-container form fieldset dl dd img {
 div.content-container form div.submit {
 	margin: 0 0 0 120px;
 	overflow: hidden;
-	
+
 	clear: both;
 	}
 
 div.content-container form div.submit input {
-	background: transparent;
-	height: 35px;
-	width: 100%;
-	border: 0;
-	color: #fff;
-	text-indent: -500px;
-	cursor: pointer;
-	background-position: 0 0;
-	overflow: hidden;
+  background: #9fcf44;
+  background-position: 15px center;
+  background-repeat: no-repeat;
+  padding: 9px 15px 10px 40px;
+  margin: 0 0 10px 0;
+  border-color: #63b219;
+  border-style: solid;
+  border-width: 1px 1px 2px 1px;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: capitalize;
+  color: #fff;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 3px;
+  text-shadow: 0 1px 0 #63b219;
 	}
 	
-div.content-container form div.submit:hover {
-	background-position: 0 -35px;
+div.content-container form div.submit input:hover {
+  background-color: #a4d646;
 	}
 	
-div.content-container form div#save {
-	width: 103px;
-	background-image: url(/images/global-save-button.gif);
-	}
-	
-div.content-container form div#sign-up {
-	width: 133px;
-	background-image: url(/images/sign-up-button.gif);
-	}
+div.content-container form div.submit#sign-up input {
+  background-image: url(../images/signup-button-icon.gif);
+}
 
-div.content-container form div#login {
-	width: 111px;
-	background-image: url(/images/login-button.gif);
-	}
+div.content-container form div.submit#login input {
+  background-image: url(../images/login-button-icon.gif);
+}
+
+div.content-container form div.submit#save input {
+  background-image: url(../images/save-button-icon.gif);
+}
 
 
 /*---HOME---*/
