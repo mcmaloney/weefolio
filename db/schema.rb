@@ -9,11 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20100621192154) do
-=======
-ActiveRecord::Schema.define(:version => 20100519163927) do
->>>>>>> images
 
   create_table "delayed_jobs", :force => true do |t|
     t.integer  "priority",   :default => 0
@@ -120,7 +116,6 @@ ActiveRecord::Schema.define(:version => 20100519163927) do
   end
 
   create_table "themes", :force => true do |t|
-<<<<<<< HEAD
     t.string   "directory_name"
     t.string   "template_filename"
     t.datetime "created_at"
@@ -132,13 +127,6 @@ ActiveRecord::Schema.define(:version => 20100519163927) do
     t.string   "name"
     t.text     "description"
     t.string   "author_name"
-=======
-    t.string   "root_folder_name"
-    t.string   "author_login"
-    t.text     "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
->>>>>>> images
   end
 
   create_table "user_mailers", :force => true do |t|
