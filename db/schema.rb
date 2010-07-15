@@ -60,7 +60,7 @@ ActiveRecord::Schema.define(:version => 20100621192154) do
   create_table "pieces", :force => true do |t|
     t.string   "title"
     t.text     "description"
-    t.decimal  "price",        :precision => 10, :scale => 2
+    t.decimal  "price"
     t.boolean  "for_sale"
     t.integer  "portfolio_id"
     t.datetime "created_at"

@@ -1,14 +1,42 @@
+<div class="column primary">
 <% form_for [@piece, @image_upload], :html => { :multipart => true } do |f| %>
   <% unless @image_upload.new_record? %>
-    <p>  
-      <%= image_tag @image_upload.image.url(:large_thumb) %>
-    </p>
+  <fieldset>
+    <legend>Edit Image</legend>
+    
+    <dl>
+      <dt>
+        <label>Image</label>
+      </dt>
+      
+      <dd>
+        <%= image_tag @image_upload.image.url(:small_thumb) %>
+        <%= f.file_field :image, :class => 'file' %>
+      </dd>
+    </dl>
+  </fieldset>
+  <% else %>
+  <fieldset>
+    <legend>Add Image</legend>
+    
+    <dl>
+      <dt>
+        <label>Image</label>
+      </dt>
+      
+      <dd>
+        <%= f.file_field :image, :class => 'file' %>
+      </dd>
+    </dl>
+  </fieldset>
+  
   <% end %>
-  <p>
-    <%= f.label :image, "Image" %><br />
-    <%= f.file_field :image %>
-  </p>
-  <p>
-    <%= f.submit "Upload" %>
-  </p>
+  
+  <div class="submit" id="save">
+    <%= f.submit "Save" %> or 
+    <%= link_to "Cancel", piece_image_uploads_path(@piece) %>
+  </div>
+
+
 <% end %>
+</div>

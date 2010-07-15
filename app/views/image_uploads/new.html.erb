@@ -8,14 +8,8 @@
   <% if @piece.can_add_more_images? %>
     <%= render :partial => 'form' %>
   <% else %>
-    <p>
-      You've added all the images to this piece allowed by your current plan type.
-    </p>
-    <p>
-      <%= link_to "Upgrade here", edit_user_path(current_user) %> to add more!
+    <p class="intro">
+      You've added all the images to this piece allowed by your current plan type. <%= link_to "Upgrade", edit_user_path(current_user) %> to add more!
     </p>
   <% end %>
-  <p>
-    <%= link_to "Back to Meta", edit_portfolio_piece_path(current_user.portfolio, @piece) %>
-  </p>
 </div>

@@ -30,6 +30,8 @@
 			<% content_tag_for :li, piece do %>
 			  <% unless piece.image_uploads.blank? %>
 				  <%= image_tag piece.image_uploads.first.image.url(:small_thumb) %>
+				<% else %>
+				  <img width="70" height="70" src="/images/no-image.gif" alt="No Image"/>
 				<% end %>
 				
 				<div class="piece-info">	

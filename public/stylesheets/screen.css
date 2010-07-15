@@ -59,6 +59,30 @@ ol.abc {
 	}
 	
 
+/*---GLOBAL BUTTONS---*/
+
+a.secondary-button,
+button.secondary-button {
+  padding: 5px 10px;
+  -moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	color: #fff;
+	background: #8fbbbb;
+	text-decoration: none;
+	text-shadow: 0 -1px 0 #5e878e;
+	border: 1px solid #5e878e;
+	border-bottom: 2px solid #5e878e;
+}
+
+a.secondary-button:hover,
+button.secondary-button:hover {
+  color: #fff;
+  background-color: #a0c8c7;
+  cursor:  pointer;
+}
+	
+
 /*---GLOBAL STRUCTURES---*/
 
 div.page-container {
@@ -500,6 +524,7 @@ div.content-container div.column form fieldset {
 div.content-container form fieldset legend {
  border-bottom: 1px solid #ececea;
  width: 100%;
+ display: block;
  font-weight: bold;
  color: #242420;
  padding: 0 0 8px 22px;
@@ -527,7 +552,7 @@ div.content-container form fieldset dl dt {
 	}
 
 div.content-container form fieldset dl dd {
-	width: 355px;
+	width: 385px;
 	padding: 0;
 	float: left;
 	margin: 0 0 15px 0;
@@ -564,7 +589,6 @@ div.content-container form fieldset dl dd input.file {
 	 -webkit-border-radius: 3px;
 	border-radius: 3px;
 	margin: 0 0 10px 0;
-	display: block;
 	font-size: 11px;
 	border: 1px solid #ececea;
 	border-top-width: 2px;
@@ -585,7 +609,7 @@ div.content-container form fieldset dl dd ul li {
 	}
 	
 div.content-container form fieldset dl dd img {
-	vertical-align: middle;
+  vertical-align: middle;
 	padding: 5px;
 	background: #f5f5f3;
 	-moz-border-radius: 3px;
@@ -608,8 +632,8 @@ div.content-container form div.submit input {
   background: #9fcf44;
   background-position: 15px center;
   background-repeat: no-repeat;
-  padding: 9px 15px 10px 40px;
-  margin: 0 0 10px 0;
+  padding: 7px 15px 8px 40px;
+  margin: 0 5px 10px 0;
   border-color: #63b219;
   border-style: solid;
   border-width: 1px 1px 2px 1px;
@@ -621,6 +645,7 @@ div.content-container form div.submit input {
   -moz-border-radius: 5px;
   border-radius: 3px;
   text-shadow: 0 1px 0 #63b219;
+  cursor: pointer;
 	}
 	
 div.content-container form div.submit input:hover {
@@ -840,6 +865,21 @@ body.themes.index div.content-container ul.themes li.theme div.image {
 	border-right: 1px solid #ececea;
 	border-bottom: 2px solid #ececea;
 	border-left: 1px solid #ececea;
+	overflow: hidden;
+	width: 230px;
+}
+
+body.themes.index div.content-container ul.themes li.theme div.options {
+  width: 235px;
+  overflow: hidden;
+}
+
+body.themes.index div.content-container ul.themes li.theme div.options a {
+  display: block;
+  float: left;
+  margin: 5px 5px 0 0;
+  width: 90px;
+  text-align: center;
 }
 
 body.themes.index div.content-container ul.themes li.theme div.info h2 {
@@ -1202,6 +1242,98 @@ body.help div.main-help div.column.primary ul.topics li dl dd {
 
 div#piece_price {
 	display: none;
+	}
+
+body.pieces.edit div.content-container div.column.primary fieldset ul.images {
+	margin: -15px 0 0 0;
+	padding: 0;
+	list-style: none;
+	}
+	
+body.pieces.edit div.content-container div.column.primary fieldset ul.images li.image {
+	overflow: hidden;
+	padding: 15px 10px;
+	border-bottom: 1px solid #ececea;
+	}
+	
+body.pieces.edit div.content-container div.column.primary fieldset ul.images li.image img {
+	display: block;
+	float: left;
+	padding: 5px;
+	background: #f5f5f3;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-top: 1px solid #ececea;
+	border-right: 1px solid #ececea;
+	border-bottom: 2px solid #ececea;
+	border-left: 1px solid #ececea;
+	margin: 0 20px 0 0;
+	}
+	
+body.pieces.edit div.content-container div.column.primary fieldset ul.images li.image ul.image-options {
+	float: right;
+	margin: 0;
+	padding: 0;
+	}
+
+body.pieces.edit div.content-container div.column.primary fieldset ul.images li.image ul.image-options li.option {
+	margin:  0 0 0 10px;
+	overflow: hidden;
+	float: left;
+	}
+	
+body.pieces.edit div.content-container div.column.primary fieldset ul.images li.image ul.image-options li.option a:link,
+body.pieces.edit div.content-container div.column.primary fieldset ul.images li.image ul.image-options li.option a:visited {
+	display: block;
+	overflow: hidden;
+	text-indent: -500px;
+	width: 16px;
+	height: 16px;
+	background-position: 0 0;
+	}
+	
+body.pieces.edit div.content-container div.column.primary fieldset ul.images li.image ul.image-options li.option a:hover,
+body.pieces.edit div.content-container div.column.primary fieldset ul.images li.image ul.image-options li.option a:visited:hover {
+	background-position: 0 -16px;
+	}
+	
+body.pieces.edit div.content-container div.column.primary fieldset ul.images li.image ul.image-options li#delete a {
+	background-image: url(/images/portfolio-delete-icon.gif);
+	}
+	
+body.pieces.edit div.content-container div.column.primary fieldset ul.images li.image ul.image-options li#edit a {
+	background-image: url(/images/portfolio-edit-icon.gif);
+	}
+	
+body.pieces.edit div.content-container div.column.primary fieldset div.add-image {
+  overflow: hidden;
+  margin: 10px 0 20px 0;
+}
+
+body.pieces.edit div.content-container div.column.primary fieldset div.add-image a {
+	display: block;
+	float: right;
+}
+
+
+/*--PIECE > EDIT IMAGES--*/
+body.image_uploads.index div.page-header-container-inner div.call-to-action a:link,
+body.image_uploads.index div.page-header-container-inner div.call-to-action a:visited {
+	display: block;
+	height: 35px;
+	width: 149px;
+	background-image: url(/images/piece-add-image-button.gif);
+	background-position: 0 0;
+	background-repeat: no-repeat;
+	overflow: hidden;
+	text-indent: -5000px;
+	position: relative;
+	right: -5px;
+	}
+	
+body.image_uploads.index div.page-header-container-inner div.call-to-action a:hover,
+body.image_uploads.index div.page-header-container-inner div.call-to-action a:visited:hover {
+	background-position: 0 -35px;
 	}
 	
 	

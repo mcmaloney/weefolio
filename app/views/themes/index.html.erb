@@ -17,7 +17,7 @@
     		  <div class="image">
     		    <%= image_tag theme.photo.url(:thumbnail), :class => "thumbnail", :width => "230", :height => "150" %>
     		    <div class="options">
-    		      <%= link_to "Preview", theme_path(theme), :class => "button preview" %>
+    		      <%= link_to "Preview", theme_path(theme), :class => "secondary-button preview"%>
     		      <% if current_user %>
     		        <%= show_install_for(current_user, theme) %>
     		      <% end %>

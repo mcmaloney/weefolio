@@ -1,7 +1,38 @@
 <% form_for [@portfolio, @piece], :html => {:multipart => true} do |f| %>
  <div class="column primary">
+  </fieldset>
+		
+		<% unless @piece.new_record? %>
+		<fieldset>
+		  <legend>Images</legend>
+		  <% if @piece.image_uploads.blank? %>
+      <p class="intro">
+        You don't have any images for this piece yet.
+      </p>
+    <% else %>
+      <ul class="images">
+      <% @piece.image_uploads.each do |upload| %>
+        <li class="image">
+          <%= link_to image_tag(upload.image.url(:small_thumb)), edit_piece_image_upload_path(@piece, upload) %>
+          
+          <ul class="image-options">
+						<li class="option" id="edit"><%= link_to 'Edit', edit_piece_image_upload_path(@piece, upload)%></li>
+						<li class="option" id="delete"><%= link_to 'Delete', piece_image_upload_path(@piece, upload), :confirm => "Are you sure?", :method => :delete %></li>
+				</ul>
+        </li>
+				
+				
+      <% end %>
+    <% end %>
+    </ul>
+    <div class="add-image">
+				  <%= link_to "&#43; Add Image", new_piece_image_upload_path(@piece), :class => 'secondary-button' %>
+				</div>
+		</fieldset>
+		<% end %>
+		
 	<fieldset>
-		<legend>Piece</legend>
+		<legend>Info</legend>
 		<dl>
 			<dt>
 				<label for="piece_title">Title</label>
@@ -16,8 +47,18 @@
 				<dd>
 			    <%= f.text_area :description, :rows => 8, :cols => 36 %>
 			  </dd>
-			</dl>
-		</fieldset>
+			
+			<% unless @piece.new_record? %>
+			<!--<dt><label>Images</label></dt>
+			
+			<dd>
+  		  <div class="manage-images">
+  		    <%= link_to "Manage Images &raquo;", piece_image_uploads_path(@piece) %>
+  		  </div>
+  		</dd>-->
+  		
+  		<% end %>
+  		</dl>
 
 		<fieldset>
 		  <legend>Additional</legend>	  
@@ -34,10 +75,11 @@
 			  <dd>
 			    <%= f.select :service_type, @service_types %>
 			  </dd>
-			  <dt>
+		
+			  <% unless current_user.plan.level == 1 %>
+			     <dt>
 			    &nbsp;
 			     </dt>
-			  <% unless current_user.plan.level == 1 %>
 				  <dd>
 			      <%= f.check_box :for_sale, :onclick => 'toggle_price_field()' %> <label for="piece_for_sale">For Sale?</label>
 			    </dd>
@@ -57,29 +99,30 @@
 		        </dd>
 			    </div>
 			  <% end %>
-  		</dl>
-  		
-  		<% unless @piece.new_record? %>
-  		  <p>
-    		  <%= link_to "Images &raquo;", piece_image_uploads_path(@piece) %>
-    		</p>
-  		<% end %>
-  		  
+  		</dl>  		  
 	</fieldset>
 	
-	<div class="submit" id="save">
-		 <%= f.submit "Next: Add Images" %>
-	</div>
+	<% unless @piece.new_record? %>
+  	<div class="submit" id="save">
+  		 <%= f.submit "Save" %>
+  	</div>
+	<% else %>
+    <div class="submit" id="save">
+  		 <%= f.submit "Save &amp; Add Images" %>
+  	</div>
+  <% end %>
 
 <% end %>
 		</div>
 <div class="column secondary">
  <ul class="widgets">
+ <% unless current_user.plan.level == 3 %>
   <li class="piece-count upgrade">
    <h2>Upgrade!</h2>
    <p>You're using <strong><%=h @portfolio.pieces.count %></strong> of your <strong><%=h @portfolio.max_pieces %></strong> pieces.</p>
    
-   <p>For additional pieces, images, &amp; other features, <a href="#">upgrade</a> to a <strong>Plus</strong> or <strong>Pro</strong> account.</p>
+   <p>For additional pieces, images, &amp; other features, <%= link_to 'upgrade', edit_user_path(current_user) %> to a <strong>Plus</strong> or <strong>Pro</strong> account.</p>
   </li>
+  <% end %>
  </ul>
 </div>
