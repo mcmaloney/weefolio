@@ -41,7 +41,7 @@ describe ImageUploadsController do
       post :create, :piece_id => @user.portfolio.pieces.first.id, :image_upload => { :image => "TEST" }
       assigns['piece'].id.should == @user.portfolio.pieces.first.id
       assigns['image_upload'].should_not be_nil
-      response.should redirect_to(piece_image_uploads_path(@user.portfolio.pieces.first))
+      response.should redirect_to(edit_portfolio_piece_path(@user.portfolio, @user.portfolio.pieces.first))
       flash[:notice].should include("Image added.")
     end
   end
@@ -52,7 +52,7 @@ describe ImageUploadsController do
       put :update, :piece_id => @user.portfolio.pieces.first.id, :id => @user.portfolio.pieces.first.image_uploads.first.id, :image_upload => { :image => "TEST" }
       assigns['piece'].id.should == @user.portfolio.pieces.first.id
       assigns['image_upload'].should_not be_nil
-      response.should redirect_to(piece_image_uploads_path(@user.portfolio.pieces.first))
+      response.should redirect_to(edit_portfolio_piece_path(@user.portfolio, @user.portfolio.pieces.first))
       flash[:notice].should include("Image updated.")
     end
   end
@@ -64,7 +64,7 @@ describe ImageUploadsController do
       assigns['piece'].id.should == @user.portfolio.pieces.first.id
       assigns['image_upload'].should_not be_nil
       @user.portfolio.pieces.first.image_uploads.count.should == 0
-      response.should redirect_to(piece_image_uploads_path(@user.portfolio.pieces.first))
+      response.should redirect_to(edit_portfolio_piece_path(@user.portfolio, @user.portfolio.pieces.first))
       flash[:notice].should include("Image deleted.")
     end
   end
