@@ -56,11 +56,12 @@ class Plan < ActiveRecord::Base
   end
   
   def populate_amount_in_cents
-    if self.level == 1
+    case self.level
+    when 1
       self.amount_in_cents = 0
-    elsif self.level == 2
+    when 2
       self.amount_in_cents = 499
-    elsif self.level == 3
+    when 3
       self.amount_in_cents = 999
     end
   end
