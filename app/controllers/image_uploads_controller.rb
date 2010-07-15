@@ -15,7 +15,7 @@ class ImageUploadsController < ApplicationController
   
   def create
     if @image_upload.save
-      redirect_to piece_image_uploads_path(@piece)
+      redirect_to edit_portfolio_piece_path(current_user.portfolio, @piece)
       flash[:notice] = "Image added."
     else
       render :action => 'new'
@@ -25,7 +25,7 @@ class ImageUploadsController < ApplicationController
   
   def update
     if @image_upload.update_attributes(params[:image_upload])
-      redirect_to piece_image_uploads_path(@piece)
+      redirect_to edit_portfolio_piece_path(current_user.portfolio, @piece)
       flash[:notice] = "Image updated."
     else
       render :action => 'edit'
@@ -35,7 +35,7 @@ class ImageUploadsController < ApplicationController
   
   def destroy
     @image_upload.destroy
-    redirect_to piece_image_uploads_path(@piece)
+    redirect_to edit_portfolio_piece_path(current_user.portfolio, @piece)
     flash[:notice] = "Image deleted."
   end
   
