@@ -19,7 +19,7 @@
     		    <div class="options">
     		      <%= link_to "Preview", theme_path(theme), :class => "secondary-button preview"%>
     		      <% if current_user %>
-    		        <%= show_install_for(current_user, theme) %>
+    		        <%= link_to "Install", install_theme_path(theme), :class => "secondary-button install" %>
     		      <% end %>
     		   </div>
     		  </div>
