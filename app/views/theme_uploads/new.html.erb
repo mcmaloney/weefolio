@@ -43,6 +43,8 @@
           </dl>
           
            <%= f.hidden_field :user_id, :value => current_user.id %>
+           
+           <%= less_reverse_captcha_field :user %>
         </fieldset>
         
         <div class="submit" id="save">
