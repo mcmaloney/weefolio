@@ -690,6 +690,7 @@ body.home div.page-header-container-inner div.illustration div.featured img.feat
  float: right;
  position: relative;
  margin: -151px -16px 0 0;
+ border: none;
  }
 
 body.home div.page-header-container-inner div.welcome-container {
