@@ -1,4 +1,6 @@
 class ThemeUpload < ActiveRecord::Base
+  belongs_to :user
+  
   has_attached_file :screenshot, :styles => { :thumbnail => "150x230#" },
                                             :storage => :s3, 
                                             :s3_credentials => "#{RAILS_ROOT}/config/s3.yml",
