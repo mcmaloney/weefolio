@@ -10,4 +10,10 @@ class ThemeUpload < ActiveRecord::Base
                                     :path => ':attachment/:id/:style/:basename.:extension'
                                     
   validates_less_reverse_captcha
+  
+  after_save :send_admin_email
+  
+  def send_admin_email
+    UserMailer.deliver_theme_upload_message(self, self.user)
+  end
 end

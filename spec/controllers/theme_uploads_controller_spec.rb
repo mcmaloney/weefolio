@@ -26,12 +26,12 @@ describe ThemeUploadsController do
       @user.setup
       login_as(@user)
       
-      post :create, :theme_upload => {:title => "My Awesome Theme", :source_code => "<h1>AWESOME</h1>"}
+      post :create, :theme_upload => {:title => "My Awesome Theme", :source_code => "<h1>AWESOME</h1>", :user_id => @user.id}
       response.should redirect_to(themes_path)
     end
     
     it "should not allow me to upload if I'm not logged in" do
-      post :create, :theme_upload => {:title => "My Awesome Theme", :source_code => "<h1>AWESOME</h1>"}
+      post :create, :theme_upload => {:title => "My Awesome Theme", :source_code => "<h1>AWESOME</h1>" }
       response.should redirect_to(login_path)
     end
   end
