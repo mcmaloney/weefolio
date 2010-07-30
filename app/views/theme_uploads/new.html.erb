@@ -1,2 +1,22 @@
-<h1>ThemeUploads#new</h1>
-<p>Find me in app/views/theme_uploads/new.html.erb</p>
+<% form_for @theme_upload, :html => { :multipart => true } do |f| %>
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :source_code %><br />
+    <%= f.text_area :source_code %>
+  </p>
+  <p>
+    <%= f.label :screenshot %><br />
+    <%= f.file_field :screenshot %>
+  </p>
+  <p>
+    <%= f.label :asset_package %><br />
+    <%= f.file_field :asset_package %>
+  </p>
+  <p>
+    <%= f.submit "Submit" %>
+  </p>
+<% end %>
+  
