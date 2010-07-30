@@ -1,2 +1,14 @@
-access_key_id: AKIAIZLM4NRWNWH24HDQ
-secret_access_key: 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
+development:
+  access_key_id: AKIAIZLM4NRWNWH24HDQ
+  secret_access_key: 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
+  bucket: weefoliodev
+  
+test:
+  access_key_id: AKIAIZLM4NRWNWH24HDQ
+  secret_access_key: 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
+  bucket: weefoliodev
+  
+production:
+  access_key_id: AKIAIZLM4NRWNWH24HDQ
+  secret_access_key: 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
+  bucket: weefolio
