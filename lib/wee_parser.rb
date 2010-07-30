@@ -184,7 +184,7 @@ class UserObject
     when "[about]"
       "<%= show_about_me_for(@user) %>"
     when "[avatar-url]"
-      "<%= image_tag @user.photo.url(:thumbnail) %>"
+      "<%= @user.photo.url(:thumbnail) %>"
     when "[rss-url]"
       "<%= user_portfolio_path(@user.login) %>.rss"
     when "[tagline]"
