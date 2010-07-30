@@ -4,10 +4,10 @@ class ThemeUpload < ActiveRecord::Base
   has_attached_file :screenshot, :styles => { :thumbnail => "150x230#" },
                                             :storage => :s3, 
                                             :s3_credentials => "#{RAILS_ROOT}/config/s3.yml",
-                                            :path => ':attachment/:id/:style/:basename.:extension'
+                                            :path => ':attachment/:title/:style/:basename.:extension'
   has_attached_file :asset_package, :storage => :s3, 
                                     :s3_credentials => "#{RAILS_ROOT}/config/s3.yml",
-                                    :path => ':attachment/:id/:style/:basename.:extension'
+                                    :path => ':attachment/:title/:basename.:extension'
                                     
   validates_less_reverse_captcha
   
