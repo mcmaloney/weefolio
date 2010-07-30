@@ -9,6 +9,11 @@
 <!--PAGE CONTENT-->
 <%# YIELD %>
 <div class="content-container">
+  <% if flash[:warning] or flash[:notice] %>
+	  	<div id="notice" <% if flash[:warning] %>class="warning"<% end %>>
+	      <%= flash[:warning] || flash[:notice] %>
+	  	</div>
+	<% end %>
 	<div class="column">  
 		<ul class="themes">
 		  <% @themes.each do |theme| %>
