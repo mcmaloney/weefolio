@@ -20,6 +20,7 @@ ActionController::Routing::Routes.draw do |map|
     admin.root :controller => 'dashboard'
     admin.resources :users
     admin.resources :themes
+    admin.resources :theme_uploads
   end
   
   # PRETTY ROUTE FOR WEEFOLIO PATH
