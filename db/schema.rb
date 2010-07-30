@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100730004757) do
+ActiveRecord::Schema.define(:version => 20100730011734) do
 
   create_table "delayed_jobs", :force => true do |t|
     t.integer  "priority",   :default => 0
@@ -128,6 +128,7 @@ ActiveRecord::Schema.define(:version => 20100730004757) do
     t.string   "asset_package_content_type"
     t.integer  "asset_package_file_size"
     t.datetime "asset_package_updated_at"
+    t.integer  "user_id"
   end
 
   create_table "themes", :force => true do |t|

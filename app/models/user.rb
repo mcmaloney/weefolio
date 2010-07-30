@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   has_one                   :design, :dependent => :destroy
   has_one                   :plan, :dependent => :destroy
   has_many                  :pieces, :through => :portfolio
+  has_many                  :theme_uploads
   validates_presence_of     :login
   validates_length_of       :login,    :within => 3..40
   validates_uniqueness_of   :login

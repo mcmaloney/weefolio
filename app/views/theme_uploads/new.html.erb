@@ -1,4 +1,7 @@
 <% form_for @theme_upload, :html => { :multipart => true } do |f| %>
+
+  <%= f.hidden_field :user_id, :value => current_user.id %>
+  
   <p>
     <%= f.label :title %><br />
     <%= f.text_field :title %>
