@@ -1,14 +1,16 @@
-<div class="main-image" id="<%=h piece.id %>">
-  <%= image_tag piece.image_uploads.first.image.url(:full_size) %>
-</div>
-
-<% if piece.image_uploads.count > 1 %>
-  <div class="gallery">
-    <ul>
-      <% piece.image_uploads.each do |upload| %>
-        <li><a href="javascript:void(0)" id="<%= upload.image.url(:full_size) %>" onclick="switch_large_image(this, <%=h piece.id %>)"><%= image_tag upload.image.url(:small_thumb) %></a></li>
-      <% end %>
-    </ul>
+<% unless piece.image_uploads.blank? %>
+  <div class="main-image" id="<%=h piece.id %>">
+      <%= image_tag piece.image_uploads.first.image.url(:full_size) %>
   </div>
+
+  <% if piece.image_uploads.count > 1 %>
+    <div class="gallery">
+      <ul>
+        <% piece.image_uploads.each do |upload| %>
+          <li><a href="javascript:void(0)" id="<%= upload.image.url(:full_size) %>" onclick="switch_large_image(this, <%=h piece.id %>)"><%= image_tag upload.image.url(:small_thumb) %></a></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
 <% end %>
 

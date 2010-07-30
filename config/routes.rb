@@ -41,6 +41,9 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :themes
   map.install_theme '/themes/install/:id', :controller => "themes", :action => "install", :conditions => { :method => :put }
   map.uninstall_theme '/themes/uninstall/:id', :controller => "themes", :action => "uninstall", :conditions => { :method => :put }
+  
+  # THEME UPLOADS
+  map.resources :theme_uploads
 
   # PIECES
   map.resources :pieces do |pieces|
