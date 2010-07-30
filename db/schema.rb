@@ -60,7 +60,7 @@ ActiveRecord::Schema.define(:version => 20100730004757) do
   create_table "pieces", :force => true do |t|
     t.string   "title"
     t.text     "description"
-    t.decimal  "price",        :precision => 10, :scale => 2
+    t.decimal  "price"
     t.boolean  "for_sale"
     t.integer  "portfolio_id"
     t.datetime "created_at"
@@ -76,6 +76,8 @@ ActiveRecord::Schema.define(:version => 20100730004757) do
     t.integer  "level"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "card_expiration_month"
+    t.string   "card_expiration_year"
     t.string   "card_type"
     t.string   "billing_first_name"
     t.string   "billing_last_name"
@@ -88,8 +90,6 @@ ActiveRecord::Schema.define(:version => 20100730004757) do
     t.string   "gateway_response"
     t.string   "payment_status"
     t.integer  "amount_in_cents"
-    t.string   "card_expiration_month"
-    t.string   "card_expiration_year"
   end
 
   create_table "portfolios", :force => true do |t|

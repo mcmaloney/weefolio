@@ -1,22 +1,71 @@
-<% form_for @theme_upload, :html => { :multipart => true } do |f| %>
-  <p>
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </p>
-  <p>
-    <%= f.label :source_code %><br />
-    <%= f.text_area :source_code %>
-  </p>
-  <p>
-    <%= f.label :screenshot %><br />
-    <%= f.file_field :screenshot %>
-  </p>
-  <p>
-    <%= f.label :asset_package %><br />
-    <%= f.file_field :asset_package %>
-  </p>
-  <p>
-    <%= f.submit "Submit" %>
-  </p>
-<% end %>
-  
+<!--PAGE TITLE/CALL-TO-ACTION-->
+<%# YIELD %>
+<div class="page-header-container-outer">
+	<div class="page-header-container-inner">
+		<h1>Submit Theme <small>&nbsp;</small></h1>
+	   
+	</div>
+</div>
+
+<div class="content-container">
+  <% if flash[:warning] or flash[:notice] %>
+	  	<div id="notice" <% if flash[:warning] %>class="warning"<% end %>>
+	      <%= flash[:warning] || flash[:notice] %>
+	  	</div>
+	<% end %>
+	<div class="column primary">
+      <% form_for @theme_upload, :html => { :multipart => true } do |f| %>
+        <fieldset>
+          <legend>Theme</legend>
+          
+          <dl>
+            <dt><%= f.label :title %></dt>
+            <dd><%= f.text_field :title %></dd>
+    
+            
+            <dt><%= f.label :source_code, "Source Code" %></dt>
+            <dd>
+              <%= f.text_area :source_code %>
+              <p>All CSS and Javascript must be included in the themes source.</p>
+            </dd>
+            
+            <dt><%= f.label :screenshot, "Thumbnail" %></dt>
+            <dd>
+              <%= f.file_field :screenshot, :class => "file" %>
+              <p>JPEG, GIF, or PNG at 230x150 pixels</p>
+            </dd>
+            
+            <dt><%= f.label :asset_package, "Assets" %></dt>
+            <dd>
+              <%= f.file_field :asset_package, :class => "file"  %>
+              <p>.ZIP file including all image assets used in the theme.</p>
+            </dd>
+          </dl>
+        </fieldset>
+        
+        <div class="submit" id="save">
+          <%= f.submit "Submit" %>
+        </div>
+      <% end %>
+  	</div>
+  	
+  	<div class="column secondary">
+  	 <ul class="widgets">
+  	   <li class="widget">
+  	     <p>Please be sure your theme meets the following <strong>requirments</strong>:</p>
+  	     
+  	     <ol>
+  	       <li>All external files and assets such as CSS, Javascript, &amp; Images (no other files allowed) are supplied within the theme's source code or uploaded in ZIP format. <strong>NO EXTERNAL ASSETS</strong></li>
+  	       
+  	       <li>Must support all "Portfolio Content Tags".</li>
+  	       <li>Must meet the aesthetic standards of Weefolio. Themes that are considered lacking are subject to rejection at Weefolio's discretion.</li>
+  	     </ol>
+  	     
+  	     <p>If you have any questions regarding theme submissions please <%= link_to 'contact us', contact_path %>!</p>
+  	   </li>
+  	 </ul>
+  	</div>
+</div>
+
+
+
