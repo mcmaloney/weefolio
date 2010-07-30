@@ -17,13 +17,16 @@
       <% @users.each do |user| %>
         <tr>
           <td>
-            <%= link_to image_tag(user.photo.url(:thumbnail)), admin_user_path(user) %>
+            <%= link_to image_tag(user.photo.url(:thumbnail)), user_portfolio_path(user.login) %>
           </td>
           <td>
-            <%= link_to h(user.login), admin_user_path(user) %>
+            <%= link_to h(user.login), user_portfolio_path(user.login) %>
           </td>
           <td>
             <%= user.email %>
+          </td>
+          <td>
+            <%= link_to "DELETE", admin_user_path(user), :confirm => "Are you sure??", :method => :delete %>
           </td>
         </tr>
       <% end %>

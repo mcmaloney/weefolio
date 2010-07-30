@@ -421,7 +421,7 @@ div.content-container div.column.secondary ul.widgets {
  list-style: none;
  }
 
-div.content-container div.column.secondary ul.widgets li {
+div.content-container div.column.secondary ul.widgets li.widget {
  background: #f5f5f3;
  padding: 0 15px;
  border-radius: 3px;
@@ -588,7 +588,7 @@ div.content-container form fieldset dl dd input.file {
   -moz-border-radius: 3px;
 	 -webkit-border-radius: 3px;
 	border-radius: 3px;
-	margin: 0 0 10px 0;
+	margin: 0 0 0px 0;
 	font-size: 11px;
 	border: 1px solid #ececea;
 	border-top-width: 2px;
@@ -690,6 +690,7 @@ body.home div.page-header-container-inner div.illustration div.featured img.feat
  float: right;
  position: relative;
  margin: -151px -16px 0 0;
+ border: none;
  }
 
 body.home div.page-header-container-inner div.welcome-container {
@@ -843,6 +844,26 @@ body.users.index ul#user-list li a span.username {
 	
 	
 /*---THEMES---*/
+
+
+body.themes.index div.page-header-container-inner div.call-to-action a:link,
+body.themes.index div.page-header-container-inner div.call-to-action a:visited {
+	display: block;
+	height: 35px;
+	width: 175px;
+	background-image: url(/images/submit-theme-button.gif);
+	background-position: 0 0;
+	background-repeat: no-repeat;
+	overflow: hidden;
+	text-indent: -5000px;
+	position: relative;
+	right: -5px;
+	}
+	
+body.themes.index div.page-header-container-inner div.call-to-action a:hover,
+body.themes.index div.page-header-container-inner div.call-to-action a:visited:hover {
+	background-position: 0 -35px;
+	}
 
 body.themes.index div.content-container ul.themes {
  list-style: none;

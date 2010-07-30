@@ -84,8 +84,8 @@
 					<dd>
 						<ul>
 						  <li><%= p.radio_button :level, 1, :onclick => "hide_billing()" %><label>Basic (Free)</label></li>
-						  <li><%= p.radio_button :level, 2, :onclick => "show_billing()" %><label>Plus ($2.99/month)</label></li>
-			        <li><%= p.radio_button :level, 3, :onclick => "show_billing()" %><label>Pro ($4.99/month)</label></li>
+						  <li><%= p.radio_button :level, 2, :onclick => "show_billing()" %><label>Plus ($4.99/month)</label></li>
+			        <li><%= p.radio_button :level, 3, :onclick => "show_billing()" %><label>Pro ($9.99/month)</label></li>
 						</ul>
 						
 						<!--<p> Current Plan: <%= @user.render_account_tier %></p>-->
@@ -210,7 +210,7 @@
 	  
 	  <div class="column secondary">
 	   <ul class="widgets">
-	  	<li class="close-account">
+	  	<li class="widget close-account">
 	  	 
 	  	 <p>
  	    <%= link_to 'Close Account', close_account_path, :class => "account-close" %>

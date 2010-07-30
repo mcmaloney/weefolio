@@ -1,7 +1,7 @@
 class UserMailer < ActionMailer::Base  
-  REGARDING = [["Report a Bug", "Bug Report"], ["Technical Help", "Technical Help"], ["General Inquiry", "General Inquiry"]]
   WEEFOLIO_ADMINS = "michael@fancylabs.com"
   WEEFOLIO_SYSTEM = "user_destroyer@weefolio.com"
+  MIKE_AND_KEVIN = "michael@fancylabs.com, kevin@fancylabs.com"
   
   # Message between users. (i.e. contact form on Weefolio page, etc.)
   def user_message(recip, from, from_name, message)
@@ -12,20 +12,19 @@ class UserMailer < ActionMailer::Base
     body message
   end
   
-  # We're using GetSatisfaction now.
-  #
-  # # Message for when someone contacts us from the contact page. Static recipient list.
-  #  def contact_message(from, sender_name, subject, message)
-  #    recipients WEEFOLIO_ADMINS
-  #    from from
-  #    subject "Message From Weefolio Contact Form - #{subject}"
-  #    body :message => message, :sender_name => sender_name, :reply_email => from
-  #  end
-  
   def delete_account_message(user)
     recipients WEEFOLIO_ADMINS
     from WEEFOLIO_SYSTEM
     subject "DELETE USER ACCOUNT REQUEST"
     body :login => user.login, :email => user.email
+  end
+  
+  # Sends us a message when a theme gets uploaded
+  def theme_upload_message(theme_upload, user)
+    recipients MIKE_AND_KEVIN
+    from "theme_upload_robot@weefolio.com"
+    subject "New Theme Uploaded"
+    sent_on Time.now
+    body :theme_upload => theme_upload, :user => user
   end
 end

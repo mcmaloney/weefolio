@@ -35,6 +35,9 @@
   <div class="submit" id="save">
     <%= f.submit "Save" %> or 
     <%= link_to "Cancel", edit_portfolio_piece_path(current_user.portfolio, @piece) %>
+    <p>
+      <div id="loading_img"></div>
+    </p>
   </div>
 
 

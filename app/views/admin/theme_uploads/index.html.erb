@@ -1,0 +1,8 @@
+<h1>Theme Uploads</h1>
+
+<% @theme_uploads.each do |theme_upload| %>
+  <p>
+    <%= link_to theme_upload.title, admin_theme_upload_path(theme_upload) %> 
+    (by <%= link_to theme_upload.user.login, admin_user_path(theme_upload.user) %>)
+  </p>
+<% end %>

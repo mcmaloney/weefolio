@@ -1,6 +1,6 @@
 module WeeParser
   CSS_DICT = ["color", "background", "font", "size", "text", "hover", "link", "title", "border", "header", "family"]
-  USER_DICT = ["header", "image", "contact", "form", "about", "me", "tagline", "rss", "url", "username"]
+  USER_DICT = ["header", "image", "contact", "form", "about", "me", "tagline", "rss", "url", "username", "avatar", "url"]
   PIECE_DICT = ["piece", "each", "pieces", "meta", "portfolio", "image", "gallery", "about", "client", "service", "for", "sale", "url", "if", "title"]
   GLOBAL_DICT = ["end", "javascript", "jquery", "wee", "script"]
   THRESH = 0.75
@@ -184,7 +184,7 @@ class UserObject
     when "[about]"
       "<%= show_about_me_for(@user) %>"
     when "[avatar-url]"
-      "<%= image_tag @user.photo.url(:thumbnail) %>"
+      "<%= @user.photo.url(:thumbnail) %>"
     when "[rss-url]"
       "<%= user_portfolio_path(@user.login) %>.rss"
     when "[tagline]"

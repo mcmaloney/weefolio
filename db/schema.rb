@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100621192154) do
+ActiveRecord::Schema.define(:version => 20100730011734) do
 
   create_table "delayed_jobs", :force => true do |t|
     t.integer  "priority",   :default => 0
@@ -60,7 +60,7 @@ ActiveRecord::Schema.define(:version => 20100621192154) do
   create_table "pieces", :force => true do |t|
     t.string   "title"
     t.text     "description"
-    t.decimal  "price"
+    t.decimal  "price",        :precision => 10, :scale => 2
     t.boolean  "for_sale"
     t.integer  "portfolio_id"
     t.datetime "created_at"
@@ -113,6 +113,22 @@ ActiveRecord::Schema.define(:version => 20100621192154) do
     t.string   "value",      :limit => 6
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "theme_uploads", :force => true do |t|
+    t.string   "title"
+    t.text     "source_code"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "screenshot_file_name"
+    t.string   "screenshot_content_type"
+    t.integer  "screenshot_file_size"
+    t.datetime "screenshot_updated_at"
+    t.string   "asset_package_file_name"
+    t.string   "asset_package_content_type"
+    t.integer  "asset_package_file_size"
+    t.datetime "asset_package_updated_at"
+    t.integer  "user_id"
   end
 
   create_table "themes", :force => true do |t|

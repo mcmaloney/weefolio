@@ -52,4 +52,5 @@ class ThemesController < ApplicationController
       flash[:notice] = "You need a Weefolio to do that. Sign up now!"
     end
   end
+  
 end
