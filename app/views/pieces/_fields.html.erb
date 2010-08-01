@@ -117,7 +117,7 @@
 <div class="column secondary">
  <ul class="widgets">
  <% unless current_user.plan.level == 3 %>
-  <li class="piece-count upgrade">
+  <li class="piece-count widget upgrade">
    <h2>Upgrade!</h2>
    <p>You're using <strong><%=h @portfolio.pieces.count %></strong> of your <strong><%=h @portfolio.max_pieces %></strong> pieces.</p>
    

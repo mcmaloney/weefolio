@@ -6,7 +6,7 @@ class MainPagesController < ApplicationController
   end
   
   def help
-    @page_title = "Weedolio - Help"
+    @page_title = "Weefolio - Help"
   end
   
   def contact

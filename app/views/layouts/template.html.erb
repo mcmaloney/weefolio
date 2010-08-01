@@ -5,6 +5,7 @@
 
 	<head>
 		<title><%= @page_title %></title>
+		<link rel="shortcut icon" href="images/favicon.gif">
 		<!--[if IE 7]>
 			<%= stylesheet_link_tag 'ie7' %>
 		<![endif]-->
@@ -24,8 +25,8 @@
 			<ul id="global-nav">
 				<li><%= link_to 'Home', root_path %></li>
 				<li><%= link_to 'Directory', directory_path %></li>
-				<li><%= link_to 'Pricing', signup_path %></li>
 				<li><%= link_to "Themes", themes_path %></li>
+				<li><%= link_to 'Pricing', signup_path %></li>
 				<li><%= link_to 'Help', help_path %></li>
 				<!--<li><a href="http://blog.weefolio.com">Blog</a></li>-->
 				<% if logged_in? %>

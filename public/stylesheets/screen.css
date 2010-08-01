@@ -505,6 +505,49 @@ div.footer-container a:visited:hover {
 	color: #242420;
 	}
 	
+	
+/*-- GLOABL PAGINATION --*/
+
+div.pagination {
+  height: 30px;
+  margin: 15px 0 0 0;
+  text-align: center;
+}
+
+div.pagination a:link,
+div.pagination a:visited {
+  border: 1px solid #ececea;
+  padding: 7px 10px 8px 10px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  border-bottom-width: 2px;
+}
+
+div.pagination a:hover,
+div.pagination a:visited:hover {
+  border-color: #767574;
+}
+
+div.pagination span.current {
+  border: 1px solid #767574;
+  padding: 7px 10px 8px 10px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  color: #242420;
+  border-bottom-width: 2px;
+}
+
+div.pagination span.disabled {
+  border: 1px solid #ececea;
+  padding: 7px 10px 8px 10px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  border-bottom-width: 2px;
+}
+
 	 
 /*-- GLOBAL FORMS --*/
 
@@ -686,6 +729,10 @@ body.home div.page-header-container-inner div.illustration div.featured {
  margin: 102px 115px 0 0;
  }
  
+body.home div.page-header-container-inner div.illustration a {
+ border: none;
+ }
+ 
 body.home div.page-header-container-inner div.illustration div.featured img.featured-banner {
  float: right;
  position: relative;
@@ -794,13 +841,15 @@ body.users.index div.page-header-container-inner form#directory-search {
 	}
 
 body.users.index div.page-header-container-inner form#directory-search input#search {
-	background: transparent url(/images/directory-search-input.gif) 0 0 no-repeat;
-	border: none;
-	height: 32px;
-	width: 196px;
-	padding: 8px 0 0 35px;
+  background: #181815 url(/images/search-bar-icon.gif) 7px center no-repeat;
+  border: 1px solid #10100e;
+  border-top-width: 2px;
+  -moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
 	color: #fff;
-	font-size: 13px;
+	padding: 7px 7px 8px 26px;
+	width: 150px;
 	}
 	
 body.users.index div.page-header-container-inner form#directory-search input#search:focus {
@@ -811,14 +860,14 @@ body.users.index ul#user-list {
 	margin: 0;
 	padding: 0;
 	list-style: none;
-	width: 730px;
+	width: 840px;
 	}
 	
 body.users.index ul#user-list li {
 	float: left;
-	width: 128px;
+	width: 138px;
 	overflow: hidden;
-	margin: 0 18px 20px 0;
+	margin: 0 30px 20px 0;
 	text-align: center;
 	}
 
@@ -827,7 +876,7 @@ body.users.index ul#user-list li a {
 	}	
 	
 body.users.index ul#user-list li a img {
-	padding: 5px;
+	padding: 10px;
 	background: #f5f5f3;
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
