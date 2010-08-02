@@ -3,7 +3,7 @@ xml.rss :version => "2.0" do
   xml.channel do
     xml.title "#{@user.login}'s WeeFeed"
     xml.description "Everything new from #{@user.login}'s Weefolio."
-    xml.link user_portfolio_path(current_user, :rss)
+    xml.link user_portfolio_path(@user, :rss)
     
     @portfolio.pieces.each do |piece|
       xml.item do
