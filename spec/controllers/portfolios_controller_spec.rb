@@ -21,6 +21,14 @@ describe PortfoliosController do
    #   get :show, :login => "sdfjgnmHH"
    #   response.code.should == "404"
    # end
+   
+   it "should render an rss view as well" do
+     get :show, :login => @user.login, :format => "rss"
+     assigns['user'].login.should == @user.login
+     assigns['design'].user_id.should == @user.id
+     assigns['portfolio'].user_id.should == @user.id
+     response.should be_success
+   end
  end
   
   describe "GET edit" do
