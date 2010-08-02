@@ -68,12 +68,12 @@ describe User do
     
     it "should show the account tier in a readable way if I change the tier" do
       @user.plan.level = 2
-      @user.render_account_tier.should == "Plus ($2.99/Month)"
+      @user.render_account_tier.should == "Plus ($4.99/Month)"
     end
     
     it "should show the account tier in a readable way if I change the tier... again" do
       @user.plan.level = 3
-      @user.render_account_tier.should == "Pro ($4.99/Month)"
+      @user.render_account_tier.should == "Pro ($9.99/Month)"
     end
     
     # This only returns true with a transaction present. For now, we'll say it has to be false without that. Still means it's working...

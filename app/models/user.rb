@@ -96,9 +96,9 @@ class User < ActiveRecord::Base
     if self.plan.level == 1
       "Basic"
     elsif self.plan.level == 2
-      "Plus ($2.99/Month)"
+      "Plus ($4.99/Month)"
     elsif self.plan.level == 3
-      "Pro ($4.99/Month)"
+      "Pro ($9.99/Month)"
     end
   end
   
