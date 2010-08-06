@@ -12,6 +12,10 @@ development:
 test:
   database: weefolio_test
   <<: *local
+  
+cucumber:
+  database: weefolio_test
+  <<: *local 
 
 production:
   database: weefolio_production
