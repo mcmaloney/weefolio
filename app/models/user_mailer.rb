@@ -10,6 +10,7 @@ class UserMailer < ActionMailer::Base
     subject "Message from Weefolio User #{from_name}"
     sent_on Time.now
     body message
+    content_type "text/html"
   end
   
   def delete_account_message(user)
@@ -17,6 +18,7 @@ class UserMailer < ActionMailer::Base
     from WEEFOLIO_SYSTEM
     subject "DELETE USER ACCOUNT REQUEST"
     body :login => user.login, :email => user.email
+    content_type "text/html"
   end
   
   # Sends us a message when a theme gets uploaded
@@ -26,5 +28,6 @@ class UserMailer < ActionMailer::Base
     subject "New Theme Uploaded"
     sent_on Time.now
     body :theme_upload => theme_upload, :user => user
+    content_type "text/html"
   end
 end
