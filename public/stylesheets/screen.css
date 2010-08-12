@@ -504,6 +504,17 @@ div.footer-container a:hover,
 div.footer-container a:visited:hover {
 	color: #242420;
 	}
+
+div.footer-container ul#footer-nav li.social {
+  margin-left: 10px;
+}
+
+div.footer-container ul#footer-nav li.social a img {
+  vertical-align: middle;
+  margin: 0 0 0 5px;
+  position: relative;
+  top: -1px;
+}
 	
 	
 /*-- GLOABL PAGINATION --*/
