@@ -1,0 +1,9 @@
+<%= render :partial => 'shared/email_header' %>
+
+From:
+<%= @sender_name %> (<%= @reply_email%>)
+
+Message:
+<%= @message %>
+
+<%= render :partial => 'shared/email_footer' %>

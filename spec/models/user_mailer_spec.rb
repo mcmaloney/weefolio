@@ -47,7 +47,7 @@ describe UserMailer do
     end
     
     it "should show the username and email of the user requesting deletion" do
-      @email.should have_text("The following user would like his/her account destroyed: #{@user.login} #{@user.email}")
+      @email.should have_body_text("The following user would like his/her account destroyed: #{@user.login} #{@user.email}")
     end
   end
 end
