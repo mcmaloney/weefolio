@@ -9,7 +9,7 @@ class UserMailer < ActionMailer::Base
     from from
     subject "Message from Weefolio User #{from_name}"
     sent_on Time.now
-    body message
+    body :message => message
     content_type "text/html"
   end
   
