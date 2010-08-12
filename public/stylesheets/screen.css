@@ -1,9 +1,9 @@
 /*---GLOBAL---*/
 
 body {
-	background: #f5f5f3 url(../-images/body_background.gif) repeat-x top center;
+	background: #f5f5f3;
 	margin: 0 0 100px 0;
-	font-family: "Lucida Grande", Arial, sans-serif;
+	font-family: "Lucida Grande", Verdana, Arial, sans-serif;
 	font-size: 11px;
 	line-height: 15px;
 	color: #767574;
@@ -504,6 +504,17 @@ div.footer-container a:hover,
 div.footer-container a:visited:hover {
 	color: #242420;
 	}
+
+div.footer-container ul#footer-nav li.social {
+  margin-left: 10px;
+}
+
+div.footer-container ul#footer-nav li.social a img {
+  vertical-align: middle;
+  margin: 0 0 0 5px;
+  position: relative;
+  top: -1px;
+}
 	
 	
 /*-- GLOABL PAGINATION --*/
