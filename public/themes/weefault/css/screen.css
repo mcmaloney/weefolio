@@ -1,0 +1,160 @@
+/*------------------------------
+
+ 000 000 000    0000      0000     
+  00  00  00  00    00  00    00
+  00  00  00  00000000  00000000
+  00  00  00  00        00    
+    00  00      0000      0000  
+    
+             FOLIO              
+
+------------------------------*/
+
+
+/*--GLOBAL--*/
+
+body {
+  margin: 0;
+  background: #242420;
+  color: #767574;
+  font-family: "Lucida Grande", Verdana, Arial, sans-serif;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+a:link, a:visited {
+  color: #9fcf44;
+}
+
+a:hover, a:visited:hover {
+  color: #242420;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #242420;
+}
+
+
+/*--STRUCTURE--*/
+
+div.header-wrap {
+  padding: 10px 0;
+  overflow: hidden;
+}
+
+div.header-wrap div.header-container {
+  width: 900px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+div.column.primary {
+  width: 900px;
+  margin: 0 auto;
+}
+
+div.portfolio-container div.piece {
+  overflow: hidden;
+  margin: 0 0 50px 0;
+} 
+
+
+/*--HEADER--*/
+
+div.header-wrap {
+  background: #121210;
+}
+
+
+/*--TAGLINE--*/
+
+div.tagline-container h1 {
+  margin: 25px 0;
+  padding: 0;
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, .5);
+}
+
+
+/*--PIECE--*/
+
+div.portfolio-container div.piece {
+  width: 860px;
+  overflow: hidden; 
+  background: #fff;
+  padding: 20px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, .5);
+  -moz-box-shadow: 0 2px 5px rgba(0, 0, 0, .5);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, .5);
+}
+
+div.portfolio-container div.piece div.images {
+  width: 600px;
+  padding: 10px;
+  background: #f5f5f3;
+  border: 1px solid #ececea;
+  border-top-width: 2px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  float: left;
+}
+
+div.portfolio-container div.piece div.piece-info {
+  width: 220px;
+  float: right;
+}
+
+div.portfolio-container div.piece div.piece-info span.category {
+  background: #8fbbbb;
+  color: #fff;
+  padding: 2px 2px 2px 3px;
+  font-size: 9px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-shadow: 0 1px 0 #729696;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+}
+
+div.portfolio-container div.piece div.piece-info h2 {
+  margin-top: 5px;
+}
+
+
+/*--INFO--*/
+
+div.info-container {
+  width: 860px;
+  overflow: hidden; 
+  background: #fff;
+  padding: 20px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, .5);
+  -moz-box-shadow: 0 2px 5px rgba(0, 0, 0, .5);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, .5);
+}
+
+div.info-container div.about {
+  width: 420px;
+  float: left;
+}
+
+div.info-container div.about img.avatar {
+  padding: 5px;
+  background: #f5f5f3;
+  border: 1px solid #ececea;
+  border-top-width: 2px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  float: left;
+  margin: 0 15px 15px 0;
+}
