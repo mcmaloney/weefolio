@@ -1165,14 +1165,78 @@ body.portfolios.edit div.page-header-container-inner div#portfolio-add-work a:vi
 	background-position: 0 -35px;
 	}
 
-body.portfolios.edit div.content-container p.count {
+body.portfolios.edit div.content-container div.page-controls {
 	padding: 15px;
 	background: #f5f5f3;
 	-moz-border-radius: 3px;
 	-webkit-border-radius: 3px;
-	border: 1px solid #ddd;
+	border-radius: 3px;
+	border: 1px solid #eaeae7;
+	border-top-width: 2px;
 	margin: 0 0 20px 0;
+	overflow: hidden;
 	}
+	
+body.portfolios.edit div.content-container div.page-controls div.order {
+  float: left;
+  margin: 3px 0 0 0;
+}
+
+body.portfolios.edit div.content-container div.page-controls div.order span {
+  background: transparent url(/images/drag-list-icon.gif) left center no-repeat;
+  padding: 1px 0 2px 21px;
+}
+
+body.portfolios.edit div.content-container div.page-controls div.view {
+  float: right;
+}
+
+body.portfolios.edit div.content-container div.page-controls div.view ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+body.portfolios.edit div.content-container div.page-controls div.view ul li {
+  display: inline;
+  margin: 0;
+}
+
+body.portfolios.edit div.content-container div.page-controls div.view ul li a:link,
+body.portfolios.edit div.content-container div.page-controls div.view ul li a:visited {
+  background-color: #c9c9c7;
+  display: block;
+  overflow: hidden;
+  height: 21px;
+  width: 21px;
+  float: left;
+  margin: 0 0 0 5px;
+  text-indent: -1000px;
+  -moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	border: 1px solid #c9c9c7;
+	border-bottom-width: 2px;
+	-webkit-background-clip: padding-box;
+}
+
+body.portfolios.edit div.content-container div.page-controls div.view ul li a:hover,
+body.portfolios.edit div.content-container div.page-controls div.view ul li a:hover:visited {
+  background-color: #767574;
+  border: 1px solid #767574;
+  border-bottom-width: 2px;
+  background-color: #767574;
+}
+
+body.portfolios.edit div.content-container div.page-controls div.view ul li.selected a {
+  border: 1px solid #767574;
+  border-bottom-width: 2px;
+  background-color: #767574;
+}
+
+body.portfolios.edit div.content-container div.page-controls div.view ul li.list a { background-image: url(/images/list-icon-mask.gif); }
+body.portfolios.edit div.content-container div.page-controls div.view ul li.expanded-list a { background-image: url(/images/expanded-list-icon-mask.gif); }
+body.portfolios.edit div.content-container div.page-controls div.view ul li.grid a { background-image: url(/images/grid-icon-mask.gif); }
 		
 body.portfolios.edit div.content-container ul.pieces {
 	margin: -10px 0 0 0;
