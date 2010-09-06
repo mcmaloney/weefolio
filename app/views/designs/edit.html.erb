@@ -46,6 +46,12 @@
 	    			<dd>
 	    				<%= image_preview_for(@user.design.background_image) %> <%= f.file_field :background_image, :class => 'file' %>
 	    			</dd>
+	    			<dt>
+	    				<label for="design_background_orientation">Background Oreintation</label>
+	    			</dt>
+	    			<dd>
+	    				<%= f.select :background_orientation, Design::BG_OPTS.collect { |c| [c[0], c[1]] } %>
+	    			</dd>
 	    		</dl>
 	      	</fieldset>
 	      	

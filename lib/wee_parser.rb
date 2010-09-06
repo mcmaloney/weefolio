@@ -1,5 +1,5 @@
 module WeeParser
-  CSS_DICT = ["color", "background", "font", "size", "text", "hover", "link", "title", "border", "header", "family", "image", "url"]
+  CSS_DICT = ["color", "background", "oreintation", "font", "size", "text", "hover", "link", "title", "border", "header", "family", "image", "url"]
   USER_DICT = ["contact", "form", "about", "me", "tagline", "rss", "url", "username", "avatar"]
   PIECE_DICT = ["piece", "each", "pieces", "meta", "portfolio", "image", "gallery", "about", "client", "service", "for", "sale", "url", "if", "title"]
   GLOBAL_DICT = ["end", "javascript", "jquery", "wee", "script"]
@@ -150,6 +150,8 @@ class CSSObject
       "<%=h @design.render_color(@design.background_color) %>"
     when "[background-image-url]"
       "<%= @design.background_image.url %>"
+    when "[background-orientation]"
+      "<%= @design.background_orientation %>"
     when "[text-color]"
       "<%=h @design.render_color(@design.text_color) %>"
     when "[font]"

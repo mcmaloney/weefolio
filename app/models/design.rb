@@ -18,6 +18,8 @@ class Design < ActiveRecord::Base
   
   after_create :set_html, :parse_browser_html
   
+  BG_OPTS = [["Center", "center top no-repeat"], ["Tile", "center top"], ["Left", "left top no-repeat"], ["Right", "right top no-repeat"]]
+  
   def set_html
     if self.theme.blank?
       self.update_attribute(:user_html, IO.readlines("#{RAILS_ROOT}/public/themes/default-template.html").to_s)
