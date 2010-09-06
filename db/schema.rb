@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100730011734) do
+ActiveRecord::Schema.define(:version => 20100906182452) do
 
   create_table "delayed_jobs", :force => true do |t|
     t.integer  "priority",   :default => 0
@@ -26,25 +26,29 @@ ActiveRecord::Schema.define(:version => 20100730011734) do
 
   create_table "designs", :force => true do |t|
     t.integer  "user_id"
-    t.integer  "layout_type",               :default => 1
+    t.integer  "layout_type",                   :default => 1
     t.string   "header_image_file_name"
     t.string   "header_image_content_type"
     t.integer  "header_image_file_size"
     t.datetime "header_image_updated_at"
-    t.string   "background_color",          :default => "f5f5f3"
-    t.string   "text_color",                :default => "767574"
-    t.string   "title_color",               :default => "242420"
-    t.string   "link_color",                :default => "9fcf44"
-    t.string   "link_hover_color",          :default => "242420"
-    t.string   "header_color",              :default => "242420"
-    t.string   "font_family",               :default => "Lucida Grande"
-    t.integer  "font_size",                 :default => 11
-    t.string   "border_color",              :default => "dcdcda"
+    t.string   "background_color",              :default => "f5f5f3"
+    t.string   "text_color",                    :default => "767574"
+    t.string   "title_color",                   :default => "242420"
+    t.string   "link_color",                    :default => "9fcf44"
+    t.string   "link_hover_color",              :default => "242420"
+    t.string   "header_color",                  :default => "242420"
+    t.string   "font_family",                   :default => "Lucida Grande"
+    t.integer  "font_size",                     :default => 11
+    t.string   "border_color",                  :default => "dcdcda"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "browser_html"
     t.text     "user_html"
     t.integer  "theme_id"
+    t.string   "background_image_file_name"
+    t.string   "background_image_content_type"
+    t.integer  "background_image_file_size"
+    t.datetime "background_image_updated_at"
   end
 
   create_table "image_uploads", :force => true do |t|

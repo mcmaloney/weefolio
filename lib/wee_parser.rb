@@ -148,6 +148,8 @@ class CSSObject
     case input_string
     when "[background-color]"
       "<%=h @design.render_color(@design.background_color) %>"
+    when "[background-image-url]"
+      "<%= @design.background_image.url %>"
     when "[text-color]"
       "<%=h @design.render_color(@design.text_color) %>"
     when "[font]"

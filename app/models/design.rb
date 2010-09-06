@@ -8,8 +8,11 @@ class Design < ActiveRecord::Base
   has_attached_file :header_image, :styles => { :header_format => "710x710>", :thumbnail => "70x70#" }, 
                                    :storage => :s3, 
                                    :s3_credentials => "#{RAILS_ROOT}/config/s3.yml",
-                                   :path => ':attachment/:id/:style/:basename.:extension',
-                                   :bucket => 'weefolio'
+                                   :path => ':attachment/:id/:style/:basename.:extension'
+                                   
+  has_attached_file :background_image, :storage => :s3, 
+                                       :s3_credentials => "#{RAILS_ROOT}/config/s3.yml",
+                                       :path => ':attachment/:id/:style/:basename.:extension'
                                    
   belongs_to :theme
   
