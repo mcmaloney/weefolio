@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100906182452) do
+ActiveRecord::Schema.define(:version => 20100906185155) do
 
   create_table "delayed_jobs", :force => true do |t|
     t.integer  "priority",   :default => 0
@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(:version => 20100906182452) do
     t.string   "background_image_content_type"
     t.integer  "background_image_file_size"
     t.datetime "background_image_updated_at"
+    t.string   "background_orientation"
   end
 
   create_table "image_uploads", :force => true do |t|
